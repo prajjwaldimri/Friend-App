@@ -1,0 +1,1 @@
+App created to help rape victims. Works on Windows and Android
