@@ -1,1 +1,1 @@
-App created to help rape victims. Works on Windows and Android
+App created to help everyone physically. Works on Windows and Android
