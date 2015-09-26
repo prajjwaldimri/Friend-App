@@ -10,11 +10,13 @@
         android:layout_height="match_parent" >
 
         <Button
-            android:layout_width="105dp"
-            android:layout_height="137dp"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
             android:text="Call"
             android:id="@+id/button"
+            android:onClick="callbutton"
             android:layout_gravity="center_horizontal|bottom" />
+
     </FrameLayout>
 
     <!-- android:layout_gravity="start" tells DrawerLayout to treat
@@ -29,5 +31,21 @@
         android:layout_gravity="start"
         android:name="com.example.admin.frien.NavigationDrawerFragment"
         tools:layout="@layout/fragment_navigation_drawer" />
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/action_bar"
+        android:weightSum="1">
+
+        <Button
+            android:id="@+id/btnSendSMS"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Send SMS"
+            android:onClick="callers"
+
+            android:layout_weight="0.03" />
+    </LinearLayout>
 
 </android.support.v4.widget.DrawerLayout>

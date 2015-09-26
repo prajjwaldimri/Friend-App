@@ -16,15 +16,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.content.Intent;
 import android.net.Uri;
 import android.widget.Toast;
+import android.content.Intent;
+import android.telephony.SmsManager;
 
 public class MainActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks {
-Button b1;
+Button mes;
+
+
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
      */
@@ -39,8 +44,8 @@ Button b1;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-b1=(Button)findViewById(R.id.button);
-        call();
+
+
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
         mTitle = getTitle();
@@ -51,16 +56,7 @@ b1=(Button)findViewById(R.id.button);
                 (DrawerLayout) findViewById(R.id.drawer_layout));
     }
 
-    private void call() {
-        Intent in=new Intent(Intent.ACTION_CALL,Uri.parse("0000000000"));
-        try{
-            startActivity(in);
-        }
 
-        catch (android.content.ActivityNotFoundException ex){
-            Toast.makeText(getApplicationContext(),"yourActivity is not founded",Toast.LENGTH_SHORT).show();
-        }
-    }
 
 
     @Override
@@ -122,6 +118,21 @@ b1=(Button)findViewById(R.id.button);
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void callbutton(View view) {
+        Intent in = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + "7830207022"));
+        startActivity(in);
+
+    }
+
+    public void callers(View view) {
+        Intent sendIntent = new Intent(Intent.ACTION_VIEW);
+        sendIntent.putExtra("sms_body", "Content of the SMS goes here...");
+
+        sendIntent.setType("vnd.android-dir/mms-sms");
+        startActivity(sendIntent);
+    }
+
 
     /**
      * A placeholder fragment containing a simple view.
