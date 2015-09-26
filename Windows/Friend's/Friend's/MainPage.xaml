@@ -8,6 +8,72 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        
+        <Grid.RowDefinitions>
+    <RowDefinition Height="1*"/>
+            <RowDefinition Height="12*"/>
+        </Grid.RowDefinitions>
+        
+        <SplitView Grid.RowSpan="2"  x:Name="MySplitView" DisplayMode="CompactOverlay"  IsPaneOpen="False" 
+
+               CompactPaneLength="50" OpenPaneLength="150">
+
+            <SplitView.Pane  >
+
+                <StackPanel Background="#2c3e50" >
+            <StackPanel Orientation="Horizontal">
+                    <Button x:Name="HamburgerButton" Foreground="White" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
+
+                    Width="50" Height="50" Background="Transparent" Click="HamburgerButton_Click"/>
+                        <TextBlock Text="Friend's" Foreground="White" FontSize="18" VerticalAlignment="Center" FontFamily="Palatino Linotype" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+
+                        <Button x:Name="MenuButton1" FontFamily="Segoe MDL2 Assets" Foreground="White" Content="&#xE7F2;"
+
+                    Width="50" Height="50" Background="Transparent"/>
+
+                        <TextBlock Text="Call" Foreground="White" FontSize="18" VerticalAlignment="Center" />
+
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+
+                        <Button x:Name="MenuButton2" FontFamily="Segoe MDL2 Assets" Foreground="White" Content="&#xE8F2;"
+
+                        Width="50" Height="50" Background="Transparent"/>
+
+                        <TextBlock Text="Sms" Foreground="White" FontSize="18" VerticalAlignment="Center" />
+
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+
+                        <Button x:Name="MenuButton3" Foreground="White" FontFamily="Segoe MDL2 Assets" Content="&#xE1D6;"
+
+                        Width="50" Height="50" Background="Transparent" Click="MenuButton3_OnClick"/>
+
+                        <TextBlock Text="Voice" Foreground="White" FontSize="18" VerticalAlignment="Center" />
+
+                    </StackPanel>
+
+                </StackPanel>
+
+            </SplitView.Pane>
+
+            <SplitView.Content>
+
+                <Grid>
+
+                    
+                </Grid>
+
+            </SplitView.Content>
+
+        </SplitView>
+        <Button x:Name="button" Grid.Row="0" Grid.RowSpan="2" Background="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Center"
+                FontFamily="Segoe MDL2 Assets" FontSize="60" Click="Button_OnClick" Content="&#xE1D6;"/>
 
     </Grid>
+    
 </Page>
