@@ -17,6 +17,69 @@
             android:onClick="callbutton"
             android:layout_gravity="center_horizontal|bottom" />
 
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/action_bar"
+            android:weightSum="1"
+            android:layout_gravity="left|top">
+            <TextView
+                android:id="@+id/textview2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignLeft="@+id/button4" />
+            <TextView
+                android:id="@+id/textview3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/textview2"
+                android:layout_alignParentRight="true" />
+            <Button
+                android:id="@+id/btnSendSMS"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Send SMS"
+                android:onClick="callers"
+
+                android:layout_weight="0.03"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="70dp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="play"
+                android:id="@+id/button3"
+                android:layout_weight="0.03"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="0dp"
+                android:layout_alignTop="@+id/button4" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="stop"
+                android:id="@+id/button2"
+
+                android:layout_weight="0.03"
+                android:layout_gravity="center_horizontal"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="record"
+                android:id="@+id/button4"
+
+                android:layout_alignTop="@+id/button2"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+
     </FrameLayout>
 
     <!-- android:layout_gravity="start" tells DrawerLayout to treat
@@ -31,21 +94,5 @@
         android:layout_gravity="start"
         android:name="com.example.admin.frien.NavigationDrawerFragment"
         tools:layout="@layout/fragment_navigation_drawer" />
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:id="@+id/action_bar"
-        android:weightSum="1">
-
-        <Button
-            android:id="@+id/btnSendSMS"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Send SMS"
-            android:onClick="callers"
-
-            android:layout_weight="0.03" />
-    </LinearLayout>
 
 </android.support.v4.widget.DrawerLayout>

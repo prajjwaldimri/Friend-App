@@ -25,10 +25,22 @@ import android.net.Uri;
 import android.widget.Toast;
 import android.content.Intent;
 import android.telephony.SmsManager;
+import java.io.IOException;
+import android.media.MediaPlayer;
+import android.media.MediaRecorder;
+import android.os.Environment;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 
-public class MainActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks {
-Button mes;
+import android.content.Context;
 
+public class MainActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks , LocationListener {
+    LocationManager locationmanager;
+Button play,stop,record;
+    private MediaRecorder myaudiorecorder;
+    private String OutputFile=null;
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -44,7 +56,97 @@ Button mes;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        locationmanager=(LocationManager)getSystemService(Context.LOCATION_SERVICE);
+        Criteria cri=new Criteria();
+        String provider=locationmanager.getBestProvider(cri,false);
 
+        if(provider!=null & !provider.equals(""))
+        {
+            Location location=locationmanager.getLastKnownLocation(provider);
+            locationmanager.requestLocationUpdates(provider,2000,1, (LocationListener) MainActivity.this);
+            if(location!=null)
+            {
+                onLocationChanged(location);
+            }
+            else{
+                Toast.makeText(getApplicationContext(),"location not found",Toast.LENGTH_LONG ).show();
+            }
+        }
+        else
+        {
+            Toast.makeText(getApplicationContext(),"Provider is null",Toast.LENGTH_LONG).show();
+        }
+        play=(Button)findViewById(R.id.button3);
+        stop=(Button)findViewById(R.id.button2);
+        record=(Button)findViewById(R.id.button4);
+
+        stop.setEnabled(false);
+        play.setEnabled(false);
+        OutputFile = Environment.getExternalStorageDirectory().getAbsolutePath() + "/recording.3gp";;
+        myaudiorecorder=new MediaRecorder();
+        myaudiorecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+        myaudiorecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
+        myaudiorecorder.setAudioEncoder(MediaRecorder.OutputFormat.AMR_NB);
+        myaudiorecorder.setOutputFile(OutputFile);
+record.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        try {
+            myaudiorecorder.prepare();
+            myaudiorecorder.start();
+        } catch (IllegalStateException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        record.setEnabled(false);
+        stop.setEnabled(true);
+
+        Toast.makeText(getApplicationContext(), "Recording started", Toast.LENGTH_LONG).show();
+    }
+});
+    stop.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            myaudiorecorder.stop();
+            myaudiorecorder.release();
+            myaudiorecorder = null;
+
+            stop.setEnabled(false);
+            play.setEnabled(true);
+
+            Toast.makeText(getApplicationContext(), "Audio recorded successfully", Toast.LENGTH_LONG).show();
+        }
+    });
+play.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) throws IllegalArgumentException,SecurityException,IllegalStateException  {
+        MediaPlayer m = new MediaPlayer();
+
+        try {
+            m.setDataSource(OutputFile);
+        }
+
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            m.prepare();
+        }
+
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        m.start();
+        Toast.makeText(getApplicationContext(), "Playing audio", Toast.LENGTH_LONG).show();
+
+    }
+});
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
@@ -55,9 +157,25 @@ Button mes;
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
     }
+@Override
+    public void onLocationChanged(Location location) {
+        TextView textView2=(TextView)findViewById(R.id.textview2);
 
+        TextView textView3=(TextView)findViewById(R.id.textview3);
 
+        textView2.setText("Latitude"+location.getLatitude());
+        textView3.setText("Longitude"+ location.getLongitude());
+    }
+@Override
+    public void onStatusChanged(String s, int i, Bundle bundle) {
+    }
+    @Override
+    public void onProviderEnabled(String s) {
+    }
+    @Override
 
+    public void onProviderDisabled(String s) {
+    }
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
@@ -126,19 +244,17 @@ Button mes;
     }
 
     public void callers(View view) {
-       /* Intent sendIntent = new Intent(Intent.ACTION_VIEW);
+        /*Intent sendIntent = new Intent(Intent.ACTION_VIEW);
         sendIntent.putExtra("sms_body", "Content of the SMS goes here...");
 
         sendIntent.setType("vnd.android-dir/mms-sms");
         startActivity(sendIntent);*/
-
         String phoneNumber = "tel:7830207022";
         String message = "SMS from Friend";
         try {
             SmsManager smsManager = SmsManager.getDefault();
             smsManager.sendTextMessage(phoneNumber, null,message, null, null);
-            Toast.makeText(getApplicationContext(), "SMS Sent!",
-                    Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "SMS Sent!", Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             Toast.makeText(getApplicationContext(),
                     "SMS faild, please try again later!",
@@ -147,6 +263,10 @@ Button mes;
 
         }
     }
+
+
+
+
 
 
     /**
