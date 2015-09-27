@@ -438,3 +438,4 @@ C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\obj\x86\Debug\Voice.g.
 C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\obj\x86\Debug\Voice.g.cs
 C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\obj\x86\Debug\Voice.xaml
 C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\obj\x86\Debug\Voice.xbf
+C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\obj\x86\Debug\Friend's.csprojResolveAssemblyReference.cache

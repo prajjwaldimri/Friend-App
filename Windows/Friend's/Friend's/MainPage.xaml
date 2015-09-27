@@ -8,12 +8,12 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        
+
         <Grid.RowDefinitions>
-    <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
             <RowDefinition Height="12*"/>
         </Grid.RowDefinitions>
-        
+
         <SplitView Grid.RowSpan="2"  x:Name="MySplitView" DisplayMode="CompactOverlay"  IsPaneOpen="False" 
 
                CompactPaneLength="50" OpenPaneLength="150">
@@ -21,8 +21,8 @@
             <SplitView.Pane  >
 
                 <StackPanel Background="#2c3e50" >
-            <StackPanel Orientation="Horizontal">
-                    <Button x:Name="HamburgerButton" Foreground="White" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="HamburgerButton" Foreground="White" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
 
                     Width="50" Height="50" Background="Transparent" Click="HamburgerButton_Click"/>
                         <TextBlock Text="Friend's" Foreground="White" FontSize="18" VerticalAlignment="Center" FontFamily="Palatino Linotype" />
@@ -65,17 +65,19 @@
 
                 <Grid>
 
-                    
+
                 </Grid>
 
             </SplitView.Content>
 
         </SplitView>
-        <Button x:Name="button" Grid.Row="0" Grid.RowSpan="2" Background="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Center"
-                FontFamily="Segoe MDL2 Assets" FontSize="60" Click="Button_OnClick" Content="&#xE1D6;"/>
+        <Button x:Name="button" Grid.Row="0" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+                FontFamily="Segoe UI" FontSize="20" Click="Button_OnClick" Content="Send Message"/>
+        <Button x:Name="button1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top"
+                FontFamily="Segoe UI" FontSize="20" Click="Button1_OnClick" Content="Call" />
         <TextBlock x:Name="textBox" Text="Hellooooo" HorizontalAlignment="Left" TextWrapping="Wrap"  VerticalAlignment="Top" Margin="80,141.667,0,0" Grid.Row="1"/>
 
 
     </Grid>
-    
+
 </Page>
