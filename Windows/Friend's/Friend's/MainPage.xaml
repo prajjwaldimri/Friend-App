@@ -73,6 +73,8 @@
         </SplitView>
         <Button x:Name="button" Grid.Row="0" Grid.RowSpan="2" Background="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Center"
                 FontFamily="Segoe MDL2 Assets" FontSize="60" Click="Button_OnClick" Content="&#xE1D6;"/>
+        <TextBlock x:Name="textBox" Text="Hellooooo" HorizontalAlignment="Left" TextWrapping="Wrap"  VerticalAlignment="Top" Margin="80,141.667,0,0" Grid.Row="1"/>
+
 
     </Grid>
     

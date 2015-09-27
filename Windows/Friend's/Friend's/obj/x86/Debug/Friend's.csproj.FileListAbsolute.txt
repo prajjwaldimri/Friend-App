@@ -1,4 +1,3 @@
-C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\obj\x86\Debug\Friend's.csprojResolveAssemblyReference.cache
 C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\obj\x86\Debug\App.g.i.cs
 C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\obj\x86\Debug\App.g.cs
 C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\obj\x86\Debug\MainPage.g.i.cs

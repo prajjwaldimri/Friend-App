@@ -22,14 +22,14 @@
 
                 <StackPanel Background="#2c3e50" >
             <StackPanel Orientation="Horizontal">
-                    <Button x:ConnectionId='6' x:Name="HamburgerButton" Foreground="White" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
+                    <Button x:ConnectionId='7' x:Name="HamburgerButton" Foreground="White" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
 
                     Width="50" Height="50" Background="Transparent"                              />
                         <TextBlock Text="Friend's" Foreground="White" FontSize="18" VerticalAlignment="Center" FontFamily="Palatino Linotype" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
 
-                        <Button x:ConnectionId='5' x:Name="MenuButton1" FontFamily="Segoe MDL2 Assets" Foreground="White" Content="&#xE7F2;"
+                        <Button x:ConnectionId='6' x:Name="MenuButton1" FontFamily="Segoe MDL2 Assets" Foreground="White" Content="&#xE7F2;"
 
                     Width="50" Height="50" Background="Transparent"/>
 
@@ -39,7 +39,7 @@
 
                     <StackPanel Orientation="Horizontal">
 
-                        <Button x:ConnectionId='4' x:Name="MenuButton2" FontFamily="Segoe MDL2 Assets" Foreground="White" Content="&#xE8F2;"
+                        <Button x:ConnectionId='5' x:Name="MenuButton2" FontFamily="Segoe MDL2 Assets" Foreground="White" Content="&#xE8F2;"
 
                         Width="50" Height="50" Background="Transparent"/>
 
@@ -49,7 +49,7 @@
 
                     <StackPanel Orientation="Horizontal">
 
-                        <Button x:ConnectionId='3' x:Name="MenuButton3" Foreground="White" FontFamily="Segoe MDL2 Assets" Content="&#xE1D6;"
+                        <Button x:ConnectionId='4' x:Name="MenuButton3" Foreground="White" FontFamily="Segoe MDL2 Assets" Content="&#xE1D6;"
 
                         Width="50" Height="50" Background="Transparent"                            />
 
@@ -73,6 +73,8 @@
         </SplitView>
         <Button x:ConnectionId='2' x:Name="button" Grid.Row="0" Grid.RowSpan="2" Background="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Center"
                 FontFamily="Segoe MDL2 Assets" FontSize="60"                        Content="&#xE1D6;"/>
+        <TextBlock x:ConnectionId='3' x:Name="textBox" Text="Hellooooo" HorizontalAlignment="Left" TextWrapping="Wrap"  VerticalAlignment="Top" Margin="80,141.667,0,0" Grid.Row="1"/>
+
 
     </Grid>
     
