@@ -75,7 +75,10 @@
                 FontFamily="Segoe UI" FontSize="20" Click="Button_OnClick" Content="Send Message"/>
         <Button x:Name="button1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top"
                 FontFamily="Segoe UI" FontSize="20" Click="Button1_OnClick" Content="Call" />
-        <TextBlock x:Name="textBox" Text="Hellooooo" HorizontalAlignment="Left" TextWrapping="Wrap"  VerticalAlignment="Top" Margin="80,141.667,0,0" Grid.Row="1"/>
+        <Button x:Name="button2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom"
+                FontFamily="Segoe UI" FontSize="20" Click="Button2_OnClick" Content="Location" />
+        <TextBlock x:Name="textBox" Text="MessageBox" HorizontalAlignment="Center" TextWrapping="Wrap"  VerticalAlignment="Center" Margin="0,-160,0,0" Grid.Row="1"/>
+        <TextBlock x:Name="textBox1" Text="Location Box" HorizontalAlignment="Center" TextWrapping="Wrap"  VerticalAlignment="Center" Margin="0,100,0,0" Grid.Row="1"/>
 
 
     </Grid>

@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading;
 using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -20,6 +21,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.ApplicationModel.Calls;
 using Windows.ApplicationModel.Chat;
+using Windows.Devices.Geolocation;
 using Windows.Devices.Sms;
 using Windows.UI;
 using Windows.UI.Popups;
@@ -44,6 +46,7 @@ namespace Friend_s
         public delegate void CallingInfoDelegate();
         public event CallingInfoDelegate CellInfoUpdateCompleted;
         public event CallingInfoDelegate ActivePhoneCallStateChanged;
+        private CancellationTokenSource _cts = null;
 
         public MainPage()
         {
@@ -185,6 +188,41 @@ namespace Friend_s
             Guid lineId = await phoneCallStore.GetDefaultLineAsync();
             return await PhoneLine.FromIdAsync(lineId);
         }
-#endregion
+        #endregion
+
+        private async void Button2_OnClick(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var accessStatus = await Geolocator.RequestAccessAsync();
+
+                switch (accessStatus)
+                {
+                    case GeolocationAccessStatus.Allowed:
+
+                        // If DesiredAccuracy or DesiredAccuracyInMeters are not set (or value is 0), DesiredAccuracy.Default is used.
+                        Geolocator geolocator = new Geolocator { DesiredAccuracyInMeters = 0 };
+
+                        // Carry out the operation
+                        Geoposition pos = await geolocator.GetGeopositionAsync();
+
+
+                        textBox1.Text = (pos.Coordinate.Point.Position.Latitude).ToString() +"\n"+ (pos.Coordinate.Point.Position.Longitude).ToString();
+                        
+                        break;
+                    case GeolocationAccessStatus.Denied:
+                        textBox1.Text = "Access Denied!";
+                        break;
+
+                    case GeolocationAccessStatus.Unspecified:
+                        textBox1.Text = "Unspecified";
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                textBox1.Text = "Error";
+            }
+        }
     }
 }

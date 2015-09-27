@@ -35,6 +35,7 @@
     <Capability Name="internetClient" />
     <uap:Capability Name="phoneCall" />
     <uap:Capability Name="chat" />
+    <DeviceCapability Name="location" />
   </Capabilities>
   <build:Metadata>
     <build:Item Name="TargetFrameworkMoniker" Value=".NETCore,Version=v5.0" />
