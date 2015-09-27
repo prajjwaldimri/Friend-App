@@ -126,11 +126,26 @@ Button mes;
     }
 
     public void callers(View view) {
-        Intent sendIntent = new Intent(Intent.ACTION_VIEW);
+       /* Intent sendIntent = new Intent(Intent.ACTION_VIEW);
         sendIntent.putExtra("sms_body", "Content of the SMS goes here...");
 
         sendIntent.setType("vnd.android-dir/mms-sms");
-        startActivity(sendIntent);
+        startActivity(sendIntent);*/
+
+        String phoneNumber = "tel:7830207022";
+        String message = "SMS from Friend";
+        try {
+            SmsManager smsManager = SmsManager.getDefault();
+            smsManager.sendTextMessage(phoneNumber, null,message, null, null);
+            Toast.makeText(getApplicationContext(), "SMS Sent!",
+                    Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(),
+                    "SMS faild, please try again later!",
+                    Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
+
+        }
     }
 
 
