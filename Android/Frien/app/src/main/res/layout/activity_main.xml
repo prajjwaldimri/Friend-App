@@ -1,0 +1,123 @@
+<!-- A DrawerLayout is intended to be used as the top-level content view using match_parent for both width and height to consume the full space available. -->
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".MainActivity">
+
+    <!-- As the main content view, the view below consumes the entire
+         space available using match_parent in both dimensions. -->
+    <FrameLayout android:id="@+id/container" android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:text="Call"
+            android:id="@+id/button"
+            android:onClick="callbutton"
+            android:textColor="#ff0aadff"
+            android:layout_gravity="center_horizontal|bottom" />
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/action_bar"
+            android:weightSum="1"
+            android:layout_gravity="left|top">
+            <TextView
+                android:id="@+id/textview2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignLeft="@+id/button4" />
+            <TextView
+                android:id="@+id/textview3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/textview2"
+                android:layout_alignParentRight="true" />
+            <Button
+                android:id="@+id/btnSendSMS"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Send SMS"
+                android:onClick="callers"
+
+                android:layout_weight="0.03"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="70dp"
+                android:textColor="#ff0e28ff" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="play"
+                android:id="@+id/button3"
+                android:layout_weight="0.03"
+                android:layout_above="@+id/btnSendSMS"
+                android:layout_alignParentLeft="true"
+                android:textColor="#ff00ff3c" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="stop"
+                android:id="@+id/button2"
+
+                android:layout_weight="0.03"
+                android:layout_gravity="center_horizontal"
+                android:layout_alignTop="@+id/button4"
+                android:layout_alignParentRight="true"
+                android:textColor="#ffff1807" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="record"
+                android:id="@+id/button4"
+
+                android:layout_above="@+id/btnSendSMS"
+                android:layout_centerHorizontal="true"
+                android:textColor="#ffff661c" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Button"
+                android:id="@+id/button5"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:background="#00ff00"
+            />
+
+    </FrameLayout>
+
+    <!-- android:layout_gravity="start" tells DrawerLayout to treat
+         this as a sliding drawer on the left side for left-to-right
+         languages and on the right side for right-to-left languages.
+         If you're not building against API 17 or higher, use
+         android:layout_gravity="left" instead. -->
+    <!-- The drawer is given a fixed width in dp and extends the full height of
+         the container. -->
+    <fragment android:id="@+id/navigation_drawer"
+        android:layout_width="@dimen/navigation_drawer_width" android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:name="com.example.admin.frien.NavigationDrawerFragment"
+        tools:layout="@layout/fragment_navigation_drawer" />
+
+
+</android.support.v4.widget.DrawerLayout>
