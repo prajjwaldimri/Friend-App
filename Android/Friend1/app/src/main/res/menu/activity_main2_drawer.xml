@@ -2,13 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
-        <item android:id="@+id/nav_call" android:icon="@android:drawable/ic_menu_camera"
+        <item android:id="@+id/nav_camara" android:icon="@android:drawable/ic_menu_camera"
             android:title="Home" />
-        <item android:id="@+id/nav_message" android:icon="@android:drawable/ic_menu_gallery"
-            android:title="Call and Message" />
-        <item android:id="@+id/nav_settings" android:icon="@android:drawable/ic_menu_slideshow"
+        <item android:id="@+id/nav_gallery" android:icon="@android:drawable/ic_menu_gallery"
+            android:title="Message and call" />
+        <item android:id="@+id/nav_slideshow" android:icon="@android:drawable/ic_menu_slideshow"
             android:title="Settings" />
-        <item android:id="@+id/nav_sos" android:icon="@android:drawable/ic_menu_manage"
+        <item android:id="@+id/nav_manage" android:icon="@android:drawable/ic_menu_manage"
             android:title="SOS" />
     </group>
 
