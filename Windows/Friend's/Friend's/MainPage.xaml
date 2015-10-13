@@ -5,82 +5,67 @@
     xmlns:local="using:Friend_s"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+        mc:Ignorable="d"
+    RequestedTheme="Light">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    
+    <Grid Name="LayoutGrid">
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="12*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
-        <SplitView Grid.RowSpan="2"  x:Name="MySplitView" DisplayMode="CompactOverlay"  IsPaneOpen="False" 
-
-               CompactPaneLength="50" OpenPaneLength="150">
-
-            <SplitView.Pane  >
-
-                <StackPanel Background="#2c3e50" >
+        
+        
+        <RelativePanel Background="#2c3e50">
+            <Button Background="DarkRed" RequestedTheme="Dark" Name="HamburgerButton" MinWidth="46" MinHeight="50" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" FontSize="20" Click="HamburgerButton_OnClick"/>
+            <Button RequestedTheme="Dark" HorizontalAlignment="Center" Background="{x:Null}" Name="BackButton" RelativePanel.RightOf="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE0A6;" FontSize="20" Click="BackButton_OnClick" Height="50" Margin="0,0,0,-10"/>
+            <TextBlock RequestedTheme="Dark" RelativePanel.AlignRightWithPanel="True" FontSize="20" Margin="10,10,0,0" Text="Friend's" FontFamily="Againts" MinWidth="70" ></TextBlock>
+        </RelativePanel>
+        
+        <SplitView RequestedTheme="Dark" CompactPaneLength="46" OpenPaneLength="200" Grid.Row="1" Name="MainSplitView" DisplayMode="CompactOverlay">
+            <SplitView.Pane>
+                <RelativePanel AlignBottomWithPanel="True">
+            <ListBox RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True" SelectionMode="Single" Name="SplitListBox" SelectionChanged="SplitListBox_OnSelectionChanged">
+                <ListBoxItem Name="HomeListItem">
                     <StackPanel Orientation="Horizontal">
-                        <Button x:Name="HamburgerButton" Foreground="White" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
-
-                    Width="50" Height="50" Background="Transparent" Click="HamburgerButton_Click"/>
-                        <TextBlock Text="Friend's" Foreground="White" FontSize="18" VerticalAlignment="Center" FontFamily="Palatino Linotype" />
+                            <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE10F;" FontSize="20"/>
+                        <TextBlock Text="Home" FontSize="18" Margin="25,0,0,0"/>
                     </StackPanel>
+                </ListBoxItem>
+                <ListBoxItem Name="SosListItem">
                     <StackPanel Orientation="Horizontal">
-
-                        <Button x:Name="MenuButton1" FontFamily="Segoe MDL2 Assets" Foreground="White" Content="&#xE7F2;"
-
-                    Width="50" Height="50" Background="Transparent"/>
-
-                        <TextBlock Text="Call" Foreground="White" FontSize="18" VerticalAlignment="Center" />
-
-                    </StackPanel>
-
-                    <StackPanel Orientation="Horizontal">
-
-                        <Button x:Name="MenuButton2" FontFamily="Segoe MDL2 Assets" Foreground="White" Content="&#xE8F2;"
-
-                        Width="50" Height="50" Background="Transparent"/>
-
-                        <TextBlock Text="Sms" Foreground="White" FontSize="18" VerticalAlignment="Center" />
-
-                    </StackPanel>
-
-                    <StackPanel Orientation="Horizontal">
-
-                        <Button x:Name="MenuButton3" Foreground="White" FontFamily="Segoe MDL2 Assets" Content="&#xE1D6;"
-
-                        Width="50" Height="50" Background="Transparent" Click="MenuButton3_OnClick"/>
-
-                        <TextBlock Text="Voice" Foreground="White" FontSize="18" VerticalAlignment="Center" />
-
-                    </StackPanel>
-
-                </StackPanel>
-
+                            <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE171;" FontSize="20"/>
+                            <TextBlock Text="SOS" FontSize="18" Margin="25,0,0,0"/>
+                        </StackPanel>
+                </ListBoxItem>
+                
+                    <Border MinWidth="200" Margin="-10,0,0,0" Background="Aqua" MinHeight="0.2" />
+                    <ListBoxItem Name="ProfileListItem">
+                        <StackPanel Orientation="Horizontal">
+                            <Ellipse Name="EllipseButtonHome" RelativePanel.Below="Hitext" RelativePanel.AlignHorizontalCenterWithPanel="True" Height="20" Width="20">
+                                <Ellipse.Fill>
+                                    <ImageBrush ImageSource="Assets/Generic-Profile-Image.jpg"></ImageBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <TextBlock Text="//Todo" FontSize="18" Margin="25,0,0,0"/>
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem RelativePanel.AlignBottomWithPanel="True" Name="SettingsListItem">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE713;" FontSize="20"/>
+                            <TextBlock Text="Settings" FontSize="18" Margin="25,0,0,0"/>
+                        </StackPanel>
+                    </ListBoxItem>
+                </ListBox>
+                </RelativePanel>
             </SplitView.Pane>
-
+            
             <SplitView.Content>
-
-                <Grid>
-
-
-                </Grid>
-
+                <Frame Name="MainFrame"/>
             </SplitView.Content>
-
         </SplitView>
-        <Button x:Name="button" Grid.Row="0" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"
-                FontFamily="Segoe UI" FontSize="20" Click="Button_OnClick" Content="Send Message"/>
-        <Button x:Name="button1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top"
-                FontFamily="Segoe UI" FontSize="20" Click="Button1_OnClick" Content="Call" />
-        <Button x:Name="button2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom"
-                FontFamily="Segoe UI" FontSize="20" Click="Button2_OnClick" Content="Location" />
-        <TextBlock x:Name="textBox" Text="MessageBox" HorizontalAlignment="Center" TextWrapping="Wrap"  VerticalAlignment="Center" Margin="0,-160,0,0" Grid.Row="1"/>
-        <TextBlock x:Name="textBox1" Text="Location Box" HorizontalAlignment="Center" TextWrapping="Wrap"  VerticalAlignment="Center" Margin="0,100,0,0" Grid.Row="1"/>
-
-
+        
     </Grid>
 
 </Page>

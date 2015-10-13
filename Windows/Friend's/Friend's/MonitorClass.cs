@@ -4,19 +4,19 @@ namespace Friend_s
 {
     public sealed class MonitorClass
     {
-        private bool doesPhoneCallExist;
+        private bool _doesPhoneCallExist;
 
         public MonitorClass()
         {
         }
 
-        public event MainPage.CallingInfoDelegate ActivePhoneCallStateChanged;
+        public event HomePage.CallingInfoDelegate ActivePhoneCallStateChanged;
 
         private void MonitorCallState()
         {
             PhoneCallManager.CallStateChanged += (o, args) =>
             {
-                doesPhoneCallExist = PhoneCallManager.IsCallActive || PhoneCallManager.IsCallIncoming;
+                _doesPhoneCallExist = PhoneCallManager.IsCallActive || PhoneCallManager.IsCallIncoming;
                 if (ActivePhoneCallStateChanged != null)
                 {
                     ActivePhoneCallStateChanged();

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -7,6 +8,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -43,13 +45,6 @@ namespace Friend_s
         protected override async void OnLaunched(LaunchActivatedEventArgs e)
         {
 
-#if DEBUG
-            if (System.Diagnostics.Debugger.IsAttached)
-            {
-                this.DebugSettings.EnableFrameRateCounter = true;
-            }
-#endif
-
             Frame rootFrame = Window.Current.Content as Frame;
 
             // Do not repeat app initialization when the Window already has content,
@@ -61,6 +56,9 @@ namespace Friend_s
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
+                CreateDatabase.CreateTable();
+                Debug.WriteLine("App.xaml executed");
+
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
                     //TODO: Load state from previously suspended application
@@ -70,10 +68,12 @@ namespace Friend_s
                 Window.Current.Content = rootFrame;
             }
 
+
+
             if (rootFrame.Content == null)
             {
                 // When the navigation stack isn't restored navigate to the first page,
-                // configuring the new page by passing required information as a navigation
+                // configuring the new page by passing required information as a navigatio  n
                 // parameter
                 rootFrame.Navigate(typeof(MainPage), e.Arguments);
             }
@@ -82,7 +82,9 @@ namespace Friend_s
             if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
             {
                 var statusBar = Windows.UI.ViewManagement.StatusBar.GetForCurrentView();
-                await statusBar.HideAsync();
+                statusBar.BackgroundColor=Color.FromArgb(1,211,47,47);
+                statusBar.BackgroundOpacity = 1;
+                
             }
         }
 
