@@ -1,21 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading;
 using Windows.Devices.Geolocation;
 using Windows.Devices.Sms;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.System;
-using Windows.UI.Xaml;
+using Windows.Storage;
+using Windows.Storage.Pickers;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
@@ -74,7 +65,7 @@ namespace Friend_s
                         Geoposition pos = await geolocator.GetGeopositionAsync();
 
 
-                        TextBlockLoc.Text = (pos.Coordinate.Point.Position.Latitude).ToString() + "\n" + (pos.Coordinate.Point.Position.Longitude).ToString();
+                        TextBlockLoc.Text = (pos.Coordinate.Point.Position.Latitude) + "\n" + (pos.Coordinate.Point.Position.Longitude);
 
                         break;
                     case GeolocationAccessStatus.Denied:
@@ -94,6 +85,32 @@ namespace Friend_s
             }
         }
 
-        
+
+        private async void EllipseButton_OnTapped(object sender, TappedRoutedEventArgs e)
+        {
+            var image = new BitmapImage();
+            var fp = new FileOpenPicker
+            {
+                ViewMode = PickerViewMode.Thumbnail,
+                SuggestedStartLocation = PickerLocationId.PicturesLibrary
+            };
+            fp.FileTypeFilter.Add(".jpeg");
+            fp.FileTypeFilter.Add(".png");
+            fp.FileTypeFilter.Add(".jpg");
+            // Using PickSingleFileAsync() will return a storage file which can be saved into an object of storage file class.          
+            var sf = await fp.PickSingleFileAsync();
+
+            if (sf == null) return;
+            // Adding bitmap image object to store the stream provided by the object of StorageFile defined above.BitmapImage bmp = new BitmapImage();           
+            // Reading file as a stream and saving it in an object of IRandomAccess.         
+            var stream = await sf.OpenAsync(FileAccessMode.Read);
+            // Adding stream as source of the bitmap image object defined above     
+
+            await image.SetSourceAsync(stream);
+
+            CreateDatabase.InsertData("7",stream.ToString(),null);
+
+            Ellipseimg.ImageSource = image;
+        }
     }
 }

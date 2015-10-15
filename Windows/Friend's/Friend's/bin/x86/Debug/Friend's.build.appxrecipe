@@ -96,9 +96,6 @@
     <AppxPackagedFile Include="C:\Users\prajj\Documents\Friend\Windows\Friend%27s\Friend%27s\bin\x86\Debug\Core\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\prajj\Documents\Friend\Windows\Friend%27s\Friend%27s\bin\x86\Debug\Core\SQLite-net.dll">
-      <PackagePath>SQLite-net.dll</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\Documents\Friend\Windows\Friend%27s\Friend%27s\bin\x86\Debug\Core\sqlite3.dll">
       <PackagePath>sqlite3.dll</PackagePath>
     </AppxPackagedFile>
@@ -107,9 +104,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\Documents\Friend\Windows\Friend%27s\Friend%27s\bin\x86\Debug\Core\SQLitePCL.Ext.dll">
       <PackagePath>SQLitePCL.Ext.dll</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\prajj\Documents\Friend\Windows\Friend%27s\Friend%27s\bin\x86\Debug\Core\SQLitePCL.raw.dll">
-      <PackagePath>SQLitePCL.raw.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\Documents\Friend\Windows\Friend%27s\Friend%27s\bin\x86\Debug\Core\System.AppContext.dll">
       <PackagePath>System.AppContext.dll</PackagePath>

@@ -43,7 +43,7 @@
             <ToggleSwitch Grid.Row="1" Grid.Column="2"
                           Grid.ColumnSpan="2"
                           HorizontalAlignment="Center"
-                          Margin="10,0,0,0"/>
+                          Margin="0,0,0,0"/>
 
             <TextBlock Grid.Column="0" Grid.Row="2" Text="SMS"
                        Grid.ColumnSpan="2"
@@ -51,7 +51,7 @@
                        VerticalAlignment="Center" FontFamily="Fonts/UBUNTU-R.TTF#Ubuntu"/>
             <ToggleSwitch Grid.Row="2" Grid.Column="2"
                           Grid.ColumnSpan="2"
-                          Margin="10,0,0,0"
+                          Margin="0,0,0,0"
                           HorizontalAlignment="Center"/>
 
             <TextBlock Grid.Column="0" Grid.Row="3" Text="Location"
@@ -60,7 +60,7 @@
                        VerticalAlignment="Center" FontFamily="Fonts/UBUNTU-R.TTF#Ubuntu"/>
             <ToggleSwitch Grid.Row="3" Grid.Column="2"
                           Grid.ColumnSpan="2"
-                          Margin="10,0,0,0"
+                          Margin="0,0,0,0"
                           Name="LocationToggle"
                           HorizontalAlignment="Center"/>
 
@@ -70,7 +70,7 @@
                        VerticalAlignment="Center" FontFamily="Fonts/UBUNTU-R.TTF#Ubuntu"/>
             <ToggleSwitch Grid.Row="4" Grid.Column="2"
                           Grid.ColumnSpan="2"
-                          Margin="10,0,0,0"
+                          Margin="0,0,0,0"
                           HorizontalAlignment="Center"/>
         </Grid>
         <Grid Grid.Row="1">
@@ -90,16 +90,16 @@
             <ColumnDefinition/>
             </Grid.ColumnDefinitions>
         
-            <TextBox Name="TextBox1" InputScope="Number" Grid.Row="0" Margin="10,10,10,10" BorderBrush="Violet" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="2,2,2,2"/>
-            <TextBox Name="TextBox2" InputScope="Number" Grid.Row="1" Margin="10,10,10,10" BorderBrush="BlueViolet"  Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="2,2,2,2"/>
-            <TextBox Name="TextBox3" InputScope="Number" Grid.Row="2" Margin="10,10,10,10" BorderBrush="Blue" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="2,2,2,2"/>
-            <TextBox Name="TextBox4" InputScope="Number" Grid.Row="3" Margin="10,10,10,10" BorderBrush="DarkBlue" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="2,2,2,2"/>
-            <TextBox Name="TextBox5" InputScope="Number" Grid.Row="4" Margin="10,10,10,10" BorderBrush="MidnightBlue" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="2,2,2,2"/>
-            <TextBox Name="TextBox10" InputScope="Number" Grid.Row="0" Margin="10,10,10,10" BorderBrush="Violet" Grid.Column="2" Grid.ColumnSpan="2" BorderThickness="2,2,2,2"/>
-            <TextBox Name="TextBox20" InputScope="Number" Grid.Row="1" Margin="10,10,10,10" BorderBrush="BlueViolet"  Grid.Column="2" Grid.ColumnSpan="2" BorderThickness="2,2,2,2"/>
-            <TextBox Name="TextBox30" InputScope="Number" Grid.Row="2" Margin="10,10,10,10" BorderBrush="Blue" Grid.Column="2" Grid.ColumnSpan="2" BorderThickness="2,2,2,2"/>
-            <TextBox Name="TextBox40" InputScope="Number" Grid.Row="3" Margin="10,10,10,10" BorderBrush="DarkBlue" Grid.Column="2" Grid.ColumnSpan="2" BorderThickness="2,2,2,2"/>
-            <TextBox Name="TextBox50" InputScope="Number" Grid.Row="4" Margin="10,10,10,10" BorderBrush="MidnightBlue" Grid.Column="2" Grid.ColumnSpan="2" BorderThickness="2,2,2,2"/>
+            <TextBox PlaceholderText="Number Priority 1" Name="TextBox1" InputScope="Number" Grid.Row="0" Margin="10,10,10,0" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="2,2,2,2"/>
+            <TextBox PlaceholderText="Number Priority 2" Name="TextBox2" InputScope="Number" Grid.Row="1" Margin="10,10,10,0" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="2,2,2,2"/>
+            <TextBox PlaceholderText="Number Priority 3" Name="TextBox3" InputScope="Number" Grid.Row="2" Margin="10,10,10,0" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="2,2,2,2"/>
+            <TextBox PlaceholderText="Number Priority 4" Name="TextBox4" InputScope="Number" Grid.Row="3" Margin="10,10,10,0" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="2,2,2,2"/>
+            <TextBox PlaceholderText="Number Priority 5" Name="TextBox5" InputScope="Number" Grid.Row="4" Margin="10,10,10,0" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="2,2,2,2"/>
+            <TextBox PlaceholderText="Name Priority 1" Name="TextBox10" InputScope="Number" Grid.Row="0" Margin="10,10,10,0"  Grid.Column="2" Grid.ColumnSpan="2" BorderThickness="2,2,2,2"/>
+            <TextBox PlaceholderText="Name Priority 2" Name="TextBox20" InputScope="Number" Grid.Row="1" Margin="10,10,10,0"  Grid.Column="2" Grid.ColumnSpan="2" BorderThickness="2,2,2,2"/>
+            <TextBox PlaceholderText="Name Priority 3" Name="TextBox30" InputScope="Number" Grid.Row="2" Margin="10,10,10,0"  Grid.Column="2" Grid.ColumnSpan="2" BorderThickness="2,2,2,2"/>
+            <TextBox PlaceholderText="Name Priority 4" Name="TextBox40" InputScope="Number" Grid.Row="3" Margin="10,10,10,0"  Grid.Column="2" Grid.ColumnSpan="2" BorderThickness="2,2,2,2"/>
+            <TextBox PlaceholderText="Name Priority 5" Name="TextBox50" InputScope="Number" Grid.Row="4" Margin="10,10,10,0"  Grid.Column="2" Grid.ColumnSpan="2" BorderThickness="2,2,2,2"/>
         <Button Click="ButtonBase_OnClick" Content="Register Numbers" HorizontalAlignment="Center" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"/>
             <Button Click="ButtonBaseReset_OnClick" Content="Reset" HorizontalAlignment="Center" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2"/>
     </Grid>

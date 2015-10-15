@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Calls;
-using Windows.Devices.Geolocation;
 using Windows.Devices.Sms;
-using Windows.System;
-
 
 
 namespace Friend_s
@@ -43,14 +39,14 @@ namespace Friend_s
             this.MonitorCallState();
 
             //Get all phone lines (To detect dual SIM devices)
-            Task<Dictionary<Guid, PhoneLine>> getPhoneLinesTask = GetPhoneLinesAsync();
+            var getPhoneLinesTask = GetPhoneLinesAsync();
             AllPhoneLines = await getPhoneLinesTask;
 
             //Get number of lines
             NoOfLines = AllPhoneLines.Count;
 
             //Get Default Phone Line
-            Task<PhoneLine> getDefaultLineTask = GetDefaultPhoneLineAsync();
+            var getDefaultLineTask = GetDefaultPhoneLineAsync();
             CurrentPhoneLine = await getDefaultLineTask;
 
 

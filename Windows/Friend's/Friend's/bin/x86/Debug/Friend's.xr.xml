@@ -30,10 +30,15 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition" />
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
+      <RootProperty Name="Name" />
+      <RootProperty Name="PlaceholderText" />
       <RootProperty Name="InputScope" />
       <RootProperty Name="Margin" />
-      <RootProperty Name="BorderBrush" />
       <RootProperty Name="BorderThickness" />
+      <RootProperty Name="Background" />
+      <RootProperty Name="Text" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Content" />
@@ -89,6 +94,13 @@
       <RootMethod Name="GetRightOf" />
       <RootMethod Name="SetRightOf" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
+      <RootProperty Name="BorderThickness" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Children" />
+      <RootProperty Name="Orientation" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Shapes.Ellipse">
       <RootProperty Name="Name" />
       <RootProperty Name="Margin" />
@@ -96,7 +108,9 @@
       <RootProperty Name="Width" />
       <RootProperty Name="Fill" />
       <RootProperty Name="Transform3D" />
+      <RootEvent Name="Tapped" />
     </RootType>
+    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.NullExtension" />
     <RootType FullName="Windows.UI.Xaml.Media.ImageBrush">
       <RootProperty Name="ImageSource" />
     </RootType>
@@ -129,14 +143,9 @@
       <RootProperty Name="Background" />
       <RootProperty Name="MinHeight" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
-      <RootProperty Name="Orientation" />
-      <RootProperty Name="Children" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Frame">
       <RootProperty Name="Name" />
     </RootType>
-    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.NullExtension" />
     <RootType FullName="Friend_s.MainPage" />
     <RootType FullName="Friend_s.Sospage" />
   </Roots.RootTypes>

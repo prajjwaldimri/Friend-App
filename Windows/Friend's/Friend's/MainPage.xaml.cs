@@ -1,15 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
-using Windows.UI.Xaml;
+﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.ApplicationModel.Calls;
-using Windows.Devices.Geolocation;
-using Windows.Devices.Sms;
-using Windows.UI.Popups;
-using Windows.UI.Xaml.Navigation;
-
 
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409

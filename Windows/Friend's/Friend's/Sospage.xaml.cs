@@ -1,20 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading;
 using Windows.Devices.Sms;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Popups;
-using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -33,18 +21,29 @@ namespace Friend_s
 
         public Sospage()
         {
-            this.InitializeComponent();
-            if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
-            {
-                var spineClass = new SpineClass();
-                spineClass.InitializeCallingInfoAsync();
-                MessageSender();
-                Caller();
-            }
-
+            InitializeComponent();
+            if (!Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
+                return;
+            var spineClass = new SpineClass();
+            spineClass.InitializeCallingInfoAsync();
+            DatabaseConnector();
+            MessageSender();
+            Caller();
         }
 
-        public async void MessageSender()
+        private static string _phonenumber;
+        private static string _phonename;
+        private static void DatabaseConnector()
+        {
+            var list = CreateDatabase.GetValues(@"SELECT Number FROM Details WHERE ID=1");
+            var list1 = CreateDatabase.GetValues(@"SELECT Name FROM Details WHERE ID=1");
+            string[] arr = list;
+            string[] brr = list1;
+            _phonenumber = arr[0];
+            _phonename = brr[0];
+        }
+
+        private async void MessageSender()
         {
             if (_device == null)
             {
@@ -59,39 +58,34 @@ namespace Friend_s
                 }
 
             }
-            string msgStr = "";
-            if (_device != null)
+            if (_device == null) return;
+            var msg = new SmsTextMessage2
             {
-                SmsTextMessage2 msg = new SmsTextMessage2();
-                if (CallandSmsSettings.Number1 != "")
-                {
-                    msg.To = "7830207022"; //CallandSMSSettings.number1.Text;
-                    msg.Body = "Hello!";
-                }
+                To = _phonenumber,
+                Body = "Hello!"
+            };
+            //CallandSMSSettings.number1.Text;
 
-                else
-                {
-                    Frame.Navigate(typeof(CallandSmsSettings));
-                }
 
-                SmsSendMessageResult result = await _device.SendMessageAndGetResultAsync(msg);
+            //else
+            //{
+            //    Frame.Navigate(typeof(CallandSmsSettings));
+            //}
 
-                if (result.IsSuccessful)
-                {
-                    msgStr = "";
-                    msgStr += "Text message sent, cellularClass: " + result.CellularClass;
-                    MessageDialog msg1= new MessageDialog("Message Sent!");
-                    await msg1.ShowAsync();
+            var result = await _device.SendMessageAndGetResultAsync(msg);
 
-                }
-            }
+            if (!result.IsSuccessful) return;
+            var msgStr = "";
+            msgStr += "Text message sent, To: " + _phonenumber;
+            var msg1= new MessageDialog("Message Sent!"+msgStr);
+            await msg1.ShowAsync();
         }
 
-        public static async void Caller()
+        private static async void Caller()
         {
             if ((SpineClass.CurrentPhoneLine != null))
             {
-                SpineClass.CurrentPhoneLine.Dial("7830207022", "Prajjwal Dimri");
+                SpineClass.CurrentPhoneLine.Dial(_phonenumber, _phonename);
             }
             else
             {

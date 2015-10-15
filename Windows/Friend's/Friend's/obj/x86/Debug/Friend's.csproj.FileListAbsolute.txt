@@ -222,9 +222,7 @@ C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\bin\x86\Debug\Core\Mic
 C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\bin\x86\Debug\Core\Microsoft.Win32.Primitives.dll
 C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\bin\x86\Debug\Core\Properties\Default.rd.xml
 C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\bin\x86\Debug\Core\resources.pri
-C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\bin\x86\Debug\Core\SQLite-net.dll
 C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\bin\x86\Debug\Core\sqlite3.dll
-C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\bin\x86\Debug\Core\SQLitePCL.raw.dll
 C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\bin\x86\Debug\Core\System.AppContext.dll
 C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\bin\x86\Debug\Core\System.Collections.Concurrent.dll
 C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\bin\x86\Debug\Core\System.Collections.dll
@@ -454,7 +452,6 @@ C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\obj\x86\Debug\Sospage.
 C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\obj\x86\Debug\Sospage.xaml
 C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\obj\x86\Debug\Sospage.xbf
 C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\bin\x86\Debug\Core\Assets\Elegant_Background-16.jpg
-C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\obj\x86\Debug\Friend's.csprojResolveAssemblyReference.cache
 C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\obj\x86\Debug\Core\Assets\Elegant_Background-16.jpg
 C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\bin\x86\Debug\Core\Fonts\AGAINTS.TTF
 C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\bin\x86\Debug\Core\Fonts\TNALOGO.TTF
