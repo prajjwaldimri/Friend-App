@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using Windows.Devices.Sms;
+using Windows.Storage;
 using Windows.UI.Popups;
 using Windows.UI.Xaml.Controls;
 
@@ -45,6 +46,12 @@ namespace Friend_s
 
         private async void MessageSender()
         {
+            if (!ApplicationData.Current.LocalSettings.Values.ContainsKey("SmsOn"))
+            {
+                var messageDialog= new MessageDialog("SMS Permission Denied");
+                await messageDialog.ShowAsync();
+                return;
+            }
             if (_device == null)
             {
                 try
@@ -77,12 +84,16 @@ namespace Friend_s
             if (!result.IsSuccessful) return;
             var msgStr = "";
             msgStr += "Text message sent, To: " + _phonenumber;
-            var msg1= new MessageDialog("Message Sent!"+msgStr);
+            var msg1 = new MessageDialog("Message Sent!" + msgStr);
             await msg1.ShowAsync();
         }
 
         private static async void Caller()
         {
+            if (!ApplicationData.Current.LocalSettings.Values.ContainsKey("CallOn"))
+            {
+           return;
+            }
             if ((SpineClass.CurrentPhoneLine != null))
             {
                 SpineClass.CurrentPhoneLine.Dial(_phonenumber, _phonename);

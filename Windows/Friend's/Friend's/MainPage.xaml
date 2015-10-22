@@ -15,15 +15,17 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+
         
-        
-        <RelativePanel Background="#2c3e50">
-            <Button Background="DarkRed" RequestedTheme="Dark" Name="HamburgerButton" MinWidth="46" MinHeight="50" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" FontSize="20" Click="HamburgerButton_OnClick"/>
-            <Button RequestedTheme="Dark" HorizontalAlignment="Center" Background="{x:Null}" Name="BackButton" RelativePanel.RightOf="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE0A6;" FontSize="20" Click="BackButton_OnClick" Height="50" Margin="0,0,0,-10"/>
-            <TextBlock RequestedTheme="Dark" RelativePanel.AlignRightWithPanel="True" FontSize="20" Margin="10,10,0,0" Text="Friend's" FontFamily="Againts" MinWidth="70" ></TextBlock>
+        <RelativePanel Background="#2c3e50" MinWidth="50">
+            
+            <Button Background="DarkRed" RequestedTheme="Dark" Name="HamburgerButton" MinWidth="46" MinHeight="48" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" FontSize="20" Click="HamburgerButton_OnClick"/>
+            <Button RequestedTheme="Dark" Name="BackButton" HorizontalAlignment="Center" Background="{x:Null}" RelativePanel.RightOf="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE0A6;" FontSize="20" Click="BackButton_OnClick" Height="50" Margin="0,0,0,0"/>
+            <TextBlock RequestedTheme="Dark" x:Name="PageTitle" x:FieldModifier="public" Text="{Binding PageTitle}" FontSize="24" VerticalAlignment="Center" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignRightWith="HamburgerButton"/>
+            <TextBlock RequestedTheme="Dark" RelativePanel.AlignRightWithPanel="True" FontSize="24" Margin="10,10,0,0" Text="Friend's" FontFamily="Fonts/AGAINTS.TTF#Againts" MinWidth="70" ></TextBlock>
         </RelativePanel>
         
-        <SplitView RequestedTheme="Dark" CompactPaneLength="46" OpenPaneLength="200" Grid.Row="1" Name="MainSplitView" DisplayMode="CompactOverlay">
+        <SplitView RequestedTheme="Dark" CompactPaneLength="46" OpenPaneLength="200" Grid.Row="1" Name="MainSplitView" DisplayMode="Overlay">
             <SplitView.Pane>
                 <RelativePanel AlignBottomWithPanel="True">
             <ListBox RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True" SelectionMode="Single" Name="SplitListBox" SelectionChanged="SplitListBox_OnSelectionChanged">

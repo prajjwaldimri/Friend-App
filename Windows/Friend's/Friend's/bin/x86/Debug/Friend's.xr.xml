@@ -67,9 +67,10 @@
       <RootProperty Name="MinWidth" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ToggleSwitch">
+      <RootProperty Name="Name" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Margin" />
-      <RootProperty Name="Name" />
+      <RootEvent Name="Toggled" />
     </RootType>
     <RootType FullName="Friend_s.CallandSmsSettings" />
     <RootType FullName="Windows.UI.Xaml.Shapes.Rectangle">

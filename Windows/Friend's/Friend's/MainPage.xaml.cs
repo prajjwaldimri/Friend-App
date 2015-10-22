@@ -17,9 +17,24 @@ namespace Friend_s
             SplitListBox.SelectedItem = HomeListItem;
             MainFrame.Navigate(typeof (HomePage));
             HomeListItem.IsSelected = true;
-
+            if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
+            {
+                BackButton.IsEnabled = false;
+                BackButton.Visibility= Visibility.Collapsed;
+                PageTitle.Visibility=Visibility.Visible;
+            }
+            else
+            {
+                BackButton.IsEnabled = true;
+                BackButton.Visibility = Visibility.Visible;
+                PageTitle.Visibility = Visibility.Collapsed;
+            }
         }
 
+        public class HomeTextUpdater
+        {
+            public string PageTitle { get; set; }
+        }
         
 
         private void HamburgerButton_OnClick(object sender, RoutedEventArgs e)

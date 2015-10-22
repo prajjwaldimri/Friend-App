@@ -34,10 +34,10 @@ namespace Friend_s
                 {
                     var spineClass = new SpineClass();
                     spineClass.InitializeCallingInfoAsync();
-                }
+                    }
                 catch (Exception e1)
                 {
-                    String e = e1.ToString();
+                    var e = e1.ToString();
                 }
             }
 
@@ -46,6 +46,7 @@ namespace Friend_s
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             LocationAccesser();
+            
         }
 
         private async void LocationAccesser()
@@ -59,10 +60,10 @@ namespace Friend_s
                     case GeolocationAccessStatus.Allowed:
 
                         // If DesiredAccuracy or DesiredAccuracyInMeters are not set (or value is 0), DesiredAccuracy.Default is used.
-                        Geolocator geolocator = new Geolocator { DesiredAccuracyInMeters = 0 };
+                        var geolocator = new Geolocator { DesiredAccuracyInMeters = 0 };
 
                         // Carry out the operation
-                        Geoposition pos = await geolocator.GetGeopositionAsync();
+                        var pos = await geolocator.GetGeopositionAsync();
 
 
                         TextBlockLoc.Text = (pos.Coordinate.Point.Position.Latitude) + "\n" + (pos.Coordinate.Point.Position.Longitude);
