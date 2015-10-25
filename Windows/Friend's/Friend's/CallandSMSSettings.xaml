@@ -80,34 +80,9 @@
                           HorizontalAlignment="Center"/>
         </Grid>
         <Grid Grid.Row="1">
-        <Grid.RowDefinitions>
-           <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-                <RowDefinition/>
-
-            </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-        
-            <TextBox PlaceholderText="Number Priority 1" Name="TextBox1" InputScope="Number" Grid.Row="0" Margin="10,10,10,0" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="2,2,2,2"/>
-            <TextBox PlaceholderText="Number Priority 2" Name="TextBox2" InputScope="Number" Grid.Row="1" Margin="10,10,10,0" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="2,2,2,2"/>
-            <TextBox PlaceholderText="Number Priority 3" Name="TextBox3" InputScope="Number" Grid.Row="2" Margin="10,10,10,0" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="2,2,2,2"/>
-            <TextBox PlaceholderText="Number Priority 4" Name="TextBox4" InputScope="Number" Grid.Row="3" Margin="10,10,10,0" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="2,2,2,2"/>
-            <TextBox PlaceholderText="Number Priority 5" Name="TextBox5" InputScope="Number" Grid.Row="4" Margin="10,10,10,0" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="2,2,2,2"/>
-            <TextBox PlaceholderText="Name Priority 1" Name="TextBox10" Grid.Row="0" Margin="10,10,10,0"  Grid.Column="2" Grid.ColumnSpan="2" BorderThickness="2,2,2,2"/>
-            <TextBox PlaceholderText="Name Priority 2" Name="TextBox20" Grid.Row="1" Margin="10,10,10,0"  Grid.Column="2" Grid.ColumnSpan="2" BorderThickness="2,2,2,2"/>
-            <TextBox PlaceholderText="Name Priority 3" Name="TextBox30" Grid.Row="2" Margin="10,10,10,0"  Grid.Column="2" Grid.ColumnSpan="2" BorderThickness="2,2,2,2"/>
-            <TextBox PlaceholderText="Name Priority 4" Name="TextBox40" Grid.Row="3" Margin="10,10,10,0"  Grid.Column="2" Grid.ColumnSpan="2" BorderThickness="2,2,2,2"/>
-            <TextBox PlaceholderText="Name Priority 5" Name="TextBox50" Grid.Row="4" Margin="10,10,10,0"  Grid.Column="2" Grid.ColumnSpan="2" BorderThickness="2,2,2,2"/>
-        <Button Click="ButtonBase_OnClick" Content="Register Numbers" HorizontalAlignment="Center" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"/>
-            <Button Click="ButtonBaseReset_OnClick" Content="Reset" HorizontalAlignment="Center" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2"/>
+            <ListView Name="ContactListView" Tapped="ContactListView_Tapped">
+                
+            </ListView>
     </Grid>
     </Grid>
 </Page>

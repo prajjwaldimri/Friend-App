@@ -1,9 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" 
-         xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
-         xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
-         xmlns:r="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
-         IgnorableNamespaces="uap mp">
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:r="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" IgnorableNamespaces="uap mp">
   <Identity Name="36411e27-597b-436e-a0bc-7205d8d5afe2" Publisher="CN=prajj" Version="1.0.0.0" />
   <mp:PhoneIdentity PhoneProductId="36411e27-597b-436e-a0bc-7205d8d5afe2" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
@@ -27,10 +23,12 @@
     </Application>
   </Applications>
   <Capabilities>
-    <r:Capability Name="cellularMessaging" />
     <Capability Name="internetClient" />
     <uap:Capability Name="phoneCall" />
     <uap:Capability Name="chat" />
-    <DeviceCapability Name="location"/>
+    <uap:Capability Name="picturesLibrary" />
+    <uap:Capability Name="removableStorage" />
+    <!--<r:Capability Name="cellularMessaging" />-->
+    <DeviceCapability Name="location" />
   </Capabilities>
 </Package>

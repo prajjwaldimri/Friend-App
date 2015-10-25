@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Calls;
+using Windows.ApplicationModel.Contacts;
 using Windows.Devices.Sms;
 
 
@@ -113,5 +115,26 @@ namespace Friend_s
             return await PhoneLine.FromIdAsync(lineId);
         }
         #endregion 
+
+        public static string GetContactResult(Contact contact)
+        {
+            var result = new StringBuilder();
+            result.AppendFormat("Display name: {0}", contact.DisplayName);
+            result.AppendLine();
+
+            foreach (ContactEmail email in contact.Emails)
+            {
+                result.AppendFormat("Email address ({0}): {1}", email.Kind, email.Address);
+                result.AppendLine();
+            }
+
+            foreach (ContactPhone phone in contact.Phones)
+            {
+                result.AppendFormat("Phone ({0}): {1}", phone.Kind, phone.Number);
+                result.AppendLine();
+            }
+
+            return result.ToString();
+        }
     }
 }
