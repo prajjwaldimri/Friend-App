@@ -91,8 +91,10 @@ namespace Friend_s
                         TextBlockLoc.Text = (pos.Coordinate.Point.Position.Latitude) + "\n" +
                                             (pos.Coordinate.Point.Position.Longitude);
                         var location = new BasicGeoposition();
-                        location.Latitude = pos.Coordinate.Point.Position.Latitude;
-                        location.Longitude = pos.Coordinate.Point.Position.Longitude;
+                        
+                        location.Latitude = Math.Round(pos.Coordinate.Point.Position.Latitude,4);
+                        
+                        location.Longitude = Math.Round(pos.Coordinate.Point.Position.Longitude,4);
                         var pointToReverseGeopoint = new Geopoint(location);
 
                         var result =
@@ -120,7 +122,6 @@ namespace Friend_s
             catch (Exception e)
             {
                 Debug.WriteLine(e);
-                TextBlockLoc.Text = "Error";
             }
         }
 
