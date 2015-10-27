@@ -47,7 +47,6 @@
       <RootProperty Name="Name" />
       <RootProperty Name="Height" />
       <RootProperty Name="Width" />
-      <RootProperty Name="Transform3D" />
       <RootEvent Name="Tapped" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.RelativePanel">
@@ -120,9 +119,10 @@
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="BorderThickness" />
+      <RootProperty Name="Name" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Media.Media3D.CompositeTransform3D">
-      <RootProperty Name="CenterY" />
+    <RootType FullName="Windows.UI.Xaml.Controls.FontIcon">
+      <RootProperty Name="Glyph" />
     </RootType>
     <RootType FullName="Friend_s.HomePage" />
     <RootType FullName="Windows.UI.Xaml.Controls.SplitView">

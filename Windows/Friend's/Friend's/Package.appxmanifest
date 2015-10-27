@@ -32,5 +32,6 @@
     <uap:Capability Name="contacts"/>
     <r:Capability Name="cellularMessaging" />
     <DeviceCapability Name="location" />
+    
   </Capabilities>
 </Package>

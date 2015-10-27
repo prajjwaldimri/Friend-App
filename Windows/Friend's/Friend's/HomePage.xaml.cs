@@ -1,10 +1,15 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
+using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Runtime.Serialization.Json;
+using System.Text;
 using System.Threading;
 using Windows.Devices.Geolocation;
 using Windows.Devices.Sms;
 using Windows.Graphics.Imaging;
+using Windows.Services.Maps;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.UI.Xaml.Controls;
@@ -79,14 +84,26 @@ namespace Friend_s
                     case GeolocationAccessStatus.Allowed:
 
                         // If DesiredAccuracy or DesiredAccuracyInMeters are not set (or value is 0), DesiredAccuracy.Default is used.
-                        var geolocator = new Geolocator {DesiredAccuracyInMeters = 0};
-
+                        var geolocator = new Geolocator();
+                        geolocator.DesiredAccuracy = PositionAccuracy.High; 
                         // Carry out the operation
                         var pos = await geolocator.GetGeopositionAsync();
-
-
                         TextBlockLoc.Text = (pos.Coordinate.Point.Position.Latitude) + "\n" +
                                             (pos.Coordinate.Point.Position.Longitude);
+                        var location = new BasicGeoposition();
+                        location.Latitude = pos.Coordinate.Point.Position.Latitude;
+                        location.Longitude = pos.Coordinate.Point.Position.Longitude;
+                        var pointToReverseGeopoint = new Geopoint(location);
+
+                        var result =
+                            await MapLocationFinder.FindLocationsAtAsync(pointToReverseGeopoint);
+
+                        if (result.Status == MapLocationFinderStatus.Success)
+                        {
+                            LocationTextBox.Text=
+                                  result.Locations[0].Address.Town;
+                        }
+                        
 
                         break;
                     case GeolocationAccessStatus.Denied:
@@ -100,8 +117,9 @@ namespace Friend_s
                         throw new ArgumentOutOfRangeException();
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Debug.WriteLine(e);
                 TextBlockLoc.Text = "Error";
             }
         }
@@ -136,5 +154,8 @@ namespace Friend_s
             SpineClass.ImagetoIsolatedStorageSaver(stream1,"profiledefault.jpg");
             
         }
+
+        
+        
     }
 }
