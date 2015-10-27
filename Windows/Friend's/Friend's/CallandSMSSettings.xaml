@@ -80,9 +80,73 @@
                           HorizontalAlignment="Center"/>
         </Grid>
         <Grid Grid.Row="1">
-            <ListView Name="ContactListView" Tapped="ContactListView_Tapped">
+            <StackPanel>
+                <StackPanel Margin="0,0,0,0" Orientation="Horizontal">
+                    <Ellipse Margin="0,0,0,0" RelativePanel.Below="Hitext" RelativePanel.AlignHorizontalCenterWithPanel="True" MinHeight="50" MinWidth="50">
+                        <Ellipse.Fill>
+                            <ImageBrush x:Name="FirstEllipseimg" ImageSource="Assets/Generic-Profile-Image.jpg"/>
+                        </Ellipse.Fill>
+                        </Ellipse>
+                    <StackPanel>
+                    <TextBlock MinWidth="250" Name="FirstContactName"/>
+                    <TextBlock MinWidth="250" Name="FirstContactNumber"/>
+                    </StackPanel>
+                    <Button Click="FirstContactButton_OnClick" Background="{x:Null}" FontSize="18" Content="&#xE104;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                    </StackPanel>
                 
-            </ListView>
+                <StackPanel Margin="0,15,0,0" Orientation="Horizontal">
+                        <Ellipse Margin="0,0,0,0" RelativePanel.Below="Hitext" RelativePanel.AlignHorizontalCenterWithPanel="True" MinHeight="50" MinWidth="50">
+                            <Ellipse.Fill>
+                                <ImageBrush x:Name="SecondEllipseimg" ImageSource="Assets/Generic-Profile-Image.jpg"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <StackPanel>
+                            <TextBlock MinWidth="250" Name="SecondContactName"/>
+                            <TextBlock MinWidth="250" Name="SecondContactNumber"/>
+                        </StackPanel>
+                    <Button Click="SecondContactButton_OnClick" Background="{x:Null}" FontSize="18" Content="&#xE104;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                    </StackPanel>
+                
+                <StackPanel Margin="0,15,0,0" Orientation="Horizontal">
+                            <Ellipse Margin="0,0,0,0" RelativePanel.Below="Hitext" RelativePanel.AlignHorizontalCenterWithPanel="True" MinHeight="50" MinWidth="50">
+                                <Ellipse.Fill>
+                                    <ImageBrush x:Name="ThirdEllipseimg" ImageSource="Assets/Generic-Profile-Image.jpg"/>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <StackPanel>
+                                <TextBlock MinWidth="250" Name="ThirdContactName"/>
+                                <TextBlock MinWidth="250" Name="ThirdContactNumber"/>
+                            </StackPanel>
+                    <Button Click="ThirdContactButton_OnClick" Background="{x:Null}" FontSize="18" Content="&#xE104;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                    </StackPanel>
+                
+                <StackPanel Margin="0,15,0,0" Orientation="Horizontal">
+                                <Ellipse Margin="0,0,0,0" RelativePanel.Below="Hitext" RelativePanel.AlignHorizontalCenterWithPanel="True" MinHeight="50" MinWidth="50">
+                                    <Ellipse.Fill>
+                                        <ImageBrush x:Name="ForthEllipseimg" ImageSource="Assets/Generic-Profile-Image.jpg"/>
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                                <StackPanel>
+                                    <TextBlock MinWidth="250" Name="ForthContactName"/>
+                                    <TextBlock MinWidth="250" Name="ForthContactNumber"/>
+                                </StackPanel>
+                    <Button Click="ForthContactButton_OnClick" Background="{x:Null}" FontSize="18" Content="&#xE104;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                    </StackPanel>
+                
+                <StackPanel Margin="0,15,0,0" Orientation="Horizontal">
+                                    <Ellipse Margin="0,0,0,0" RelativePanel.Below="Hitext" RelativePanel.AlignHorizontalCenterWithPanel="True" MinHeight="50" MinWidth="50">
+                                        <Ellipse.Fill>
+                                            <ImageBrush x:Name="FifthEllipseimg" ImageSource="Assets/Generic-Profile-Image.jpg"/>
+                                        </Ellipse.Fill>
+                                    </Ellipse>
+                                    <StackPanel>
+                                        <TextBlock MinWidth="250" Name="FifthContactName"/>
+                                        <TextBlock MinWidth="250" Name="FifthContactNumber"/>
+                                    </StackPanel>
+                    <Button Click="FifthContactButton_OnClick" Background="{x:Null}" FontSize="18" Content="&#xE104;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                                </StackPanel>
+                </StackPanel>
+            
     </Grid>
     </Grid>
 </Page>

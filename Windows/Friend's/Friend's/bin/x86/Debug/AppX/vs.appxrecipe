@@ -10,7 +10,7 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>36411e27-597b-436e-a0bc-7205d8d5afe2</PackageIdentityName>
     <IntermediateOutputPath>C:\Users\prajj\Documents\Friend\Windows\Friend%27s\Friend%27s\obj\x86\Debug\</IntermediateOutputPath>
-    <RegisteredManifestChecksum>E839F307B457144D507B0EB1C76F508BF6657B56043D60EDE1D40454E5AF2045</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>76EFE442C397B470E1B0FC95B54D750D9B16955CBF5C365E4D77C68DB1E1D49D</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>36411e27-597b-436e-a0bc-7205d8d5afe2_1.0.0.0_x86__wqqaj6de6k89e</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>36411e27-597b-436e-a0bc-7205d8d5afe2_wqqaj6de6k89e!App</RegisteredUserModeAppID>
     <RegisteredPackageID>36411e27-597b-436e-a0bc-7205d8d5afe2</RegisteredPackageID>
@@ -22,7 +22,7 @@
     <AppXManifest Include="C:\Users\prajj\Documents\Friend\Windows\Friend%27s\Friend%27s\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-25T04:54:35.581</Modified>
+      <Modified>2015-10-27T04:18:16.841</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -76,7 +76,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\Documents\Friend\Windows\Friend%27s\Friend%27s\bin\x86\Debug\Core\entrypoint\Friend%27s.exe">
       <PackagePath>entrypoint\Friend%27s.exe</PackagePath>
-      <Modified>2015-10-25T04:54:34.226</Modified>
+      <Modified>2015-10-27T04:18:14.847</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\Documents\Friend\Windows\Friend%27s\Friend%27s\bin\x86\Debug\Core\Fonts\AGAINTS.TTF">
       <PackagePath>Fonts\AGAINTS.TTF</PackagePath>
@@ -92,11 +92,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\Documents\Friend\Windows\Friend%27s\Friend%27s\bin\x86\Debug\Core\Friend%27s.exe">
       <PackagePath>Friend%27s.exe</PackagePath>
-      <Modified>2015-10-25T04:54:35.581</Modified>
+      <Modified>2015-10-27T04:18:16.840</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\Documents\Friend\Windows\Friend%27s\Friend%27s\bin\x86\Debug\Core\Friend%27s.xr.xml">
       <PackagePath>Friend%27s.xr.xml</PackagePath>
-      <Modified>2015-10-23T15:43:58.770</Modified>
+      <Modified>2015-10-26T15:58:53.361</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\Documents\Friend\Windows\Friend%27s\Friend%27s\bin\x86\Debug\Core\Microsoft.ApplicationInsights.dll">
       <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
@@ -128,7 +128,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\Documents\Friend\Windows\Friend%27s\Friend%27s\bin\x86\Debug\Core\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-10-25T04:54:34.863</Modified>
+      <Modified>2015-10-27T04:18:15.852</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\Documents\Friend\Windows\Friend%27s\Friend%27s\bin\x86\Debug\Core\sqlite3.dll">
       <PackagePath>sqlite3.dll</PackagePath>

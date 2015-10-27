@@ -132,37 +132,21 @@ namespace Friend_s.Friend_s_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[14];
+            _typeNameTable = new string[6];
             _typeNameTable[0] = "Friend_s.CallandSmsSettings";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "System.Collections.Generic.IReadOnlyList`1<Friend_s.CallandSmsSettings.GetContactDetails>";
-            _typeNameTable[4] = "System.Collections.Generic.List`1<Friend_s.CallandSmsSettings.GetContactDetails>";
-            _typeNameTable[5] = "Object";
-            _typeNameTable[6] = "Friend_s.CallandSmsSettings.GetContactDetails";
-            _typeNameTable[7] = "String";
-            _typeNameTable[8] = "Windows.UI.Xaml.Media.Imaging.BitmapImage";
-            _typeNameTable[9] = "Windows.UI.Xaml.Visibility";
-            _typeNameTable[10] = "System.Collections.Generic.List`1<String>";
-            _typeNameTable[11] = "Friend_s.HomePage";
-            _typeNameTable[12] = "Friend_s.MainPage";
-            _typeNameTable[13] = "Friend_s.Sospage";
+            _typeNameTable[3] = "Friend_s.HomePage";
+            _typeNameTable[4] = "Friend_s.MainPage";
+            _typeNameTable[5] = "Friend_s.Sospage";
 
-            _typeTable = new global::System.Type[14];
+            _typeTable = new global::System.Type[6];
             _typeTable[0] = typeof(global::Friend_s.CallandSmsSettings);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::System.Collections.Generic.IReadOnlyList<global::Friend_s.CallandSmsSettings.GetContactDetails>);
-            _typeTable[4] = typeof(global::System.Collections.Generic.List<global::Friend_s.CallandSmsSettings.GetContactDetails>);
-            _typeTable[5] = typeof(global::System.Object);
-            _typeTable[6] = typeof(global::Friend_s.CallandSmsSettings.GetContactDetails);
-            _typeTable[7] = typeof(global::System.String);
-            _typeTable[8] = typeof(global::Windows.UI.Xaml.Media.Imaging.BitmapImage);
-            _typeTable[9] = typeof(global::Windows.UI.Xaml.Visibility);
-            _typeTable[10] = typeof(global::System.Collections.Generic.List<global::System.String>);
-            _typeTable[11] = typeof(global::Friend_s.HomePage);
-            _typeTable[12] = typeof(global::Friend_s.MainPage);
-            _typeTable[13] = typeof(global::Friend_s.Sospage);
+            _typeTable[3] = typeof(global::Friend_s.HomePage);
+            _typeTable[4] = typeof(global::Friend_s.MainPage);
+            _typeTable[5] = typeof(global::Friend_s.Sospage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -198,23 +182,9 @@ namespace Friend_s.Friend_s_XamlTypeInfo
         }
 
         private object Activate_0_CallandSmsSettings() { return new global::Friend_s.CallandSmsSettings(); }
-        private object Activate_4_List() { return new global::System.Collections.Generic.List<global::Friend_s.CallandSmsSettings.GetContactDetails>(); }
-        private object Activate_10_List() { return new global::System.Collections.Generic.List<global::System.String>(); }
-        private object Activate_11_HomePage() { return new global::Friend_s.HomePage(); }
-        private object Activate_12_MainPage() { return new global::Friend_s.MainPage(); }
-        private object Activate_13_Sospage() { return new global::Friend_s.Sospage(); }
-        private void VectorAdd_4_List(object instance, object item)
-        {
-            var collection = (global::System.Collections.Generic.ICollection<global::Friend_s.CallandSmsSettings.GetContactDetails>)instance;
-            var newItem = (global::Friend_s.CallandSmsSettings.GetContactDetails)item;
-            collection.Add(newItem);
-        }
-        private void VectorAdd_10_List(object instance, object item)
-        {
-            var collection = (global::System.Collections.Generic.ICollection<global::System.String>)instance;
-            var newItem = (global::System.String)item;
-            collection.Add(newItem);
-        }
+        private object Activate_3_HomePage() { return new global::Friend_s.HomePage(); }
+        private object Activate_4_MainPage() { return new global::Friend_s.MainPage(); }
+        private object Activate_5_Sospage() { return new global::Friend_s.Sospage(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -229,8 +199,6 @@ namespace Friend_s.Friend_s_XamlTypeInfo
             case 0:   //  Friend_s.CallandSmsSettings
                 userType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_0_CallandSmsSettings;
-                userType.AddMemberName("ContactDetails");
-                userType.AddMemberName("SetContacts");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -243,70 +211,23 @@ namespace Friend_s.Friend_s_XamlTypeInfo
                 xamlType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  System.Collections.Generic.IReadOnlyList`1<Friend_s.CallandSmsSettings.GetContactDetails>
-                userType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 4:   //  System.Collections.Generic.List`1<Friend_s.CallandSmsSettings.GetContactDetails>
-                userType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.CollectionAdd = VectorAdd_4_List;
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 5:   //  Object
-                xamlType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 6:   //  Friend_s.CallandSmsSettings.GetContactDetails
-                userType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.AddMemberName("ContactName");
-                userType.AddMemberName("ContactImage");
-                userType.AddMemberName("CanShow");
-                userType.AddMemberName("PhoneNumbers");
-                userType.AddMemberName("ContactEmails");
+            case 3:   //  Friend_s.HomePage
+                userType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_3_HomePage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 7:   //  String
-                xamlType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 8:   //  Windows.UI.Xaml.Media.Imaging.BitmapImage
-                xamlType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 9:   //  Windows.UI.Xaml.Visibility
-                xamlType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 10:   //  System.Collections.Generic.List`1<String>
-                userType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.CollectionAdd = VectorAdd_10_List;
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 11:   //  Friend_s.HomePage
+            case 4:   //  Friend_s.MainPage
                 userType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_11_HomePage;
+                userType.Activator = Activate_4_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 12:   //  Friend_s.MainPage
+            case 5:   //  Friend_s.Sospage
                 userType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_12_MainPage;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 13:   //  Friend_s.Sospage
-                userType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_13_Sospage;
+                userType.Activator = Activate_5_Sospage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -315,117 +236,11 @@ namespace Friend_s.Friend_s_XamlTypeInfo
         }
 
 
-        private object get_0_CallandSmsSettings_ContactDetails(object instance)
-        {
-            var that = (global::Friend_s.CallandSmsSettings)instance;
-            return that.ContactDetails;
-        }
-        private void set_0_CallandSmsSettings_ContactDetails(object instance, object Value)
-        {
-            var that = (global::Friend_s.CallandSmsSettings)instance;
-            that.ContactDetails = (global::System.Collections.Generic.IReadOnlyList<global::Friend_s.CallandSmsSettings.GetContactDetails>)Value;
-        }
-        private object get_1_CallandSmsSettings_SetContacts(object instance)
-        {
-            var that = (global::Friend_s.CallandSmsSettings)instance;
-            return that.SetContacts;
-        }
-        private void set_1_CallandSmsSettings_SetContacts(object instance, object Value)
-        {
-            var that = (global::Friend_s.CallandSmsSettings)instance;
-            that.SetContacts = (global::System.Collections.Generic.List<global::Friend_s.CallandSmsSettings.GetContactDetails>)Value;
-        }
-        private object get_2_GetContactDetails_ContactName(object instance)
-        {
-            var that = (global::Friend_s.CallandSmsSettings.GetContactDetails)instance;
-            return that.ContactName;
-        }
-        private object get_3_GetContactDetails_ContactImage(object instance)
-        {
-            var that = (global::Friend_s.CallandSmsSettings.GetContactDetails)instance;
-            return that.ContactImage;
-        }
-        private object get_4_GetContactDetails_CanShow(object instance)
-        {
-            var that = (global::Friend_s.CallandSmsSettings.GetContactDetails)instance;
-            return that.CanShow;
-        }
-        private void set_4_GetContactDetails_CanShow(object instance, object Value)
-        {
-            var that = (global::Friend_s.CallandSmsSettings.GetContactDetails)instance;
-            that.CanShow = (global::Windows.UI.Xaml.Visibility)Value;
-        }
-        private object get_5_GetContactDetails_PhoneNumbers(object instance)
-        {
-            var that = (global::Friend_s.CallandSmsSettings.GetContactDetails)instance;
-            return that.PhoneNumbers;
-        }
-        private void set_5_GetContactDetails_PhoneNumbers(object instance, object Value)
-        {
-            var that = (global::Friend_s.CallandSmsSettings.GetContactDetails)instance;
-            that.PhoneNumbers = (global::System.Collections.Generic.List<global::System.String>)Value;
-        }
-        private object get_6_GetContactDetails_ContactEmails(object instance)
-        {
-            var that = (global::Friend_s.CallandSmsSettings.GetContactDetails)instance;
-            return that.ContactEmails;
-        }
-        private void set_6_GetContactDetails_ContactEmails(object instance, object Value)
-        {
-            var that = (global::Friend_s.CallandSmsSettings.GetContactDetails)instance;
-            that.ContactEmails = (global::System.Collections.Generic.List<global::System.String>)Value;
-        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
             global::Friend_s.Friend_s_XamlTypeInfo.XamlMember xamlMember = null;
-            global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType userType;
-
-            switch (longMemberName)
-            {
-            case "Friend_s.CallandSmsSettings.ContactDetails":
-                userType = (global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Friend_s.CallandSmsSettings");
-                xamlMember = new global::Friend_s.Friend_s_XamlTypeInfo.XamlMember(this, "ContactDetails", "System.Collections.Generic.IReadOnlyList`1<Friend_s.CallandSmsSettings.GetContactDetails>");
-                xamlMember.Getter = get_0_CallandSmsSettings_ContactDetails;
-                xamlMember.Setter = set_0_CallandSmsSettings_ContactDetails;
-                break;
-            case "Friend_s.CallandSmsSettings.SetContacts":
-                userType = (global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Friend_s.CallandSmsSettings");
-                xamlMember = new global::Friend_s.Friend_s_XamlTypeInfo.XamlMember(this, "SetContacts", "System.Collections.Generic.List`1<Friend_s.CallandSmsSettings.GetContactDetails>");
-                xamlMember.Getter = get_1_CallandSmsSettings_SetContacts;
-                xamlMember.Setter = set_1_CallandSmsSettings_SetContacts;
-                break;
-            case "Friend_s.CallandSmsSettings.GetContactDetails.ContactName":
-                userType = (global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Friend_s.CallandSmsSettings.GetContactDetails");
-                xamlMember = new global::Friend_s.Friend_s_XamlTypeInfo.XamlMember(this, "ContactName", "String");
-                xamlMember.Getter = get_2_GetContactDetails_ContactName;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "Friend_s.CallandSmsSettings.GetContactDetails.ContactImage":
-                userType = (global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Friend_s.CallandSmsSettings.GetContactDetails");
-                xamlMember = new global::Friend_s.Friend_s_XamlTypeInfo.XamlMember(this, "ContactImage", "Windows.UI.Xaml.Media.Imaging.BitmapImage");
-                xamlMember.Getter = get_3_GetContactDetails_ContactImage;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "Friend_s.CallandSmsSettings.GetContactDetails.CanShow":
-                userType = (global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Friend_s.CallandSmsSettings.GetContactDetails");
-                xamlMember = new global::Friend_s.Friend_s_XamlTypeInfo.XamlMember(this, "CanShow", "Windows.UI.Xaml.Visibility");
-                xamlMember.Getter = get_4_GetContactDetails_CanShow;
-                xamlMember.Setter = set_4_GetContactDetails_CanShow;
-                break;
-            case "Friend_s.CallandSmsSettings.GetContactDetails.PhoneNumbers":
-                userType = (global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Friend_s.CallandSmsSettings.GetContactDetails");
-                xamlMember = new global::Friend_s.Friend_s_XamlTypeInfo.XamlMember(this, "PhoneNumbers", "System.Collections.Generic.List`1<String>");
-                xamlMember.Getter = get_5_GetContactDetails_PhoneNumbers;
-                xamlMember.Setter = set_5_GetContactDetails_PhoneNumbers;
-                break;
-            case "Friend_s.CallandSmsSettings.GetContactDetails.ContactEmails":
-                userType = (global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Friend_s.CallandSmsSettings.GetContactDetails");
-                xamlMember = new global::Friend_s.Friend_s_XamlTypeInfo.XamlMember(this, "ContactEmails", "System.Collections.Generic.List`1<String>");
-                xamlMember.Getter = get_6_GetContactDetails_ContactEmails;
-                xamlMember.Setter = set_6_GetContactDetails_ContactEmails;
-                break;
-            }
+            // No Local Properties
             return xamlMember;
         }
     }

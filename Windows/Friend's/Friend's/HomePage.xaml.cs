@@ -1,21 +1,16 @@
 ﻿using System;
 using System.Diagnostics;
-using System.IO;
-using System.IO.IsolatedStorage;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading;
-using System.Threading.Tasks;
 using Windows.Devices.Geolocation;
 using Windows.Devices.Sms;
 using Windows.Graphics.Imaging;
 using Windows.Storage;
 using Windows.Storage.Pickers;
-using Windows.Storage.Streams;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
-using Microsoft.ApplicationInsights.Extensibility.Implementation.Tracing;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -27,30 +22,24 @@ namespace Friend_s
     public sealed partial class HomePage : Page
     {
         private SmsDevice2 _device;
-
         public delegate void CallingInfoDelegate();
-
-        public event CallingInfoDelegate CellInfoUpdateCompleted;
-        public event CallingInfoDelegate ActivePhoneCallStateChanged;
         private CancellationTokenSource _cts = null;
 
 
         public HomePage()
         {
             this.InitializeComponent();
-            if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
+            if (!Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
+                return;
+            try
             {
-                try
-                {
-                    var spineClass = new SpineClass();
-                    spineClass.InitializeCallingInfoAsync();
-                }
-                catch (Exception e1)
-                {
-                    var e = e1.ToString();
-                }
+                var spineClass = new SpineClass();
+                spineClass.InitializeCallingInfoAsync();
             }
-
+            catch (Exception e1)
+            {
+                Debug.WriteLine(e1);
+            }
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -65,16 +54,16 @@ namespace Friend_s
             {
                 var image1 = new BitmapImage();
                 var storagefile =
-                    await Windows.Storage.ApplicationData.Current.RoamingFolder.GetFileAsync("profiledefault.jpg");
+                    await ApplicationData.Current.RoamingFolder.GetFileAsync("profiledefault.jpg");
                 if (storagefile == null) return;
                 var stream = await storagefile.OpenAsync(FileAccessMode.Read);
                 //Converts to a IRandomAccessStream that can be set to an image
                 await image1.SetSourceAsync(stream);
                 Ellipseimg.ImageSource = image1;
             }
-            catch(Exception)
+            catch(Exception e)
             {
-                
+                Debug.WriteLine(e);
             }
         }
 
@@ -138,31 +127,14 @@ namespace Friend_s
             
             // Reading file as a stream and saving it in an object of IRandomAccess.         
             var stream = await storagefile.OpenAsync(FileAccessMode.Read);
+            var stream1 = await storagefile.OpenReadAsync();
             
             // Adding stream as source of the bitmap image object defined above     
             await image1.SetSourceAsync(stream);
             Ellipseimg.ImageSource = image1;
 
-            //WriteableBitmap is used to save our image to our desired location, which in this case is the LocalStorage of app
-            var image = new WriteableBitmap(50, 50);
-            var stream1 = await storagefile.OpenReadAsync();
-            image.SetSource(stream1);
-
-            //Saving to roaming folder so that it can sync the profile pic to other devices
-            var saveAsTarget =
-                    await ApplicationData.Current.RoamingFolder.CreateFileAsync("profiledefault.jpg",CreationCollisionOption.ReplaceExisting);
+            SpineClass.ImagetoIsolatedStorageSaver(stream1,"profiledefault.jpg");
             
-            //Encoding with Bitmap Encoder to jpeg format
-            var encoder = await BitmapEncoder.CreateAsync(
-                BitmapEncoder.JpegEncoderId,
-                await saveAsTarget.OpenAsync(FileAccessMode.ReadWrite));
-            //Saving as a stream
-            var pixelStream = image.PixelBuffer.AsStream();
-            var pixels = new byte[pixelStream.Length];
-            await pixelStream.ReadAsync(pixels, 0, pixels.Length);
-            encoder.SetPixelData(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Ignore, (uint)image.PixelWidth, (uint)image.PixelHeight, 96.0, 96.0, pixels);
-            await encoder.FlushAsync();
-
         }
     }
 }
