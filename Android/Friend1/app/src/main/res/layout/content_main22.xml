@@ -16,7 +16,8 @@
         android:ems="10"
         android:id="@+id/editText"
         android:layout_above="@+id/editText2"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignLeft="@+id/editText5"
+        android:layout_alignStart="@+id/editText5" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -80,7 +81,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/switch1"
-        android:checked="false"
+        android:checked="true"
         android:layout_below="@+id/switch3"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
@@ -92,7 +93,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/switch2"
-        android:checked="false"
+        android:checked="true"
         android:text="Calls"
         android:layout_below="@+id/textView4"
         android:layout_alignParentRight="true"
@@ -104,12 +105,72 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/switch3"
-        android:checked="false"
+        android:checked="true"
         android:layout_below="@+id/switch2"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:text="Location" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:elevation="10dp"
+        android:id="@+id/button3"
+        android:background="@mipmap/ic_contact"
+        android:layout_alignBottom="@+id/editText"
+        android:layout_alignRight="@+id/switch1"
+        android:layout_alignEnd="@+id/switch1"
+        android:clickable="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:elevation="10dp"
+        android:background="@mipmap/ic_contact"
+        android:id="@+id/button4"
+        android:layout_above="@+id/editText3"
+        android:layout_alignRight="@+id/switch1"
+        android:layout_alignEnd="@+id/switch1"
+        android:clickable="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:elevation="10dp"
+        android:background="@mipmap/ic_contact"
+        android:id="@+id/button5"
+        android:layout_above="@+id/editText4"
+        android:layout_alignRight="@+id/switch1"
+        android:layout_alignEnd="@+id/switch1"
+        android:clickable="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:elevation="10dp"
+        android:background="@mipmap/ic_contact"
+        android:id="@+id/button6"
+        android:layout_above="@+id/editText5"
+        android:layout_alignLeft="@+id/button5"
+        android:layout_alignStart="@+id/button5"
+        android:clickable="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:elevation="10dp"
+        android:background="@mipmap/ic_contact"
+        android:id="@+id/button7"
+        android:layout_alignBottom="@+id/editText5"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:clickable="true" />
 
 </RelativeLayout>
