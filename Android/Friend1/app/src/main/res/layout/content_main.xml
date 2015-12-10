@@ -9,25 +9,48 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior" tools:showIn="@layout/app_bar_main"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Calls"
-        android:id="@+id/textView2"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="160dp" />
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="300dp"
+        android:background="@mipmap/ic_launc">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/textView3"
-        android:layout_alignTop="@+id/textView2"
-        android:layout_toRightOf="@+id/textView2"
-        android:layout_toEndOf="@+id/textView2"
-        android:layout_marginLeft="36dp"
-        android:layout_marginStart="36dp" />
+        <CircleImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/imageView2"
+            android:shape="oval"
+            android:background="@mipmap/ic_laun"
+            android:layout_below="@+id/textView2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="55dp" />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Hi"
+            android:id="@+id/textView2"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Ayush Bahuguna"
+            android:id="@+id/textView3"
+            android:layout_alignBaseline="@+id/button2"
+            android:layout_alignBottom="@+id/button2"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:id="@+id/button2"
+            android:background="@mipmap/ic_cemera"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
 </RelativeLayout>
