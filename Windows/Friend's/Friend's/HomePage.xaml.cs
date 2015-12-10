@@ -1,14 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
-using System.IO;
-using System.Net.Http;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Runtime.Serialization.Json;
-using System.Text;
 using System.Threading;
 using Windows.Devices.Geolocation;
 using Windows.Devices.Sms;
-using Windows.Graphics.Imaging;
 using Windows.Services.Maps;
 using Windows.Storage;
 using Windows.Storage.Pickers;

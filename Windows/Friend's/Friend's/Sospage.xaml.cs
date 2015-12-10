@@ -65,7 +65,7 @@ namespace Friend_s
                 }
 
             }
-            if (_device == null) return;
+            //if (_device == null) return;
             var msg = new SmsTextMessage2
             {
                 To = _phonenumber,
@@ -78,9 +78,8 @@ namespace Friend_s
             //{
             //    Frame.Navigate(typeof(CallandSmsSettings));
             //}
-
-            var result = await _device.SendMessageAndGetResultAsync(msg);
-
+             var result = await _device.SendMessageAndGetResultAsync(msg);
+            
             if (!result.IsSuccessful) return;
             var msgStr = "";
             msgStr += "Text message sent, To: " + _phonenumber;

@@ -14,56 +14,8 @@ namespace Friend_s
         public MainPage()
         {
             this.InitializeComponent();
-            SplitListBox.SelectedItem = HomeListItem;
-            MainFrame.Navigate(typeof (HomePage));
-            HomeListItem.IsSelected = true;
-            if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
-            {
-                BackButton.IsEnabled = false;
-                BackButton.Visibility= Visibility.Collapsed;
-                PageTitle.Visibility=Visibility.Visible;
-            }
-            else
-            {
-                BackButton.IsEnabled = true;
-                BackButton.Visibility = Visibility.Visible;
-                PageTitle.Visibility = Visibility.Collapsed;
-            }
-        }
-
-        public class HomeTextUpdater
-        {
-            public string PageTitle { get; set; }
-        }
-        
-
-        private void HamburgerButton_OnClick(object sender, RoutedEventArgs e)
-        {
-            MainSplitView.IsPaneOpen = !MainSplitView.IsPaneOpen;
-        }
-
-        private void SplitListBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (HomeListItem.IsSelected)
-            {
-                MainFrame.Navigate(typeof (HomePage));
-            }
-            else if (SettingsListItem.IsSelected)
-            {
-                MainFrame.Navigate(typeof (CallandSmsSettings));
-            }
-            else if (SosListItem.IsSelected)
-            {
-                MainFrame.Navigate(typeof (Sospage));
-            }
-        }
-
-        private void BackButton_OnClick(object sender, RoutedEventArgs e)
-        {
-            if (MainFrame.CanGoBack)
-            {
-                MainFrame.GoBack();
-            }
         }
     }
 }
+
+       

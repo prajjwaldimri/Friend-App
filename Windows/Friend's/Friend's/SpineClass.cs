@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
-using System.IO.IsolatedStorage;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading;
@@ -12,7 +10,6 @@ using Windows.ApplicationModel.Contacts;
 using Windows.Devices.Sms;
 using Windows.Graphics.Imaging;
 using Windows.Storage;
-using Windows.Storage.Pickers;
 using Windows.Storage.Streams;
 using Windows.UI.Xaml.Media.Imaging;
 
@@ -33,15 +30,6 @@ namespace Friend_s
         public CancellationTokenSource Cts = null;
         public static double LocLat;
         public static double LocLon;
-
-        public async void Initializer()
-        {
-          
-
-            
-        }
-
-         
 
         #region phonecallsetters
 
