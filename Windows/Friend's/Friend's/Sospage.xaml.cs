@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Threading;
+using Windows.Devices.Geolocation;
 using Windows.Devices.Sms;
+using Windows.Services.Maps;
 using Windows.Storage;
 using Windows.UI.Popups;
 using Windows.UI.Xaml.Controls;
@@ -19,10 +22,13 @@ namespace Friend_s
         public event CallingInfoDelegate CellInfoUpdateCompleted;
         public event CallingInfoDelegate ActivePhoneCallStateChanged;
         private CancellationTokenSource _cts = null;
-
+        private static string latitude;
+        private static string longitude;
+        
         public Sospage()
         {
             InitializeComponent();
+            LocationAccesser();
             if (!Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
                 return;
             var spineClass = new SpineClass();
@@ -42,6 +48,46 @@ namespace Friend_s
             string[] brr = list1;
             _phonenumber = arr[0];
             _phonename = brr[0];
+        }
+
+        private static async void LocationAccesser()
+        {
+            try
+            {
+                var accessStatus = await Geolocator.RequestAccessAsync();
+
+                switch (accessStatus)
+                {
+                    case GeolocationAccessStatus.Allowed:
+
+                        // If DesiredAccuracy or DesiredAccuracyInMeters are not set (or value is 0), DesiredAccuracy.Default is used.
+                        var geolocator = new Geolocator {DesiredAccuracy = PositionAccuracy.High};
+                        // Carry out the operation
+                        var pos = await geolocator.GetGeopositionAsync();
+                        latitude = pos.Coordinate.Point.Position.Latitude.ToString();
+                        longitude= pos.Coordinate.Point.Position.Longitude.ToString();
+                        var location = new BasicGeoposition
+                        {
+                            Latitude = Math.Round(pos.Coordinate.Point.Position.Latitude, 4),
+                            Longitude = Math.Round(pos.Coordinate.Point.Position.Longitude, 4)
+                        };
+                        
+                        break;
+                    case GeolocationAccessStatus.Denied:
+                        Debug.WriteLine("Access Denied!");
+                        break;
+
+                    case GeolocationAccessStatus.Unspecified:
+                        Debug.WriteLine("Unspecified");
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+            }
         }
 
         private async void MessageSender()
@@ -69,7 +115,7 @@ namespace Friend_s
             var msg = new SmsTextMessage2
             {
                 To = _phonenumber,
-                Body = "Hello!"
+                Body = "I am in need of help. My coordinates are\n Latitude:"+ latitude+ "Longitude \n" + longitude
             };
             //CallandSMSSettings.number1.Text;
 

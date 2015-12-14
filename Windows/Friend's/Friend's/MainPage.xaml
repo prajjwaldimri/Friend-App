@@ -236,8 +236,7 @@
     </Page.Resources>
 
 
-    <ScrollViewer Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-                VerticalScrollMode="Enabled">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Pivot>
             <Pivot.Resources>
                 <!-- Default style for Windows.UI.Xaml.Controls.Primitives.PivotHeaderItem -->
@@ -384,37 +383,37 @@
                 </Style>
 
             </Pivot.Resources>
+            
             <Pivot.Style>
                 <StaticResource ResourceKey="PivotStyleDynamicHeader"/>
             </Pivot.Style>
             <PivotItem>
                 <PivotItem.Header>
-                    <local:TabHeader Label="item 1" Glyph="&#xE716;" />
+                    <local:TabHeader Label="Home" Glyph="&#xE10F;" />
                 </PivotItem.Header>
-                <TextBlock>Content 1</TextBlock>
+                <ScrollViewer>
+                <local:HomePage></local:HomePage>
+                </ScrollViewer>
             </PivotItem>
             <PivotItem>
                 <PivotItem.Header>
-                    <local:TabHeader Label="item 2" Glyph="&#xE719;" />
+                    <local:TabHeader Label="Settings" Glyph="&#xE13A;" />
                 </PivotItem.Header>
-                <TextBlock>Content 2</TextBlock>
+                <ScrollViewer>
+                    <local:CallandSmsSettings></local:CallandSmsSettings>
+                </ScrollViewer>
             </PivotItem>
             <PivotItem>
                 <PivotItem.Header>
-                    <local:TabHeader Label="item 3" Glyph="&#xE721;" />
+                    <local:TabHeader Label="About" Glyph="&#xE721;" />
                 </PivotItem.Header>
                 <TextBlock>Content 3</TextBlock>
             </PivotItem>
-            <PivotItem>
-                <PivotItem.Header>
-                    <local:TabHeader Label="item 4" Glyph="&#xE723;" />
-                </PivotItem.Header>
-                <TextBlock>Content 4</TextBlock>
-            </PivotItem>
+            
         </Pivot>
 
 
 
-    </ScrollViewer>
+    </Grid>
 
 </Page>

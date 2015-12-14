@@ -133,6 +133,7 @@
     <RootType FullName="Windows.UI.Xaml.FrameworkElement">
       <RootProperty Name="Margin" />
       <RootProperty Name="Height" />
+      <RootProperty Name="MinHeight" />
       <RootProperty Name="RequestedTheme" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Control">
@@ -240,7 +241,6 @@
       <RootProperty Name="VerticalContentAlignment" />
       <RootProperty Name="ZoomMode" />
       <RootProperty Name="Content" />
-      <RootProperty Name="Background" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Primitives.PivotPanel">
       <RootProperty Name="VerticalAlignment" />

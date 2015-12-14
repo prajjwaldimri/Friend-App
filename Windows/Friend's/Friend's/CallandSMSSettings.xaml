@@ -14,70 +14,9 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
             
-            <TextBlock Grid.Row="0" Text="Permissions:"
-                       Grid.ColumnSpan="2"
-                       FontSize="25"
-                       HorizontalAlignment="Left"
-                       VerticalAlignment="Center" FontFamily="Fonts/UBUNTU-R.TTF#Ubuntu"/>
-
-            <TextBlock Grid.Column="0" Grid.Row="1" Text="Calling"
-                       Grid.ColumnSpan="2"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center" FontFamily="Fonts/UBUNTU-R.TTF#Ubuntu"/>
-            <ToggleSwitch Grid.Row="1" Grid.Column="2"
-                          Name="CallToggle"
-                          Grid.ColumnSpan="2"
-                          
-                          Toggled="CallToggle_OnToggled"
-                          HorizontalAlignment="Center"
-                          Margin="0,0,0,0"/>
-
-            <TextBlock Grid.Column="0" Grid.Row="2" Text="SMS"
-                       Grid.ColumnSpan="2"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center" FontFamily="Fonts/UBUNTU-R.TTF#Ubuntu"/>
-            <ToggleSwitch Grid.Row="2" Grid.Column="2"
-                          Name="SMSToggle"
-                          Toggled="SMSToggle_OnToggled"
-                          Grid.ColumnSpan="2"
-                          Margin="0,0,0,0"
-                          HorizontalAlignment="Center"/>
-
-            <TextBlock Grid.Column="0" Grid.Row="3" Text="Location"
-                       Grid.ColumnSpan="2"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center" FontFamily="Fonts/UBUNTU-R.TTF#Ubuntu"/>
-            <ToggleSwitch Grid.Row="3" Grid.Column="2"
-                          Grid.ColumnSpan="2"
-                          Margin="0,0,0,0"
-                          Name="LocationToggle"
-                          Toggled="LocationToggle_OnToggled"
-                          HorizontalAlignment="Center"/>
-
-            <TextBlock Grid.Column="0" Grid.Row="4" Text="Voice"
-                       Grid.ColumnSpan="2"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center" FontFamily="Fonts/UBUNTU-R.TTF#Ubuntu"/>
-            <ToggleSwitch Grid.Row="4" Grid.Column="2"
-                          Grid.ColumnSpan="2"
-                          Margin="0,0,0,0"
-                          HorizontalAlignment="Center"/>
+            
+           
         </Grid>
         <Grid Grid.Row="1">
             <StackPanel>

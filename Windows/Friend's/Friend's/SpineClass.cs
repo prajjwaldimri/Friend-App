@@ -7,8 +7,10 @@ using System.Threading;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Calls;
 using Windows.ApplicationModel.Contacts;
+using Windows.Devices.Geolocation;
 using Windows.Devices.Sms;
 using Windows.Graphics.Imaging;
+using Windows.Services.Maps;
 using Windows.Storage;
 using Windows.Storage.Streams;
 using Windows.UI.Xaml.Media.Imaging;
@@ -19,6 +21,9 @@ namespace Friend_s
     public class SpineClass
     {
         public static PhoneLine CurrentPhoneLine;
+        public static double LocLat ;
+        public static double LocLon;
+        public static string LocationAddress;
         public SmsDevice2 Device;
         public MainPage RootPage;
         public static Dictionary<Guid, PhoneLine> AllPhoneLines;
@@ -28,8 +33,7 @@ namespace Friend_s
         public event CallingInfoDelegate CellInfoUpdateCompleted;
         public event CallingInfoDelegate ActivePhoneCallStateChanged;
         public CancellationTokenSource Cts = null;
-        public static double LocLat;
-        public static double LocLon;
+        
 
         #region phonecallsetters
 
