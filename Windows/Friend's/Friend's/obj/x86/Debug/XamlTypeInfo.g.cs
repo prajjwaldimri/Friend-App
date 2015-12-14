@@ -139,8 +139,8 @@ namespace Friend_s.Friend_s_XamlTypeInfo
             _typeNameTable[3] = "Friend_s.HomePage";
             _typeNameTable[4] = "Friend_s.TabHeader";
             _typeNameTable[5] = "String";
-            _typeNameTable[6] = "Friend_s.MainPage";
-            _typeNameTable[7] = "Friend_s.Sospage";
+            _typeNameTable[6] = "Friend_s.Sospage";
+            _typeNameTable[7] = "Friend_s.MainPage";
 
             _typeTable = new global::System.Type[8];
             _typeTable[0] = typeof(global::Friend_s.CallandSmsSettings);
@@ -149,8 +149,8 @@ namespace Friend_s.Friend_s_XamlTypeInfo
             _typeTable[3] = typeof(global::Friend_s.HomePage);
             _typeTable[4] = typeof(global::Friend_s.TabHeader);
             _typeTable[5] = typeof(global::System.String);
-            _typeTable[6] = typeof(global::Friend_s.MainPage);
-            _typeTable[7] = typeof(global::Friend_s.Sospage);
+            _typeTable[6] = typeof(global::Friend_s.Sospage);
+            _typeTable[7] = typeof(global::Friend_s.MainPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -188,8 +188,8 @@ namespace Friend_s.Friend_s_XamlTypeInfo
         private object Activate_0_CallandSmsSettings() { return new global::Friend_s.CallandSmsSettings(); }
         private object Activate_3_HomePage() { return new global::Friend_s.HomePage(); }
         private object Activate_4_TabHeader() { return new global::Friend_s.TabHeader(); }
-        private object Activate_6_MainPage() { return new global::Friend_s.MainPage(); }
-        private object Activate_7_Sospage() { return new global::Friend_s.Sospage(); }
+        private object Activate_6_Sospage() { return new global::Friend_s.Sospage(); }
+        private object Activate_7_MainPage() { return new global::Friend_s.MainPage(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -236,16 +236,16 @@ namespace Friend_s.Friend_s_XamlTypeInfo
                 xamlType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 6:   //  Friend_s.MainPage
+            case 6:   //  Friend_s.Sospage
                 userType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_6_MainPage;
+                userType.Activator = Activate_6_Sospage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 7:   //  Friend_s.Sospage
+            case 7:   //  Friend_s.MainPage
                 userType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_7_Sospage;
+                userType.Activator = Activate_7_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

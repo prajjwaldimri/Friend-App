@@ -405,9 +405,9 @@
             </PivotItem>
             <PivotItem>
                 <PivotItem.Header>
-                    <local:TabHeader Label="About" Glyph="&#xE721;" />
+                    <local:TabHeader Label="Sos" Glyph="&#xE721;" />
                 </PivotItem.Header>
-                <TextBlock>Content 3</TextBlock>
+                <local:Sospage></local:Sospage>
             </PivotItem>
             
         </Pivot>

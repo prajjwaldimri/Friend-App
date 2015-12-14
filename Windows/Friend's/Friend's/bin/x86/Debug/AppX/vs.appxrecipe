@@ -22,13 +22,13 @@
     <AppXManifest Include="C:\Users\prajj\Documents\Friend\Windows\Friend%27s\Friend%27s\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-12-14T17:55:37.745</Modified>
+      <Modified>2015-12-14T18:53:29.191</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\prajj\Documents\Friend\Windows\Friend%27s\Friend%27s\bin\x86\Debug\Friend%27s.exe">
       <PackagePath>entrypoint\Friend%27s.exe</PackagePath>
-      <Modified>2015-12-14T17:55:35.002</Modified>
+      <Modified>2015-12-14T18:52:50.859</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\Microsoft.ApplicationInsights\1.0.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll">
       <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
@@ -538,7 +538,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\Documents\Friend\Windows\Friend%27s\Friend%27s\bin\x86\Debug\Friend%27s.xr.xml">
       <PackagePath>Friend%27s.xr.xml</PackagePath>
-      <Modified>2015-12-14T16:23:22.242</Modified>
+      <Modified>2015-12-14T18:52:50.551</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -546,11 +546,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\Documents\Friend\Windows\Friend%27s\Friend%27s\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-12-14T17:55:36.663</Modified>
+      <Modified>2015-12-14T18:53:28.895</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\Documents\Friend\Windows\Friend%27s\Friend%27s\bin\x86\Debug\Core\Friend%27s.exe">
       <PackagePath>Friend%27s.exe</PackagePath>
-      <Modified>2015-12-14T17:55:37.742</Modified>
+      <Modified>2015-12-14T18:53:29.188</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

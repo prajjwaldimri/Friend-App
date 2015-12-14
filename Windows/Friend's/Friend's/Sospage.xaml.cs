@@ -6,6 +6,7 @@ using Windows.Devices.Sms;
 using Windows.Services.Maps;
 using Windows.Storage;
 using Windows.UI.Popups;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
@@ -28,16 +29,28 @@ namespace Friend_s
         public Sospage()
         {
             InitializeComponent();
-            LocationAccesser();
+
+            var timer = new DispatcherTimer();
+            timer.Interval=TimeSpan.FromSeconds(20);
+            timer.Tick += timer_Tick;
+            timer.Start();
+            
             if (!Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
                 return;
             var spineClass = new SpineClass();
             spineClass.InitializeCallingInfoAsync();
             DatabaseConnector();
-            MessageSender();
             Caller();
         }
 
+        private void timer_Tick(object sender, object e)
+        {
+            LocationAccesser();
+            if (!Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
+                MessageSender();
+        }
+
+        
         private static string _phonenumber;
         private static string _phonename;
         private static void DatabaseConnector()
@@ -48,6 +61,7 @@ namespace Friend_s
             string[] brr = list1;
             _phonenumber = arr[0];
             _phonename = brr[0];
+            
         }
 
         private static async void LocationAccesser()
