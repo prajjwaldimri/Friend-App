@@ -10,7 +10,7 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>36411e27-597b-436e-a0bc-7205d8d5afe2</PackageIdentityName>
     <IntermediateOutputPath>C:\Users\prajj\Documents\Friend\Windows\Friend%27s\Friend%27s\obj\x86\Debug\</IntermediateOutputPath>
-    <RegisteredManifestChecksum>4240A0BF8C7382875A1C3B09D9B98FB66B6B6B5A039ABDE3EA99B859E5BD5C87</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>B0345A516F9E5D830DEA0A9997D330B426E43AE04308DF00E33C4EC12BBF0E00</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>36411e27-597b-436e-a0bc-7205d8d5afe2_1.0.0.0_x86__wqqaj6de6k89e</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>36411e27-597b-436e-a0bc-7205d8d5afe2_wqqaj6de6k89e!App</RegisteredUserModeAppID>
     <RegisteredPackageID>36411e27-597b-436e-a0bc-7205d8d5afe2</RegisteredPackageID>
@@ -22,13 +22,25 @@
     <AppXManifest Include="C:\Users\prajj\Documents\Friend\Windows\Friend%27s\Friend%27s\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-12-14T18:53:29.191</Modified>
+      <Modified>2016-01-19T18:44:12.050</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\prajj\Documents\Friend\Windows\Friend%27s\Friend%27s\bin\x86\Debug\Friend%27s.exe">
       <PackagePath>entrypoint\Friend%27s.exe</PackagePath>
-      <Modified>2015-12-14T18:52:50.859</Modified>
+      <Modified>2016-01-19T18:43:57.930</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\BehaviorsXamlSDKManaged\12.0\References\CommonConfiguration\Neutral\Microsoft.Xaml.Interactions.dll">
+      <PackagePath>Microsoft.Xaml.Interactions.dll</PackagePath>
+      <Modified>2014-12-10T12:38:10.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\BehaviorsXamlSDKManaged\12.0\References\CommonConfiguration\Neutral\Microsoft.Xaml.Interactivity.dll">
+      <PackagePath>Microsoft.Xaml.Interactivity.dll</PackagePath>
+      <Modified>2014-12-10T12:38:10.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\CommonServiceLocator\1.3.0\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll">
+      <PackagePath>Microsoft.Practices.ServiceLocation.dll</PackagePath>
+      <Modified>2015-09-29T16:48:03.606</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\Microsoft.ApplicationInsights\1.0.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll">
       <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
@@ -101,6 +113,18 @@
     <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\Microsoft.Win32.Primitives\4.0.0\lib\dotnet\Microsoft.Win32.Primitives.dll">
       <PackagePath>Microsoft.Win32.Primitives.dll</PackagePath>
       <Modified>2015-09-13T05:30:45.646</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\MvvmLightLibs\5.2.0\lib\windows81\GalaSoft.MvvmLight.dll">
+      <PackagePath>GalaSoft.MvvmLight.dll</PackagePath>
+      <Modified>2015-09-29T16:48:04.323</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\MvvmLightLibs\5.2.0\lib\windows81\GalaSoft.MvvmLight.Extras.dll">
+      <PackagePath>GalaSoft.MvvmLight.Extras.dll</PackagePath>
+      <Modified>2015-09-29T16:48:04.338</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\MvvmLightLibs\5.2.0\lib\windows81\GalaSoft.MvvmLight.Platform.dll">
+      <PackagePath>GalaSoft.MvvmLight.Platform.dll</PackagePath>
+      <Modified>2015-09-29T16:48:04.357</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\SQLitePCL\3.8.7.2\lib\netcore451\SQLitePCL.dll">
       <PackagePath>SQLitePCL.dll</PackagePath>
@@ -498,6 +522,10 @@
       <PackagePath>Fonts\TNALOGO.TTF</PackagePath>
       <Modified>2015-10-11T07:51:28.764</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\prajj\Documents\Friend\Windows\Friend%27s\Friend%27s\Fonts\fontawesome-webfont.ttf">
+      <PackagePath>Fonts\fontawesome-webfont.ttf</PackagePath>
+      <Modified>2016-01-19T14:51:38.205</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\Documents\Friend\Windows\Friend%27s\Friend%27s\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
       <Modified>2015-09-25T02:20:05.414</Modified>
@@ -538,19 +566,19 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\Documents\Friend\Windows\Friend%27s\Friend%27s\bin\x86\Debug\Friend%27s.xr.xml">
       <PackagePath>Friend%27s.xr.xml</PackagePath>
-      <Modified>2015-12-14T18:52:50.551</Modified>
+      <Modified>2016-01-19T18:43:57.293</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
-      <Modified>2015-12-02T13:53:35.321</Modified>
+      <Modified>2016-01-05T11:42:06.478</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\Documents\Friend\Windows\Friend%27s\Friend%27s\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-12-14T18:53:28.895</Modified>
+      <Modified>2016-01-19T18:44:11.452</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\Documents\Friend\Windows\Friend%27s\Friend%27s\bin\x86\Debug\Core\Friend%27s.exe">
       <PackagePath>Friend%27s.exe</PackagePath>
-      <Modified>2015-12-14T18:53:29.188</Modified>
+      <Modified>2016-01-19T18:44:12.047</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

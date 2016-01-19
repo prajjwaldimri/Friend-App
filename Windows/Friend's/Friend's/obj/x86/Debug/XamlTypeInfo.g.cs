@@ -132,25 +132,57 @@ namespace Friend_s.Friend_s_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[8];
-            _typeNameTable[0] = "Friend_s.CallandSmsSettings";
-            _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "Friend_s.HomePage";
-            _typeNameTable[4] = "Friend_s.TabHeader";
-            _typeNameTable[5] = "String";
-            _typeNameTable[6] = "Friend_s.Sospage";
-            _typeNameTable[7] = "Friend_s.MainPage";
+            _typeNameTable = new string[24];
+            _typeNameTable[0] = "Friend_s.Services.ViewModelLocator";
+            _typeNameTable[1] = "Object";
+            _typeNameTable[2] = "Friend_s.ViewModel.HomePageViewModel";
+            _typeNameTable[3] = "Friend_s.Portable.ViewModel.BaseViewModel";
+            _typeNameTable[4] = "GalaSoft.MvvmLight.ViewModelBase";
+            _typeNameTable[5] = "GalaSoft.MvvmLight.ObservableObject";
+            _typeNameTable[6] = "Friend_s.Portable.ViewModel.CallandSettingsPageViewModel";
+            _typeNameTable[7] = "Friend_s.CallandSmsSettings";
+            _typeNameTable[8] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[9] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[10] = "Microsoft.Xaml.Interactivity.Interaction";
+            _typeNameTable[11] = "Microsoft.Xaml.Interactivity.BehaviorCollection";
+            _typeNameTable[12] = "Windows.UI.Xaml.DependencyObjectCollection";
+            _typeNameTable[13] = "Windows.UI.Xaml.DependencyObject";
+            _typeNameTable[14] = "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior";
+            _typeNameTable[15] = "Microsoft.Xaml.Interactivity.ActionCollection";
+            _typeNameTable[16] = "String";
+            _typeNameTable[17] = "Microsoft.Xaml.Interactions.Core.InvokeCommandAction";
+            _typeNameTable[18] = "System.Windows.Input.ICommand";
+            _typeNameTable[19] = "Windows.UI.Xaml.Data.IValueConverter";
+            _typeNameTable[20] = "Friend_s.HomePage";
+            _typeNameTable[21] = "Friend_s.MainPage";
+            _typeNameTable[22] = "Friend_s.Sospage";
+            _typeNameTable[23] = "Friend_s.TabHeader";
 
-            _typeTable = new global::System.Type[8];
-            _typeTable[0] = typeof(global::Friend_s.CallandSmsSettings);
-            _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::Friend_s.HomePage);
-            _typeTable[4] = typeof(global::Friend_s.TabHeader);
-            _typeTable[5] = typeof(global::System.String);
-            _typeTable[6] = typeof(global::Friend_s.Sospage);
-            _typeTable[7] = typeof(global::Friend_s.MainPage);
+            _typeTable = new global::System.Type[24];
+            _typeTable[0] = typeof(global::Friend_s.Services.ViewModelLocator);
+            _typeTable[1] = typeof(global::System.Object);
+            _typeTable[2] = typeof(global::Friend_s.ViewModel.HomePageViewModel);
+            _typeTable[3] = typeof(global::Friend_s.Portable.ViewModel.BaseViewModel);
+            _typeTable[4] = typeof(global::GalaSoft.MvvmLight.ViewModelBase);
+            _typeTable[5] = typeof(global::GalaSoft.MvvmLight.ObservableObject);
+            _typeTable[6] = typeof(global::Friend_s.Portable.ViewModel.CallandSettingsPageViewModel);
+            _typeTable[7] = typeof(global::Friend_s.CallandSmsSettings);
+            _typeTable[8] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[9] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[10] = typeof(global::Microsoft.Xaml.Interactivity.Interaction);
+            _typeTable[11] = typeof(global::Microsoft.Xaml.Interactivity.BehaviorCollection);
+            _typeTable[12] = typeof(global::Windows.UI.Xaml.DependencyObjectCollection);
+            _typeTable[13] = typeof(global::Windows.UI.Xaml.DependencyObject);
+            _typeTable[14] = typeof(global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior);
+            _typeTable[15] = typeof(global::Microsoft.Xaml.Interactivity.ActionCollection);
+            _typeTable[16] = typeof(global::System.String);
+            _typeTable[17] = typeof(global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction);
+            _typeTable[18] = typeof(global::System.Windows.Input.ICommand);
+            _typeTable[19] = typeof(global::Windows.UI.Xaml.Data.IValueConverter);
+            _typeTable[20] = typeof(global::Friend_s.HomePage);
+            _typeTable[21] = typeof(global::Friend_s.MainPage);
+            _typeTable[22] = typeof(global::Friend_s.Sospage);
+            _typeTable[23] = typeof(global::Friend_s.TabHeader);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -185,11 +217,32 @@ namespace Friend_s.Friend_s_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_CallandSmsSettings() { return new global::Friend_s.CallandSmsSettings(); }
-        private object Activate_3_HomePage() { return new global::Friend_s.HomePage(); }
-        private object Activate_4_TabHeader() { return new global::Friend_s.TabHeader(); }
-        private object Activate_6_Sospage() { return new global::Friend_s.Sospage(); }
-        private object Activate_7_MainPage() { return new global::Friend_s.MainPage(); }
+        private object Activate_0_ViewModelLocator() { return new global::Friend_s.Services.ViewModelLocator(); }
+        private object Activate_2_HomePageViewModel() { return new global::Friend_s.ViewModel.HomePageViewModel(); }
+        private object Activate_3_BaseViewModel() { return new global::Friend_s.Portable.ViewModel.BaseViewModel(); }
+        private object Activate_5_ObservableObject() { return new global::GalaSoft.MvvmLight.ObservableObject(); }
+        private object Activate_6_CallandSettingsPageViewModel() { return new global::Friend_s.Portable.ViewModel.CallandSettingsPageViewModel(); }
+        private object Activate_7_CallandSmsSettings() { return new global::Friend_s.CallandSmsSettings(); }
+        private object Activate_11_BehaviorCollection() { return new global::Microsoft.Xaml.Interactivity.BehaviorCollection(); }
+        private object Activate_14_EventTriggerBehavior() { return new global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior(); }
+        private object Activate_15_ActionCollection() { return new global::Microsoft.Xaml.Interactivity.ActionCollection(); }
+        private object Activate_17_InvokeCommandAction() { return new global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction(); }
+        private object Activate_20_HomePage() { return new global::Friend_s.HomePage(); }
+        private object Activate_21_MainPage() { return new global::Friend_s.MainPage(); }
+        private object Activate_22_Sospage() { return new global::Friend_s.Sospage(); }
+        private object Activate_23_TabHeader() { return new global::Friend_s.TabHeader(); }
+        private void VectorAdd_11_BehaviorCollection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.DependencyObject>)instance;
+            var newItem = (global::Windows.UI.Xaml.DependencyObject)item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_15_ActionCollection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.DependencyObject>)instance;
+            var newItem = (global::Windows.UI.Xaml.DependencyObject)item;
+            collection.Add(newItem);
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -201,51 +254,156 @@ namespace Friend_s.Friend_s_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  Friend_s.CallandSmsSettings
-                userType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_0_CallandSmsSettings;
+            case 0:   //  Friend_s.Services.ViewModelLocator
+                userType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_0_ViewModelLocator;
+                userType.AddMemberName("HomePage");
+                userType.AddMemberName("CallandSettingsPage");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 1:   //  Windows.UI.Xaml.Controls.Page
+            case 1:   //  Object
                 xamlType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 2:   //  Windows.UI.Xaml.Controls.UserControl
-                xamlType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 3:   //  Friend_s.HomePage
-                userType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_3_HomePage;
+            case 2:   //  Friend_s.ViewModel.HomePageViewModel
+                userType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Friend_s.Portable.ViewModel.BaseViewModel"));
+                userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 4:   //  Friend_s.TabHeader
+            case 3:   //  Friend_s.Portable.ViewModel.BaseViewModel
+                userType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("GalaSoft.MvvmLight.ViewModelBase"));
+                userType.Activator = Activate_3_BaseViewModel;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 4:   //  GalaSoft.MvvmLight.ViewModelBase
+                userType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("GalaSoft.MvvmLight.ObservableObject"));
+                xamlType = userType;
+                break;
+
+            case 5:   //  GalaSoft.MvvmLight.ObservableObject
+                userType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_5_ObservableObject;
+                xamlType = userType;
+                break;
+
+            case 6:   //  Friend_s.Portable.ViewModel.CallandSettingsPageViewModel
+                userType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Friend_s.Portable.ViewModel.BaseViewModel"));
+                userType.SetIsReturnTypeStub();
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 7:   //  Friend_s.CallandSmsSettings
+                userType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_7_CallandSmsSettings;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 8:   //  Windows.UI.Xaml.Controls.Page
+                xamlType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 9:   //  Windows.UI.Xaml.Controls.UserControl
+                xamlType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 10:   //  Microsoft.Xaml.Interactivity.Interaction
+                userType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.AddMemberName("Behaviors");
+                xamlType = userType;
+                break;
+
+            case 11:   //  Microsoft.Xaml.Interactivity.BehaviorCollection
+                userType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObjectCollection"));
+                userType.CollectionAdd = VectorAdd_11_BehaviorCollection;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 12:   //  Windows.UI.Xaml.DependencyObjectCollection
+                xamlType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 13:   //  Windows.UI.Xaml.DependencyObject
+                xamlType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 14:   //  Microsoft.Xaml.Interactions.Core.EventTriggerBehavior
+                userType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
+                userType.Activator = Activate_14_EventTriggerBehavior;
+                userType.SetContentPropertyName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Actions");
+                userType.AddMemberName("Actions");
+                userType.AddMemberName("EventName");
+                userType.AddMemberName("SourceObject");
+                userType.AddMemberName("AssociatedObject");
+                xamlType = userType;
+                break;
+
+            case 15:   //  Microsoft.Xaml.Interactivity.ActionCollection
+                userType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObjectCollection"));
+                userType.CollectionAdd = VectorAdd_15_ActionCollection;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 16:   //  String
+                xamlType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 17:   //  Microsoft.Xaml.Interactions.Core.InvokeCommandAction
+                userType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
+                userType.Activator = Activate_17_InvokeCommandAction;
+                userType.AddMemberName("Command");
+                userType.AddMemberName("CommandParameter");
+                userType.AddMemberName("InputConverter");
+                userType.AddMemberName("InputConverterParameter");
+                userType.AddMemberName("InputConverterLanguage");
+                xamlType = userType;
+                break;
+
+            case 18:   //  System.Windows.Input.ICommand
+                userType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType(this, typeName, type, null);
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 19:   //  Windows.UI.Xaml.Data.IValueConverter
+                xamlType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 20:   //  Friend_s.HomePage
+                userType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_20_HomePage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 21:   //  Friend_s.MainPage
+                userType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_21_MainPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 22:   //  Friend_s.Sospage
+                userType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_22_Sospage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 23:   //  Friend_s.TabHeader
                 userType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_4_TabHeader;
-                userType.AddMemberName("Label");
+                userType.Activator = Activate_23_TabHeader;
                 userType.AddMemberName("Glyph");
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 5:   //  String
-                xamlType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 6:   //  Friend_s.Sospage
-                userType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_6_Sospage;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 7:   //  Friend_s.MainPage
-                userType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_7_MainPage;
+                userType.AddMemberName("Label");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -254,25 +412,123 @@ namespace Friend_s.Friend_s_XamlTypeInfo
         }
 
 
-        private object get_0_TabHeader_Label(object instance)
+        private object get_0_ViewModelLocator_HomePage(object instance)
         {
-            var that = (global::Friend_s.TabHeader)instance;
-            return that.Label;
+            var that = (global::Friend_s.Services.ViewModelLocator)instance;
+            return that.HomePage;
         }
-        private void set_0_TabHeader_Label(object instance, object Value)
+        private object get_1_ViewModelLocator_CallandSettingsPage(object instance)
         {
-            var that = (global::Friend_s.TabHeader)instance;
-            that.Label = (global::System.String)Value;
+            var that = (global::Friend_s.Services.ViewModelLocator)instance;
+            return that.CallandSettingsPage;
         }
-        private object get_1_TabHeader_Glyph(object instance)
+        private object get_2_Interaction_Behaviors(object instance)
+        {
+            return global::Microsoft.Xaml.Interactivity.Interaction.GetBehaviors((global::Windows.UI.Xaml.DependencyObject)instance);
+        }
+        private void set_2_Interaction_Behaviors(object instance, object Value)
+        {
+            global::Microsoft.Xaml.Interactivity.Interaction.SetBehaviors((global::Windows.UI.Xaml.DependencyObject)instance, (global::Microsoft.Xaml.Interactivity.BehaviorCollection)Value);
+        }
+        private object get_3_EventTriggerBehavior_Actions(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
+            return that.Actions;
+        }
+        private object get_4_EventTriggerBehavior_EventName(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
+            return that.EventName;
+        }
+        private void set_4_EventTriggerBehavior_EventName(object instance, object Value)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
+            that.EventName = (global::System.String)Value;
+        }
+        private object get_5_EventTriggerBehavior_SourceObject(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
+            return that.SourceObject;
+        }
+        private void set_5_EventTriggerBehavior_SourceObject(object instance, object Value)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
+            that.SourceObject = (global::System.Object)Value;
+        }
+        private object get_6_EventTriggerBehavior_AssociatedObject(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
+            return that.AssociatedObject;
+        }
+        private object get_7_InvokeCommandAction_Command(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            return that.Command;
+        }
+        private void set_7_InvokeCommandAction_Command(object instance, object Value)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            that.Command = (global::System.Windows.Input.ICommand)Value;
+        }
+        private object get_8_InvokeCommandAction_CommandParameter(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            return that.CommandParameter;
+        }
+        private void set_8_InvokeCommandAction_CommandParameter(object instance, object Value)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            that.CommandParameter = (global::System.Object)Value;
+        }
+        private object get_9_InvokeCommandAction_InputConverter(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            return that.InputConverter;
+        }
+        private void set_9_InvokeCommandAction_InputConverter(object instance, object Value)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            that.InputConverter = (global::Windows.UI.Xaml.Data.IValueConverter)Value;
+        }
+        private object get_10_InvokeCommandAction_InputConverterParameter(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            return that.InputConverterParameter;
+        }
+        private void set_10_InvokeCommandAction_InputConverterParameter(object instance, object Value)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            that.InputConverterParameter = (global::System.Object)Value;
+        }
+        private object get_11_InvokeCommandAction_InputConverterLanguage(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            return that.InputConverterLanguage;
+        }
+        private void set_11_InvokeCommandAction_InputConverterLanguage(object instance, object Value)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            that.InputConverterLanguage = (global::System.String)Value;
+        }
+        private object get_12_TabHeader_Glyph(object instance)
         {
             var that = (global::Friend_s.TabHeader)instance;
             return that.Glyph;
         }
-        private void set_1_TabHeader_Glyph(object instance, object Value)
+        private void set_12_TabHeader_Glyph(object instance, object Value)
         {
             var that = (global::Friend_s.TabHeader)instance;
             that.Glyph = (global::System.String)Value;
+        }
+        private object get_13_TabHeader_Label(object instance)
+        {
+            var that = (global::Friend_s.TabHeader)instance;
+            return that.Label;
+        }
+        private void set_13_TabHeader_Label(object instance, object Value)
+        {
+            var that = (global::Friend_s.TabHeader)instance;
+            that.Label = (global::System.String)Value;
         }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
@@ -282,19 +538,101 @@ namespace Friend_s.Friend_s_XamlTypeInfo
 
             switch (longMemberName)
             {
-            case "Friend_s.TabHeader.Label":
-                userType = (global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Friend_s.TabHeader");
-                xamlMember = new global::Friend_s.Friend_s_XamlTypeInfo.XamlMember(this, "Label", "String");
+            case "Friend_s.Services.ViewModelLocator.HomePage":
+                userType = (global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Friend_s.Services.ViewModelLocator");
+                xamlMember = new global::Friend_s.Friend_s_XamlTypeInfo.XamlMember(this, "HomePage", "Friend_s.ViewModel.HomePageViewModel");
+                xamlMember.Getter = get_0_ViewModelLocator_HomePage;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "Friend_s.Services.ViewModelLocator.CallandSettingsPage":
+                userType = (global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Friend_s.Services.ViewModelLocator");
+                xamlMember = new global::Friend_s.Friend_s_XamlTypeInfo.XamlMember(this, "CallandSettingsPage", "Friend_s.Portable.ViewModel.CallandSettingsPageViewModel");
+                xamlMember.Getter = get_1_ViewModelLocator_CallandSettingsPage;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "Microsoft.Xaml.Interactivity.Interaction.Behaviors":
+                userType = (global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactivity.Interaction");
+                xamlMember = new global::Friend_s.Friend_s_XamlTypeInfo.XamlMember(this, "Behaviors", "Microsoft.Xaml.Interactivity.BehaviorCollection");
+                xamlMember.SetTargetTypeName("Windows.UI.Xaml.DependencyObject");
+                xamlMember.SetIsAttachable();
+                xamlMember.Getter = get_2_Interaction_Behaviors;
+                xamlMember.Setter = set_2_Interaction_Behaviors;
+                break;
+            case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Actions":
+                userType = (global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
+                xamlMember = new global::Friend_s.Friend_s_XamlTypeInfo.XamlMember(this, "Actions", "Microsoft.Xaml.Interactivity.ActionCollection");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_0_TabHeader_Label;
-                xamlMember.Setter = set_0_TabHeader_Label;
+                xamlMember.Getter = get_3_EventTriggerBehavior_Actions;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.EventName":
+                userType = (global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
+                xamlMember = new global::Friend_s.Friend_s_XamlTypeInfo.XamlMember(this, "EventName", "String");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_4_EventTriggerBehavior_EventName;
+                xamlMember.Setter = set_4_EventTriggerBehavior_EventName;
+                break;
+            case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.SourceObject":
+                userType = (global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
+                xamlMember = new global::Friend_s.Friend_s_XamlTypeInfo.XamlMember(this, "SourceObject", "Object");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_5_EventTriggerBehavior_SourceObject;
+                xamlMember.Setter = set_5_EventTriggerBehavior_SourceObject;
+                break;
+            case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.AssociatedObject":
+                userType = (global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
+                xamlMember = new global::Friend_s.Friend_s_XamlTypeInfo.XamlMember(this, "AssociatedObject", "Windows.UI.Xaml.DependencyObject");
+                xamlMember.Getter = get_6_EventTriggerBehavior_AssociatedObject;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.Command":
+                userType = (global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
+                xamlMember = new global::Friend_s.Friend_s_XamlTypeInfo.XamlMember(this, "Command", "System.Windows.Input.ICommand");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_7_InvokeCommandAction_Command;
+                xamlMember.Setter = set_7_InvokeCommandAction_Command;
+                break;
+            case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.CommandParameter":
+                userType = (global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
+                xamlMember = new global::Friend_s.Friend_s_XamlTypeInfo.XamlMember(this, "CommandParameter", "Object");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_8_InvokeCommandAction_CommandParameter;
+                xamlMember.Setter = set_8_InvokeCommandAction_CommandParameter;
+                break;
+            case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverter":
+                userType = (global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
+                xamlMember = new global::Friend_s.Friend_s_XamlTypeInfo.XamlMember(this, "InputConverter", "Windows.UI.Xaml.Data.IValueConverter");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_9_InvokeCommandAction_InputConverter;
+                xamlMember.Setter = set_9_InvokeCommandAction_InputConverter;
+                break;
+            case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterParameter":
+                userType = (global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
+                xamlMember = new global::Friend_s.Friend_s_XamlTypeInfo.XamlMember(this, "InputConverterParameter", "Object");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_10_InvokeCommandAction_InputConverterParameter;
+                xamlMember.Setter = set_10_InvokeCommandAction_InputConverterParameter;
+                break;
+            case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterLanguage":
+                userType = (global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
+                xamlMember = new global::Friend_s.Friend_s_XamlTypeInfo.XamlMember(this, "InputConverterLanguage", "String");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_11_InvokeCommandAction_InputConverterLanguage;
+                xamlMember.Setter = set_11_InvokeCommandAction_InputConverterLanguage;
                 break;
             case "Friend_s.TabHeader.Glyph":
                 userType = (global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Friend_s.TabHeader");
                 xamlMember = new global::Friend_s.Friend_s_XamlTypeInfo.XamlMember(this, "Glyph", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_1_TabHeader_Glyph;
-                xamlMember.Setter = set_1_TabHeader_Glyph;
+                xamlMember.Getter = get_12_TabHeader_Glyph;
+                xamlMember.Setter = set_12_TabHeader_Glyph;
+                break;
+            case "Friend_s.TabHeader.Label":
+                userType = (global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Friend_s.TabHeader");
+                xamlMember = new global::Friend_s.Friend_s_XamlTypeInfo.XamlMember(this, "Label", "String");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_13_TabHeader_Label;
+                xamlMember.Setter = set_13_TabHeader_Label;
                 break;
             }
             return xamlMember;

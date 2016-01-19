@@ -23,8 +23,8 @@ namespace Friend_s
         public event CallingInfoDelegate CellInfoUpdateCompleted;
         public event CallingInfoDelegate ActivePhoneCallStateChanged;
         private CancellationTokenSource _cts = null;
-        private static string latitude;
-        private static string longitude;
+        private static string _latitude;
+        private static string _longitude;
         
         public Sospage()
         {
@@ -59,9 +59,8 @@ namespace Friend_s
             var list1 = CreateDatabase.GetValues(@"SELECT Name FROM Details WHERE ID=1");
             string[] arr = list;
             string[] brr = list1;
-            _phonenumber = arr[0];
-            _phonename = brr[0];
-            
+            if (arr != null) _phonenumber = arr[0];
+            if (brr != null) _phonename = brr[0];
         }
 
         private static async void LocationAccesser()
@@ -78,8 +77,8 @@ namespace Friend_s
                         var geolocator = new Geolocator {DesiredAccuracy = PositionAccuracy.High};
                         // Carry out the operation
                         var pos = await geolocator.GetGeopositionAsync();
-                        latitude = pos.Coordinate.Point.Position.Latitude.ToString();
-                        longitude= pos.Coordinate.Point.Position.Longitude.ToString();
+                        _latitude = pos.Coordinate.Point.Position.Latitude.ToString();
+                        _longitude= pos.Coordinate.Point.Position.Longitude.ToString();
                         var location = new BasicGeoposition
                         {
                             Latitude = Math.Round(pos.Coordinate.Point.Position.Latitude, 4),
@@ -108,8 +107,8 @@ namespace Friend_s
         {
             if (!ApplicationData.Current.LocalSettings.Values.ContainsKey("SmsOn"))
             {
-                var messageDialog= new MessageDialog("SMS Permission Denied");
-                await messageDialog.ShowAsync();
+                //var messageDialog= new MessageDialog("SMS Permission Denied");
+                //await messageDialog.ShowAsync();
                 return;
             }
             if (_device == null)
@@ -129,7 +128,7 @@ namespace Friend_s
             var msg = new SmsTextMessage2
             {
                 To = _phonenumber,
-                Body = "I am in need of help. My coordinates are\n Latitude:"+ latitude+ "Longitude \n" + longitude
+                Body = "I am in need of help. My coordinates are\n Latitude:"+ _latitude+ "Longitude \n" + _longitude
             };
             //CallandSMSSettings.number1.Text;
 

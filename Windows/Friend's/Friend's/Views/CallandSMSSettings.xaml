@@ -5,19 +5,24 @@
     xmlns:local="using:Friend_s"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:model="using:Friend_s.Portable.Model"
     mc:Ignorable="d"
-    RequestedTheme="Light">
+    RequestedTheme="Light"
+    DataContext="{Binding CallandSettingsPage, Source={StaticResource ViewModelLocator}}">
+
+    
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Grid>
-            
-            
-           
-        </Grid>
+        <StackPanel Background="{Binding SelectedItem.HexColor}" Padding="20">
+            <TextBlock Text="Second Page" Style="{ThemeResource TitleTextBlockStyle}" />
+            <TextBlock Text="{Binding SelectedItem.Title}" Style="{ThemeResource HeaderTextBlockStyle}" />
+            <TextBlock Text="{Binding SelectedItem.Subtitle}" Style="{ThemeResource SubheaderTextBlockStyle}" />
+
+        </StackPanel>
         <Grid Grid.Row="1">
             <StackPanel>
                 <StackPanel Margin="0,0,0,0" Orientation="Horizontal">

@@ -1,6 +1,6 @@
 App.xbf
-CallandSMSSettings.xbf
-HomePage.xbf
 MainPage.xbf
-Sospage.xbf
-TabHeader.xbf
+Views\CallandSMSSettings.xbf
+Views\HomePage.xbf
+Views\Sospage.xbf
+Views\TabHeader.xbf
