@@ -1,0 +1,140 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context="com.example.admin.friend.TwoFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:id="@+id/button"
+        android:layout_marginBottom="44dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Permissions"
+        android:id="@+id/textView4"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/switch1"
+        android:checked="false"
+        android:layout_below="@+id/switch3"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="Message" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/switch2"
+        android:checked="false"
+        android:text="Calls"
+        android:layout_below="@+id/textView4"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/switch3"
+        android:checked="false"
+        android:layout_below="@+id/switch2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="Location" />
+
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@mipmap/ic_launchercon"
+        android:id="@+id/button2"
+        android:layout_above="@+id/button"
+        android:layout_alignLeft="@+id/button4"
+        android:layout_alignStart="@+id/button4"
+        android:layout_marginBottom="34dp" />
+
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@mipmap/ic_launchercon"
+        android:id="@+id/button3"
+        android:layout_marginRight="51dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginTop="33dp"
+        android:layout_below="@+id/switch1"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@mipmap/ic_launchercon"
+        android:id="@+id/button4"
+        android:layout_marginTop="59dp"
+        android:layout_below="@+id/button5"
+        android:layout_alignLeft="@+id/button5"
+        android:layout_alignStart="@+id/button5" />
+
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@mipmap/ic_launchercon"
+        android:id="@+id/button5"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignLeft="@+id/button3"
+        android:layout_alignStart="@+id/button3" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/Set_cnct"
+        android:id="@+id/textView"
+        android:layout_alignBottom="@+id/button3"
+        android:layout_alignRight="@+id/textView3"
+        android:layout_alignEnd="@+id/textView3" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/Set_cnct"
+        android:id="@+id/textView2"
+        android:layout_marginTop="65dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/Set_cnct"
+        android:id="@+id/textView3"
+        android:layout_alignBottom="@+id/button4"
+        android:layout_alignLeft="@+id/textView5"
+        android:layout_alignStart="@+id/textView5" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/Set_cnct"
+        android:id="@+id/textView5"
+        android:layout_alignBottom="@+id/button2"
+        android:layout_alignLeft="@+id/button"
+        android:layout_alignStart="@+id/button" />
+
+</RelativeLayout>
