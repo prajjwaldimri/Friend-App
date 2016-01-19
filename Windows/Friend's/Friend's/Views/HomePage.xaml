@@ -5,19 +5,25 @@
     xmlns:local="using:Friend_s"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    xmlns:i="using:Microsoft.Xaml.Interactivity"
     xmlns:core="using:Microsoft.Xaml.Interactions.Core"
-    DataContext="{Binding Path=HomePage,Source={StaticResource ViewModelLocator}}">
-    
-  <i:Interaction.Behaviors>
-      <core:EventTriggerBehavior EventName="Loaded">
-          <core:InvokeCommandAction Command="{Binding LocationAccesserCommand}"/>
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    DataContext="{Binding Path=HomePage,Source={StaticResource ViewModelLocator}}"
+    mc:Ignorable="d">
+    <!--Causing Problems-->
+    <interactivity:Interaction.Behaviors>
+        <core:EventTriggerBehavior EventName="Loaded">
+            <core:InvokeCommandAction Command="{Binding LocationAccesserCommand}"/>
+        </core:EventTriggerBehavior>
+        <core:EventTriggerBehavior EventName="Loaded">
             <core:InvokeCommandAction Command="{Binding ProfileImageSetterCommand}"/>
         </core:EventTriggerBehavior>
-  </i:Interaction.Behaviors>
-    
+        </interactivity:Interaction.Behaviors>
+<!--Have to replace-->
+
+
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        
 
         <Grid.RowDefinitions>
             <RowDefinition/>

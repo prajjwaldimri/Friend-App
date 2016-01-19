@@ -7,9 +7,11 @@
     <RootPropertyPathName Name="Subtitle" />
     <RootPropertyPathName Name="Title" />
     <RootPropertyPathName Name="HomePage" />
+    <RootPropertyPathName Name="ProfileImageSetterCommand" />
     <RootPropertyPathName Name="LocationAccesserCommand" />
     <RootPropertyPathName Name="GpsLocationPoint" />
     <RootPropertyPathName Name="GpsLocation" />
+    <RootPropertyPathName Name="ProfileImageSource" />
     <RootPropertyPathName Name="Label" />
     <RootPropertyPathName Name="Glyph" />
   </Roots.PropertyPathNames>
@@ -18,7 +20,7 @@
       <RootProperty Name="RequestedTheme" />
       <RootProperty Name="Resources" />
     </RootType>
-    <RootType FullName="Friend_s.Portable.Services.ViewModelLocator" />
+    <RootType FullName="Friend_s.Services.ViewModelLocator" />
     <RootType FullName="Windows.UI.Xaml.Media.SolidColorBrush">
       <RootProperty Name="Color" />
     </RootType>
@@ -86,7 +88,6 @@
       <RootProperty Name="FontFamily" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="Command" />
       <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.NullExtension" />

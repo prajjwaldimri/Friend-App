@@ -60,7 +60,7 @@
                     </DataTemplate>
                 </Pivot.HeaderTemplate>
                 <PivotItem Header="HOME">
-                    <local:HomePage></local:HomePage>
+                    <local:HomePage/>
                 </PivotItem>
                 <PivotItem Header="SOS"></PivotItem>
                 <PivotItem Header="SETTINGS"></PivotItem>
