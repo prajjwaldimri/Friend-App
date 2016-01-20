@@ -1597,6 +1597,14 @@
         "runtime": {
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "WriteableBitmapEx/1.5.0": {
+        "compile": {
+          "lib/NetCore45/WriteableBitmapEx.WinRT.dll": {}
+        },
+        "runtime": {
+          "lib/NetCore45/WriteableBitmapEx.WinRT.dll": {}
+        }
       }
     },
     "UAP,Version=v10.0/win10-arm": {
@@ -3284,6 +3292,14 @@
         "runtime": {
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "WriteableBitmapEx/1.5.0": {
+        "compile": {
+          "lib/NetCore45/WriteableBitmapEx.WinRT.dll": {}
+        },
+        "runtime": {
+          "lib/NetCore45/WriteableBitmapEx.WinRT.dll": {}
+        }
       }
     },
     "UAP,Version=v10.0/win10-arm-aot": {
@@ -4942,6 +4958,14 @@
         },
         "runtime": {
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
+        }
+      },
+      "WriteableBitmapEx/1.5.0": {
+        "compile": {
+          "lib/NetCore45/WriteableBitmapEx.WinRT.dll": {}
+        },
+        "runtime": {
+          "lib/NetCore45/WriteableBitmapEx.WinRT.dll": {}
         }
       }
     },
@@ -6635,6 +6659,14 @@
         "runtime": {
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "WriteableBitmapEx/1.5.0": {
+        "compile": {
+          "lib/NetCore45/WriteableBitmapEx.WinRT.dll": {}
+        },
+        "runtime": {
+          "lib/NetCore45/WriteableBitmapEx.WinRT.dll": {}
+        }
       }
     },
     "UAP,Version=v10.0/win10-x64-aot": {
@@ -8293,6 +8325,14 @@
         },
         "runtime": {
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
+        }
+      },
+      "WriteableBitmapEx/1.5.0": {
+        "compile": {
+          "lib/NetCore45/WriteableBitmapEx.WinRT.dll": {}
+        },
+        "runtime": {
+          "lib/NetCore45/WriteableBitmapEx.WinRT.dll": {}
         }
       }
     },
@@ -9986,6 +10026,14 @@
         "runtime": {
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "WriteableBitmapEx/1.5.0": {
+        "compile": {
+          "lib/NetCore45/WriteableBitmapEx.WinRT.dll": {}
+        },
+        "runtime": {
+          "lib/NetCore45/WriteableBitmapEx.WinRT.dll": {}
+        }
       }
     },
     "UAP,Version=v10.0/win10-x86-aot": {
@@ -11644,6 +11692,14 @@
         },
         "runtime": {
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
+        }
+      },
+      "WriteableBitmapEx/1.5.0": {
+        "compile": {
+          "lib/NetCore45/WriteableBitmapEx.WinRT.dll": {}
+        },
+        "runtime": {
+          "lib/NetCore45/WriteableBitmapEx.WinRT.dll": {}
         }
       }
     }
@@ -15275,6 +15331,40 @@
         "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll",
         "System.Xml.XmlSerializer.nuspec"
       ]
+    },
+    "WriteableBitmapEx/1.5.0": {
+      "sha512": "K4g5wN6y4RhDUcfLdOoNZrQQBdv6dbXycaOoeBcS3qrXMhXssECb4K/3cPXehi+hDSwNx5dYLhRilk49DXiFZQ==",
+      "type": "Package",
+      "files": [
+        "[Content_Types].xml",
+        "_rels/.rels",
+        "lib/net40/WriteableBitmapEx.Wpf.dll",
+        "lib/net40/WriteableBitmapEx.Wpf.pdb",
+        "lib/net40/WriteableBitmapEx.Wpf.XML",
+        "lib/NetCore45/WriteableBitmapEx.WinRT.dll",
+        "lib/NetCore45/WriteableBitmapEx.WinRT.pdb",
+        "lib/NetCore45/WriteableBitmapEx.WinRT.xml",
+        "lib/sl4/WriteableBitmapEx.dll",
+        "lib/sl4/WriteableBitmapEx.pdb",
+        "lib/sl4/WriteableBitmapEx.XML",
+        "lib/sl4-wp71/WriteableBitmapExWinPhone.dll",
+        "lib/sl4-wp71/WriteableBitmapExWinPhone.pdb",
+        "lib/sl4-wp71/WriteableBitmapExWinPhone.XML",
+        "lib/sl4-wp71/WriteableBitmapExWinPhoneXnaDependant.dll",
+        "lib/sl4-wp71/WriteableBitmapExWinPhoneXnaDependant.pdb",
+        "lib/sl4-wp71/WriteableBitmapExWinPhoneXnaDependant.XML",
+        "lib/WindowsPhone8/WriteableBitmapExWinPhone.dll",
+        "lib/WindowsPhone8/WriteableBitmapExWinPhone.pdb",
+        "lib/WindowsPhone8/WriteableBitmapExWinPhone.XML",
+        "lib/WindowsPhone8/WriteableBitmapExWinPhoneXnaDependant.dll",
+        "lib/WindowsPhone8/WriteableBitmapExWinPhoneXnaDependant.pdb",
+        "lib/WindowsPhone8/WriteableBitmapExWinPhoneXnaDependant.XML",
+        "lib/wpa81/WriteableBitmapEx.WinRT.dll",
+        "lib/wpa81/WriteableBitmapEx.WinRT.pdb",
+        "lib/wpa81/WriteableBitmapEx.WinRT.xml",
+        "package/services/metadata/core-properties/23a5426dfec74835823a81716acfa9bb.psmdcp",
+        "WriteableBitmapEx.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -15284,7 +15374,8 @@
       "Microsoft.ApplicationInsights.WindowsApps >= 1.1.1",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.0.0",
       "MvvmLightLibs >= 5.2.0",
-      "SQLitePCL >= 3.8.7.2"
+      "SQLitePCL >= 3.8.7.2",
+      "WriteableBitmapEx >= 1.5.0"
     ],
     "UAP,Version=v10.0": []
   }

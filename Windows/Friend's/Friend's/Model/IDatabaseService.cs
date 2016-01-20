@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Friend_s.Portable.Model
+namespace Friend_s.Model
 {
     public interface IDatabaseService
     {

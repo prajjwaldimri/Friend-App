@@ -1,6 +1,6 @@
-﻿using Friend_s.Portable.Model;
+﻿using Friend_s.Model;
 
-namespace Friend_s.Portable.ViewModel
+namespace Friend_s.ViewModel
 {
     public class CallandSettingsPageViewModel : BaseViewModel
     {

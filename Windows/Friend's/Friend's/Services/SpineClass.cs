@@ -7,16 +7,13 @@ using System.Threading;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Calls;
 using Windows.ApplicationModel.Contacts;
-using Windows.Devices.Geolocation;
 using Windows.Devices.Sms;
 using Windows.Graphics.Imaging;
-using Windows.Services.Maps;
 using Windows.Storage;
 using Windows.Storage.Streams;
 using Windows.UI.Xaml.Media.Imaging;
 
-
-namespace Friend_s
+namespace Friend_s.Services
 {
     public class SpineClass
     {
@@ -25,7 +22,7 @@ namespace Friend_s
         public static double LocLon;
         public static string LocationAddress;
         public SmsDevice2 Device;
-        public MainPage RootPage;
+        public Views.MainPage RootPage;
         public static Dictionary<Guid, PhoneLine> AllPhoneLines;
         public bool DoesPhoneCallExist;
         public int NoOfLines;
@@ -39,7 +36,7 @@ namespace Friend_s
 
         public async void InitializeCallingInfoAsync()
         {
-            this.MonitorCallState();
+            MonitorCallState();
 
             //Get all phone lines (To detect dual SIM devices)
             var getPhoneLinesTask = GetPhoneLinesAsync();

@@ -1,6 +1,6 @@
 ﻿using GalaSoft.MvvmLight;
 
-namespace Friend_s.Portable.ViewModel
+namespace Friend_s.ViewModel
 {
     public class BaseViewModel:ViewModelBase
     {

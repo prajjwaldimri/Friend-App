@@ -24,8 +24,8 @@ namespace Friend_s
             Microsoft.ApplicationInsights.WindowsAppInitializer.InitializeAsync(
                 Microsoft.ApplicationInsights.WindowsCollectors.Metadata |
                 Microsoft.ApplicationInsights.WindowsCollectors.Session);
-            this.InitializeComponent();
-            this.Suspending += OnSuspending;
+            InitializeComponent();
+            Suspending += OnSuspending;
         }
 
         /// <summary>
@@ -67,14 +67,14 @@ namespace Friend_s
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigatio  n
                 // parameter
-                rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                rootFrame.Navigate(typeof(Views.MainPage), e.Arguments);
             }
             // Ensure the current window is active
             Window.Current.Activate();
             if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
             {
                 var statusBar = Windows.UI.ViewManagement.StatusBar.GetForCurrentView();
-                statusBar.BackgroundColor=Color.FromArgb(1,211,47,47);
+                statusBar.BackgroundColor=Color.FromArgb(255,62,70,81);
                 statusBar.BackgroundOpacity = 1;
                 
             }

@@ -2,17 +2,17 @@
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Contacts;
-using Windows.Devices.Geolocation;
 using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
+using Friend_s.Services;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace Friend_s
+namespace Friend_s.Views
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -25,7 +25,7 @@ namespace Friend_s
         }
 
 
-        protected async override void OnNavigatedTo(NavigationEventArgs e)
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
             DatabaseConnector();
             await ThumbnailRetriever();

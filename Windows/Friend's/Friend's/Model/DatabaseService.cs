@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using SQLitePCL;
 
-namespace Friend_s.Portable.Model
+namespace Friend_s.Model
 {
     class DatabaseService : IDatabaseService
     {

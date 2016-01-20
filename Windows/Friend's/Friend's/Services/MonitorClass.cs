@@ -1,6 +1,7 @@
 using Windows.ApplicationModel.Calls;
+using Friend_s.Views;
 
-namespace Friend_s
+namespace Friend_s.Services
 {
     public sealed class MonitorClass
     {

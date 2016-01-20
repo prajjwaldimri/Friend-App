@@ -101,6 +101,8 @@
     <Content Include="Fonts\UBUNTU-R.TTF" />
     <Content Include="Fonts\TNALOGO.TTF" />
     <Content Include="Fonts\fontawesome-webfont.ttf" />
+    <Content Include="Fonts\HirukoStencil.otf" />
+    <Content Include="Fonts\TT1255M_.TTF" />
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
@@ -112,9 +114,9 @@
     <Compile Include="Model\DatabaseService.cs" />
     <Compile Include="Model\IDatabaseService.cs" />
     <Compile Include="Model\TestItem.cs" />
-    <Compile Include="MonitorClass.cs" />
+    <Compile Include="Services\MonitorClass.cs" />
     <Compile Include="Services\ViewModelLocator.cs" />
-    <Compile Include="SpineClass.cs" />
+    <Compile Include="Services\SpineClass.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\CallandSettingsPageViewModel.cs" />
     <Compile Include="ViewModel\HomePageViewModel.cs" />
@@ -124,7 +126,7 @@
     <Compile Include="Views\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainPage.xaml.cs">
+    <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -166,7 +168,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainPage.xaml">
+    <Page Include="Views\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

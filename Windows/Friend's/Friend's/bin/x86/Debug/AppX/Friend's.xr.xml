@@ -7,10 +7,12 @@
     <RootPropertyPathName Name="Subtitle" />
     <RootPropertyPathName Name="Title" />
     <RootPropertyPathName Name="HomePage" />
+    <RootPropertyPathName Name="SpineInitializerCommand" />
     <RootPropertyPathName Name="ProfileImageSetterCommand" />
     <RootPropertyPathName Name="LocationAccesserCommand" />
-    <RootPropertyPathName Name="GpsLocationPoint" />
     <RootPropertyPathName Name="GpsLocation" />
+    <RootPropertyPathName Name="UserName" />
+    <RootPropertyPathName Name="ProfileEllipseButtonTapCommand" />
     <RootPropertyPathName Name="ProfileImageSource" />
     <RootPropertyPathName Name="Label" />
     <RootPropertyPathName Name="Glyph" />
@@ -40,15 +42,14 @@
       <RootProperty Name="RowDefinitions" />
       <RootProperty Name="Children" />
       <RootProperty Name="ColumnDefinitions" />
-      <RootProperty Name="Margin" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
       <RootMethod Name="GetRow" />
       <RootMethod Name="SetRow" />
-      <RootMethod Name="GetRowSpan" />
-      <RootMethod Name="SetRowSpan" />
       <RootMethod Name="GetColumn" />
       <RootMethod Name="SetColumn" />
+      <RootMethod Name="GetRowSpan" />
+      <RootMethod Name="SetRowSpan" />
       <RootMethod Name="GetColumnSpan" />
       <RootMethod Name="SetColumnSpan" />
     </RootType>
@@ -63,6 +64,7 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="Orientation" />
       <RootProperty Name="BorderThickness" />
+      <RootProperty Name="HorizontalAlignment" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Shapes.Ellipse">
       <RootProperty Name="Margin" />
@@ -70,9 +72,10 @@
       <RootProperty Name="MinWidth" />
       <RootProperty Name="Fill" />
       <RootProperty Name="Name" />
+      <RootProperty Name="Stroke" />
+      <RootProperty Name="StrokeThickness" />
       <RootProperty Name="Height" />
       <RootProperty Name="Width" />
-      <RootEvent Name="Tapped" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.RelativePanel">
       <RootProperty Name="Children" />
@@ -88,6 +91,12 @@
       <RootProperty Name="FontFamily" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Foreground" />
+      <RootProperty Name="BorderBrush" />
+      <RootProperty Name="BorderThickness" />
+      <RootProperty Name="RequestedTheme" />
+      <RootProperty Name="HorizontalContentAlignment" />
+      <RootProperty Name="VerticalContentAlignment" />
       <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.NullExtension" />
@@ -97,14 +106,16 @@
       <RootProperty Name="Text" />
       <RootProperty Name="Style" />
       <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="FontSize" />
-      <RootProperty Name="Opacity" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="TextWrapping" />
+      <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="FontFamily" />
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="FontWeight" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Media.ImageBrush">
       <RootProperty Name="ImageSource" />
+      <RootProperty Name="Stretch" />
     </RootType>
     <RootType FullName="Friend_s.CallandSmsSettings" />
     <RootType FullName="Microsoft.Xaml.Interactivity.Interaction">
@@ -119,13 +130,19 @@
       <RootProperty Name="Command" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition" />
+    <RootType FullName="Windows.UI.Xaml.Shapes.Rectangle">
+      <RootProperty Name="Fill" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.SymbolIcon">
+      <RootProperty Name="Symbol" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.FontIcon">
       <RootProperty Name="Glyph" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Margin" />
       <RootProperty Name="FontSize" />
     </RootType>
-    <RootType FullName="Friend_s.HomePage" />
+    <RootType FullName="Friend_s.Views.HomePage" />
     <RootType FullName="Windows.UI.Xaml.Controls.Pivot">
       <RootProperty Name="Style" />
       <RootProperty Name="Title" />
@@ -185,6 +202,7 @@
       <RootProperty Name="Template" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.PivotItem">
+      <RootProperty Name="Margin" />
       <RootProperty Name="Header" />
       <RootProperty Name="Content" />
     </RootType>

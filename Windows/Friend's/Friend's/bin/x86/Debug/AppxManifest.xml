@@ -11,7 +11,7 @@
   <mp:PhoneIdentity PhoneProductId="36411e27-597b-436e-a0bc-7205d8d5afe2" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Friend's</DisplayName>
-    <PublisherDisplayName>prajj</PublisherDisplayName>
+    <PublisherDisplayName>Prajjwal Dimri</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>
@@ -38,7 +38,10 @@
     <uap:Capability Name="removableStorage" />
     <uap:Capability Name="userAccountInformation" />
     <uap:Capability Name="contacts" />
+    <uap:Capability Name="musicLibrary" />
+    <uap:Capability Name="objects3D" />
     <r:Capability Name="cellularMessaging" />
+    <uap:Capability Name="sharedUserCertificates" />
     <DeviceCapability Name="location" />
   </Capabilities>
   <build:Metadata>
