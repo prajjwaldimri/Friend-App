@@ -1,11 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-using System.Threading;
-using Windows.Devices.Sms;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Media.Imaging;
-
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
+﻿// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace Friend_s.Views
 {

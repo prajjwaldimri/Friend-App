@@ -5,91 +5,151 @@
     xmlns:local="using:Friend_s"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
     mc:Ignorable="d"
-    RequestedTheme="Light"
     DataContext="{Binding CallandSettingsPage, Source={StaticResource ViewModelLocator}}">
 
-    
+    <interactivity:Interaction.Behaviors>
+        <core:EventTriggerBehavior EventName="Loaded">
+            <core:InvokeCommandAction Command="{Binding UniversalSettingsCommand}"/>
+        </core:EventTriggerBehavior>
+        <core:EventTriggerBehavior EventName="Loaded">
+            <core:InvokeCommandAction Command="{Binding LocalStorageSettingsRetrieverCommand}"/>
+        </core:EventTriggerBehavior>
+        
+    </interactivity:Interaction.Behaviors>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="{Binding ThemeColor}">
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <StackPanel Background="{Binding SelectedItem.HexColor}" Padding="20">
-            <TextBlock Text="Second Page" Style="{ThemeResource TitleTextBlockStyle}" />
-            <TextBlock Text="{Binding SelectedItem.Title}" Style="{ThemeResource HeaderTextBlockStyle}" />
-            <TextBlock Text="{Binding SelectedItem.Subtitle}" Style="{ThemeResource SubheaderTextBlockStyle}" />
-
-        </StackPanel>
-        <Grid Grid.Row="1">
-            <StackPanel>
-                <StackPanel Margin="0,0,0,0" Orientation="Horizontal">
-                    <Ellipse Margin="0,0,0,0" RelativePanel.Below="Hitext" RelativePanel.AlignHorizontalCenterWithPanel="True" MinHeight="50" MinWidth="50">
-                        <Ellipse.Fill>
-                            <ImageBrush x:Name="FirstEllipseimg" ImageSource="Assets/Generic-Profile-Image.jpg"/>
-                        </Ellipse.Fill>
-                        </Ellipse>
-                    <StackPanel>
-                    <TextBlock MinWidth="250" Name="FirstContactName"/>
-                    <TextBlock MinWidth="250" Name="FirstContactNumber"/>
-                    </StackPanel>
-                    <Button Click="FirstContactButton_OnClick" Background="{x:Null}" FontSize="18" Content="&#xE104;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-                    </StackPanel>
-                
-                <StackPanel Margin="0,15,0,0" Orientation="Horizontal">
-                        <Ellipse Margin="0,0,0,0" RelativePanel.Below="Hitext" RelativePanel.AlignHorizontalCenterWithPanel="True" MinHeight="50" MinWidth="50">
-                            <Ellipse.Fill>
-                                <ImageBrush x:Name="SecondEllipseimg" ImageSource="Assets/Generic-Profile-Image.jpg"/>
-                            </Ellipse.Fill>
-                        </Ellipse>
-                        <StackPanel>
-                            <TextBlock MinWidth="250" Name="SecondContactName"/>
-                            <TextBlock MinWidth="250" Name="SecondContactNumber"/>
-                        </StackPanel>
-                    <Button Click="SecondContactButton_OnClick" Background="{x:Null}" FontSize="18" Content="&#xE104;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-                    </StackPanel>
-                
-                <StackPanel Margin="0,15,0,0" Orientation="Horizontal">
-                            <Ellipse Margin="0,0,0,0" RelativePanel.Below="Hitext" RelativePanel.AlignHorizontalCenterWithPanel="True" MinHeight="50" MinWidth="50">
-                                <Ellipse.Fill>
-                                    <ImageBrush x:Name="ThirdEllipseimg" ImageSource="Assets/Generic-Profile-Image.jpg"/>
-                                </Ellipse.Fill>
-                            </Ellipse>
-                            <StackPanel>
-                                <TextBlock MinWidth="250" Name="ThirdContactName"/>
-                                <TextBlock MinWidth="250" Name="ThirdContactNumber"/>
-                            </StackPanel>
-                    <Button Click="ThirdContactButton_OnClick" Background="{x:Null}" FontSize="18" Content="&#xE104;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-                    </StackPanel>
-                
-                <StackPanel Margin="0,15,0,0" Orientation="Horizontal">
-                                <Ellipse Margin="0,0,0,0" RelativePanel.Below="Hitext" RelativePanel.AlignHorizontalCenterWithPanel="True" MinHeight="50" MinWidth="50">
-                                    <Ellipse.Fill>
-                                        <ImageBrush x:Name="ForthEllipseimg" ImageSource="Assets/Generic-Profile-Image.jpg"/>
-                                    </Ellipse.Fill>
-                                </Ellipse>
-                                <StackPanel>
-                                    <TextBlock MinWidth="250" Name="ForthContactName"/>
-                                    <TextBlock MinWidth="250" Name="ForthContactNumber"/>
-                                </StackPanel>
-                    <Button Click="ForthContactButton_OnClick" Background="{x:Null}" FontSize="18" Content="&#xE104;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-                    </StackPanel>
-                
-                <StackPanel Margin="0,15,0,0" Orientation="Horizontal">
-                                    <Ellipse Margin="0,0,0,0" RelativePanel.Below="Hitext" RelativePanel.AlignHorizontalCenterWithPanel="True" MinHeight="50" MinWidth="50">
-                                        <Ellipse.Fill>
-                                            <ImageBrush x:Name="FifthEllipseimg" ImageSource="Assets/Generic-Profile-Image.jpg"/>
-                                        </Ellipse.Fill>
-                                    </Ellipse>
-                                    <StackPanel>
-                                        <TextBlock MinWidth="250" Name="FifthContactName"/>
-                                        <TextBlock MinWidth="250" Name="FifthContactNumber"/>
-                                    </StackPanel>
-                    <Button Click="FifthContactButton_OnClick" Background="{x:Null}" FontSize="18" Content="&#xE104;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-                                </StackPanel>
-                </StackPanel>
+        
+        <Grid Margin="5,5,0,0" Grid.Row="0">
             
-    </Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1.4*"/>
+                <RowDefinition Height="0.2*"/>
+                <RowDefinition Height="1.4*"/>
+                <RowDefinition Height="0.2*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            
+            
+            <TextBlock Text="Profile" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" 
+                       FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="21.333" FontWeight="Bold"/>
+            
+            <SymbolIcon Symbol="Contact" Grid.Row="2" Grid.Column="0"/>
+            <TextBlock Grid.Row="2" Grid.Column="1" x:Name="UserNameTextBlock" 
+                       Text="{Binding UserName}" VerticalAlignment="Center"/>
+            <TextBox Background="{x:Null}" TextAlignment="Left" 
+                     VerticalAlignment="Bottom" x:Name="UserNameTextBox" Visibility="Collapsed"
+                     Grid.Row="2" Grid.Column="1" BorderThickness="0"/>
+            <SymbolIcon x:Name="UserNameEditIcon" Tapped="UserNameEditIcon_OnTapped" Symbol="Edit" Grid.Row="2" Grid.Column="2"/>
+            <SymbolIcon Visibility="Collapsed" x:Name="UserNameSaveIcon" Tapped="UserNameSaveIcon_OnTapped" Symbol="Save" Grid.Row="2" Grid.Column="2"/>
+
+            <TextBlock FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="21.333" FontWeight="Bold"
+                       Text="Social Networks" Grid.ColumnSpan="2" Grid.Row="4" Grid.Column="0"/>
+
+            <FontIcon VerticalAlignment="Center" Glyph="&#xf230;"
+                      Grid.Row="6" Grid.Column="0" 
+                      FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"/>
+            <TextBlock TextAlignment="Left" Text="Connect Facebook" VerticalAlignment="Center" 
+                     Grid.Row="6" Grid.Column="1"/>
+            <FontIcon Glyph="&#xf067;" FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"
+                      Grid.Row="6" VerticalAlignment="Center" Grid.Column="2"/>
+
+            <FontIcon VerticalAlignment="Center" Glyph="&#xf081;"
+                      Grid.Row="8" Grid.Column="0" 
+                      FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"/>
+            <TextBlock TextAlignment="Left" Text="Connect Twitter" VerticalAlignment="Center" 
+                     Grid.Row="8" Grid.Column="1"/>
+            <FontIcon Glyph="&#xf067;" FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"
+                      Grid.Row="8" VerticalAlignment="Center" Grid.Column="2"/>
+
+            <TextBlock FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="21.333" FontWeight="Bold"
+                       Text="Other" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+            <FontIcon Grid.Row="12" Grid.Column="0" Glyph="&#xf042;"
+                      FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" 
+                      Grid.Row="12" Text="Theme" VerticalAlignment="Center"/>
+            <ToggleSwitch Toggled="ToggleSwitch_OnToggled" IsOn="{Binding ToggleSwitchIsOn}" 
+                          Grid.Column="2" Grid.Row="12" OffContent="Blue" OnContent="Pink"
+                          x:Name="ThemeToggleSwitch"/>
+
+            <FontIcon Grid.Row="14" Grid.Column="0" Glyph="&#xf017;"
+                      FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" 
+                      Grid.Row="14" Text="Timing between messages" VerticalAlignment="Center"/>
+            <Slider VerticalAlignment="Center" Grid.Row="14" Grid.Column="2"/>
+
+            <TextBlock FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="21.333" FontWeight="Bold"
+                       Text="Contacts" Grid.Row="16" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+        </Grid>
+        
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            
+            <SymbolIcon Symbol="Contact2" Grid.Row="0" Grid.Column="0"/>
+            <SymbolIcon Symbol="Contact2" Grid.Row="1" Grid.Column="0"/>
+            <SymbolIcon Symbol="Contact2" Grid.Row="2" Grid.Column="0"/>
+
+            <TextBlock VerticalAlignment="Center" Text="{Binding FirstContactName}" Grid.Row="0" Grid.Column="1"/>
+            <TextBlock VerticalAlignment="Center" Text="{Binding SecondContactName}" Grid.Row="1" Grid.Column="1"/>
+            <TextBlock VerticalAlignment="Center" Text="{Binding ThirdContactName}" Grid.Row="2" Grid.Column="1"/>
+            
+            <Button Background="{x:Null}" Grid.Row="0" Grid.Column="2" CommandParameter="1"
+                    HorizontalAlignment="Center" Command="{Binding EditContactButtonHandlerCommand}">
+                <Button.Content>
+                    <SymbolIcon Symbol="Edit" />
+                </Button.Content>
+            </Button>
+
+            <Button Background="{x:Null}" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center"
+                    Command="{Binding EditContactButtonHandlerCommand}" CommandParameter="2">
+                <Button.Content>
+                    <SymbolIcon Symbol="Edit" />
+                </Button.Content>
+            </Button>
+
+            <Button Background="{x:Null}" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center"
+                    Command="{Binding EditContactButtonHandlerCommand}" CommandParameter="3">
+                <Button.Content>
+                    <SymbolIcon Symbol="Edit" />
+                </Button.Content>
+            </Button>
+
+        </Grid>
     </Grid>
 </Page>

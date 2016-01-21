@@ -223,9 +223,9 @@ C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\obj\x86\Debug\Multiple
 C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\obj\x86\Debug\GalaSoft.MvvmLight.Platform.pri.xml
 C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\obj\x86\Debug\SQLitePCL.Ext.pri.xml
 C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\obj\x86\Debug\ProjectArchitectures.txt
-C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\bin\x86\Debug\WriteableBitmapEx.WinRT.dll
 C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\bin\x86\Debug\Views\MainPage.xbf
 C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\obj\x86\Debug\Views\MainPage.g.i.cs
 C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\obj\x86\Debug\Views\MainPage.g.cs
 C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\obj\x86\Debug\Views\MainPage.xaml
 C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\obj\x86\Debug\Views\MainPage.xbf
+C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\obj\x86\Debug\Friend's.csprojResolveAssemblyReference.cache

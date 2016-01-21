@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
-using Windows.Storage;
 using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -47,10 +45,8 @@ namespace Friend_s
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
-                await CopyDatabase();
-                //CreateDatabase.CreateTable();
-                //CreateDatabase.InsertData("0","Prajjwal","7830207022");
-
+                //await CopyDatabase();
+                
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
                     //TODO: Load state from previously suspended application
@@ -104,26 +100,5 @@ namespace Friend_s
             deferral.Complete();
         }
 
-        private async Task CopyDatabase()
-
-        {
-            bool isDatabaseExisting = false;
-            try
-            {
-                StorageFile storageFile = await ApplicationData.Current.LocalFolder.GetFileAsync("testdatabase.sqlite");
-                isDatabaseExisting = true;
-            }
-            catch
-            {
-                isDatabaseExisting = false;
-            }
-
-            if (!isDatabaseExisting)
-            {
-                StorageFile databaseFile = await ApplicationData.Current.LocalFolder.CreateFileAsync("testdatabase.sqlite");
-//                await databaseFile.CopyAsync(ApplicationData.Current.LocalFolder);
-            }
-
-        }
     }
 }

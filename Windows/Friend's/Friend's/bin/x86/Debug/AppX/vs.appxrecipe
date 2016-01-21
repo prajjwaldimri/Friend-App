@@ -10,7 +10,7 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>36411e27-597b-436e-a0bc-7205d8d5afe2</PackageIdentityName>
     <IntermediateOutputPath>C:\Users\prajj\Documents\Friend\Windows\Friend%27s\Friend%27s\obj\x86\Debug\</IntermediateOutputPath>
-    <RegisteredManifestChecksum>1C3BBC056B187659CF2A28C2DC34465A23C0D17D885E356520C42C81502A794E</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>DF5CEE8D9E97CF53B8B925EA2F8FCC61084F39F2E24D9D522116D3CA5BD4953A</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>36411e27-597b-436e-a0bc-7205d8d5afe2_1.0.0.0_x86__wqqaj6de6k89e</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>36411e27-597b-436e-a0bc-7205d8d5afe2_wqqaj6de6k89e!App</RegisteredUserModeAppID>
     <RegisteredPackageID>36411e27-597b-436e-a0bc-7205d8d5afe2</RegisteredPackageID>
@@ -22,13 +22,13 @@
     <AppXManifest Include="C:\Users\prajj\Documents\Friend\Windows\Friend%27s\Friend%27s\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-01-20T13:35:13.727</Modified>
+      <Modified>2016-01-21T17:52:28.452</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\prajj\Documents\Friend\Windows\Friend%27s\Friend%27s\bin\x86\Debug\Friend%27s.exe">
       <PackagePath>entrypoint\Friend%27s.exe</PackagePath>
-      <Modified>2016-01-20T13:35:12.427</Modified>
+      <Modified>2016-01-21T17:52:27.348</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\BehaviorsXamlSDKManaged\12.0\References\CommonConfiguration\Neutral\Microsoft.Xaml.Interactions.dll">
       <PackagePath>Microsoft.Xaml.Interactions.dll</PackagePath>
@@ -482,13 +482,9 @@
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
       <Modified>2015-09-13T05:31:46.491</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\WriteableBitmapEx\1.5.0\lib\NetCore45\WriteableBitmapEx.WinRT.dll">
-      <PackagePath>WriteableBitmapEx.WinRT.dll</PackagePath>
-      <Modified>2016-01-20T11:17:13.765</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UAP\v0.8.0.0\ExtensionSDKs\SQLite.UAP.2015\3.9.2\Redist\Debug\x86\sqlite3.dll">
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UAP\v0.8.0.0\ExtensionSDKs\SQLite.UAP.2015\3.10.2\Redist\Debug\x86\sqlite3.dll">
       <PackagePath>sqlite3.dll</PackagePath>
-      <Modified>2015-12-07T15:06:38.006</Modified>
+      <Modified>2016-01-21T08:09:19.599</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\SQLitePCL\3.8.7.2\build\netcore451\SQLitePCL.Ext.dll">
       <PackagePath>SQLitePCL.Ext.dll</PackagePath>
@@ -578,7 +574,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\Documents\Friend\Windows\Friend%27s\Friend%27s\bin\x86\Debug\Friend%27s.xr.xml">
       <PackagePath>Friend%27s.xr.xml</PackagePath>
-      <Modified>2016-01-20T13:35:12.005</Modified>
+      <Modified>2016-01-21T17:49:30.388</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -586,11 +582,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\Documents\Friend\Windows\Friend%27s\Friend%27s\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-01-20T13:35:13.242</Modified>
+      <Modified>2016-01-21T17:52:28.039</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\Documents\Friend\Windows\Friend%27s\Friend%27s\bin\x86\Debug\Core\Friend%27s.exe">
       <PackagePath>Friend%27s.exe</PackagePath>
-      <Modified>2016-01-20T13:35:13.724</Modified>
+      <Modified>2016-01-21T17:52:28.449</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

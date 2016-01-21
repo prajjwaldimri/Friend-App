@@ -5,8 +5,7 @@
     "Microsoft.ApplicationInsights.WindowsApps": "1.1.1",
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0",
     "MvvmLightLibs": "5.2.0",
-    "SQLitePCL": "3.8.7.2",
-    "WriteableBitmapEx": "1.5.0"
+    "SQLitePCL": "3.8.7.2"
   },
   "frameworks": {
     "uap10.0": {}

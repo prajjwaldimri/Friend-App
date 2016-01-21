@@ -360,10 +360,7 @@
     <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\System.Xml.XmlSerializer\4.0.10\lib\netcore50\System.Xml.XmlSerializer.dll">
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\WriteableBitmapEx\1.5.0\lib\NetCore45\WriteableBitmapEx.WinRT.dll">
-      <PackagePath>WriteableBitmapEx.WinRT.dll</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UAP\v0.8.0.0\ExtensionSDKs\SQLite.UAP.2015\3.9.2\Redist\Debug\x86\sqlite3.dll">
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UAP\v0.8.0.0\ExtensionSDKs\SQLite.UAP.2015\3.10.2\Redist\Debug\x86\sqlite3.dll">
       <PackagePath>sqlite3.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\SQLitePCL\3.8.7.2\build\netcore451\SQLitePCL.Ext.dll">

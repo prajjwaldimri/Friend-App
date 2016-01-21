@@ -1,8 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
-using Friend_s.Model;
+using Friend_s.Portable.Model;
 
-namespace Friend_s.Design
+namespace Friend_s.Portable.Design
 {
     public class DesignDatabaseService : IDatabaseService
     {

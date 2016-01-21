@@ -39,7 +39,7 @@ namespace Friend_s.Views
                 return;
             var spineClass = new SpineClass();
             spineClass.InitializeCallingInfoAsync();
-            DatabaseConnector();
+            //DatabaseConnector();
             Caller();
         }
 
@@ -53,15 +53,15 @@ namespace Friend_s.Views
         
         private static string _phonenumber;
         private static string _phonename;
-        private static void DatabaseConnector()
-        {
-            var list = CreateDatabase.GetValues(@"SELECT Number FROM Details WHERE ID=1");
-            var list1 = CreateDatabase.GetValues(@"SELECT Name FROM Details WHERE ID=1");
-            string[] arr = list;
-            string[] brr = list1;
-            if (arr != null) _phonenumber = arr[0];
-            if (brr != null) _phonename = brr[0];
-        }
+        //private static void DatabaseConnector()
+        //{
+        //    var list = CreateDatabase.GetValues(@"SELECT Number FROM Details WHERE ID=1");
+        //    var list1 = CreateDatabase.GetValues(@"SELECT Name FROM Details WHERE ID=1");
+        //    string[] arr = list;
+        //    string[] brr = list1;
+        //    if (arr != null) _phonenumber = arr[0];
+        //    if (brr != null) _phonename = brr[0];
+        //}
 
         private static async void LocationAccesser()
         {

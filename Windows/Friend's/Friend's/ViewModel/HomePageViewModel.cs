@@ -1,20 +1,10 @@
 ﻿using System;
-using System.Collections.ObjectModel;
 using System.Diagnostics;
-using System.IO;
-using System.Threading.Tasks;
 using Windows.Devices.Geolocation;
-using Windows.Foundation;
-using Windows.Graphics.Imaging;
 using Windows.Services.Maps;
 using Windows.Storage;
 using Windows.Storage.Pickers;
-using Windows.Storage.Streams;
-using Windows.System.UserProfile;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
-using Friend_s.Model;
 using Friend_s.Services;
 using GalaSoft.MvvmLight.Command;
 
@@ -27,68 +17,38 @@ namespace Friend_s.ViewModel
            LocationAccesserCommand = new RelayCommand(LocationAccesser);
            ProfileImageSetterCommand = new RelayCommand(ProfileSetter);
            ProfileEllipseButtonTapCommand = new RelayCommand(EllipseTapped);
-            SpineInitializerCommand = new RelayCommand(SpineInitializer);
+           SpineInitializerCommand = new RelayCommand(SpineInitializer);
+           ThemeRetrieverCommand = new RelayCommand(ThemeInitializer);
+        
         }
         //Variables
 
         private string _gpsLocationPoint;
         private string _gpsLocation;
         private BitmapImage _profileBitmapImage;
-        private string _userName = "Prajjwal";
-
+        
         //Commands and Services Declaration
 
-        private readonly IDatabaseService _databaseService;
 
         public RelayCommand LocationAccesserCommand { get; private set; }
         public RelayCommand ProfileImageSetterCommand { get; private set; }
         public RelayCommand ProfileEllipseButtonTapCommand { get; private set; }
         public RelayCommand SpineInitializerCommand { get; private set; }
+        public RelayCommand ThemeRetrieverCommand { get; private set; }
 
         public BitmapImage ProfileImageSource => _profileBitmapImage;
 
         public const string TestItemPropertyName = "TestItem";
 
-        private ObservableCollection<TestItem> _testItems = new ObservableCollection<TestItem>();
 
 
         //String Values
-        public ObservableCollection<TestItem> TestItems
-        {
-            get { return _testItems; }
-            set { Set(TestItemPropertyName, ref _testItems, value); }
-        }
 
         private string GpsLocationPoint => _gpsLocationPoint;
 
         public string GpsLocation => _gpsLocation;
 
-        public string UserName => _userName;
-
-        //public HomePageViewModel()
-        //{
-        //    this.LocationAccesserCommand = new RelayCommand(this.LocationAccesser);
-        //}
-
-        //public HomePageViewModel(IDatabaseService databaseService)
-        //{
-        //    _databaseService = databaseService;
-        //    Initialize();
-        //}
-
-        private async Task Initialize()
-        {
-            try
-            {
-                TestItems = new ObservableCollection<TestItem>(await _databaseService.GetTestItems());
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-            }
-        }
-
-
+        
         //Methods
 
         private async void LocationAccesser()
@@ -213,6 +173,13 @@ namespace Friend_s.ViewModel
             }
         }
 
-
+        private static void ThemeInitializer()
+        {
+            var applicationData = ApplicationData.Current;
+            var localsettings = applicationData.LocalSettings;
+            var bvm = new BaseViewModel();
+            if (localsettings.Values != null) bvm.ThemeColor = localsettings.Values["ThemeColor"] as string;
+            bvm.RaisePropertyChangedBase();
+        }
     }
 }

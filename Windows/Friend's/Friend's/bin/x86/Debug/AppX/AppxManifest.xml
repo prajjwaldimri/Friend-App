@@ -10,8 +10,8 @@
   <Identity Name="36411e27-597b-436e-a0bc-7205d8d5afe2" Publisher="CN=prajj" Version="1.0.0.0" ProcessorArchitecture="x86" />
   <mp:PhoneIdentity PhoneProductId="36411e27-597b-436e-a0bc-7205d8d5afe2" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>Friend's</DisplayName>
-    <PublisherDisplayName>Prajjwal Dimri</PublisherDisplayName>
+    <DisplayName>Friend</DisplayName>
+    <PublisherDisplayName>Prajjwal</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>
@@ -39,11 +39,8 @@
     <uap:Capability Name="picturesLibrary" />
     <uap:Capability Name="removableStorage" />
     <uap:Capability Name="userAccountInformation" />
-    <uap:Capability Name="contacts" />
-    <uap:Capability Name="musicLibrary" />
-    <uap:Capability Name="objects3D" />
     <r:Capability Name="cellularMessaging" />
-    <uap:Capability Name="sharedUserCertificates" />
+    <uap:Capability Name="contacts" />
     <DeviceCapability Name="location" />
   </Capabilities>
   <build:Metadata>
@@ -57,7 +54,7 @@
     <build:Item Name="TargetRuntime" Value="Managed" />
     <build:Item Name="Microsoft.Windows.UI.Xaml.Build.Tasks.dll" Version="14.0.24720.0" />
     <build:Item Name="BehaviorsXamlSDKManaged" Version="12.0" />
-    <build:Item Name="SQLite.UAP.2015" Version="3.9.2" />
+    <build:Item Name="SQLite.UAP.2015" Version="3.10.2" />
     <build:Item Name="WindowsMobile" Version="10.0.10240.0" />
     <build:Item Name="MakePri.exe" Version="10.0.10586.15 (th2_release.151119-1817)" />
   </build:Metadata>

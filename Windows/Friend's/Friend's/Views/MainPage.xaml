@@ -54,13 +54,13 @@
                 
             <Pivot.TitleTemplate>
                     <DataTemplate>
-                      <TextBlock Text="{Binding}" FontFamily="Fonts/TT1255M_.TTF#AlphabetSoup Tilt BT" FontSize="32"></TextBlock>
+                      <TextBlock Text="{Binding}" FontFamily="/Fonts/TT1255M_.TTF#AlphabetSoup Tilt BT" FontSize="32"></TextBlock>
                     </DataTemplate>
                 </Pivot.TitleTemplate>
-                <Pivot.HeaderTemplate>
+            <Pivot.HeaderTemplate>
                     <DataTemplate>
                     <StackPanel>
-                        <TextBlock FontSize="20" Text="{Binding}" FontFamily="Fonts/HirukoStencil.otf#Hiruko Stencil"/>
+                        <TextBlock FontSize="20" Text="{Binding}" FontFamily="/Fonts/HirukoStencil.otf#Hiruko Stencil"/>
                      </StackPanel>
                 </DataTemplate>
                 </Pivot.HeaderTemplate>
@@ -68,14 +68,18 @@
                 <PivotItem Margin="0,0,0,0" Header="HOME">
                     <views:HomePage/>
                 </PivotItem>
-                
-                <PivotItem Header="TIMER"/>
-                
-                <PivotItem Header="SETTINGS">
-                    <views:CallandSmsSettings/>
+
+            <PivotItem Margin="0,0,0,0" Header="TIMER">
+                    <TextBlock/>
                 </PivotItem>
                 
-                <PivotItem Header="ABOUT"/>
+                <PivotItem Margin="0,0,0,0" Header="SETTINGS">
+                    <views:CallandSmsSettings/>
+                </PivotItem>
+
+            <PivotItem Margin="0,0,0,0" Header="ABOUT">
+                    <TextBlock/>
+                </PivotItem>
             </Pivot>
         
         

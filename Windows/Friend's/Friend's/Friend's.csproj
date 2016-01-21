@@ -109,11 +109,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CreateDatabase.cs" />
-    <Compile Include="Design\DesignDatabaseService.cs" />
-    <Compile Include="Model\DatabaseService.cs" />
-    <Compile Include="Model\IDatabaseService.cs" />
-    <Compile Include="Model\TestItem.cs" />
     <Compile Include="Services\MonitorClass.cs" />
     <Compile Include="Services\ViewModelLocator.cs" />
     <Compile Include="Services\SpineClass.cs" />
@@ -188,7 +183,7 @@
     <SDKReference Include="Microsoft.VCLibs.120, Version=14.0">
       <Name>Microsoft Visual C++ 2013 Runtime Package for Windows Universal</Name>
     </SDKReference>
-    <SDKReference Include="SQLite.UAP.2015, Version=3.9.2">
+    <SDKReference Include="SQLite.UAP.2015, Version=3.10.2">
       <Name>SQLite for Universal App Platform</Name>
     </SDKReference>
     <SDKReference Include="WindowsMobile, Version=10.0.10240.0">
@@ -196,6 +191,7 @@
     </SDKReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Model\" />
     <Folder Include="Services\Interfaces\" />
   </ItemGroup>
   <ItemGroup>
