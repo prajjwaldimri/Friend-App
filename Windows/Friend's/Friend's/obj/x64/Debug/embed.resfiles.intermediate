@@ -1,5 +1,6 @@
 App.xbf
-CallandSMSSettings.xbf
-HomePage.xbf
-MainPage.xbf
-Sospage.xbf
+Views\CallandSMSSettings.xbf
+Views\HomePage.xbf
+Views\MainPage.xbf
+Views\Sospage.xbf
+Views\TimerPage.xbf

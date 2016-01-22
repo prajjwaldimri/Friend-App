@@ -12,7 +12,7 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+    <TargetPlatformMinVersion>10.0.10586.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
     <FileAlignment>512</FileAlignment>
@@ -52,6 +52,7 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
+    <Optimize>true</Optimize>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
     <OutputPath>bin\x64\Release\</OutputPath>
@@ -115,6 +116,7 @@
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\CallandSettingsPageViewModel.cs" />
     <Compile Include="ViewModel\HomePageViewModel.cs" />
+    <Compile Include="ViewModel\TimerPageViewModel.cs" />
     <Compile Include="Views\CallandSMSSettings.xaml.cs">
       <DependentUpon>CallandSMSSettings.xaml</DependentUpon>
     </Compile>
@@ -128,8 +130,8 @@
     <Compile Include="Views\Sospage.xaml.cs">
       <DependentUpon>Sospage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\TabHeader.xaml.cs">
-      <DependentUpon>TabHeader.xaml</DependentUpon>
+    <Compile Include="Views\TimerPage.xaml.cs">
+      <DependentUpon>TimerPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -171,7 +173,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\TabHeader.xaml">
+    <Page Include="Views\TimerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -182,9 +184,6 @@
     </SDKReference>
     <SDKReference Include="Microsoft.VCLibs.120, Version=14.0">
       <Name>Microsoft Visual C++ 2013 Runtime Package for Windows Universal</Name>
-    </SDKReference>
-    <SDKReference Include="SQLite.UAP.2015, Version=3.10.2">
-      <Name>SQLite for Universal App Platform</Name>
     </SDKReference>
     <SDKReference Include="WindowsMobile, Version=10.0.10240.0">
       <Name>Windows Mobile Extensions for the UWP %28WindowsMobile, Version=10.0.10240.0%29</Name>

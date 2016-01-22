@@ -38,7 +38,6 @@ namespace Friend_s.ViewModel
 
         public BitmapImage ProfileImageSource => _profileBitmapImage;
 
-        public const string TestItemPropertyName = "TestItem";
 
 
 

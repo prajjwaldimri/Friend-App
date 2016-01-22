@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.UI;
@@ -31,7 +32,7 @@ namespace Friend_s
         /// will be used such as when the application is launched to open a specific file.
         /// </summary>
         /// <param name="e">Details about the launch request and process.</param>
-        protected override async void OnLaunched(LaunchActivatedEventArgs e)
+        protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
 
             var rootFrame = Window.Current.Content as Frame;
@@ -42,6 +43,8 @@ namespace Friend_s
             {
                 // Create a Frame to act as the navigation context and navigate to the first page
                 rootFrame = new Frame();
+
+                rootFrame.CacheSize = 5;
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
@@ -83,7 +86,9 @@ namespace Friend_s
         /// <param name="e">Details about the navigation failure</param>
         void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
         {
+            Debug.WriteLine(e);
             throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
+
         }
 
         /// <summary>
@@ -97,6 +102,7 @@ namespace Friend_s
         {
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
+            Debug.WriteLine(e);
             deferral.Complete();
         }
 

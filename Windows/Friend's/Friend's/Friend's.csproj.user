@@ -5,6 +5,7 @@
     <UseEmulator>false</UseEmulator>
     <UseSimulator>false</UseSimulator>
     <AuthenticationMode>Windows</AuthenticationMode>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <DeviceId>30F105C9-681E-420b-A277-7C086EAD8A4E</DeviceId>
@@ -12,9 +13,14 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
     <DebugEngines>
     </DebugEngines>
+    <AuthenticationMode>Windows</AuthenticationMode>
+    <CreateCleanLayout>false</CreateCleanLayout>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
     <DeviceId>30F105C9-681E-420b-A277-7C086EAD8A4E</DeviceId>
     <UseEmulator>true</UseEmulator>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
   </PropertyGroup>
 </Project>

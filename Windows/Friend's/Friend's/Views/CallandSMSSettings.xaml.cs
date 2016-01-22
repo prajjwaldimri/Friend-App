@@ -13,7 +13,7 @@ namespace Friend_s.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class CallandSmsSettings : Page
+    public sealed partial class CallandSmsSettings
     {
         public CallandSmsSettings()
         {
@@ -68,7 +68,6 @@ namespace Friend_s.Views
         {
             var localData = ApplicationData.Current.LocalSettings;
             var roamData = ApplicationData.Current.RoamingSettings;
-            string _themeColor;
            
 
             if (!ThemeToggleSwitch.IsOn)

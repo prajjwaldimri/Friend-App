@@ -1,4 +1,4 @@
-﻿<Page
+﻿<UserControl
     x:Class="Friend_s.Views.HomePage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -26,7 +26,7 @@
         </interactivity:Interaction.Behaviors>
 
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="{Binding ThemeColor}">
 
         
 
@@ -47,8 +47,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Rectangle Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" Grid.ColumnSpan="4"
-                   Fill="{Binding ThemeColor}"/>
+        <Rectangle Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" Grid.ColumnSpan="4"/>
         
         
 
@@ -69,7 +68,7 @@
                 </Ellipse.Fill>
             </Ellipse>
            
-            <TextBlock Margin="0,20,0,0" Text="{Binding Path=UserName}"
+            <TextBlock Margin="0,20,0,0" Text="{Binding UserName}"
                        HorizontalAlignment="Center" 
                        VerticalAlignment="Center" FontFamily="Nanami Blk" FontSize="22" FontWeight="Bold"/>
            
@@ -118,5 +117,5 @@
 
     </Grid>
 
-</Page>
+</UserControl>
 

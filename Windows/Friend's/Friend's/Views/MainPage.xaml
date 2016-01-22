@@ -9,68 +9,34 @@
     mc:Ignorable="d"
     RequestedTheme="Dark">
 
-    <Page.Resources>
-        <SolidColorBrush x:Key="PivotBackground" Color="#2C82C9"/>
-        
-        <Style x:Key="PivotStyle" TargetType="Pivot">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Pivot">
-                        <Grid x:Name="RootElement" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                            </Grid.RowDefinitions>
-                            
-                            <!--Notice that ContentControl is wrapped in a Grid and Background set to resource furtehr up-->
-                            <Grid VerticalAlignment="Center" Background="{StaticResource PivotBackground}">
-                                <ContentControl x:Name="TitleContentControl" ContentTemplate="{TemplateBinding TitleTemplate}" Content="{TemplateBinding Title}" Style="{StaticResource PivotTitleContentControlStyle}"/>
-                            </Grid>
-                            <ScrollViewer x:Name="ScrollViewer" HorizontalSnapPointsAlignment="Center" HorizontalSnapPointsType="MandatorySingle" HorizontalScrollBarVisibility="Hidden" Margin="{TemplateBinding Padding}" Grid.Row="1" Template="{StaticResource ScrollViewerScrollBarlessTemplate}" VerticalSnapPointsType="None" VerticalScrollBarVisibility="Disabled" VerticalScrollMode="Disabled" VerticalContentAlignment="Stretch" ZoomMode="Disabled">
-                                <PivotPanel x:Name="Panel" VerticalAlignment="Stretch">
-                                    <!--Background set to resource further up-->
-                                    <PivotHeaderPanel Background="{StaticResource PivotBackground}" x:Name="Header" >
-                                        <PivotHeaderPanel.RenderTransform>
-                                            <CompositeTransform x:Name="HeaderTranslateTransform" TranslateX="0"/>
-                                        </PivotHeaderPanel.RenderTransform>
-                                    </PivotHeaderPanel>
-                                    <ItemsPresenter x:Name="PivotItemPresenter">
-                                        <ItemsPresenter.RenderTransform>
-                                            <TranslateTransform x:Name="ItemsPresenterTranslateTransform" X="0"/>
-                                        </ItemsPresenter.RenderTransform>
-                                    </ItemsPresenter>
-                                </PivotPanel>
-                            </ScrollViewer>
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Page.Resources>
-
-
+    
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-            <Pivot Style="{StaticResource PivotStyle}" Title="Friend's">
-                
-            <Pivot.TitleTemplate>
+        <Pivot Background="#2C82C9" Title="Friend's">
+
+           <Pivot.TitleTemplate>
                     <DataTemplate>
                       <TextBlock Text="{Binding}" FontFamily="/Fonts/TT1255M_.TTF#AlphabetSoup Tilt BT" FontSize="32"></TextBlock>
                     </DataTemplate>
                 </Pivot.TitleTemplate>
-            <Pivot.HeaderTemplate>
-                    <DataTemplate>
+            
+                <Pivot.HeaderTemplate> 
+                <DataTemplate>
                     <StackPanel>
                         <TextBlock FontSize="20" Text="{Binding}" FontFamily="/Fonts/HirukoStencil.otf#Hiruko Stencil"/>
                      </StackPanel>
                 </DataTemplate>
-                </Pivot.HeaderTemplate>
+            </Pivot.HeaderTemplate>
+                
+                
                 
                 <PivotItem Margin="0,0,0,0" Header="HOME">
                     <views:HomePage/>
                 </PivotItem>
 
             <PivotItem Margin="0,0,0,0" Header="TIMER">
-                    <TextBlock/>
+                
+                <views:TimerPage/>
+                    
                 </PivotItem>
                 
                 <PivotItem Margin="0,0,0,0" Header="SETTINGS">

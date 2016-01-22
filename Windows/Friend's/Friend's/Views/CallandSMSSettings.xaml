@@ -1,4 +1,4 @@
-﻿<Page
+﻿<UserControl
     x:Class="Friend_s.Views.CallandSmsSettings"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -12,12 +12,11 @@
 
     <interactivity:Interaction.Behaviors>
         <core:EventTriggerBehavior EventName="Loaded">
-            <core:InvokeCommandAction Command="{Binding UniversalSettingsCommand}"/>
-        </core:EventTriggerBehavior>
-        <core:EventTriggerBehavior EventName="Loaded">
             <core:InvokeCommandAction Command="{Binding LocalStorageSettingsRetrieverCommand}"/>
         </core:EventTriggerBehavior>
-        
+        <core:EventTriggerBehavior EventName="Loaded">
+            <core:InvokeCommandAction Command="{Binding UniversalSettingsCommand}"/>
+        </core:EventTriggerBehavior>
     </interactivity:Interaction.Behaviors>
 
     <Grid Background="{Binding ThemeColor}">
@@ -152,4 +151,4 @@
 
         </Grid>
     </Grid>
-</Page>
+</UserControl>
