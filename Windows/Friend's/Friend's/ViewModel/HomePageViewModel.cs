@@ -176,8 +176,10 @@ namespace Friend_s.ViewModel
         {
             var applicationData = ApplicationData.Current;
             var localsettings = applicationData.LocalSettings;
+            var roamsettings = applicationData.RoamingSettings;
             var bvm = new BaseViewModel();
             if (localsettings.Values != null) bvm.ThemeColor = localsettings.Values["ThemeColor"] as string;
+            if (roamsettings.Values != null) bvm.ThemeColor = roamsettings.Values["ThemeColor"] as string;
             bvm.RaisePropertyChangedBase();
         }
     }

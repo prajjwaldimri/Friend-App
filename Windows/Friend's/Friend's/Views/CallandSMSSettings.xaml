@@ -83,7 +83,13 @@
             <TextBlock TextAlignment="Left" Text="Connect Twitter" VerticalAlignment="Center" 
                      Grid.Row="8" Grid.Column="1"/>
             <FontIcon Glyph="&#xf067;" FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"
-                      Grid.Row="8" VerticalAlignment="Center" Grid.Column="2"/>
+                      Grid.Row="8" VerticalAlignment="Center" Grid.Column="2">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="Tapped">
+                        <core:InvokeCommandAction Command="{Binding TwitterCommand}"/>
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+            </FontIcon>
 
             <TextBlock FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="21.333" FontWeight="Bold"
                        Text="Other" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2"/>

@@ -72,7 +72,7 @@ namespace Friend_s.Views
 
             if (!ThemeToggleSwitch.IsOn)
             {
-                if (!localData.Values.ContainsKey("ThemeColor"))
+                if (!localData.Values.ContainsKey("ThemeColor")||!roamData.Values.ContainsKey("ThemeColor"))
                 {
                     localData.Values.Add("ThemeColor", "#22A7F0");
                     roamData.Values.Add("ThemeColor", "#22A7F0");
@@ -87,7 +87,7 @@ namespace Friend_s.Views
             }
             else
             {
-                if (!localData.Values.ContainsKey("ThemeColor"))
+                if (!localData.Values.ContainsKey("ThemeColor")|| !roamData.Values.ContainsKey("ThemeColor"))
                 {
                     localData.Values.Add("ThemeColor", "#E01931");
                     roamData.Values.Add("ThemeColor", "#E01931");

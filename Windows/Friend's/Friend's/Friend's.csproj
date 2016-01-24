@@ -8,7 +8,7 @@
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Friend_s</RootNamespace>
-    <AssemblyName>Friend's</AssemblyName>
+    <AssemblyName>Friend</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
@@ -17,7 +17,11 @@
     <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <PackageCertificateKeyFile>Friend's_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateKeyFile>Friend%27s_StoreKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateThumbprint>CBF743B457E8B116E3CDC6B5781503487DC7A153</PackageCertificateThumbprint>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <DebugSymbols>true</DebugSymbols>
@@ -104,6 +108,7 @@
     <Content Include="Fonts\fontawesome-webfont.ttf" />
     <Content Include="Fonts\HirukoStencil.otf" />
     <Content Include="Fonts\TT1255M_.TTF" />
+    <None Include="Friend%27s_StoreKey.pfx" />
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
@@ -143,6 +148,7 @@
   <ItemGroup>
     <Content Include="Assets\Elegant_Background-16.jpg" />
     <Content Include="Assets\Generic-Profile-Image.jpg" />
+    <None Include="Package.StoreAssociation.xml" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

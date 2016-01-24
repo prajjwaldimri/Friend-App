@@ -10,7 +10,7 @@
     DataContext="{Binding Path=TimerPage,Source={StaticResource ViewModelLocator}}"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="DeepSkyBlue">
 
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -25,15 +25,50 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        
-        
 
-        <Ellipse Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Stroke="Gray" StrokeThickness="5" 
-                 Fill="#FF0E0B0B">
+
+        <Grid Grid.Row="0" Grid.ColumnSpan="4">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+
+            <TextBlock x:Name="MinuteText" Grid.Row="0" Grid.Column="1" Text="00" FontSize="30"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="0" Grid.Column="2" Text=":" FontSize="30"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock x:Name="SecondText" Grid.Row="0" Grid.Column="3" Text="00" FontSize="30"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="0" Grid.Column="4" Text=":" FontSize="30"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock x:Name="MillisecondText" Grid.Row="0" Grid.Column="5" Text="00" FontSize="30"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+        
+        <Rectangle x:Name="HoldRectangle" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Fill="GhostWhite"
+                    Holding="HoldRectangle_OnHolding">
+            
+            
            
-        </Ellipse>
-        <FontIcon Glyph="&#xf25a;" FontSize="40" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"/>
-        <TextBlock Text="Hold" HorizontalAlignment="Center" VerticalAlignment="Center"
-                   Grid.Row="1" Margin="0,100,0,0" Grid.Column="1" Grid.ColumnSpan="2" />
+        </Rectangle>
+        <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+        <FontIcon Glyph="&#xf25a;" FontSize="80"  
+                  FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome" Foreground="Black"/>
+        <TextBlock Text="Hold" FontSize="30" HorizontalAlignment="Center"  Margin="0,20,0,0"
+                   Foreground="Black" FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontWeight="Bold" />
+        </StackPanel>
+
+
     </Grid>
 </UserControl>

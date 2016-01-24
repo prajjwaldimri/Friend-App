@@ -54,14 +54,14 @@ namespace Friend_s.ViewModel
         {
             var applicationData = Windows.Storage.ApplicationData.Current;
             var localsettings = applicationData.LocalSettings;
-            if (localsettings.Values == null) return;
+            var roamsettings = applicationData.RoamingSettings;
             if (localsettings.Values.ContainsKey("UserName"))
                 _userName = localsettings.Values["UserName"] as string;
             if (localsettings.Values.ContainsKey("ThemeColor"))
                 _themeColor = localsettings.Values["ThemeColor"] as string;
             else
             {
-                localsettings.Values.Add("ThemeColor","#22A7F0");
+                localsettings.Values.Add("ThemeColor", "#22A7F0");
                 _themeColor = localsettings.Values["ThemeColor"] as string;
             }
             RaisePropertyChanged(()=>UserName);

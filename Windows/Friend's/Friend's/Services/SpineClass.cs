@@ -11,6 +11,7 @@ using Windows.Devices.Sms;
 using Windows.Graphics.Imaging;
 using Windows.Storage;
 using Windows.Storage.Streams;
+using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
 
 namespace Friend_s.Services
@@ -166,6 +167,12 @@ namespace Friend_s.Services
             {
                 Debug.Write(e);
             }
+        }
+
+        public static void TwitterAuthenticator()
+        {
+            
+            WebView webView = new WebView();
         }
 
         

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using Windows.ApplicationModel.Contacts;
+using Friend_s.Services;
 using GalaSoft.MvvmLight.Command;
 
 namespace Friend_s.ViewModel
@@ -9,11 +10,13 @@ namespace Friend_s.ViewModel
     {
         public RelayCommand LocalStorageSettingsRetrieverCommand { get; private set; }
         public RelayCommand<object> EditContactButtonHandlerCommand { get; private set; }
+        public RelayCommand TwitterCommand { get; private set; }
 
         public CallandSettingsPageViewModel()
         {
             LocalStorageSettingsRetrieverCommand = new RelayCommand(LocalStorageSettingsRetriever);
             EditContactButtonHandlerCommand = new RelayCommand<object>(EditContactButtonHandler);
+            TwitterCommand = new RelayCommand(TwitterConnector);
         }
 
         private string _facebookConnected;
@@ -145,6 +148,11 @@ namespace Friend_s.ViewModel
                     Debug.WriteLine("Default Case Hit!");
                     break;
             }
+        }
+
+        private void TwitterConnector()
+        {
+            SpineClass.TwitterAuthenticator();
         }
     }
 }

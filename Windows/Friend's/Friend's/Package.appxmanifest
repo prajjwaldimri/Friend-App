@@ -1,39 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:r="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" IgnorableNamespaces="uap r mp">
-	<Identity Name="36411e27-597b-436e-a0bc-7205d8d5afe2" Publisher="CN=prajj" Version="1.0.0.0" />
-	<mp:PhoneIdentity PhoneProductId="36411e27-597b-436e-a0bc-7205d8d5afe2" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
-	<Properties>
-	<DisplayName>Friend</DisplayName>
-	<PublisherDisplayName>Prajjwal</PublisherDisplayName>
-	<Logo>Assets\StoreLogo.png</Logo>
-	</Properties>
-	<Dependencies>
-	<TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
-	</Dependencies>
-	<Resources>
-	<Resource Language="x-generate" />
-	</Resources>
-	<Applications>
-	<Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Friend_s.App">
-		<uap:VisualElements DisplayName="Friend's" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="Friend's" BackgroundColor="transparent">
-		<uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png">
-		</uap:DefaultTile>
-		<uap:SplashScreen Image="Assets\SplashScreen.png" />
-		</uap:VisualElements>
-	</Application>
-	</Applications>
-	
-	<Capabilities>
-	
-	<Capability Name="internetClient"/>
-	<uap:Capability Name="phoneCall"/>
-	<uap:Capability Name="chat"/>
-	<uap:Capability Name="picturesLibrary"/>
-	<uap:Capability Name="removableStorage"/>
-	<uap:Capability Name="userAccountInformation"/>
-	<uap:Capability Name="contacts"/>
-	<r:Capability Name="cellularMessaging" /> 
-	<DeviceCapability Name="location"/>
-	
-	</Capabilities>
+  <Identity Name="34691PrajjwalDimri.Friends" Publisher="CN=883EF119-9F3F-4348-A873-0DBB7FD085E0" Version="1.1.0.0" />
+  <mp:PhoneIdentity PhoneProductId="36411e27-597b-436e-a0bc-7205d8d5afe2" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Properties>
+    <DisplayName>Friend's</DisplayName>
+    <PublisherDisplayName>Prajjwal</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Friend_s.App">
+      <uap:VisualElements DisplayName="Friend's" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="Friend's" BackgroundColor="transparent">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png">
+        </uap:DefaultTile>
+        <uap:SplashScreen Image="Assets\SplashScreen.png" />
+        <uap:InitialRotationPreference>
+          <uap:Rotation Preference="portrait" />
+        </uap:InitialRotationPreference>
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <uap:Capability Name="phoneCall" />
+    <uap:Capability Name="chat" />
+    <uap:Capability Name="picturesLibrary" />
+    <uap:Capability Name="removableStorage" />
+    <uap:Capability Name="userAccountInformation" />
+    <uap:Capability Name="contacts" />
+    <r:Capability Name="cellularMessaging" />
+    <DeviceCapability Name="location" />
+  </Capabilities>
 </Package>
