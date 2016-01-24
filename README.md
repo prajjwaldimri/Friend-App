@@ -2,6 +2,7 @@ Friend's
 =========
 [![License APACHE](https://img.shields.io/badge/license-APACHE-642C90.svg?style=flat-square)](https://github.com/prajjwaldimri/Friend-App/blob/master/LICENSE)
 [![Contact](https://img.shields.io/badge/contact-@prajjwaldimri-642C90.svg?style=flat-square)](https://twitter.com/prajjwaldimri)
+[![GitHub commits](https://img.shields.io/github/commits-since/SubtitleEdit/subtitleedit/3.4.7.svg?style=flat-square)](https://github.com/prajjwaldimri/Friend-App/commits/master)
 
 
 The app that protects you physically!
