@@ -5,7 +5,8 @@
     "Microsoft.ApplicationInsights.WindowsApps": "1.1.1",
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0",
     "MvvmLightLibs": "5.2.0",
-    "Newtonsoft.Json": "8.0.2"
+    "Newtonsoft.Json": "8.0.2",
+    "TweetinviAPI": "0.9.10.2"
   },
   "frameworks": {
     "uap10.0": {}

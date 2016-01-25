@@ -12,14 +12,11 @@
   See http://www.galasoft.ch/mvvm
 */
 
-using Friend_s.Portable.Design;
-using Friend_s.Portable.Model;
-using Friend_s.Portable.ViewModel;
-using GalaSoft.MvvmLight;
+using Friend_s.ViewModel;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
 
-namespace Friend_s.Portable.Services
+namespace Friend_s.Services
 {
     /// <summary>
     /// This class contains static references to all the view models in the
@@ -34,19 +31,10 @@ namespace Friend_s.Portable.Services
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
-            if (ViewModelBase.IsInDesignModeStatic)
-            {
-                // Create design time view services and models
-                SimpleIoc.Default.Register<IDatabaseService,DesignDatabaseService>();
-               
-            }
-            else
-            {
-                SimpleIoc.Default.Register<IDatabaseService, DatabaseService>();
-            }
-
             SimpleIoc.Default.Register<HomePageViewModel>();
             SimpleIoc.Default.Register<CallandSettingsPageViewModel>();
+            SimpleIoc.Default.Register<TimerPageViewModel>();
+
         }
 
         public HomePageViewModel HomePage
@@ -57,6 +45,11 @@ namespace Friend_s.Portable.Services
         public CallandSettingsPageViewModel CallandSettingsPage
         {
             get { return ServiceLocator.Current.GetInstance<CallandSettingsPageViewModel>(); }
+        }
+
+        public TimerPageViewModel TimerPage
+        {
+            get { return ServiceLocator.Current.GetInstance<TimerPageViewModel>(); }
         }
         
     }
