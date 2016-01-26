@@ -1,11 +1,6 @@
 language: android
 android:
-
-before_install:
-    - cd Android
-    - cd Friend1
-    
-  components:
+components:
     # The BuildTools version used by project
     - build-tools-23.0.1
 
@@ -18,6 +13,11 @@ before_install:
     #- extra-android-m2repository
     #- addon-google_apis-google-19
     - sys-img-armeabi-v7a-android-16
+
+before_install:
+    - cd Android
+    - cd Friend1
+    
     
     
     
