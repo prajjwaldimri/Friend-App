@@ -1,0 +1,15 @@
+language: android
+android:
+components:
+    - build-tools-23.0.1
+    - android-23
+    - sys-img-armeabi-v7a-android-16
+
+before_install:
+    - cd Android
+    - cd Friend1
+    
+    
+    
+    
+    
