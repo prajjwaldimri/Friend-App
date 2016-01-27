@@ -177,13 +177,19 @@ namespace Friend_s.Services
 
         public static void TwitterAuthenticator()
         {
-            
-            var appCredentials = new TwitterCredentials("CONSUMER_KEY", "CONSUMER_SECRET");
+            try
+            {
+                var appCredentials = new TwitterCredentials("CONSUMER_KEY", "CONSUMER_SECRET");
 
-            var url = CredentialsCreator.GetAuthorizationURL(appCredentials);
+                var url = CredentialsCreator.GetAuthorizationURL(appCredentials);
 
-            WebView webView = new WebView();
-            webView.Navigate(new Uri(url));
+                WebView webView = new WebView();
+                webView.Navigate(new Uri(url));
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+            }
         }
 
         public static async void FacebookPoster()

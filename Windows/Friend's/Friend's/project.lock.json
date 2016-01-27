@@ -310,6 +310,22 @@
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
         }
       },
+      "NotificationsExtensions.Win10/10586.0.0": {
+        "compile": {
+          "lib/uap10.0/NotificationsExtensions.winmd": {}
+        },
+        "runtime": {
+          "lib/uap10.0/NotificationsExtensions.winmd": {}
+        }
+      },
+      "QueryString.NET/1.0.0": {
+        "compile": {
+          "lib/dotnet/QueryString.NETCore.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/QueryString.NETCore.dll": {}
+        }
+      },
       "System.AppContext/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.0, )",
@@ -1645,7 +1661,7 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "TweetinviAPI/0.9.10.2": {
+      "tweetinviapi/0.9.10.2-w10-uap": {
         "dependencies": {
           "Autofac": "[3.5.2, )",
           "Microsoft.Bcl.Async": "[1.0.168, )",
@@ -1654,10 +1670,26 @@
           "Newtonsoft.Json": "[7.0.1, )"
         },
         "compile": {
-          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {}
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Controllers.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Core.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Credentials.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Factories.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Logic.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Security.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Streams.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.WebLogic.dll": {}
         },
         "runtime": {
-          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {}
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Controllers.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Core.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Credentials.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Factories.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Logic.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Security.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Streams.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.WebLogic.dll": {}
         }
       }
     },
@@ -2010,6 +2042,22 @@
         },
         "runtime": {
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
+        }
+      },
+      "NotificationsExtensions.Win10/10586.0.0": {
+        "compile": {
+          "lib/uap10.0/NotificationsExtensions.winmd": {}
+        },
+        "runtime": {
+          "lib/uap10.0/NotificationsExtensions.winmd": {}
+        }
+      },
+      "QueryString.NET/1.0.0": {
+        "compile": {
+          "lib/dotnet/QueryString.NETCore.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/QueryString.NETCore.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -3394,7 +3442,7 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "TweetinviAPI/0.9.10.2": {
+      "tweetinviapi/0.9.10.2-w10-uap": {
         "dependencies": {
           "Autofac": "[3.5.2, )",
           "Microsoft.Bcl.Async": "[1.0.168, )",
@@ -3403,10 +3451,26 @@
           "Newtonsoft.Json": "[7.0.1, )"
         },
         "compile": {
-          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {}
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Controllers.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Core.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Credentials.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Factories.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Logic.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Security.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Streams.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.WebLogic.dll": {}
         },
         "runtime": {
-          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {}
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Controllers.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Core.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Credentials.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Factories.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Logic.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Security.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Streams.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.WebLogic.dll": {}
         }
       }
     },
@@ -3745,6 +3809,22 @@
         },
         "runtime": {
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
+        }
+      },
+      "NotificationsExtensions.Win10/10586.0.0": {
+        "compile": {
+          "lib/uap10.0/NotificationsExtensions.winmd": {}
+        },
+        "runtime": {
+          "lib/uap10.0/NotificationsExtensions.winmd": {}
+        }
+      },
+      "QueryString.NET/1.0.0": {
+        "compile": {
+          "lib/dotnet/QueryString.NETCore.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/QueryString.NETCore.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -5115,7 +5195,7 @@
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "TweetinviAPI/0.9.10.2": {
+      "tweetinviapi/0.9.10.2-w10-uap": {
         "dependencies": {
           "Autofac": "[3.5.2, )",
           "Microsoft.Bcl.Async": "[1.0.168, )",
@@ -5124,10 +5204,26 @@
           "Newtonsoft.Json": "[7.0.1, )"
         },
         "compile": {
-          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {}
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Controllers.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Core.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Credentials.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Factories.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Logic.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Security.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Streams.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.WebLogic.dll": {}
         },
         "runtime": {
-          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {}
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Controllers.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Core.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Credentials.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Factories.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Logic.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Security.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Streams.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.WebLogic.dll": {}
         }
       }
     },
@@ -5487,6 +5583,22 @@
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
         }
       },
+      "NotificationsExtensions.Win10/10586.0.0": {
+        "compile": {
+          "lib/uap10.0/NotificationsExtensions.winmd": {}
+        },
+        "runtime": {
+          "lib/uap10.0/NotificationsExtensions.winmd": {}
+        }
+      },
+      "QueryString.NET/1.0.0": {
+        "compile": {
+          "lib/dotnet/QueryString.NETCore.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/QueryString.NETCore.dll": {}
+        }
+      },
       "System.AppContext/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.0, )",
@@ -6869,7 +6981,7 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "TweetinviAPI/0.9.10.2": {
+      "tweetinviapi/0.9.10.2-w10-uap": {
         "dependencies": {
           "Autofac": "[3.5.2, )",
           "Microsoft.Bcl.Async": "[1.0.168, )",
@@ -6878,10 +6990,26 @@
           "Newtonsoft.Json": "[7.0.1, )"
         },
         "compile": {
-          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {}
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Controllers.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Core.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Credentials.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Factories.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Logic.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Security.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Streams.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.WebLogic.dll": {}
         },
         "runtime": {
-          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {}
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Controllers.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Core.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Credentials.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Factories.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Logic.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Security.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Streams.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.WebLogic.dll": {}
         }
       }
     },
@@ -7220,6 +7348,22 @@
         },
         "runtime": {
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
+        }
+      },
+      "NotificationsExtensions.Win10/10586.0.0": {
+        "compile": {
+          "lib/uap10.0/NotificationsExtensions.winmd": {}
+        },
+        "runtime": {
+          "lib/uap10.0/NotificationsExtensions.winmd": {}
+        }
+      },
+      "QueryString.NET/1.0.0": {
+        "compile": {
+          "lib/dotnet/QueryString.NETCore.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/QueryString.NETCore.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -8590,7 +8734,7 @@
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "TweetinviAPI/0.9.10.2": {
+      "tweetinviapi/0.9.10.2-w10-uap": {
         "dependencies": {
           "Autofac": "[3.5.2, )",
           "Microsoft.Bcl.Async": "[1.0.168, )",
@@ -8599,10 +8743,26 @@
           "Newtonsoft.Json": "[7.0.1, )"
         },
         "compile": {
-          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {}
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Controllers.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Core.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Credentials.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Factories.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Logic.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Security.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Streams.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.WebLogic.dll": {}
         },
         "runtime": {
-          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {}
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Controllers.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Core.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Credentials.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Factories.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Logic.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Security.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Streams.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.WebLogic.dll": {}
         }
       }
     },
@@ -8962,6 +9122,22 @@
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
         }
       },
+      "NotificationsExtensions.Win10/10586.0.0": {
+        "compile": {
+          "lib/uap10.0/NotificationsExtensions.winmd": {}
+        },
+        "runtime": {
+          "lib/uap10.0/NotificationsExtensions.winmd": {}
+        }
+      },
+      "QueryString.NET/1.0.0": {
+        "compile": {
+          "lib/dotnet/QueryString.NETCore.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/QueryString.NETCore.dll": {}
+        }
+      },
       "System.AppContext/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.0, )",
@@ -10344,7 +10520,7 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "TweetinviAPI/0.9.10.2": {
+      "tweetinviapi/0.9.10.2-w10-uap": {
         "dependencies": {
           "Autofac": "[3.5.2, )",
           "Microsoft.Bcl.Async": "[1.0.168, )",
@@ -10353,10 +10529,26 @@
           "Newtonsoft.Json": "[7.0.1, )"
         },
         "compile": {
-          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {}
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Controllers.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Core.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Credentials.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Factories.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Logic.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Security.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Streams.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.WebLogic.dll": {}
         },
         "runtime": {
-          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {}
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Controllers.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Core.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Credentials.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Factories.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Logic.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Security.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Streams.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.WebLogic.dll": {}
         }
       }
     },
@@ -10695,6 +10887,22 @@
         },
         "runtime": {
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
+        }
+      },
+      "NotificationsExtensions.Win10/10586.0.0": {
+        "compile": {
+          "lib/uap10.0/NotificationsExtensions.winmd": {}
+        },
+        "runtime": {
+          "lib/uap10.0/NotificationsExtensions.winmd": {}
+        }
+      },
+      "QueryString.NET/1.0.0": {
+        "compile": {
+          "lib/dotnet/QueryString.NETCore.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/QueryString.NETCore.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -12065,7 +12273,7 @@
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "TweetinviAPI/0.9.10.2": {
+      "tweetinviapi/0.9.10.2-w10-uap": {
         "dependencies": {
           "Autofac": "[3.5.2, )",
           "Microsoft.Bcl.Async": "[1.0.168, )",
@@ -12074,10 +12282,26 @@
           "Newtonsoft.Json": "[7.0.1, )"
         },
         "compile": {
-          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {}
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Controllers.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Core.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Credentials.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Factories.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Logic.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Security.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Streams.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.WebLogic.dll": {}
         },
         "runtime": {
-          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {}
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Controllers.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Core.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Credentials.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Factories.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Logic.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Security.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Streams.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.WebLogic.dll": {}
         }
       }
     }
@@ -13199,6 +13423,43 @@
         "Newtonsoft.Json.nuspec",
         "package/services/metadata/core-properties/cc8c591d554640789c6a6ef6456f7772.psmdcp",
         "tools/install.ps1"
+      ]
+    },
+    "NotificationsExtensions.Win10/10586.0.0": {
+      "sha512": "MISR3bytM8ZHZtaJbWUU4GxHbnQKqUfjohg5uSAflFUqztKbvhDmKN1fTJYs/oYovhBFrU4P3CoiWfRnT7FTWw==",
+      "type": "Package",
+      "files": [
+        "[Content_Types].xml",
+        "_rels/.rels",
+        "lib/dotnet/NotificationsExtensions.Win10.NETCore.dll",
+        "lib/dotnet/NotificationsExtensions.Win10.NETCore.pdb",
+        "lib/dotnet/NotificationsExtensions.Win10.NETCore.XML",
+        "lib/portable-net45+sl50+win+wpa81+wp80/NotificationsExtensions.Win10.Portable.dll",
+        "lib/portable-net45+sl50+win+wpa81+wp80/NotificationsExtensions.Win10.Portable.pdb",
+        "lib/portable-net45+sl50+win+wpa81+wp80/NotificationsExtensions.Win10.Portable.XML",
+        "lib/uap10.0/NotificationsExtensions.pdb",
+        "lib/uap10.0/NotificationsExtensions.pri",
+        "lib/uap10.0/NotificationsExtensions.winmd",
+        "lib/uap10.0/NotificationsExtensions.winmd.xml",
+        "lib/uap10.0/NotificationsExtensions.xml",
+        "NotificationsExtensions.Win10.nuspec",
+        "package/services/metadata/core-properties/5d5cbb4e5ec6464fa0b3cee3b82d40de.psmdcp"
+      ]
+    },
+    "QueryString.NET/1.0.0": {
+      "sha512": "wmOG5qPFYH7jKp3fMXQ2VeMXTgcyoI4hwPF8AxFAyrT/uVBDe0ISzyh/iFEnwmFBUm19UgbDoFRU3o47a1/vUw==",
+      "type": "Package",
+      "files": [
+        "[Content_Types].xml",
+        "_rels/.rels",
+        "lib/dotnet/QueryString.NETCore.dll",
+        "lib/dotnet/QueryString.NETCore.pdb",
+        "lib/dotnet/QueryString.NETCore.XML",
+        "lib/portable-net4+sl50+win+wpa81+wp80/QueryString.Portable.dll",
+        "lib/portable-net4+sl50+win+wpa81+wp80/QueryString.Portable.pdb",
+        "lib/portable-net4+sl50+win+wpa81+wp80/QueryString.Portable.xml",
+        "package/services/metadata/core-properties/643187e148944d5892c2282c5396136a.psmdcp",
+        "QueryString.NET.nuspec"
       ]
     },
     "System.AppContext/4.0.0": {
@@ -15896,17 +16157,49 @@
         "System.Xml.XmlSerializer.nuspec"
       ]
     },
-    "TweetinviAPI/0.9.10.2": {
-      "sha512": "42wrJFwRTprsvax6ccrfCs7F7g5aBX4VXvCBYD/09ADQT7Ip6P3nd8xA8TJyZisgxCUNv5l8FusTgIODa//oJQ==",
+    "tweetinviapi/0.9.10.2-w10-uap": {
+      "sha512": "KZS++nlhhU9Pm1rh8I7eAfs3JMqBzL73jfOeyl3VbZhsBxSkZ+EO68pZ1fnKtkEfSKydG3Nq35oeAoJoHL5T6Q==",
       "type": "Package",
       "files": [
         "[Content_Types].xml",
         "_rels/.rels",
+        "lib/net40/Tweetinvi.Controllers.dll",
+        "lib/net40/Tweetinvi.Core.dll",
+        "lib/net40/Tweetinvi.Credentials.dll",
         "lib/net40/Tweetinvi.dll",
+        "lib/net40/Tweetinvi.Factories.dll",
+        "lib/net40/Tweetinvi.Logic.dll",
+        "lib/net40/Tweetinvi.Security.dll",
+        "lib/net40/Tweetinvi.Streams.dll",
+        "lib/net40/Tweetinvi.WebLogic.dll",
+        "lib/net45/Tweetinvi.Controllers.dll",
+        "lib/net45/Tweetinvi.Core.dll",
+        "lib/net45/Tweetinvi.Credentials.dll",
         "lib/net45/Tweetinvi.dll",
+        "lib/net45/Tweetinvi.Factories.dll",
+        "lib/net45/Tweetinvi.Logic.dll",
+        "lib/net45/Tweetinvi.Security.dll",
+        "lib/net45/Tweetinvi.Streams.dll",
+        "lib/net45/Tweetinvi.WebLogic.dll",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Tweetinvi.Controllers.dll",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Tweetinvi.Core.dll",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Tweetinvi.Credentials.dll",
         "lib/portable-net40+sl5+wp80+win8+wpa81/Tweetinvi.dll",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Tweetinvi.Factories.dll",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Tweetinvi.Logic.dll",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Tweetinvi.Security.dll",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Tweetinvi.Streams.dll",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Tweetinvi.WebLogic.dll",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Controllers.dll",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Core.dll",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Credentials.dll",
         "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll",
-        "package/services/metadata/core-properties/bd1cc76ab40c48bebbdbd2fdb40d90d6.psmdcp",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Factories.dll",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Logic.dll",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Security.dll",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Streams.dll",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.WebLogic.dll",
+        "package/services/metadata/core-properties/e012c83ebe74476c94987c69d3ccade1.psmdcp",
         "tools/install.ps1",
         "TweetinviAPI.nuspec"
       ]
@@ -15920,7 +16213,9 @@
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.0.0",
       "MvvmLightLibs >= 5.2.0",
       "Newtonsoft.Json >= 8.0.2",
-      "TweetinviAPI >= 0.9.10.2"
+      "NotificationsExtensions.Win10 >= 10586.0.0",
+      "QueryString.NET >= 1.0.0",
+      "tweetinviapi >= 0.9.10.2-w10-uap"
     ],
     "UAP,Version=v10.0": []
   }

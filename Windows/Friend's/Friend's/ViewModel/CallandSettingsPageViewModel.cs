@@ -1,8 +1,13 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Xml;
 using Windows.ApplicationModel.Contacts;
+using Windows.Data.Xml.Dom;
+using Windows.UI.Notifications;
 using Friend_s.Services;
 using GalaSoft.MvvmLight.Command;
+using Microsoft.QueryStringDotNET;
+using NotificationsExtensions.Toasts;
 
 namespace Friend_s.ViewModel
 {
@@ -11,12 +16,14 @@ namespace Friend_s.ViewModel
         public RelayCommand LocalStorageSettingsRetrieverCommand { get; private set; }
         public RelayCommand<object> EditContactButtonHandlerCommand { get; private set; }
         public RelayCommand TwitterCommand { get; private set; }
+        public RelayCommand ToastMakerCommand { get; private set; }
 
         public CallandSettingsPageViewModel()
         {
             LocalStorageSettingsRetrieverCommand = new RelayCommand(LocalStorageSettingsRetriever);
             EditContactButtonHandlerCommand = new RelayCommand<object>(EditContactButtonHandler);
             TwitterCommand = new RelayCommand(TwitterConnector);
+            ToastMakerCommand = new RelayCommand(ToastGenerator);
         }
 
         private string _facebookConnected;
@@ -153,6 +160,36 @@ namespace Friend_s.ViewModel
         private void TwitterConnector()
         {
             SpineClass.TwitterAuthenticator();
+        }
+
+        private async void ToastGenerator()
+        {
+            const string title = "Click on time of Emergency!";
+
+            var visual = new ToastVisual()
+            {
+                TitleText = new ToastText()
+                {
+                    Text = title
+                }
+
+            };
+
+            const int conversationId = 177777;
+
+            var toastContent = new ToastContent()
+            {
+                Visual = visual,
+                Launch = new QueryString()
+                {
+                    {"conversationId", conversationId.ToString()}
+                }.ToString()
+            };
+
+            var toast = new ToastNotification(toastContent.GetXml());
+            toast.ExpirationTime = DateTime.Now.AddDays(2);
+            toast.SuppressPopup = true;
+            ToastNotificationManager.CreateToastNotifier().Show(toast);
         }
     }
 }

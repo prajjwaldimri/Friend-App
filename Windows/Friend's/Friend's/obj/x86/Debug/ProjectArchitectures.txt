@@ -1,1 +1,2 @@
-C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\Friend's.csproj;x86
+C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\FBWinSDK\FBSDK-UWP\FBSDK-UWP\FBSDK-UWP.vcxproj;x86
+C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\Friend's\Friend's.csproj;x86

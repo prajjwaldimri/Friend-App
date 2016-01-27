@@ -27,28 +27,32 @@
                 </DataTemplate>
             </Pivot.HeaderTemplate>
                 
-                
-                
-                <PivotItem Margin="0,0,0,0" Header="HOME">
+                <PivotItem Margin="0,0,0,49" Header="HOME">
                     <views:HomePage/>
                 </PivotItem>
 
-            <PivotItem Margin="0,0,0,0" Header="TIMER">
+            <PivotItem Margin="0,0,0,49" Header="TIMER">
                 
                 <views:TimerPage/>
                     
                 </PivotItem>
                 
-                <PivotItem Margin="0,0,0,0" Header="SETTINGS">
+                <PivotItem Margin="0,0,0,49" Header="SETTINGS">
+                    <ScrollViewer VerticalScrollMode="Enabled">
                     <views:CallandSmsSettings/>
-                </PivotItem>
+                </ScrollViewer>
+            </PivotItem>
 
             <PivotItem Margin="0,0,0,0" Header="ABOUT">
                     <TextBlock/>
                 </PivotItem>
             </Pivot>
         
-        
+        <CommandBar Background="WhiteSmoke" VerticalAlignment="Bottom" Foreground="Black">
+            <AppBarButton Icon="Like" Foreground="Black"/>
+            <AppBarButton Icon="Dislike" Foreground="Black"/>
+            <AppBarButton Icon="Favorite" Foreground="Black"/>
+        </CommandBar>
     </Grid>
 
 </Page>

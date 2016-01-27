@@ -40,7 +40,7 @@ namespace Friend_s.Views
             var spineClass = new SpineClass();
             spineClass.InitializeCallingInfoAsync();
             //DatabaseConnector();
-            Caller();
+            //Caller();
         }
 
         private void timer_Tick(object sender, object e)

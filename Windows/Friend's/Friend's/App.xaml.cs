@@ -2,10 +2,13 @@
 using System.Diagnostics;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.Security.EnterpriseData;
 using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
+using Friend_s.Views;
+using Microsoft.QueryStringDotNET;
 
 namespace Friend_s
 {
@@ -66,7 +69,7 @@ namespace Friend_s
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigatio  n
                 // parameter
-                rootFrame.Navigate(typeof(Views.MainPage), e.Arguments);
+                rootFrame.Navigate(typeof(MainPage), e.Arguments);
             }
             // Ensure the current window is active
             Window.Current.Activate();
@@ -79,11 +82,58 @@ namespace Friend_s
             }
         }
 
-        /// <summary>
-        /// Invoked when Navigation to a certain page fails
-        /// </summary>
-        /// <param name="sender">The Frame which failed navigation</param>
-        /// <param name="e">Details about the navigation failure</param>
+        protected override void OnActivated(IActivatedEventArgs e)
+        {
+            // Get the root frame
+            var rootFrame = Window.Current.Content as Frame;
+
+            // TODO: Initialize root frame just like in OnLaunched
+
+            // Handle toast activation
+            if (e is ToastNotificationActivatedEventArgs)
+            {
+                if (rootFrame == null)
+                {
+                    // Create a Frame to act as the navigation context and navigate to the first page
+                    rootFrame = new Frame();
+
+                    rootFrame.NavigationFailed += OnNavigationFailed;
+
+                    //await CopyDatabase();
+
+                    if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
+                    {
+                        //TODO: Load state from previously suspended application
+                    }
+
+                    // Place the frame in the current Window
+                    Window.Current.Content = rootFrame;
+                }
+
+
+
+                if (rootFrame.Content == null)
+                {
+                    // When the navigation stack isn't restored navigate to the first page,
+                    // configuring the new page by passing required information as a navigatio  n
+                    // parameter
+                    rootFrame.Navigate(typeof (Sospage));
+                }
+                else
+                {
+                    rootFrame.Navigate(typeof (Sospage));
+                }
+
+                if (rootFrame.BackStack.Count == 0)
+                    rootFrame.BackStack.Add(new PageStackEntry(typeof(HomePage), null, null));
+            }
+
+            // TODO: Handle other types of activation
+
+            // Ensure the current window is active
+            Window.Current.Activate();
+        }
+
         void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
         {
             Debug.WriteLine(e);

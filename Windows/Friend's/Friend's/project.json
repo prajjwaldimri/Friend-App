@@ -6,7 +6,9 @@
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0",
     "MvvmLightLibs": "5.2.0",
     "Newtonsoft.Json": "8.0.2",
-    "TweetinviAPI": "0.9.10.2"
+    "NotificationsExtensions.Win10": "10586.0.0",
+    "QueryString.NET": "1.0.0",
+    "tweetinviapi": "0.9.10.2-w10-uap"
   },
   "frameworks": {
     "uap10.0": {}

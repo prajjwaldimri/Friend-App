@@ -38,6 +38,7 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -51,7 +52,7 @@
         
         
 
-        <StackPanel BorderThickness="0,40,0,0" Grid.Row="0" Grid.RowSpan="4" Grid.Column="1"
+        <StackPanel BorderThickness="0,40,0,0" Grid.Row="0" Grid.RowSpan="5" Grid.Column="1"
                     Grid.ColumnSpan="2">
             
             <Ellipse Stroke="White" StrokeThickness="4"
@@ -80,7 +81,7 @@
             </StackPanel>
         </StackPanel>
 
-        <Button Grid.Row="4" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="2"
+        <Button Grid.Row="5" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="2"
                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                 Background="Cornsilk" Foreground="Black" 
                 FontFamily="Rondalo" FontSize="20" BorderBrush="White"
@@ -98,7 +99,7 @@
         </Button>
 
 
-        <Button Grid.Row="4" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="2"
+        <Button Grid.Row="5" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="2"
                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                 Background="Cornsilk" Foreground="Black" 
                 FontFamily="Rondalo" FontSize="20" BorderBrush="White" 
