@@ -14,11 +14,11 @@ using Windows.Storage;
 using Windows.Storage.Streams;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
+using Facebook;
+using Facebook.Graph;
 using Newtonsoft.Json;
 using Tweetinvi;
 using Tweetinvi.Core.Credentials;
-using Facebook;
-using Facebook.Graph;
 
 namespace Friend_s.Services
 {

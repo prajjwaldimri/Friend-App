@@ -46,10 +46,12 @@ namespace BackgroundProcesses
                 }.ToString()
             };
 
-            var toast = new ToastNotification(toastContent.GetXml());
-            toast.ExpirationTime = DateTime.Now.AddHours(10);
-            toast.SuppressPopup = true;
-            toast.Tag = "Friends";
+            var toast = new ToastNotification(toastContent.GetXml())
+            {
+                ExpirationTime = DateTime.Now.AddHours(10),
+                SuppressPopup = true,
+                Tag = "Friends"
+            };
             if (ToastNotificationManager.History != null) ToastNotificationManager.History.Remove("Friends");
             ToastNotificationManager.CreateToastNotifier().Show(toast);
         }
