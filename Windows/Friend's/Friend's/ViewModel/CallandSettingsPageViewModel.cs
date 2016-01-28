@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Xml;
+using Windows.ApplicationModel.Background;
 using Windows.ApplicationModel.Contacts;
 using Windows.Data.Xml.Dom;
+using Windows.Storage;
 using Windows.UI.Notifications;
 using Friend_s.Services;
 using GalaSoft.MvvmLight.Command;
@@ -16,14 +18,14 @@ namespace Friend_s.ViewModel
         public RelayCommand LocalStorageSettingsRetrieverCommand { get; private set; }
         public RelayCommand<object> EditContactButtonHandlerCommand { get; private set; }
         public RelayCommand TwitterCommand { get; private set; }
-        public RelayCommand ToastMakerCommand { get; private set; }
+        public RelayCommand ToastToggledCommand { get; private set; }
 
         public CallandSettingsPageViewModel()
         {
             LocalStorageSettingsRetrieverCommand = new RelayCommand(LocalStorageSettingsRetriever);
             EditContactButtonHandlerCommand = new RelayCommand<object>(EditContactButtonHandler);
             TwitterCommand = new RelayCommand(TwitterConnector);
-            ToastMakerCommand = new RelayCommand(ToastGenerator);
+            ToastToggledCommand = new RelayCommand(ToastMakerToggledButton);
         }
 
         private string _facebookConnected;
@@ -32,7 +34,9 @@ namespace Friend_s.ViewModel
         private string _secondContactName;
         private string _thirdContactName;
         private bool _toggleSwitchIsOn;
+        private bool _toastToggleSwitchIsOn;
         private string _themeColor;
+        private string _notificationStatus;
 
 
         public string FacebookConnected { get { return _facebookConnected; } }
@@ -41,6 +45,7 @@ namespace Friend_s.ViewModel
         public string SecondContactName { get { return _secondContactName; } }
         public string ThirdContactName { get { return _thirdContactName; } }
         public bool ToggleSwitchIsOn { get { return _toggleSwitchIsOn;} }
+        public bool ToastToggleSwitchIsOn { get { return _toastToggleSwitchIsOn; } }
 
 
         private void LocalStorageSettingsRetriever()
@@ -60,6 +65,8 @@ namespace Friend_s.ViewModel
                 _twitterConnected= localsettings.Values["TwitterConnect"] as string;
             if (localsettings.Values.ContainsKey("ThemeColor"))
                 _themeColor = localsettings.Values["ThemeColor"] as string;
+            if (localsettings.Values.ContainsKey("ToastNotification"))
+                _notificationStatus = localsettings.Values["ToastNotification"] as string;
 
             if (_themeColor == "#22A7F0")
             {
@@ -69,11 +76,20 @@ namespace Friend_s.ViewModel
             {
                 _toggleSwitchIsOn = true;
             }
+            if (_notificationStatus == "Off")
+            {
+                _toastToggleSwitchIsOn = false;
+            }
+            else if (_notificationStatus == "On")
+            {
+                _toastToggleSwitchIsOn = true;
+            }
 
             RaisePropertyChanged(() =>FirstContactName);
             RaisePropertyChanged(() => SecondContactName);
             RaisePropertyChanged(() => ThirdContactName);
             RaisePropertyChanged(()=>ToggleSwitchIsOn);
+            RaisePropertyChanged(()=>ToastToggleSwitchIsOn);
         }
 
         private async void EditContactButtonHandler(object parameter)
@@ -162,34 +178,103 @@ namespace Friend_s.ViewModel
             SpineClass.TwitterAuthenticator();
         }
 
-        private async void ToastGenerator()
+        private async void BackgroundProcessRegisterer()
         {
-            const string title = "Click on time of Emergency!";
+            var taskName = "ActionCenterToastMaker";
 
-            var visual = new ToastVisual()
+            var backgroundAccessStatus = await BackgroundExecutionManager.RequestAccessAsync();
+
+            if (backgroundAccessStatus == BackgroundAccessStatus.AllowedMayUseActiveRealTimeConnectivity ||
+                backgroundAccessStatus == BackgroundAccessStatus.AllowedWithAlwaysOnRealTimeConnectivity)
             {
-                TitleText = new ToastText()
+                foreach (var task in BackgroundTaskRegistration.AllTasks)
                 {
-                    Text = title
+                    if (task.Value.Name == taskName)
+                    {
+                        return;
+                    }
                 }
 
-            };
+                BackgroundTaskBuilder taskBuilder = new BackgroundTaskBuilder();
+                taskBuilder.Name = taskName;
+                taskBuilder.TaskEntryPoint = typeof(BackgroundProcesses.ActionCenterToastMaker).FullName;
+                taskBuilder.SetTrigger(new TimeTrigger(500, false));
 
-            const int conversationId = 177777;
+                var register = taskBuilder.Register();
+            }
+        }
 
-            var toastContent = new ToastContent()
+        private async void BackgroundProcessRemover()
+        {
+            var taskName = "ActionCenterToastMaker";
+
+            var backgroundAccessStatus = await BackgroundExecutionManager.RequestAccessAsync();
+
+            if (backgroundAccessStatus == BackgroundAccessStatus.AllowedMayUseActiveRealTimeConnectivity ||
+                backgroundAccessStatus == BackgroundAccessStatus.AllowedWithAlwaysOnRealTimeConnectivity)
             {
-                Visual = visual,
-                Launch = new QueryString()
+                foreach (var task in BackgroundTaskRegistration.AllTasks)
                 {
-                    {"conversationId", conversationId.ToString()}
-                }.ToString()
-            };
+                    if (task.Value.Name == taskName)
+                    {
+                        task.Value.Unregister(true);
+                    }
+                }
+            }
+        }
 
-            var toast = new ToastNotification(toastContent.GetXml());
-            toast.ExpirationTime = DateTime.Now.AddDays(2);
-            toast.SuppressPopup = true;
-            ToastNotificationManager.CreateToastNotifier().Show(toast);
+        private void ToastMakerToggledButton()
+        {
+            var localData = ApplicationData.Current.LocalSettings;
+            var roamData = ApplicationData.Current.RoamingSettings;
+
+            if (localData.Values.ContainsKey("ToastNotification"))
+                _notificationStatus = localData.Values["ToastNotification"] as string;
+
+            if (_notificationStatus == "Off")
+                _toastToggleSwitchIsOn = false;
+            
+            else if (_notificationStatus == "On")
+                _toastToggleSwitchIsOn = true;
+            
+
+
+            if (!_toastToggleSwitchIsOn)
+            {
+                if (!localData.Values.ContainsKey("ToastNotification") || !roamData.Values.ContainsKey("ToastNotification"))
+                {
+                    localData.Values.Add("ToastNotification", "On");
+                    roamData.Values.Add("ToastNotification", "On");
+                }
+                else
+                {
+                    localData.Values.Remove("ToastNotification");
+                    roamData.Values.Remove("ToastNotification");
+                    localData.Values.Add("ToastNotification", "On");
+                    roamData.Values.Add("ToastNotification", "On");
+                }
+                _toastToggleSwitchIsOn = true;
+                BackgroundProcessRegisterer();
+            }
+            else
+            {
+                if (!localData.Values.ContainsKey("ToastNotification") || !roamData.Values.ContainsKey("ToastNotification"))
+                {
+                    localData.Values.Add("ToastNotification", "Off");
+                    roamData.Values.Add("ToastNotification", "Off");
+                }
+                else
+                {
+                    localData.Values.Remove("ToastNotification");
+                    roamData.Values.Remove("ToastNotification");
+                    localData.Values.Add("ToastNotification", "Off");
+                    roamData.Values.Add("ToastNotification", "Off");
+                }
+                _toastToggleSwitchIsOn = false;
+                BackgroundProcessRemover();
+            }
+            
+            RaisePropertyChanged(()=>ToastToggleSwitchIsOn);
         }
     }
 }

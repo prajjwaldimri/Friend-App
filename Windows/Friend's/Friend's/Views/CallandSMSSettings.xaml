@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
-    mc:Ignorable="d"
+    mc:Ignorable="d" 
     DataContext="{Binding CallandSettingsPage, Source={StaticResource ViewModelLocator}}">
 
     <interactivity:Interaction.Behaviors>
@@ -178,12 +178,23 @@
             
             <TextBlock Text="Message" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" 
                        FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="21.333" FontWeight="Bold"/>
-            <SymbolIcon Grid.Column="2" Symbol="Edit"/>
+            <SymbolIcon Grid.Row="0" Grid.Column="2" Symbol="Edit"/>
             <TextBox Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" Background="AntiqueWhite" BorderBrush="White"/>
 
             <TextBlock Text="Notification Settings" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" 
                        FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="21.333" FontWeight="Bold"/>
-            <Button Command="{Binding ToastMakerCommand}" Content="Create a toast" Grid.Row="6" Grid.ColumnSpan="4"/>
+            
+                <TextBlock VerticalAlignment="Center" Text="Permanent Toast Notifications"
+                           Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
+            
+            <ToggleSwitch x:Name="ToastMakerToggle"
+                              Grid.Row="6" Grid.Column="2" IsOn="{Binding ToastToggleSwitchIsOn}">
+                    <interactivity:Interaction.Behaviors>
+                        <core:EventTriggerBehavior EventName="Toggled">
+                            <core:InvokeCommandAction Command="{Binding ToastToggledCommand}"/>
+                        </core:EventTriggerBehavior>
+                    </interactivity:Interaction.Behaviors>
+                </ToggleSwitch>
             </Grid>
     </Grid>
     </ScrollViewer>

@@ -105,5 +105,7 @@ namespace Friend_s.Views
             await msg.ShowAsync();
 
         }
+
+        
     }
 }

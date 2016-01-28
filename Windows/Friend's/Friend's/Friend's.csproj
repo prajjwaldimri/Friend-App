@@ -108,7 +108,6 @@
     <Content Include="Fonts\fontawesome-webfont.ttf" />
     <Content Include="Fonts\HirukoStencil.otf" />
     <Content Include="Fonts\TT1255M_.TTF" />
-    <None Include="Friend%27s_StoreKey.pfx" />
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
@@ -203,6 +202,10 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BackgroundProcesses\BackgroundProcesses.csproj">
+      <Project>{12b3fe7f-8200-4363-8130-7d3b42570fa7}</Project>
+      <Name>BackgroundProcesses</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FBWinSDK\FBSDK-UWP\FBSDK-UWP\FBSDK-UWP.vcxproj">
       <Project>{973a943b-ff77-4267-8f30-f5fe2b7f5583}</Project>
       <Name>Facebook</Name>

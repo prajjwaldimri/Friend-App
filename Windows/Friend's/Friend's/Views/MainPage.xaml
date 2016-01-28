@@ -11,6 +11,7 @@
 
     
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        
         <Pivot Background="#2C82C9" Title="Friend's">
 
            <Pivot.TitleTemplate>
@@ -49,9 +50,12 @@
             </Pivot>
         
         <CommandBar Background="WhiteSmoke" VerticalAlignment="Bottom" Foreground="Black">
+            
             <AppBarButton Icon="Like" Foreground="Black"/>
             <AppBarButton Icon="Dislike" Foreground="Black"/>
             <AppBarButton Icon="Favorite" Foreground="Black"/>
+            
+            
         </CommandBar>
     </Grid>
 
