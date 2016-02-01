@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Linq;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
-using Windows.Security.EnterpriseData;
+using Windows.ApplicationModel.Background;
 using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using Friend_s.Views;
-using Microsoft.QueryStringDotNET;
 
 namespace Friend_s
 {
@@ -35,9 +35,8 @@ namespace Friend_s
         /// will be used such as when the application is launched to open a specific file.
         /// </summary>
         /// <param name="e">Details about the launch request and process.</param>
-        protected override void OnLaunched(LaunchActivatedEventArgs e)
+        protected override async void OnLaunched(LaunchActivatedEventArgs e)
         {
-
             var rootFrame = Window.Current.Content as Frame;
 
             // Do not repeat app initialization when the Window already has content,
@@ -60,10 +59,19 @@ namespace Friend_s
 
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
+
+                //var status = await BackgroundExecutionManager.RequestAccessAsync();
+
+                //var builder = new BackgroundTaskBuilder()
+                //{
+                //    Name = "MyReminder",
+                //    TaskEntryPoint = "BackgroundProcesses.Reminder"
+                //};
+
+                //builder.SetTrigger(new ToastNotificationActionTrigger());
+
+                //var registration = builder.Register();
             }
-
-
-
             if (rootFrame.Content == null)
             {
                 // When the navigation stack isn't restored navigate to the first page,
@@ -73,6 +81,7 @@ namespace Friend_s
             }
             // Ensure the current window is active
             Window.Current.Activate();
+
             if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
             {
                 var statusBar = Windows.UI.ViewManagement.StatusBar.GetForCurrentView();
@@ -108,6 +117,7 @@ namespace Friend_s
 
                     // Place the frame in the current Window
                     Window.Current.Content = rootFrame;
+                    
                 }
 
 
@@ -155,6 +165,6 @@ namespace Friend_s
             Debug.WriteLine(e);
             deferral.Complete();
         }
-
+        
     }
 }

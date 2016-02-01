@@ -20,7 +20,7 @@
     </interactivity:Interaction.Behaviors>
 
     <ScrollViewer VerticalScrollMode="Enabled" VerticalScrollBarVisibility="Visible">
-    <Grid Background="DeepSkyBlue">
+    <Grid Background="{Binding ThemeColor}">
         <Grid.RowDefinitions>
             <RowDefinition Height="3*"/>
             <RowDefinition Height="1*"/>

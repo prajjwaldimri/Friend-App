@@ -10,7 +10,7 @@
     DataContext="{Binding Path=TimerPage,Source={StaticResource ViewModelLocator}}"
     mc:Ignorable="d">
 
-    <Grid Background="DeepSkyBlue">
+    <Grid Background="{Binding ThemeColor}">
 
         <Grid.RowDefinitions>
             <RowDefinition/>

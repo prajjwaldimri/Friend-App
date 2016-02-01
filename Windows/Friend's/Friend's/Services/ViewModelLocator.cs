@@ -34,6 +34,9 @@ namespace Friend_s.Services
             SimpleIoc.Default.Register<HomePageViewModel>();
             SimpleIoc.Default.Register<CallandSettingsPageViewModel>();
             SimpleIoc.Default.Register<TimerPageViewModel>();
+            SimpleIoc.Default.Register<ReminderPageViewModel>();
+            SimpleIoc.Default.Register<SosPageViewModel>();
+            SimpleIoc.Default.Register<BaseViewModel>();
 
         }
 
@@ -50,6 +53,21 @@ namespace Friend_s.Services
         public TimerPageViewModel TimerPage
         {
             get { return ServiceLocator.Current.GetInstance<TimerPageViewModel>(); }
+        }
+
+        public ReminderPageViewModel ReminderPage
+        {
+            get { return ServiceLocator.Current.GetInstance<ReminderPageViewModel>(); }
+        }
+
+        public SosPageViewModel SosPage
+        {
+            get { return ServiceLocator.Current.GetInstance<SosPageViewModel>(); }
+        }
+
+        public BaseViewModel BaseView
+        {
+            get { return ServiceLocator.Current.GetInstance<BaseViewModel>(); }
         }
         
     }

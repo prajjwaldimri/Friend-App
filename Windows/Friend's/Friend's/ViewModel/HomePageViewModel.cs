@@ -23,10 +23,6 @@ namespace Friend_s.ViewModel
         }
         //Variables
 
-        private string _gpsLocationPoint;
-        private string _gpsLocation;
-        private BitmapImage _profileBitmapImage;
-        
         //Commands and Services Declaration
 
 
@@ -36,18 +32,16 @@ namespace Friend_s.ViewModel
         public RelayCommand SpineInitializerCommand { get; private set; }
         public RelayCommand ThemeRetrieverCommand { get; private set; }
 
-        public BitmapImage ProfileImageSource => _profileBitmapImage;
-
-
+        public BitmapImage ProfileImageSource { get; private set; }
 
 
         //String Values
 
-        private string GpsLocationPoint => _gpsLocationPoint;
+        private string GpsLocationPoint { get; set; }
 
-        public string GpsLocation => _gpsLocation;
+        public string GpsLocation { get; private set; }
 
-        
+
         //Methods
 
         private async void LocationAccesser()
@@ -65,7 +59,7 @@ namespace Friend_s.ViewModel
                         geolocator.DesiredAccuracy = PositionAccuracy.High;
                         // Carry out the operation
                         var pos = await geolocator.GetGeopositionAsync();
-                        _gpsLocationPoint = (pos.Coordinate.Point.Position.Latitude) + "\n" +
+                        GpsLocationPoint = (pos.Coordinate.Point.Position.Latitude) + "\n" +
                                             (pos.Coordinate.Point.Position.Longitude);
                         var location = new BasicGeoposition();
 
@@ -79,18 +73,18 @@ namespace Friend_s.ViewModel
 
                         if (result.Status == MapLocationFinderStatus.Success)
                         {
-                            _gpsLocation =
+                            GpsLocation =
                                   result.Locations[0].Address.Town;
                         }
 
 
                         break;
                     case GeolocationAccessStatus.Denied:
-                        _gpsLocation = "Access Denied!";
+                        GpsLocation = "Access Denied!";
                         break;
 
                     case GeolocationAccessStatus.Unspecified:
-                        _gpsLocation = "Unspecified";
+                        GpsLocation = "Unspecified";
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
@@ -115,7 +109,7 @@ namespace Friend_s.ViewModel
                 var stream = await storagefile.OpenAsync(FileAccessMode.Read);
                 //Converts to a IRandomAccessStream that can be set to an image
                 await image1.SetSourceAsync(stream);
-                _profileBitmapImage = image1;
+                ProfileImageSource = image1;
                 RaisePropertyChanged(()=> ProfileImageSource);
             }
             catch (Exception e)
@@ -150,7 +144,7 @@ namespace Friend_s.ViewModel
 
             // Adding stream as source of the bitmap image object defined above     
             await image1.SetSourceAsync(stream);
-            _profileBitmapImage = image1;
+            ProfileImageSource = image1;
             
             SpineClass.ImagetoIsolatedStorageSaver(stream1, "profiledefault.jpg");
             RaisePropertyChanged(() => ProfileImageSource);

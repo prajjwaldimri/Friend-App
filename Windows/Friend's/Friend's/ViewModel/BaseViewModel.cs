@@ -1,4 +1,6 @@
-﻿using GalaSoft.MvvmLight;
+﻿using System;
+using System.Collections.Generic;
+using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 
 namespace Friend_s.ViewModel
@@ -44,6 +46,8 @@ namespace Friend_s.ViewModel
             set { _themeColor = value; RaisePropertyChanged(()=>ThemeColor); }
         }
 
+        public string CommandBarQuote { get; set; }
+
         public void RaisePropertyChangedBase()
         {
             RaisePropertyChanged(()=>ThemeColor);
@@ -66,6 +70,31 @@ namespace Friend_s.ViewModel
             }
             RaisePropertyChanged(()=>UserName);
             RaisePropertyChanged(()=> ThemeColor);
+
+            var Quotes = new List<string>()
+            {
+                "Be Yourself",
+                "Move On",
+                "Free Yourself",
+                "Look Up :)",
+                "Dream Big",
+                "Start Living!",
+                "Define Yourself",
+                "Be Happy",
+                "Be Fearless",
+                "Accept Yourself",
+                "Trust Yourself",
+                "Stay Positive",
+                "Don't Stop",
+                "Enjoy Life"
+            };
+
+            var random = new Random();
+            var number=  random.Next(1, 15);
+
+            CommandBarQuote = Quotes[number];
+
+            RaisePropertyChanged(()=>CommandBarQuote);
         }
     }
 }

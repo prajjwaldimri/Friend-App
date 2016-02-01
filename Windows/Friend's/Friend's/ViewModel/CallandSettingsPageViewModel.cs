@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Xml;
+using System.Linq;
 using Windows.ApplicationModel.Background;
 using Windows.ApplicationModel.Contacts;
-using Windows.Data.Xml.Dom;
 using Windows.Storage;
-using Windows.UI.Notifications;
 using Friend_s.Services;
 using GalaSoft.MvvmLight.Command;
-using Microsoft.QueryStringDotNET;
-using NotificationsExtensions.Toasts;
 
 namespace Friend_s.ViewModel
 {
@@ -28,24 +24,23 @@ namespace Friend_s.ViewModel
             ToastToggledCommand = new RelayCommand(ToastMakerToggledButton);
         }
 
-        private string _facebookConnected;
-        private string _twitterConnected;
-        private string _firstContactName;
-        private string _secondContactName;
-        private string _thirdContactName;
-        private bool _toggleSwitchIsOn;
-        private bool _toastToggleSwitchIsOn;
         private string _themeColor;
         private string _notificationStatus;
 
 
-        public string FacebookConnected { get { return _facebookConnected; } }
-        public string TwitterConnected { get { return _twitterConnected; } }
-        public string FirstContactName { get { return _firstContactName; } }
-        public string SecondContactName { get { return _secondContactName; } }
-        public string ThirdContactName { get { return _thirdContactName; } }
-        public bool ToggleSwitchIsOn { get { return _toggleSwitchIsOn;} }
-        public bool ToastToggleSwitchIsOn { get { return _toastToggleSwitchIsOn; } }
+        public string FacebookConnected { get; private set; }
+
+        public string TwitterConnected { get; private set; }
+
+        public string FirstContactName { get; private set; }
+
+        public string SecondContactName { get; private set; }
+
+        public string ThirdContactName { get; private set; }
+
+        public bool ToggleSwitchIsOn { get; private set; }
+
+        public bool ToastToggleSwitchIsOn { get; private set; }
 
 
         private void LocalStorageSettingsRetriever()
@@ -54,15 +49,15 @@ namespace Friend_s.ViewModel
             var localsettings = applicationData.LocalSettings;
             if (localsettings.Values == null) return;
             if (localsettings.Values.ContainsKey("FirstContactName"))
-                _firstContactName = localsettings.Values["FirstContactName"] as string;
+                FirstContactName = localsettings.Values["FirstContactName"] as string;
             if (localsettings.Values.ContainsKey("SecondContactName"))
-                _secondContactName = localsettings.Values["SecondContactName"] as string;
+                SecondContactName = localsettings.Values["SecondContactName"] as string;
             if (localsettings.Values.ContainsKey("ThirdContactName"))
-                _thirdContactName = localsettings.Values["ThirdContactName"] as string;
+                ThirdContactName = localsettings.Values["ThirdContactName"] as string;
             if (localsettings.Values.ContainsKey("FacebookConnect"))
-                _facebookConnected = localsettings.Values["FacebookConnect"] as string;
+                FacebookConnected = localsettings.Values["FacebookConnect"] as string;
             if (localsettings.Values.ContainsKey("TwitterConnect"))
-                _twitterConnected= localsettings.Values["TwitterConnect"] as string;
+                TwitterConnected = localsettings.Values["TwitterConnect"] as string;
             if (localsettings.Values.ContainsKey("ThemeColor"))
                 _themeColor = localsettings.Values["ThemeColor"] as string;
             if (localsettings.Values.ContainsKey("ToastNotification"))
@@ -70,26 +65,26 @@ namespace Friend_s.ViewModel
 
             if (_themeColor == "#22A7F0")
             {
-                _toggleSwitchIsOn = false;
+                ToggleSwitchIsOn = false;
             }
-            else if(_themeColor== "#E01931")
+            else if (_themeColor == "#E01931")
             {
-                _toggleSwitchIsOn = true;
+                ToggleSwitchIsOn = true;
             }
             if (_notificationStatus == "Off")
             {
-                _toastToggleSwitchIsOn = false;
+                ToastToggleSwitchIsOn = false;
             }
             else if (_notificationStatus == "On")
             {
-                _toastToggleSwitchIsOn = true;
+                ToastToggleSwitchIsOn = true;
             }
 
-            RaisePropertyChanged(() =>FirstContactName);
+            RaisePropertyChanged(() => FirstContactName);
             RaisePropertyChanged(() => SecondContactName);
             RaisePropertyChanged(() => ThirdContactName);
-            RaisePropertyChanged(()=>ToggleSwitchIsOn);
-            RaisePropertyChanged(()=>ToastToggleSwitchIsOn);
+            RaisePropertyChanged(() => ToggleSwitchIsOn);
+            RaisePropertyChanged(() => ToastToggleSwitchIsOn);
         }
 
         private async void EditContactButtonHandler(object parameter)
@@ -107,8 +102,8 @@ namespace Friend_s.ViewModel
                     {
                         localsettings.Values.Add("FirstContactName", contacts.DisplayName);
                         localsettings.Values.Add("FirstContactNumber", contacts.YomiDisplayName);
-                        _firstContactName = contacts.DisplayName;
-                        RaisePropertyChanged(()=>FirstContactName);
+                        FirstContactName = contacts.DisplayName;
+                        RaisePropertyChanged(() => FirstContactName);
                     }
                     else
                     {
@@ -116,7 +111,7 @@ namespace Friend_s.ViewModel
                         localsettings.Values.Remove("FirstContactNumber");
                         localsettings.Values.Add("FirstContactName", contacts.DisplayName);
                         localsettings.Values.Add("FirstContactNumber", contacts.YomiDisplayName);
-                        _firstContactName = contacts.DisplayName;
+                        FirstContactName = contacts.DisplayName;
                         RaisePropertyChanged(() => FirstContactName);
                     }
                     break;
@@ -130,7 +125,7 @@ namespace Friend_s.ViewModel
                     {
                         localsettings.Values.Add("SecondContactName", contacts1.DisplayName);
                         localsettings.Values.Add("SecondContactNumber", contacts1.YomiDisplayName);
-                        _secondContactName = contacts1.DisplayName;
+                        SecondContactName = contacts1.DisplayName;
                         RaisePropertyChanged(() => SecondContactName);
                     }
                     else
@@ -139,7 +134,7 @@ namespace Friend_s.ViewModel
                         localsettings.Values.Remove("SecondContactNumber");
                         localsettings.Values.Add("SecondContactName", contacts1.DisplayName);
                         localsettings.Values.Add("SecondContactNumber", contacts1.YomiDisplayName);
-                        _secondContactName = contacts1.DisplayName;
+                        SecondContactName = contacts1.DisplayName;
                         RaisePropertyChanged(() => SecondContactName);
                     }
                     break;
@@ -153,7 +148,7 @@ namespace Friend_s.ViewModel
                     {
                         localsettings.Values.Add("ThirdContactName", contacts2.DisplayName);
                         localsettings.Values.Add("ThirdContactNumber", contacts2.YomiDisplayName);
-                        _thirdContactName = contacts2.DisplayName;
+                        ThirdContactName = contacts2.DisplayName;
                         RaisePropertyChanged(() => ThirdContactName);
                     }
                     else
@@ -162,7 +157,7 @@ namespace Friend_s.ViewModel
                         localsettings.Values.Remove("ThirdContactNumber");
                         localsettings.Values.Add("ThirdContactName", contacts2.DisplayName);
                         localsettings.Values.Add("ThirdContactNumber", contacts2.YomiDisplayName);
-                        _thirdContactName = contacts2.DisplayName;
+                        ThirdContactName = contacts2.DisplayName;
                         RaisePropertyChanged(() => ThirdContactName);
                     }
                     break;
@@ -180,50 +175,40 @@ namespace Friend_s.ViewModel
 
         private async void BackgroundProcessRegisterer()
         {
-            var taskName = "ActionCenterToastMaker";
+            const string taskName = "ActionCenterToastMaker";
 
             var backgroundAccessStatus = await BackgroundExecutionManager.RequestAccessAsync();
 
-            if (backgroundAccessStatus == BackgroundAccessStatus.AllowedMayUseActiveRealTimeConnectivity ||
-                backgroundAccessStatus == BackgroundAccessStatus.AllowedWithAlwaysOnRealTimeConnectivity)
+            if (backgroundAccessStatus != BackgroundAccessStatus.AllowedMayUseActiveRealTimeConnectivity &&
+                backgroundAccessStatus != BackgroundAccessStatus.AllowedWithAlwaysOnRealTimeConnectivity) return;
+            if (BackgroundTaskRegistration.AllTasks.Any(task => task.Value.Name == taskName))
             {
-                foreach (var task in BackgroundTaskRegistration.AllTasks)
-                {
-                    if (task.Value.Name == taskName)
-                    {
-                        return;
-                    }
-                }
-
-                BackgroundTaskBuilder taskBuilder = new BackgroundTaskBuilder();
-                taskBuilder.Name = taskName;
-                taskBuilder.TaskEntryPoint = typeof(BackgroundProcesses.ActionCenterToastMaker).FullName;
-                taskBuilder.SetTrigger(new TimeTrigger(500, false));
-
-                var register = taskBuilder.Register();
+                return;
             }
+
+            var taskBuilder = new BackgroundTaskBuilder();
+            taskBuilder.Name = taskName;
+            taskBuilder.TaskEntryPoint = typeof (BackgroundProcesses.ActionCenterToastMaker).FullName;
+            taskBuilder.SetTrigger(new TimeTrigger(500, false));
+
+            var register = taskBuilder.Register();
         }
 
         private async void BackgroundProcessRemover()
         {
-            var taskName = "ActionCenterToastMaker";
+            const string taskName = "ActionCenterToastMaker";
 
             var backgroundAccessStatus = await BackgroundExecutionManager.RequestAccessAsync();
 
-            if (backgroundAccessStatus == BackgroundAccessStatus.AllowedMayUseActiveRealTimeConnectivity ||
-                backgroundAccessStatus == BackgroundAccessStatus.AllowedWithAlwaysOnRealTimeConnectivity)
+            if (backgroundAccessStatus != BackgroundAccessStatus.AllowedMayUseActiveRealTimeConnectivity &&
+                backgroundAccessStatus != BackgroundAccessStatus.AllowedWithAlwaysOnRealTimeConnectivity) return;
+            foreach (var task in BackgroundTaskRegistration.AllTasks.Where(task => task.Value.Name == taskName))
             {
-                foreach (var task in BackgroundTaskRegistration.AllTasks)
-                {
-                    if (task.Value.Name == taskName)
-                    {
-                        task.Value.Unregister(true);
-                    }
-                }
+                task.Value.Unregister(true);
             }
         }
 
-        private void ToastMakerToggledButton()
+        private async void ToastMakerToggledButton()
         {
             var localData = ApplicationData.Current.LocalSettings;
             var roamData = ApplicationData.Current.RoamingSettings;
@@ -231,17 +216,20 @@ namespace Friend_s.ViewModel
             if (localData.Values.ContainsKey("ToastNotification"))
                 _notificationStatus = localData.Values["ToastNotification"] as string;
 
-            if (_notificationStatus == "Off")
-                _toastToggleSwitchIsOn = false;
-            
-            else if (_notificationStatus == "On")
-                _toastToggleSwitchIsOn = true;
-            
+            const string taskName = "ActionCenterToastMaker";
 
+            var backgroundAccessStatus = await BackgroundExecutionManager.RequestAccessAsync();
 
-            if (!_toastToggleSwitchIsOn)
+            if (backgroundAccessStatus != BackgroundAccessStatus.AllowedMayUseActiveRealTimeConnectivity &&
+                backgroundAccessStatus != BackgroundAccessStatus.AllowedWithAlwaysOnRealTimeConnectivity) return;
+            foreach (var task in BackgroundTaskRegistration.AllTasks)
             {
-                if (!localData.Values.ContainsKey("ToastNotification") || !roamData.Values.ContainsKey("ToastNotification"))
+                ToastToggleSwitchIsOn = task.Value.Name == taskName;
+            }
+            if (!ToastToggleSwitchIsOn)
+            {
+                if (!localData.Values.ContainsKey("ToastNotification") ||
+                    !roamData.Values.ContainsKey("ToastNotification"))
                 {
                     localData.Values.Add("ToastNotification", "On");
                     roamData.Values.Add("ToastNotification", "On");
@@ -253,12 +241,13 @@ namespace Friend_s.ViewModel
                     localData.Values.Add("ToastNotification", "On");
                     roamData.Values.Add("ToastNotification", "On");
                 }
-                _toastToggleSwitchIsOn = true;
+                ToastToggleSwitchIsOn = true;
                 BackgroundProcessRegisterer();
             }
             else
             {
-                if (!localData.Values.ContainsKey("ToastNotification") || !roamData.Values.ContainsKey("ToastNotification"))
+                if (!localData.Values.ContainsKey("ToastNotification") ||
+                    !roamData.Values.ContainsKey("ToastNotification"))
                 {
                     localData.Values.Add("ToastNotification", "Off");
                     roamData.Values.Add("ToastNotification", "Off");
@@ -270,11 +259,11 @@ namespace Friend_s.ViewModel
                     localData.Values.Add("ToastNotification", "Off");
                     roamData.Values.Add("ToastNotification", "Off");
                 }
-                _toastToggleSwitchIsOn = false;
+                ToastToggleSwitchIsOn = false;
                 BackgroundProcessRemover();
             }
-            
-            RaisePropertyChanged(()=>ToastToggleSwitchIsOn);
+
+            RaisePropertyChanged(() => ToastToggleSwitchIsOn);
         }
     }
 }

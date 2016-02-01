@@ -4,6 +4,9 @@
     <RootPropertyPathName Name="CallandSettingsPage" />
     <RootPropertyPathName Name="UniversalSettingsCommand" />
     <RootPropertyPathName Name="LocalStorageSettingsRetrieverCommand" />
+    <RootPropertyPathName Name="ThemeColor" />
+    <RootPropertyPathName Name="ToastToggleSwitchIsOn" />
+    <RootPropertyPathName Name="ToastToggledCommand" />
     <RootPropertyPathName Name="EditContactButtonHandlerCommand" />
     <RootPropertyPathName Name="ThirdContactName" />
     <RootPropertyPathName Name="SecondContactName" />
@@ -15,10 +18,13 @@
     <RootPropertyPathName Name="SpineInitializerCommand" />
     <RootPropertyPathName Name="ProfileImageSetterCommand" />
     <RootPropertyPathName Name="LocationAccesserCommand" />
-    <RootPropertyPathName Name="ThemeColor" />
     <RootPropertyPathName Name="GpsLocation" />
     <RootPropertyPathName Name="ProfileEllipseButtonTapCommand" />
     <RootPropertyPathName Name="ProfileImageSource" />
+    <RootPropertyPathName Name="ReminderPage" />
+    <RootPropertyPathName Name="ReminderRemoverCommand" />
+    <RootPropertyPathName Name="ReminderRegisterCommand" />
+    <RootPropertyPathName Name="Time" />
     <RootPropertyPathName Name="TimerPage" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
@@ -33,7 +39,6 @@
     <RootType FullName="Windows.UI.Xaml.Controls.UserControl">
       <RootProperty Name="DataContext" />
       <RootProperty Name="Content" />
-      <RootProperty Name="RequestedTheme" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Interactivity.Interaction">
       <RootMethod Name="GetBehaviors" />
@@ -42,6 +47,7 @@
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
       <RootProperty Name="Source" />
       <RootProperty Name="Path" />
+      <RootProperty Name="Mode" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.StaticResourceExtension" />
     <RootType FullName="Microsoft.Xaml.Interactions.Core.EventTriggerBehavior">
@@ -83,8 +89,8 @@
       <RootProperty Name="FontSize" />
       <RootProperty Name="FontWeight" />
       <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="TextAlignment" />
       <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="TextAlignment" />
       <RootProperty Name="Margin" />
       <RootProperty Name="TextWrapping" />
       <RootProperty Name="Name" />
@@ -103,6 +109,12 @@
       <RootProperty Name="Visibility" />
       <RootProperty Name="BorderThickness" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ToggleSwitch">
+      <RootProperty Name="IsOn" />
+      <RootProperty Name="OffContent" />
+      <RootProperty Name="OnContent" />
+      <RootEvent Name="Toggled" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Background" />
       <RootProperty Name="CommandParameter" />
@@ -117,6 +129,7 @@
       <RootProperty Name="BorderThickness" />
       <RootProperty Name="HorizontalContentAlignment" />
       <RootProperty Name="VerticalContentAlignment" />
+      <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.NullExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.FontIcon">
@@ -125,12 +138,6 @@
       <RootProperty Name="FontFamily" />
       <RootProperty Name="FontSize" />
       <RootProperty Name="Foreground" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ToggleSwitch">
-      <RootProperty Name="IsOn" />
-      <RootProperty Name="OffContent" />
-      <RootProperty Name="OnContent" />
-      <RootEvent Name="Toggled" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Slider">
       <RootProperty Name="VerticalAlignment" />
@@ -174,6 +181,16 @@
       <RootProperty Name="HeaderTemplate" />
       <RootProperty Name="Items" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.CommandBar">
+      <RootProperty Name="Background" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Foreground" />
+      <RootProperty Name="PrimaryCommands" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.AppBarButton">
+      <RootProperty Name="Icon" />
+      <RootProperty Name="Foreground" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
       <RootProperty Name="Template" />
     </RootType>
@@ -182,8 +199,14 @@
       <RootProperty Name="Header" />
       <RootProperty Name="Content" />
     </RootType>
+    <RootType FullName="Friend_s.Views.Reminderpage" />
     <RootType FullName="Friend_s.Views.TimerPage" />
     <RootType FullName="Friend_s.Views.MainPage" />
+    <RootType FullName="Windows.UI.Xaml.Controls.TimePicker">
+      <RootProperty Name="Name" />
+      <RootProperty Name="Time" />
+      <RootProperty Name="HorizontalAlignment" />
+    </RootType>
     <RootType FullName="Friend_s.Views.Sospage" />
   </Roots.RootTypes>
 </Roots>

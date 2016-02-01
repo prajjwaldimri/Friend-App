@@ -6,9 +6,17 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:views="using:Friend_s.Views"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
     mc:Ignorable="d"
-    RequestedTheme="Dark">
+    RequestedTheme="Dark"
+    DataContext="{Binding BaseView, Source={StaticResource ViewModelLocator}}">
 
+    <interactivity:Interaction.Behaviors>
+        <core:EventTriggerBehavior EventName="Loaded">
+            <core:InvokeCommandAction Command="{Binding UniversalSettingsCommand}"/>
+        </core:EventTriggerBehavior>
+        </interactivity:Interaction.Behaviors>
     
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         
@@ -44,17 +52,23 @@
                 </ScrollViewer>
             </PivotItem>
 
-            <PivotItem Margin="0,0,0,0" Header="ABOUT">
+            <PivotItem Margin="0,0,0,49" Header="REMINDER">
+                <views:Reminderpage/>
+            </PivotItem>
+
+        <PivotItem Margin="0,0,0,49" Header="ABOUT">
                     <TextBlock/>
                 </PivotItem>
             </Pivot>
         
         <CommandBar Background="WhiteSmoke" VerticalAlignment="Bottom" Foreground="Black">
+            <AppBarSeparator Foreground="Black"/>
+            <AppBarButton Icon="List" Label="Medi-Kit" Foreground="Black"/>
+            <AppBarButton Icon="Favorite" Label="Rate" Foreground="Black"/>
             
-            <AppBarButton Icon="Like" Foreground="Black"/>
-            <AppBarButton Icon="Dislike" Foreground="Black"/>
-            <AppBarButton Icon="Favorite" Foreground="Black"/>
-            
+            <CommandBar.Content>
+                <TextBlock Margin="12,14" Text="{Binding CommandBarQuote}" Foreground="Black"/>
+            </CommandBar.Content>
             
         </CommandBar>
     </Grid>

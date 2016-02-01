@@ -2,7 +2,6 @@
 using Windows.Storage;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
 using Friend_s.ViewModel;
 

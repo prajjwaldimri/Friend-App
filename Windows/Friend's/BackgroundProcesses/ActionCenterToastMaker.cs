@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Windows.ApplicationModel.Background;
 using Windows.UI.Notifications;
-using Windows.UI.Popups;
-using Windows.UI.WebUI;
 using Microsoft.QueryStringDotNET;
 using NotificationsExtensions.Toasts;
 
@@ -18,8 +12,6 @@ namespace BackgroundProcesses
         public void Run(IBackgroundTaskInstance taskInstance)
         {
             ToastGenerator();
-            
-            
         }
 
         private void ToastGenerator()
@@ -48,7 +40,7 @@ namespace BackgroundProcesses
 
             var toast = new ToastNotification(toastContent.GetXml())
             {
-                ExpirationTime = DateTime.Now.AddHours(10),
+                ExpirationTime = DateTime.Now.AddHours(5),
                 SuppressPopup = true,
                 Tag = "Friends"
             };
