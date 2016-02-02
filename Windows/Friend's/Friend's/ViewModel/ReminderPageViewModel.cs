@@ -107,7 +107,7 @@ namespace Friend_s.ViewModel
                         new DateTimeOffset(DateTime.Today.AddDays(1) + Time))
                     {Id = "scheduledtoast"};
                     
-                    var timeDifference = DateTime.Now.AddDays(1).TimeOfDay - Time;
+                    var timeDifference = Time.Add(new TimeSpan(1,0,0,0)) ;
                     timeDifference = timeDifference.Add(new TimeSpan(0, 0, 30, 0));
                     const string taskName = "Reminder";
                     var taskBuilder = new BackgroundTaskBuilder();
