@@ -582,3 +582,9 @@ C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\Friend's\obj\x86\Debug\M
 C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\Friend's\obj\x86\Debug\NotificationsExtensions.pri.xml
 C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\Friend's\obj\x86\Debug\GalaSoft.MvvmLight.Platform.pri.xml
 C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\Friend's\obj\x86\Debug\ProjectArchitectures.txt
+C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\Friend's\bin\x86\Debug\Microsoft.Band.dll
+C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\Friend's\bin\x86\Debug\Microsoft.Band.Store.dll
+C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\Friend's\bin\x86\Debug\Microsoft.Band.Windows.dll
+C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\Friend's\obj\x86\Debug\Microsoft.Band\en\Microsoft.Band.BandResources.resw
+C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\Friend's\obj\x86\Debug\Microsoft.Band.Store.pri.xml
+C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\Friend's\obj\x86\Debug\Microsoft.Band.Windows.pri.xml

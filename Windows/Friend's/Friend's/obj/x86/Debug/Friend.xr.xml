@@ -21,10 +21,13 @@
     <RootPropertyPathName Name="GpsLocation" />
     <RootPropertyPathName Name="ProfileEllipseButtonTapCommand" />
     <RootPropertyPathName Name="ProfileImageSource" />
+    <RootPropertyPathName Name="BaseView" />
+    <RootPropertyPathName Name="CommandBarQuote" />
     <RootPropertyPathName Name="ReminderPage" />
     <RootPropertyPathName Name="ReminderRemoverCommand" />
     <RootPropertyPathName Name="ReminderRegisterCommand" />
     <RootPropertyPathName Name="Time" />
+    <RootPropertyPathName Name="SosPage" />
     <RootPropertyPathName Name="TimerPage" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
@@ -171,6 +174,7 @@
     <RootType FullName="Friend_s.Views.HomePage" />
     <RootType FullName="Windows.UI.Xaml.Controls.Page">
       <RootProperty Name="RequestedTheme" />
+      <RootProperty Name="DataContext" />
       <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.ThemeResourceExtension" />
@@ -186,9 +190,14 @@
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Foreground" />
       <RootProperty Name="PrimaryCommands" />
+      <RootProperty Name="Content" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.AppBarSeparator">
+      <RootProperty Name="Foreground" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.AppBarButton">
       <RootProperty Name="Icon" />
+      <RootProperty Name="Label" />
       <RootProperty Name="Foreground" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.DataTemplate">

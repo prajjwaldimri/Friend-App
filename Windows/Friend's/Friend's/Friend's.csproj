@@ -209,9 +209,6 @@
     <Folder Include="Services\Interfaces\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\BackgroundProcesses\BackgroundProcesses.csproj">
       <Project>{12b3fe7f-8200-4363-8130-7d3b42570fa7}</Project>
       <Name>BackgroundProcesses</Name>

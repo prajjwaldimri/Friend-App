@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.ApplicationModel.Background;
 using Windows.UI.Notifications;
 using Friend_s.Views;
 using GalaSoft.MvvmLight.Command;
@@ -76,16 +78,50 @@ namespace Friend_s.ViewModel
 
             if (Time > DateTime.Now.TimeOfDay)
             {
-                var scheduled = new ScheduledToastNotification(toastContent.GetXml(),
-                    new DateTimeOffset(DateTime.Today + Time)) {Id = "scheduledtoast"};
-                ToastNotificationManager.CreateToastNotifier().AddToSchedule(scheduled);
+                try
+                {
+                    var scheduled = new ScheduledToastNotification(toastContent.GetXml(),
+                        new DateTimeOffset(DateTime.Today + Time)) {Id = "scheduledtoast"};
+
+                    var timeDifference = Time - DateTime.Now.TimeOfDay;
+                    timeDifference = timeDifference.Add(new TimeSpan(0, 0, 30, 0));
+                    const string taskName = "Reminder";
+                    var taskBuilder = new BackgroundTaskBuilder();
+                    taskBuilder.Name = taskName;
+                    taskBuilder.TaskEntryPoint = typeof (BackgroundProcesses.Reminder).FullName;
+                    taskBuilder.SetTrigger(new TimeTrigger(Convert.ToUInt32(timeDifference.Minutes.ToString()), true));
+
+                    taskBuilder.Register();
+                    ToastNotificationManager.CreateToastNotifier().AddToSchedule(scheduled);
+                }
+                catch (Exception e)
+                {
+                    Debug.WriteLine(e);
+                }
             }
             else
             {
-                var scheduled = new ScheduledToastNotification(toastContent.GetXml(),
-                    new DateTimeOffset(DateTime.Today.AddDays(1) + Time))
-                { Id = "scheduledtoast" };
-                ToastNotificationManager.CreateToastNotifier().AddToSchedule(scheduled);
+                try
+                {
+                    var scheduled = new ScheduledToastNotification(toastContent.GetXml(),
+                        new DateTimeOffset(DateTime.Today.AddDays(1) + Time))
+                    {Id = "scheduledtoast"};
+                    
+                    var timeDifference = DateTime.Now.AddDays(1).TimeOfDay - Time;
+                    timeDifference = timeDifference.Add(new TimeSpan(0, 0, 30, 0));
+                    const string taskName = "Reminder";
+                    var taskBuilder = new BackgroundTaskBuilder();
+                    taskBuilder.Name = taskName;
+                    taskBuilder.TaskEntryPoint = typeof (BackgroundProcesses.Reminder).FullName;
+                    taskBuilder.SetTrigger(new TimeTrigger(Convert.ToUInt32(timeDifference.Minutes.ToString()), true));
+
+                    ToastNotificationManager.CreateToastNotifier().AddToSchedule(scheduled);
+                    taskBuilder.Register();
+                }
+                catch (Exception e)
+                {
+                    Debug.WriteLine(e);
+                }
             }
             
         }

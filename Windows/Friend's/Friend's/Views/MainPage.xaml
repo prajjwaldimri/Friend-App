@@ -62,12 +62,12 @@
             </Pivot>
         
         <CommandBar Background="WhiteSmoke" VerticalAlignment="Bottom" Foreground="Black">
-            <AppBarSeparator Foreground="Black"/>
+            <AppBarSeparator Foreground="Black" />
             <AppBarButton Icon="List" Label="Medi-Kit" Foreground="Black"/>
             <AppBarButton Icon="Favorite" Label="Rate" Foreground="Black"/>
             
             <CommandBar.Content>
-                <TextBlock Margin="12,14" Text="{Binding CommandBarQuote}" Foreground="Black"/>
+                <TextBlock Margin="20,10" Text="{Binding CommandBarQuote}" Foreground="Black"/>
             </CommandBar.Content>
             
         </CommandBar>
