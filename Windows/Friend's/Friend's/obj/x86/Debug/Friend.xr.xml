@@ -133,6 +133,7 @@
       <RootProperty Name="HorizontalContentAlignment" />
       <RootProperty Name="VerticalContentAlignment" />
       <RootProperty Name="Margin" />
+      <RootEvent Name="Holding" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.NullExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.FontIcon">
@@ -146,10 +147,7 @@
       <RootProperty Name="VerticalAlignment" />
     </RootType>
     <RootType FullName="Friend_s.Views.CallandSmsSettings" />
-    <RootType FullName="Windows.UI.Xaml.Shapes.Rectangle">
-      <RootProperty Name="Fill" />
-      <RootEvent Name="Holding" />
-    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Shapes.Rectangle" />
     <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
       <RootProperty Name="BorderThickness" />
       <RootProperty Name="Children" />

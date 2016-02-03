@@ -27,7 +27,7 @@ namespace Friend_s.ViewModel
         public TimeSpan Time { get; set; }
 
 
-        private void ReminderRegister()
+        private async void ReminderRegister()
         {
 
             const string title = "Are you there?";
@@ -84,13 +84,19 @@ namespace Friend_s.ViewModel
                         new DateTimeOffset(DateTime.Today + Time)) {Id = "scheduledtoast"};
 
                     var timeDifference = Time - DateTime.Now.TimeOfDay;
-                    timeDifference = timeDifference.Add(new TimeSpan(0, 0, 30, 0));
+                    timeDifference = timeDifference.Add(new TimeSpan(0, 0, 15, 0));
                     const string taskName = "Reminder";
                     var taskBuilder = new BackgroundTaskBuilder();
                     taskBuilder.Name = taskName;
                     taskBuilder.TaskEntryPoint = typeof (BackgroundProcesses.Reminder).FullName;
                     taskBuilder.SetTrigger(new TimeTrigger(Convert.ToUInt32(timeDifference.Minutes.ToString()), true));
 
+                    var backgroundAccessStatus = await BackgroundExecutionManager.RequestAccessAsync();
+
+                    foreach (var task in BackgroundTaskRegistration.AllTasks.Where(task => task.Value.Name == taskName))
+                    {
+                        task.Value.Unregister(true);
+                    }
                     taskBuilder.Register();
                     ToastNotificationManager.CreateToastNotifier().AddToSchedule(scheduled);
                 }
@@ -108,12 +114,19 @@ namespace Friend_s.ViewModel
                     {Id = "scheduledtoast"};
                     
                     var timeDifference = Time.Add(new TimeSpan(1,0,0,0)) ;
-                    timeDifference = timeDifference.Add(new TimeSpan(0, 0, 30, 0));
+                    timeDifference = timeDifference.Add(new TimeSpan(0, 0, 15, 0));
                     const string taskName = "Reminder";
                     var taskBuilder = new BackgroundTaskBuilder();
                     taskBuilder.Name = taskName;
                     taskBuilder.TaskEntryPoint = typeof (BackgroundProcesses.Reminder).FullName;
                     taskBuilder.SetTrigger(new TimeTrigger(Convert.ToUInt32(timeDifference.Minutes.ToString()), true));
+
+                    var backgroundAccessStatus = await BackgroundExecutionManager.RequestAccessAsync();
+
+                    foreach (var task in BackgroundTaskRegistration.AllTasks.Where(task => task.Value.Name == taskName))
+                    {
+                        task.Value.Unregister(true);
+                    }
 
                     ToastNotificationManager.CreateToastNotifier().AddToSchedule(scheduled);
                     taskBuilder.Register();

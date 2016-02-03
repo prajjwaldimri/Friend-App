@@ -60,17 +60,17 @@ namespace Friend_s
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
 
-                //var status = await BackgroundExecutionManager.RequestAccessAsync();
+                var status = await BackgroundExecutionManager.RequestAccessAsync();
 
-                //var builder = new BackgroundTaskBuilder()
-                //{
-                //    Name = "MyReminder",
-                //    TaskEntryPoint = "BackgroundProcesses.Reminder"
-                //};
+                var builder = new BackgroundTaskBuilder()
+                {
+                    Name = "MyReminder",
+                    TaskEntryPoint = "BackgroundProcesses.Reminder"
+                };
 
-                //builder.SetTrigger(new ToastNotificationActionTrigger());
+                builder.SetTrigger(new ToastNotificationActionTrigger());
 
-                //var registration = builder.Register();
+                var registration = builder.Register();
             }
             if (rootFrame.Content == null)
             {

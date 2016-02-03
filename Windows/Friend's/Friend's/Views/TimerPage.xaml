@@ -56,18 +56,20 @@
                        HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
         
-        <Rectangle x:Name="HoldRectangle" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Fill="GhostWhite"
-                    Holding="HoldRectangle_OnHolding">
-            
+        <Button x:Name="HoldRectangle" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Background="GhostWhite"
+                    Holding="HoldRectangle_OnHolding" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Button.Content>
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+                    <FontIcon Glyph="&#xf25a;" FontSize="80"  
+                  FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome" Foreground="Black"/>
+                    <TextBlock Text="Hold" FontSize="30" HorizontalAlignment="Center"  Margin="0,20,0,0"
+                   Foreground="Black" FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontWeight="Bold" />
+                </StackPanel>
+            </Button.Content>
             
            
-        </Rectangle>
-        <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
-        <FontIcon Glyph="&#xf25a;" FontSize="80"  
-                  FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome" Foreground="Black"/>
-        <TextBlock Text="Hold" FontSize="30" HorizontalAlignment="Center"  Margin="0,20,0,0"
-                   Foreground="Black" FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontWeight="Bold" />
-        </StackPanel>
+        </Button>
+        
 
 
     </Grid>

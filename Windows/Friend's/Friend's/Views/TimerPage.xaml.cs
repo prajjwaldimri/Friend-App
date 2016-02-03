@@ -19,30 +19,29 @@ namespace Friend_s.Views
         public TimerPage()
         {
             InitializeComponent();
-            var applicationData = ApplicationData.Current.LocalSettings;
             
         }
 
         private DispatcherTimer timer = new DispatcherTimer();
         private DispatcherTimer militimer = new DispatcherTimer();
 
-        static TimeSpan secondstime = TimeSpan.FromSeconds(120);
-        TimeSpan minutestime = TimeSpan.FromMinutes(Convert.ToDouble(secondstime.Minutes.ToString()));
-        double i=0;
+        static TimeSpan _secondstime = TimeSpan.FromSeconds(10);
+        TimeSpan _minutestime = TimeSpan.FromMinutes(Convert.ToDouble(_secondstime.Minutes.ToString()));
+        private double i;
 
         private void TimerOnTick(object sender, object o)
         {
-                secondstime = secondstime.Add(TimeSpan.FromSeconds(-1));
-                SecondText.Text = secondstime.ToString("ss");
+                _secondstime = _secondstime.Add(TimeSpan.FromSeconds(-1));
+                SecondText.Text = _secondstime.ToString("ss");
             
 
             if (i%60 == 0)
             {
-                minutestime = minutestime.Add(TimeSpan.FromMinutes(-1));
-                MinuteText.Text = minutestime.ToString("mm");
+                _minutestime = _minutestime.Add(TimeSpan.FromMinutes(-1));
+                MinuteText.Text = _minutestime.ToString("mm");
             }
 
-            if (secondstime == TimeSpan.Zero)
+            if (_secondstime == TimeSpan.Zero)
             {
                 timer.Stop();
                 militimer.Stop();
@@ -60,6 +59,8 @@ namespace Friend_s.Views
                 {
                     timer.Stop();
                     militimer.Stop();
+                    _secondstime = TimeSpan.FromSeconds(10);
+                    _minutestime = TimeSpan.FromMinutes(Convert.ToDouble(_secondstime.Minutes.ToString()));
                     timer.Tick -= TimerOnTick;
                 }
             }

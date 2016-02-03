@@ -133,9 +133,10 @@
         <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileBindingContentContact" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="NotificationsExtensions.Badges.BadgeGlyphNotificationContent" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="NotificationsExtensions.Badges.BadgeNumericNotificationContent" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="BackgroundProcesses.ActionCenterToastMaker" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="BackgroundProcesses.SpineClass" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="BackgroundProcesses.EmergencyBackgroundService" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="BackgroundProcesses.Reminder" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="BackgroundProcesses.ActionCenterToastMaker" ThreadingModel="both" />
       </InProcessServer>
     </Extension>
   </Extensions>
@@ -150,7 +151,7 @@
     <build:Item Name="TargetRuntime" Value="Managed" />
     <build:Item Name="Microsoft.Windows.UI.Xaml.Build.Tasks.dll" Version="14.0.24720.0" />
     <build:Item Name="BehaviorsXamlSDKManaged" Version="12.0" />
-    <build:Item Name="WindowsMobile" Version="10.0.10240.0" />
+    <build:Item Name="WindowsMobile" Version="10.0.10586.0" />
     <build:Item Name="MakePri.exe" Version="10.0.10586.15 (th2_release.151119-1817)" />
   </build:Metadata>
 </Package>

@@ -35,6 +35,11 @@ namespace BackgroundProcesses
 
             var details = taskInstance.TriggerDetails as ToastNotificationActionTriggerDetail;
 
+            if (!localSettings.Values.ContainsKey("EmergencyOn"))
+            {
+                localSettings.Values.Add("EmergencyOn",true);
+            }
+
             if (details != null)
             {
                 if (localSettings.Values.ContainsKey("EmergencyOn"))
@@ -50,8 +55,8 @@ namespace BackgroundProcesses
             }
         }
 
-        
-        public static void TimerStarter()
+
+        private static void TimerStarter()
         {
             var timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(20);
