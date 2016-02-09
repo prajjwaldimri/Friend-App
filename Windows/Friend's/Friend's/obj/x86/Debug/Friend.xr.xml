@@ -98,6 +98,7 @@
       <RootProperty Name="TextWrapping" />
       <RootProperty Name="Name" />
       <RootProperty Name="Foreground" />
+      <RootProperty Name="TextTrimming" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.SymbolIcon">
       <RootProperty Name="Symbol" />

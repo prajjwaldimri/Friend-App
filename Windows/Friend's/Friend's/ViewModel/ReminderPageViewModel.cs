@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Windows.ApplicationModel.Background;
 using Windows.UI.Notifications;
-using Friend_s.Views;
 using GalaSoft.MvvmLight.Command;
 using Microsoft.QueryStringDotNET;
 using NotificationsExtensions.Toasts;
