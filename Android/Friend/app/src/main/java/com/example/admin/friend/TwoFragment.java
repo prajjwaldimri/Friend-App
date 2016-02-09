@@ -49,8 +49,8 @@ public class TwoFragment extends android.support.v4.app.Fragment implements View
         view = inflater.inflate(R.layout.fragment_two, container, false);
 
         s1 = (Switch) view.findViewById(R.id.switch1);
-        s2 = (Switch) view.findViewById(R.id.switch2);
-        s3 = (Switch) view.findViewById(R.id.switch3);
+        //s2 = (Switch) view.findViewById(R.id.switch2);
+        //s3 = (Switch) view.findViewById(R.id.switch3);
 
 
         s1.setChecked(true);
