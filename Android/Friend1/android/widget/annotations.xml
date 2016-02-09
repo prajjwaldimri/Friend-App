@@ -1,6 +1,0 @@
-<root>
-  <item
-      name='android.widget.ImageView ImageView(android.content.Context, android.util.AttributeSet) 1'>
-    <annotation name='java.lang.annotation.Deprecated' />
-  </item>
-</root>
