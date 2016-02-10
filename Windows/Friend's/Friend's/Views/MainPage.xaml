@@ -67,7 +67,8 @@
             <AppBarButton Icon="Favorite" Label="Rate" Foreground="Black"/>
             
             <CommandBar.Content>
-                <TextBlock Margin="20,10" Text="{Binding CommandBarQuote}" Foreground="Black"/>
+                <TextBlock Margin="20,10" Text="{Binding CommandBarQuote}"
+                           Foreground="Black" TextTrimming="CharacterEllipsis"/>
             </CommandBar.Content>
             
         </CommandBar>

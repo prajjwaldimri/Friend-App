@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Linq;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.ApplicationModel.Background;
@@ -46,8 +45,6 @@ namespace Friend_s
                 // Create a Frame to act as the navigation context and navigate to the first page
                 rootFrame = new Frame();
 
-                rootFrame.CacheSize = 5;
-
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
                 //await CopyDatabase();
@@ -60,17 +57,25 @@ namespace Friend_s
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
 
-                var status = await BackgroundExecutionManager.RequestAccessAsync();
-
-                var builder = new BackgroundTaskBuilder()
+                try
                 {
-                    Name = "MyReminder",
-                    TaskEntryPoint = "BackgroundProcesses.Reminder"
-                };
 
-                builder.SetTrigger(new ToastNotificationActionTrigger());
+                    var status = await BackgroundExecutionManager.RequestAccessAsync();
 
-                var registration = builder.Register();
+                    var builder = new BackgroundTaskBuilder()
+                    {
+                        Name = "MyReminder",
+                        TaskEntryPoint = "BackgroundProcesses.Reminder"
+                    };
+
+                    builder.SetTrigger(new ToastNotificationActionTrigger());
+
+                    var registration = builder.Register();
+                }
+                catch (Exception ex)
+                {
+                    Debug.Write(ex);
+                }
             }
             if (rootFrame.Content == null)
             {
@@ -82,13 +87,11 @@ namespace Friend_s
             // Ensure the current window is active
             Window.Current.Activate();
 
-            if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
-            {
-                var statusBar = Windows.UI.ViewManagement.StatusBar.GetForCurrentView();
-                statusBar.BackgroundColor=Color.FromArgb(255,62,70,81);
-                statusBar.BackgroundOpacity = 1;
-                
-            }
+            if (!Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
+                return;
+            var statusBar = Windows.UI.ViewManagement.StatusBar.GetForCurrentView();
+            statusBar.BackgroundColor=Color.FromArgb(255,62,70,81);
+            statusBar.BackgroundOpacity = 1;
         }
 
         protected override void OnActivated(IActivatedEventArgs e)

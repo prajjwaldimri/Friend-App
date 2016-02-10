@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 using Windows.Devices.Geolocation;
 using Windows.Services.Maps;
 using Windows.Storage;
@@ -105,12 +106,24 @@ namespace Friend_s.ViewModel
                 var image1 = new BitmapImage();
                 var storagefile =
                     await ApplicationData.Current.RoamingFolder.GetFileAsync("profiledefault.jpg");
-                if (storagefile == null) return;
-                var stream = await storagefile.OpenAsync(FileAccessMode.Read);
-                //Converts to a IRandomAccessStream that can be set to an image
-                await image1.SetSourceAsync(stream);
-                ProfileImageSource = image1;
-                RaisePropertyChanged(()=> ProfileImageSource);
+                if (storagefile == null)
+                {
+                    ProfileImageSource = new BitmapImage(new Uri("ms-appx:/Assets/Generic-Profile-Image.jpg"));
+                    RaisePropertyChanged(() => ProfileImageSource);
+                }
+                else
+                {
+                    var stream = await storagefile.OpenAsync(FileAccessMode.Read);
+                    //Converts to a IRandomAccessStream that can be set to an image
+                    await image1.SetSourceAsync(stream);
+                    ProfileImageSource = image1;
+                    RaisePropertyChanged(() => ProfileImageSource);
+                }
+            }
+            catch (FileNotFoundException)
+            {
+                ProfileImageSource = new BitmapImage(new Uri("ms-appx:/Assets/Generic-Profile-Image.jpg"));
+                RaisePropertyChanged(() => ProfileImageSource);
             }
             catch (Exception e)
             {

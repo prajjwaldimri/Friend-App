@@ -133,10 +133,9 @@
         <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileBindingContentContact" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="NotificationsExtensions.Badges.BadgeGlyphNotificationContent" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="NotificationsExtensions.Badges.BadgeNumericNotificationContent" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="BackgroundProcesses.SpineClass" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="BackgroundProcesses.EmergencyBackgroundService" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="BackgroundProcesses.Reminder" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="BackgroundProcesses.ActionCenterToastMaker" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="BackgroundProcesses.Reminder" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="BackgroundProcesses.SpineClass" ThreadingModel="both" />
       </InProcessServer>
     </Extension>
   </Extensions>
