@@ -82,6 +82,7 @@ public class HomePagefragment extends android.support.v4.app.Fragment {
         String piturepath=cursor.getString(columnIndx);
         cursor.close();
         return piturepath;
+        //
     }
     }
 
