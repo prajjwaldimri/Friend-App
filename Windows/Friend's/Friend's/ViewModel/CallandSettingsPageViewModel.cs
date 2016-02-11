@@ -26,20 +26,12 @@ namespace Friend_s.ViewModel
 
         private string _themeColor;
         private string _notificationStatus;
-
-
-        public string FacebookConnected { get; private set; }
-
-        public string TwitterConnected { get; private set; }
-
+        private string FacebookConnected { get; set; }
+        private string TwitterConnected { get; set; }
         public string FirstContactName { get; private set; }
-
         public string SecondContactName { get; private set; }
-
         public string ThirdContactName { get; private set; }
-
         public bool ToggleSwitchIsOn { get; private set; }
-
         public bool ToastToggleSwitchIsOn { get; private set; }
 
 
@@ -63,11 +55,11 @@ namespace Friend_s.ViewModel
             if (localsettings.Values.ContainsKey("ToastNotification"))
                 _notificationStatus = localsettings.Values["ToastNotification"] as string;
 
-            if (_themeColor == "#22A7F0")
+            if (_themeColor == "#18BC9C")
             {
                 ToggleSwitchIsOn = false;
             }
-            else if (_themeColor == "#E01931")
+            else if (_themeColor == "#BA4C63")
             {
                 ToggleSwitchIsOn = true;
             }

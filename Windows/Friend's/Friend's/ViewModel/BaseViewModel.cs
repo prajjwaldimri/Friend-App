@@ -62,16 +62,18 @@ namespace Friend_s.ViewModel
             if (localsettings.Values.ContainsKey("UserName"))
                 _userName = localsettings.Values["UserName"] as string;
             if (localsettings.Values.ContainsKey("ThemeColor"))
+            {
                 _themeColor = localsettings.Values["ThemeColor"] as string;
+            }
             else
             {
-                localsettings.Values.Add("ThemeColor", "#22A7F0");
+                localsettings.Values.Add("ThemeColor", "#18BC9C");
                 _themeColor = localsettings.Values["ThemeColor"] as string;
             }
             RaisePropertyChanged(()=>UserName);
             RaisePropertyChanged(()=> ThemeColor);
 
-            var Quotes = new List<string>()
+            var quotes = new List<string>()
             {
                 "Be Yourself",
                 "Move On",
@@ -92,7 +94,7 @@ namespace Friend_s.ViewModel
             var random = new Random();
             var number=  random.Next(1, 15);
 
-            CommandBarQuote = Quotes[number];
+            CommandBarQuote = quotes[number];
 
             RaisePropertyChanged(()=>CommandBarQuote);
         }

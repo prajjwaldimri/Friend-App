@@ -71,32 +71,32 @@ namespace Friend_s.Views
 
             if (!ThemeToggleSwitch.IsOn)
             {
-                if (!localData.Values.ContainsKey("ThemeColor")||!roamData.Values.ContainsKey("ThemeColor"))
+                if (!localData.Values.ContainsKey("ThemeColor")&&!roamData.Values.ContainsKey("ThemeColor"))
                 {
-                    localData.Values.Add("ThemeColor", "#22A7F0");
-                    roamData.Values.Add("ThemeColor", "#22A7F0");
+                    localData.Values.Add("ThemeColor", "#18BC9C");
+                    roamData.Values.Add("ThemeColor", "#18BC9C");
                 }
                 else
                 {
                     localData.Values.Remove("ThemeColor");
                     roamData.Values.Remove("ThemeColor");
-                    localData.Values.Add("ThemeColor", "#22A7F0");
-                    roamData.Values.Add("ThemeColor", "#22A7F0");
+                    localData.Values.Add("ThemeColor", "#18BC9C");
+                    roamData.Values.Add("ThemeColor", "#18BC9C");
                 }
             }
             else
             {
-                if (!localData.Values.ContainsKey("ThemeColor")|| !roamData.Values.ContainsKey("ThemeColor"))
+                if (!localData.Values.ContainsKey("ThemeColor")&& !roamData.Values.ContainsKey("ThemeColor"))
                 {
-                    localData.Values.Add("ThemeColor", "#E01931");
-                    roamData.Values.Add("ThemeColor", "#E01931");
+                    localData.Values.Add("ThemeColor", "#BA4C63");
+                    roamData.Values.Add("ThemeColor", "#BA4C63");
                 }
                 else
                 {
                     localData.Values.Remove("ThemeColor");
                     roamData.Values.Remove("ThemeColor");
-                    localData.Values.Add("ThemeColor", "#E01931");
-                    roamData.Values.Add("ThemeColor", "#E01931");
+                    localData.Values.Add("ThemeColor", "#BA4C63");
+                    roamData.Values.Add("ThemeColor", "#BA4C63");
                 }
             }
 
