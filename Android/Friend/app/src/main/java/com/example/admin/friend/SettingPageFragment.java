@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,12 +15,9 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import static android.provider.ContactsContract.CommonDataKinds.Phone;
 
-import java.sql.ResultSet;
-
-import static android.provider.ContactsContract.CommonDataKinds.*;
-
-public class TwoFragment extends android.support.v4.app.Fragment implements View.OnClickListener {
+public class SettingPageFragment extends android.support.v4.app.Fragment implements View.OnClickListener {
     private static final int CONTACT_PICKER = 1001;
     private static final int RESULT_OK = 1;
 
@@ -33,7 +28,7 @@ public class TwoFragment extends android.support.v4.app.Fragment implements View
     private  ContentResolver contentResolver;
 
 
-    public TwoFragment() {
+    public SettingPageFragment() {
     }
 
     @Override
@@ -46,7 +41,7 @@ public class TwoFragment extends android.support.v4.app.Fragment implements View
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_two, container, false);
+        view = inflater.inflate(R.layout.fragment_settingpage, container, false);
 
         s1 = (Switch) view.findViewById(R.id.switch1);
         //s2 = (Switch) view.findViewById(R.id.switch2);
@@ -130,9 +125,7 @@ public class TwoFragment extends android.support.v4.app.Fragment implements View
                 contactpicker = new Intent(Intent.ACTION_PICK, Phone.CONTENT_URI);
                 startActivityForResult(contactpicker, CONTACT_PICKER);
                 break;
-            case R.id.button:
-                addContacts();
-                break;
+
 
         }
 
@@ -157,7 +150,7 @@ public class TwoFragment extends android.support.v4.app.Fragment implements View
             String phoneNo;
             String name;
             Uri uri=data.getData();
-           c= getContentResolver().query(uri,null,null,null,null);
+           c= getActivity().getContentResolver().query(uri,null,null,null,null);
             assert c != null;
             c.moveToFirst();
             int phoneIndx=c.getColumnIndex(Phone.NUMBER);
@@ -171,28 +164,9 @@ public class TwoFragment extends android.support.v4.app.Fragment implements View
         }
     }
 
-      public void addContacts() {
-        String num=tv1.getText().toString();
-        String num1=tv2.getText().toString();
-        String num2=tv3.getText().toString();
-        String num3=tv4.getText().toString();
-        DatabaseHandler dbs = new DatabaseHandler(this.getContext());
-        Log.d("Insert", "Inserting");
-
-            dbs.addContact(new Contact(num));
-            dbs.addContact(new Contact(num1));
-            dbs.addContact(new Contact(num2));
-            dbs.addContact(new Contact(num3));
 
 
 
-
-        }
-
-
-    public ContentResolver getContentResolver() {
-        return contentResolver;
-    }
 }
 
 
