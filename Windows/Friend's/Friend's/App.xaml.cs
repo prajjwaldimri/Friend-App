@@ -89,9 +89,16 @@ namespace Friend_s
 
             if (!Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
                 return;
-            var statusBar = Windows.UI.ViewManagement.StatusBar.GetForCurrentView();
-            statusBar.BackgroundColor=Color.FromArgb(255,62,70,81);
-            statusBar.BackgroundOpacity = 1;
+            try
+            {
+                var statusBar = Windows.UI.ViewManagement.StatusBar.GetForCurrentView();
+                statusBar.BackgroundColor = Color.FromArgb(255, 62, 70, 81);
+                statusBar.BackgroundOpacity = 1;
+            }
+            catch (Exception exception)
+            {
+                Debug.WriteLine(exception);
+            }
         }
 
         protected override void OnActivated(IActivatedEventArgs e)
@@ -166,6 +173,7 @@ namespace Friend_s
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
             Debug.WriteLine(e);
+            deferral.Complete();
             deferral.Complete();
         }
         

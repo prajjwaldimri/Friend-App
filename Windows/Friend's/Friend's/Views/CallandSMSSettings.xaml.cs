@@ -4,6 +4,7 @@ using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Input;
 using Friend_s.ViewModel;
+using GalaSoft.MvvmLight.Messaging;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -31,7 +32,7 @@ namespace Friend_s.Views
             UserNameTextBox.Focus(FocusState.Pointer);
         }
 
-        private async void UserNameSaveIcon_OnTapped(object sender, TappedRoutedEventArgs e)
+        private void UserNameSaveIcon_OnTapped(object sender, TappedRoutedEventArgs e)
         {
             var localData = ApplicationData.Current.LocalSettings;
             var roamData = ApplicationData.Current.RoamingSettings;
@@ -52,58 +53,12 @@ namespace Friend_s.Views
             UserNameSaveIcon.Visibility = Visibility.Collapsed;
             UserNameTextBox.Visibility = Visibility.Collapsed;
             UserNameTextBlock.Visibility = Visibility.Visible;
-            var bvm = new BaseViewModel();
-            bvm.UniversalSettingsRetriever();
-            bvm.RaisePropertyChangedBase();
-            var msg = new MessageDialog("Profile will be updated at next restart!");
-            await msg.ShowAsync();
             UserNameTextBlock.Text = UserNameTextBox.Text;
+
+           CallandSettingsPageViewModel cspvm = new CallandSettingsPageViewModel();
+            cspvm.UserNameSaver(UserNameTextBlock.Text);
         }
 
-
-        //TODO: Transfer to ViewModel
-
-        private async void ToggleSwitch_OnToggled(object sender, RoutedEventArgs e)
-        {
-            var localData = ApplicationData.Current.LocalSettings;
-            var roamData = ApplicationData.Current.RoamingSettings;
-           
-
-            if (!ThemeToggleSwitch.IsOn)
-            {
-                if (!localData.Values.ContainsKey("ThemeColor")&&!roamData.Values.ContainsKey("ThemeColor"))
-                {
-                    localData.Values.Add("ThemeColor", "#18BC9C");
-                    roamData.Values.Add("ThemeColor", "#18BC9C");
-                }
-                else
-                {
-                    localData.Values.Remove("ThemeColor");
-                    roamData.Values.Remove("ThemeColor");
-                    localData.Values.Add("ThemeColor", "#18BC9C");
-                    roamData.Values.Add("ThemeColor", "#18BC9C");
-                }
-            }
-            else
-            {
-                if (!localData.Values.ContainsKey("ThemeColor")&& !roamData.Values.ContainsKey("ThemeColor"))
-                {
-                    localData.Values.Add("ThemeColor", "#BA4C63");
-                    roamData.Values.Add("ThemeColor", "#BA4C63");
-                }
-                else
-                {
-                    localData.Values.Remove("ThemeColor");
-                    roamData.Values.Remove("ThemeColor");
-                    localData.Values.Add("ThemeColor", "#BA4C63");
-                    roamData.Values.Add("ThemeColor", "#BA4C63");
-                }
-            }
-
-            var msg = new MessageDialog("Theme will be updated at next restart!");
-            await msg.ShowAsync();
-
-        }
 
         
     }

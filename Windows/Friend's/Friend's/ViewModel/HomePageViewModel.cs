@@ -181,13 +181,20 @@ namespace Friend_s.ViewModel
 
         private static void ThemeInitializer()
         {
-            var applicationData = ApplicationData.Current;
-            var localsettings = applicationData.LocalSettings;
-            var roamsettings = applicationData.RoamingSettings;
-            var bvm = new BaseViewModel();
-            if (localsettings.Values != null) bvm.ThemeColor = localsettings.Values["ThemeColor"] as string;
-            if (roamsettings.Values != null) bvm.ThemeColor = roamsettings.Values["ThemeColor"] as string;
-            bvm.RaisePropertyChangedBase();
+            try
+            {
+                var applicationData = ApplicationData.Current;
+                var localsettings = applicationData.LocalSettings;
+                var roamsettings = applicationData.RoamingSettings;
+                var bvm = new BaseViewModel();
+                if (localsettings.Values != null) bvm.ThemeColor = localsettings.Values["ThemeColor"] as string;
+                if (roamsettings.Values != null) bvm.ThemeColor = roamsettings.Values["ThemeColor"] as string;
+                bvm.RaisePropertyChangedBase();
+            }
+            catch (Exception exception)
+            {
+                Debug.WriteLine(exception);
+            }
         }
     }
 }
