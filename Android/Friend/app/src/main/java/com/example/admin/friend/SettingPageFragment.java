@@ -1,13 +1,15 @@
 package com.example.admin.friend;
 
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,25 +17,21 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import static android.provider.ContactsContract.CommonDataKinds.Phone;
 
-import java.sql.ResultSet;
-
-import static android.provider.ContactsContract.CommonDataKinds.*;
-
-public class TwoFragment extends android.support.v4.app.Fragment implements View.OnClickListener {
+public class SettingPageFragment extends android.support.v4.app.Fragment implements View.OnClickListener {
     private static final int CONTACT_PICKER = 1001;
     private static final int RESULT_OK = 1;
-
+    Notification mynotification;
     View view;
-    Switch s1, s2, s3;
+    Switch theme,toast;
     TextView tv1,tv2,tv3,tv4;
     Button b, b1, b2,b3,b4;
     private  ContentResolver contentResolver;
 
 
-    public TwoFragment() {
+    public SettingPageFragment() {
     }
 
     @Override
@@ -46,63 +44,36 @@ public class TwoFragment extends android.support.v4.app.Fragment implements View
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_two, container, false);
+        view = inflater.inflate(R.layout.fragment_settingpage, container, false);
 
-        s1 = (Switch) view.findViewById(R.id.switch1);
-        //s2 = (Switch) view.findViewById(R.id.switch2);
-        //s3 = (Switch) view.findViewById(R.id.switch3);
+        theme = (Switch) view.findViewById(R.id.switch1);
+        toast=(Switch)view.findViewById(R.id.switch2);
 
-
-        s1.setChecked(true);
-
-        s2.setChecked(true);
-        s3.setChecked(true);
-        s1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        toast.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (!s1.isChecked()) {
+                if(toast.isChecked()==true){
+                    String title = "Friend";
+                    String subject = "Notification by friend app";
+                    String body = "notification";
+                    NotificationManager manager = (NotificationManager) getActivity().getSystemService(Context.NOTIFICATION_SERVICE);
+                    Notification.Builder builder = new Notification.Builder(getActivity());
+                    builder.setContentTitle(title);
+                    builder.setContentText(subject);
+                    builder.setSmallIcon(R.mipmap.ic_launcher);
+                    builder.setOngoing(true);
+                    builder.build();
+                    PendingIntent pendingIntent = PendingIntent.getActivity(getContext(), 0, new Intent(), 0);
+                    mynotification = builder.getNotification();
+                    manager.notify(11, mynotification);
 
-
-                    Toast.makeText(getActivity(), "Message feature will not work properly", Toast.LENGTH_LONG).show();
                 }
-            }
-        });
-        s2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (!s2.isChecked()) {
+                else {
 
-                    Toast.makeText(getActivity(), "Calling feature will not work properly", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
-        s3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (!s3.isChecked()) {
-
-                    Toast.makeText(getActivity(), "Location  feature will not work properly", Toast.LENGTH_LONG).show();
                 }
             }
         });
 
-        b = (Button) view.findViewById(R.id.button);
-        b1 = (Button) view.findViewById(R.id.button3);
-        b2 = (Button) view.findViewById(R.id.button5);
-        b3=(Button)view.findViewById(R.id.button4);
-        b4=(Button)view.findViewById(R.id.button2);
-        tv1 = (TextView) view.findViewById(R.id.textView);
-        tv2 = (TextView) view.findViewById(R.id.textView2);
-        tv3=(TextView)view.findViewById(R.id.textView3);
-        tv4=(TextView)view.findViewById(R.id.textView5);
-
-
-        b.setOnClickListener(this);
-        b1.setOnClickListener(this);
-        b2.setOnClickListener(this);
-        b3.setOnClickListener(this);
-        b4.setOnClickListener(this);
 
 
         return view;
@@ -131,7 +102,6 @@ public class TwoFragment extends android.support.v4.app.Fragment implements View
                 startActivityForResult(contactpicker, CONTACT_PICKER);
                 break;
             case R.id.button:
-                addContacts();
                 break;
 
         }
@@ -171,23 +141,6 @@ public class TwoFragment extends android.support.v4.app.Fragment implements View
         }
     }
 
-      public void addContacts() {
-        String num=tv1.getText().toString();
-        String num1=tv2.getText().toString();
-        String num2=tv3.getText().toString();
-        String num3=tv4.getText().toString();
-        DatabaseHandler dbs = new DatabaseHandler(this.getContext());
-        Log.d("Insert", "Inserting");
-
-            dbs.addContact(new Contact(num));
-            dbs.addContact(new Contact(num1));
-            dbs.addContact(new Contact(num2));
-            dbs.addContact(new Contact(num3));
-
-
-
-
-        }
 
 
     public ContentResolver getContentResolver() {
