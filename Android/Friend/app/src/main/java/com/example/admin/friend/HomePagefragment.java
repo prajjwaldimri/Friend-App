@@ -14,13 +14,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class HomePagefragment extends android.support.v4.app.Fragment {
+public class HomePageFragment extends android.support.v4.app.Fragment {
     private static final int RESULT_OK = 1;
     View view;
 
     Bitmap bmp;
     ImageView iv;
-    public HomePagefragment() {
+    public HomePageFragment() {
 
     }
 

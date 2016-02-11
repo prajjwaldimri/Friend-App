@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,10 +15,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
-import java.sql.ResultSet;
-
-import static android.provider.ContactsContract.CommonDataKinds.*;
+import static android.provider.ContactsContract.CommonDataKinds.Phone;
 
 public class SettingPageFragment extends android.support.v4.app.Fragment implements View.OnClickListener {
     private static final int CONTACT_PICKER = 1001;

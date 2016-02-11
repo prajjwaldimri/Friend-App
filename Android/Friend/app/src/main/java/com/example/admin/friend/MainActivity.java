@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
 
-        adapter.addFragment(new HomePagefragment(), "Home");
+        adapter.addFragment(new HomePageFragment(), "Home");
         adapter.addFragment(new SettingPageFragment(), "Settings");
         adapter.addFragment(new TimerPageFragment(), "About");
         viewPager.setAdapter(adapter);
