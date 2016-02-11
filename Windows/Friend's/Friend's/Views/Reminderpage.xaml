@@ -10,6 +10,12 @@
     xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
     DataContext="{Binding ReminderPage, Source={StaticResource ViewModelLocator}}">
 
+    <interactivity:Interaction.Behaviors>
+      <core:EventTriggerBehavior EventName="Loaded">
+            <core:InvokeCommandAction Command="{Binding UniversalSettingsCommand}"/>
+        </core:EventTriggerBehavior>
+    </interactivity:Interaction.Behaviors>
+    
     <Grid Background="{Binding ThemeColor}">
 
         <StackPanel VerticalAlignment="Center">
