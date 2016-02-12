@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
         adapter.addFragment(new HomePageFragment(), "Home");
         adapter.addFragment(new SettingPageFragment(), "Settings");
-        adapter.addFragment(new TimerPageFragment(), "About");
+        adapter.addFragment(new TimerPageFragment(), "Timer");
         viewPager.setAdapter(adapter);
     }
 
