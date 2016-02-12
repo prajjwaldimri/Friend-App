@@ -19,8 +19,8 @@
         </interactivity:Interaction.Behaviors>
     
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        
-        <Pivot Background="#2C82C9" Title="Friend's">
+
+        <Pivot Background="#2C3E50" Title="Friend's">
 
            <Pivot.TitleTemplate>
                     <DataTemplate>

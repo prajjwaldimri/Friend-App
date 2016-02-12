@@ -10,6 +10,12 @@
     DataContext="{Binding Path=TimerPage,Source={StaticResource ViewModelLocator}}"
     mc:Ignorable="d">
 
+    <interactivity:Interaction.Behaviors>
+        <core:EventTriggerBehavior EventName="Loaded">
+            <core:InvokeCommandAction Command="{Binding UniversalSettingsCommand}"/>
+        </core:EventTriggerBehavior>
+    </interactivity:Interaction.Behaviors>
+    
     <Grid Background="{Binding ThemeColor}">
 
         <Grid.RowDefinitions>
