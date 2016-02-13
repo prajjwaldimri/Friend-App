@@ -51,7 +51,6 @@ namespace Friend_s.ViewModel
             try
             {
                 var applicationData = ApplicationData.Current;
-
                 var localsettings = applicationData.LocalSettings;
                 if (localsettings.Values == null) return;
                 if (localsettings.Values.ContainsKey("FirstContactName"))
@@ -68,6 +67,8 @@ namespace Friend_s.ViewModel
                     _themeColor = localsettings.Values["ThemeColor"] as string;
                 if (localsettings.Values.ContainsKey("ToastNotification"))
                     _notificationStatus = localsettings.Values["ToastNotification"] as string;
+
+                
 
                 if (_themeColor == "#18BC9C")
                 {
