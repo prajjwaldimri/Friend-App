@@ -1,7 +1,11 @@
 package com.example.admin.friend;
 
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
@@ -13,16 +17,15 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import static android.provider.ContactsContract.CommonDataKinds.Phone;
 
 public class SettingPageFragment extends android.support.v4.app.Fragment implements View.OnClickListener {
     private static final int CONTACT_PICKER = 1001;
     private static final int RESULT_OK = 1;
-
+    Notification mynotification;
     View view;
-    Switch s1, s2, s3;
+    Switch theme, toast;
     TextView tv1,tv2,tv3,tv4;
     Button b, b1, b2,b3,b4;
     private  ContentResolver contentResolver;
@@ -43,44 +46,11 @@ public class SettingPageFragment extends android.support.v4.app.Fragment impleme
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_settingpage, container, false);
 
-        s1 = (Switch) view.findViewById(R.id.switch1);
-        //s2 = (Switch) view.findViewById(R.id.switch2);
+        toast = (Switch) view.findViewById(R.id.switch1);
+        theme = (Switch) view.findViewById(R.id.switch2);
         //s3 = (Switch) view.findViewById(R.id.switch3);
 
 
-        s1.setChecked(true);
-
-        s2.setChecked(true);
-        s3.setChecked(true);
-        s1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (!s1.isChecked()) {
-
-
-                    Toast.makeText(getActivity(), "Message feature will not work properly", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
-        s2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (!s2.isChecked()) {
-
-                    Toast.makeText(getActivity(), "Calling feature will not work properly", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
-        s3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (!s3.isChecked()) {
-
-                    Toast.makeText(getActivity(), "Location  feature will not work properly", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
 
         b = (Button) view.findViewById(R.id.button);
         b1 = (Button) view.findViewById(R.id.button3);
@@ -98,6 +68,29 @@ public class SettingPageFragment extends android.support.v4.app.Fragment impleme
         b2.setOnClickListener(this);
         b3.setOnClickListener(this);
         b4.setOnClickListener(this);
+        toast.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (toast.isChecked() == true) {
+                    String title = "Friend";
+                    String subject = "Notification by friend app";
+                    String body = "notification";
+                    NotificationManager manager = (NotificationManager) getActivity().getSystemService(Context.NOTIFICATION_SERVICE);
+                    Notification.Builder builder = new Notification.Builder(getActivity());
+                    builder.setContentTitle(title);
+                    builder.setContentText(subject);
+                    builder.setSmallIcon(R.mipmap.ic_launcher);
+                    builder.setOngoing(true);
+                    builder.build();
+                    PendingIntent pendingIntent = PendingIntent.getActivity(getContext(), 0, new Intent(), 0);
+                    mynotification = builder.getNotification();
+                    manager.notify(11, mynotification);
+
+                } else {
+
+                }
+            }
+        });
 
 
         return view;
