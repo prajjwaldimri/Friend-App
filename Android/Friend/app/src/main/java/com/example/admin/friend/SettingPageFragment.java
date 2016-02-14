@@ -26,8 +26,8 @@ public class SettingPageFragment extends android.support.v4.app.Fragment impleme
     Notification mynotification;
     View view;
     Switch theme, toast;
-    TextView tv1,tv2,tv3,tv4;
-    Button b, b1, b2,b3,b4;
+    TextView pname,phoneno,tv3,tv4;
+    Button contact1,contact2, contact3,contact4,Register;
     private  ContentResolver contentResolver;
 
 
@@ -52,22 +52,22 @@ public class SettingPageFragment extends android.support.v4.app.Fragment impleme
 
 
 
-        b = (Button) view.findViewById(R.id.button);
-        b1 = (Button) view.findViewById(R.id.button3);
-        b2 = (Button) view.findViewById(R.id.button5);
-        b3=(Button)view.findViewById(R.id.button4);
-        b4=(Button)view.findViewById(R.id.button2);
-        tv1 = (TextView) view.findViewById(R.id.textView);
-        tv2 = (TextView) view.findViewById(R.id.textView2);
+        contact1 = (Button) view.findViewById(R.id.button);
+        contact2 = (Button) view.findViewById(R.id.button3);
+        contact3= (Button) view.findViewById(R.id.button5);
+        contact4=(Button)view.findViewById(R.id.button4);
+        Register=(Button)view.findViewById(R.id.button2);
+        pname = (TextView) view.findViewById(R.id.textView);
+        phoneno = (TextView) view.findViewById(R.id.textView2);
         tv3=(TextView)view.findViewById(R.id.textView3);
         tv4=(TextView)view.findViewById(R.id.textView5);
 
 
-        b.setOnClickListener(this);
-        b1.setOnClickListener(this);
-        b2.setOnClickListener(this);
-        b3.setOnClickListener(this);
-        b4.setOnClickListener(this);
+        contact1.setOnClickListener(this);
+        contact2.setOnClickListener(this);
+        contact3.setOnClickListener(this);
+        contact4.setOnClickListener(this);
+        Register.setOnClickListener(this);
         toast.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -150,8 +150,8 @@ public class SettingPageFragment extends android.support.v4.app.Fragment impleme
             int nameIndx=c.getColumnIndex(Phone.DISPLAY_NAME);
             phoneNo=c.getString(phoneIndx);
             name=c.getString(nameIndx);
-            tv1.setText(name);
-            tv2.setText(phoneNo);
+            pname.setText(name);
+            phoneno.setText(phoneNo);
         }catch (Exception e){
             e.printStackTrace();
         }
