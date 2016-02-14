@@ -438,9 +438,6 @@
     <AppxPackagedFile Include="C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend%27s\Friend%27s\Assets\Generic-Profile-Image.jpg">
       <PackagePath>Assets\Generic-Profile-Image.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend%27s\Friend%27s\Assets\sqlite3.dll">
-      <PackagePath>Assets\sqlite3.dll</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend%27s\Friend%27s\Fonts\AGAINTS.TTF">
       <PackagePath>Fonts\AGAINTS.TTF</PackagePath>
     </AppxPackagedFile>

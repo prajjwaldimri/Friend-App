@@ -4,8 +4,10 @@ using System.Linq;
 using Windows.ApplicationModel.Background;
 using Windows.ApplicationModel.Contacts;
 using Windows.Storage;
+using Windows.UI.Xaml;
 using Friend_s.Services;
 using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.Messaging;
 
 namespace Friend_s.ViewModel
 {
@@ -15,81 +17,91 @@ namespace Friend_s.ViewModel
         public RelayCommand<object> EditContactButtonHandlerCommand { get; private set; }
         public RelayCommand TwitterCommand { get; private set; }
         public RelayCommand ToastToggledCommand { get; private set; }
-
+        public RelayCommand ThemeToggledCommand { get; private set; }
+        
         public CallandSettingsPageViewModel()
         {
             LocalStorageSettingsRetrieverCommand = new RelayCommand(LocalStorageSettingsRetriever);
             EditContactButtonHandlerCommand = new RelayCommand<object>(EditContactButtonHandler);
             TwitterCommand = new RelayCommand(TwitterConnector);
             ToastToggledCommand = new RelayCommand(ToastMakerToggledButton);
+            ThemeToggledCommand = new RelayCommand(ThemeChangerToggledButton);
         }
+
+        public void UserNameSaver(string userName)
+        {
+            MessengerInstance.Send<NotificationMessage>(new NotificationMessage(userName));
+        }
+
 
         private string _themeColor;
         private string _notificationStatus;
-
-
-        public string FacebookConnected { get; private set; }
-
-        public string TwitterConnected { get; private set; }
-
+        private string FacebookConnected { get; set; }
+        private string TwitterConnected { get; set; }
         public string FirstContactName { get; private set; }
-
         public string SecondContactName { get; private set; }
-
         public string ThirdContactName { get; private set; }
-
         public bool ToggleSwitchIsOn { get; private set; }
-
         public bool ToastToggleSwitchIsOn { get; private set; }
+        
 
 
         private void LocalStorageSettingsRetriever()
         {
-            var applicationData = Windows.Storage.ApplicationData.Current;
-            var localsettings = applicationData.LocalSettings;
-            if (localsettings.Values == null) return;
-            if (localsettings.Values.ContainsKey("FirstContactName"))
-                FirstContactName = localsettings.Values["FirstContactName"] as string;
-            if (localsettings.Values.ContainsKey("SecondContactName"))
-                SecondContactName = localsettings.Values["SecondContactName"] as string;
-            if (localsettings.Values.ContainsKey("ThirdContactName"))
-                ThirdContactName = localsettings.Values["ThirdContactName"] as string;
-            if (localsettings.Values.ContainsKey("FacebookConnect"))
-                FacebookConnected = localsettings.Values["FacebookConnect"] as string;
-            if (localsettings.Values.ContainsKey("TwitterConnect"))
-                TwitterConnected = localsettings.Values["TwitterConnect"] as string;
-            if (localsettings.Values.ContainsKey("ThemeColor"))
-                _themeColor = localsettings.Values["ThemeColor"] as string;
-            if (localsettings.Values.ContainsKey("ToastNotification"))
-                _notificationStatus = localsettings.Values["ToastNotification"] as string;
+            try
+            {
+                var applicationData = ApplicationData.Current;
+                var localsettings = applicationData.LocalSettings;
+                if (localsettings.Values == null) return;
+                if (localsettings.Values.ContainsKey("FirstContactName"))
+                    FirstContactName = localsettings.Values["FirstContactName"] as string;
+                if (localsettings.Values.ContainsKey("SecondContactName"))
+                    SecondContactName = localsettings.Values["SecondContactName"] as string;
+                if (localsettings.Values.ContainsKey("ThirdContactName"))
+                    ThirdContactName = localsettings.Values["ThirdContactName"] as string;
+                if (localsettings.Values.ContainsKey("FacebookConnect"))
+                    FacebookConnected = localsettings.Values["FacebookConnect"] as string;
+                if (localsettings.Values.ContainsKey("TwitterConnect"))
+                    TwitterConnected = localsettings.Values["TwitterConnect"] as string;
+                if (localsettings.Values.ContainsKey("ThemeColor"))
+                    _themeColor = localsettings.Values["ThemeColor"] as string;
+                if (localsettings.Values.ContainsKey("ToastNotification"))
+                    _notificationStatus = localsettings.Values["ToastNotification"] as string;
 
-            if (_themeColor == "#22A7F0")
-            {
-                ToggleSwitchIsOn = false;
-            }
-            else if (_themeColor == "#E01931")
-            {
-                ToggleSwitchIsOn = true;
-            }
-            if (_notificationStatus == "Off")
-            {
-                ToastToggleSwitchIsOn = false;
-            }
-            else if (_notificationStatus == "On")
-            {
-                ToastToggleSwitchIsOn = true;
-            }
+                
 
-            RaisePropertyChanged(() => FirstContactName);
-            RaisePropertyChanged(() => SecondContactName);
-            RaisePropertyChanged(() => ThirdContactName);
-            RaisePropertyChanged(() => ToggleSwitchIsOn);
-            RaisePropertyChanged(() => ToastToggleSwitchIsOn);
+                if (_themeColor == "#18BC9C")
+                {
+                    ToggleSwitchIsOn = false;
+                }
+                else if (_themeColor == "#BA4C63")
+                {
+                    ToggleSwitchIsOn = true;
+                }
+                if (_notificationStatus == "Off")
+                {
+                    ToastToggleSwitchIsOn = false;
+                }
+                else if (_notificationStatus == "On")
+                {
+                    ToastToggleSwitchIsOn = true;
+                }
+
+                RaisePropertyChanged(() => FirstContactName);
+                RaisePropertyChanged(() => SecondContactName);
+                RaisePropertyChanged(() => ThirdContactName);
+                RaisePropertyChanged(() => ToggleSwitchIsOn);
+                RaisePropertyChanged(() => ToastToggleSwitchIsOn);
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+            }
         }
 
         private async void EditContactButtonHandler(object parameter)
         {
-            var applicationData = Windows.Storage.ApplicationData.Current;
+            var applicationData = ApplicationData.Current;
             var localsettings = applicationData.LocalSettings;
             switch (int.Parse(parameter.ToString()))
             {
@@ -113,6 +125,7 @@ namespace Friend_s.ViewModel
                         localsettings.Values.Add("FirstContactNumber", contacts.YomiDisplayName);
                         FirstContactName = contacts.DisplayName;
                         RaisePropertyChanged(() => FirstContactName);
+                        
                     }
                     break;
 
@@ -264,6 +277,50 @@ namespace Friend_s.ViewModel
             }
 
             RaisePropertyChanged(() => ToastToggleSwitchIsOn);
+        }
+
+        private void ThemeChangerToggledButton()
+        {
+            var localData = ApplicationData.Current.LocalSettings;
+            var roamData = ApplicationData.Current.RoamingSettings;
+
+            if (ToggleSwitchIsOn)
+            {
+                if (!localData.Values.ContainsKey("ThemeColor") && !roamData.Values.ContainsKey("ThemeColor"))
+                {
+                    localData.Values.Add("ThemeColor", "#18BC9C");
+                    roamData.Values.Add("ThemeColor", "#18BC9C");
+                }
+                else
+                {
+                    localData.Values.Remove("ThemeColor");
+                    roamData.Values.Remove("ThemeColor");
+                    localData.Values.Add("ThemeColor", "#18BC9C");
+                    roamData.Values.Add("ThemeColor", "#18BC9C");
+                }
+                ToggleSwitchIsOn = false;
+                _themeColor = "#18BC9C";
+            }
+            else
+            {
+                if (!localData.Values.ContainsKey("ThemeColor") && !roamData.Values.ContainsKey("ThemeColor"))
+                {
+                    localData.Values.Add("ThemeColor", "#BA4C63");
+                    roamData.Values.Add("ThemeColor", "#BA4C63");
+                }
+                else
+                {
+                    localData.Values.Remove("ThemeColor");
+                    roamData.Values.Remove("ThemeColor");
+                    localData.Values.Add("ThemeColor", "#BA4C63");
+                    roamData.Values.Add("ThemeColor", "#BA4C63");
+                }
+                ToggleSwitchIsOn = true;
+                _themeColor = "#BA4C63";
+            }
+            
+            RaisePropertyChanged(()=>ToggleSwitchIsOn);
+            MessengerInstance.Send<NotificationMessage>(new NotificationMessage(_themeColor));
         }
     }
 }

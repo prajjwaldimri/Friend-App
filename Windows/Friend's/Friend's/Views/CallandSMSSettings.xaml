@@ -100,9 +100,15 @@
                       FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"/>
             <TextBlock HorizontalAlignment="Left" Grid.Column="1" 
                       Grid.Row="12" Text="Theme" VerticalAlignment="Center"/>
-            <ToggleSwitch Toggled="ToggleSwitch_OnToggled" IsOn="{Binding ToggleSwitchIsOn}" 
-                          Grid.Column="2" Grid.Row="12" OffContent="Blue" OnContent="Pink"
-                          x:Name="ThemeToggleSwitch"/>
+            <ToggleSwitch IsOn="{Binding ToggleSwitchIsOn}" 
+                          Grid.Column="2" Grid.Row="12" OffContent="Green" OnContent="Pink"
+                          x:Name="ThemeToggleSwitch">
+                    <interactivity:Interaction.Behaviors>
+                        <core:EventTriggerBehavior EventName="Toggled">
+                            <core:InvokeCommandAction Command="{Binding ThemeToggledCommand}"/>
+                        </core:EventTriggerBehavior>
+                    </interactivity:Interaction.Behaviors>
+                </ToggleSwitch>
 
             <FontIcon Grid.Row="14" Grid.Column="0" Glyph="&#xf017;"
                       FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"/>

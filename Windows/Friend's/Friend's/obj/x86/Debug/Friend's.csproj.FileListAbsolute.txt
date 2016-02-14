@@ -280,7 +280,6 @@ C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\obj\x86\Debug\GalaSoft
 C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\obj\x86\Debug\ProjectArchitectures.txt
 C:\Users\prajj\Documents\Friend\Windows\Friend's\Friend's\obj\x86\Debug\Friend's.csprojResolveAssemblyReference.cache
 C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\Friend's\bin\x86\Debug\ApplicationInsights.config
-C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\Friend's\bin\x86\Debug\Assets\sqlite3.dll
 C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\Friend's\bin\x86\Debug\App.xbf
 C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\Friend's\bin\x86\Debug\Views\CallandSMSSettings.xbf
 C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\Friend's\bin\x86\Debug\Views\HomePage.xbf
