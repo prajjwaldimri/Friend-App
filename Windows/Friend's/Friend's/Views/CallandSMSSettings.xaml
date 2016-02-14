@@ -101,7 +101,7 @@
             <TextBlock HorizontalAlignment="Left" Grid.Column="1" 
                       Grid.Row="12" Text="Theme" VerticalAlignment="Center"/>
             <ToggleSwitch IsOn="{Binding ToggleSwitchIsOn}" 
-                          Grid.Column="2" Grid.Row="12" OffContent="Blue" OnContent="Pink"
+                          Grid.Column="2" Grid.Row="12" OffContent="Green" OnContent="Pink"
                           x:Name="ThemeToggleSwitch">
                     <interactivity:Interaction.Behaviors>
                         <core:EventTriggerBehavior EventName="Toggled">
