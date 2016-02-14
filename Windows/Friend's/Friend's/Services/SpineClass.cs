@@ -12,13 +12,10 @@ using Windows.Foundation.Collections;
 using Windows.Graphics.Imaging;
 using Windows.Storage;
 using Windows.Storage.Streams;
-using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
 using Facebook;
 using Facebook.Graph;
 using Newtonsoft.Json;
-using Tweetinvi;
-using Tweetinvi.Core.Credentials;
 
 namespace Friend_s.Services
 {
@@ -175,22 +172,7 @@ namespace Friend_s.Services
             }
         }
 
-        public static void TwitterAuthenticator()
-        {
-            try
-            {
-                var appCredentials = new TwitterCredentials("CONSUMER_KEY", "CONSUMER_SECRET");
-
-                var url = CredentialsCreator.GetAuthorizationURL(appCredentials);
-
-                WebView webView = new WebView();
-                webView.Navigate(new Uri(url));
-            }
-            catch (Exception e)
-            {
-                Debug.WriteLine(e);
-            }
-        }
+        
 
         public static async void FacebookPoster()
         {

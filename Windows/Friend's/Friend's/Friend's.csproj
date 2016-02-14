@@ -140,6 +140,9 @@
     <Compile Include="Views\TimerPage.xaml.cs">
       <DependentUpon>TimerPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\TwitterAuthenticator.xaml.cs">
+      <DependentUpon>TwitterAuthenticator.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -186,6 +189,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\TimerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TwitterAuthenticator.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

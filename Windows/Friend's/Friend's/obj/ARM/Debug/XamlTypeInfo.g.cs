@@ -156,7 +156,7 @@ namespace Friend_s.Friend_s_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[28];
+            _typeNameTable = new string[29];
             _typeNameTable[0] = "Friend_s.Services.ViewModelLocator";
             _typeNameTable[1] = "Object";
             _typeNameTable[2] = "Friend_s.ViewModel.HomePageViewModel";
@@ -185,8 +185,9 @@ namespace Friend_s.Friend_s_XamlTypeInfo
             _typeNameTable[25] = "Friend_s.Views.MainPage";
             _typeNameTable[26] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[27] = "Friend_s.Views.Sospage";
+            _typeNameTable[28] = "Friend_s.Views.TwitterAuthenticator";
 
-            _typeTable = new global::System.Type[28];
+            _typeTable = new global::System.Type[29];
             _typeTable[0] = typeof(global::Friend_s.Services.ViewModelLocator);
             _typeTable[1] = typeof(global::System.Object);
             _typeTable[2] = typeof(global::Friend_s.ViewModel.HomePageViewModel);
@@ -215,6 +216,7 @@ namespace Friend_s.Friend_s_XamlTypeInfo
             _typeTable[25] = typeof(global::Friend_s.Views.MainPage);
             _typeTable[26] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[27] = typeof(global::Friend_s.Views.Sospage);
+            _typeTable[28] = typeof(global::Friend_s.Views.TwitterAuthenticator);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -267,6 +269,7 @@ namespace Friend_s.Friend_s_XamlTypeInfo
         private object Activate_24_TimerPage() { return new global::Friend_s.Views.TimerPage(); }
         private object Activate_25_MainPage() { return new global::Friend_s.Views.MainPage(); }
         private object Activate_27_Sospage() { return new global::Friend_s.Views.Sospage(); }
+        private object Activate_28_TwitterAuthenticator() { return new global::Friend_s.Views.TwitterAuthenticator(); }
         private void VectorAdd_11_BehaviorCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.DependencyObject>)instance;
@@ -470,6 +473,13 @@ namespace Friend_s.Friend_s_XamlTypeInfo
             case 27:   //  Friend_s.Views.Sospage
                 userType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_27_Sospage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 28:   //  Friend_s.Views.TwitterAuthenticator
+                userType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_28_TwitterAuthenticator;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
