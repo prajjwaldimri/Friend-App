@@ -14,6 +14,9 @@
         <core:EventTriggerBehavior EventName="Loaded">
             <core:InvokeCommandAction Command="{Binding UniversalSettingsCommand}"/>
         </core:EventTriggerBehavior>
+        <core:EventTriggerBehavior EventName="Loaded">
+            <core:InvokeCommandAction Command="{Binding TimerValueRetrieverCommand}"/>
+        </core:EventTriggerBehavior>
     </interactivity:Interaction.Behaviors>
     
     <Grid Background="{Binding ThemeColor}">
@@ -46,12 +49,12 @@
             </Grid.ColumnDefinitions>
 
 
-            <TextBlock x:Name="MinuteText" Grid.Row="0" Grid.Column="1" Text="00" FontSize="30"
-                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock x:Name="MinuteText" Grid.Row="0" Grid.Column="1" Text="{Binding MinuteValue}"
+                       FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <TextBlock Grid.Row="0" Grid.Column="2" Text=":" FontSize="30"
                        HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <TextBlock x:Name="SecondText" Grid.Row="0" Grid.Column="3" Text="00" FontSize="30"
-                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock x:Name="SecondText" Grid.Row="0" Grid.Column="3" Text="{Binding SecondsValue}" 
+                       FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <TextBlock Grid.Row="0" Grid.Column="4" Text=":" FontSize="30"
                        HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <TextBlock x:Name="MillisecondText" Grid.Row="0" Grid.Column="5" Text="00" FontSize="30"

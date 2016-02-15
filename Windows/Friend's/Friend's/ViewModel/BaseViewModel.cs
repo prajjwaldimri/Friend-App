@@ -15,20 +15,6 @@ namespace Friend_s.ViewModel
             MessengerInstance.Register<NotificationMessage>(this,NotifyMe );
         }
 
-        private void NotifyMe(NotificationMessage obj)
-        {
-            var notification = obj.Notification;
-            if (notification == "#18BC9C" || notification== "#BA4C63")
-            {
-                _themeColor = notification;
-            }
-            else
-            {
-                _userName = notification;
-            }
-            RaisePropertyChangedBase();
-        }
-
         private string _themeColor;
         private string _userName;
         private bool _isLoading;
@@ -127,6 +113,25 @@ namespace Friend_s.ViewModel
             {
                 Debug.WriteLine(exception);
             }
+        }
+
+        private void NotifyMe(NotificationMessage obj)
+        {
+            var notification = obj.Notification;
+            double result;
+            double.TryParse(notification, out result);
+
+            if (result != 0) return;
+            if (notification == "#18BC9C" || notification == "#BA4C63")
+            {
+                _themeColor = notification;
+            }
+
+            else
+            {
+                _userName = notification;
+            }
+            RaisePropertyChangedBase();
         }
     }
 }

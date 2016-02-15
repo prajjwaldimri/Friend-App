@@ -97,7 +97,7 @@
                     <interactivity:Interaction.Behaviors>
                         <core:EventTriggerBehavior EventName="Tapped">
                             <core:InvokeCommandAction CommandParameter="1" 
-                                                      Command="{Binding ThemeToggledCommand}"/>
+                                                      Command="{Binding SocialIntegrationRemoverCommand}"/>
                         </core:EventTriggerBehavior>
                     </interactivity:Interaction.Behaviors>
                 </FontIcon>
@@ -124,9 +124,16 @@
                       FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"/>
             <TextBlock HorizontalAlignment="Left" Grid.Column="1" 
                       Grid.Row="14" Text="Timing between messages" VerticalAlignment="Center"/>
-            <Slider VerticalAlignment="Center" Grid.Row="14" Grid.Column="2"/>
+                <Slider Name="TimerSlider"  VerticalAlignment="Center" Value="{Binding SliderValue, Mode=TwoWay}"
+                        Grid.Row="14" Grid.Column="2" StepFrequency="20" >
+                    <interactivity:Interaction.Behaviors>
+                        <core:EventTriggerBehavior EventName="ValueChanged">
+                            <core:InvokeCommandAction Command="{Binding SliderValueChangedCommand}"/>
+                        </core:EventTriggerBehavior>
+                    </interactivity:Interaction.Behaviors>
+                </Slider>
 
-            <TextBlock FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="21.333" FontWeight="Bold"
+                <TextBlock FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="21.333" FontWeight="Bold"
                        Text="Contacts" Grid.Row="16" Grid.Column="0" Grid.ColumnSpan="2"/>
 
         </Grid>

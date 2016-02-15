@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using Windows.Storage;
 using Windows.UI.Input;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -17,13 +18,17 @@ namespace Friend_s.Views
         public TimerPage()
         {
             InitializeComponent();
+            TimerValueRetriever();
         }
+
+        
 
         private DispatcherTimer timer = new DispatcherTimer();
         private DispatcherTimer militimer = new DispatcherTimer();
 
-        private static TimeSpan _secondstime = TimeSpan.FromSeconds(10);
-        private TimeSpan _minutestime = TimeSpan.FromMinutes(Convert.ToDouble(_secondstime.Minutes.ToString()));
+        private static TimeSpan _secondstime;
+        private TimeSpan _minutestime;
+        private double _timerValue;
         private double _i;
 
         private void TimerOnTick(object sender, object o)
@@ -32,31 +37,36 @@ namespace Friend_s.Views
                 SecondText.Text = _secondstime.ToString("ss");
             
 
-            if (_i%60 == 0)
+            if (_minutestime== new TimeSpan(0,1,0))
             {
-                _minutestime = _minutestime.Add(TimeSpan.FromMinutes(-1));
-                MinuteText.Text = _minutestime.ToString("mm");
+                _i--;
+                if (_i==0)
+                {
+                    _minutestime = _minutestime.Add(TimeSpan.FromMinutes(-1));
+                    MinuteText.Text = _minutestime.ToString("mm");
+                }
             }
 
-            if (_secondstime == TimeSpan.Zero)
+            if (_secondstime == TimeSpan.Zero && _minutestime == new TimeSpan(0, 0, 0))
             {
                 timer.Stop();
                 militimer.Stop();
                 //TODO: Uncomment on release
                 //SosPageViewModel.TimerStarter();
             }
-            _i++;
+            
         }
 
         private void HoldRectangle_OnHolding(object sender, HoldingRoutedEventArgs e)
         {
+            TimerValueRetriever();
             if (e.HoldingState == HoldingState.Started)
             {
                 if (timer.IsEnabled)
                 {
                     timer.Stop();
                     militimer.Stop();
-                    _secondstime = TimeSpan.FromSeconds(10);
+                    _secondstime = TimeSpan.FromSeconds(_timerValue);
                     _minutestime = TimeSpan.FromMinutes(Convert.ToDouble(_secondstime.Minutes.ToString()));
                     timer.Tick -= TimerOnTick;
                 }
@@ -77,6 +87,28 @@ namespace Friend_s.Views
 
                 MillisecondText.Text = j.ToString(CultureInfo.CurrentCulture);
             };
+        }
+
+        private void TimerValueRetriever()
+        {
+            var applicationData = ApplicationData.Current;
+            var localsettings = applicationData.LocalSettings;
+            if (localsettings.Values == null) return;
+            if (localsettings.Values.ContainsKey("TimerTime"))
+            {
+                _timerValue = Convert.ToDouble(localsettings.Values["TimerTime"]);
+                _secondstime = TimeSpan.FromSeconds(_timerValue);
+                _minutestime = TimeSpan.FromMinutes(Convert.ToDouble(_secondstime.Minutes.ToString()));
+            }
+            else
+            {
+                _secondstime = TimeSpan.FromSeconds(20);
+                _minutestime = TimeSpan.FromMinutes(Convert.ToDouble(_secondstime.Minutes.ToString()));
+                localsettings.Values.Add("TimerTime", (double)20);
+            }
+            _i = _secondstime.Seconds;
+            _i++;
+
         }
     }
 }

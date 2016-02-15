@@ -26,9 +26,9 @@ namespace Friend_s.ViewModel
             TimerStarterCommand = new RelayCommand(TimerStarter);
         }
 
-        public RelayCommand TimerStarterCommand { get; set; }
+        private RelayCommand TimerStarterCommand { get; set; }
 
-        public static void TimerStarter()
+        private static void TimerStarter()
         {
             var timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(20);

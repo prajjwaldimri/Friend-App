@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using Windows.ApplicationModel.Background;
 using Windows.ApplicationModel.Contacts;
@@ -16,10 +17,11 @@ namespace Friend_s.ViewModel
         public RelayCommand LocalStorageSettingsRetrieverCommand { get; private set; }
         public RelayCommand PasswordVaultRetrieverCommand { get; private set; }
         public RelayCommand<object> EditContactButtonHandlerCommand { get; private set; }
-        private RelayCommand<object> SocialIntegrationRemoverCommand { get; set; } 
+        public RelayCommand<object> SocialIntegrationRemoverCommand { get; }
         public RelayCommand ToastToggledCommand { get; private set; }
         public RelayCommand ThemeToggledCommand { get; private set; }
-        
+        public RelayCommand SliderValueChangedCommand { get; private set; }
+
         public CallandSettingsPageViewModel()
         {
             LocalStorageSettingsRetrieverCommand = new RelayCommand(LocalStorageSettingsRetriever);
@@ -28,9 +30,10 @@ namespace Friend_s.ViewModel
             SocialIntegrationRemoverCommand = new RelayCommand<object>(PasswordVaultRemoverMethod);
             ToastToggledCommand = new RelayCommand(ToastMakerToggledButton);
             ThemeToggledCommand = new RelayCommand(ThemeChangerToggledButton);
+            SliderValueChangedCommand = new RelayCommand(SliderValueControllerMethod);
         }
 
-        
+
         private string _themeColor;
         private string _notificationStatus;
         private string FacebookConnected { get; set; }
@@ -43,6 +46,7 @@ namespace Friend_s.ViewModel
         private bool IsAppFirstTimeOn { get; set; }
         public Visibility TwitterPlusIconVisibility { get; private set; }
         public Visibility TwitterRemoveIconVisibility { get; private set; }
+        public double SliderValue { get; set; }
 
 
         private void LocalStorageSettingsRetriever()
@@ -66,6 +70,8 @@ namespace Friend_s.ViewModel
                     _themeColor = localsettings.Values["ThemeColor"] as string;
                 if (localsettings.Values.ContainsKey("ToastNotification"))
                     _notificationStatus = localsettings.Values["ToastNotification"] as string;
+                if (localsettings.Values.ContainsKey("TimerTime"))
+                    SliderValue = (double) localsettings.Values["TimerTime"];
 
 
                 if (_themeColor == "#18BC9C")
@@ -91,6 +97,9 @@ namespace Friend_s.ViewModel
                 RaisePropertyChanged(() => ThirdContactName);
                 RaisePropertyChanged(() => ToggleSwitchIsOn);
                 RaisePropertyChanged(() => ToastToggleSwitchIsOn);
+                RaisePropertyChanged(() => SliderValue
+
+                    );
             }
             catch (Exception e)
             {
@@ -124,7 +133,7 @@ namespace Friend_s.ViewModel
                         localsettings.Values.Add("FirstContactNumber", contacts.YomiDisplayName);
                         FirstContactName = contacts.DisplayName;
                         RaisePropertyChanged(() => FirstContactName);
-                        
+
                     }
                     break;
 
@@ -191,7 +200,7 @@ namespace Friend_s.ViewModel
                         var credentialList = vault.FindAllByUserName("Twitter");
                         if (credentialList.Count <= 0) return;
                         var credential = vault.Retrieve("Friend", "Twitter");
-                        vault.Remove(new PasswordCredential("Friend","Twitter",credential.Password));
+                        vault.Remove(new PasswordCredential("Friend", "Twitter", credential.Password));
                         TwitterPlusIconVisibility = Visibility.Visible;
                         TwitterRemoveIconVisibility = Visibility.Collapsed;
                     }
@@ -209,6 +218,8 @@ namespace Friend_s.ViewModel
                 default:
                     break;
             }
+            RaisePropertyChanged(() => TwitterRemoveIconVisibility);
+            RaisePropertyChanged(() => TwitterPlusIconVisibility);
         }
 
         private static async void BackgroundProcessRegisterer()
@@ -348,8 +359,8 @@ namespace Friend_s.ViewModel
                 ToggleSwitchIsOn = true;
                 _themeColor = "#BA4C63";
             }
-            
-            RaisePropertyChanged(()=>ToggleSwitchIsOn);
+
+            RaisePropertyChanged(() => ToggleSwitchIsOn);
             MessengerInstance.Send(new NotificationMessage(_themeColor));
         }
 
@@ -370,9 +381,9 @@ namespace Friend_s.ViewModel
                 TwitterRemoveIconVisibility = Visibility.Collapsed;
             }
 
-            RaisePropertyChanged(()=>TwitterPlusIconVisibility);
-            RaisePropertyChanged(()=>TwitterRemoveIconVisibility);
-            
+            RaisePropertyChanged(() => TwitterPlusIconVisibility);
+            RaisePropertyChanged(() => TwitterRemoveIconVisibility);
+
         }
 
         public void UserNameSaver(string userName)
@@ -387,6 +398,24 @@ namespace Friend_s.ViewModel
             }
         }
 
+        private void SliderValueControllerMethod()
+        {
+            var currentSliderValue = SliderValue;
+            var localData = ApplicationData.Current.LocalSettings;
 
+            if (localData.Values.ContainsKey("TimerTime")) localData.Values.Remove("TimerTime");
+            localData.Values.Add("TimerTime", currentSliderValue);
+
+            try
+            {
+                MessengerInstance.Send(new NotificationMessage(currentSliderValue.ToString()));
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+            }
+        }
     }
+
+
 }

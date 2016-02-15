@@ -35,7 +35,7 @@ namespace Friend_s.Views
         {
             var localData = ApplicationData.Current.LocalSettings;
             var roamData = ApplicationData.Current.RoamingSettings;
-            if (!localData.Values.ContainsKey("UserName") || !roamData.Values.ContainsKey("UserName"))
+            if (!localData.Values.ContainsKey("UserName") && !roamData.Values.ContainsKey("UserName"))
             {
                 localData.Values.Add("UserName", UserNameTextBox.Text);
                 roamData.Values.Add("UserName", UserNameTextBox.Text);
@@ -64,6 +64,7 @@ namespace Friend_s.Views
             var frame = Window.Current.Content as Frame;
             if (frame != null)
                 frame.Navigate(typeof (TwitterAuthenticator));
+            
         }
 
         private void TwitterRemoveIcon_OnTapped(object sender, TappedRoutedEventArgs e)
