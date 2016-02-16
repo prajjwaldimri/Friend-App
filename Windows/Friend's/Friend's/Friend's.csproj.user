@@ -31,5 +31,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <AuthenticationMode>Windows</AuthenticationMode>
+    <DeviceId>90F4E8F4-EC5F-4B64-B2E8-6EDE6F813BD3</DeviceId>
+    <UseEmulator>true</UseEmulator>
   </PropertyGroup>
 </Project>
