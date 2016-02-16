@@ -106,7 +106,6 @@
     <Content Include="Fonts\fontawesome-webfont.ttf" />
     <Content Include="Fonts\HirukoStencil.otf" />
     <Content Include="Fonts\TT1255M_.TTF" />
-    <None Include="Friend%27s_StoreKey.pfx" />
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
@@ -149,7 +148,6 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="Friend's_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Elegant_Background-16.jpg" />
