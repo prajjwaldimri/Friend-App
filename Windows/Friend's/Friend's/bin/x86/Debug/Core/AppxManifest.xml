@@ -7,7 +7,7 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="34691PrajjwalDimri.FriendsOpenBeta" Publisher="CN=883EF119-9F3F-4348-A873-0DBB7FD085E0" Version="1.1.0.0" ProcessorArchitecture="x86" />
+  <Identity Name="34691PrajjwalDimri.FriendsOpenBeta" Publisher="CN=Prajjwal" Version="1.1.0.0" ProcessorArchitecture="x86" />
   <mp:PhoneIdentity PhoneProductId="36411e27-597b-436e-a0bc-7205d8d5afe2" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Friend's Open Beta</DisplayName>
@@ -33,19 +33,19 @@
         </uap:InitialRotationPreference>
       </uap:VisualElements>
       <Extensions>
+        <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundProcesses.Reminder">
+          <BackgroundTasks>
+            <Task Type="general" />
+            <Task Type="systemEvent" />
+            <Task Type="pushNotification" />
+            <uap:Task Type="chatMessageNotification" />
+          </BackgroundTasks>
+        </Extension>
         <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundProcesses.ActionCenterToastMaker">
           <BackgroundTasks>
             <Task Type="general" />
             <Task Type="systemEvent" />
             <Task Type="timer" />
-            <Task Type="pushNotification" />
-            <uap:Task Type="chatMessageNotification" />
-          </BackgroundTasks>
-        </Extension>
-        <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundProcesses.Reminder">
-          <BackgroundTasks>
-            <Task Type="general" />
-            <Task Type="systemEvent" />
             <Task Type="pushNotification" />
             <uap:Task Type="chatMessageNotification" />
           </BackgroundTasks>
