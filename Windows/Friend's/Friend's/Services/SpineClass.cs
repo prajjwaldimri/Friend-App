@@ -13,8 +13,6 @@ using Windows.Graphics.Imaging;
 using Windows.Storage;
 using Windows.Storage.Streams;
 using Windows.UI.Xaml.Media.Imaging;
-using Facebook;
-using Facebook.Graph;
 using Newtonsoft.Json;
 
 namespace Friend_s.Services
@@ -174,64 +172,6 @@ namespace Friend_s.Services
 
         
 
-        public static async void FacebookPoster()
-        {
-            var sess = FBSession.ActiveSession;
-            sess.FBAppId = "<Facebook App ID>";
-            sess.WinAppId = "<Windows or Windows Phone Store ID depending on the target device>";
-
-            var permissionList = new List<String>();
-            permissionList.Add("public_profile");
-            permissionList.Add("publish_actions");
-            var permissions = new FBPermissions(permissionList);
-
-            // Login to Facebook
-            var result = await sess.LoginAsync(permissions);
-
-            if (result.Succeeded)
-            {
-                FBUser user = sess.User;
-
-                // Set caption, link and description parameters
-                PropertySet parameters = new PropertySet();
-                parameters.Add("title", "Microsoft");
-                parameters.Add("description", "Microsoft home page");
-                // Add post message
-                parameters.Add("message", "Posting from my Universal Windows app.");
-
-                // Set Graph api path
-                string path = "/" + user.Id + "/feed";
-
-                FBSingleValue sval = new FBSingleValue(path, parameters,
-                                    new FBJsonClassFactory(FBReturnObject.FromJson));
-
-                FBResult fbresult = await sval.PostAsync();
-
-                if (fbresult.Succeeded)
-                {
-                    // Posting succeeded
-                }
-                else
-                {
-                    // Posting failed
-                }
-            }
-            else
-            {
-
-            }
-        }
 
     }
-
-    public class FBReturnObject
-    {
-        public static object FromJson(string jsontext)
-        {
-            FBReturnObject obj = JsonConvert.DeserializeObject<FBReturnObject>(jsontext);
-            return obj;
-        }
-    }
-
-
 }

@@ -33,6 +33,7 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
     <OutputPath>bin\ARM\Release\</OutputPath>
@@ -216,10 +217,6 @@
     <ProjectReference Include="..\BackgroundProcesses\BackgroundProcesses.csproj">
       <Project>{12b3fe7f-8200-4363-8130-7d3b42570fa7}</Project>
       <Name>BackgroundProcesses</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FBWinSDK\FBSDK-UWP\FBSDK-UWP\FBSDK-UWP.vcxproj">
-      <Project>{973a943b-ff77-4267-8f30-f5fe2b7f5583}</Project>
-      <Name>Facebook</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
