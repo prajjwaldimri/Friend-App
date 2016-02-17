@@ -7,7 +7,7 @@ components:
 
 before_install:
     - cd Android
-    - cd Friend1
+    - cd Friend
     
     
     
