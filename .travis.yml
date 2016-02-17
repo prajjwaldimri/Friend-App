@@ -8,6 +8,7 @@ components:
 before_install:
     - cd Android
     - cd Friend
+    - chmod +x gradlew
     
     
     
