@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using Windows.ApplicationModel.Background;
 using Windows.ApplicationModel.Contacts;
+using Windows.Security.Credentials;
 using Windows.Storage;
 using Windows.UI.Xaml;
-using Friend_s.Services;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
 
@@ -14,23 +15,22 @@ namespace Friend_s.ViewModel
     public class CallandSettingsPageViewModel : BaseViewModel
     {
         public RelayCommand LocalStorageSettingsRetrieverCommand { get; private set; }
+        public RelayCommand PasswordVaultRetrieverCommand { get; private set; }
         public RelayCommand<object> EditContactButtonHandlerCommand { get; private set; }
-        public RelayCommand TwitterCommand { get; private set; }
+        public RelayCommand<object> SocialIntegrationRemoverCommand { get; }
         public RelayCommand ToastToggledCommand { get; private set; }
         public RelayCommand ThemeToggledCommand { get; private set; }
-        
+        public RelayCommand SliderValueChangedCommand { get; private set; }
+
         public CallandSettingsPageViewModel()
         {
             LocalStorageSettingsRetrieverCommand = new RelayCommand(LocalStorageSettingsRetriever);
+            PasswordVaultRetrieverCommand = new RelayCommand(PasswordVaultRetrieverMethod);
             EditContactButtonHandlerCommand = new RelayCommand<object>(EditContactButtonHandler);
-            TwitterCommand = new RelayCommand(TwitterConnector);
+            SocialIntegrationRemoverCommand = new RelayCommand<object>(PasswordVaultRemoverMethod);
             ToastToggledCommand = new RelayCommand(ToastMakerToggledButton);
             ThemeToggledCommand = new RelayCommand(ThemeChangerToggledButton);
-        }
-
-        public void UserNameSaver(string userName)
-        {
-            MessengerInstance.Send<NotificationMessage>(new NotificationMessage(userName));
+            SliderValueChangedCommand = new RelayCommand(SliderValueControllerMethod);
         }
 
 
@@ -43,7 +43,10 @@ namespace Friend_s.ViewModel
         public string ThirdContactName { get; private set; }
         public bool ToggleSwitchIsOn { get; private set; }
         public bool ToastToggleSwitchIsOn { get; private set; }
-        
+        private bool IsAppFirstTimeOn { get; set; }
+        public Visibility TwitterPlusIconVisibility { get; private set; }
+        public Visibility TwitterRemoveIconVisibility { get; private set; }
+        public double SliderValue { get; set; }
 
 
         private void LocalStorageSettingsRetriever()
@@ -67,8 +70,9 @@ namespace Friend_s.ViewModel
                     _themeColor = localsettings.Values["ThemeColor"] as string;
                 if (localsettings.Values.ContainsKey("ToastNotification"))
                     _notificationStatus = localsettings.Values["ToastNotification"] as string;
+                if (localsettings.Values.ContainsKey("TimerTime"))
+                    SliderValue = (double) localsettings.Values["TimerTime"];
 
-                
 
                 if (_themeColor == "#18BC9C")
                 {
@@ -77,6 +81,7 @@ namespace Friend_s.ViewModel
                 else if (_themeColor == "#BA4C63")
                 {
                     ToggleSwitchIsOn = true;
+                    IsAppFirstTimeOn = true;
                 }
                 if (_notificationStatus == "Off")
                 {
@@ -92,6 +97,9 @@ namespace Friend_s.ViewModel
                 RaisePropertyChanged(() => ThirdContactName);
                 RaisePropertyChanged(() => ToggleSwitchIsOn);
                 RaisePropertyChanged(() => ToastToggleSwitchIsOn);
+                RaisePropertyChanged(() => SliderValue
+
+                    );
             }
             catch (Exception e)
             {
@@ -125,7 +133,7 @@ namespace Friend_s.ViewModel
                         localsettings.Values.Add("FirstContactNumber", contacts.YomiDisplayName);
                         FirstContactName = contacts.DisplayName;
                         RaisePropertyChanged(() => FirstContactName);
-                        
+
                     }
                     break;
 
@@ -181,12 +189,40 @@ namespace Friend_s.ViewModel
             }
         }
 
-        private void TwitterConnector()
+        private void PasswordVaultRemoverMethod(object obj)
         {
-            SpineClass.TwitterAuthenticator();
+            switch (int.Parse(obj.ToString()))
+            {
+                case 1:
+                    var vault = new PasswordVault();
+                    try
+                    {
+                        var credentialList = vault.FindAllByUserName("Twitter");
+                        if (credentialList.Count <= 0) return;
+                        var credential = vault.Retrieve("Friend", "Twitter");
+                        vault.Remove(new PasswordCredential("Friend", "Twitter", credential.Password));
+                        TwitterPlusIconVisibility = Visibility.Visible;
+                        TwitterRemoveIconVisibility = Visibility.Collapsed;
+                    }
+
+                    catch (Exception ex)
+                    {
+                        Debug.WriteLine(ex);
+                    }
+                    break;
+
+                case 2:
+                    //TODO: Handle Facebook's Integration
+                    break;
+
+                default:
+                    break;
+            }
+            RaisePropertyChanged(() => TwitterRemoveIconVisibility);
+            RaisePropertyChanged(() => TwitterPlusIconVisibility);
         }
 
-        private async void BackgroundProcessRegisterer()
+        private static async void BackgroundProcessRegisterer()
         {
             const string taskName = "ActionCenterToastMaker";
 
@@ -207,7 +243,7 @@ namespace Friend_s.ViewModel
             var register = taskBuilder.Register();
         }
 
-        private async void BackgroundProcessRemover()
+        private static async void BackgroundProcessRemover()
         {
             const string taskName = "ActionCenterToastMaker";
 
@@ -286,6 +322,11 @@ namespace Friend_s.ViewModel
 
             if (ToggleSwitchIsOn)
             {
+                if (IsAppFirstTimeOn)
+                {
+                    IsAppFirstTimeOn = false;
+                    return;
+                }
                 if (!localData.Values.ContainsKey("ThemeColor") && !roamData.Values.ContainsKey("ThemeColor"))
                 {
                     localData.Values.Add("ThemeColor", "#18BC9C");
@@ -318,9 +359,63 @@ namespace Friend_s.ViewModel
                 ToggleSwitchIsOn = true;
                 _themeColor = "#BA4C63";
             }
-            
-            RaisePropertyChanged(()=>ToggleSwitchIsOn);
-            MessengerInstance.Send<NotificationMessage>(new NotificationMessage(_themeColor));
+
+            RaisePropertyChanged(() => ToggleSwitchIsOn);
+            MessengerInstance.Send(new NotificationMessage(_themeColor));
+        }
+
+        private void PasswordVaultRetrieverMethod()
+        {
+            var vault = new PasswordVault();
+            try
+            {
+                var credentialList = vault.FindAllByUserName("Twitter");
+                if (credentialList.Count <= 0) return;
+                TwitterPlusIconVisibility = Visibility.Collapsed;
+                TwitterRemoveIconVisibility = Visibility.Visible;
+            }
+
+            catch (Exception ex)
+            {
+                TwitterPlusIconVisibility = Visibility.Visible;
+                TwitterRemoveIconVisibility = Visibility.Collapsed;
+            }
+
+            RaisePropertyChanged(() => TwitterPlusIconVisibility);
+            RaisePropertyChanged(() => TwitterRemoveIconVisibility);
+
+        }
+
+        public void UserNameSaver(string userName)
+        {
+            try
+            {
+                MessengerInstance.Send(new NotificationMessage(userName));
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+            }
+        }
+
+        private void SliderValueControllerMethod()
+        {
+            var currentSliderValue = SliderValue;
+            var localData = ApplicationData.Current.LocalSettings;
+
+            if (localData.Values.ContainsKey("TimerTime")) localData.Values.Remove("TimerTime");
+            localData.Values.Add("TimerTime", currentSliderValue);
+
+            try
+            {
+                MessengerInstance.Send(new NotificationMessage(currentSliderValue.ToString()));
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+            }
         }
     }
+
+
 }

@@ -2,7 +2,7 @@
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DeviceId>90F4E8F4-EC5F-4B64-B2E8-6EDE6F813BD3</DeviceId>
-    <UseEmulator>true</UseEmulator>
+    <UseEmulator>false</UseEmulator>
     <UseSimulator>false</UseSimulator>
     <AuthenticationMode>Windows</AuthenticationMode>
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
@@ -15,6 +15,7 @@
     </DebugEngines>
     <AuthenticationMode>Windows</AuthenticationMode>
     <CreateCleanLayout>false</CreateCleanLayout>
+    <RemoteDebugEnabled>false</RemoteDebugEnabled>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
     <DeviceId>30F105C9-681E-420b-A277-7C086EAD8A4E</DeviceId>
@@ -30,5 +31,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <AuthenticationMode>Windows</AuthenticationMode>
+    <DeviceId>90F4E8F4-EC5F-4B64-B2E8-6EDE6F813BD3</DeviceId>
+    <UseEmulator>true</UseEmulator>
   </PropertyGroup>
 </Project>

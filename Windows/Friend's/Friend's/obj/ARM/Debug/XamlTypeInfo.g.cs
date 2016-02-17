@@ -67,18 +67,6 @@ namespace Friend_s.Friend_s_XamlTypeInfo
             {
                 xamlType = CreateXamlType(typeIndex);
             }
-            var userXamlType = xamlType as global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType;
-            if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub && !userXamlType.IsLocalType))
-            {
-                global::Windows.UI.Xaml.Markup.IXamlType libXamlType = CheckOtherMetadataProvidersForType(type);
-                if (libXamlType != null)
-                {
-                    if(libXamlType.IsConstructible || xamlType == null)
-                    {
-                        xamlType = libXamlType;
-                    }
-                }
-            }
             if (xamlType != null)
             {
                 _xamlTypeCacheByName.Add(xamlType.FullName, xamlType);
@@ -102,18 +90,6 @@ namespace Friend_s.Friend_s_XamlTypeInfo
             if(typeIndex != -1)
             {
                 xamlType = CreateXamlType(typeIndex);
-            }
-            var userXamlType = xamlType as global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType;
-            if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub && !userXamlType.IsLocalType))
-            {
-                global::Windows.UI.Xaml.Markup.IXamlType libXamlType = CheckOtherMetadataProvidersForName(typeName);
-                if (libXamlType != null)
-                {
-                    if(libXamlType.IsConstructible || xamlType == null)
-                    {
-                        xamlType = libXamlType;
-                    }
-                }
             }
             if (xamlType != null)
             {
@@ -156,7 +132,7 @@ namespace Friend_s.Friend_s_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[28];
+            _typeNameTable = new string[29];
             _typeNameTable[0] = "Friend_s.Services.ViewModelLocator";
             _typeNameTable[1] = "Object";
             _typeNameTable[2] = "Friend_s.ViewModel.HomePageViewModel";
@@ -185,8 +161,9 @@ namespace Friend_s.Friend_s_XamlTypeInfo
             _typeNameTable[25] = "Friend_s.Views.MainPage";
             _typeNameTable[26] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[27] = "Friend_s.Views.Sospage";
+            _typeNameTable[28] = "Friend_s.Views.TwitterAuthenticator";
 
-            _typeTable = new global::System.Type[28];
+            _typeTable = new global::System.Type[29];
             _typeTable[0] = typeof(global::Friend_s.Services.ViewModelLocator);
             _typeTable[1] = typeof(global::System.Object);
             _typeTable[2] = typeof(global::Friend_s.ViewModel.HomePageViewModel);
@@ -215,6 +192,7 @@ namespace Friend_s.Friend_s_XamlTypeInfo
             _typeTable[25] = typeof(global::Friend_s.Views.MainPage);
             _typeTable[26] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[27] = typeof(global::Friend_s.Views.Sospage);
+            _typeTable[28] = typeof(global::Friend_s.Views.TwitterAuthenticator);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -267,6 +245,7 @@ namespace Friend_s.Friend_s_XamlTypeInfo
         private object Activate_24_TimerPage() { return new global::Friend_s.Views.TimerPage(); }
         private object Activate_25_MainPage() { return new global::Friend_s.Views.MainPage(); }
         private object Activate_27_Sospage() { return new global::Friend_s.Views.Sospage(); }
+        private object Activate_28_TwitterAuthenticator() { return new global::Friend_s.Views.TwitterAuthenticator(); }
         private void VectorAdd_11_BehaviorCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.DependencyObject>)instance;
@@ -473,64 +452,17 @@ namespace Friend_s.Friend_s_XamlTypeInfo
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
+
+            case 28:   //  Friend_s.Views.TwitterAuthenticator
+                userType = new global::Friend_s.Friend_s_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_28_TwitterAuthenticator;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
             }
             return xamlType;
         }
 
-        private global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider> _otherProviders;
-        private global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider> OtherProviders
-        {
-            get
-            {
-                if(_otherProviders == null)
-                {
-                    var otherProviders = new global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider>();
-                    global::Windows.UI.Xaml.Markup.IXamlMetadataProvider provider;
-                    provider = new global::Facebook.FBSDK_UWP_XamlTypeInfo.XamlMetaDataProvider() as global::Windows.UI.Xaml.Markup.IXamlMetadataProvider;
-                    otherProviders.Add(provider); 
-                    _otherProviders = otherProviders;
-                }
-                return _otherProviders;
-            }
-        }
-
-        private global::Windows.UI.Xaml.Markup.IXamlType CheckOtherMetadataProvidersForName(string typeName)
-        {
-            global::Windows.UI.Xaml.Markup.IXamlType xamlType = null;
-            global::Windows.UI.Xaml.Markup.IXamlType foundXamlType = null;
-            foreach(global::Windows.UI.Xaml.Markup.IXamlMetadataProvider xmp in OtherProviders)
-            {
-                xamlType = xmp.GetXamlType(typeName);
-                if(xamlType != null)
-                {
-                    if(xamlType.IsConstructible)    // not Constructible means it might be a Return Type Stub
-                    {
-                        return xamlType;
-                    }
-                    foundXamlType = xamlType;
-                }
-            }
-            return foundXamlType;
-        }
-
-        private global::Windows.UI.Xaml.Markup.IXamlType CheckOtherMetadataProvidersForType(global::System.Type type)
-        {
-            global::Windows.UI.Xaml.Markup.IXamlType xamlType = null;
-            global::Windows.UI.Xaml.Markup.IXamlType foundXamlType = null;
-            foreach(global::Windows.UI.Xaml.Markup.IXamlMetadataProvider xmp in OtherProviders)
-            {
-                xamlType = xmp.GetXamlType(type);
-                if(xamlType != null)
-                {
-                    if(xamlType.IsConstructible)    // not Constructible means it might be a Return Type Stub
-                    {
-                        return xamlType;
-                    }
-                    foundXamlType = xamlType;
-                }
-            }
-            return foundXamlType;
-        }
 
         private object get_0_ViewModelLocator_HomePage(object instance)
         {

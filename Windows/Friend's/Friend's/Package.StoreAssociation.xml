@@ -358,9 +358,9 @@
     <Language Code="zu-za" InMinimumRequirementSet="true" />
   </SupportedLocales>
   <ProductReservedInfo>
-    <MainPackageIdentityName>34691PrajjwalDimri.Friends</MainPackageIdentityName>
+    <MainPackageIdentityName>34691PrajjwalDimri.FriendsOpenBeta</MainPackageIdentityName>
     <ReservedNames>
-      <ReservedName>Friend's</ReservedName>
+      <ReservedName>Friend's Open Beta</ReservedName>
     </ReservedNames>
   </ProductReservedInfo>
   <AccountPackageIdentityNames>
@@ -369,9 +369,10 @@
     <MainPackageIdentityName>34691PrajjwalDimri.10Charts</MainPackageIdentityName>
     <MainPackageIdentityName>34691PrajjwalDimri.Flashtica</MainPackageIdentityName>
     <MainPackageIdentityName>34691PrajjwalDimri.FlashticaBeta</MainPackageIdentityName>
+    <MainPackageIdentityName>34691PrajjwalDimri.Friends</MainPackageIdentityName>
     <MainPackageIdentityName>34691PrajjwalDimri.TheStudentNetwork</MainPackageIdentityName>
     <MainPackageIdentityName>34691PrajjwalDimri.Voatee</MainPackageIdentityName>
     <MainPackageIdentityName>34691PrajjwalDimri.WpHubForums</MainPackageIdentityName>
   </AccountPackageIdentityNames>
-  <PackageInfoList LandingUrl="https://dev.windows.com/dashboard/Application?appId=9NBLGGH5GMG9" />
+  <PackageInfoList LandingUrl="https://dev.windows.com/dashboard/Application?appId=9NBLGGH5LHKH" />
 </StoreAssociation>

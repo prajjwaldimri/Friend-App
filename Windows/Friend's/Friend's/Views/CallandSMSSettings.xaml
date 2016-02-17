@@ -17,10 +17,13 @@
         <core:EventTriggerBehavior EventName="Loaded">
             <core:InvokeCommandAction Command="{Binding UniversalSettingsCommand}"/>
         </core:EventTriggerBehavior>
+        <core:EventTriggerBehavior EventName="Loaded">
+            <core:InvokeCommandAction Command="{Binding PasswordVaultRetrieverCommand}"/>
+        </core:EventTriggerBehavior>
     </interactivity:Interaction.Behaviors>
 
     <ScrollViewer VerticalScrollMode="Enabled" VerticalScrollBarVisibility="Visible">
-    <Grid Background="{Binding ThemeColor}">
+    <Grid Name="MainGrid" Background="{Binding ThemeColor}">
         <Grid.RowDefinitions>
             <RowDefinition Height="3*"/>
             <RowDefinition Height="1*"/>
@@ -84,15 +87,22 @@
                       FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"/>
             <TextBlock TextAlignment="Left" Text="Connect Twitter" VerticalAlignment="Center" 
                      Grid.Row="8" Grid.Column="1"/>
-            <FontIcon Glyph="&#xf067;" FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"
-                      Grid.Row="8" VerticalAlignment="Center" Grid.Column="2">
-                <interactivity:Interaction.Behaviors>
-                    <core:EventTriggerBehavior EventName="Tapped">
-                        <core:InvokeCommandAction Command="{Binding TwitterCommand}"/>
-                    </core:EventTriggerBehavior>
-                </interactivity:Interaction.Behaviors>
-            </FontIcon>
+            <FontIcon Name="TwitterAddIcon" Glyph="&#xf067;" FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"
+                      Grid.Row="8" VerticalAlignment="Center" Grid.Column="2" 
+                      Tapped="UIElement_OnTapped" Visibility="{Binding TwitterPlusIconVisibility}"/>
 
+            <FontIcon Name="TwitterRemoveIcon" Glyph="&#xf00d;" FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"
+                      Grid.Row="8" VerticalAlignment="Center" Grid.Column="2" 
+                      Visibility="{Binding TwitterRemoveIconVisibility}">
+                    <interactivity:Interaction.Behaviors>
+                        <core:EventTriggerBehavior EventName="Tapped">
+                            <core:InvokeCommandAction CommandParameter="1" 
+                                                      Command="{Binding SocialIntegrationRemoverCommand}"/>
+                        </core:EventTriggerBehavior>
+                    </interactivity:Interaction.Behaviors>
+                </FontIcon>
+
+                    
             <TextBlock FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="21.333" FontWeight="Bold"
                        Text="Other" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2"/>
 
@@ -114,9 +124,16 @@
                       FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"/>
             <TextBlock HorizontalAlignment="Left" Grid.Column="1" 
                       Grid.Row="14" Text="Timing between messages" VerticalAlignment="Center"/>
-            <Slider VerticalAlignment="Center" Grid.Row="14" Grid.Column="2"/>
+                <Slider Name="TimerSlider"  VerticalAlignment="Center" Value="{Binding SliderValue, Mode=TwoWay}"
+                        Grid.Row="14" Grid.Column="2" StepFrequency="20" >
+                    <interactivity:Interaction.Behaviors>
+                        <core:EventTriggerBehavior EventName="ValueChanged">
+                            <core:InvokeCommandAction Command="{Binding SliderValueChangedCommand}"/>
+                        </core:EventTriggerBehavior>
+                    </interactivity:Interaction.Behaviors>
+                </Slider>
 
-            <TextBlock FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="21.333" FontWeight="Bold"
+                <TextBlock FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="21.333" FontWeight="Bold"
                        Text="Contacts" Grid.Row="16" Grid.Column="0" Grid.ColumnSpan="2"/>
 
         </Grid>
