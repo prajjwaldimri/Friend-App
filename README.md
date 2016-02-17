@@ -34,7 +34,7 @@ Open the solution file `Friend's.sln` in Visual Studio.  Make sure the selected 
 
 #### (In Android)
 
-Open the sub-folder named Friend1 inside the Android folder of Project directly in Android Studio. 
+Open the sub-folder named Friend inside the Android folder of Project directly in Android Studio. 
 
 
 #### Please refer to the wiki for further information: https://github.com/prajjwaldimri/Friend-App/wiki
