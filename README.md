@@ -1,6 +1,6 @@
 Friend's
 =========
-[![Windows Build status](https://ci.appveyor.com/api/projects/status/cie691osqna780e4/branch/master?svg=true)](https://ci.appveyor.com/project/prajjwaldimri/friend-app/branch/master)
+[![Build status](https://ci.appveyor.com/api/projects/status/goe3p4ao7ujmrrhi/branch/beta?svg=true)](https://ci.appveyor.com/project/prajjwaldimri/friend-app/branch/beta)
 [![License APACHE](https://img.shields.io/badge/license-APACHE-642C90.svg?style=flat-square)](https://github.com/prajjwaldimri/Friend-App/blob/master/LICENSE)
 [![Contact](https://img.shields.io/badge/contact-@prajjwaldimri-642C90.svg?style=flat-square)](https://twitter.com/prajjwaldimri)
 [![Android Build Travis](https://img.shields.io/travis/prajjwaldimri/Friend-App.svg?style=flat-square)](https://travis-ci.org/prajjwaldimri/Friend-App)

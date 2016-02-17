@@ -1,10 +1,9 @@
 ﻿using System;
 using Windows.Storage;
-using Windows.UI.Popups;
 using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
 using Friend_s.ViewModel;
-using GalaSoft.MvvmLight.Messaging;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -36,7 +35,7 @@ namespace Friend_s.Views
         {
             var localData = ApplicationData.Current.LocalSettings;
             var roamData = ApplicationData.Current.RoamingSettings;
-            if (!localData.Values.ContainsKey("UserName") || !roamData.Values.ContainsKey("UserName"))
+            if (!localData.Values.ContainsKey("UserName") && !roamData.Values.ContainsKey("UserName"))
             {
                 localData.Values.Add("UserName", UserNameTextBox.Text);
                 roamData.Values.Add("UserName", UserNameTextBox.Text);
@@ -55,11 +54,22 @@ namespace Friend_s.Views
             UserNameTextBlock.Visibility = Visibility.Visible;
             UserNameTextBlock.Text = UserNameTextBox.Text;
 
-           CallandSettingsPageViewModel cspvm = new CallandSettingsPageViewModel();
+            var cspvm = new CallandSettingsPageViewModel();
             cspvm.UserNameSaver(UserNameTextBlock.Text);
         }
 
 
-        
+        private void UIElement_OnTapped(object sender, TappedRoutedEventArgs e)
+        {
+            var frame = Window.Current.Content as Frame;
+            if (frame != null)
+                frame.Navigate(typeof (TwitterAuthenticator));
+            
+        }
+
+        private void TwitterRemoveIcon_OnTapped(object sender, TappedRoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

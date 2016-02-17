@@ -5,6 +5,7 @@ using Windows.Devices.Geolocation;
 using Windows.Services.Maps;
 using Windows.Storage;
 using Windows.Storage.Pickers;
+using Windows.UI.Popups;
 using Windows.UI.Xaml.Media.Imaging;
 using Friend_s.Services;
 using GalaSoft.MvvmLight.Command;
@@ -133,34 +134,43 @@ namespace Friend_s.ViewModel
 
         private async void EllipseTapped()
         {
-            var image1 = new BitmapImage();
-            
-            
-            //Initializing a new instance of FileOpenPicker
-            var fp = new FileOpenPicker
+            try
             {
-                ViewMode = PickerViewMode.Thumbnail,
-                SuggestedStartLocation = PickerLocationId.PicturesLibrary
-            };
-            fp.FileTypeFilter.Add(".jpeg");
-            fp.FileTypeFilter.Add(".png");
-            fp.FileTypeFilter.Add(".jpg");
-            // Using PickSingleFileAsync() will return one storage file which can be saved into an object of storage file class.          
-            var storagefile = await fp.PickSingleFileAsync();
+                var image1 = new BitmapImage();
 
-            if (storagefile == null) return;
-            // Adding bitmap image object to store the stream provided by the object of StorageFile defined above.BitmapImage bmp = new BitmapImage();           
+                //Initializing a new instance of FileOpenPicker
+                var fp = new FileOpenPicker
+                {
+                    ViewMode = PickerViewMode.Thumbnail,
+                    SuggestedStartLocation = PickerLocationId.PicturesLibrary
+                };
+                fp.FileTypeFilter.Add(".jpeg");
+                fp.FileTypeFilter.Add(".png");
+                fp.FileTypeFilter.Add(".jpg");
+                // Using PickSingleFileAsync() will return one storage file which can be saved into an object of storage file class.          
+                var storagefile = await fp.PickSingleFileAsync();
+                
+                if (storagefile == null) return;
+                // Adding bitmap image object to store the stream provided by the object of StorageFile defined above.BitmapImage bmp = new BitmapImage();           
 
-            // Reading file as a stream and saving it in an object of IRandomAccess.         
-            var stream = await storagefile.OpenAsync(FileAccessMode.Read);
-            var stream1 = await storagefile.OpenReadAsync();
+                // Reading file as a stream and saving it in an object of IRandomAccess.         
+                var stream = await storagefile.OpenAsync(FileAccessMode.Read);
+                var stream1 = await storagefile.OpenReadAsync();
 
-            // Adding stream as source of the bitmap image object defined above     
-            await image1.SetSourceAsync(stream);
-            ProfileImageSource = image1;
-            
-            SpineClass.ImagetoIsolatedStorageSaver(stream1, "profiledefault.jpg");
-            RaisePropertyChanged(() => ProfileImageSource);
+                // Adding stream as source of the bitmap image object defined above     
+                await image1.SetSourceAsync(stream);
+                ProfileImageSource = image1;
+
+                SpineClass.ImagetoIsolatedStorageSaver(stream1, "profiledefault.jpg");
+                RaisePropertyChanged(() => ProfileImageSource);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+                var messageDialog = new MessageDialog(ex.ToString());
+                await messageDialog.ShowAsync();
+
+            }
         }
 
         private static void SpineInitializer()

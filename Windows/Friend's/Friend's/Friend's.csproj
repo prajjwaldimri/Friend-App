@@ -17,8 +17,8 @@
     <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <PackageCertificateKeyFile>Friend%27s_StoreKey.pfx</PackageCertificateKeyFile>
-    <PackageCertificateThumbprint>CBF743B457E8B116E3CDC6B5781503487DC7A153</PackageCertificateThumbprint>
+    <PackageCertificateKeyFile>Friend%27s_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateThumbprint>2A60FAD181FCFBC971E4324CA94EE215E19D17F8</PackageCertificateThumbprint>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <AppxBundle>Always</AppxBundle>
     <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
@@ -33,6 +33,7 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
     <OutputPath>bin\ARM\Release\</OutputPath>
@@ -105,7 +106,7 @@
     <Content Include="Fonts\fontawesome-webfont.ttf" />
     <Content Include="Fonts\HirukoStencil.otf" />
     <Content Include="Fonts\TT1255M_.TTF" />
-    <None Include="Friend%27s_StoreKey.pfx" />
+    <None Include="Friend%27s_TemporaryKey.pfx" />
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
@@ -140,12 +141,14 @@
     <Compile Include="Views\TimerPage.xaml.cs">
       <DependentUpon>TimerPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\TwitterAuthenticator.xaml.cs">
+      <DependentUpon>TwitterAuthenticator.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="Friend's_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Elegant_Background-16.jpg" />
@@ -189,6 +192,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\TwitterAuthenticator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <SDKReference Include="BehaviorsXamlSDKManaged, Version=12.0">
@@ -197,8 +204,8 @@
     <SDKReference Include="Microsoft.VCLibs.120, Version=14.0">
       <Name>Microsoft Visual C++ 2013 Runtime Package for Windows Universal</Name>
     </SDKReference>
-    <SDKReference Include="WindowsMobile, Version=10.0.10240.0">
-      <Name>Windows Mobile Extensions for the UWP %28WindowsMobile, Version=10.0.10240.0%29</Name>
+    <SDKReference Include="WindowsMobile, Version=10.0.10586.0">
+      <Name>Windows Mobile Extensions for the UWP</Name>
     </SDKReference>
   </ItemGroup>
   <ItemGroup>
@@ -209,10 +216,6 @@
     <ProjectReference Include="..\BackgroundProcesses\BackgroundProcesses.csproj">
       <Project>{12b3fe7f-8200-4363-8130-7d3b42570fa7}</Project>
       <Name>BackgroundProcesses</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FBWinSDK\FBSDK-UWP\FBSDK-UWP\FBSDK-UWP.vcxproj">
-      <Project>{973a943b-ff77-4267-8f30-f5fe2b7f5583}</Project>
-      <Name>Facebook</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
