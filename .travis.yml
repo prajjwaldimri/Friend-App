@@ -1,10 +1,21 @@
+sudo: false
 language: android
+cache:apt
+
 android:
 components:
     - build-tools-23.0.1
     - android-23
     - extra
     - sys-img-armeabi-v7a-android-16
+    
+licenses:
+    - 'android-sdk-preview-license-52d11cd2'
+    - 'android-sdk-license-.+'
+    - 'android-googletv-license-99eda7fb'
+
+jdk:
+    - oraclejdk8
 
 before_install:
     - cd Android
