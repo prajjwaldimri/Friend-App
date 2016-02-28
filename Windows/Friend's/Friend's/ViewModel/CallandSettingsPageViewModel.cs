@@ -51,6 +51,7 @@ namespace Friend_s.ViewModel
 
         private void LocalStorageSettingsRetriever()
         {
+            MessengerInstance.Send(new NotificationMessage("ProgressBarEnable"));
             try
             {
                 var applicationData = ApplicationData.Current;
@@ -105,6 +106,7 @@ namespace Friend_s.ViewModel
             {
                 Debug.WriteLine(e);
             }
+            MessengerInstance.Send(new NotificationMessage("ProgressBarDisable"));
         }
 
         private async void EditContactButtonHandler(object parameter)
@@ -259,6 +261,7 @@ namespace Friend_s.ViewModel
 
         private async void ToastMakerToggledButton()
         {
+            MessengerInstance.Send(new NotificationMessage("ProgressBarEnable"));
             var localData = ApplicationData.Current.LocalSettings;
             var roamData = ApplicationData.Current.RoamingSettings;
 
@@ -313,10 +316,12 @@ namespace Friend_s.ViewModel
             }
 
             RaisePropertyChanged(() => ToastToggleSwitchIsOn);
+            MessengerInstance.Send(new NotificationMessage("ProgressBarDisable"));
         }
 
         private void ThemeChangerToggledButton()
         {
+            MessengerInstance.Send(new NotificationMessage("ProgressBarEnable"));
             var localData = ApplicationData.Current.LocalSettings;
             var roamData = ApplicationData.Current.RoamingSettings;
 
@@ -362,6 +367,7 @@ namespace Friend_s.ViewModel
 
             RaisePropertyChanged(() => ToggleSwitchIsOn);
             MessengerInstance.Send(new NotificationMessage(_themeColor));
+            MessengerInstance.Send(new NotificationMessage("ProgressBarDisable"));
         }
 
         private void PasswordVaultRetrieverMethod()
@@ -388,6 +394,7 @@ namespace Friend_s.ViewModel
 
         public void UserNameSaver(string userName)
         {
+            MessengerInstance.Send(new NotificationMessage("ProgressBarEnable"));
             try
             {
                 MessengerInstance.Send(new NotificationMessage(userName));
@@ -396,10 +403,12 @@ namespace Friend_s.ViewModel
             {
                 Debug.WriteLine(e);
             }
+            MessengerInstance.Send(new NotificationMessage("ProgressBarDisable"));
         }
 
         private void SliderValueControllerMethod()
         {
+            MessengerInstance.Send(new NotificationMessage("ProgressBarEnable"));
             var currentSliderValue = SliderValue;
             var localData = ApplicationData.Current.LocalSettings;
 
@@ -414,6 +423,7 @@ namespace Friend_s.ViewModel
             {
                 Debug.WriteLine(e);
             }
+            MessengerInstance.Send(new NotificationMessage("ProgressBarDisable"));
         }
     }
 
