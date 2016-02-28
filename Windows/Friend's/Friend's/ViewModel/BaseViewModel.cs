@@ -123,9 +123,9 @@ namespace Friend_s.ViewModel
         {
             var notification = obj.Notification;
             double result;
-            double.TryParse(notification, out result);
+            var parseresult = double.TryParse(notification, out result);
 
-            if (result != 0) return;
+            if (parseresult) return;
             if (notification == "#18BC9C" || notification == "#BA4C63")
             {
                 _themeColor = notification;
