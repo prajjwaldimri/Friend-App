@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Runtime.InteropServices;
 using Windows.Devices.Geolocation;
 using Windows.Services.Maps;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.UI.Popups;
 using Windows.UI.Xaml.Media.Imaging;
+using Autofac.Core.Registration;
 using Friend_s.Services;
 using GalaSoft.MvvmLight.Command;
 
@@ -129,6 +131,8 @@ namespace Friend_s.ViewModel
             catch (Exception e)
             {
                 Debug.WriteLine(e);
+                ProfileImageSource = new BitmapImage(new Uri("ms-appx:/Assets/Generic-Profile-Image.jpg"));
+                RaisePropertyChanged(() => ProfileImageSource);
             }
         }
 
