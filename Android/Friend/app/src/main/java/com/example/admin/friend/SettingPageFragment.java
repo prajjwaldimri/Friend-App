@@ -2,19 +2,13 @@ package com.example.admin.friend;
 
 
 import android.app.Notification;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.content.ContentResolver;
-import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -46,7 +40,7 @@ public class SettingPageFragment extends android.support.v4.app.Fragment impleme
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_settingpage, container, false);
 
-        toast = (Switch) view.findViewById(R.id.switch1);
+       /* toast = (Switch) view.findViewById(R.id.switch1);
         theme = (Switch) view.findViewById(R.id.switch2);
         //s3 = (Switch) view.findViewById(R.id.switch3);
 
@@ -91,7 +85,7 @@ public class SettingPageFragment extends android.support.v4.app.Fragment impleme
                 }
             }
         });
-
+*/
 
         return view;
 
@@ -125,7 +119,7 @@ public class SettingPageFragment extends android.support.v4.app.Fragment impleme
 
     }
 
-    @Override
+   /* @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
@@ -137,7 +131,7 @@ public class SettingPageFragment extends android.support.v4.app.Fragment impleme
         }
     }
 
-    private void contactPicked(Intent data) {
+   private void contactPicked(Intent data) {
         Cursor c;
         try{
             String phoneNo;
@@ -156,7 +150,7 @@ public class SettingPageFragment extends android.support.v4.app.Fragment impleme
             e.printStackTrace();
         }
     }
-
+*/
 
 
 
