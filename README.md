@@ -1,4 +1,4 @@
-Friend's
+BeFriend
 =========
 [![Build status](https://ci.appveyor.com/api/projects/status/goe3p4ao7ujmrrhi/branch/beta?svg=true)](https://ci.appveyor.com/project/prajjwaldimri/friend-app/branch/beta)
 [![License APACHE](https://img.shields.io/badge/license-APACHE-642C90.svg?style=flat-square)](https://github.com/prajjwaldimri/Friend-App/blob/master/LICENSE)
@@ -7,7 +7,7 @@ Friend's
 [![GitHub issues](https://img.shields.io/github/issues/prajjwaldimri/Friend-App.svg?style=flat-square)](https://github.com/prajjwaldimri/Friend-App/issues)
 
 
-The app that protects you physically!
+The app that notifies your friends and relatives anytime you are in danger.
 
 ## Requirements
 
