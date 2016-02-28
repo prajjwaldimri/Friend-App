@@ -49,9 +49,8 @@
         </Grid.ColumnDefinitions>
 
         <Rectangle Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" Grid.ColumnSpan="4"/>
-        
-        
 
+        
         <StackPanel BorderThickness="0,40,0,0" Grid.Row="0" Grid.RowSpan="5" Grid.Column="1"
                     Grid.ColumnSpan="2">
             
@@ -81,6 +80,7 @@
             </StackPanel>
         </StackPanel>
 
+        
         <Button Grid.Row="5" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="2"
                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                 Background="Cornsilk" Foreground="Black" 

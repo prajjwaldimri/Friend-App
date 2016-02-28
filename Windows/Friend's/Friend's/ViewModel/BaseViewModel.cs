@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Windows.UI.Xaml;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
@@ -18,9 +19,8 @@ namespace Friend_s.ViewModel
         private string _themeColor;
         private string _userName;
         private bool _isLoading;
-
+        
         public RelayCommand UniversalSettingsCommand { get; private set; }
-
         public virtual bool IsLoading
         {
             get { return _isLoading; }
@@ -30,7 +30,6 @@ namespace Friend_s.ViewModel
                 RaisePropertyChanged();
             }
         }
-
         public string UserName
         {
             get { return _userName;}
@@ -48,20 +47,23 @@ namespace Friend_s.ViewModel
             get { return _themeColor; }
             set { _themeColor = value; RaisePropertyChanged(()=>ThemeColor); }
         }
-
         public string CommandBarQuote { get; set; }
+        public bool IsProgressBarEnabled { get; set; }
+        public Visibility IsProgressBarVisibile { get; set; }
 
-        public void RaisePropertyChangedBase()
+        private void RaisePropertyChangedBase()
         {
             RaisePropertyChanged(()=>ThemeColor);
             RaisePropertyChanged(()=>UserName);
+            RaisePropertyChanged(()=>IsProgressBarEnabled);
+            RaisePropertyChanged(()=>IsProgressBarVisibile);
         }
 
-        public void UniversalSettingsRetriever()
+        private void UniversalSettingsRetriever()
         {
             try
             {
-                var applicationData = Windows.Storage.ApplicationData.Current;
+               var applicationData = Windows.Storage.ApplicationData.Current;
                 var localsettings = applicationData.LocalSettings;
                 if (localsettings.Values.ContainsKey("UserName"))
                     _userName = localsettings.Values["UserName"] as string;
@@ -74,8 +76,9 @@ namespace Friend_s.ViewModel
                     localsettings.Values.Add("ThemeColor", "#18BC9C");
                     _themeColor = localsettings.Values["ThemeColor"] as string;
                 }
-                RaisePropertyChanged(() => UserName);
-                RaisePropertyChanged(() => ThemeColor);
+                IsProgressBarEnabled = false;
+                IsProgressBarVisibile = Visibility.Collapsed;
+                RaisePropertyChangedBase();
             }
             catch (Exception exception)
             {
@@ -113,6 +116,7 @@ namespace Friend_s.ViewModel
             {
                 Debug.WriteLine(exception);
             }
+
         }
 
         private void NotifyMe(NotificationMessage obj)
@@ -125,6 +129,20 @@ namespace Friend_s.ViewModel
             if (notification == "#18BC9C" || notification == "#BA4C63")
             {
                 _themeColor = notification;
+            }
+
+            else if (notification == "ProgressBarEnable" || notification == "ProgressBarDisable")
+            {
+                if (notification == "ProgressBarEnable")
+                {
+                    IsProgressBarEnabled = true;
+                    IsProgressBarVisibile = Visibility.Visible;
+                }
+                else
+                {
+                    IsProgressBarEnabled = false;
+                    IsProgressBarVisibile = Visibility.Collapsed;
+                }
             }
 
             else

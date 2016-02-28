@@ -11,6 +11,7 @@ using Windows.UI.Xaml.Media.Imaging;
 using Autofac.Core.Registration;
 using Friend_s.Services;
 using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.Messaging;
 
 namespace Friend_s.ViewModel
 {
@@ -22,8 +23,6 @@ namespace Friend_s.ViewModel
            ProfileImageSetterCommand = new RelayCommand(ProfileSetter);
            ProfileEllipseButtonTapCommand = new RelayCommand(EllipseTapped);
            SpineInitializerCommand = new RelayCommand(SpineInitializer);
-           ThemeRetrieverCommand = new RelayCommand(ThemeInitializer);
-        
         }
         //Variables
 
@@ -34,24 +33,21 @@ namespace Friend_s.ViewModel
         public RelayCommand ProfileImageSetterCommand { get; private set; }
         public RelayCommand ProfileEllipseButtonTapCommand { get; private set; }
         public RelayCommand SpineInitializerCommand { get; private set; }
-        public RelayCommand ThemeRetrieverCommand { get; private set; }
+
 
         public BitmapImage ProfileImageSource { get; private set; }
-
-
+        
         //String Values
-
         private string GpsLocationPoint { get; set; }
-
         public string GpsLocation { get; private set; }
 
 
         //Methods
-
         private async void LocationAccesser()
         {
             try
             {
+                MessengerInstance.Send(new NotificationMessage("ProgressBarEnable"));
                 var accessStatus = await Geolocator.RequestAccessAsync();
 
                 switch (accessStatus)
@@ -100,6 +96,7 @@ namespace Friend_s.ViewModel
             }
             RaisePropertyChanged(()=> GpsLocationPoint);
             RaisePropertyChanged(()=>GpsLocation);
+            MessengerInstance.Send(new NotificationMessage("ProgressBarDisable"));
         }
 
         private async void ProfileSetter()
@@ -193,22 +190,6 @@ namespace Friend_s.ViewModel
             }
         }
 
-        private static void ThemeInitializer()
-        {
-            try
-            {
-                var applicationData = ApplicationData.Current;
-                var localsettings = applicationData.LocalSettings;
-                var roamsettings = applicationData.RoamingSettings;
-                var bvm = new BaseViewModel();
-                if (localsettings.Values != null) bvm.ThemeColor = localsettings.Values["ThemeColor"] as string;
-                if (roamsettings.Values != null) bvm.ThemeColor = roamsettings.Values["ThemeColor"] as string;
-                bvm.RaisePropertyChangedBase();
-            }
-            catch (Exception exception)
-            {
-                Debug.WriteLine(exception);
-            }
-        }
+        
     }
 }
