@@ -102,11 +102,18 @@ namespace Friend_s.ViewModel
                     "Trust Yourself",
                     "Stay Positive",
                     "Don't Stop",
-                    "Enjoy Life"
+                    "Enjoy Life",
+                    "Nobody is Perfect",
+                    "Change is Good",
+                    "Live the Moment",
+                    "Never Stop Dreaming",
+                    "Go For It",
+                    "Never Give Up",
+                    "Family is Forever"
                 };
 
                 var random = new Random();
-                var number = random.Next(1, 13);
+                var number = random.Next(1, 20);
 
                 CommandBarQuote = quotes[number];
 

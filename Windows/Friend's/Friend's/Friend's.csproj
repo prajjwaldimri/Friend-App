@@ -17,8 +17,8 @@
     <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <PackageCertificateKeyFile>Friend%27s_StoreKey.pfx</PackageCertificateKeyFile>
-    <PackageCertificateThumbprint>5F2304698283B96033C3A9975868C52639F807C6</PackageCertificateThumbprint>
+    <PackageCertificateKeyFile>Friend%27s_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateThumbprint>2A60FAD181FCFBC971E4324CA94EE215E19D17F8</PackageCertificateThumbprint>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <AppxBundle>Always</AppxBundle>
     <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
@@ -99,7 +99,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\13.jpg" />
     <Content Include="Fonts\AGAINTS.TTF" />
     <Content Include="Fonts\UBUNTU-R.TTF" />
     <Content Include="Fonts\TNALOGO.TTF" />
@@ -152,7 +151,6 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Elegant_Background-16.jpg" />
     <Content Include="Assets\Generic-Profile-Image.jpg" />
     <None Include="Package.StoreAssociation.xml" />
     <Content Include="Properties\Default.rd.xml" />

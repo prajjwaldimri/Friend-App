@@ -390,15 +390,6 @@
     <AppxPackagedFile Include="C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend%27s\Friend%27s\ApplicationInsights.config">
       <PackagePath>ApplicationInsights.config</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend%27s\Friend%27s\Assets\13.jpg">
-      <PackagePath>Assets\13.jpg</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend%27s\Friend%27s\Assets\Elegant_Background-16.jpg">
-      <PackagePath>Assets\Elegant_Background-16.jpg</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend%27s\Friend%27s\Assets\Generic-Profile-Image.jpg">
-      <PackagePath>Assets\Generic-Profile-Image.jpg</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend%27s\Friend%27s\Fonts\AGAINTS.TTF">
       <PackagePath>Fonts\AGAINTS.TTF</PackagePath>
     </AppxPackagedFile>
@@ -416,6 +407,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend%27s\Friend%27s\Fonts\HirukoStencil.otf">
       <PackagePath>Fonts\HirukoStencil.otf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend%27s\Friend%27s\Assets\Generic-Profile-Image.jpg">
+      <PackagePath>Assets\Generic-Profile-Image.jpg</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend%27s\Friend%27s\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
