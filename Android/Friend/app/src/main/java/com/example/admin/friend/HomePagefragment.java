@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.location.Address;
+import android.location.Geocoder;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -13,17 +15,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
 
 public class HomePagefragment extends android.support.v4.app.Fragment {
     private static final int RESULT_OK = 1;
     View view;
-
+TextView location;
     Bitmap bmp;
     ImageView iv;
     public HomePagefragment() {
@@ -42,15 +47,38 @@ public class HomePagefragment extends android.support.v4.app.Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_homepage, container, false);
         iv = (ImageView) view.findViewById(R.id.imageView);
+        location=(TextView)view.findViewById(R.id.textView9);
         iv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openGallery();
             }
         });
-
+getLocation();
          retrieve();
         return view;
+    }
+
+    public void getLocation() {
+        Geocoder geocoder=new Geocoder(getActivity(),Locale.ENGLISH);
+        try{
+            List<Address> addresses=geocoder.getFromLocation(37.423247,-122.085469,1);
+            if (addresses!=null){
+                Address address=addresses.get(0);
+                StringBuilder stringBuilder=new StringBuilder();
+                for (int i=0;i<address.getMaxAddressLineIndex();i++){
+                    stringBuilder.append(address.getAddressLine(i)).append("\n");
+                    location.setText(""+stringBuilder.toString());
+
+                }
+            }
+            else {
+                location.setText("No Location found");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     private void openGallery() {

@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-         toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
@@ -33,13 +33,15 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-      private void setupViewPager(ViewPager viewPager) {
+
+    private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
 
         adapter.addFragment(new HomePagefragment(), "Home");
         adapter.addFragment(new SettingPageFragment(), "Settings");
         adapter.addFragment(new TimerPageFragment(), "Timer");
+        adapter.addFragment(new ReminderPage(), "Reminder");
         viewPager.setAdapter(adapter);
     }
 
