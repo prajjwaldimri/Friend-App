@@ -358,21 +358,22 @@
     <Language Code="zu-za" InMinimumRequirementSet="true" />
   </SupportedLocales>
   <ProductReservedInfo>
-    <MainPackageIdentityName>34691PrajjwalDimri.FriendsOpenBeta</MainPackageIdentityName>
+    <MainPackageIdentityName>34691PrajjwalDimri.BeFriendBeta</MainPackageIdentityName>
     <ReservedNames>
-      <ReservedName>Friend's Open Beta</ReservedName>
+      <ReservedName>BeFriend Beta</ReservedName>
     </ReservedNames>
   </ProductReservedInfo>
   <AccountPackageIdentityNames>
     <MainPackageIdentityName>34691PrajjwalDimri.10Calc</MainPackageIdentityName>
     <MainPackageIdentityName>34691PrajjwalDimri.10CalcBeta</MainPackageIdentityName>
     <MainPackageIdentityName>34691PrajjwalDimri.10Charts</MainPackageIdentityName>
+    <MainPackageIdentityName>34691PrajjwalDimri.BeFriend</MainPackageIdentityName>
     <MainPackageIdentityName>34691PrajjwalDimri.Flashtica</MainPackageIdentityName>
     <MainPackageIdentityName>34691PrajjwalDimri.FlashticaBeta</MainPackageIdentityName>
-    <MainPackageIdentityName>34691PrajjwalDimri.Friends</MainPackageIdentityName>
+    <MainPackageIdentityName>34691PrajjwalDimri.FriendsOpenBeta</MainPackageIdentityName>
     <MainPackageIdentityName>34691PrajjwalDimri.TheStudentNetwork</MainPackageIdentityName>
     <MainPackageIdentityName>34691PrajjwalDimri.Voatee</MainPackageIdentityName>
     <MainPackageIdentityName>34691PrajjwalDimri.WpHubForums</MainPackageIdentityName>
   </AccountPackageIdentityNames>
-  <PackageInfoList LandingUrl="https://dev.windows.com/dashboard/Application?appId=9NBLGGH5LHKH" />
+  <PackageInfoList LandingUrl="https://dev.windows.com/dashboard/Application?appId=9NBLGGH4Q8NG" />
 </StoreAssociation>

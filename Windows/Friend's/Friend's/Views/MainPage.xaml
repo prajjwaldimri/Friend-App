@@ -20,7 +20,9 @@
     
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-        <Pivot Background="#2C3E50" Title="Friend's">
+        
+
+        <Pivot Background="#2C3E50" Title="BeFriend Beta">
 
            <Pivot.TitleTemplate>
                     <DataTemplate>
@@ -72,6 +74,12 @@
             </CommandBar.Content>
             
         </CommandBar>
+
+        <ProgressBar IsEnabled="{Binding IsProgressBarEnabled}"
+                     Visibility="{Binding IsProgressBarVisibile}"
+                     IsIndeterminate="True"
+                     Grid.Row="0" Grid.Column="0" VerticalAlignment="Top"
+                     Foreground="Lavender"/>
     </Grid>
 
 </Page>

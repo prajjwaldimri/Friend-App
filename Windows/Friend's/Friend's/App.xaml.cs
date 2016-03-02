@@ -156,7 +156,6 @@ namespace Friend_s
 
         void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
         {
-            Debug.WriteLine(e);
             throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
 
         }
@@ -172,8 +171,6 @@ namespace Friend_s
         {
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
-            Debug.WriteLine(e);
-            deferral.Complete();
             deferral.Complete();
         }
         

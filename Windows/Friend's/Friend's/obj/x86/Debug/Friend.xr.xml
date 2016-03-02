@@ -28,6 +28,8 @@
     <RootPropertyPathName Name="ProfileEllipseButtonTapCommand" />
     <RootPropertyPathName Name="ProfileImageSource" />
     <RootPropertyPathName Name="BaseView" />
+    <RootPropertyPathName Name="IsProgressBarEnabled" />
+    <RootPropertyPathName Name="IsProgressBarVisibile" />
     <RootPropertyPathName Name="CommandBarQuote" />
     <RootPropertyPathName Name="ReminderPage" />
     <RootPropertyPathName Name="ReminderRemoverCommand" />
@@ -211,6 +213,13 @@
       <RootProperty Name="Foreground" />
       <RootProperty Name="PrimaryCommands" />
       <RootProperty Name="Content" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ProgressBar">
+      <RootProperty Name="IsEnabled" />
+      <RootProperty Name="Visibility" />
+      <RootProperty Name="IsIndeterminate" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Foreground" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.AppBarSeparator">
       <RootProperty Name="Foreground" />

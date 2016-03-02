@@ -17,7 +17,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -54,9 +53,10 @@ TextView location;
                 openGallery();
             }
         });
+
 getLocation();
-         retrieve();
-        return view;
+retrieve();
+     return view;
     }
 
     public void getLocation() {
@@ -96,6 +96,7 @@ getLocation();
                 String path=getPathFromCameraData(data,this.getActivity());
                 Bitmap bmp=BitmapFactory.decodeFile(path);
                 iv.setImageBitmap(bmp);
+                storeImage();
 
             }else {
                 Toast.makeText(getActivity(), "Pick your image first", Toast.LENGTH_LONG).show();
@@ -104,7 +105,7 @@ getLocation();
             e.printStackTrace();
 
         }
-        storeimage();
+
 }
 
     private String getPathFromCameraData(Intent data, Context context) {
@@ -117,9 +118,9 @@ getLocation();
         String piturepath=cursor.getString(columnIndx);
         cursor.close();
         return piturepath;
-        //
+
     }
-    private boolean storeimage() {
+    private boolean storeImage() {
 
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
         File filepaths = Environment.getExternalStorageDirectory();
@@ -128,21 +129,19 @@ getLocation();
         File imageName=new File(dir,"myProfile.jpeg");
         try {
 
-            FileOutputStream fo = new FileOutputStream(imageName);
+            new FileOutputStream(imageName);
             if (bmp != null) {
                 bmp.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
             } else {
                 return false;
             }
-            fo.flush();
-            fo.close();
 
         } catch (IOException e) {
             e.printStackTrace();
         }
         return true;
     }
-    public boolean retrieve(){
+    public boolean retrieveImage(){
         File f = new File(android.os.Environment.getExternalStorageDirectory() + "/friend's/myProfile.jpeg");
         Bitmap bmp = BitmapFactory.decodeFile(f.getAbsolutePath());
         iv.setImageBitmap(bmp);
