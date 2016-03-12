@@ -7,9 +7,12 @@ using Windows.Services.Maps;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.UI.Popups;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
 using Autofac.Core.Registration;
 using Friend_s.Services;
+using Friend_s.Views;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
 
@@ -23,7 +26,10 @@ namespace Friend_s.ViewModel
            ProfileImageSetterCommand = new RelayCommand(ProfileSetter);
            ProfileEllipseButtonTapCommand = new RelayCommand(EllipseTapped);
            SpineInitializerCommand = new RelayCommand(SpineInitializer);
+            ButtonClickEventHome = new RelayCommand<object>(ButtonClickEventMethod);
         }
+
+        
         //Variables
 
         //Commands and Services Declaration
@@ -33,7 +39,7 @@ namespace Friend_s.ViewModel
         public RelayCommand ProfileImageSetterCommand { get; private set; }
         public RelayCommand ProfileEllipseButtonTapCommand { get; private set; }
         public RelayCommand SpineInitializerCommand { get; private set; }
-
+        public RelayCommand<object> ButtonClickEventHome { get; private set; }
 
         public BitmapImage ProfileImageSource { get; private set; }
         
@@ -190,6 +196,26 @@ namespace Friend_s.ViewModel
             }
         }
 
-        
+        private void ButtonClickEventMethod(object obj)
+        {
+            var parameter = Convert.ToInt32(obj);
+            switch (parameter)
+            {
+                case 1:
+                    var frame = Window.Current.Content as Frame;
+                    if (frame != null)
+                        frame.Navigate(typeof(Sospage));
+                    break;
+
+                case 2:
+                    var frame1 = Window.Current.Content as Frame;
+                    break;
+
+                default:
+                    Debug.WriteLine("Default case hit on HomePage");
+                    break;
+            }
+        }
+
     }
 }

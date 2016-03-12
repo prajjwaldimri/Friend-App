@@ -3,11 +3,14 @@ using System.Diagnostics;
 using System.Threading;
 using Windows.Devices.Geolocation;
 using Windows.Devices.Sms;
+using Windows.Security.Credentials;
 using Windows.Storage;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Friend_s.Services;
 using GalaSoft.MvvmLight.Command;
+using Tweetinvi;
+using Tweetinvi.Core.Credentials;
 
 namespace Friend_s.ViewModel
 {
@@ -21,34 +24,43 @@ namespace Friend_s.ViewModel
         private static string _latitude;
         private static string _longitude;
 
+        public string SosPageText { get; set; }
+
         public SosPageViewModel()
         {
             TimerStarterCommand = new RelayCommand(TimerStarter);
+            SosCommand = new RelayCommand(SosCommandMethod);
         }
 
-        private RelayCommand TimerStarterCommand { get; set; }
+        public RelayCommand TimerStarterCommand { get; set; }
+        public RelayCommand SosCommand { get; set; }
 
-        private static void TimerStarter()
+        private void TimerStarter()
         {
+            SosPageText += "Timer Started \n";
+            RaisePropertyChanged(()=>SosPageText);
             var timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(20);
             timer.Tick += timer_Tick;
-            timer.Start();
+            //timer.Start();
 
             if (!Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
                 return;
             var spineClass = new SpineClass();
             spineClass.InitializeCallingInfoAsync();
+            Caller();
         }
 
-        private static void timer_Tick(object sender, object e)
+        private void timer_Tick(object sender, object e)
         {
             LocationAccesser();
 
             if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
                 return;
+            //TODO: Get messaging permission
+            
             MessageSender();
-            Caller();
+            
         }
 
 
@@ -56,8 +68,9 @@ namespace Friend_s.ViewModel
         private static string _phonename;
 
 
-        private static async void LocationAccesser()
+        private async void LocationAccesser()
         {
+            SosPageText += "Trying to get location... \n";
             try
             {
                 var accessStatus = await Geolocator.RequestAccessAsync();
@@ -74,17 +87,20 @@ namespace Friend_s.ViewModel
                         _longitude = pos.Coordinate.Point.Position.Longitude.ToString();
                         var location = new BasicGeoposition
                         {
-                            Latitude = Math.Round(pos.Coordinate.Point.Position.Latitude, 4),
-                            Longitude = Math.Round(pos.Coordinate.Point.Position.Longitude, 4)
+                            Latitude = pos.Coordinate.Point.Position.Latitude,
+                            Longitude = pos.Coordinate.Point.Position.Longitude
                         };
+                        SosPageText += "Location accessed... \n" + _latitude + "\n" + _longitude ;
 
                         break;
                     case GeolocationAccessStatus.Denied:
                         Debug.WriteLine("Access Denied!");
+                        SosPageText += "Access Denied \n";
                         break;
 
                     case GeolocationAccessStatus.Unspecified:
                         Debug.WriteLine("Unspecified");
+                        SosPageText += "Unknown error \n";
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
@@ -94,16 +110,11 @@ namespace Friend_s.ViewModel
             {
                 Debug.WriteLine(e);
             }
+            RaisePropertyChanged(() => SosPageText);
         }
 
-        private static async void MessageSender()
+        private async void MessageSender()
         {
-            if (!ApplicationData.Current.LocalSettings.Values.ContainsKey("SmsOn"))
-            {
-                //var messageDialog= new MessageDialog("SMS Permission Denied");
-                //await messageDialog.ShowAsync();
-                return;
-            }
             if (_device == null)
             {
                 try
@@ -127,35 +138,76 @@ namespace Friend_s.ViewModel
                 Body = "I am in need of help. My coordinates are\n Latitude:" + _latitude + "Longitude \n" + _longitude
             };
             var result = await _device.SendMessageAndGetResultAsync(msg);
+            SosPageText += "Sending Message.... \n";
 
-            if (!result.IsSuccessful) return;
+            if (!result.IsSuccessful)
+            {
+                SosPageText += "Message Sending Failed \n";
+                return;
+            }
             var msgStr = "";
             msgStr += "Text message sent, To: " + _phonenumber;
-            var msg1 = new MessageDialog("Message Sent!" + msgStr);
-            await msg1.ShowAsync();
+            SosPageText += msgStr+"\n";
+            RaisePropertyChanged(()=>SosPageText);
         }
 
-        private static async void Caller()
+        private async void Caller()
         {
-            if (!ApplicationData.Current.LocalSettings.Values.ContainsKey("CallOn"))
+            if (!ApplicationData.Current.LocalSettings.Values.ContainsKey("FirstContactNumber"))
+            {
+                SosPageText += "Contacts not assigned \n";
+                return;
+            }
+            _phonenumber = ApplicationData.Current.LocalSettings.Values["FirstContactNumber"] as string;
+
+            if (!ApplicationData.Current.LocalSettings.Values.ContainsKey("FirstContactName"))
             {
                 return;
             }
-            if (!ApplicationData.Current.LocalSettings.Values.ContainsKey("FirstContactNumber")) return;
-            _phonenumber = ApplicationData.Current.LocalSettings.Values["FirstContactNumber"] as string;
-
-            if (!ApplicationData.Current.LocalSettings.Values.ContainsKey("FirstContactName")) return;
             _phonename = ApplicationData.Current.LocalSettings.Values["FirstContactName"] as string;
 
             if ((SpineClass.CurrentPhoneLine != null))
             {
+                SosPageText += "Calling... \n";
                 SpineClass.CurrentPhoneLine.Dial(_phonenumber, _phonename);
             }
             else
             {
-                var dialog = new MessageDialog("No line found to place the call");
-                await dialog.ShowAsync();
+                SosPageText += "No line found to place the call. No SIM or system not a mobile phone \n";
             }
+            RaisePropertyChanged(()=>SosPageText);
+        }
+
+        private async void TwitterPoster()
+        {
+            SosPageText += "Checking credentials... \n";
+            var vault = new PasswordVault();
+            var credentialList = vault.FindAllByUserName("Twitter");
+            if (credentialList.Count <= 0)
+            {
+                SosPageText += "Twitter not configured \n";
+                return;
+            }
+            var credential = vault.Retrieve("Friend", "Twitter");
+            SosPageText += "Credentials Retrieved \n";
+
+            // Set up your credentials (https://apps.twitter.com)
+            Auth.SetUserCredentials("CONSUMER_KEY", "CONSUMER_SECRET", "ACCESS_TOKEN", "ACCESS_TOKEN_SECRET");
+
+            //TODO: Publish the Tweet with location on your Timeline
+            Tweet.PublishTweet("I need help at"+_latitude+_longitude);
+
+            SosPageText += "Publishing Tweet... \n";
+
+            RaisePropertyChanged(()=>SosPageText);
+        }
+
+        private void SosCommandMethod()
+        {
+            LocationAccesser();
+            MessageSender();
+            //Caller();
+            //TwitterPoster();
         }
     }
 }

@@ -75,7 +75,7 @@ namespace Friend_s.ViewModel
                     SliderValue = (double) localsettings.Values["TimerTime"];
 
 
-                if (_themeColor == "#18BC9C")
+                if (_themeColor == "#00D054")
                 {
                     ToggleSwitchIsOn = false;
                 }
@@ -334,18 +334,18 @@ namespace Friend_s.ViewModel
                 }
                 if (!localData.Values.ContainsKey("ThemeColor") && !roamData.Values.ContainsKey("ThemeColor"))
                 {
-                    localData.Values.Add("ThemeColor", "#18BC9C");
-                    roamData.Values.Add("ThemeColor", "#18BC9C");
+                    localData.Values.Add("ThemeColor", "#00D054");
+                    roamData.Values.Add("ThemeColor", "#00D054");
                 }
                 else
                 {
                     localData.Values.Remove("ThemeColor");
                     roamData.Values.Remove("ThemeColor");
-                    localData.Values.Add("ThemeColor", "#18BC9C");
-                    roamData.Values.Add("ThemeColor", "#18BC9C");
+                    localData.Values.Add("ThemeColor", "#00D054");
+                    roamData.Values.Add("ThemeColor", "#00D054");
                 }
                 ToggleSwitchIsOn = false;
-                _themeColor = "#18BC9C";
+                _themeColor = "#00D054";
             }
             else
             {
