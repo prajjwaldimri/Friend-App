@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TimePicker;
 
 public class ReminderPage extends android.support.v4.app.Fragment {
-View view;
+    View view;
     TimePicker timePicker;
     @Override
     public void onCreate(Bundle savedInstanceState) {

@@ -55,7 +55,7 @@ TextView location;
         });
 
 getLocation();
-retrieve();
+//retrieve();
      return view;
     }
 
