@@ -24,6 +24,7 @@
     <RootPropertyPathName Name="SpineInitializerCommand" />
     <RootPropertyPathName Name="ProfileImageSetterCommand" />
     <RootPropertyPathName Name="LocationAccesserCommand" />
+    <RootPropertyPathName Name="ButtonClickEventHome" />
     <RootPropertyPathName Name="GpsLocation" />
     <RootPropertyPathName Name="ProfileEllipseButtonTapCommand" />
     <RootPropertyPathName Name="ProfileImageSource" />
@@ -36,6 +37,9 @@
     <RootPropertyPathName Name="ReminderRegisterCommand" />
     <RootPropertyPathName Name="Time" />
     <RootPropertyPathName Name="SosPage" />
+    <RootPropertyPathName Name="SosCommand" />
+    <RootPropertyPathName Name="TimerStarterCommand" />
+    <RootPropertyPathName Name="SosPageText" />
     <RootPropertyPathName Name="TimerPage" />
     <RootPropertyPathName Name="TimerValueRetrieverCommand" />
     <RootPropertyPathName Name="SecondsValue" />

@@ -86,6 +86,8 @@
                 Background="Cornsilk" Foreground="Black" 
                 FontFamily="Rondalo" FontSize="20" BorderBrush="White"
                 BorderThickness="0.2"
+                Command="{Binding ButtonClickEventHome}"
+                CommandParameter="1"
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center">
             <Button.Content>
@@ -104,6 +106,8 @@
                 Background="Cornsilk" Foreground="Black" 
                 FontFamily="Rondalo" FontSize="20" BorderBrush="White" 
                 BorderThickness="0.2"
+                Command="{Binding ButtonClickEventHome}"
+                CommandParameter="2"
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center">
             <Button.Content>

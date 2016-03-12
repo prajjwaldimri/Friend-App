@@ -18,18 +18,9 @@ namespace Friend_s.ViewModel
 
         private string _themeColor;
         private string _userName;
-        private bool _isLoading;
         
         public RelayCommand UniversalSettingsCommand { get; private set; }
-        public virtual bool IsLoading
-        {
-            get { return _isLoading; }
-            set
-            {
-                _isLoading = value;
-                RaisePropertyChanged();
-            }
-        }
+        
         public string UserName
         {
             get { return _userName;}
@@ -73,7 +64,7 @@ namespace Friend_s.ViewModel
                 }
                 else
                 {
-                    localsettings.Values.Add("ThemeColor", "#18BC9C");
+                    localsettings.Values.Add("ThemeColor", "#00D054");
                     _themeColor = localsettings.Values["ThemeColor"] as string;
                 }
                 IsProgressBarEnabled = false;
@@ -133,7 +124,7 @@ namespace Friend_s.ViewModel
             var parseresult = double.TryParse(notification, out result);
 
             if (parseresult) return;
-            if (notification == "#18BC9C" || notification == "#BA4C63")
+            if (notification == "#00D054" || notification == "#BA4C63")
             {
                 _themeColor = notification;
             }
