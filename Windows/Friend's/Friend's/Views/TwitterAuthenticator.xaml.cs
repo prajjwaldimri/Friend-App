@@ -26,8 +26,8 @@ namespace Friend_s.Views
         {
             TwitterAuthenticatorMethod();
         }
-
-        readonly TwitterCredentials _appCredentials = new TwitterCredentials(AuthTokens._twitterConsumerKey, AuthTokens._twitterConsumerSecret);
+        //Use your consumerKey and ConsumerSecret
+        readonly TwitterCredentials _appCredentials = new TwitterCredentials("AuthTokens._twitterConsumerKey", "AuthTokens._twitterConsumerSecret");
 
         private async void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
