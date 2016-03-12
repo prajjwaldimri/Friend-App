@@ -1,5 +1,6 @@
 package com.example.admin.friend;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -22,24 +23,26 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/TT1255M_.ttf");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-         toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
-
-
     }
-      private void setupViewPager(ViewPager viewPager) {
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
+    private void setupViewPager(ViewPager viewPager) {
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
         adapter.addFragment(new HomePagefragment(), "Home");
         adapter.addFragment(new SettingPageFragment(), "Settings");
         adapter.addFragment(new TimerPageFragment(), "Timer");
+        adapter.addFragment(new ReminderPage(), "Reminder");
         viewPager.setAdapter(adapter);
     }
 
