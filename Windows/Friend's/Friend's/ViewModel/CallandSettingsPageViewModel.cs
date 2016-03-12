@@ -199,10 +199,14 @@ namespace Friend_s.ViewModel
                     var vault = new PasswordVault();
                     try
                     {
-                        var credentialList = vault.FindAllByUserName("Twitter");
+                        var credentialList = vault.FindAllByUserName("TwitterAccessToken");
                         if (credentialList.Count <= 0) return;
-                        var credential = vault.Retrieve("Friend", "Twitter");
-                        vault.Remove(new PasswordCredential("Friend", "Twitter", credential.Password));
+                        var credential = vault.Retrieve("Friend", "TwitterAccessToken");
+                        vault.Remove(new PasswordCredential("Friend", "TwitterAccessToken", credential.Password));
+                        var credentialList1 = vault.FindAllByUserName("TwitterAccessTokenSecret");
+                        if (credentialList1.Count <= 0) return;
+                        var credential1 = vault.Retrieve("Friend", "TwitterAccessTokenSecret");
+                        vault.Remove(new PasswordCredential("Friend", "TwitterAccessTokenSecret", credential1.Password));
                         TwitterPlusIconVisibility = Visibility.Visible;
                         TwitterRemoveIconVisibility = Visibility.Collapsed;
                     }
@@ -375,8 +379,10 @@ namespace Friend_s.ViewModel
             var vault = new PasswordVault();
             try
             {
-                var credentialList = vault.FindAllByUserName("Twitter");
+                var credentialList = vault.FindAllByUserName("TwitterAccessToken");
                 if (credentialList.Count <= 0) return;
+                var credentialList1 = vault.FindAllByUserName("TwitterAccessTokenSecret");
+                if (credentialList1.Count <= 0) return;
                 TwitterPlusIconVisibility = Visibility.Collapsed;
                 TwitterRemoveIconVisibility = Visibility.Visible;
             }

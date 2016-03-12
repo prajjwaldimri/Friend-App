@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Threading;
+using System.Threading.Tasks;
 using Windows.Devices.Geolocation;
 using Windows.Devices.Sms;
 using Windows.Security.Credentials;
@@ -68,7 +69,7 @@ namespace Friend_s.ViewModel
         private static string _phonename;
 
 
-        private async void LocationAccesser()
+        private async Task LocationAccesser()
         {
             SosPageText += "Trying to get location... \n";
             try
@@ -182,20 +183,23 @@ namespace Friend_s.ViewModel
         {
             SosPageText += "Checking credentials... \n";
             var vault = new PasswordVault();
-            var credentialList = vault.FindAllByUserName("Twitter");
+            var credentialList = vault.FindAllByUserName("TwitterAccessToken");
             if (credentialList.Count <= 0)
             {
                 SosPageText += "Twitter not configured \n";
                 return;
             }
-            var credential = vault.Retrieve("Friend", "Twitter");
+            var twitteraccesstoken = vault.Retrieve("Friend", "TwitterAccessToken");
+            var twitteraccesstokensecret = vault.Retrieve("Friend", "TwitterAccessTokenSecret");
             SosPageText += "Credentials Retrieved \n";
 
             // Set up your credentials (https://apps.twitter.com)
-            Auth.SetUserCredentials("CONSUMER_KEY", "CONSUMER_SECRET", "ACCESS_TOKEN", "ACCESS_TOKEN_SECRET");
+            //Use your own consumerKey and consumerSecret below!
+            Auth.SetUserCredentials("AuthTokens._twitterConsumerKey", "AuthTokens._twitterConsumerSecret", twitteraccesstoken.Password, twitteraccesstokensecret.Password);
 
+            await LocationAccesser();
             //TODO: Publish the Tweet with location on your Timeline
-            Tweet.PublishTweet("I need help at"+_latitude+_longitude);
+            Tweet.PublishTweet("I need help at \n"+_latitude+"\n"+_longitude);
 
             SosPageText += "Publishing Tweet... \n";
 
@@ -207,7 +211,7 @@ namespace Friend_s.ViewModel
             LocationAccesser();
             MessageSender();
             //Caller();
-            //TwitterPoster();
+            TwitterPoster();
         }
     }
 }

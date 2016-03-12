@@ -113,6 +113,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AuthTokens.cs" />
     <Compile Include="Services\MonitorClass.cs" />
     <Compile Include="Services\ViewModelLocator.cs" />
     <Compile Include="Services\SpineClass.cs" />

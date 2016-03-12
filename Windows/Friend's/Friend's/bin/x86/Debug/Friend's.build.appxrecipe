@@ -378,8 +378,32 @@
     <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\System.Xml.XmlSerializer\4.0.10\lib\netcore50\System.Xml.XmlSerializer.dll">
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\TweetinviAPI\0.9.10.2\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Tweetinvi.dll">
+    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\TweetinviAPI\0.9.11\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Tweetinvi.Controllers.dll">
+      <PackagePath>Tweetinvi.Controllers.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\TweetinviAPI\0.9.11\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Tweetinvi.Core.dll">
+      <PackagePath>Tweetinvi.Core.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\TweetinviAPI\0.9.11\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Tweetinvi.Credentials.dll">
+      <PackagePath>Tweetinvi.Credentials.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\TweetinviAPI\0.9.11\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Tweetinvi.dll">
       <PackagePath>Tweetinvi.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\TweetinviAPI\0.9.11\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Tweetinvi.Factories.dll">
+      <PackagePath>Tweetinvi.Factories.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\TweetinviAPI\0.9.11\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Tweetinvi.Logic.dll">
+      <PackagePath>Tweetinvi.Logic.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\TweetinviAPI\0.9.11\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Tweetinvi.Security.dll">
+      <PackagePath>Tweetinvi.Security.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\TweetinviAPI\0.9.11\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Tweetinvi.Streams.dll">
+      <PackagePath>Tweetinvi.Streams.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\TweetinviAPI\0.9.11\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Tweetinvi.WebLogic.dll">
+      <PackagePath>Tweetinvi.WebLogic.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\NotificationsExtensions.Win10\10586.0.2\lib\uap10.0\NotificationsExtensions.winmd">
       <PackagePath>NotificationsExtensions.winmd</PackagePath>

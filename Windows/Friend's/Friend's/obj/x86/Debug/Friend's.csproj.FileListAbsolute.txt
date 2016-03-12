@@ -293,3 +293,12 @@ C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\Friend's\obj\x86\Debug\M
 C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\Friend's\obj\x86\Debug\NotificationsExtensions.pri.xml
 C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\Friend's\obj\x86\Debug\GalaSoft.MvvmLight.Platform.pri.xml
 C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\Friend's\obj\x86\Debug\ProjectArchitectures.txt
+C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\Friend's\obj\x86\Debug\Friend's.csprojResolveAssemblyReference.cache
+C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\Friend's\bin\x86\Debug\Tweetinvi.Controllers.dll
+C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\Friend's\bin\x86\Debug\Tweetinvi.Core.dll
+C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\Friend's\bin\x86\Debug\Tweetinvi.Credentials.dll
+C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\Friend's\bin\x86\Debug\Tweetinvi.Factories.dll
+C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\Friend's\bin\x86\Debug\Tweetinvi.Logic.dll
+C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\Friend's\bin\x86\Debug\Tweetinvi.Security.dll
+C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\Friend's\bin\x86\Debug\Tweetinvi.Streams.dll
+C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\Friend's\bin\x86\Debug\Tweetinvi.WebLogic.dll

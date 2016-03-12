@@ -27,7 +27,7 @@ namespace Friend_s.Views
             TwitterAuthenticatorMethod();
         }
 
-        readonly TwitterCredentials _appCredentials = new TwitterCredentials("CONSUMER_KEY", "CONSUMER_SECRET");
+        readonly TwitterCredentials _appCredentials = new TwitterCredentials(AuthTokens._twitterConsumerKey, AuthTokens._twitterConsumerSecret);
 
         private async void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
@@ -43,7 +43,8 @@ namespace Friend_s.Views
                 Auth.SetCredentials(userCredentials);
 
                 var vault = new PasswordVault();
-                vault.Add(new PasswordCredential("Friend","Twitter",userCredentials.ToString()));
+                vault.Add(new PasswordCredential("Friend","TwitterAccessToken",userCredentials.AccessToken));
+                vault.Add(new PasswordCredential("Friend","TwitterAccessTokenSecret",userCredentials.AccessTokenSecret));
                 var frame = Window.Current.Content as Frame;
                 frame?.Navigate(typeof(MainPage));
             }
