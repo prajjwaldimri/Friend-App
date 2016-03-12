@@ -19,6 +19,9 @@
     <RootPropertyPathName Name="TwitterRemoveIconVisibility" />
     <RootPropertyPathName Name="SocialIntegrationRemoverCommand" />
     <RootPropertyPathName Name="TwitterPlusIconVisibility" />
+    <RootPropertyPathName Name="FacebookRemoveIconVisibility" />
+    <RootPropertyPathName Name="FacebookPlusIconVisibility" />
+    <RootPropertyPathName Name="FacebookAuthenticatorCommand" />
     <RootPropertyPathName Name="UserName" />
     <RootPropertyPathName Name="HomePage" />
     <RootPropertyPathName Name="SpineInitializerCommand" />

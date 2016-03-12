@@ -79,10 +79,30 @@
                       FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"/>
             <TextBlock TextAlignment="Left" Text="Connect Facebook" VerticalAlignment="Center" 
                      Grid.Row="6" Grid.Column="1"/>
-            <FontIcon Glyph="&#xf067;" FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"
-                      Grid.Row="6" VerticalAlignment="Center" Grid.Column="2"/>
+            <FontIcon Glyph="&#xf067;" Name="FacebookAddIcon"
+                      FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"
+                      Grid.Row="6" VerticalAlignment="Center" Grid.Column="2"
+                      Visibility="{Binding FacebookPlusIconVisibility}">
+                    <interactivity:Interaction.Behaviors>
+                        <core:EventTriggerBehavior EventName="Tapped">
+                            <core:InvokeCommandAction Command="{Binding FacebookAuthenticatorCommand}"/>
+                        </core:EventTriggerBehavior>
+                        </interactivity:Interaction.Behaviors>
+                </FontIcon>
 
-            <FontIcon VerticalAlignment="Center" Glyph="&#xf081;"
+                <FontIcon Glyph="&#xf00d;" Name="FacebookRemoveIcon"
+                      Visibility="{Binding FacebookRemoveIconVisibility}"
+                      FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"
+                      Grid.Row="6" VerticalAlignment="Center" Grid.Column="2">
+                    <interactivity:Interaction.Behaviors>
+                        <core:EventTriggerBehavior EventName="Tapped">
+                            <core:InvokeCommandAction CommandParameter="2" 
+                                                      Command="{Binding SocialIntegrationRemoverCommand}"/>
+                        </core:EventTriggerBehavior>
+                    </interactivity:Interaction.Behaviors>
+                </FontIcon>
+
+                <FontIcon VerticalAlignment="Center" Glyph="&#xf081;"
                       Grid.Row="8" Grid.Column="0" 
                       FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"/>
             <TextBlock TextAlignment="Left" Text="Connect Twitter" VerticalAlignment="Center" 

@@ -4,14 +4,18 @@ using System.Threading;
 using System.Threading.Tasks;
 using Windows.Devices.Geolocation;
 using Windows.Devices.Sms;
+using Windows.Foundation.Collections;
 using Windows.Security.Credentials;
 using Windows.Storage;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Friend_s.Services;
 using GalaSoft.MvvmLight.Command;
+using Newtonsoft.Json;
 using Tweetinvi;
 using Tweetinvi.Core.Credentials;
+using winsdkfb;
+using winsdkfb.Graph;
 
 namespace Friend_s.ViewModel
 {
@@ -195,7 +199,7 @@ namespace Friend_s.ViewModel
 
             // Set up your credentials (https://apps.twitter.com)
             //Use your own consumerKey and consumerSecret below!
-            Auth.SetUserCredentials("AuthTokens._twitterConsumerKey", "AuthTokens._twitterConsumerSecret", twitteraccesstoken.Password, twitteraccesstokensecret.Password);
+            Auth.SetUserCredentials("AuthTokens.TwitterConsumerKey", "AuthTokens.TwitterConsumerSecret", twitteraccesstoken.Password, twitteraccesstokensecret.Password);
 
             await LocationAccesser();
             //TODO: Publish the Tweet with location on your Timeline
@@ -206,12 +210,57 @@ namespace Friend_s.ViewModel
             RaisePropertyChanged(()=>SosPageText);
         }
 
+        private async void FacebookPoster()
+        {
+            // Get active session
+            FBSession sess = FBSession.ActiveSession;
+
+
+            if (sess.LoggedIn)
+            {
+                FBUser user = sess.User;
+                // Set caption, link and description parameters
+                PropertySet parameters = new PropertySet();
+                
+                // Add post message
+                await LocationAccesser();
+                parameters.Add("message", "I am in need of help \n"+"\n"+_latitude+"\n"+_longitude);
+
+                // Set Graph api path
+                string path = "/" + user.Id + "/feed";
+
+                var factory = new FBJsonClassFactory(s => {
+                                                              return JsonConvert.DeserializeObject<FBReturnObject>(s);
+                });
+
+                var singleValue = new FBSingleValue(path, parameters, factory);
+                var result = await singleValue.PostAsync();
+                if (result.Succeeded)
+                {
+                    SosPageText += "Posted to Facebook Wall";
+                }
+                else
+                {
+                    SosPageText += "Can't post to Facebook Wall";
+                }
+            }
+            RaisePropertyChanged(()=>SosPageText);
+        }
+
         private void SosCommandMethod()
         {
             LocationAccesser();
-            MessageSender();
-            //Caller();
+            //MessageSender();
             TwitterPoster();
+            FacebookPoster();
+            Caller();
         }
     }
+
+    public class FBReturnObject
+    {
+        public string Id { get; set; }
+        public string Post_Id { get; set; }
+    }
+
 }

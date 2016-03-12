@@ -302,3 +302,6 @@ C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\Friend's\bin\x86\Debug\T
 C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\Friend's\bin\x86\Debug\Tweetinvi.Security.dll
 C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\Friend's\bin\x86\Debug\Tweetinvi.Streams.dll
 C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\Friend's\bin\x86\Debug\Tweetinvi.WebLogic.dll
+C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\Friend's\bin\x86\Debug\winsdkfb.winmd
+C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\Friend's\bin\x86\Debug\winsdkfb.pdb
+C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\Friend's\bin\x86\Debug\winsdkfb.pri
