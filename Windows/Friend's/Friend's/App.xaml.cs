@@ -71,6 +71,8 @@ namespace Friend_s
                     builder.SetTrigger(new ToastNotificationActionTrigger());
 
                     var registration = builder.Register();
+
+                    
                 }
                 catch (Exception ex)
                 {

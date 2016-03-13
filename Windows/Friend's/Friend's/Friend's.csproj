@@ -105,6 +105,8 @@
     <Content Include="Fonts\fontawesome-webfont.ttf" />
     <Content Include="Fonts\HirukoStencil.otf" />
     <Content Include="Fonts\TT1255M_.TTF" />
+    <Content Include="TwitterConsumerSecret.txt" />
+    <Content Include="TwitterConsumerKey.txt" />
     <None Include="Friend%27s_StoreKey.pfx" />
     <None Include="Friend%27s_TemporaryKey.pfx" />
     <None Include="project.json" />

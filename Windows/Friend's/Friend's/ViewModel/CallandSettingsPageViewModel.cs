@@ -466,7 +466,7 @@ namespace Friend_s.ViewModel
         {
             var sess = FBSession.ActiveSession;
             //Use your FB App ID
-            sess.FBAppId = "AuthTokens.FacebookAppID";
+            sess.FBAppId = AuthTokens.FacebookAppID;
             sess.WinAppId = WebAuthenticationBroker.GetCurrentApplicationCallbackUri().ToString();
             
 
