@@ -67,9 +67,6 @@ namespace Friend_s.Views
             
         }
 
-        private void TwitterRemoveIcon_OnTapped(object sender, TappedRoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }
