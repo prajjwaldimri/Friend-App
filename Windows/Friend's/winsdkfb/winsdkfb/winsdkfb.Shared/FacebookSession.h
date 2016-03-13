@@ -13,12 +13,11 @@
 // THE SOFTWARE.
 //
 //******************************************************************************
-
+//#include "FBUser.h"
 #pragma once
 
 #include "FacebookAccessTokenData.h"
 #include "FacebookResult.h"
-#include "FBUser.h"
 #include "FacebookDialog.xaml.h"
 #include "FacebookPermissions.h"
 
