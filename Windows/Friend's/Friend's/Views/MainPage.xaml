@@ -22,7 +22,7 @@
 
         
 
-        <Pivot Background="#2C3E50" Title="Friend's">
+        <Pivot Background="#2C3E50" Title="BeFriend Beta">
 
            <Pivot.TitleTemplate>
                     <DataTemplate>

@@ -1,14 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using Windows.ApplicationModel.Background;
 using Windows.ApplicationModel.Contacts;
+using Windows.Security.Authentication.Web;
 using Windows.Security.Credentials;
 using Windows.Storage;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
+using winsdkfb;
+using winsdkfb.Graph;
+
 
 namespace Friend_s.ViewModel
 {
@@ -21,6 +27,7 @@ namespace Friend_s.ViewModel
         public RelayCommand ToastToggledCommand { get; private set; }
         public RelayCommand ThemeToggledCommand { get; private set; }
         public RelayCommand SliderValueChangedCommand { get; private set; }
+        public RelayCommand FacebookAuthenticatorCommand { get; private set; }
 
         public CallandSettingsPageViewModel()
         {
@@ -31,6 +38,7 @@ namespace Friend_s.ViewModel
             ToastToggledCommand = new RelayCommand(ToastMakerToggledButton);
             ThemeToggledCommand = new RelayCommand(ThemeChangerToggledButton);
             SliderValueChangedCommand = new RelayCommand(SliderValueControllerMethod);
+            FacebookAuthenticatorCommand = new RelayCommand(FacebookLoginMethod);
         }
 
 
@@ -46,6 +54,8 @@ namespace Friend_s.ViewModel
         private bool IsAppFirstTimeOn { get; set; }
         public Visibility TwitterPlusIconVisibility { get; private set; }
         public Visibility TwitterRemoveIconVisibility { get; private set; }
+        public Visibility FacebookPlusIconVisibility { get; private set; }
+        public Visibility FacebookRemoveIconVisibility { get; private set; }
         public double SliderValue { get; set; }
 
 
@@ -75,7 +85,7 @@ namespace Friend_s.ViewModel
                     SliderValue = (double) localsettings.Values["TimerTime"];
 
 
-                if (_themeColor == "#18BC9C")
+                if (_themeColor == "#00D054")
                 {
                     ToggleSwitchIsOn = false;
                 }
@@ -93,6 +103,21 @@ namespace Friend_s.ViewModel
                     ToastToggleSwitchIsOn = true;
                 }
 
+                var sess = FBSession.ActiveSession;
+                if (sess.LoggedIn)
+                {
+                    FacebookPlusIconVisibility = Visibility.Collapsed;
+                    FacebookRemoveIconVisibility = Visibility.Visible;
+                }
+                else
+                {
+
+                    FacebookPlusIconVisibility = Visibility.Visible;
+                    FacebookRemoveIconVisibility = Visibility.Collapsed;
+                }
+
+                RaisePropertyChanged(() => FacebookPlusIconVisibility);
+                RaisePropertyChanged(() => FacebookRemoveIconVisibility);
                 RaisePropertyChanged(() => FirstContactName);
                 RaisePropertyChanged(() => SecondContactName);
                 RaisePropertyChanged(() => ThirdContactName);
@@ -191,7 +216,7 @@ namespace Friend_s.ViewModel
             }
         }
 
-        private void PasswordVaultRemoverMethod(object obj)
+        private async void PasswordVaultRemoverMethod(object obj)
         {
             switch (int.Parse(obj.ToString()))
             {
@@ -199,10 +224,14 @@ namespace Friend_s.ViewModel
                     var vault = new PasswordVault();
                     try
                     {
-                        var credentialList = vault.FindAllByUserName("Twitter");
+                        var credentialList = vault.FindAllByUserName("TwitterAccessToken");
                         if (credentialList.Count <= 0) return;
-                        var credential = vault.Retrieve("Friend", "Twitter");
-                        vault.Remove(new PasswordCredential("Friend", "Twitter", credential.Password));
+                        var credential = vault.Retrieve("Friend", "TwitterAccessToken");
+                        vault.Remove(new PasswordCredential("Friend", "TwitterAccessToken", credential.Password));
+                        var credentialList1 = vault.FindAllByUserName("TwitterAccessTokenSecret");
+                        if (credentialList1.Count <= 0) return;
+                        var credential1 = vault.Retrieve("Friend", "TwitterAccessTokenSecret");
+                        vault.Remove(new PasswordCredential("Friend", "TwitterAccessTokenSecret", credential1.Password));
                         TwitterPlusIconVisibility = Visibility.Visible;
                         TwitterRemoveIconVisibility = Visibility.Collapsed;
                     }
@@ -214,7 +243,10 @@ namespace Friend_s.ViewModel
                     break;
 
                 case 2:
-                    //TODO: Handle Facebook's Integration
+                    var sess = FBSession.ActiveSession;
+                    await sess.LogoutAsync();
+                    FacebookPlusIconVisibility = Visibility.Visible;
+                    FacebookRemoveIconVisibility = Visibility.Collapsed;
                     break;
 
                 default:
@@ -222,6 +254,8 @@ namespace Friend_s.ViewModel
             }
             RaisePropertyChanged(() => TwitterRemoveIconVisibility);
             RaisePropertyChanged(() => TwitterPlusIconVisibility);
+            RaisePropertyChanged(()=>FacebookPlusIconVisibility);
+            RaisePropertyChanged(()=>FacebookRemoveIconVisibility);
         }
 
         private static async void BackgroundProcessRegisterer()
@@ -334,18 +368,18 @@ namespace Friend_s.ViewModel
                 }
                 if (!localData.Values.ContainsKey("ThemeColor") && !roamData.Values.ContainsKey("ThemeColor"))
                 {
-                    localData.Values.Add("ThemeColor", "#18BC9C");
-                    roamData.Values.Add("ThemeColor", "#18BC9C");
+                    localData.Values.Add("ThemeColor", "#00D054");
+                    roamData.Values.Add("ThemeColor", "#00D054");
                 }
                 else
                 {
                     localData.Values.Remove("ThemeColor");
                     roamData.Values.Remove("ThemeColor");
-                    localData.Values.Add("ThemeColor", "#18BC9C");
-                    roamData.Values.Add("ThemeColor", "#18BC9C");
+                    localData.Values.Add("ThemeColor", "#00D054");
+                    roamData.Values.Add("ThemeColor", "#00D054");
                 }
                 ToggleSwitchIsOn = false;
-                _themeColor = "#18BC9C";
+                _themeColor = "#00D054";
             }
             else
             {
@@ -375,8 +409,10 @@ namespace Friend_s.ViewModel
             var vault = new PasswordVault();
             try
             {
-                var credentialList = vault.FindAllByUserName("Twitter");
+                var credentialList = vault.FindAllByUserName("TwitterAccessToken");
                 if (credentialList.Count <= 0) return;
+                var credentialList1 = vault.FindAllByUserName("TwitterAccessTokenSecret");
+                if (credentialList1.Count <= 0) return;
                 TwitterPlusIconVisibility = Visibility.Collapsed;
                 TwitterRemoveIconVisibility = Visibility.Visible;
             }
@@ -425,6 +461,41 @@ namespace Friend_s.ViewModel
             }
             MessengerInstance.Send(new NotificationMessage("ProgressBarDisable"));
         }
+
+        private async void FacebookLoginMethod()
+        {
+            var sess = FBSession.ActiveSession;
+            //Use your FB App ID
+            sess.FBAppId = AuthTokens.FacebookAppID;
+            sess.WinAppId = WebAuthenticationBroker.GetCurrentApplicationCallbackUri().ToString();
+            
+
+            // Add permissions required by the app
+            var permissionList = new List<string>();
+            permissionList.Add("public_profile");
+            permissionList.Add("publish_actions");
+            var permissions = new FBPermissions(permissionList);
+
+
+            // Login to Facebook
+            var result = await sess.LoginAsync(permissions);
+
+            if (result.Succeeded)
+            {
+                FacebookPlusIconVisibility = Visibility.Collapsed;
+                FacebookRemoveIconVisibility = Visibility.Visible;
+            }
+            else
+            {
+                
+                FacebookPlusIconVisibility = Visibility.Visible;
+                FacebookRemoveIconVisibility = Visibility.Collapsed;
+            }
+            RaisePropertyChanged(()=>FacebookPlusIconVisibility);
+            RaisePropertyChanged(()=>FacebookRemoveIconVisibility);
+        }
+
+
     }
 
 

@@ -1,7 +1,5 @@
 WinMetadata\Windows.winmd
 ApplicationInsights.config
-Assets\13.jpg
-Assets\Elegant_Background-16.jpg
 Assets\Generic-Profile-Image.jpg
 Assets\LockScreenLogo.scale-200.png
 Assets\SplashScreen.scale-200.png
@@ -18,3 +16,5 @@ Fonts\TNALOGO.TTF
 Fonts\TT1255M_.TTF
 Fonts\UBUNTU-R.TTF
 Properties\Default.rd.xml
+TwitterConsumerKey.txt
+TwitterConsumerSecret.txt

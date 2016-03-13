@@ -19,6 +19,18 @@
           "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
         }
       },
+      "FakeBand/0.0.8": {
+        "dependencies": {
+          "Microsoft.Band": "[1.3.11121, )",
+          "Rx-Main": "[2.2.5, )"
+        },
+        "compile": {
+          "lib/portable-net45+win+wpa81/FakeBand.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win+wpa81/FakeBand.dll": {}
+        }
+      },
       "Microsoft.ApplicationInsights/1.2.3": {
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
@@ -48,6 +60,18 @@
         },
         "runtime": {
           "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
+        }
+      },
+      "Microsoft.Band/1.3.11121": {
+        "compile": {
+          "lib/netcore451/Microsoft.Band.dll": {},
+          "lib/netcore451/Microsoft.Band.Store.dll": {},
+          "lib/netcore451/Microsoft.Band.Windows.dll": {}
+        },
+        "runtime": {
+          "lib/netcore451/Microsoft.Band.dll": {},
+          "lib/netcore451/Microsoft.Band.Store.dll": {},
+          "lib/netcore451/Microsoft.Band.Windows.dll": {}
         }
       },
       "Microsoft.Bcl/1.1.10": {
@@ -324,6 +348,57 @@
         },
         "runtime": {
           "lib/dotnet/QueryString.NETCore.dll": {}
+        }
+      },
+      "Rx-Core/2.2.5": {
+        "dependencies": {
+          "Rx-Interfaces": "[2.2.5, )"
+        },
+        "compile": {
+          "lib/windows8/System.Reactive.Core.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.Core.dll": {}
+        }
+      },
+      "Rx-Interfaces/2.2.5": {
+        "compile": {
+          "lib/windows8/System.Reactive.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.Interfaces.dll": {}
+        }
+      },
+      "Rx-Linq/2.2.5": {
+        "dependencies": {
+          "Rx-Core": "[2.2.5, )",
+          "Rx-Interfaces": "[2.2.5, )"
+        },
+        "compile": {
+          "lib/windows8/System.Reactive.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.Linq.dll": {}
+        }
+      },
+      "Rx-Main/2.2.5": {
+        "dependencies": {
+          "Rx-Core": "[2.2.5, )",
+          "Rx-Interfaces": "[2.2.5, )",
+          "Rx-Linq": "[2.2.5, )",
+          "Rx-PlatformServices": "[2.2.5, )"
+        }
+      },
+      "Rx-PlatformServices/2.2.5": {
+        "dependencies": {
+          "Rx-Core": "[2.2.5, )",
+          "Rx-Interfaces": "[2.2.5, )"
+        },
+        "compile": {
+          "lib/windows8/System.Reactive.PlatformServices.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.PlatformServices.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -1661,19 +1736,35 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "TweetinviAPI/0.9.10.2": {
+      "TweetinviAPI/0.9.11": {
         "dependencies": {
           "Autofac": "[3.5.2, )",
           "Microsoft.Bcl.Async": "[1.0.168, )",
           "Microsoft.Bcl.Build": "[1.0.21, )",
           "Microsoft.Net.Http": "[2.2.29, )",
-          "Newtonsoft.Json": "[7.0.1, )"
+          "Newtonsoft.Json": "[8.0.2, )"
         },
         "compile": {
-          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {}
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Controllers.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Core.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Credentials.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Factories.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Logic.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Security.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Streams.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.WebLogic.dll": {}
         },
         "runtime": {
-          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {}
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Controllers.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Core.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Credentials.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Factories.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Logic.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Security.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Streams.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.WebLogic.dll": {}
         }
       }
     },
@@ -1692,6 +1783,18 @@
         },
         "runtime": {
           "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        }
+      },
+      "FakeBand/0.0.8": {
+        "dependencies": {
+          "Microsoft.Band": "[1.3.11121, )",
+          "Rx-Main": "[2.2.5, )"
+        },
+        "compile": {
+          "lib/portable-net45+win+wpa81/FakeBand.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win+wpa81/FakeBand.dll": {}
         }
       },
       "Microsoft.ApplicationInsights/1.2.3": {
@@ -1723,6 +1826,18 @@
         },
         "runtime": {
           "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
+        }
+      },
+      "Microsoft.Band/1.3.11121": {
+        "compile": {
+          "lib/netcore451/Microsoft.Band.dll": {},
+          "lib/netcore451/Microsoft.Band.Store.dll": {},
+          "lib/netcore451/Microsoft.Band.Windows.dll": {}
+        },
+        "runtime": {
+          "lib/netcore451/Microsoft.Band.dll": {},
+          "lib/netcore451/Microsoft.Band.Store.dll": {},
+          "lib/netcore451/Microsoft.Band.Windows.dll": {}
         }
       },
       "Microsoft.Bcl/1.1.10": {
@@ -2042,6 +2157,57 @@
         },
         "runtime": {
           "lib/dotnet/QueryString.NETCore.dll": {}
+        }
+      },
+      "Rx-Core/2.2.5": {
+        "dependencies": {
+          "Rx-Interfaces": "[2.2.5, )"
+        },
+        "compile": {
+          "lib/windows8/System.Reactive.Core.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.Core.dll": {}
+        }
+      },
+      "Rx-Interfaces/2.2.5": {
+        "compile": {
+          "lib/windows8/System.Reactive.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.Interfaces.dll": {}
+        }
+      },
+      "Rx-Linq/2.2.5": {
+        "dependencies": {
+          "Rx-Core": "[2.2.5, )",
+          "Rx-Interfaces": "[2.2.5, )"
+        },
+        "compile": {
+          "lib/windows8/System.Reactive.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.Linq.dll": {}
+        }
+      },
+      "Rx-Main/2.2.5": {
+        "dependencies": {
+          "Rx-Core": "[2.2.5, )",
+          "Rx-Interfaces": "[2.2.5, )",
+          "Rx-Linq": "[2.2.5, )",
+          "Rx-PlatformServices": "[2.2.5, )"
+        }
+      },
+      "Rx-PlatformServices/2.2.5": {
+        "dependencies": {
+          "Rx-Core": "[2.2.5, )",
+          "Rx-Interfaces": "[2.2.5, )"
+        },
+        "compile": {
+          "lib/windows8/System.Reactive.PlatformServices.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.PlatformServices.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -3426,19 +3592,35 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "TweetinviAPI/0.9.10.2": {
+      "TweetinviAPI/0.9.11": {
         "dependencies": {
           "Autofac": "[3.5.2, )",
           "Microsoft.Bcl.Async": "[1.0.168, )",
           "Microsoft.Bcl.Build": "[1.0.21, )",
           "Microsoft.Net.Http": "[2.2.29, )",
-          "Newtonsoft.Json": "[7.0.1, )"
+          "Newtonsoft.Json": "[8.0.2, )"
         },
         "compile": {
-          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {}
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Controllers.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Core.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Credentials.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Factories.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Logic.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Security.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Streams.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.WebLogic.dll": {}
         },
         "runtime": {
-          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {}
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Controllers.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Core.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Credentials.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Factories.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Logic.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Security.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Streams.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.WebLogic.dll": {}
         }
       }
     },
@@ -3457,6 +3639,18 @@
         },
         "runtime": {
           "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        }
+      },
+      "FakeBand/0.0.8": {
+        "dependencies": {
+          "Microsoft.Band": "[1.3.11121, )",
+          "Rx-Main": "[2.2.5, )"
+        },
+        "compile": {
+          "lib/portable-net45+win+wpa81/FakeBand.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win+wpa81/FakeBand.dll": {}
         }
       },
       "Microsoft.ApplicationInsights/1.2.3": {
@@ -3488,6 +3682,18 @@
         },
         "runtime": {
           "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
+        }
+      },
+      "Microsoft.Band/1.3.11121": {
+        "compile": {
+          "lib/netcore451/Microsoft.Band.dll": {},
+          "lib/netcore451/Microsoft.Band.Store.dll": {},
+          "lib/netcore451/Microsoft.Band.Windows.dll": {}
+        },
+        "runtime": {
+          "lib/netcore451/Microsoft.Band.dll": {},
+          "lib/netcore451/Microsoft.Band.Store.dll": {},
+          "lib/netcore451/Microsoft.Band.Windows.dll": {}
         }
       },
       "Microsoft.Bcl/1.1.10": {
@@ -3793,6 +3999,57 @@
         },
         "runtime": {
           "lib/dotnet/QueryString.NETCore.dll": {}
+        }
+      },
+      "Rx-Core/2.2.5": {
+        "dependencies": {
+          "Rx-Interfaces": "[2.2.5, )"
+        },
+        "compile": {
+          "lib/windows8/System.Reactive.Core.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.Core.dll": {}
+        }
+      },
+      "Rx-Interfaces/2.2.5": {
+        "compile": {
+          "lib/windows8/System.Reactive.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.Interfaces.dll": {}
+        }
+      },
+      "Rx-Linq/2.2.5": {
+        "dependencies": {
+          "Rx-Core": "[2.2.5, )",
+          "Rx-Interfaces": "[2.2.5, )"
+        },
+        "compile": {
+          "lib/windows8/System.Reactive.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.Linq.dll": {}
+        }
+      },
+      "Rx-Main/2.2.5": {
+        "dependencies": {
+          "Rx-Core": "[2.2.5, )",
+          "Rx-Interfaces": "[2.2.5, )",
+          "Rx-Linq": "[2.2.5, )",
+          "Rx-PlatformServices": "[2.2.5, )"
+        }
+      },
+      "Rx-PlatformServices/2.2.5": {
+        "dependencies": {
+          "Rx-Core": "[2.2.5, )",
+          "Rx-Interfaces": "[2.2.5, )"
+        },
+        "compile": {
+          "lib/windows8/System.Reactive.PlatformServices.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.PlatformServices.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -5163,19 +5420,35 @@
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "TweetinviAPI/0.9.10.2": {
+      "TweetinviAPI/0.9.11": {
         "dependencies": {
           "Autofac": "[3.5.2, )",
           "Microsoft.Bcl.Async": "[1.0.168, )",
           "Microsoft.Bcl.Build": "[1.0.21, )",
           "Microsoft.Net.Http": "[2.2.29, )",
-          "Newtonsoft.Json": "[7.0.1, )"
+          "Newtonsoft.Json": "[8.0.2, )"
         },
         "compile": {
-          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {}
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Controllers.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Core.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Credentials.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Factories.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Logic.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Security.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Streams.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.WebLogic.dll": {}
         },
         "runtime": {
-          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {}
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Controllers.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Core.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Credentials.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Factories.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Logic.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Security.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Streams.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.WebLogic.dll": {}
         }
       }
     },
@@ -5194,6 +5467,18 @@
         },
         "runtime": {
           "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        }
+      },
+      "FakeBand/0.0.8": {
+        "dependencies": {
+          "Microsoft.Band": "[1.3.11121, )",
+          "Rx-Main": "[2.2.5, )"
+        },
+        "compile": {
+          "lib/portable-net45+win+wpa81/FakeBand.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win+wpa81/FakeBand.dll": {}
         }
       },
       "Microsoft.ApplicationInsights/1.2.3": {
@@ -5225,6 +5510,18 @@
         },
         "runtime": {
           "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
+        }
+      },
+      "Microsoft.Band/1.3.11121": {
+        "compile": {
+          "lib/netcore451/Microsoft.Band.dll": {},
+          "lib/netcore451/Microsoft.Band.Store.dll": {},
+          "lib/netcore451/Microsoft.Band.Windows.dll": {}
+        },
+        "runtime": {
+          "lib/netcore451/Microsoft.Band.dll": {},
+          "lib/netcore451/Microsoft.Band.Store.dll": {},
+          "lib/netcore451/Microsoft.Band.Windows.dll": {}
         }
       },
       "Microsoft.Bcl/1.1.10": {
@@ -5551,6 +5848,57 @@
           "lib/dotnet/QueryString.NETCore.dll": {}
         }
       },
+      "Rx-Core/2.2.5": {
+        "dependencies": {
+          "Rx-Interfaces": "[2.2.5, )"
+        },
+        "compile": {
+          "lib/windows8/System.Reactive.Core.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.Core.dll": {}
+        }
+      },
+      "Rx-Interfaces/2.2.5": {
+        "compile": {
+          "lib/windows8/System.Reactive.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.Interfaces.dll": {}
+        }
+      },
+      "Rx-Linq/2.2.5": {
+        "dependencies": {
+          "Rx-Core": "[2.2.5, )",
+          "Rx-Interfaces": "[2.2.5, )"
+        },
+        "compile": {
+          "lib/windows8/System.Reactive.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.Linq.dll": {}
+        }
+      },
+      "Rx-Main/2.2.5": {
+        "dependencies": {
+          "Rx-Core": "[2.2.5, )",
+          "Rx-Interfaces": "[2.2.5, )",
+          "Rx-Linq": "[2.2.5, )",
+          "Rx-PlatformServices": "[2.2.5, )"
+        }
+      },
+      "Rx-PlatformServices/2.2.5": {
+        "dependencies": {
+          "Rx-Core": "[2.2.5, )",
+          "Rx-Interfaces": "[2.2.5, )"
+        },
+        "compile": {
+          "lib/windows8/System.Reactive.PlatformServices.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.PlatformServices.dll": {}
+        }
+      },
       "System.AppContext/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.0, )",
@@ -6933,19 +7281,35 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "TweetinviAPI/0.9.10.2": {
+      "TweetinviAPI/0.9.11": {
         "dependencies": {
           "Autofac": "[3.5.2, )",
           "Microsoft.Bcl.Async": "[1.0.168, )",
           "Microsoft.Bcl.Build": "[1.0.21, )",
           "Microsoft.Net.Http": "[2.2.29, )",
-          "Newtonsoft.Json": "[7.0.1, )"
+          "Newtonsoft.Json": "[8.0.2, )"
         },
         "compile": {
-          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {}
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Controllers.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Core.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Credentials.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Factories.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Logic.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Security.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Streams.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.WebLogic.dll": {}
         },
         "runtime": {
-          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {}
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Controllers.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Core.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Credentials.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Factories.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Logic.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Security.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Streams.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.WebLogic.dll": {}
         }
       }
     },
@@ -6964,6 +7328,18 @@
         },
         "runtime": {
           "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        }
+      },
+      "FakeBand/0.0.8": {
+        "dependencies": {
+          "Microsoft.Band": "[1.3.11121, )",
+          "Rx-Main": "[2.2.5, )"
+        },
+        "compile": {
+          "lib/portable-net45+win+wpa81/FakeBand.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win+wpa81/FakeBand.dll": {}
         }
       },
       "Microsoft.ApplicationInsights/1.2.3": {
@@ -6995,6 +7371,18 @@
         },
         "runtime": {
           "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
+        }
+      },
+      "Microsoft.Band/1.3.11121": {
+        "compile": {
+          "lib/netcore451/Microsoft.Band.dll": {},
+          "lib/netcore451/Microsoft.Band.Store.dll": {},
+          "lib/netcore451/Microsoft.Band.Windows.dll": {}
+        },
+        "runtime": {
+          "lib/netcore451/Microsoft.Band.dll": {},
+          "lib/netcore451/Microsoft.Band.Store.dll": {},
+          "lib/netcore451/Microsoft.Band.Windows.dll": {}
         }
       },
       "Microsoft.Bcl/1.1.10": {
@@ -7300,6 +7688,57 @@
         },
         "runtime": {
           "lib/dotnet/QueryString.NETCore.dll": {}
+        }
+      },
+      "Rx-Core/2.2.5": {
+        "dependencies": {
+          "Rx-Interfaces": "[2.2.5, )"
+        },
+        "compile": {
+          "lib/windows8/System.Reactive.Core.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.Core.dll": {}
+        }
+      },
+      "Rx-Interfaces/2.2.5": {
+        "compile": {
+          "lib/windows8/System.Reactive.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.Interfaces.dll": {}
+        }
+      },
+      "Rx-Linq/2.2.5": {
+        "dependencies": {
+          "Rx-Core": "[2.2.5, )",
+          "Rx-Interfaces": "[2.2.5, )"
+        },
+        "compile": {
+          "lib/windows8/System.Reactive.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.Linq.dll": {}
+        }
+      },
+      "Rx-Main/2.2.5": {
+        "dependencies": {
+          "Rx-Core": "[2.2.5, )",
+          "Rx-Interfaces": "[2.2.5, )",
+          "Rx-Linq": "[2.2.5, )",
+          "Rx-PlatformServices": "[2.2.5, )"
+        }
+      },
+      "Rx-PlatformServices/2.2.5": {
+        "dependencies": {
+          "Rx-Core": "[2.2.5, )",
+          "Rx-Interfaces": "[2.2.5, )"
+        },
+        "compile": {
+          "lib/windows8/System.Reactive.PlatformServices.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.PlatformServices.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -8670,19 +9109,35 @@
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "TweetinviAPI/0.9.10.2": {
+      "TweetinviAPI/0.9.11": {
         "dependencies": {
           "Autofac": "[3.5.2, )",
           "Microsoft.Bcl.Async": "[1.0.168, )",
           "Microsoft.Bcl.Build": "[1.0.21, )",
           "Microsoft.Net.Http": "[2.2.29, )",
-          "Newtonsoft.Json": "[7.0.1, )"
+          "Newtonsoft.Json": "[8.0.2, )"
         },
         "compile": {
-          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {}
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Controllers.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Core.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Credentials.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Factories.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Logic.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Security.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Streams.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.WebLogic.dll": {}
         },
         "runtime": {
-          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {}
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Controllers.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Core.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Credentials.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Factories.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Logic.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Security.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Streams.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.WebLogic.dll": {}
         }
       }
     },
@@ -8701,6 +9156,18 @@
         },
         "runtime": {
           "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        }
+      },
+      "FakeBand/0.0.8": {
+        "dependencies": {
+          "Microsoft.Band": "[1.3.11121, )",
+          "Rx-Main": "[2.2.5, )"
+        },
+        "compile": {
+          "lib/portable-net45+win+wpa81/FakeBand.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win+wpa81/FakeBand.dll": {}
         }
       },
       "Microsoft.ApplicationInsights/1.2.3": {
@@ -8732,6 +9199,18 @@
         },
         "runtime": {
           "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
+        }
+      },
+      "Microsoft.Band/1.3.11121": {
+        "compile": {
+          "lib/netcore451/Microsoft.Band.dll": {},
+          "lib/netcore451/Microsoft.Band.Store.dll": {},
+          "lib/netcore451/Microsoft.Band.Windows.dll": {}
+        },
+        "runtime": {
+          "lib/netcore451/Microsoft.Band.dll": {},
+          "lib/netcore451/Microsoft.Band.Store.dll": {},
+          "lib/netcore451/Microsoft.Band.Windows.dll": {}
         }
       },
       "Microsoft.Bcl/1.1.10": {
@@ -9058,6 +9537,57 @@
           "lib/dotnet/QueryString.NETCore.dll": {}
         }
       },
+      "Rx-Core/2.2.5": {
+        "dependencies": {
+          "Rx-Interfaces": "[2.2.5, )"
+        },
+        "compile": {
+          "lib/windows8/System.Reactive.Core.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.Core.dll": {}
+        }
+      },
+      "Rx-Interfaces/2.2.5": {
+        "compile": {
+          "lib/windows8/System.Reactive.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.Interfaces.dll": {}
+        }
+      },
+      "Rx-Linq/2.2.5": {
+        "dependencies": {
+          "Rx-Core": "[2.2.5, )",
+          "Rx-Interfaces": "[2.2.5, )"
+        },
+        "compile": {
+          "lib/windows8/System.Reactive.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.Linq.dll": {}
+        }
+      },
+      "Rx-Main/2.2.5": {
+        "dependencies": {
+          "Rx-Core": "[2.2.5, )",
+          "Rx-Interfaces": "[2.2.5, )",
+          "Rx-Linq": "[2.2.5, )",
+          "Rx-PlatformServices": "[2.2.5, )"
+        }
+      },
+      "Rx-PlatformServices/2.2.5": {
+        "dependencies": {
+          "Rx-Core": "[2.2.5, )",
+          "Rx-Interfaces": "[2.2.5, )"
+        },
+        "compile": {
+          "lib/windows8/System.Reactive.PlatformServices.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.PlatformServices.dll": {}
+        }
+      },
       "System.AppContext/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.0, )",
@@ -10440,19 +10970,35 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "TweetinviAPI/0.9.10.2": {
+      "TweetinviAPI/0.9.11": {
         "dependencies": {
           "Autofac": "[3.5.2, )",
           "Microsoft.Bcl.Async": "[1.0.168, )",
           "Microsoft.Bcl.Build": "[1.0.21, )",
           "Microsoft.Net.Http": "[2.2.29, )",
-          "Newtonsoft.Json": "[7.0.1, )"
+          "Newtonsoft.Json": "[8.0.2, )"
         },
         "compile": {
-          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {}
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Controllers.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Core.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Credentials.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Factories.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Logic.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Security.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Streams.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.WebLogic.dll": {}
         },
         "runtime": {
-          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {}
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Controllers.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Core.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Credentials.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Factories.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Logic.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Security.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Streams.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.WebLogic.dll": {}
         }
       }
     },
@@ -10471,6 +11017,18 @@
         },
         "runtime": {
           "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        }
+      },
+      "FakeBand/0.0.8": {
+        "dependencies": {
+          "Microsoft.Band": "[1.3.11121, )",
+          "Rx-Main": "[2.2.5, )"
+        },
+        "compile": {
+          "lib/portable-net45+win+wpa81/FakeBand.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win+wpa81/FakeBand.dll": {}
         }
       },
       "Microsoft.ApplicationInsights/1.2.3": {
@@ -10502,6 +11060,18 @@
         },
         "runtime": {
           "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
+        }
+      },
+      "Microsoft.Band/1.3.11121": {
+        "compile": {
+          "lib/netcore451/Microsoft.Band.dll": {},
+          "lib/netcore451/Microsoft.Band.Store.dll": {},
+          "lib/netcore451/Microsoft.Band.Windows.dll": {}
+        },
+        "runtime": {
+          "lib/netcore451/Microsoft.Band.dll": {},
+          "lib/netcore451/Microsoft.Band.Store.dll": {},
+          "lib/netcore451/Microsoft.Band.Windows.dll": {}
         }
       },
       "Microsoft.Bcl/1.1.10": {
@@ -10807,6 +11377,57 @@
         },
         "runtime": {
           "lib/dotnet/QueryString.NETCore.dll": {}
+        }
+      },
+      "Rx-Core/2.2.5": {
+        "dependencies": {
+          "Rx-Interfaces": "[2.2.5, )"
+        },
+        "compile": {
+          "lib/windows8/System.Reactive.Core.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.Core.dll": {}
+        }
+      },
+      "Rx-Interfaces/2.2.5": {
+        "compile": {
+          "lib/windows8/System.Reactive.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.Interfaces.dll": {}
+        }
+      },
+      "Rx-Linq/2.2.5": {
+        "dependencies": {
+          "Rx-Core": "[2.2.5, )",
+          "Rx-Interfaces": "[2.2.5, )"
+        },
+        "compile": {
+          "lib/windows8/System.Reactive.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.Linq.dll": {}
+        }
+      },
+      "Rx-Main/2.2.5": {
+        "dependencies": {
+          "Rx-Core": "[2.2.5, )",
+          "Rx-Interfaces": "[2.2.5, )",
+          "Rx-Linq": "[2.2.5, )",
+          "Rx-PlatformServices": "[2.2.5, )"
+        }
+      },
+      "Rx-PlatformServices/2.2.5": {
+        "dependencies": {
+          "Rx-Core": "[2.2.5, )",
+          "Rx-Interfaces": "[2.2.5, )"
+        },
+        "compile": {
+          "lib/windows8/System.Reactive.PlatformServices.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/System.Reactive.PlatformServices.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -12177,19 +12798,35 @@
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "TweetinviAPI/0.9.10.2": {
+      "TweetinviAPI/0.9.11": {
         "dependencies": {
           "Autofac": "[3.5.2, )",
           "Microsoft.Bcl.Async": "[1.0.168, )",
           "Microsoft.Bcl.Build": "[1.0.21, )",
           "Microsoft.Net.Http": "[2.2.29, )",
-          "Newtonsoft.Json": "[7.0.1, )"
+          "Newtonsoft.Json": "[8.0.2, )"
         },
         "compile": {
-          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {}
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Controllers.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Core.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Credentials.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Factories.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Logic.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Security.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Streams.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.WebLogic.dll": {}
         },
         "runtime": {
-          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {}
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Controllers.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Core.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Credentials.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Factories.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Logic.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Security.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Streams.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.WebLogic.dll": {}
         }
       }
     }
@@ -12222,6 +12859,77 @@
         "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.XML",
         "package/services/metadata/core-properties/8a82b9e5a63a439481bfa8d4ec335002.psmdcp",
         "package/services/metadata/core-properties/99be0c88b2fd41c8b07c42071005ee47.psmdcp"
+      ]
+    },
+    "FakeBand/0.0.8": {
+      "sha512": "v0jyEFeSPBLq3jrUSx8B+/zQMxmpb1qlQ4LHxv3uZQnyk0JPVDzZXvIPKZSD8caRcitq/IdHH3zdOJ3UG2ys3A==",
+      "type": "Package",
+      "files": [
+        "[Content_Types].xml",
+        "_rels/.rels",
+        "FakeBand.nuspec",
+        "lib/portable-net45+win+wpa81/FakeBand.dll",
+        "lib/portable-net45+win+wpa81/FakeBand.pdb",
+        "package/services/metadata/core-properties/4e726ac3f3784bdd99b1ea80eeb0bf62.psmdcp",
+        "src/FakeBand/BandResource.Designer.cs",
+        "src/FakeBand/Fakes/FakeAccelerometerReading.cs",
+        "src/FakeBand/Fakes/FakeAccelerometerSensor.cs",
+        "src/FakeBand/Fakes/FakeAltimeterReading.cs",
+        "src/FakeBand/Fakes/FakeAltimeterSensor.cs",
+        "src/FakeBand/Fakes/FakeAmbientLightReading.cs",
+        "src/FakeBand/Fakes/FakeAmbientLightSensor.cs",
+        "src/FakeBand/Fakes/FakeBandCaloriesReading.cs",
+        "src/FakeBand/Fakes/FakeBandClient.cs",
+        "src/FakeBand/Fakes/FakeBandClientManager.cs",
+        "src/FakeBand/Fakes/FakeBandDeviceContactReading.cs",
+        "src/FakeBand/Fakes/FakeBandDistanceReading.cs",
+        "src/FakeBand/Fakes/FakeBandHeartReading.cs",
+        "src/FakeBand/Fakes/FakeBandInfo.cs",
+        "src/FakeBand/Fakes/FakeBandNotificationManager.cs",
+        "src/FakeBand/Fakes/FakeBandOneConstants.cs",
+        "src/FakeBand/Fakes/FakeBandPedometerReading.cs",
+        "src/FakeBand/Fakes/FakeBandPersonalizationManager.cs",
+        "src/FakeBand/Fakes/FakeBandRRIntervalReading.cs",
+        "src/FakeBand/Fakes/FakeBandSensor.cs",
+        "src/FakeBand/Fakes/FakeBandSensorManager.cs",
+        "src/FakeBand/Fakes/FakeBandSkinTemperatureReading.cs",
+        "src/FakeBand/Fakes/FakeBandTileManager.cs",
+        "src/FakeBand/Fakes/FakeBandTwoConstants.cs",
+        "src/FakeBand/Fakes/FakeBandUVReading.cs",
+        "src/FakeBand/Fakes/FakeBarometerReading.cs",
+        "src/FakeBand/Fakes/FakeBarometerSensor.cs",
+        "src/FakeBand/Fakes/FakeCaloriesSensor.cs",
+        "src/FakeBand/Fakes/FakeDeviceContactSensor.cs",
+        "src/FakeBand/Fakes/FakeDistanceSensor.cs",
+        "src/FakeBand/Fakes/FakeGsrReading.cs",
+        "src/FakeBand/Fakes/FakeGsrSensor.cs",
+        "src/FakeBand/Fakes/FakeGyroReading.cs",
+        "src/FakeBand/Fakes/FakeGyroSensor.cs",
+        "src/FakeBand/Fakes/FakeHeartRateSensor.cs",
+        "src/FakeBand/Fakes/FakePedometerSensor.cs",
+        "src/FakeBand/Fakes/FakeRrSensor.cs",
+        "src/FakeBand/Fakes/FakeSkinTemperatureSensor.cs",
+        "src/FakeBand/Fakes/FakeTileContainer.cs",
+        "src/FakeBand/Fakes/FakeUVSensor.cs",
+        "src/FakeBand/Fakes/IAppIdProvider.cs",
+        "src/FakeBand/Fakes/IBandConstants.cs",
+        "src/FakeBand/Fakes/ITileContainer.cs",
+        "src/FakeBand/Properties/AssemblyInfo.cs",
+        "src/FakeBand/Utils/BandTileExtensions.cs",
+        "src/FakeBand/Utils/BandTypeConstants.cs",
+        "src/FakeBand/Utils/Bgr565Pbgra32ConversionStream.cs",
+        "src/FakeBand/Utils/ByteArrayProxyStream.cs",
+        "src/FakeBand/Utils/CargoVersion.cs",
+        "src/FakeBand/Utils/CargoVersions.cs",
+        "src/FakeBand/Utils/ColorScale.cs",
+        "src/FakeBand/Utils/Exts.cs",
+        "src/FakeBand/Utils/ImageConversionStreamBase.cs",
+        "src/FakeBand/Utils/RandomNormal.cs",
+        "src/FakeBand/Utils/SubscriptionType.cs",
+        "src/FakeBand/Utils/TileData.cs",
+        "src/FakeBand/Utils/TileRepresentation.cs",
+        "src/FakeBand/Utils/TileRepresentationExtensions.cs",
+        "src/FakeBand/Utils/TileSettings.cs"
       ]
     },
     "Microsoft.ApplicationInsights/1.2.3": {
@@ -12274,6 +12982,32 @@
         "lib/wpa81/Microsoft.ApplicationInsights.Extensibility.Windows.XML",
         "Microsoft.ApplicationInsights.WindowsApps.nuspec",
         "package/services/metadata/core-properties/8265b8c93c244c80b4e8bce27f31849d.psmdcp"
+      ]
+    },
+    "Microsoft.Band/1.3.11121": {
+      "sha512": "LSb+OfR7EAgZtFEjnmK/GtFqbsnAQk1xoGyVmBLqGdhf24FGkZzGm9sgZXpEzP+vdzgI0uvgBbgUYi8f8GVq5g==",
+      "type": "Package",
+      "files": [
+        "[Content_Types].xml",
+        "_rels/.rels",
+        "content/netcore451/Package.appxmanifest.transform",
+        "content/wpa81/Package.appxmanifest.transform",
+        "lib/netcore451/Microsoft.Band.dll",
+        "lib/netcore451/Microsoft.Band.Store.dll",
+        "lib/netcore451/Microsoft.Band.Store.pri",
+        "lib/netcore451/Microsoft.Band.Windows.dll",
+        "lib/netcore451/Microsoft.Band.Windows.pri",
+        "lib/portable-net45+win+wpa81/Microsoft.Band.dll",
+        "lib/portable-win81+wpa81/Microsoft.Band.dll",
+        "lib/portable-win81+wpa81/Microsoft.Band.Store.dll",
+        "lib/portable-win81+wpa81/Microsoft.Band.Store.pri",
+        "lib/wpa81/Microsoft.Band.dll",
+        "lib/wpa81/Microsoft.Band.Phone.dll",
+        "lib/wpa81/Microsoft.Band.Phone.pri",
+        "lib/wpa81/Microsoft.Band.Store.dll",
+        "lib/wpa81/Microsoft.Band.Store.pri",
+        "Microsoft.Band.nuspec",
+        "package/services/metadata/core-properties/884488e5e673422f898b88a4afd664ec.psmdcp"
       ]
     },
     "Microsoft.Bcl/1.1.10": {
@@ -13348,6 +14082,136 @@
         "lib/portable-net4+sl50+win+wpa81+wp80/QueryString.Portable.xml",
         "package/services/metadata/core-properties/643187e148944d5892c2282c5396136a.psmdcp",
         "QueryString.NET.nuspec"
+      ]
+    },
+    "Rx-Core/2.2.5": {
+      "sha512": "DfWVTfW6tvRkkqpnRHKxPIvaRZyDJGADuqrE6J2nwejOQbLRWi0rNUwXkViDWz++25BGDy3iRE5OE6Dv8mJxYQ==",
+      "type": "Package",
+      "files": [
+        "[Content_Types].xml",
+        "_rels/.rels",
+        "lib/net40/System.Reactive.Core.dll",
+        "lib/net40/System.Reactive.Core.XML",
+        "lib/net45/System.Reactive.Core.dll",
+        "lib/net45/System.Reactive.Core.XML",
+        "lib/portable-net40+sl5+win8+wp8/System.Reactive.Core.dll",
+        "lib/portable-net40+sl5+win8+wp8/System.Reactive.Core.XML",
+        "lib/portable-net45+winrt45+wp8+wpa81/System.Reactive.Core.dll",
+        "lib/portable-net45+winrt45+wp8+wpa81/System.Reactive.Core.XML",
+        "lib/portable-win81+wpa81/System.Reactive.Core.dll",
+        "lib/portable-win81+wpa81/System.Reactive.Core.XML",
+        "lib/portable-windows8+net45+wp8/System.Reactive.Core.dll",
+        "lib/portable-windows8+net45+wp8/System.Reactive.Core.XML",
+        "lib/sl5/System.Reactive.Core.dll",
+        "lib/sl5/System.Reactive.Core.XML",
+        "lib/windows8/System.Reactive.Core.dll",
+        "lib/windows8/System.Reactive.Core.XML",
+        "lib/windowsphone71/System.Reactive.Core.dll",
+        "lib/windowsphone71/System.Reactive.Core.XML",
+        "lib/windowsphone8/System.Reactive.Core.dll",
+        "lib/windowsphone8/System.Reactive.Core.XML",
+        "package/services/metadata/core-properties/acd70acf6eca4cb38c21c68005176d93.psmdcp",
+        "Rx-Core.nuspec"
+      ]
+    },
+    "Rx-Interfaces/2.2.5": {
+      "sha512": "FKtG2QfMIeUcfB7r3a89VoAiszX3DTvYETkpC6U0FzWpxRK/mcHyzYOsniDfag+NsDG0P1k1c8yNSefXKp3t2A==",
+      "type": "Package",
+      "files": [
+        "[Content_Types].xml",
+        "_rels/.rels",
+        "lib/net40/System.Reactive.Interfaces.dll",
+        "lib/net40/System.Reactive.Interfaces.XML",
+        "lib/net45/System.Reactive.Interfaces.dll",
+        "lib/net45/System.Reactive.Interfaces.XML",
+        "lib/portable-net40+sl5+win8+wp8/System.Reactive.Interfaces.dll",
+        "lib/portable-net40+sl5+win8+wp8/System.Reactive.Interfaces.XML",
+        "lib/portable-net45+winrt45+wp8+wpa81/System.Reactive.Interfaces.dll",
+        "lib/portable-net45+winrt45+wp8+wpa81/System.Reactive.Interfaces.XML",
+        "lib/portable-win81+wpa81/System.Reactive.Interfaces.dll",
+        "lib/portable-win81+wpa81/System.Reactive.Interfaces.XML",
+        "lib/portable-windows8+net45+wp8/System.Reactive.Interfaces.dll",
+        "lib/portable-windows8+net45+wp8/System.Reactive.Interfaces.XML",
+        "lib/sl5/System.Reactive.Interfaces.dll",
+        "lib/sl5/System.Reactive.Interfaces.XML",
+        "lib/windows8/System.Reactive.Interfaces.dll",
+        "lib/windows8/System.Reactive.Interfaces.XML",
+        "lib/windowsphone71/System.Reactive.Interfaces.dll",
+        "lib/windowsphone71/System.Reactive.Interfaces.XML",
+        "lib/windowsphone8/System.Reactive.Interfaces.dll",
+        "lib/windowsphone8/System.Reactive.Interfaces.XML",
+        "package/services/metadata/core-properties/c34c0935638f4b7ea6c51ca968fd1a88.psmdcp",
+        "Rx-Interfaces.nuspec"
+      ]
+    },
+    "Rx-Linq/2.2.5": {
+      "sha512": "UTeCIu3cWPExxmTzdiVq7SalqTBhUaomBTaAC9LpYPoAopjlFwA3hjVWXoLkGlDc/44wqJemJuEwFP00KphiFg==",
+      "type": "Package",
+      "files": [
+        "[Content_Types].xml",
+        "_rels/.rels",
+        "lib/net40/System.Reactive.Linq.dll",
+        "lib/net40/System.Reactive.Linq.XML",
+        "lib/net45/System.Reactive.Linq.dll",
+        "lib/net45/System.Reactive.Linq.XML",
+        "lib/portable-net40+sl5+win8+wp8/System.Reactive.Linq.dll",
+        "lib/portable-net40+sl5+win8+wp8/System.Reactive.Linq.XML",
+        "lib/portable-net45+winrt45+wp8+wpa81/System.Reactive.Linq.dll",
+        "lib/portable-net45+winrt45+wp8+wpa81/System.Reactive.Linq.XML",
+        "lib/portable-win81+wpa81/System.Reactive.Linq.dll",
+        "lib/portable-win81+wpa81/System.Reactive.Linq.XML",
+        "lib/portable-windows8+net45+wp8/System.Reactive.Linq.dll",
+        "lib/portable-windows8+net45+wp8/System.Reactive.Linq.XML",
+        "lib/sl5/System.Reactive.Linq.dll",
+        "lib/sl5/System.Reactive.Linq.XML",
+        "lib/windows8/System.Reactive.Linq.dll",
+        "lib/windows8/System.Reactive.Linq.XML",
+        "lib/windowsphone71/System.Reactive.Linq.dll",
+        "lib/windowsphone71/System.Reactive.Linq.XML",
+        "lib/windowsphone8/System.Reactive.Linq.dll",
+        "lib/windowsphone8/System.Reactive.Linq.XML",
+        "package/services/metadata/core-properties/0b05bef9a8e34a3da5e4d5d41f320ee4.psmdcp",
+        "Rx-Linq.nuspec"
+      ]
+    },
+    "Rx-Main/2.2.5": {
+      "sha512": "qdQ6qENEiLsp/LRdzZlLlodihWN8VDjwNfWa8c2ELjEHZgTdKzt1V4i61gkHVtFKZXe8Px6KupbMP3pZ+1tusQ==",
+      "type": "Package",
+      "files": [
+        "[Content_Types].xml",
+        "_rels/.rels",
+        "package/services/metadata/core-properties/42be7976390b4c6f82065a7d2c011282.psmdcp",
+        "Rx-Main.nuspec"
+      ]
+    },
+    "Rx-PlatformServices/2.2.5": {
+      "sha512": "pMnNEvJVjT+wuDib+W/bi5hhIYcre7dW5yxvKrJxnR4iKJ1VLA/dY2FTtjDriHGx7OeGn12lQewXlH2oHiWFPA==",
+      "type": "Package",
+      "files": [
+        "[Content_Types].xml",
+        "_rels/.rels",
+        "lib/net40/System.Reactive.PlatformServices.dll",
+        "lib/net40/System.Reactive.PlatformServices.XML",
+        "lib/net45/System.Reactive.PlatformServices.dll",
+        "lib/net45/System.Reactive.PlatformServices.XML",
+        "lib/portable-net40+sl5+win8+wp8/System.Reactive.PlatformServices.dll",
+        "lib/portable-net40+sl5+win8+wp8/System.Reactive.PlatformServices.XML",
+        "lib/portable-net45+winrt45+wp8+wpa81/System.Reactive.PlatformServices.dll",
+        "lib/portable-net45+winrt45+wp8+wpa81/System.Reactive.PlatformServices.XML",
+        "lib/portable-win81+wpa81/System.Reactive.PlatformServices.dll",
+        "lib/portable-win81+wpa81/System.Reactive.PlatformServices.XML",
+        "lib/portable-windows8+net45+wp8/System.Reactive.PlatformServices.dll",
+        "lib/portable-windows8+net45+wp8/System.Reactive.PlatformServices.XML",
+        "lib/sl5/System.Reactive.PlatformServices.dll",
+        "lib/sl5/System.Reactive.PlatformServices.XML",
+        "lib/windows8/System.Reactive.PlatformServices.dll",
+        "lib/windows8/System.Reactive.PlatformServices.XML",
+        "lib/windowsphone71/System.Reactive.PlatformServices.dll",
+        "lib/windowsphone71/System.Reactive.PlatformServices.XML",
+        "lib/windowsphone8/System.Reactive.PlatformServices.dll",
+        "lib/windowsphone8/System.Reactive.PlatformServices.XML",
+        "package/services/metadata/core-properties/5087526007294f7d8e78a6a4a61c494a.psmdcp",
+        "Rx-PlatformServices.nuspec"
       ]
     },
     "System.AppContext/4.0.0": {
@@ -16045,8 +16909,8 @@
         "System.Xml.XmlSerializer.nuspec"
       ]
     },
-    "TweetinviAPI/0.9.10.2": {
-      "sha512": "42wrJFwRTprsvax6ccrfCs7F7g5aBX4VXvCBYD/09ADQT7Ip6P3nd8xA8TJyZisgxCUNv5l8FusTgIODa//oJQ==",
+    "TweetinviAPI/0.9.11": {
+      "sha512": "iKKuwxPZf8Wt1UBj4lbHtoFivVQELb/8r5sRbFLIaZv6Jr8tfFrUTR5ccM64L/2ocGC07TUTUh22YPNLpyc34g==",
       "type": "Package",
       "files": [
         "[Content_Types].xml",
@@ -16054,8 +16918,16 @@
         "lib/net40/Tweetinvi.dll",
         "lib/net45/Tweetinvi.dll",
         "lib/portable-net40+sl5+wp80+win8+wpa81/Tweetinvi.dll",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Controllers.dll",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Core.dll",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Credentials.dll",
         "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.dll",
-        "package/services/metadata/core-properties/bd1cc76ab40c48bebbdbd2fdb40d90d6.psmdcp",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Factories.dll",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Logic.dll",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Security.dll",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Streams.dll",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.WebLogic.dll",
+        "package/services/metadata/core-properties/f97ff84786c7436aa8e850cdf3fc7ef3.psmdcp",
         "tools/install.ps1",
         "TweetinviAPI.nuspec"
       ]
@@ -16063,6 +16935,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
+      "FakeBand >= 0.0.8",
       "Microsoft.ApplicationInsights >= 1.2.3",
       "Microsoft.ApplicationInsights.PersistenceChannel >= 1.2.3",
       "Microsoft.ApplicationInsights.WindowsApps >= 1.1.1",
@@ -16071,7 +16944,7 @@
       "Newtonsoft.Json >= 8.0.2",
       "NotificationsExtensions.Win10 >= 10586.0.2",
       "QueryString.NET >= 1.0.0",
-      "TweetinviAPI >= 0.9.10.2"
+      "TweetinviAPI >= 0.9.11"
     ],
     "UAP,Version=v10.0": []
   }

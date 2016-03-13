@@ -1,14 +1,20 @@
 package com.example.admin.friend;
 
 
+import android.annotation.TargetApi;
 import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -22,7 +28,7 @@ public class SettingPageFragment extends android.support.v4.app.Fragment impleme
     Switch theme, toast;
     TextView pname,phoneno,tv3,tv4;
     Button contact1,contact2, contact3,contact4,Register;
-    private  ContentResolver contentResolver;
+    private Context context;
 
 
     public SettingPageFragment() {
@@ -40,12 +46,12 @@ public class SettingPageFragment extends android.support.v4.app.Fragment impleme
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_settingpage, container, false);
 
-       /* toast = (Switch) view.findViewById(R.id.switch1);
+        toast = (Switch) view.findViewById(R.id.switch1);
         theme = (Switch) view.findViewById(R.id.switch2);
         //s3 = (Switch) view.findViewById(R.id.switch3);
 
 
-
+/*
         contact1 = (Button) view.findViewById(R.id.button);
         contact2 = (Button) view.findViewById(R.id.button3);
         contact3= (Button) view.findViewById(R.id.button5);
@@ -62,10 +68,12 @@ public class SettingPageFragment extends android.support.v4.app.Fragment impleme
         contact3.setOnClickListener(this);
         contact4.setOnClickListener(this);
         Register.setOnClickListener(this);
+*/
         toast.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (toast.isChecked() == true) {
+                if (toast.isChecked()) {
                     String title = "Friend";
                     String subject = "Notification by friend app";
                     String body = "notification";
@@ -85,7 +93,7 @@ public class SettingPageFragment extends android.support.v4.app.Fragment impleme
                 }
             }
         });
-*/
+
 
         return view;
 
@@ -93,7 +101,7 @@ public class SettingPageFragment extends android.support.v4.app.Fragment impleme
     }
 
 
-    @Override
+  @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.button2:
@@ -118,8 +126,8 @@ public class SettingPageFragment extends android.support.v4.app.Fragment impleme
 
 
     }
-
-   /* @Override
+/*
+    @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
@@ -129,15 +137,13 @@ public class SettingPageFragment extends android.support.v4.app.Fragment impleme
                     break;
             }
         }
-    }
-
-   private void contactPicked(Intent data) {
+    }   private void contactPicked(Intent data) {
         Cursor c;
         try{
             String phoneNo;
             String name;
             Uri uri=data.getData();
-           c= getActivity().getContentResolver().query(uri,null,null,null,null);
+           c= context.getContentResolver().query(uri,null,null,null,null);
             assert c != null;
             c.moveToFirst();
             int phoneIndx=c.getColumnIndex(Phone.NUMBER);

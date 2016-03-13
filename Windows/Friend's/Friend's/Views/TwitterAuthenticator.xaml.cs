@@ -15,19 +15,19 @@ namespace Friend_s.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class TwitterAuthenticator : Page
+    public sealed partial class TwitterAuthenticator
     {
         public TwitterAuthenticator()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             TwitterAuthenticatorMethod();
         }
-
-        readonly TwitterCredentials _appCredentials = new TwitterCredentials("CONSUMER_KEY", "CONSUMER_SECRET");
+        //Use your consumerKey and ConsumerSecret
+        readonly TwitterCredentials _appCredentials = new TwitterCredentials("AuthTokens.TwitterConsumerKey", "AuthTokens.TwitterConsumerSecret");
 
         private async void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
@@ -43,7 +43,8 @@ namespace Friend_s.Views
                 Auth.SetCredentials(userCredentials);
 
                 var vault = new PasswordVault();
-                vault.Add(new PasswordCredential("Friend","Twitter",userCredentials.ToString()));
+                vault.Add(new PasswordCredential("Friend","TwitterAccessToken",userCredentials.AccessToken));
+                vault.Add(new PasswordCredential("Friend","TwitterAccessTokenSecret",userCredentials.AccessTokenSecret));
                 var frame = Window.Current.Content as Frame;
                 frame?.Navigate(typeof(MainPage));
             }

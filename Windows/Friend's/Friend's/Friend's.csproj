@@ -99,13 +99,15 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\13.jpg" />
     <Content Include="Fonts\AGAINTS.TTF" />
     <Content Include="Fonts\UBUNTU-R.TTF" />
     <Content Include="Fonts\TNALOGO.TTF" />
     <Content Include="Fonts\fontawesome-webfont.ttf" />
     <Content Include="Fonts\HirukoStencil.otf" />
     <Content Include="Fonts\TT1255M_.TTF" />
+    <Content Include="TwitterConsumerSecret.txt" />
+    <Content Include="TwitterConsumerKey.txt" />
+    <None Include="Friend%27s_StoreKey.pfx" />
     <None Include="Friend%27s_TemporaryKey.pfx" />
     <None Include="project.json" />
   </ItemGroup>
@@ -113,6 +115,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AuthTokens.cs" />
     <Compile Include="Services\MonitorClass.cs" />
     <Compile Include="Services\ViewModelLocator.cs" />
     <Compile Include="Services\SpineClass.cs" />
@@ -151,7 +154,6 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Elegant_Background-16.jpg" />
     <Content Include="Assets\Generic-Profile-Image.jpg" />
     <None Include="Package.StoreAssociation.xml" />
     <Content Include="Properties\Default.rd.xml" />
@@ -216,6 +218,10 @@
     <ProjectReference Include="..\BackgroundProcesses\BackgroundProcesses.csproj">
       <Project>{12b3fe7f-8200-4363-8130-7d3b42570fa7}</Project>
       <Name>BackgroundProcesses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\winsdkfb\winsdkfb_uwp\winsdkfb_uwp\winsdkfb_uwp.vcxproj">
+      <Project>{973a943b-ff77-4267-8f30-f5fe2b7f5583}</Project>
+      <Name>winsdkfb</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

@@ -19,11 +19,15 @@
     <RootPropertyPathName Name="TwitterRemoveIconVisibility" />
     <RootPropertyPathName Name="SocialIntegrationRemoverCommand" />
     <RootPropertyPathName Name="TwitterPlusIconVisibility" />
+    <RootPropertyPathName Name="FacebookRemoveIconVisibility" />
+    <RootPropertyPathName Name="FacebookPlusIconVisibility" />
+    <RootPropertyPathName Name="FacebookAuthenticatorCommand" />
     <RootPropertyPathName Name="UserName" />
     <RootPropertyPathName Name="HomePage" />
     <RootPropertyPathName Name="SpineInitializerCommand" />
     <RootPropertyPathName Name="ProfileImageSetterCommand" />
     <RootPropertyPathName Name="LocationAccesserCommand" />
+    <RootPropertyPathName Name="ButtonClickEventHome" />
     <RootPropertyPathName Name="GpsLocation" />
     <RootPropertyPathName Name="ProfileEllipseButtonTapCommand" />
     <RootPropertyPathName Name="ProfileImageSource" />
@@ -36,6 +40,9 @@
     <RootPropertyPathName Name="ReminderRegisterCommand" />
     <RootPropertyPathName Name="Time" />
     <RootPropertyPathName Name="SosPage" />
+    <RootPropertyPathName Name="SosCommand" />
+    <RootPropertyPathName Name="TimerStarterCommand" />
+    <RootPropertyPathName Name="SosPageText" />
     <RootPropertyPathName Name="TimerPage" />
     <RootPropertyPathName Name="TimerValueRetrieverCommand" />
     <RootPropertyPathName Name="SecondsValue" />

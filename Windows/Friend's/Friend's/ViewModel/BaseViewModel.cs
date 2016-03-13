@@ -18,18 +18,9 @@ namespace Friend_s.ViewModel
 
         private string _themeColor;
         private string _userName;
-        private bool _isLoading;
         
         public RelayCommand UniversalSettingsCommand { get; private set; }
-        public virtual bool IsLoading
-        {
-            get { return _isLoading; }
-            set
-            {
-                _isLoading = value;
-                RaisePropertyChanged();
-            }
-        }
+        
         public string UserName
         {
             get { return _userName;}
@@ -73,7 +64,7 @@ namespace Friend_s.ViewModel
                 }
                 else
                 {
-                    localsettings.Values.Add("ThemeColor", "#18BC9C");
+                    localsettings.Values.Add("ThemeColor", "#00D054");
                     _themeColor = localsettings.Values["ThemeColor"] as string;
                 }
                 IsProgressBarEnabled = false;
@@ -102,11 +93,18 @@ namespace Friend_s.ViewModel
                     "Trust Yourself",
                     "Stay Positive",
                     "Don't Stop",
-                    "Enjoy Life"
+                    "Enjoy Life",
+                    "Nobody is Perfect",
+                    "Change is Good",
+                    "Live the Moment",
+                    "Never Stop Dreaming",
+                    "Go For It",
+                    "Never Give Up",
+                    "Family is Forever"
                 };
 
                 var random = new Random();
-                var number = random.Next(1, 13);
+                var number = random.Next(1, 20);
 
                 CommandBarQuote = quotes[number];
 
@@ -116,17 +114,17 @@ namespace Friend_s.ViewModel
             {
                 Debug.WriteLine(exception);
             }
-
+            
         }
 
         private void NotifyMe(NotificationMessage obj)
         {
             var notification = obj.Notification;
             double result;
-            double.TryParse(notification, out result);
+            var parseresult = double.TryParse(notification, out result);
 
-            if (result != 0) return;
-            if (notification == "#18BC9C" || notification == "#BA4C63")
+            if (parseresult) return;
+            if (notification == "#00D054" || notification == "#BA4C63")
             {
                 _themeColor = notification;
             }
