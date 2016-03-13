@@ -114,7 +114,7 @@ namespace Friend_s.ViewModel
             {
                 Debug.WriteLine(exception);
             }
-
+            
         }
 
         private void NotifyMe(NotificationMessage obj)

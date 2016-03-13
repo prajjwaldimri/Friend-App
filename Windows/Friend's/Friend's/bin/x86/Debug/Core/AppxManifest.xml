@@ -22,6 +22,7 @@
   </Dependencies>
   <Resources>
     <Resource Language="EN-US" />
+    <Resource Language="EN" />
   </Resources>
   <Applications>
     <Application Id="App" Executable="Friend.exe" EntryPoint="Friend_s.App">
@@ -67,75 +68,75 @@
     <Extension Category="windows.activatableClass.inProcessServer">
       <InProcessServer>
         <Path>winsdkfb.dll</Path>
-        <ActivatableClass ActivatableClassId="winsdkfb.FBError" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.FBMediaStream" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.FBLoginButton" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.ColorLuminosityConverter" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.FBMediaObject" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.FacebookDialog" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.Graph.FBAppRequest" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.Graph.FBUser" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.Graph.FBGroup" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.Graph.FBPage" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.Graph.FBPaging" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.Graph.FBCursors" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.Graph.FBPermission" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.Graph.FBProfilePicture" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.Graph.FBPaginatedArray" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.Graph.FBSingleValue" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.Graph.FBProfilePictureData" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.FBClient" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.winsdkfb_uwp_XamlTypeInfo.XamlMetaDataProvider" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.ScaleConverter" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="winsdkfb.FBAppRequest" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.FBFeedRequest" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.FBSendRequest" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="winsdkfb.winsdkfb_uwp_XamlTypeInfo.XamlMetaDataProvider" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="winsdkfb.FBMediaStream" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="winsdkfb.Graph.FBUser" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="winsdkfb.Graph.FBProfilePictureData" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="winsdkfb.Graph.FBPermission" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="winsdkfb.Graph.FBPaging" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="winsdkfb.Graph.FBSingleValue" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="winsdkfb.Graph.FBPaginatedArray" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="winsdkfb.Graph.FBPage" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="winsdkfb.Graph.FBAppRequest" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="winsdkfb.Graph.FBGroup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="winsdkfb.Graph.FBProfilePicture" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="winsdkfb.Graph.FBCursors" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="winsdkfb.FBPermissions" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="winsdkfb.FacebookDialog" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="winsdkfb.FBAccessTokenData" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="winsdkfb.FBError" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="winsdkfb.FBFeedRequest" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="winsdkfb.FBSession" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="winsdkfb.FBClient" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="winsdkfb.ScaleConverter" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="winsdkfb.ProfilePictureControl" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="winsdkfb.FBResult" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.FBAccessTokenData" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="winsdkfb.FBSession" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="winsdkfb.FBLoginButton" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="winsdkfb.FBSendRequest" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="winsdkfb.ColorLuminosityConverter" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="winsdkfb.FBMediaObject" ThreadingModel="both" />
       </InProcessServer>
     </Extension>
     <Extension Category="windows.activatableClass.inProcessServer">
       <InProcessServer>
         <Path>Friend.exe</Path>
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileImageSource" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileBindingContentContact" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileGroup" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileVisual" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileBindingContentIconic" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileBindingContentAdaptive" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileBasicText" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileText" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileBindingContentPeople" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileBackgroundImage" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileContent" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TilePeekImage" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileBinding" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileImage" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileSubgroup" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileBindingContentPhotos" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="NotificationsExtensions.Badges.BadgeNumericNotificationContent" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="NotificationsExtensions.Badges.BadgeGlyphNotificationContent" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastTextBox" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastContent" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastImage" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastVisual" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastActionsCustom" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastActionsSnoozeAndDismiss" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastButton" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastSelectionBoxItem" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastButtonSnooze" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastSelectionBox" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastButtonDismiss" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastAudio" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastImageSource" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastText" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastSelectionBox" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastSelectionBoxItem" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastTextBox" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastButton" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastActionsSnoozeAndDismiss" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastButtonDismiss" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastActionsCustom" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastContent" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastAppLogo" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="BackgroundProcesses.SpineClass" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="BackgroundProcesses.Reminder" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastVisual" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastImage" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastAudio" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastButtonSnooze" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastText" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileImage" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileSubgroup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileText" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileBasicText" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileBindingContentAdaptive" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileVisual" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileBindingContentContact" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileBindingContentPhotos" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileBackgroundImage" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileContent" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileGroup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileBinding" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileBindingContentIconic" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileBindingContentPeople" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TilePeekImage" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileImageSource" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="BackgroundProcesses.ActionCenterToastMaker" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="BackgroundProcesses.Reminder" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="BackgroundProcesses.SpineClass" ThreadingModel="both" />
       </InProcessServer>
     </Extension>
   </Extensions>

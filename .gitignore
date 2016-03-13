@@ -230,6 +230,7 @@ gen/
 out/
 
 # Gradle files
+gradle.properties
 .gradle/
 build/
 

@@ -199,7 +199,8 @@ namespace Friend_s.ViewModel
 
             // Set up your credentials (https://apps.twitter.com)
             //Use your own consumerKey and consumerSecret below!
-            Auth.SetUserCredentials("AuthTokens.TwitterConsumerKey", "AuthTokens.TwitterConsumerSecret", twitteraccesstoken.Password, twitteraccesstokensecret.Password);
+            await AuthTokens.KeyRetriever();
+            Auth.SetUserCredentials(AuthTokens.TwitterConsumerKey, AuthTokens.TwitterConsumerSecret, twitteraccesstoken.Password, twitteraccesstokensecret.Password);
 
             await LocationAccesser();
             //TODO: Publish the Tweet with location on your Timeline
