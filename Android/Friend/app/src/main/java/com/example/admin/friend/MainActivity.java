@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/TT1255M_.ttf");
+//        Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/TT1255M_.ttf");
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);

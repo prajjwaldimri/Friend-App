@@ -37,23 +37,19 @@ Button Setalarm;
         Setalarm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Calendar current = Calendar.getInstance();
                 Calendar cal = Calendar.getInstance();
                 cal.set(timePicker.getCurrentHour(), timePicker.getCurrentMinute(), 00);
-                if (cal.compareTo(current) <= 0) {
-                    Toast.makeText(getContext(), "Invalid time", Toast.LENGTH_LONG).show();
-                } else {
-                    setAlarm(cal);
-                }
 
+                setAlarm(cal);
             }
 
+
             private void setAlarm(Calendar targetcal) {
-                Toast.makeText(getContext(),"Alarm is set",Toast.LENGTH_LONG).show();
-                Intent intent=new Intent(getContext(),AlarmReceiver.class);
-                PendingIntent pendingIntent=PendingIntent.getBroadcast(getContext(),RQS_1,intent,0);
-                AlarmManager alarmmanager=(AlarmManager)getActivity().getSystemService(Context.ALARM_SERVICE);
-                alarmmanager.set(AlarmManager.RTC_WAKEUP,targetcal.getTimeInMillis(),pendingIntent);
+                Toast.makeText(getContext(), "Alarm is set", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(getContext().getApplicationContext(),AlarmReceiver.class);
+                PendingIntent pendingIntent = PendingIntent.getBroadcast(getContext().getApplicationContext(), RQS_1, intent, 0);
+                AlarmManager alarmmanager = (AlarmManager)getActivity().getSystemService(Context.ALARM_SERVICE);
+                alarmmanager.set(AlarmManager.RTC_WAKEUP, targetcal.getTimeInMillis(), pendingIntent);
             }
         });
 
