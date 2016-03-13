@@ -55,11 +55,10 @@ TextView location;
         });
 
 getLocation();
-<<<<<<< HEAD
 retrieveImage();
-=======
+
 //retrieve();
->>>>>>> 8210d47990cac17563db65e6282c9c312f314f60
+
      return view;
     }
 

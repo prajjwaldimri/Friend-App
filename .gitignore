@@ -233,6 +233,7 @@ out/
 gradle.properties
 .gradle/
 build/
+gradle.properties
 
 # Local configuration file (sdk path, etc)
 local.properties
