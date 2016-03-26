@@ -54,15 +54,15 @@ TextView location;
             }
         });
 
-getLocation();
-retrieveImage();
+   //getLocation();
+  retrieveImage();
 
 //retrieve();
 
      return view;
     }
 
-    public void getLocation() {
+    /*public void getLocation() {
         Geocoder geocoder=new Geocoder(getActivity(),Locale.ENGLISH);
         try{
             List<Address> addresses=geocoder.getFromLocation(37.423247,-122.085469,1);
@@ -82,7 +82,7 @@ retrieveImage();
             e.printStackTrace();
         }
 
-    }
+    }*/
 
     private void openGallery() {
         Intent photoPickerIntent = new Intent(Intent.ACTION_GET_CONTENT);
