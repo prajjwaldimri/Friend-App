@@ -66,7 +66,8 @@
         <CommandBar Background="WhiteSmoke" VerticalAlignment="Bottom" Foreground="Black">
             <AppBarSeparator Foreground="Black" />
             <AppBarButton Icon="List" Label="Medi-Kit" Foreground="Black"/>
-            <AppBarButton Icon="Favorite" Label="Rate" Foreground="Black"/>
+            <AppBarButton Name="StoreRateButton" Icon="Favorite" Label="Rate" Foreground="Black"
+                          Click="StoreRateButton_OnClick"/>
             
             <CommandBar.Content>
                 <TextBlock Margin="20,10" Text="{Binding CommandBarQuote}"

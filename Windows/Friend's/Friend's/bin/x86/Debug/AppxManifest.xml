@@ -7,7 +7,7 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="34691PrajjwalDimri.BeFriendBeta" Publisher="CN=Prajjwal" Version="1.1.0.0" ProcessorArchitecture="x86" />
+  <Identity Name="34691PrajjwalDimri.BeFriendBeta" Publisher="CN=Prajjwal" Version="1.1.1.0" ProcessorArchitecture="x86" />
   <mp:PhoneIdentity PhoneProductId="36411e27-597b-436e-a0bc-7205d8d5afe2" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>BeFriend Beta</DisplayName>
@@ -33,19 +33,19 @@
         </uap:InitialRotationPreference>
       </uap:VisualElements>
       <Extensions>
+        <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundProcesses.Reminder">
+          <BackgroundTasks>
+            <Task Type="general" />
+            <Task Type="systemEvent" />
+            <Task Type="pushNotification" />
+            <uap:Task Type="chatMessageNotification" />
+          </BackgroundTasks>
+        </Extension>
         <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundProcesses.ActionCenterToastMaker">
           <BackgroundTasks>
             <Task Type="general" />
             <Task Type="systemEvent" />
             <Task Type="timer" />
-            <Task Type="pushNotification" />
-            <uap:Task Type="chatMessageNotification" />
-          </BackgroundTasks>
-        </Extension>
-        <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundProcesses.Reminder">
-          <BackgroundTasks>
-            <Task Type="general" />
-            <Task Type="systemEvent" />
             <Task Type="pushNotification" />
             <uap:Task Type="chatMessageNotification" />
           </BackgroundTasks>
@@ -100,39 +100,39 @@
     <Extension Category="windows.activatableClass.inProcessServer">
       <InProcessServer>
         <Path>CLRHost.dll</Path>
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Badges.BadgeNumericNotificationContent" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="NotificationsExtensions.Badges.BadgeGlyphNotificationContent" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Badges.BadgeNumericNotificationContent" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileBindingContentIconic" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TilePeekImage" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileBindingContentAdaptive" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileImageSource" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileBasicText" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileSubgroup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileBinding" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileBindingContentPeople" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileImage" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileBindingContentPhotos" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileContent" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileBindingContentContact" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileVisual" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileText" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileGroup" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileBackgroundImage" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastButtonSnooze" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastVisual" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastAppLogo" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastImage" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastImageSource" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastSelectionBox" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastSelectionBoxItem" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastTextBox" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastButton" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastActionsSnoozeAndDismiss" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastAudio" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastButtonDismiss" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastActionsCustom" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastContent" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastAppLogo" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastVisual" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastImage" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastAudio" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastButtonSnooze" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastSelectionBox" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastSelectionBoxItem" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastButton" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastText" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileImage" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileSubgroup" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileText" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileBasicText" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileBindingContentAdaptive" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileVisual" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileBindingContentContact" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileBindingContentPhotos" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileBackgroundImage" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileContent" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileGroup" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileBinding" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileBindingContentIconic" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileBindingContentPeople" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TilePeekImage" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NotificationsExtensions.Tiles.TileImageSource" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="BackgroundProcesses.ActionCenterToastMaker" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="BackgroundProcesses.Reminder" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="BackgroundProcesses.SpineClass" ThreadingModel="both" />

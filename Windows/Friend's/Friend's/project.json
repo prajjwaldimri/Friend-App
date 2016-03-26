@@ -1,15 +1,16 @@
 ﻿{
   "dependencies": {
-    "FakeBand": "0.0.8",
-    "Microsoft.ApplicationInsights": "1.2.3",
+    "FakeBand": "0.0.9",
+    "Microsoft.ApplicationInsights": "2.0.1",
     "Microsoft.ApplicationInsights.PersistenceChannel": "1.2.3",
     "Microsoft.ApplicationInsights.WindowsApps": "1.1.1",
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0",
     "MvvmLightLibs": "5.2.0",
-    "Newtonsoft.Json": "8.0.2",
+    "Newtonsoft.Json": "8.0.3",
     "NotificationsExtensions.Win10": "10586.0.2",
     "QueryString.NET": "1.0.0",
-    "TweetinviAPI": "0.9.11"
+    "Syn.Bot": "1.2.2",
+    "TweetinviAPI": "0.9.11.2"
   },
   "frameworks": {
     "uap10.0": {}

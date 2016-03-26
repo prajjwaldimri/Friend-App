@@ -83,7 +83,7 @@
         
         <Button Grid.Row="5" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="2"
                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-                Background="Cornsilk" Foreground="Black" 
+                Background="FloralWhite" Foreground="Black" 
                 FontFamily="Rondalo" FontSize="20" BorderBrush="White"
                 BorderThickness="0.2"
                 Command="{Binding ButtonClickEventHome}"
@@ -103,7 +103,7 @@
 
         <Button Grid.Row="5" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="2"
                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-                Background="Cornsilk" Foreground="Black" 
+                Background="FloralWhite" Foreground="Black" 
                 FontFamily="Rondalo" FontSize="20" BorderBrush="White" 
                 BorderThickness="0.2"
                 Command="{Binding ButtonClickEventHome}"

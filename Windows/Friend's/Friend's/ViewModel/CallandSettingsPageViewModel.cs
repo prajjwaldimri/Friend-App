@@ -56,6 +56,9 @@ namespace Friend_s.ViewModel
         public Visibility TwitterRemoveIconVisibility { get; private set; }
         public Visibility FacebookPlusIconVisibility { get; private set; }
         public Visibility FacebookRemoveIconVisibility { get; private set; }
+        public Visibility MessageEditIconVisibility { get; private set; }
+        public Visibility MessageSaveIconVisibility { get; private set; }
+        public bool IsMessageBoxEnabled { get; private set; }
         public double SliderValue { get; set; }
 
 
@@ -115,6 +118,9 @@ namespace Friend_s.ViewModel
                     FacebookPlusIconVisibility = Visibility.Visible;
                     FacebookRemoveIconVisibility = Visibility.Collapsed;
                 }
+                MessageEditIconVisibility = Visibility.Visible;
+                MessageSaveIconVisibility = Visibility.Collapsed;
+                IsMessageBoxEnabled = false;
 
                 RaisePropertyChanged(() => FacebookPlusIconVisibility);
                 RaisePropertyChanged(() => FacebookRemoveIconVisibility);
@@ -123,9 +129,10 @@ namespace Friend_s.ViewModel
                 RaisePropertyChanged(() => ThirdContactName);
                 RaisePropertyChanged(() => ToggleSwitchIsOn);
                 RaisePropertyChanged(() => ToastToggleSwitchIsOn);
-                RaisePropertyChanged(() => SliderValue
-
-                    );
+                RaisePropertyChanged(() => SliderValue);
+                RaisePropertyChanged(()=> MessageEditIconVisibility);
+                RaisePropertyChanged(()=>MessageSaveIconVisibility);
+                RaisePropertyChanged(()=>IsMessageBoxEnabled);
             }
             catch (Exception e)
             {
@@ -208,6 +215,16 @@ namespace Friend_s.ViewModel
                         ThirdContactName = contacts2.DisplayName;
                         RaisePropertyChanged(() => ThirdContactName);
                     }
+                    break;
+
+                case 4:
+
+                    IsMessageBoxEnabled = false;
+                    MessageEditIconVisibility = Visibility.Visible;
+                    MessageSaveIconVisibility = Visibility.Collapsed;
+                    break;
+
+                case 5:
                     break;
 
                 default:
@@ -495,7 +512,7 @@ namespace Friend_s.ViewModel
             RaisePropertyChanged(()=>FacebookRemoveIconVisibility);
         }
 
-
+        
     }
 
 

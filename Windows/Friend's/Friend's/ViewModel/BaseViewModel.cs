@@ -44,10 +44,17 @@ namespace Friend_s.ViewModel
 
         private void RaisePropertyChangedBase()
         {
-            RaisePropertyChanged(()=>ThemeColor);
-            RaisePropertyChanged(()=>UserName);
-            RaisePropertyChanged(()=>IsProgressBarEnabled);
-            RaisePropertyChanged(()=>IsProgressBarVisibile);
+            try
+            {
+                RaisePropertyChanged(() => ThemeColor);
+                RaisePropertyChanged(() => UserName);
+                RaisePropertyChanged(() => IsProgressBarEnabled);
+                RaisePropertyChanged(() => IsProgressBarVisibile);
+            }
+            catch (Exception exception)
+            {
+                Debug.WriteLine(exception);
+            }
         }
 
         private void UniversalSettingsRetriever()
@@ -119,35 +126,44 @@ namespace Friend_s.ViewModel
 
         private void NotifyMe(NotificationMessage obj)
         {
-            var notification = obj.Notification;
-            double result;
-            var parseresult = double.TryParse(notification, out result);
-
-            if (parseresult) return;
-            if (notification == "#00D054" || notification == "#BA4C63")
+            try
             {
-                _themeColor = notification;
-            }
+                var notification = obj.Notification;
+                double result;
+                var parseresult = double.TryParse(notification, out result);
 
-            else if (notification == "ProgressBarEnable" || notification == "ProgressBarDisable")
-            {
-                if (notification == "ProgressBarEnable")
+                if (parseresult) return;
+                if (notification == "#00D054" || notification == "#BA4C63")
                 {
-                    IsProgressBarEnabled = true;
-                    IsProgressBarVisibile = Visibility.Visible;
+                    _themeColor = notification;
                 }
+
+                else if (notification == "ProgressBarEnable" || notification == "ProgressBarDisable")
+                {
+                    if (notification == "ProgressBarEnable")
+                    {
+                        IsProgressBarEnabled = true;
+                        IsProgressBarVisibile = Visibility.Visible;
+                    }
+                    else
+                    {
+                        IsProgressBarEnabled = false;
+                        IsProgressBarVisibile = Visibility.Collapsed;
+                    }
+                }
+
                 else
                 {
-                    IsProgressBarEnabled = false;
-                    IsProgressBarVisibile = Visibility.Collapsed;
+                    _userName = notification;
                 }
+                RaisePropertyChangedBase();
             }
-
-            else
+            catch (Exception exception)
             {
-                _userName = notification;
+                Debug.WriteLine(exception);
             }
-            RaisePropertyChangedBase();
         }
+
+        
     }
 }

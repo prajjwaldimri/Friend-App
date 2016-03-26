@@ -138,6 +138,9 @@
     <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\Rx-PlatformServices\2.2.5\lib\windows8\System.Reactive.PlatformServices.dll">
       <PackagePath>System.Reactive.PlatformServices.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\Syn.Bot\1.2.2\lib\portable-net45+sl5+wp8+win8\Syn.Bot.dll">
+      <PackagePath>Syn.Bot.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\System.AppContext\4.0.0\lib\netcore50\System.AppContext.dll">
       <PackagePath>System.AppContext.dll</PackagePath>
     </AppxPackagedFile>
@@ -467,6 +470,12 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend%27s\Friend%27s\TwitterConsumerKey.txt">
       <PackagePath>TwitterConsumerKey.txt</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend%27s\Friend%27s\Test.simlpk">
+      <PackagePath>Test.simlpk</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend%27s\Friend%27s\TestProject.simlproj">
+      <PackagePath>TestProject.simlproj</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend%27s\Friend%27s\Assets\Generic-Profile-Image.jpg">
       <PackagePath>Assets\Generic-Profile-Image.jpg</PackagePath>

@@ -221,13 +221,33 @@
             
             <TextBlock Text="Message" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" 
                        FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="21.333" FontWeight="Bold"/>
-            <SymbolIcon Grid.Row="0" Grid.Column="2" Symbol="Edit"/>
-            <TextBox Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" Background="AntiqueWhite" BorderBrush="White"/>
+            
+            <SymbolIcon Name="MessageEditSymbol" Grid.Row="0" Grid.Column="2" Symbol="Edit">
+                    <interactivity:Interaction.Behaviors>
+                        <core:EventTriggerBehavior>
+                            <core:InvokeCommandAction Command="{Binding EditContactButtonHandlerCommand}"
+                                                      CommandParameter="5"/>
+                        </core:EventTriggerBehavior>
+                    </interactivity:Interaction.Behaviors>
+            </SymbolIcon>
+            <SymbolIcon Name="MessageSaveSymbol" Grid.Row="0" Grid.Column="2" Symbol="Save"
+                        Visibility="Collapsed">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior>
+                        <core:InvokeCommandAction Command="{Binding EditContactButtonHandlerCommand}"
+                                                  CommandParameter="4"/>
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+            </SymbolIcon>
+                
+            <TextBox Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" Background="AntiqueWhite"
+                         BorderBrush="White" IsReadOnly="{Binding }"/>
 
             <TextBlock Text="Notification Settings" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" 
                        FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="21.333" FontWeight="Bold"/>
             
-                <TextBlock VerticalAlignment="Center" Text="Permanent Toast Notifications"
+            
+            <TextBlock VerticalAlignment="Center" Text="Permanent Toast Notifications"
                            Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
             
             <ToggleSwitch x:Name="ToastMakerToggle"

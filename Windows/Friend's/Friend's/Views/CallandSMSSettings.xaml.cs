@@ -3,6 +3,7 @@ using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
+using Windows.UI.Xaml.Navigation;
 using Friend_s.ViewModel;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
@@ -62,8 +63,8 @@ namespace Friend_s.Views
         private void UIElement_OnTapped(object sender, TappedRoutedEventArgs e)
         {
             var frame = Window.Current.Content as Frame;
-            if (frame != null)
-                frame.Navigate(typeof (TwitterAuthenticator));
+            frame?.BackStack.Add(new PageStackEntry(typeof(CallandSmsSettings),null,null));
+            frame?.Navigate(typeof (TwitterAuthenticator));
             
         }
 
