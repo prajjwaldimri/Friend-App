@@ -134,9 +134,10 @@
         <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastSelectionBoxItem" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastButton" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="NotificationsExtensions.Toasts.ToastText" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="BackgroundProcesses.ActionCenterToastMaker" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="BackgroundProcesses.Reminder" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="BackgroundProcesses.ActionCenterToastMaker" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="BackgroundProcesses.SpineClass" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="BackgroundProcesses.FBReturnObject" ThreadingModel="both" />
       </InProcessServer>
     </Extension>
   </Extensions>

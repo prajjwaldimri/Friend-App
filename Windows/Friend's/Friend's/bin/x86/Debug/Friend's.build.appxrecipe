@@ -33,10 +33,10 @@
     <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\CommonServiceLocator\1.3.0\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll">
       <PackagePath>Microsoft.Practices.ServiceLocation.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\FakeBand\0.0.8\lib\portable-net45+win+wpa81\FakeBand.dll">
+    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\FakeBand\0.0.9\lib\portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10\FakeBand.dll">
       <PackagePath>FakeBand.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\Microsoft.ApplicationInsights\1.2.3\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll">
+    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\Microsoft.ApplicationInsights\2.0.1\lib\uap10.0\Microsoft.ApplicationInsights.dll">
       <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\Microsoft.ApplicationInsights.PersistenceChannel\1.2.3\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.PersistenceChannel.dll">
@@ -45,14 +45,17 @@
     <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\Microsoft.ApplicationInsights.WindowsApps\1.1.1\lib\win81\Microsoft.ApplicationInsights.Extensibility.Windows.dll">
       <PackagePath>Microsoft.ApplicationInsights.Extensibility.Windows.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\Microsoft.Band\1.3.11121\lib\netcore451\Microsoft.Band.dll">
+    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\Microsoft.Band\1.3.20307\lib\uap10.0\Google.Protobuf.dll">
+      <PackagePath>Google.Protobuf.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\Microsoft.Band\1.3.20307\lib\uap10.0\Microsoft.Band.dll">
       <PackagePath>Microsoft.Band.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\Microsoft.Band\1.3.11121\lib\netcore451\Microsoft.Band.Store.dll">
-      <PackagePath>Microsoft.Band.Store.dll</PackagePath>
+    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\Microsoft.Band\1.3.20307\lib\uap10.0\Microsoft.Band.Phone_UAP.dll">
+      <PackagePath>Microsoft.Band.Phone_UAP.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\Microsoft.Band\1.3.11121\lib\netcore451\Microsoft.Band.Windows.dll">
-      <PackagePath>Microsoft.Band.Windows.dll</PackagePath>
+    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\Microsoft.Band\1.3.20307\lib\uap10.0\Microsoft.Band.Store_UAP.dll">
+      <PackagePath>Microsoft.Band.Store_UAP.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\Microsoft.Bcl.Async\1.0.168\lib\win8\Microsoft.Threading.Tasks.dll">
       <PackagePath>Microsoft.Threading.Tasks.dll</PackagePath>
@@ -120,7 +123,7 @@
     <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\MvvmLightLibs\5.2.0\lib\windows81\GalaSoft.MvvmLight.Platform.dll">
       <PackagePath>GalaSoft.MvvmLight.Platform.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\Newtonsoft.Json\8.0.2\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Newtonsoft.Json.dll">
+    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\Newtonsoft.Json\8.0.3\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\QueryString.NET\1.0.0\lib\dotnet\QueryString.NETCore.dll">
@@ -405,31 +408,31 @@
     <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\System.Xml.XmlSerializer\4.0.10\lib\netcore50\System.Xml.XmlSerializer.dll">
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\TweetinviAPI\0.9.11\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Tweetinvi.Controllers.dll">
+    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\TweetinviAPI\0.9.11.2\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Tweetinvi.Controllers.dll">
       <PackagePath>Tweetinvi.Controllers.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\TweetinviAPI\0.9.11\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Tweetinvi.Core.dll">
+    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\TweetinviAPI\0.9.11.2\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Tweetinvi.Core.dll">
       <PackagePath>Tweetinvi.Core.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\TweetinviAPI\0.9.11\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Tweetinvi.Credentials.dll">
+    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\TweetinviAPI\0.9.11.2\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Tweetinvi.Credentials.dll">
       <PackagePath>Tweetinvi.Credentials.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\TweetinviAPI\0.9.11\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Tweetinvi.dll">
+    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\TweetinviAPI\0.9.11.2\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Tweetinvi.dll">
       <PackagePath>Tweetinvi.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\TweetinviAPI\0.9.11\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Tweetinvi.Factories.dll">
+    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\TweetinviAPI\0.9.11.2\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Tweetinvi.Factories.dll">
       <PackagePath>Tweetinvi.Factories.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\TweetinviAPI\0.9.11\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Tweetinvi.Logic.dll">
+    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\TweetinviAPI\0.9.11.2\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Tweetinvi.Logic.dll">
       <PackagePath>Tweetinvi.Logic.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\TweetinviAPI\0.9.11\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Tweetinvi.Security.dll">
+    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\TweetinviAPI\0.9.11.2\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Tweetinvi.Security.dll">
       <PackagePath>Tweetinvi.Security.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\TweetinviAPI\0.9.11\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Tweetinvi.Streams.dll">
+    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\TweetinviAPI\0.9.11.2\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Tweetinvi.Streams.dll">
       <PackagePath>Tweetinvi.Streams.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\TweetinviAPI\0.9.11\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Tweetinvi.WebLogic.dll">
+    <AppxPackagedFile Include="C:\Users\prajj\.nuget\packages\TweetinviAPI\0.9.11.2\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Tweetinvi.WebLogic.dll">
       <PackagePath>Tweetinvi.WebLogic.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend%27s\Debug\winsdkfb_uwp\winsdkfb.dll">
@@ -462,6 +465,12 @@
     <AppxPackagedFile Include="C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend%27s\Friend%27s\Fonts\TT1255M_.TTF">
       <PackagePath>Fonts\TT1255M_.TTF</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend%27s\Friend%27s\Fonts\Karla-Regular.ttf">
+      <PackagePath>Fonts\Karla-Regular.ttf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend%27s\Friend%27s\Fonts\Karla-Bold.ttf">
+      <PackagePath>Fonts\Karla-Bold.ttf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend%27s\Friend%27s\Fonts\HirukoStencil.otf">
       <PackagePath>Fonts\HirukoStencil.otf</PackagePath>
     </AppxPackagedFile>
@@ -471,11 +480,8 @@
     <AppxPackagedFile Include="C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend%27s\Friend%27s\TwitterConsumerKey.txt">
       <PackagePath>TwitterConsumerKey.txt</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend%27s\Friend%27s\Test.simlpk">
-      <PackagePath>Test.simlpk</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend%27s\Friend%27s\TestProject.simlproj">
-      <PackagePath>TestProject.simlproj</PackagePath>
+    <AppxPackagedFile Include="C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend%27s\Friend%27s\BeFriendBot.simlpk">
+      <PackagePath>BeFriendBot.simlpk</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend%27s\Friend%27s\Assets\Generic-Profile-Image.jpg">
       <PackagePath>Assets\Generic-Profile-Image.jpg</PackagePath>

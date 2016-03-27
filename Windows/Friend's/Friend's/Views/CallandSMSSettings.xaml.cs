@@ -68,6 +68,26 @@ namespace Friend_s.Views
             
         }
 
-        
+
+        private void MessageSaveButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            var localData = ApplicationData.Current.LocalSettings;
+            var roamData = ApplicationData.Current.RoamingSettings;
+            if (!localData.Values.ContainsKey("MessageToSend") && !roamData.Values.ContainsKey("MessageToSend"))
+            {
+                localData.Values.Add("MessageToSend", UserNameTextBox.Text);
+                roamData.Values.Add("MessageToSend", UserNameTextBox.Text);
+            }
+            else
+            {
+                localData.Values.Remove("MessageToSend");
+                roamData.Values.Remove("MessageToSend");
+                localData.Values.Add("MessageToSend", UserNameTextBox.Text);
+                roamData.Values.Add("MessageToSend", UserNameTextBox.Text);
+            }
+
+            
+
+        }
     }
 }

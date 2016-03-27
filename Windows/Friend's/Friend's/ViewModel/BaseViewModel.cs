@@ -16,7 +16,8 @@ namespace Friend_s.ViewModel
             MessengerInstance.Register<NotificationMessage>(this,NotifyMe );
         }
 
-        private string _themeColor;
+        private string _themeColorPrimary;
+        private string _themeColorSecondary;
         private string _userName;
         
         public RelayCommand UniversalSettingsCommand { get; private set; }
@@ -33,10 +34,15 @@ namespace Friend_s.ViewModel
                 }
             }
         }
-        public string ThemeColor
+        public string ThemeColorPrimary
         {
-            get { return _themeColor; }
-            set { _themeColor = value; RaisePropertyChanged(()=>ThemeColor); }
+            get { return _themeColorPrimary; }
+            set { _themeColorPrimary = value; RaisePropertyChanged(()=>ThemeColorPrimary); }
+        }
+        public string ThemeColorSecondary
+        {
+            get { return _themeColorSecondary; }
+            set { _themeColorSecondary = value; RaisePropertyChanged(() => ThemeColorSecondary); }
         }
         public string CommandBarQuote { get; set; }
         public bool IsProgressBarEnabled { get; set; }
@@ -46,10 +52,11 @@ namespace Friend_s.ViewModel
         {
             try
             {
-                RaisePropertyChanged(() => ThemeColor);
+                RaisePropertyChanged(() => ThemeColorPrimary);
                 RaisePropertyChanged(() => UserName);
                 RaisePropertyChanged(() => IsProgressBarEnabled);
                 RaisePropertyChanged(() => IsProgressBarVisibile);
+                RaisePropertyChanged(()=> ThemeColorSecondary);
             }
             catch (Exception exception)
             {
@@ -65,14 +72,17 @@ namespace Friend_s.ViewModel
                 var localsettings = applicationData.LocalSettings;
                 if (localsettings.Values.ContainsKey("UserName"))
                     _userName = localsettings.Values["UserName"] as string;
-                if (localsettings.Values.ContainsKey("ThemeColor"))
+                if (localsettings.Values.ContainsKey("ThemeColorPrimary"))
                 {
-                    _themeColor = localsettings.Values["ThemeColor"] as string;
+                    _themeColorPrimary = localsettings.Values["ThemeColorPrimary"] as string;
+                    _themeColorSecondary = localsettings.Values["ThemeColorSecondary"] as string;
                 }
                 else
                 {
-                    localsettings.Values.Add("ThemeColor", "#00D054");
-                    _themeColor = localsettings.Values["ThemeColor"] as string;
+                    localsettings.Values.Add("ThemeColorPrimary", "#0371b2");
+                    localsettings.Values.Add("ThemeColorSecondary", "#00a0ff");
+                    _themeColorPrimary = localsettings.Values["ThemeColorPrimary"] as string;
+                    _themeColorSecondary = localsettings.Values["ThemeColorSecondary"] as string;
                 }
                 IsProgressBarEnabled = false;
                 IsProgressBarVisibile = Visibility.Collapsed;
@@ -133,9 +143,15 @@ namespace Friend_s.ViewModel
                 var parseresult = double.TryParse(notification, out result);
 
                 if (parseresult) return;
-                if (notification == "#00D054" || notification == "#BA4C63")
+                if (notification == "#ceb9fe" || notification == "#0371b2")
                 {
-                    _themeColor = notification;
+                    _themeColorPrimary = notification;
+                    
+                }
+
+                else if (notification == "#00a0ff" || notification == "#9f8fc4")
+                {
+                    _themeColorSecondary = notification;
                 }
 
                 else if (notification == "ProgressBarEnable" || notification == "ProgressBarDisable")

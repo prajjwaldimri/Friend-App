@@ -16,7 +16,13 @@
         </core:EventTriggerBehavior>
     </interactivity:Interaction.Behaviors>
     
-    <Grid Background="{Binding ThemeColor}">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0,1" StartPoint="0.8,1.">
+                <GradientStop Color="{Binding ThemeColorPrimary}" Offset="0"/>
+                <GradientStop Color="{Binding ThemeColorSecondary}" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
 
         <StackPanel VerticalAlignment="Center">
             <TextBlock Text="Register a reminder!" HorizontalAlignment="Center"

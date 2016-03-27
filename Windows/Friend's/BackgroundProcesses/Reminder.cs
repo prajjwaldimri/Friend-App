@@ -1,15 +1,21 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Threading;
+using System.Threading.Tasks;
 using Windows.ApplicationModel.Background;
 using Windows.Devices.Geolocation;
 using Windows.Devices.Sms;
+using Windows.Foundation.Collections;
+using Windows.Security.Credentials;
 using Windows.Storage;
 using Windows.UI.Notifications;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
-
-
+using Friend_s;
+using Newtonsoft.Json;
+using Tweetinvi;
+using winsdkfb;
+using winsdkfb.Graph;
 
 namespace BackgroundProcesses
 {
@@ -24,10 +30,21 @@ namespace BackgroundProcesses
         private CancellationTokenSource _cts = null;
         private static string _latitude;
         private static string _longitude;
+        private static string _message="";
 
         public void Run(IBackgroundTaskInstance taskInstance)
         {
             var localSettings = ApplicationData.Current.LocalSettings;
+
+            var localsettings = ApplicationData.Current.LocalSettings;
+            if (localsettings.Values.ContainsKey("MessageToSend"))
+            {
+                _message = localsettings.Values["MessageToSend"] as string;
+            }
+            else
+            {
+                _message = "Help Me at";
+            }
 
             var details = taskInstance.TriggerDetails as ToastNotificationActionTriggerDetail;
 
@@ -48,39 +65,31 @@ namespace BackgroundProcesses
             if (localSettings.Values.ContainsKey("EmergencyOn"))
             {
                 TimerStarter();
+                Caller();
             }
         }
 
 
         private static void TimerStarter()
         {
-            var timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(20);
-            timer.Tick += timer_Tick;
-            timer.Start();
-
+            LocationAccesser();
+            //MessageSender();
+            TwitterPoster();
+            FacebookPoster();
             if (!Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
                 return;
             var spineClass = new SpineClass();
             spineClass.InitializeCallingInfoAsync();
+           
         }
 
-        private static void timer_Tick(object sender, object e)
-        {
-            LocationAccesser();
-
-            if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
-                return;
-            MessageSender();
-            Caller();
-        }
-
-
+        
         private static string _phonenumber;
         private static string _phonename;
+        
 
 
-        private static async void LocationAccesser()
+        private static async Task LocationAccesser()
         {
             try
             {
@@ -118,6 +127,8 @@ namespace BackgroundProcesses
             {
                 Debug.WriteLine(e);
             }
+
+            
         }
 
         private static async void MessageSender()
@@ -182,6 +193,83 @@ namespace BackgroundProcesses
             }
         }
 
+        private static async void TwitterPoster()
+        {
+            Debug.WriteLine("Checking credentials... \n");
+            var vault = new PasswordVault();
+            try
+            {
+                var credentialList = vault.FindAllByUserName("TwitterAccessToken");
+                if (credentialList.Count <= 0)
+                {
+                    Debug.WriteLine("Twitter not configured \n");
+                    return;
+                }
+                var twitteraccesstoken = vault.Retrieve("Friend", "TwitterAccessToken");
+                var twitteraccesstokensecret = vault.Retrieve("Friend", "TwitterAccessTokenSecret");
+                Debug.WriteLine("Credentials Retrieved \n");
 
+                // Set up your credentials (https://apps.twitter.com)
+                //Use your own consumerKey and consumerSecret below!
+                await AuthTokens.KeyRetriever();
+                Auth.SetUserCredentials(AuthTokens.TwitterConsumerKey, AuthTokens.TwitterConsumerSecret,
+                    twitteraccesstoken.Password, twitteraccesstokensecret.Password);
+
+                await LocationAccesser();
+                //TODO: Publish the Tweet with location on your Timeline
+                Tweet.PublishTweet(_message + " \n" + _latitude + "\n" + _longitude);
+
+               Debug.WriteLine("Publishing Tweet... \n");
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine("Twitter not configured \n");
+                Debug.WriteLine(e);
+            }
+
+            
+        }
+
+        private static async void FacebookPoster()
+        {
+            // Get active session
+            FBSession sess = FBSession.ActiveSession;
+
+
+            if (sess.LoggedIn)
+            {
+                var user = sess.User;
+                // Set caption, link and description parameters
+                var parameters = new PropertySet();
+
+                // Add post message
+                await LocationAccesser();
+                parameters.Add("message", _message + "\n" + "\n" + _latitude + "\n" + _longitude);
+
+                // Set Graph api path
+                var path = "/" + user.Id + "/feed";
+
+                var factory = new FBJsonClassFactory(s => {
+                    return JsonConvert.DeserializeObject<FBReturnObject>(s);
+                });
+
+                var singleValue = new FBSingleValue(path, parameters, factory);
+                var result = await singleValue.PostAsync();
+                if (result.Succeeded)
+                {
+                    Debug.WriteLine("Succeed");
+                }
+                else
+                {
+                    Debug.WriteLine("Failed");
+                }
+            }
+        }
+
+    }
+    public sealed class FBReturnObject
+    {
+        public string Id { get; set; }
+        public string Post_Id { get; set; }
     }
 }

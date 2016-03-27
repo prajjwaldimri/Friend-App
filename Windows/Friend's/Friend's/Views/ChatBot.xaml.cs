@@ -34,6 +34,8 @@ namespace Friend_s
         }
 
 
+
+
         private void SendButton_OnClick(object sender, RoutedEventArgs e)
         {
             ChatBotConnector();
@@ -56,8 +58,8 @@ namespace Friend_s
         private void ChatBotConnector()
         {
             var result = _chatbot.Chat(InputText.Text);
-            OutputText.Text = string.Format("User: {0}\nBot: {1}\n{2}", InputText.Text, result.BotMessage,
-                OutputText.Text);
+            //OutputText = string.Format("User: {0}\nBot: {1}\n{2}", InputText.Text, result.BotMessage);
+                
             InputText.Text = string.Empty;
         }
 

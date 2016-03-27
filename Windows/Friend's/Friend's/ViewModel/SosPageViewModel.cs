@@ -31,6 +31,8 @@ namespace Friend_s.ViewModel
 
         public string SosPageText { get; set; }
 
+        private string Message;
+
         public SosPageViewModel()
         {
             TimerStarterCommand = new RelayCommand(TimerStarter);
@@ -74,6 +76,15 @@ namespace Friend_s.ViewModel
 
         private async void SosCommandMethod()
         {
+            var localsettings = ApplicationData.Current.LocalSettings;
+            if (localsettings.Values.ContainsKey("MessageToSend"))
+            {
+                Message = localsettings.Values["MessageToSend"] as string;
+            }
+            else
+            {
+                Message = "Help Me at";
+            }
             await LocationAccesser();
             //MessageSender();
             TwitterPoster();
@@ -148,7 +159,7 @@ namespace Friend_s.ViewModel
             var msg = new SmsTextMessage2
             {
                 To = _phonenumber,
-                Body = "I am in need of help. My coordinates are\n Latitude:" + _latitude + "Longitude \n" + _longitude
+                Body = Message+"My coordinates are\n Latitude:" + _latitude + "Longitude \n" + _longitude
             };
             var result = await _device.SendMessageAndGetResultAsync(msg);
             SosPageText += "Sending Message.... \n";
@@ -215,7 +226,7 @@ namespace Friend_s.ViewModel
 
                 await LocationAccesser();
                 //TODO: Publish the Tweet with location on your Timeline
-                Tweet.PublishTweet("I need help at \n" + _latitude + "\n" + _longitude);
+                Tweet.PublishTweet(Message+" \n" + _latitude + "\n" + _longitude);
 
                 SosPageText += "Publishing Tweet... \n";
             }
@@ -242,7 +253,7 @@ namespace Friend_s.ViewModel
                 
                 // Add post message
                 await LocationAccesser();
-                parameters.Add("message", "I am in need of help \n"+"\n"+_latitude+"\n"+_longitude);
+                parameters.Add("message", Message+"\n"+"\n"+_latitude+"\n"+_longitude);
 
                 // Set Graph api path
                 var path = "/" + user.Id + "/feed";
