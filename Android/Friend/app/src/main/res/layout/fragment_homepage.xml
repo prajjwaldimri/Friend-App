@@ -11,7 +11,7 @@
         android:layout_width="200dp"
         android:layout_height="170dp"
         android:text="Emergency calls"
-        android:id="@+id/button2"
+        android:id="@+id/sosNavigatorButton"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"/>
@@ -20,7 +20,7 @@
         android:layout_width="200dp"
         android:layout_height="170dp"
         android:text="Support"
-        android:id="@+id/button6"
+        android:id="@+id/supportButton"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
@@ -30,7 +30,7 @@
     <ImageView
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:id="@+id/imageView"
+        android:id="@+id/profileImageView"
         android:background="@mipmap/ic_launcher"
         android:scaleType="centerCrop"
         android:layout_gravity="center"
@@ -42,12 +42,12 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/textView9"
-        android:layout_above="@+id/button2"
+        android:layout_above="@+id/sosNavigatorButton"
         android:layout_marginBottom="31dp"
-        android:layout_alignRight="@+id/imageView"
-        android:layout_alignEnd="@+id/imageView"
-        android:layout_alignLeft="@+id/imageView"
-        android:layout_alignStart="@+id/imageView" />
+        android:layout_alignRight="@+id/profileImageView"
+        android:layout_alignEnd="@+id/profileImageView"
+        android:layout_alignLeft="@+id/profileImageView"
+        android:layout_alignStart="@+id/profileImageView" />
 
 
 </RelativeLayout>
