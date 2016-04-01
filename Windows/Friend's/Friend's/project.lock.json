@@ -19,24 +19,45 @@
           "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
         }
       },
-      "FakeBand/0.0.8": {
+      "FakeBand/0.0.9": {
         "dependencies": {
-          "Microsoft.Band": "[1.3.11121, )",
+          "Microsoft.Band": "[1.3.20307, )",
           "Rx-Main": "[2.2.5, )"
         },
         "compile": {
-          "lib/portable-net45+win+wpa81/FakeBand.dll": {}
+          "lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/FakeBand.dll": {}
         },
         "runtime": {
-          "lib/portable-net45+win+wpa81/FakeBand.dll": {}
+          "lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/FakeBand.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights/1.2.3": {
+      "Microsoft.ApplicationInsights/2.0.1": {
+        "dependencies": {
+          "System.Collections": "[4.0.10, )",
+          "System.Diagnostics.Debug": "[4.0.10, )",
+          "System.Diagnostics.Tools": "[4.0.0, )",
+          "System.Diagnostics.Tracing": "[4.0.20, )",
+          "System.Globalization": "[4.0.10, )",
+          "System.IO": "[4.0.10, )",
+          "System.IO.Compression": "[4.0.0, )",
+          "System.Linq": "[4.0.0, )",
+          "System.Net.Http": "[4.0.0, )",
+          "System.Reflection": "[4.0.10, )",
+          "System.Reflection.Extensions": "[4.0.0, )",
+          "System.Runtime": "[4.0.20, )",
+          "System.Runtime.Extensions": "[4.0.10, )",
+          "System.Text.Encoding": "[4.0.10, )",
+          "System.Text.Encoding.Extensions": "[4.0.10, )",
+          "System.Text.RegularExpressions": "[4.0.10, )",
+          "System.Threading": "[4.0.10, )",
+          "System.Threading.Tasks": "[4.0.10, )",
+          "System.Xml.XDocument": "[4.0.10, )"
+        },
         "compile": {
-          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
+          "lib/uap10.0/Microsoft.ApplicationInsights.dll": {}
         },
         "runtime": {
-          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
+          "lib/uap10.0/Microsoft.ApplicationInsights.dll": {}
         }
       },
       "Microsoft.ApplicationInsights.PersistenceChannel/1.2.3": {
@@ -62,16 +83,18 @@
           "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
         }
       },
-      "Microsoft.Band/1.3.11121": {
+      "Microsoft.Band/1.3.20307": {
         "compile": {
-          "lib/netcore451/Microsoft.Band.dll": {},
-          "lib/netcore451/Microsoft.Band.Store.dll": {},
-          "lib/netcore451/Microsoft.Band.Windows.dll": {}
+          "lib/uap10.0/Google.Protobuf.dll": {},
+          "lib/uap10.0/Microsoft.Band.dll": {},
+          "lib/uap10.0/Microsoft.Band.Phone_UAP.dll": {},
+          "lib/uap10.0/Microsoft.Band.Store_UAP.dll": {}
         },
         "runtime": {
-          "lib/netcore451/Microsoft.Band.dll": {},
-          "lib/netcore451/Microsoft.Band.Store.dll": {},
-          "lib/netcore451/Microsoft.Band.Windows.dll": {}
+          "lib/uap10.0/Google.Protobuf.dll": {},
+          "lib/uap10.0/Microsoft.Band.dll": {},
+          "lib/uap10.0/Microsoft.Band.Phone_UAP.dll": {},
+          "lib/uap10.0/Microsoft.Band.Store_UAP.dll": {}
         }
       },
       "Microsoft.Bcl/1.1.10": {
@@ -326,7 +349,7 @@
           "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
         }
       },
-      "Newtonsoft.Json/8.0.2": {
+      "Newtonsoft.Json/8.0.3": {
         "compile": {
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
         },
@@ -399,6 +422,14 @@
         },
         "runtime": {
           "lib/windows8/System.Reactive.PlatformServices.dll": {}
+        }
+      },
+      "Syn.Bot/1.2.2": {
+        "compile": {
+          "lib/portable-net45+sl5+wp8+win8/Syn.Bot.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+sl5+wp8+win8/Syn.Bot.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -1736,7 +1767,7 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "TweetinviAPI/0.9.11": {
+      "TweetinviAPI/0.9.11.2": {
         "dependencies": {
           "Autofac": "[3.5.2, )",
           "Microsoft.Bcl.Async": "[1.0.168, )",
@@ -1785,24 +1816,45 @@
           "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
         }
       },
-      "FakeBand/0.0.8": {
+      "FakeBand/0.0.9": {
         "dependencies": {
-          "Microsoft.Band": "[1.3.11121, )",
+          "Microsoft.Band": "[1.3.20307, )",
           "Rx-Main": "[2.2.5, )"
         },
         "compile": {
-          "lib/portable-net45+win+wpa81/FakeBand.dll": {}
+          "lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/FakeBand.dll": {}
         },
         "runtime": {
-          "lib/portable-net45+win+wpa81/FakeBand.dll": {}
+          "lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/FakeBand.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights/1.2.3": {
+      "Microsoft.ApplicationInsights/2.0.1": {
+        "dependencies": {
+          "System.Collections": "[4.0.10, )",
+          "System.Diagnostics.Debug": "[4.0.10, )",
+          "System.Diagnostics.Tools": "[4.0.0, )",
+          "System.Diagnostics.Tracing": "[4.0.20, )",
+          "System.Globalization": "[4.0.10, )",
+          "System.IO": "[4.0.10, )",
+          "System.IO.Compression": "[4.0.0, )",
+          "System.Linq": "[4.0.0, )",
+          "System.Net.Http": "[4.0.0, )",
+          "System.Reflection": "[4.0.10, )",
+          "System.Reflection.Extensions": "[4.0.0, )",
+          "System.Runtime": "[4.0.20, )",
+          "System.Runtime.Extensions": "[4.0.10, )",
+          "System.Text.Encoding": "[4.0.10, )",
+          "System.Text.Encoding.Extensions": "[4.0.10, )",
+          "System.Text.RegularExpressions": "[4.0.10, )",
+          "System.Threading": "[4.0.10, )",
+          "System.Threading.Tasks": "[4.0.10, )",
+          "System.Xml.XDocument": "[4.0.10, )"
+        },
         "compile": {
-          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
+          "lib/uap10.0/Microsoft.ApplicationInsights.dll": {}
         },
         "runtime": {
-          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
+          "lib/uap10.0/Microsoft.ApplicationInsights.dll": {}
         }
       },
       "Microsoft.ApplicationInsights.PersistenceChannel/1.2.3": {
@@ -1828,16 +1880,18 @@
           "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
         }
       },
-      "Microsoft.Band/1.3.11121": {
+      "Microsoft.Band/1.3.20307": {
         "compile": {
-          "lib/netcore451/Microsoft.Band.dll": {},
-          "lib/netcore451/Microsoft.Band.Store.dll": {},
-          "lib/netcore451/Microsoft.Band.Windows.dll": {}
+          "lib/uap10.0/Google.Protobuf.dll": {},
+          "lib/uap10.0/Microsoft.Band.dll": {},
+          "lib/uap10.0/Microsoft.Band.Phone_UAP.dll": {},
+          "lib/uap10.0/Microsoft.Band.Store_UAP.dll": {}
         },
         "runtime": {
-          "lib/netcore451/Microsoft.Band.dll": {},
-          "lib/netcore451/Microsoft.Band.Store.dll": {},
-          "lib/netcore451/Microsoft.Band.Windows.dll": {}
+          "lib/uap10.0/Google.Protobuf.dll": {},
+          "lib/uap10.0/Microsoft.Band.dll": {},
+          "lib/uap10.0/Microsoft.Band.Phone_UAP.dll": {},
+          "lib/uap10.0/Microsoft.Band.Store_UAP.dll": {}
         }
       },
       "Microsoft.Bcl/1.1.10": {
@@ -2135,7 +2189,7 @@
           "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
         }
       },
-      "Newtonsoft.Json/8.0.2": {
+      "Newtonsoft.Json/8.0.3": {
         "compile": {
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
         },
@@ -2208,6 +2262,14 @@
         },
         "runtime": {
           "lib/windows8/System.Reactive.PlatformServices.dll": {}
+        }
+      },
+      "Syn.Bot/1.2.2": {
+        "compile": {
+          "lib/portable-net45+sl5+wp8+win8/Syn.Bot.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+sl5+wp8+win8/Syn.Bot.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -3592,7 +3654,7 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "TweetinviAPI/0.9.11": {
+      "TweetinviAPI/0.9.11.2": {
         "dependencies": {
           "Autofac": "[3.5.2, )",
           "Microsoft.Bcl.Async": "[1.0.168, )",
@@ -3641,24 +3703,45 @@
           "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
         }
       },
-      "FakeBand/0.0.8": {
+      "FakeBand/0.0.9": {
         "dependencies": {
-          "Microsoft.Band": "[1.3.11121, )",
+          "Microsoft.Band": "[1.3.20307, )",
           "Rx-Main": "[2.2.5, )"
         },
         "compile": {
-          "lib/portable-net45+win+wpa81/FakeBand.dll": {}
+          "lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/FakeBand.dll": {}
         },
         "runtime": {
-          "lib/portable-net45+win+wpa81/FakeBand.dll": {}
+          "lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/FakeBand.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights/1.2.3": {
+      "Microsoft.ApplicationInsights/2.0.1": {
+        "dependencies": {
+          "System.Collections": "[4.0.10, )",
+          "System.Diagnostics.Debug": "[4.0.10, )",
+          "System.Diagnostics.Tools": "[4.0.0, )",
+          "System.Diagnostics.Tracing": "[4.0.20, )",
+          "System.Globalization": "[4.0.10, )",
+          "System.IO": "[4.0.10, )",
+          "System.IO.Compression": "[4.0.0, )",
+          "System.Linq": "[4.0.0, )",
+          "System.Net.Http": "[4.0.0, )",
+          "System.Reflection": "[4.0.10, )",
+          "System.Reflection.Extensions": "[4.0.0, )",
+          "System.Runtime": "[4.0.20, )",
+          "System.Runtime.Extensions": "[4.0.10, )",
+          "System.Text.Encoding": "[4.0.10, )",
+          "System.Text.Encoding.Extensions": "[4.0.10, )",
+          "System.Text.RegularExpressions": "[4.0.10, )",
+          "System.Threading": "[4.0.10, )",
+          "System.Threading.Tasks": "[4.0.10, )",
+          "System.Xml.XDocument": "[4.0.10, )"
+        },
         "compile": {
-          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
+          "lib/uap10.0/Microsoft.ApplicationInsights.dll": {}
         },
         "runtime": {
-          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
+          "lib/uap10.0/Microsoft.ApplicationInsights.dll": {}
         }
       },
       "Microsoft.ApplicationInsights.PersistenceChannel/1.2.3": {
@@ -3684,16 +3767,18 @@
           "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
         }
       },
-      "Microsoft.Band/1.3.11121": {
+      "Microsoft.Band/1.3.20307": {
         "compile": {
-          "lib/netcore451/Microsoft.Band.dll": {},
-          "lib/netcore451/Microsoft.Band.Store.dll": {},
-          "lib/netcore451/Microsoft.Band.Windows.dll": {}
+          "lib/uap10.0/Google.Protobuf.dll": {},
+          "lib/uap10.0/Microsoft.Band.dll": {},
+          "lib/uap10.0/Microsoft.Band.Phone_UAP.dll": {},
+          "lib/uap10.0/Microsoft.Band.Store_UAP.dll": {}
         },
         "runtime": {
-          "lib/netcore451/Microsoft.Band.dll": {},
-          "lib/netcore451/Microsoft.Band.Store.dll": {},
-          "lib/netcore451/Microsoft.Band.Windows.dll": {}
+          "lib/uap10.0/Google.Protobuf.dll": {},
+          "lib/uap10.0/Microsoft.Band.dll": {},
+          "lib/uap10.0/Microsoft.Band.Phone_UAP.dll": {},
+          "lib/uap10.0/Microsoft.Band.Store_UAP.dll": {}
         }
       },
       "Microsoft.Bcl/1.1.10": {
@@ -3977,7 +4062,7 @@
           "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
         }
       },
-      "Newtonsoft.Json/8.0.2": {
+      "Newtonsoft.Json/8.0.3": {
         "compile": {
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
         },
@@ -4050,6 +4135,14 @@
         },
         "runtime": {
           "lib/windows8/System.Reactive.PlatformServices.dll": {}
+        }
+      },
+      "Syn.Bot/1.2.2": {
+        "compile": {
+          "lib/portable-net45+sl5+wp8+win8/Syn.Bot.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+sl5+wp8+win8/Syn.Bot.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -5420,7 +5513,7 @@
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "TweetinviAPI/0.9.11": {
+      "TweetinviAPI/0.9.11.2": {
         "dependencies": {
           "Autofac": "[3.5.2, )",
           "Microsoft.Bcl.Async": "[1.0.168, )",
@@ -5469,24 +5562,45 @@
           "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
         }
       },
-      "FakeBand/0.0.8": {
+      "FakeBand/0.0.9": {
         "dependencies": {
-          "Microsoft.Band": "[1.3.11121, )",
+          "Microsoft.Band": "[1.3.20307, )",
           "Rx-Main": "[2.2.5, )"
         },
         "compile": {
-          "lib/portable-net45+win+wpa81/FakeBand.dll": {}
+          "lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/FakeBand.dll": {}
         },
         "runtime": {
-          "lib/portable-net45+win+wpa81/FakeBand.dll": {}
+          "lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/FakeBand.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights/1.2.3": {
+      "Microsoft.ApplicationInsights/2.0.1": {
+        "dependencies": {
+          "System.Collections": "[4.0.10, )",
+          "System.Diagnostics.Debug": "[4.0.10, )",
+          "System.Diagnostics.Tools": "[4.0.0, )",
+          "System.Diagnostics.Tracing": "[4.0.20, )",
+          "System.Globalization": "[4.0.10, )",
+          "System.IO": "[4.0.10, )",
+          "System.IO.Compression": "[4.0.0, )",
+          "System.Linq": "[4.0.0, )",
+          "System.Net.Http": "[4.0.0, )",
+          "System.Reflection": "[4.0.10, )",
+          "System.Reflection.Extensions": "[4.0.0, )",
+          "System.Runtime": "[4.0.20, )",
+          "System.Runtime.Extensions": "[4.0.10, )",
+          "System.Text.Encoding": "[4.0.10, )",
+          "System.Text.Encoding.Extensions": "[4.0.10, )",
+          "System.Text.RegularExpressions": "[4.0.10, )",
+          "System.Threading": "[4.0.10, )",
+          "System.Threading.Tasks": "[4.0.10, )",
+          "System.Xml.XDocument": "[4.0.10, )"
+        },
         "compile": {
-          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
+          "lib/uap10.0/Microsoft.ApplicationInsights.dll": {}
         },
         "runtime": {
-          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
+          "lib/uap10.0/Microsoft.ApplicationInsights.dll": {}
         }
       },
       "Microsoft.ApplicationInsights.PersistenceChannel/1.2.3": {
@@ -5512,16 +5626,18 @@
           "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
         }
       },
-      "Microsoft.Band/1.3.11121": {
+      "Microsoft.Band/1.3.20307": {
         "compile": {
-          "lib/netcore451/Microsoft.Band.dll": {},
-          "lib/netcore451/Microsoft.Band.Store.dll": {},
-          "lib/netcore451/Microsoft.Band.Windows.dll": {}
+          "lib/uap10.0/Google.Protobuf.dll": {},
+          "lib/uap10.0/Microsoft.Band.dll": {},
+          "lib/uap10.0/Microsoft.Band.Phone_UAP.dll": {},
+          "lib/uap10.0/Microsoft.Band.Store_UAP.dll": {}
         },
         "runtime": {
-          "lib/netcore451/Microsoft.Band.dll": {},
-          "lib/netcore451/Microsoft.Band.Store.dll": {},
-          "lib/netcore451/Microsoft.Band.Windows.dll": {}
+          "lib/uap10.0/Google.Protobuf.dll": {},
+          "lib/uap10.0/Microsoft.Band.dll": {},
+          "lib/uap10.0/Microsoft.Band.Phone_UAP.dll": {},
+          "lib/uap10.0/Microsoft.Band.Store_UAP.dll": {}
         }
       },
       "Microsoft.Bcl/1.1.10": {
@@ -5824,7 +5940,7 @@
           "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
         }
       },
-      "Newtonsoft.Json/8.0.2": {
+      "Newtonsoft.Json/8.0.3": {
         "compile": {
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
         },
@@ -5897,6 +6013,14 @@
         },
         "runtime": {
           "lib/windows8/System.Reactive.PlatformServices.dll": {}
+        }
+      },
+      "Syn.Bot/1.2.2": {
+        "compile": {
+          "lib/portable-net45+sl5+wp8+win8/Syn.Bot.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+sl5+wp8+win8/Syn.Bot.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -7281,7 +7405,7 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "TweetinviAPI/0.9.11": {
+      "TweetinviAPI/0.9.11.2": {
         "dependencies": {
           "Autofac": "[3.5.2, )",
           "Microsoft.Bcl.Async": "[1.0.168, )",
@@ -7330,24 +7454,45 @@
           "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
         }
       },
-      "FakeBand/0.0.8": {
+      "FakeBand/0.0.9": {
         "dependencies": {
-          "Microsoft.Band": "[1.3.11121, )",
+          "Microsoft.Band": "[1.3.20307, )",
           "Rx-Main": "[2.2.5, )"
         },
         "compile": {
-          "lib/portable-net45+win+wpa81/FakeBand.dll": {}
+          "lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/FakeBand.dll": {}
         },
         "runtime": {
-          "lib/portable-net45+win+wpa81/FakeBand.dll": {}
+          "lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/FakeBand.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights/1.2.3": {
+      "Microsoft.ApplicationInsights/2.0.1": {
+        "dependencies": {
+          "System.Collections": "[4.0.10, )",
+          "System.Diagnostics.Debug": "[4.0.10, )",
+          "System.Diagnostics.Tools": "[4.0.0, )",
+          "System.Diagnostics.Tracing": "[4.0.20, )",
+          "System.Globalization": "[4.0.10, )",
+          "System.IO": "[4.0.10, )",
+          "System.IO.Compression": "[4.0.0, )",
+          "System.Linq": "[4.0.0, )",
+          "System.Net.Http": "[4.0.0, )",
+          "System.Reflection": "[4.0.10, )",
+          "System.Reflection.Extensions": "[4.0.0, )",
+          "System.Runtime": "[4.0.20, )",
+          "System.Runtime.Extensions": "[4.0.10, )",
+          "System.Text.Encoding": "[4.0.10, )",
+          "System.Text.Encoding.Extensions": "[4.0.10, )",
+          "System.Text.RegularExpressions": "[4.0.10, )",
+          "System.Threading": "[4.0.10, )",
+          "System.Threading.Tasks": "[4.0.10, )",
+          "System.Xml.XDocument": "[4.0.10, )"
+        },
         "compile": {
-          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
+          "lib/uap10.0/Microsoft.ApplicationInsights.dll": {}
         },
         "runtime": {
-          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
+          "lib/uap10.0/Microsoft.ApplicationInsights.dll": {}
         }
       },
       "Microsoft.ApplicationInsights.PersistenceChannel/1.2.3": {
@@ -7373,16 +7518,18 @@
           "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
         }
       },
-      "Microsoft.Band/1.3.11121": {
+      "Microsoft.Band/1.3.20307": {
         "compile": {
-          "lib/netcore451/Microsoft.Band.dll": {},
-          "lib/netcore451/Microsoft.Band.Store.dll": {},
-          "lib/netcore451/Microsoft.Band.Windows.dll": {}
+          "lib/uap10.0/Google.Protobuf.dll": {},
+          "lib/uap10.0/Microsoft.Band.dll": {},
+          "lib/uap10.0/Microsoft.Band.Phone_UAP.dll": {},
+          "lib/uap10.0/Microsoft.Band.Store_UAP.dll": {}
         },
         "runtime": {
-          "lib/netcore451/Microsoft.Band.dll": {},
-          "lib/netcore451/Microsoft.Band.Store.dll": {},
-          "lib/netcore451/Microsoft.Band.Windows.dll": {}
+          "lib/uap10.0/Google.Protobuf.dll": {},
+          "lib/uap10.0/Microsoft.Band.dll": {},
+          "lib/uap10.0/Microsoft.Band.Phone_UAP.dll": {},
+          "lib/uap10.0/Microsoft.Band.Store_UAP.dll": {}
         }
       },
       "Microsoft.Bcl/1.1.10": {
@@ -7666,7 +7813,7 @@
           "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
         }
       },
-      "Newtonsoft.Json/8.0.2": {
+      "Newtonsoft.Json/8.0.3": {
         "compile": {
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
         },
@@ -7739,6 +7886,14 @@
         },
         "runtime": {
           "lib/windows8/System.Reactive.PlatformServices.dll": {}
+        }
+      },
+      "Syn.Bot/1.2.2": {
+        "compile": {
+          "lib/portable-net45+sl5+wp8+win8/Syn.Bot.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+sl5+wp8+win8/Syn.Bot.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -9109,7 +9264,7 @@
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "TweetinviAPI/0.9.11": {
+      "TweetinviAPI/0.9.11.2": {
         "dependencies": {
           "Autofac": "[3.5.2, )",
           "Microsoft.Bcl.Async": "[1.0.168, )",
@@ -9158,24 +9313,45 @@
           "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
         }
       },
-      "FakeBand/0.0.8": {
+      "FakeBand/0.0.9": {
         "dependencies": {
-          "Microsoft.Band": "[1.3.11121, )",
+          "Microsoft.Band": "[1.3.20307, )",
           "Rx-Main": "[2.2.5, )"
         },
         "compile": {
-          "lib/portable-net45+win+wpa81/FakeBand.dll": {}
+          "lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/FakeBand.dll": {}
         },
         "runtime": {
-          "lib/portable-net45+win+wpa81/FakeBand.dll": {}
+          "lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/FakeBand.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights/1.2.3": {
+      "Microsoft.ApplicationInsights/2.0.1": {
+        "dependencies": {
+          "System.Collections": "[4.0.10, )",
+          "System.Diagnostics.Debug": "[4.0.10, )",
+          "System.Diagnostics.Tools": "[4.0.0, )",
+          "System.Diagnostics.Tracing": "[4.0.20, )",
+          "System.Globalization": "[4.0.10, )",
+          "System.IO": "[4.0.10, )",
+          "System.IO.Compression": "[4.0.0, )",
+          "System.Linq": "[4.0.0, )",
+          "System.Net.Http": "[4.0.0, )",
+          "System.Reflection": "[4.0.10, )",
+          "System.Reflection.Extensions": "[4.0.0, )",
+          "System.Runtime": "[4.0.20, )",
+          "System.Runtime.Extensions": "[4.0.10, )",
+          "System.Text.Encoding": "[4.0.10, )",
+          "System.Text.Encoding.Extensions": "[4.0.10, )",
+          "System.Text.RegularExpressions": "[4.0.10, )",
+          "System.Threading": "[4.0.10, )",
+          "System.Threading.Tasks": "[4.0.10, )",
+          "System.Xml.XDocument": "[4.0.10, )"
+        },
         "compile": {
-          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
+          "lib/uap10.0/Microsoft.ApplicationInsights.dll": {}
         },
         "runtime": {
-          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
+          "lib/uap10.0/Microsoft.ApplicationInsights.dll": {}
         }
       },
       "Microsoft.ApplicationInsights.PersistenceChannel/1.2.3": {
@@ -9201,16 +9377,18 @@
           "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
         }
       },
-      "Microsoft.Band/1.3.11121": {
+      "Microsoft.Band/1.3.20307": {
         "compile": {
-          "lib/netcore451/Microsoft.Band.dll": {},
-          "lib/netcore451/Microsoft.Band.Store.dll": {},
-          "lib/netcore451/Microsoft.Band.Windows.dll": {}
+          "lib/uap10.0/Google.Protobuf.dll": {},
+          "lib/uap10.0/Microsoft.Band.dll": {},
+          "lib/uap10.0/Microsoft.Band.Phone_UAP.dll": {},
+          "lib/uap10.0/Microsoft.Band.Store_UAP.dll": {}
         },
         "runtime": {
-          "lib/netcore451/Microsoft.Band.dll": {},
-          "lib/netcore451/Microsoft.Band.Store.dll": {},
-          "lib/netcore451/Microsoft.Band.Windows.dll": {}
+          "lib/uap10.0/Google.Protobuf.dll": {},
+          "lib/uap10.0/Microsoft.Band.dll": {},
+          "lib/uap10.0/Microsoft.Band.Phone_UAP.dll": {},
+          "lib/uap10.0/Microsoft.Band.Store_UAP.dll": {}
         }
       },
       "Microsoft.Bcl/1.1.10": {
@@ -9513,7 +9691,7 @@
           "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
         }
       },
-      "Newtonsoft.Json/8.0.2": {
+      "Newtonsoft.Json/8.0.3": {
         "compile": {
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
         },
@@ -9586,6 +9764,14 @@
         },
         "runtime": {
           "lib/windows8/System.Reactive.PlatformServices.dll": {}
+        }
+      },
+      "Syn.Bot/1.2.2": {
+        "compile": {
+          "lib/portable-net45+sl5+wp8+win8/Syn.Bot.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+sl5+wp8+win8/Syn.Bot.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -10970,7 +11156,7 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "TweetinviAPI/0.9.11": {
+      "TweetinviAPI/0.9.11.2": {
         "dependencies": {
           "Autofac": "[3.5.2, )",
           "Microsoft.Bcl.Async": "[1.0.168, )",
@@ -11019,24 +11205,45 @@
           "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
         }
       },
-      "FakeBand/0.0.8": {
+      "FakeBand/0.0.9": {
         "dependencies": {
-          "Microsoft.Band": "[1.3.11121, )",
+          "Microsoft.Band": "[1.3.20307, )",
           "Rx-Main": "[2.2.5, )"
         },
         "compile": {
-          "lib/portable-net45+win+wpa81/FakeBand.dll": {}
+          "lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/FakeBand.dll": {}
         },
         "runtime": {
-          "lib/portable-net45+win+wpa81/FakeBand.dll": {}
+          "lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/FakeBand.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights/1.2.3": {
+      "Microsoft.ApplicationInsights/2.0.1": {
+        "dependencies": {
+          "System.Collections": "[4.0.10, )",
+          "System.Diagnostics.Debug": "[4.0.10, )",
+          "System.Diagnostics.Tools": "[4.0.0, )",
+          "System.Diagnostics.Tracing": "[4.0.20, )",
+          "System.Globalization": "[4.0.10, )",
+          "System.IO": "[4.0.10, )",
+          "System.IO.Compression": "[4.0.0, )",
+          "System.Linq": "[4.0.0, )",
+          "System.Net.Http": "[4.0.0, )",
+          "System.Reflection": "[4.0.10, )",
+          "System.Reflection.Extensions": "[4.0.0, )",
+          "System.Runtime": "[4.0.20, )",
+          "System.Runtime.Extensions": "[4.0.10, )",
+          "System.Text.Encoding": "[4.0.10, )",
+          "System.Text.Encoding.Extensions": "[4.0.10, )",
+          "System.Text.RegularExpressions": "[4.0.10, )",
+          "System.Threading": "[4.0.10, )",
+          "System.Threading.Tasks": "[4.0.10, )",
+          "System.Xml.XDocument": "[4.0.10, )"
+        },
         "compile": {
-          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
+          "lib/uap10.0/Microsoft.ApplicationInsights.dll": {}
         },
         "runtime": {
-          "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
+          "lib/uap10.0/Microsoft.ApplicationInsights.dll": {}
         }
       },
       "Microsoft.ApplicationInsights.PersistenceChannel/1.2.3": {
@@ -11062,16 +11269,18 @@
           "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
         }
       },
-      "Microsoft.Band/1.3.11121": {
+      "Microsoft.Band/1.3.20307": {
         "compile": {
-          "lib/netcore451/Microsoft.Band.dll": {},
-          "lib/netcore451/Microsoft.Band.Store.dll": {},
-          "lib/netcore451/Microsoft.Band.Windows.dll": {}
+          "lib/uap10.0/Google.Protobuf.dll": {},
+          "lib/uap10.0/Microsoft.Band.dll": {},
+          "lib/uap10.0/Microsoft.Band.Phone_UAP.dll": {},
+          "lib/uap10.0/Microsoft.Band.Store_UAP.dll": {}
         },
         "runtime": {
-          "lib/netcore451/Microsoft.Band.dll": {},
-          "lib/netcore451/Microsoft.Band.Store.dll": {},
-          "lib/netcore451/Microsoft.Band.Windows.dll": {}
+          "lib/uap10.0/Google.Protobuf.dll": {},
+          "lib/uap10.0/Microsoft.Band.dll": {},
+          "lib/uap10.0/Microsoft.Band.Phone_UAP.dll": {},
+          "lib/uap10.0/Microsoft.Band.Store_UAP.dll": {}
         }
       },
       "Microsoft.Bcl/1.1.10": {
@@ -11355,7 +11564,7 @@
           "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
         }
       },
-      "Newtonsoft.Json/8.0.2": {
+      "Newtonsoft.Json/8.0.3": {
         "compile": {
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
         },
@@ -11428,6 +11637,14 @@
         },
         "runtime": {
           "lib/windows8/System.Reactive.PlatformServices.dll": {}
+        }
+      },
+      "Syn.Bot/1.2.2": {
+        "compile": {
+          "lib/portable-net45+sl5+wp8+win8/Syn.Bot.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+sl5+wp8+win8/Syn.Bot.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -12798,7 +13015,7 @@
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "TweetinviAPI/0.9.11": {
+      "TweetinviAPI/0.9.11.2": {
         "dependencies": {
           "Autofac": "[3.5.2, )",
           "Microsoft.Bcl.Async": "[1.0.168, )",
@@ -12861,16 +13078,16 @@
         "package/services/metadata/core-properties/99be0c88b2fd41c8b07c42071005ee47.psmdcp"
       ]
     },
-    "FakeBand/0.0.8": {
-      "sha512": "v0jyEFeSPBLq3jrUSx8B+/zQMxmpb1qlQ4LHxv3uZQnyk0JPVDzZXvIPKZSD8caRcitq/IdHH3zdOJ3UG2ys3A==",
+    "FakeBand/0.0.9": {
+      "sha512": "ME46w6XpHjzMkHoJL8S/ai2Qs2wEcvtRBJAeKKqbilRzepWYpQPP0YP98bHAM9h+z7xIHo0RAxlwRgHWR3aK2g==",
       "type": "Package",
       "files": [
         "[Content_Types].xml",
         "_rels/.rels",
         "FakeBand.nuspec",
-        "lib/portable-net45+win+wpa81/FakeBand.dll",
-        "lib/portable-net45+win+wpa81/FakeBand.pdb",
-        "package/services/metadata/core-properties/4e726ac3f3784bdd99b1ea80eeb0bf62.psmdcp",
+        "lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/FakeBand.dll",
+        "lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/FakeBand.pdb",
+        "package/services/metadata/core-properties/6d4f8f2b7e1341dcb6ae541fc6bc01ad.psmdcp",
         "src/FakeBand/BandResource.Designer.cs",
         "src/FakeBand/Fakes/FakeAccelerometerReading.cs",
         "src/FakeBand/Fakes/FakeAccelerometerSensor.cs",
@@ -12932,22 +13149,25 @@
         "src/FakeBand/Utils/TileSettings.cs"
       ]
     },
-    "Microsoft.ApplicationInsights/1.2.3": {
-      "sha512": "a34atobxpucCTTX9VCD7aIu6Ydzry+Va7TxK2tTQcfaMvefGW4kUKtg9GHKIn19IaXe+A4oZt/GBqsOt5vQrBA==",
+    "Microsoft.ApplicationInsights/2.0.1": {
+      "sha512": "iZjOx8ysupwITjhCl6suEOBQ+yTUBlJhQ2lfXBJkpS66gjB5TDJxIPrqKJ17/v4QqiFw//eHTGtMUCtoMN6WDQ==",
       "type": "Package",
       "files": [
         "[Content_Types].xml",
         "_rels/.rels",
+        "lib/dotnet5.4/Microsoft.ApplicationInsights.dll",
+        "lib/dotnet5.4/Microsoft.ApplicationInsights.XML",
         "lib/net40/Microsoft.ApplicationInsights.dll",
         "lib/net40/Microsoft.ApplicationInsights.XML",
         "lib/net45/Microsoft.ApplicationInsights.dll",
         "lib/net45/Microsoft.ApplicationInsights.XML",
+        "lib/net46/Microsoft.ApplicationInsights.dll",
+        "lib/net46/Microsoft.ApplicationInsights.XML",
         "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll",
-        "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.XML",
+        "lib/uap10.0/Microsoft.ApplicationInsights.dll",
         "lib/wp8/Microsoft.ApplicationInsights.dll",
-        "lib/wp8/Microsoft.ApplicationInsights.XML",
         "Microsoft.ApplicationInsights.nuspec",
-        "package/services/metadata/core-properties/3b36eef276524f5d883c618d5fd8c500.psmdcp"
+        "package/services/metadata/core-properties/312640b031884ea79d940dd9faa4155a.psmdcp"
       ]
     },
     "Microsoft.ApplicationInsights.PersistenceChannel/1.2.3": {
@@ -12984,30 +13204,39 @@
         "package/services/metadata/core-properties/8265b8c93c244c80b4e8bce27f31849d.psmdcp"
       ]
     },
-    "Microsoft.Band/1.3.11121": {
-      "sha512": "LSb+OfR7EAgZtFEjnmK/GtFqbsnAQk1xoGyVmBLqGdhf24FGkZzGm9sgZXpEzP+vdzgI0uvgBbgUYi8f8GVq5g==",
+    "Microsoft.Band/1.3.20307": {
+      "sha512": "pU8e7mpGi9hPo5GSCCe1HmpQXLX/s7XfuddF8OSbpgzmuDz7ZdDmEH73N3DrMlRC4gG/quAq2reUKakSHukazg==",
       "type": "Package",
       "files": [
         "[Content_Types].xml",
         "_rels/.rels",
         "content/netcore451/Package.appxmanifest.transform",
         "content/wpa81/Package.appxmanifest.transform",
+        "lib/netcore451/Google.Protobuf.dll",
         "lib/netcore451/Microsoft.Band.dll",
         "lib/netcore451/Microsoft.Band.Store.dll",
         "lib/netcore451/Microsoft.Band.Store.pri",
         "lib/netcore451/Microsoft.Band.Windows.dll",
         "lib/netcore451/Microsoft.Band.Windows.pri",
         "lib/portable-net45+win+wpa81/Microsoft.Band.dll",
+        "lib/portable-win81+wpa81/Google.Protobuf.dll",
         "lib/portable-win81+wpa81/Microsoft.Band.dll",
         "lib/portable-win81+wpa81/Microsoft.Band.Store.dll",
         "lib/portable-win81+wpa81/Microsoft.Band.Store.pri",
+        "lib/uap10.0/Google.Protobuf.dll",
+        "lib/uap10.0/Microsoft.Band.dll",
+        "lib/uap10.0/Microsoft.Band.Phone_UAP.dll",
+        "lib/uap10.0/Microsoft.Band.Phone_UAP.pri",
+        "lib/uap10.0/Microsoft.Band.Store_UAP.dll",
+        "lib/uap10.0/Microsoft.Band.Store_UAP.pri",
+        "lib/wpa81/Google.Protobuf.dll",
         "lib/wpa81/Microsoft.Band.dll",
         "lib/wpa81/Microsoft.Band.Phone.dll",
         "lib/wpa81/Microsoft.Band.Phone.pri",
         "lib/wpa81/Microsoft.Band.Store.dll",
         "lib/wpa81/Microsoft.Band.Store.pri",
         "Microsoft.Band.nuspec",
-        "package/services/metadata/core-properties/884488e5e673422f898b88a4afd664ec.psmdcp"
+        "package/services/metadata/core-properties/59c74f696fd7440da00366686b2c228c.psmdcp"
       ]
     },
     "Microsoft.Bcl/1.1.10": {
@@ -14024,8 +14253,8 @@
         "package/services/metadata/core-properties/2416d2969a834c638aba3851d652cc13.psmdcp"
       ]
     },
-    "Newtonsoft.Json/8.0.2": {
-      "sha512": "e5yWmEfu68rmtG431zl9N/7PlNKQDIuiDW5MHlEFAZcecakcxrIGnKqrPAtWNILzK2oNanRB5cD150MYhECK3g==",
+    "Newtonsoft.Json/8.0.3": {
+      "sha512": "KGsYQdS2zLH+H8x2cZaSI7e+YZ4SFIbyy1YJQYl6GYBWjf5o4H1A68nxyq+WTyVSOJQ4GqS/DiPE+UseUizgMg==",
       "type": "Package",
       "files": [
         "[Content_Types].xml",
@@ -14043,7 +14272,7 @@
         "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll",
         "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.xml",
         "Newtonsoft.Json.nuspec",
-        "package/services/metadata/core-properties/cc8c591d554640789c6a6ef6456f7772.psmdcp",
+        "package/services/metadata/core-properties/199d932507f04f0285dade0302b87d22.psmdcp",
         "tools/install.ps1"
       ]
     },
@@ -14212,6 +14441,19 @@
         "lib/windowsphone8/System.Reactive.PlatformServices.XML",
         "package/services/metadata/core-properties/5087526007294f7d8e78a6a4a61c494a.psmdcp",
         "Rx-PlatformServices.nuspec"
+      ]
+    },
+    "Syn.Bot/1.2.2": {
+      "sha512": "U+BA90u70fOuixm+LeZGEOBnxNsMCwJlpV3JNzksOz4nItGxdDOX6KkheOgTM/8nUrbCw7dkZ+1EsWFpmFiOLw==",
+      "type": "Package",
+      "files": [
+        "[Content_Types].xml",
+        "_rels/.rels",
+        "lib/portable-net45+sl5+wp8+win8/Syn.Bot.dll",
+        "lib/portable-net45+sl5+wp8+win8/Syn.Bot.XML",
+        "package/services/metadata/core-properties/98774ea92f6247f8a3e338d01619ceb8.psmdcp",
+        "Syn.Bot.nuspec",
+        "tools/install.ps1"
       ]
     },
     "System.AppContext/4.0.0": {
@@ -16909,8 +17151,8 @@
         "System.Xml.XmlSerializer.nuspec"
       ]
     },
-    "TweetinviAPI/0.9.11": {
-      "sha512": "iKKuwxPZf8Wt1UBj4lbHtoFivVQELb/8r5sRbFLIaZv6Jr8tfFrUTR5ccM64L/2ocGC07TUTUh22YPNLpyc34g==",
+    "TweetinviAPI/0.9.11.2": {
+      "sha512": "dIWrxCrtHeBuvQFcA4mzVcSjr9p7rvCKf0CjlrUqv3SFoiLDjM1k0SGjxcS9BmnF9S19FtQvrNvHiRMKTO/+Cg==",
       "type": "Package",
       "files": [
         "[Content_Types].xml",
@@ -16927,7 +17169,7 @@
         "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Security.dll",
         "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.Streams.dll",
         "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Tweetinvi.WebLogic.dll",
-        "package/services/metadata/core-properties/f97ff84786c7436aa8e850cdf3fc7ef3.psmdcp",
+        "package/services/metadata/core-properties/45bc56d3d7ad4ba5afb249898a788d9b.psmdcp",
         "tools/install.ps1",
         "TweetinviAPI.nuspec"
       ]
@@ -16935,16 +17177,17 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "FakeBand >= 0.0.8",
-      "Microsoft.ApplicationInsights >= 1.2.3",
+      "FakeBand >= 0.0.9",
+      "Microsoft.ApplicationInsights >= 2.0.1",
       "Microsoft.ApplicationInsights.PersistenceChannel >= 1.2.3",
       "Microsoft.ApplicationInsights.WindowsApps >= 1.1.1",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.0.0",
       "MvvmLightLibs >= 5.2.0",
-      "Newtonsoft.Json >= 8.0.2",
+      "Newtonsoft.Json >= 8.0.3",
       "NotificationsExtensions.Win10 >= 10586.0.2",
       "QueryString.NET >= 1.0.0",
-      "TweetinviAPI >= 0.9.11"
+      "Syn.Bot >= 1.2.2",
+      "TweetinviAPI >= 0.9.11.2"
     ],
     "UAP,Version=v10.0": []
   }

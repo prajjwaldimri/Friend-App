@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
+using System.Xml;
 using Windows.ApplicationModel.Background;
 using Windows.ApplicationModel.Contacts;
 using Windows.Security.Authentication.Web;
@@ -42,7 +43,8 @@ namespace Friend_s.ViewModel
         }
 
 
-        private string _themeColor;
+        private string _themeColorPrimary;
+        private string _themeColorSecondary;
         private string _notificationStatus;
         private string FacebookConnected { get; set; }
         private string TwitterConnected { get; set; }
@@ -56,7 +58,11 @@ namespace Friend_s.ViewModel
         public Visibility TwitterRemoveIconVisibility { get; private set; }
         public Visibility FacebookPlusIconVisibility { get; private set; }
         public Visibility FacebookRemoveIconVisibility { get; private set; }
+        public Visibility MessageEditIconVisibility { get; private set; }
+        public Visibility MessageSaveIconVisibility { get; private set; }
+        public bool IsMessageBoxDisabled { get; private set; }
         public double SliderValue { get; set; }
+        public string MessageBox { get; set; }
 
 
         private void LocalStorageSettingsRetriever()
@@ -77,19 +83,23 @@ namespace Friend_s.ViewModel
                     FacebookConnected = localsettings.Values["FacebookConnect"] as string;
                 if (localsettings.Values.ContainsKey("TwitterConnect"))
                     TwitterConnected = localsettings.Values["TwitterConnect"] as string;
-                if (localsettings.Values.ContainsKey("ThemeColor"))
-                    _themeColor = localsettings.Values["ThemeColor"] as string;
+                if (localsettings.Values.ContainsKey("ThemeColorPrimary"))
+                    _themeColorPrimary = localsettings.Values["ThemeColorPrimary"] as string;
+                if (localsettings.Values.ContainsKey("ThemeColorSecondary"))
+                    _themeColorSecondary = localsettings.Values["ThemeColorSecondary"] as string;
                 if (localsettings.Values.ContainsKey("ToastNotification"))
                     _notificationStatus = localsettings.Values["ToastNotification"] as string;
                 if (localsettings.Values.ContainsKey("TimerTime"))
                     SliderValue = (double) localsettings.Values["TimerTime"];
+                if (localsettings.Values.ContainsKey("MessageToSend"))
+                    MessageBox = localsettings.Values["MessageToSend"] as string;
 
 
-                if (_themeColor == "#00D054")
+                if (_themeColorPrimary == "#0371b2")
                 {
                     ToggleSwitchIsOn = false;
                 }
-                else if (_themeColor == "#BA4C63")
+                else if (_themeColorPrimary == "#ceb9fe")
                 {
                     ToggleSwitchIsOn = true;
                     IsAppFirstTimeOn = true;
@@ -115,6 +125,9 @@ namespace Friend_s.ViewModel
                     FacebookPlusIconVisibility = Visibility.Visible;
                     FacebookRemoveIconVisibility = Visibility.Collapsed;
                 }
+                MessageEditIconVisibility = Visibility.Visible;
+                MessageSaveIconVisibility = Visibility.Collapsed;
+                IsMessageBoxDisabled = true;
 
                 RaisePropertyChanged(() => FacebookPlusIconVisibility);
                 RaisePropertyChanged(() => FacebookRemoveIconVisibility);
@@ -123,9 +136,11 @@ namespace Friend_s.ViewModel
                 RaisePropertyChanged(() => ThirdContactName);
                 RaisePropertyChanged(() => ToggleSwitchIsOn);
                 RaisePropertyChanged(() => ToastToggleSwitchIsOn);
-                RaisePropertyChanged(() => SliderValue
-
-                    );
+                RaisePropertyChanged(() => SliderValue);
+                RaisePropertyChanged(()=> MessageEditIconVisibility);
+                RaisePropertyChanged(()=>MessageSaveIconVisibility);
+                RaisePropertyChanged(()=>IsMessageBoxDisabled);
+                RaisePropertyChanged(()=> MessageBox);
             }
             catch (Exception e)
             {
@@ -208,6 +223,25 @@ namespace Friend_s.ViewModel
                         ThirdContactName = contacts2.DisplayName;
                         RaisePropertyChanged(() => ThirdContactName);
                     }
+                    break;
+
+                case 4:
+
+                    IsMessageBoxDisabled = true;
+                    MessageEditIconVisibility = Visibility.Visible;
+                    MessageSaveIconVisibility = Visibility.Collapsed;
+                    RaisePropertyChanged(()=> MessageEditIconVisibility);
+                    RaisePropertyChanged(()=> MessageSaveIconVisibility);
+                    RaisePropertyChanged(()=> IsMessageBoxDisabled);
+                    break;
+
+                case 5:
+                    IsMessageBoxDisabled = false;
+                    MessageEditIconVisibility = Visibility.Collapsed;
+                    MessageSaveIconVisibility = Visibility.Visible;
+                    RaisePropertyChanged(() => MessageEditIconVisibility);
+                    RaisePropertyChanged(() => MessageSaveIconVisibility);
+                    RaisePropertyChanged(() => IsMessageBoxDisabled);
                     break;
 
                 default:
@@ -366,41 +400,56 @@ namespace Friend_s.ViewModel
                     IsAppFirstTimeOn = false;
                     return;
                 }
-                if (!localData.Values.ContainsKey("ThemeColor") && !roamData.Values.ContainsKey("ThemeColor"))
+                if (!localData.Values.ContainsKey("ThemeColorPrimary") && !roamData.Values.ContainsKey("ThemeColorPrimary"))
                 {
-                    localData.Values.Add("ThemeColor", "#00D054");
-                    roamData.Values.Add("ThemeColor", "#00D054");
+                    localData.Values.Add("ThemeColorPrimary", "#0371b2");
+                    roamData.Values.Add("ThemeColorPrimary", "#0371b2");
+                    localData.Values.Add("ThemeColorSecondary", "#00a0ff");
+                    roamData.Values.Add("ThemeColorSecondary", "#00a0ff");
                 }
                 else
                 {
-                    localData.Values.Remove("ThemeColor");
-                    roamData.Values.Remove("ThemeColor");
-                    localData.Values.Add("ThemeColor", "#00D054");
-                    roamData.Values.Add("ThemeColor", "#00D054");
+                    localData.Values.Remove("ThemeColorPrimary");
+                    roamData.Values.Remove("ThemeColorPrimary");
+                    localData.Values.Remove("ThemeColorSecondary");
+                    roamData.Values.Remove("ThemeColorSecondary");
+                    localData.Values.Add("ThemeColorPrimary", "#0371b2");
+                    roamData.Values.Add("ThemeColorPrimary", "#0371b2");
+                    localData.Values.Add("ThemeColorSecondary", "#00a0ff");
+                    roamData.Values.Add("ThemeColorSecondary", "#00a0ff");
                 }
                 ToggleSwitchIsOn = false;
-                _themeColor = "#00D054";
+                _themeColorPrimary = "#0371b2";
+                _themeColorSecondary = "#00a0ff";
             }
             else
             {
-                if (!localData.Values.ContainsKey("ThemeColor") && !roamData.Values.ContainsKey("ThemeColor"))
+                if (!localData.Values.ContainsKey("ThemeColorPrimary") && !roamData.Values.ContainsKey("ThemeColorPrimary"))
                 {
-                    localData.Values.Add("ThemeColor", "#BA4C63");
-                    roamData.Values.Add("ThemeColor", "#BA4C63");
+                    localData.Values.Add("ThemeColorPrimary", "#ceb9fe");
+                    roamData.Values.Add("ThemeColorPrimary", "#ceb9fe");
+                    localData.Values.Add("ThemeColorSecondary", "#9f8fc4");
+                    roamData.Values.Add("ThemeColorSecondary", "#9f8fc4");
                 }
                 else
                 {
-                    localData.Values.Remove("ThemeColor");
-                    roamData.Values.Remove("ThemeColor");
-                    localData.Values.Add("ThemeColor", "#BA4C63");
-                    roamData.Values.Add("ThemeColor", "#BA4C63");
+                    localData.Values.Remove("ThemeColorPrimary");
+                    roamData.Values.Remove("ThemeColorPrimary");
+                    localData.Values.Remove("ThemeColorSecondary");
+                    roamData.Values.Remove("ThemeColorSecondary");
+                    localData.Values.Add("ThemeColorPrimary", "#ceb9fe");
+                    roamData.Values.Add("ThemeColorPrimary", "#ceb9fe");
+                    localData.Values.Add("ThemeColorSecondary", "#9f8fc4");
+                    roamData.Values.Add("ThemeColorSecondary", "#9f8fc4");
                 }
                 ToggleSwitchIsOn = true;
-                _themeColor = "#BA4C63";
+                _themeColorPrimary = "#ceb9fe";
+                _themeColorSecondary = "#9f8fc4";
             }
 
             RaisePropertyChanged(() => ToggleSwitchIsOn);
-            MessengerInstance.Send(new NotificationMessage(_themeColor));
+            MessengerInstance.Send(new NotificationMessage(_themeColorPrimary));
+            MessengerInstance.Send(new NotificationMessage(_themeColorSecondary));
             MessengerInstance.Send(new NotificationMessage("ProgressBarDisable"));
         }
 
@@ -495,7 +544,7 @@ namespace Friend_s.ViewModel
             RaisePropertyChanged(()=>FacebookRemoveIconVisibility);
         }
 
-
+        
     }
 
 

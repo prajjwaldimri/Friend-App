@@ -31,6 +31,8 @@ namespace Friend_s.ViewModel
 
         public string SosPageText { get; set; }
 
+        private string Message;
+
         public SosPageViewModel()
         {
             TimerStarterCommand = new RelayCommand(TimerStarter);
@@ -56,9 +58,9 @@ namespace Friend_s.ViewModel
             Caller();
         }
 
-        private void timer_Tick(object sender, object e)
+        private async void timer_Tick(object sender, object e)
         {
-            LocationAccesser();
+            await LocationAccesser();
 
             if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
                 return;
@@ -72,6 +74,23 @@ namespace Friend_s.ViewModel
         private static string _phonenumber;
         private static string _phonename;
 
+        private async void SosCommandMethod()
+        {
+            var localsettings = ApplicationData.Current.LocalSettings;
+            if (localsettings.Values.ContainsKey("MessageToSend"))
+            {
+                Message = localsettings.Values["MessageToSend"] as string;
+            }
+            else
+            {
+                Message = "Help Me at";
+            }
+            await LocationAccesser();
+            //MessageSender();
+            TwitterPoster();
+            FacebookPoster();
+            Caller();
+        }
 
         private async Task LocationAccesser()
         {
@@ -140,7 +159,7 @@ namespace Friend_s.ViewModel
             var msg = new SmsTextMessage2
             {
                 To = _phonenumber,
-                Body = "I am in need of help. My coordinates are\n Latitude:" + _latitude + "Longitude \n" + _longitude
+                Body = Message+"My coordinates are\n Latitude:" + _latitude + "Longitude \n" + _longitude
             };
             var result = await _device.SendMessageAndGetResultAsync(msg);
             SosPageText += "Sending Message.... \n";
@@ -187,26 +206,35 @@ namespace Friend_s.ViewModel
         {
             SosPageText += "Checking credentials... \n";
             var vault = new PasswordVault();
-            var credentialList = vault.FindAllByUserName("TwitterAccessToken");
-            if (credentialList.Count <= 0)
+            try
+            {
+                var credentialList = vault.FindAllByUserName("TwitterAccessToken");
+                if (credentialList.Count <= 0)
+                {
+                    SosPageText += "Twitter not configured \n";
+                    return;
+                }
+                var twitteraccesstoken = vault.Retrieve("Friend", "TwitterAccessToken");
+                var twitteraccesstokensecret = vault.Retrieve("Friend", "TwitterAccessTokenSecret");
+                SosPageText += "Credentials Retrieved \n";
+
+                // Set up your credentials (https://apps.twitter.com)
+                //Use your own consumerKey and consumerSecret below!
+                await AuthTokens.KeyRetriever();
+                Auth.SetUserCredentials(AuthTokens.TwitterConsumerKey, AuthTokens.TwitterConsumerSecret,
+                    twitteraccesstoken.Password, twitteraccesstokensecret.Password);
+
+                await LocationAccesser();
+                //TODO: Publish the Tweet with location on your Timeline
+                Tweet.PublishTweet(Message+" \n" + _latitude + "\n" + _longitude);
+
+                SosPageText += "Publishing Tweet... \n";
+            }
+            catch (Exception e)
             {
                 SosPageText += "Twitter not configured \n";
-                return;
+                Debug.WriteLine(e);
             }
-            var twitteraccesstoken = vault.Retrieve("Friend", "TwitterAccessToken");
-            var twitteraccesstokensecret = vault.Retrieve("Friend", "TwitterAccessTokenSecret");
-            SosPageText += "Credentials Retrieved \n";
-
-            // Set up your credentials (https://apps.twitter.com)
-            //Use your own consumerKey and consumerSecret below!
-            await AuthTokens.KeyRetriever();
-            Auth.SetUserCredentials(AuthTokens.TwitterConsumerKey, AuthTokens.TwitterConsumerSecret, twitteraccesstoken.Password, twitteraccesstokensecret.Password);
-
-            await LocationAccesser();
-            //TODO: Publish the Tweet with location on your Timeline
-            Tweet.PublishTweet("I need help at \n"+_latitude+"\n"+_longitude);
-
-            SosPageText += "Publishing Tweet... \n";
 
             RaisePropertyChanged(()=>SosPageText);
         }
@@ -219,16 +247,16 @@ namespace Friend_s.ViewModel
 
             if (sess.LoggedIn)
             {
-                FBUser user = sess.User;
+                var user = sess.User;
                 // Set caption, link and description parameters
-                PropertySet parameters = new PropertySet();
+                var parameters = new PropertySet();
                 
                 // Add post message
                 await LocationAccesser();
-                parameters.Add("message", "I am in need of help \n"+"\n"+_latitude+"\n"+_longitude);
+                parameters.Add("message", Message+"\n"+"\n"+_latitude+"\n"+_longitude);
 
                 // Set Graph api path
-                string path = "/" + user.Id + "/feed";
+                var path = "/" + user.Id + "/feed";
 
                 var factory = new FBJsonClassFactory(s => {
                                                               return JsonConvert.DeserializeObject<FBReturnObject>(s);
@@ -238,24 +266,17 @@ namespace Friend_s.ViewModel
                 var result = await singleValue.PostAsync();
                 if (result.Succeeded)
                 {
-                    SosPageText += "Posted to Facebook Wall";
+                    SosPageText += "\n Posted to Facebook Wall";
                 }
                 else
                 {
-                    SosPageText += "Can't post to Facebook Wall";
+                    SosPageText += "\n Can't post to Facebook Wall";
                 }
             }
             RaisePropertyChanged(()=>SosPageText);
         }
 
-        private void SosCommandMethod()
-        {
-            LocationAccesser();
-            //MessageSender();
-            TwitterPoster();
-            FacebookPoster();
-            Caller();
-        }
+        
     }
 
     public class FBReturnObject

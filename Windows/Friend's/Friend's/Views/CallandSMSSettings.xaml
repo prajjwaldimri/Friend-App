@@ -23,63 +23,74 @@
     </interactivity:Interaction.Behaviors>
 
     <ScrollViewer VerticalScrollMode="Enabled" VerticalScrollBarVisibility="Visible">
-    <Grid Name="MainGrid" Background="{Binding ThemeColor}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-        </Grid.RowDefinitions>
-        
-        <Grid Margin="5,5,0,0" Grid.Row="0">
-            
+        <Grid Name="MainGrid">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0.8,1.">
+                    <GradientStop Color="{Binding ThemeColorPrimary}" Offset="0"/>
+                    <GradientStop Color="{Binding ThemeColorSecondary}" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition Height="20"/>
-                <RowDefinition/>
-                <RowDefinition Height="20"/>
-                <RowDefinition/>
-                <RowDefinition Height="20"/>
-                <RowDefinition/>
-                <RowDefinition Height="20"/>
-                <RowDefinition/>
-                <RowDefinition Height="20"/>
-                <RowDefinition/>
-                <RowDefinition Height="20"/>
-                <RowDefinition Height="1.4*"/>
-                <RowDefinition Height="0.2*"/>
-                <RowDefinition Height="1.4*"/>
-                <RowDefinition Height="0.2*"/>
-                <RowDefinition/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
-            
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="5*"/>
-                <ColumnDefinition Width="2*"/>
-            </Grid.ColumnDefinitions>
-            
-            
-            <TextBlock Text="Profile" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" 
-                       FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="21.333" FontWeight="Bold"/>
-            
-            <SymbolIcon Symbol="Contact" Grid.Row="2" Grid.Column="0"/>
-            <TextBlock Grid.Row="2" Grid.Column="1" x:Name="UserNameTextBlock" 
+
+            <Grid Margin="10,10,0,0" Grid.Row="0">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="1.4*"/>
+                    <RowDefinition Height="0.2*"/>
+                    <RowDefinition Height="1.4*"/>
+                    <RowDefinition Height="0.2*"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+
+                <TextBlock Text="Profile" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" 
+                       FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="28"
+                       FontWeight="Bold"/>
+
+                <SymbolIcon Symbol="Contact" Grid.Row="2" Grid.Column="0"/>
+                <TextBlock Grid.Row="2" Grid.Column="1" x:Name="UserNameTextBlock"
+                       FontSize="20" FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"
                        Text="{Binding UserName}" VerticalAlignment="Center"/>
-            <TextBox Background="{x:Null}" TextAlignment="Left" 
+                <TextBox Background="{x:Null}" TextAlignment="Left" 
+                     FontSize="20" FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"
                      VerticalAlignment="Bottom" x:Name="UserNameTextBox" Visibility="Collapsed"
                      Grid.Row="2" Grid.Column="1" BorderThickness="0"/>
-            <SymbolIcon x:Name="UserNameEditIcon" Tapped="UserNameEditIcon_OnTapped" Symbol="Edit" Grid.Row="2" Grid.Column="2"/>
-            <SymbolIcon Visibility="Collapsed" x:Name="UserNameSaveIcon" Tapped="UserNameSaveIcon_OnTapped" Symbol="Save" Grid.Row="2" Grid.Column="2"/>
+                <SymbolIcon x:Name="UserNameEditIcon" Tapped="UserNameEditIcon_OnTapped" Symbol="Edit" Grid.Row="2" Grid.Column="2"/>
+                <SymbolIcon Visibility="Collapsed" x:Name="UserNameSaveIcon" Tapped="UserNameSaveIcon_OnTapped" Symbol="Save" Grid.Row="2" Grid.Column="2"/>
 
-            <TextBlock FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="21.333" FontWeight="Bold"
+                <TextBlock FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="28" FontWeight="Bold"
                        Text="Social Networks" Grid.ColumnSpan="2" Grid.Row="4" Grid.Column="0"/>
 
-            <FontIcon VerticalAlignment="Center" Glyph="&#xf230;"
+                <FontIcon VerticalAlignment="Center" Glyph="&#xf230;"
                       Grid.Row="6" Grid.Column="0" 
                       FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"/>
-            <TextBlock TextAlignment="Left" Text="Connect Facebook" VerticalAlignment="Center" 
+                <TextBlock TextAlignment="Left" Text="Connect Facebook" VerticalAlignment="Center" 
+                       FontSize="20" FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"
                      Grid.Row="6" Grid.Column="1"/>
-            <FontIcon Glyph="&#xf067;" Name="FacebookAddIcon"
+                <FontIcon Glyph="&#xf067;" Name="FacebookAddIcon"
                       FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"
                       Grid.Row="6" VerticalAlignment="Center" Grid.Column="2"
                       Visibility="{Binding FacebookPlusIconVisibility}">
@@ -87,7 +98,7 @@
                         <core:EventTriggerBehavior EventName="Tapped">
                             <core:InvokeCommandAction Command="{Binding FacebookAuthenticatorCommand}"/>
                         </core:EventTriggerBehavior>
-                        </interactivity:Interaction.Behaviors>
+                    </interactivity:Interaction.Behaviors>
                 </FontIcon>
 
                 <FontIcon Glyph="&#xf00d;" Name="FacebookRemoveIcon"
@@ -105,13 +116,14 @@
                 <FontIcon VerticalAlignment="Center" Glyph="&#xf081;"
                       Grid.Row="8" Grid.Column="0" 
                       FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"/>
-            <TextBlock TextAlignment="Left" Text="Connect Twitter" VerticalAlignment="Center" 
+                <TextBlock TextAlignment="Left" Text="Connect Twitter" VerticalAlignment="Center" 
+                       FontSize="20" FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"
                      Grid.Row="8" Grid.Column="1"/>
-            <FontIcon Name="TwitterAddIcon" Glyph="&#xf067;" FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"
+                <FontIcon Name="TwitterAddIcon" Glyph="&#xf067;" FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"
                       Grid.Row="8" VerticalAlignment="Center" Grid.Column="2" 
                       Tapped="UIElement_OnTapped" Visibility="{Binding TwitterPlusIconVisibility}"/>
 
-            <FontIcon Name="TwitterRemoveIcon" Glyph="&#xf00d;" FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"
+                <FontIcon Name="TwitterRemoveIcon" Glyph="&#xf00d;" FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"
                       Grid.Row="8" VerticalAlignment="Center" Grid.Column="2" 
                       Visibility="{Binding TwitterRemoveIconVisibility}">
                     <interactivity:Interaction.Behaviors>
@@ -122,15 +134,17 @@
                     </interactivity:Interaction.Behaviors>
                 </FontIcon>
 
-                    
-            <TextBlock FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="21.333" FontWeight="Bold"
+
+                <TextBlock FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="28"
+                       FontWeight="Bold"
                        Text="Other" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2"/>
 
-            <FontIcon Grid.Row="12" Grid.Column="0" Glyph="&#xf042;"
+                <FontIcon Grid.Row="12" Grid.Column="0" Glyph="&#xf042;"
                       FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"/>
-            <TextBlock HorizontalAlignment="Left" Grid.Column="1" 
+                <TextBlock HorizontalAlignment="Left" Grid.Column="1" 
+                       FontSize="20" FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"
                       Grid.Row="12" Text="Theme" VerticalAlignment="Center"/>
-            <ToggleSwitch IsOn="{Binding ToggleSwitchIsOn}" 
+                <ToggleSwitch IsOn="{Binding ToggleSwitchIsOn}" 
                           Grid.Column="2" Grid.Row="12" OffContent="Green" OnContent="Pink"
                           x:Name="ThemeToggleSwitch">
                     <interactivity:Interaction.Behaviors>
@@ -140,97 +154,139 @@
                     </interactivity:Interaction.Behaviors>
                 </ToggleSwitch>
 
-            <FontIcon Grid.Row="14" Grid.Column="0" Glyph="&#xf017;"
+                <FontIcon Grid.Row="14" Grid.Column="0" Glyph="&#xf017;"
                       FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"/>
-            <TextBlock HorizontalAlignment="Left" Grid.Column="1" 
+                <TextBlock HorizontalAlignment="Left" Grid.Column="1" 
+                       FontSize="20" FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"
                       Grid.Row="14" Text="Timing between messages" VerticalAlignment="Center"/>
-                <Slider Name="TimerSlider"  VerticalAlignment="Center" Value="{Binding SliderValue, Mode=TwoWay}"
+                <Slider Name="TimerSlider"  VerticalAlignment="Center" 
+                        Value="{Binding SliderValue, Mode=TwoWay}"
                         Grid.Row="14" Grid.Column="2" StepFrequency="20" >
                     <interactivity:Interaction.Behaviors>
                         <core:EventTriggerBehavior EventName="ValueChanged">
-                            <core:InvokeCommandAction Command="{Binding SliderValueChangedCommand}"/>
+                            <core:InvokeCommandAction 
+                                Command="{Binding SliderValueChangedCommand}"/>
                         </core:EventTriggerBehavior>
                     </interactivity:Interaction.Behaviors>
                 </Slider>
 
-                <TextBlock FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="21.333" FontWeight="Bold"
+                <TextBlock FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" 
+                           FontSize="28" FontWeight="Bold"
                        Text="Contacts" Grid.Row="16" Grid.Column="0" Grid.ColumnSpan="2"/>
 
-        </Grid>
-        
-        <Grid Grid.Row="1">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="5*"/>
-                <ColumnDefinition Width="2*"/>
-            </Grid.ColumnDefinitions>
-            
-            <SymbolIcon Symbol="Contact2" Grid.Row="0" Grid.Column="0"/>
-            <SymbolIcon Symbol="Contact2" Grid.Row="1" Grid.Column="0"/>
-            <SymbolIcon Symbol="Contact2" Grid.Row="2" Grid.Column="0"/>
+            </Grid>
 
-            <TextBlock VerticalAlignment="Center" Text="{Binding FirstContactName}" Grid.Row="0" Grid.Column="1"/>
-            <TextBlock VerticalAlignment="Center" Text="{Binding SecondContactName}" Grid.Row="1" Grid.Column="1"/>
-            <TextBlock VerticalAlignment="Center" Text="{Binding ThirdContactName}" Grid.Row="2" Grid.Column="1"/>
-            
-            <Button Background="{x:Null}" Grid.Row="0" Grid.Column="2" CommandParameter="1"
-                    HorizontalAlignment="Center" Command="{Binding EditContactButtonHandlerCommand}">
-                <Button.Content>
-                    <SymbolIcon Symbol="Edit" />
-                </Button.Content>
-            </Button>
-
-            <Button Background="{x:Null}" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center"
-                    Command="{Binding EditContactButtonHandlerCommand}" CommandParameter="2">
-                <Button.Content>
-                    <SymbolIcon Symbol="Edit" />
-                </Button.Content>
-            </Button>
-
-            <Button Background="{x:Null}" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center"
-                    Command="{Binding EditContactButtonHandlerCommand}" CommandParameter="3">
-                <Button.Content>
-                    <SymbolIcon Symbol="Edit" />
-                </Button.Content>
-            </Button>
-
-        </Grid>
-        
-        <Grid Grid.Row="2" Margin="5,5,0,0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="20"/>
-                <RowDefinition Height="3*"/>
-                <RowDefinition Height="20"/>
-                <RowDefinition/>
-                <RowDefinition Height="20"/>
-                <RowDefinition/>
+            <Grid Grid.Row="1" Grid.Margin="10,10,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
-            
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="5*"/>
-                <ColumnDefinition Width="2*"/>
-                </Grid.ColumnDefinitions>
-            
-            <TextBlock Text="Message" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" 
-                       FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="21.333" FontWeight="Bold"/>
-            <SymbolIcon Grid.Row="0" Grid.Column="2" Symbol="Edit"/>
-            <TextBox Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" Background="AntiqueWhite" BorderBrush="White"/>
 
-            <TextBlock Text="Notification Settings" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" 
-                       FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="21.333" FontWeight="Bold"/>
-            
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <SymbolIcon Symbol="Contact2" Grid.Row="0" Grid.Column="0"/>
+                <SymbolIcon Symbol="Contact2" Grid.Row="1" Grid.Column="0"/>
+                <SymbolIcon Symbol="Contact2" Grid.Row="2" Grid.Column="0"/>
+
+                <TextBlock VerticalAlignment="Center" Text="{Binding FirstContactName}" 
+                       Grid.Row="0" Grid.Column="1" FontSize="20" 
+                       FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"/>
+
+                <TextBlock VerticalAlignment="Center" FontSize="20" 
+                           FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"
+                       Text="{Binding SecondContactName}" Grid.Row="1" Grid.Column="1"/>
+                <TextBlock VerticalAlignment="Center"
+                       FontSize="20" FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"
+                       Text="{Binding ThirdContactName}" Grid.Row="2" Grid.Column="1"/>
+
+                <Button Background="{x:Null}" Grid.Row="0" Grid.Column="2" CommandParameter="1"
+                    HorizontalAlignment="Center" Command="{Binding EditContactButtonHandlerCommand}">
+                    <Button.Content>
+                        <SymbolIcon Symbol="Edit" />
+                    </Button.Content>
+                </Button>
+
+                <Button Background="{x:Null}" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center"
+                    Command="{Binding EditContactButtonHandlerCommand}" CommandParameter="2">
+                    <Button.Content>
+                        <SymbolIcon Symbol="Edit" />
+                    </Button.Content>
+                </Button>
+
+                <Button Background="{x:Null}" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center"
+                    Command="{Binding EditContactButtonHandlerCommand}" CommandParameter="3">
+                    <Button.Content>
+                        <SymbolIcon Symbol="Edit" />
+                    </Button.Content>
+                </Button>
+
+            </Grid>
+
+            <Grid Grid.Row="2" Margin="10,10,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Message" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" 
+                       FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="28"
+                           FontWeight="Bold"/>
+
+                <SymbolIcon Name="MessageEditSymbol" Grid.Row="0" Grid.Column="2" Symbol="Edit"
+                        Visibility="{Binding MessageEditIconVisibility}">
+                    <interactivity:Interaction.Behaviors>
+                        <core:EventTriggerBehavior EventName="Tapped">
+                            <core:InvokeCommandAction Command="{Binding EditContactButtonHandlerCommand}"
+                                                      CommandParameter="5"/>
+                        </core:EventTriggerBehavior>
+                    </interactivity:Interaction.Behaviors>
+                </SymbolIcon>
+
+                <SymbolIcon Name="MessageSaveSymbol" Grid.Row="0" Grid.Column="2" Symbol="Save"
+                        Visibility="{Binding MessageSaveIconVisibility}">
+                    <interactivity:Interaction.Behaviors>
+                        <core:EventTriggerBehavior EventName="Tapped">
+                            <core:InvokeCommandAction Command="{Binding EditContactButtonHandlerCommand}"
+                                                  CommandParameter="4"/>
+                        </core:EventTriggerBehavior>
+                    </interactivity:Interaction.Behaviors>
+                </SymbolIcon>
+
+                <Button Name="MessageSaveButton" Grid.Row="0" Grid.Column="1" Visibility="{Binding MessageSaveIconVisibility}"
+                    HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{x:Null}"
+                    Click="MessageSaveButton_OnClick" Grid.ColumnSpan="2" Margin="218.333,-4,0,3.667"/>
+
+                <TextBox Name="MessageTextBox" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" 
+                     Background="White" BorderBrush="White" IsReadOnly="{Binding IsMessageBoxDisabled}"
+                     Text="{Binding MessageBox}"/>
+
+                <TextBlock Text="Notification Settings" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" 
+                       FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="28"
+                       FontWeight="Bold"/>
+
+
                 <TextBlock VerticalAlignment="Center" Text="Permanent Toast Notifications"
-                           Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
-            
-            <ToggleSwitch x:Name="ToastMakerToggle"
+                       FontSize="20" FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"
+                       Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" 
+                       HorizontalAlignment="Left"/>
+
+                <ToggleSwitch x:Name="ToastMakerToggle"
                               Grid.Row="6" Grid.Column="2" IsOn="{Binding ToastToggleSwitchIsOn}">
                     <interactivity:Interaction.Behaviors>
                         <core:EventTriggerBehavior EventName="Toggled">
@@ -239,6 +295,6 @@
                     </interactivity:Interaction.Behaviors>
                 </ToggleSwitch>
             </Grid>
-    </Grid>
+        </Grid>
     </ScrollViewer>
 </UserControl>

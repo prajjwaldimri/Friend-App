@@ -1,3 +1,4 @@
 C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\BackgroundProcesses\BackgroundProcesses.csproj;x86
 C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\Friend's\Friend's.csproj;x86
 C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\winsdkfb\winsdkfb_uwp\winsdkfb_uwp\winsdkfb_uwp.vcxproj;x86
+C:\Users\prajj\Source\Repos\Friend-App\Windows\Friend's\winsdkfb\winsdkfb_uwp\winsdkfb_uwp\winsdkfb_uwp.vcxproj;x86
