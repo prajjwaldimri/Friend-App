@@ -18,7 +18,7 @@
         android:layout_width="0dp"
         android:layout_height="140dp"
         android:text="Emergency calls"
-
+        android:layout_weight=".2"
         android:id="@+id/sosNavigatorButton"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
