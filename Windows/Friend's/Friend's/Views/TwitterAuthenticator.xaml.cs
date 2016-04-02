@@ -22,12 +22,16 @@ namespace Friend_s.Views
             InitializeComponent();
         }
 
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
+            await AuthTokens.KeyRetriever();
+            _appCredentials = new TwitterCredentials(AuthTokens.TwitterConsumerKey, AuthTokens.TwitterConsumerSecret);
             TwitterAuthenticatorMethod();
+            
         }
         //Use your consumerKey and ConsumerSecret
-        readonly TwitterCredentials _appCredentials = new TwitterCredentials("AuthTokens.TwitterConsumerKey", "AuthTokens.TwitterConsumerSecret");
+
+        private  TwitterCredentials _appCredentials;
 
         private async void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {

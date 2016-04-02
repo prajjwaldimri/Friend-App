@@ -37,6 +37,7 @@ namespace Friend_s.Services
             SimpleIoc.Default.Register<ReminderPageViewModel>();
             SimpleIoc.Default.Register<SosPageViewModel>();
             SimpleIoc.Default.Register<BaseViewModel>();
+            SimpleIoc.Default.Register<ChatBotPageViewModel>();
 
         }
 
@@ -68,6 +69,11 @@ namespace Friend_s.Services
         public BaseViewModel BaseView
         {
             get { return ServiceLocator.Current.GetInstance<BaseViewModel>(); }
+        }
+
+        public ChatBotPageViewModel ChatBotView
+        {
+            get { return ServiceLocator.Current.GetInstance<ChatBotPageViewModel>(); }
         }
         
     }

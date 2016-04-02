@@ -2,6 +2,7 @@ package com.example.admin.friend;
 
 import android.app.ActionBar;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -10,6 +11,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -26,11 +28,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-//        Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/TT1255M_.ttf");
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/HirukoStencil.otf");
+        TextView title= (TextView)findViewById(R.id.toolbarTextView);
+        title.setTypeface(custom_font);
         setSupportActionBar(toolbar);
         ActionBar ab=getActionBar();
         TextView tv= new TextView(getApplicationContext());
@@ -42,6 +46,32 @@ public class MainActivity extends AppCompatActivity {
         setupViewPager(viewPager);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
+        for(int i=0;i<tabLayout.getTabCount();i++)
+        {
+            switch(i)
+            {
+                case 0:
+                    tabLayout.getTabAt(i).setIcon(R.drawable.ic_action_name);
+                    break;
+                case 1:
+                    tabLayout.getTabAt(i).setIcon(R.drawable.ic_action_name2);
+                    break;
+                case 2:
+                    tabLayout.getTabAt(i).setIcon(R.drawable.ic_action_name3);
+                    break;
+                case 3:
+                    tabLayout.getTabAt(i).setIcon(R.drawable.ic_action_name4);
+                    break;
+                case 4:
+                    tabLayout.getTabAt(i).setIcon(R.drawable.ic_action_name5);
+                    break;
+                default:
+                    break;
+            }
+
+        }
+
+
     }
 
     private void setupViewPager(ViewPager viewPager) {
@@ -51,8 +81,11 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFragment(new SettingPageFragment(), "Settings");
         adapter.addFragment(new TimerPageFragment(), "Timer");
         adapter.addFragment(new ReminderPage(), "Reminder");
+
         viewPager.setAdapter(adapter);
     }
+
+
 
     class ViewPagerAdapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();
@@ -83,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
         public void addFragment(Fragment fragment, String string) {
             mFragmentList.add(fragment);
             mFragmentTitleList.add(string);
+
         }
     }
 

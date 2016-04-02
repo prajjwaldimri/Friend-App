@@ -5,7 +5,6 @@ import android.annotation.TargetApi;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -78,7 +77,7 @@ public class SettingPageFragment extends android.support.v4.app.Fragment impleme
         contact2 = (Button) view.findViewById(R.id.button3);
         contact3= (Button) view.findViewById(R.id.button5);
         contact4=(Button)view.findViewById(R.id.button4);
-        Register=(Button)view.findViewById(R.id.button2);
+        Register=(Button)view.findViewById(R.id.sosNavigatorButton);
         pname = (TextView) view.findViewById(R.id.textView);
         phoneno = (TextView) view.findViewById(R.id.textView2);
         tv3=(TextView)view.findViewById(R.id.textView3);
@@ -128,7 +127,7 @@ public class SettingPageFragment extends android.support.v4.app.Fragment impleme
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.button2:
+            case R.id.sosNavigatorButton:
                 Intent contactpicker = new Intent(Intent.ACTION_PICK, Phone.CONTENT_URI);
                 startActivityForResult(contactpicker, CONTACT_PICKER);
                 break;

@@ -10,6 +10,7 @@
     <Application.Resources>
               <services:ViewModelLocator x:Key="ViewModelLocator"/>
         <SolidColorBrush x:Key="PivotControlBackgroundBrush" Color="Blue"/>
+        
     </Application.Resources>
     
 </Application>

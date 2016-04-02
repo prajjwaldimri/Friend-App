@@ -7,6 +7,7 @@ using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
 using Windows.Storage;
+using Friend_s.ViewModel;
 
 namespace Friend_s
 {
@@ -19,13 +20,12 @@ namespace Friend_s
 
         public static async Task KeyRetriever()
         {
-            var storageFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
             try
             {
                 var consumerKey = await StorageFile.GetFileFromApplicationUriAsync(new Uri(@"ms-appx:///TwitterConsumerKey.txt"));
                 using (var sRead = new StreamReader(await consumerKey.OpenStreamForReadAsync()))
                     TwitterConsumerKey = await sRead.ReadToEndAsync();
-                var consumerSecret = await StorageFile.GetFileFromApplicationUriAsync(new Uri(@"ms-appx:///TwitterConsumerKey.txt"));
+                var consumerSecret = await StorageFile.GetFileFromApplicationUriAsync(new Uri(@"ms-appx:///TwitterConsumerSecret.txt"));
                 using (var sRead = new StreamReader(await consumerSecret.OpenStreamForReadAsync()))
                     TwitterConsumerSecret = await sRead.ReadToEndAsync();
             }
@@ -33,6 +33,7 @@ namespace Friend_s
             {
                 Debug.WriteLine("No API Keys Found. Please check AuthTokens class for further details");
             }
+            
         }
     }
 }

@@ -107,6 +107,11 @@
     <Content Include="Fonts\TT1255M_.TTF" />
     <Content Include="TwitterConsumerSecret.txt" />
     <Content Include="TwitterConsumerKey.txt" />
+    <Content Include="BeFriendBot.simlpk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fonts\Karla-Regular.ttf" />
+    <Content Include="Fonts\Karla-Bold.ttf" />
     <None Include="Friend%27s_StoreKey.pfx" />
     <None Include="Friend%27s_TemporaryKey.pfx" />
     <None Include="project.json" />
@@ -116,6 +121,10 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="AuthTokens.cs" />
+    <Compile Include="ViewModel\ChatBotPageViewModel.cs" />
+    <Compile Include="Views\ChatBot.xaml.cs">
+      <DependentUpon>ChatBot.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Services\MonitorClass.cs" />
     <Compile Include="Services\ViewModelLocator.cs" />
     <Compile Include="Services\SpineClass.cs" />
@@ -170,6 +179,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Views\ChatBot.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\CallandSMSSettings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

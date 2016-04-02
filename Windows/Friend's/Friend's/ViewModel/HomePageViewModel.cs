@@ -2,10 +2,12 @@
 using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
+using Windows.ApplicationModel.Contacts;
 using Windows.Devices.Geolocation;
 using Windows.Services.Maps;
 using Windows.Storage;
 using Windows.Storage.Pickers;
+using Windows.System;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -196,7 +198,7 @@ namespace Friend_s.ViewModel
             }
         }
 
-        private void ButtonClickEventMethod(object obj)
+        private async void ButtonClickEventMethod(object obj)
         {
             var parameter = Convert.ToInt32(obj);
             switch (parameter)
@@ -204,13 +206,26 @@ namespace Friend_s.ViewModel
                 case 1:
                     var frame = Window.Current.Content as Frame;
                     if (frame != null)
-                        frame.Navigate(typeof(Sospage));
+                    {
+                        
+                        frame.Navigate(typeof (Sospage));
+                    }
                     break;
 
                 case 2:
                     var frame1 = Window.Current.Content as Frame;
+                    if (frame1 != null)
+                    {
+
+                        frame1.Navigate(typeof(ChatBot));
+                    }
+
+
+                    //var uri = new Uri("mailto:prajjwaldimri@outlook.com");
+                    //await Launcher.LaunchUriAsync(uri);
                     break;
 
+                
                 default:
                     Debug.WriteLine("Default case hit on HomePage");
                     break;
