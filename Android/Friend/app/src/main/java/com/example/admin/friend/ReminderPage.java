@@ -2,6 +2,7 @@ package com.example.admin.friend;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
+import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -45,15 +46,22 @@ Button Setalarm;
 
 
             private void setAlarm(Calendar targetcal) {
-                Toast.makeText(getContext(), "Alarm is set", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(getContext().getApplicationContext(),AlarmReceiver.class);
-                PendingIntent pendingIntent = PendingIntent.getBroadcast(getContext().getApplicationContext(), RQS_1, intent, 0);
+                Toast.makeText(getActivity(), "Alarm is set", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(getActivity(),AlarmReceiver.class);
+                PendingIntent pendingIntent = PendingIntent.getBroadcast(getActivity(), RQS_1, intent, 0);
                 AlarmManager alarmmanager = (AlarmManager)getActivity().getSystemService(Context.ALARM_SERVICE);
-                alarmmanager.set(AlarmManager.RTC_WAKEUP, targetcal.getTimeInMillis(), pendingIntent);
+                alarmmanager.set(AlarmManager.RTC_WAKEUP, targetcal.getTimeInMillis(),pendingIntent);
+
             }
         });
 
 
+
         return view;
     }
+
+
+
+
+
 }
