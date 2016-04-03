@@ -132,7 +132,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(IntDir)pch.pch</PrecompiledHeaderOutputFile>
       <AdditionalUsingDirectories>$(WindowsSDK_WindowsMetadata);$(AdditionalUsingDirectories)</AdditionalUsingDirectories>
-      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/bigobj /Zm120 %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>28204</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>$(ProjectDir)..\..\winsdkfb\winsdkfb.Shared;$(ProjectDir)..\..\winsdkfb\winsdkfb.Shared\Generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>

@@ -99,6 +99,8 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Extra Images\pexels-photo-30732.jpg" />
+    <Content Include="Assets\Extra Images\sunny-man-person-legs.jpg" />
     <Content Include="Fonts\AGAINTS.TTF" />
     <Content Include="Fonts\UBUNTU-R.TTF" />
     <Content Include="Fonts\TNALOGO.TTF" />
@@ -114,6 +116,9 @@
     <Content Include="Fonts\Karla-Bold.ttf" />
     <None Include="BeFriendUWP_StoreKey.pfx" />
     <None Include="BeFriendUWP_TemporaryKey.pfx" />
+    <Content Include="Fonts\Corbert-Regular.otf" />
+    <Content Include="Fonts\Brandon_reg.otf" />
+    <Content Include="Fonts\Brandon_bld.otf" />
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
@@ -136,6 +141,9 @@
     <Compile Include="ViewModel\TimerPageViewModel.cs" />
     <Compile Include="Views\CallandSMSSettings.xaml.cs">
       <DependentUpon>CallandSMSSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FirstTimeTutorial.xaml.cs">
+      <DependentUpon>FirstTimeTutorial.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
@@ -184,6 +192,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CallandSMSSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FirstTimeTutorial.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

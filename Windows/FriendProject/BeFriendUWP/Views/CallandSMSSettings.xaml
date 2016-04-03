@@ -67,28 +67,29 @@
 
 
                 <TextBlock Text="Profile" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" 
-                       FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="28"
+                       FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="26"
                        FontWeight="Bold"/>
 
                 <SymbolIcon Symbol="Contact" Grid.Row="2" Grid.Column="0"/>
                 <TextBlock Grid.Row="2" Grid.Column="1" x:Name="UserNameTextBlock"
-                       FontSize="20" FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"
+                       FontSize="18" FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"
                        Text="{Binding UserName}" VerticalAlignment="Center"/>
                 <TextBox Background="{x:Null}" TextAlignment="Left" 
-                     FontSize="20" FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"
+                     FontSize="18" FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"
                      VerticalAlignment="Bottom" x:Name="UserNameTextBox" Visibility="Collapsed"
                      Grid.Row="2" Grid.Column="1" BorderThickness="0"/>
                 <SymbolIcon x:Name="UserNameEditIcon" Tapped="UserNameEditIcon_OnTapped" Symbol="Edit" Grid.Row="2" Grid.Column="2"/>
-                <SymbolIcon Visibility="Collapsed" x:Name="UserNameSaveIcon" Tapped="UserNameSaveIcon_OnTapped" Symbol="Save" Grid.Row="2" Grid.Column="2"/>
+                <SymbolIcon Visibility="Collapsed" x:Name="UserNameSaveIcon" Tapped="UserNameSaveIcon_OnTapped" Symbol="Save" Grid.Row="2" 
+                            Grid.Column="2"/>
 
-                <TextBlock FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="28" FontWeight="Bold"
+                <TextBlock FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="26" FontWeight="Bold"
                        Text="Social Networks" Grid.ColumnSpan="2" Grid.Row="4" Grid.Column="0"/>
 
                 <FontIcon VerticalAlignment="Center" Glyph="&#xf230;"
                       Grid.Row="6" Grid.Column="0" 
                       FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"/>
                 <TextBlock TextAlignment="Left" Text="Connect Facebook" VerticalAlignment="Center" 
-                       FontSize="20" FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"
+                       FontSize="18" FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"
                      Grid.Row="6" Grid.Column="1"/>
                 <FontIcon Glyph="&#xf067;" Name="FacebookAddIcon"
                       FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"
@@ -117,7 +118,7 @@
                       Grid.Row="8" Grid.Column="0" 
                       FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"/>
                 <TextBlock TextAlignment="Left" Text="Connect Twitter" VerticalAlignment="Center" 
-                       FontSize="20" FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"
+                       FontSize="18" FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"
                      Grid.Row="8" Grid.Column="1"/>
                 <FontIcon Name="TwitterAddIcon" Glyph="&#xf067;" FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"
                       Grid.Row="8" VerticalAlignment="Center" Grid.Column="2" 
@@ -135,14 +136,14 @@
                 </FontIcon>
 
 
-                <TextBlock FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="28"
+                <TextBlock FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="26"
                        FontWeight="Bold"
                        Text="Other" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2"/>
 
                 <FontIcon Grid.Row="12" Grid.Column="0" Glyph="&#xf042;"
                       FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"/>
                 <TextBlock HorizontalAlignment="Left" Grid.Column="1" 
-                       FontSize="20" FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"
+                       FontSize="18" FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"
                       Grid.Row="12" Text="Theme" VerticalAlignment="Center"/>
                 <ToggleSwitch IsOn="{Binding ToggleSwitchIsOn}" 
                           Grid.Column="2" Grid.Row="12" OffContent="Green" OnContent="Pink"
@@ -157,11 +158,11 @@
                 <FontIcon Grid.Row="14" Grid.Column="0" Glyph="&#xf017;"
                       FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"/>
                 <TextBlock HorizontalAlignment="Left" Grid.Column="1" 
-                       FontSize="20" FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"
+                       FontSize="18" FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"
                       Grid.Row="14" Text="Timing between messages" VerticalAlignment="Center"/>
                 <Slider Name="TimerSlider"  VerticalAlignment="Center" 
                         Value="{Binding SliderValue, Mode=TwoWay}"
-                        Grid.Row="14" Grid.Column="2" StepFrequency="20" >
+                        Grid.Row="14" Grid.Column="2" StepFrequency="10" >
                     <interactivity:Interaction.Behaviors>
                         <core:EventTriggerBehavior EventName="ValueChanged">
                             <core:InvokeCommandAction 
@@ -171,7 +172,7 @@
                 </Slider>
 
                 <TextBlock FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" 
-                           FontSize="28" FontWeight="Bold"
+                           FontSize="26" FontWeight="Bold"
                        Text="Contacts" Grid.Row="16" Grid.Column="0" Grid.ColumnSpan="2"/>
 
             </Grid>
@@ -194,14 +195,14 @@
                 <SymbolIcon Symbol="Contact2" Grid.Row="2" Grid.Column="0"/>
 
                 <TextBlock VerticalAlignment="Center" Text="{Binding FirstContactName}" 
-                       Grid.Row="0" Grid.Column="1" FontSize="20" 
+                       Grid.Row="0" Grid.Column="1" FontSize="18" 
                        FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"/>
 
-                <TextBlock VerticalAlignment="Center" FontSize="20" 
+                <TextBlock VerticalAlignment="Center" FontSize="18" 
                            FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"
                        Text="{Binding SecondContactName}" Grid.Row="1" Grid.Column="1"/>
                 <TextBlock VerticalAlignment="Center"
-                       FontSize="20" FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"
+                       FontSize="18" FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"
                        Text="{Binding ThirdContactName}" Grid.Row="2" Grid.Column="1"/>
 
                 <Button Background="{x:Null}" Grid.Row="0" Grid.Column="2" CommandParameter="1"
@@ -245,7 +246,7 @@
                 </Grid.ColumnDefinitions>
 
                 <TextBlock Text="Message" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" 
-                       FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="28"
+                       FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="26"
                            FontWeight="Bold"/>
 
                 <SymbolIcon Name="MessageEditSymbol" Grid.Row="0" Grid.Column="2" Symbol="Edit"
@@ -277,12 +278,12 @@
                      Text="{Binding MessageBox}"/>
 
                 <TextBlock Text="Notification Settings" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" 
-                       FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="28"
+                       FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="26"
                        FontWeight="Bold"/>
 
 
                 <TextBlock VerticalAlignment="Center" Text="Permanent Toast Notifications"
-                       FontSize="20" FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"
+                       FontSize="18" FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"
                        Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" 
                        HorizontalAlignment="Left"/>
 

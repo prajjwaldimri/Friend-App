@@ -3,11 +3,13 @@ using System.Diagnostics;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.ApplicationModel.Background;
+using Windows.Storage;
 using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using BeFriend.Views;
+using Friend_s.Views;
 
 namespace BeFriend
 {
@@ -37,6 +39,8 @@ namespace BeFriend
         protected override async void OnLaunched(LaunchActivatedEventArgs e)
         {
             var rootFrame = Window.Current.Content as Frame;
+
+            var localsettings = ApplicationData.Current.LocalSettings;
 
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
@@ -84,7 +88,15 @@ namespace BeFriend
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigatio  n
                 // parameter
-                rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                if (localsettings.Values.ContainsKey("FirstTimeRunComplete"))
+                {
+                    rootFrame.Navigate(typeof (FirstTimeTutorial), e.Arguments);
+                }
+
+                else
+                {
+                    rootFrame.Navigate(typeof (FirstTimeTutorial), e.Arguments);
+                }
             }
             // Ensure the current window is active
             Window.Current.Activate();

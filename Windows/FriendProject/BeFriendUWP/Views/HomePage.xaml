@@ -57,8 +57,9 @@
         <Rectangle Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" Grid.ColumnSpan="4"/>
 
 
-        <StackPanel BorderThickness="0,40,0,0" Grid.Row="0" Grid.RowSpan="5" Grid.Column="1"
-                    Grid.ColumnSpan="2">
+        <StackPanel BorderThickness="0,0,0,0" Grid.Row="0" Grid.RowSpan="5" Grid.Column="0"
+                    Grid.ColumnSpan="4" Orientation="Horizontal"
+                    HorizontalAlignment="Center">
 
             <Ellipse Stroke="White" StrokeThickness="4"
                      Margin="0,0,0,0" Name="EllipseButton"
@@ -74,15 +75,17 @@
                 </Ellipse.Fill>
             </Ellipse>
 
-            <TextBlock Margin="0,20,0,0" Text="{Binding UserName}"
+            <StackPanel Margin="20,0,0,0" VerticalAlignment="Center">
+            <TextBlock Margin="0,0,0,0" Text="{Binding UserName}"
                        HorizontalAlignment="Center" 
-                       VerticalAlignment="Center" FontFamily="Nanami Blk" FontSize="22" FontWeight="Bold"/>
+                       VerticalAlignment="Center" FontFamily="ms-appx:/Fonts/Corbert-Regular.otf#Corbert" FontSize="22" FontWeight="Bold"/>
 
             <StackPanel Margin="0,20,0,0" HorizontalAlignment="Center" Orientation="Horizontal">
                 <FontIcon Glyph="&#xE1C4;"/>
                 <TextBlock Margin="2,0,0,0" Name="LocationTextBox"
                            Text="{Binding GpsLocation}"
                            HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+            </StackPanel>
             </StackPanel>
         </StackPanel>
 
