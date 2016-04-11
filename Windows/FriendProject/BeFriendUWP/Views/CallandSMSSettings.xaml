@@ -275,7 +275,7 @@
 
                 <TextBox Name="MessageTextBox" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" 
                      Background="White" BorderBrush="White" IsReadOnly="{Binding IsMessageBoxDisabled}"
-                     Text="{Binding MessageBox}"/>
+                     Text="{Binding MessageBox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
                 <TextBlock Text="Notification Settings" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" 
                        FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="26"

@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="Friend_s.Views.FirstTimeTutorial"
+    x:Class="BeFriend.Views.FirstTimeTutorial"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:BeFriend.Views"
@@ -337,8 +337,8 @@
         </Grid.RowDefinitions>
         
 
-        <Image Grid.Row="0" Grid.RowSpan="2" x:Name="MainImage" VerticalAlignment="Center"
-               Width="1123" Source="../Assets/Extra Images/pexels-photo-30732.jpg" 
+        <Image Grid.Row="0" Grid.RowSpan="3" x:Name="MainImage" VerticalAlignment="Center"
+               Width="1123" Source="../Assets/Extra Images/night-clouds-trees-stars.jpg" 
                Margin="0,0,-643,0"  Opacity="1.0" RenderTransformOrigin="0,0.5" Stretch="UniformToFill" HorizontalAlignment="Left">
             <Image.RenderTransform>
                 <CompositeTransform/>
@@ -353,23 +353,93 @@
         <Pivot Margin="0,0,0,0" Grid.Row="1" Name="MainPivot" SelectionChanged="Pivot_OnSelectionChanged">
            
             <PivotItem>
+                
                 <StackPanel VerticalAlignment="Top" HorizontalAlignment="Stretch">
 
                     <TextBlock Margin="0,20,0,20" Foreground="White" Text="Let's Get Started!"
                                HorizontalAlignment="Center" FontSize="30" FontFamily="ms-appx:/Fonts/Brandon_bld.otf#Brandon Grotesque Bold" 
-                               FontWeight="Bold"/>
+                               FontWeight="Bold">
+                    </TextBlock>
+                    
                     <TextBlock Margin="0,20,0,20" Foreground="White" Text="Enter your name and choose a profile pic"
                                HorizontalAlignment="Center" FontSize="20" FontFamily="ms-appx:/Fonts/UBUNTU-R.TTF#Ubuntu" 
                                FontWeight="Bold" TextWrapping="WrapWholeWords" TextAlignment="Center"/>
-                    <TextBox BorderThickness="0" AcceptsReturn="False"
+                    <TextBox Name="UserNameTextBox"
+                        BorderThickness="0" AcceptsReturn="False"
                              Margin="50,20,50,0" PlaceholderText="Name..."
                              FontSize="20" Background="White" />
-
-                    
+                    <StackPanel HorizontalAlignment="Center" Margin="50,20,50,0">
+                        
+                        <Button RequestedTheme="Dark" Click="PictureButton_OnClick" Content="Click to choose a picture"/>
+                        
+                        <TextBlock HorizontalAlignment="Center" Name="DisplaypicPathTextBlock" Margin="0,10,0,0" RequestedTheme="Dark" Text="No picture selected"/>
+                        
+                    </StackPanel>
                 </StackPanel>
+              
             </PivotItem>
             
-            <PivotItem></PivotItem>
+            <PivotItem>
+                
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Stretch">
+                    <TextBlock Margin="0,20,0,50" Foreground="White" Text="Choose 3 people whom you would like to inform if you're ever in danger!"
+                               HorizontalAlignment="Center" FontSize="20" 
+                               FontFamily="ms-appx:/Fonts/UBUNTU-R.TTF#Ubuntu" FontWeight="Bold" TextWrapping="WrapWholeWords"
+                               TextAlignment="Center"/>
+
+                    <StackPanel HorizontalAlignment="Center" Name="FirstContactPanel" Tapped="FirstContactPanel_OnTapped" 
+                                Margin="20,10,20,10" RequestedTheme="Dark" Orientation="Horizontal">
+                        <Viewbox MaxHeight="30">
+                            <SymbolIcon Symbol="Contact2"></SymbolIcon>
+                        </Viewbox>
+                        <TextBlock Text="Click here to set contact 1..." Name="FirstContactTextBlock"
+                                   Margin="10,0,10,0" VerticalAlignment="Center" FontSize="16"/>
+                    </StackPanel>
+
+                    <StackPanel HorizontalAlignment="Center" Name="SecondContactPanel" Tapped="SecondContactPanel_OnTapped"
+                                Margin="20,10,20,10" RequestedTheme="Dark" Orientation="Horizontal">
+                        <Viewbox MaxHeight="30">
+                            <SymbolIcon Symbol="Contact2"></SymbolIcon>
+                        </Viewbox>
+                        <TextBlock Text="Click here to set contact 2..." Name="SecondContactTextBlock"
+                                   Margin="10,0,10,0" VerticalAlignment="Center" FontSize="16"/>
+                    </StackPanel>
+
+                    <StackPanel HorizontalAlignment="Center" Name="ThirdContactPanel" Tapped="ThirdContactPanel_OnTapped" 
+                                Margin="20,10,20,10" RequestedTheme="Dark" Orientation="Horizontal">
+                        <Viewbox MaxHeight="30">
+                            <SymbolIcon Symbol="Contact2"></SymbolIcon>
+                        </Viewbox>
+                        <TextBlock Text="Click here to set contact 3..." Name="ThirdContactTextBlock"
+                                   Margin="10,0,10,0" VerticalAlignment="Center" FontSize="16"/>
+                    </StackPanel>
+                    
+                    <StackPanel HorizontalAlignment="Center" Margin="0,50,0,10" RequestedTheme="Dark" Orientation="Horizontal">
+                        <Button Background="#326ada" Margin="10,0,10,0">
+                            <Button.Content>
+                                <StackPanel Orientation="Horizontal">
+                                    <FontIcon Glyph="&#xf081;" FontSize="30"
+                                        FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"/>
+                                    <TextBlock Margin="10,0,10,0" VerticalAlignment="Center"
+                                               Text="Add Twitter" FontSize="16"/>
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+                        <Button Background="#3b5998" Margin="10,0,10,0">
+                            <Button.Content>
+                                <StackPanel Orientation="Horizontal">
+                                    <FontIcon Glyph="&#xf230;" FontSize="30"
+                                        FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"/>
+                                    <TextBlock Margin="10,0,10,0" VerticalAlignment="Center"
+                                               Text="Add Facebook" FontSize="16"/>
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+
+                    </StackPanel>
+
+                </StackPanel>
+            </PivotItem>
             <PivotItem></PivotItem>
             <PivotItem></PivotItem>
             <PivotItem></PivotItem>
@@ -397,17 +467,17 @@
                     Content="Finish" Background="Tomato" FontFamily="ms-appx:/Fonts/Karla-Bold.ttf#Karla"/>
 
 
-            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <StackPanel Background="{x:Null}" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
         
-                <RadioButton IsEnabled="False" Name="FirstButton" GroupName="ProgressButtons"
+                <RadioButton RequestedTheme="Dark" IsEnabled="False" Name="FirstButton" GroupName="ProgressButtons"
                              Style="{StaticResource RadioButtonStyle1}"/>
-                <RadioButton IsEnabled="False" Name="SecondButton" GroupName="ProgressButtons"
+                <RadioButton RequestedTheme="Dark" IsEnabled="False" Name="SecondButton" GroupName="ProgressButtons"
                              Style="{StaticResource RadioButtonStyle1}"/>
-                <RadioButton IsEnabled="False" Name="ThirdButton" GroupName="ProgressButtons"
+                <RadioButton RequestedTheme="Dark" IsEnabled="False" Name="ThirdButton" GroupName="ProgressButtons"
                              Style="{StaticResource RadioButtonStyle1}"/>
-                <RadioButton IsEnabled="False" Name="FourthButton" GroupName="ProgressButtons"
+                <RadioButton RequestedTheme="Dark" IsEnabled="False" Name="FourthButton" GroupName="ProgressButtons"
                              Style="{StaticResource RadioButtonStyle1}"/>
-                <RadioButton IsEnabled="False" Name="FifthButton" GroupName="ProgressButtons"
+                <RadioButton RequestedTheme="Dark" IsEnabled="False" Name="FifthButton" GroupName="ProgressButtons"
                              Style="{StaticResource RadioButtonStyle1}"/>
         
             </StackPanel>

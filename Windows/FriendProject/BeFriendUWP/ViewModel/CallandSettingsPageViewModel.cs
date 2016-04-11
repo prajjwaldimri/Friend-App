@@ -54,6 +54,7 @@ namespace BeFriend.ViewModel
         public bool ToggleSwitchIsOn { get; private set; }
         public bool ToastToggleSwitchIsOn { get; private set; }
         private bool IsAppFirstTimeOn { get; set; }
+        private bool IsAppFirstTimeOn1 { get; set; }
         public Visibility TwitterPlusIconVisibility { get; private set; }
         public Visibility TwitterRemoveIconVisibility { get; private set; }
         public Visibility FacebookPlusIconVisibility { get; private set; }
@@ -62,7 +63,8 @@ namespace BeFriend.ViewModel
         public Visibility MessageSaveIconVisibility { get; private set; }
         public bool IsMessageBoxDisabled { get; private set; }
         public double SliderValue { get; set; }
-        public string MessageBox { get; set; }
+        public string MessageBox { get;
+            set; }
 
 
         private void LocalStorageSettingsRetriever()
@@ -89,11 +91,17 @@ namespace BeFriend.ViewModel
                     _themeColorSecondary = localsettings.Values["ThemeColorSecondary"] as string;
                 if (localsettings.Values.ContainsKey("ToastNotification"))
                     _notificationStatus = localsettings.Values["ToastNotification"] as string;
+                else
+                {
+                    localsettings.Values.Add("ToastNotification", "Off");
+                    _notificationStatus = "Off";
+                }
                 if (localsettings.Values.ContainsKey("TimerTime"))
                     SliderValue = (double) localsettings.Values["TimerTime"];
                 if (localsettings.Values.ContainsKey("MessageToSend"))
                     MessageBox = localsettings.Values["MessageToSend"] as string;
 
+                IsAppFirstTimeOn1 = true;
 
                 if (_themeColorPrimary == "#0371b2")
                 {
@@ -233,6 +241,21 @@ namespace BeFriend.ViewModel
                     RaisePropertyChanged(()=> MessageEditIconVisibility);
                     RaisePropertyChanged(()=> MessageSaveIconVisibility);
                     RaisePropertyChanged(()=> IsMessageBoxDisabled);
+                    var localData = ApplicationData.Current.LocalSettings;
+                    var roamData = ApplicationData.Current.RoamingSettings;
+                    if (!localData.Values.ContainsKey("MessageToSend") && !roamData.Values.ContainsKey("MessageToSend"))
+                    {
+                        localData.Values.Add("MessageToSend", MessageBox);
+                        roamData.Values.Add("MessageToSend", MessageBox);
+                    }
+                    else
+                    {
+                        localData.Values.Remove("MessageToSend");
+                        roamData.Values.Remove("MessageToSend");
+                        localData.Values.Add("MessageToSend", MessageBox);
+                        roamData.Values.Add("MessageToSend", MessageBox);
+                    }
+
                     break;
 
                 case 5:
@@ -329,7 +352,12 @@ namespace BeFriend.ViewModel
 
         private async void ToastMakerToggledButton()
         {
-            MessengerInstance.Send(new NotificationMessage("ProgressBarEnable"));
+
+            if (IsAppFirstTimeOn1)
+            {
+                IsAppFirstTimeOn1 = false;
+                return;
+            }
             var localData = ApplicationData.Current.LocalSettings;
             var roamData = ApplicationData.Current.RoamingSettings;
 
@@ -345,43 +373,88 @@ namespace BeFriend.ViewModel
             foreach (var task in BackgroundTaskRegistration.AllTasks)
             {
                 ToastToggleSwitchIsOn = task.Value.Name == taskName;
+                if (ToastToggleSwitchIsOn)
+                    break;
             }
             if (!ToastToggleSwitchIsOn)
             {
-                if (!localData.Values.ContainsKey("ToastNotification") ||
-                    !roamData.Values.ContainsKey("ToastNotification"))
+                if (_notificationStatus == "Off")
                 {
-                    localData.Values.Add("ToastNotification", "On");
-                    roamData.Values.Add("ToastNotification", "On");
+                    if (!localData.Values.ContainsKey("ToastNotification") ||
+                        !roamData.Values.ContainsKey("ToastNotification"))
+                    {
+                        localData.Values.Add("ToastNotification", "On");
+                        roamData.Values.Add("ToastNotification", "On");
+                    }
+                    else
+                    {
+                        localData.Values.Remove("ToastNotification");
+                        roamData.Values.Remove("ToastNotification");
+                        localData.Values.Add("ToastNotification", "On");
+                        roamData.Values.Add("ToastNotification", "On");
+                    }
+                    ToastToggleSwitchIsOn = true;
+                    BackgroundProcessRegisterer();
                 }
                 else
                 {
-                    localData.Values.Remove("ToastNotification");
-                    roamData.Values.Remove("ToastNotification");
-                    localData.Values.Add("ToastNotification", "On");
-                    roamData.Values.Add("ToastNotification", "On");
+                    if (!localData.Values.ContainsKey("ToastNotification") ||
+                        !roamData.Values.ContainsKey("ToastNotification"))
+                    {
+                        localData.Values.Add("ToastNotification", "Off");
+                        roamData.Values.Add("ToastNotification", "Off");
+                    }
+                    else
+                    {
+                        localData.Values.Remove("ToastNotification");
+                        roamData.Values.Remove("ToastNotification");
+                        localData.Values.Add("ToastNotification", "Off");
+                        roamData.Values.Add("ToastNotification", "Off");
+                    }
+                    ToastToggleSwitchIsOn = false;
                 }
-                ToastToggleSwitchIsOn = true;
-                BackgroundProcessRegisterer();
             }
+
             else
             {
-                if (!localData.Values.ContainsKey("ToastNotification") ||
-                    !roamData.Values.ContainsKey("ToastNotification"))
+                if (_notificationStatus == "On")
                 {
-                    localData.Values.Add("ToastNotification", "Off");
-                    roamData.Values.Add("ToastNotification", "Off");
+                    if (!localData.Values.ContainsKey("ToastNotification") ||
+                        !roamData.Values.ContainsKey("ToastNotification"))
+                    {
+                        localData.Values.Add("ToastNotification", "Off");
+                        roamData.Values.Add("ToastNotification", "Off");
+                    }
+                    else
+                    {
+                        localData.Values.Remove("ToastNotification");
+                        roamData.Values.Remove("ToastNotification");
+                        localData.Values.Add("ToastNotification", "Off");
+                        roamData.Values.Add("ToastNotification", "Off");
+                    }
+                    ToastToggleSwitchIsOn = false;
+                    BackgroundProcessRemover();
                 }
                 else
                 {
-                    localData.Values.Remove("ToastNotification");
-                    roamData.Values.Remove("ToastNotification");
-                    localData.Values.Add("ToastNotification", "Off");
-                    roamData.Values.Add("ToastNotification", "Off");
+                    if (!localData.Values.ContainsKey("ToastNotification") ||
+                        !roamData.Values.ContainsKey("ToastNotification"))
+                    {
+                        localData.Values.Add("ToastNotification", "On");
+                        roamData.Values.Add("ToastNotification", "On");
+                    }
+                    else
+                    {
+                        localData.Values.Remove("ToastNotification");
+                        roamData.Values.Remove("ToastNotification");
+                        localData.Values.Add("ToastNotification", "On");
+                        roamData.Values.Add("ToastNotification", "On");
+                    }
+                    ToastToggleSwitchIsOn = true;
                 }
-                ToastToggleSwitchIsOn = false;
-                BackgroundProcessRemover();
+                
             }
+           
 
             RaisePropertyChanged(() => ToastToggleSwitchIsOn);
             MessengerInstance.Send(new NotificationMessage("ProgressBarDisable"));

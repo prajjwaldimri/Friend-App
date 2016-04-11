@@ -9,7 +9,6 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using BeFriend.Views;
-using Friend_s.Views;
 
 namespace BeFriend
 {

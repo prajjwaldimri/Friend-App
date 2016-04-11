@@ -7,8 +7,8 @@
     <ProjectGuid>{7704C0AB-0C33-40AF-A19D-47742887AABD}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Friend_s</RootNamespace>
-    <AssemblyName>Friend</AssemblyName>
+    <RootNamespace>BeFriend</RootNamespace>
+    <AssemblyName>BeFriend</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
@@ -99,6 +99,8 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Extra Images\night-clouds-trees-stars.jpg" />
+    <Content Include="Assets\Extra Images\night-dark-long-exposure-windmill.jpg" />
     <Content Include="Assets\Extra Images\pexels-photo-30732.jpg" />
     <Content Include="Assets\Extra Images\sunny-man-person-legs.jpg" />
     <Content Include="Fonts\AGAINTS.TTF" />
