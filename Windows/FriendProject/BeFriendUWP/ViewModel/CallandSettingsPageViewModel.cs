@@ -63,8 +63,7 @@ namespace BeFriend.ViewModel
         public Visibility MessageSaveIconVisibility { get; private set; }
         public bool IsMessageBoxDisabled { get; private set; }
         public double SliderValue { get; set; }
-        public string MessageBox { get;
-            set; }
+        public string MessageBox { get; set; }
 
 
         private void LocalStorageSettingsRetriever()

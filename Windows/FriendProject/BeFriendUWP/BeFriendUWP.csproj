@@ -99,10 +99,13 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Extra Images\BeFriendReminderPageMockup.png" />
+    <Content Include="Assets\Extra Images\BeFriendTimerPageMockup.png" />
     <Content Include="Assets\Extra Images\night-clouds-trees-stars.jpg" />
     <Content Include="Assets\Extra Images\night-dark-long-exposure-windmill.jpg" />
     <Content Include="Assets\Extra Images\pexels-photo-30732.jpg" />
     <Content Include="Assets\Extra Images\sunny-man-person-legs.jpg" />
+    <Content Include="Assets\Extra Images\wp_ss_20160411_0001.png" />
     <Content Include="Fonts\AGAINTS.TTF" />
     <Content Include="Fonts\UBUNTU-R.TTF" />
     <Content Include="Fonts\TNALOGO.TTF" />

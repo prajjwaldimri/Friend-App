@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using Windows.Security.Credentials;
+using Windows.Storage;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -35,6 +36,7 @@ namespace BeFriend.Views
 
         private async void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
+            
             if (string.IsNullOrEmpty(pinText.Text))
             {
                 var msgDialog = new MessageDialog("Please Enter the pin showed below");
@@ -49,8 +51,17 @@ namespace BeFriend.Views
                 var vault = new PasswordVault();
                 vault.Add(new PasswordCredential("Friend","TwitterAccessToken",userCredentials.AccessToken));
                 vault.Add(new PasswordCredential("Friend","TwitterAccessTokenSecret",userCredentials.AccessTokenSecret));
+                var localSettings = ApplicationData.Current.LocalSettings;
                 var frame = Window.Current.Content as Frame;
-                frame?.Navigate(typeof(MainPage));
+
+                if (localSettings.Values.ContainsKey("FirstTimeRunComplete"))
+                {
+                    frame?.Navigate(typeof (MainPage));
+                }
+                else
+                {
+                    frame?.Navigate(typeof (FirstTimeTutorial));
+                }
             }
         }
 
@@ -65,6 +76,20 @@ namespace BeFriend.Views
             catch (Exception e)
             {
                 Debug.WriteLine(e);
+            }
+        }
+
+        private void CancelButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            var localSettings = ApplicationData.Current.LocalSettings;
+            var frame = Window.Current.Content as Frame;
+            if (localSettings.Values.ContainsKey("FirstTimeRunComplete"))
+            {
+                frame?.Navigate(typeof(MainPage));
+            }
+            else
+            {
+                frame?.Navigate(typeof(FirstTimeTutorial));
             }
         }
     }

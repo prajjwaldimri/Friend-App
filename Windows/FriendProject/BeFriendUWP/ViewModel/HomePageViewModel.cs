@@ -172,6 +172,8 @@ namespace BeFriend.ViewModel
 
                 SpineClass.ImagetoIsolatedStorageSaver(stream1, "profiledefault.jpg");
                 RaisePropertyChanged(() => ProfileImageSource);
+                stream.Dispose();
+                stream1.Dispose();
             }
             catch (Exception ex)
             {

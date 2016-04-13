@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using Windows.ApplicationModel.Contacts;
+using Windows.Security.Authentication.Web;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.UI.Popups;
@@ -8,7 +10,9 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media.Imaging;
+using Windows.UI.Xaml.Navigation;
 using BeFriend.Services;
+using winsdkfb;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -26,7 +30,16 @@ namespace BeFriend.Views
             
         }
 
-        private void Pivot_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            var localSettings = ApplicationData.Current.LocalSettings;
+            if (!localSettings.Values.ContainsKey("FirstTimeRunComplete"))
+            {
+                MainPivot.SelectedIndex = 1;
+            }
+        }
+
+        private async void Pivot_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var localsettings = ApplicationData.Current.LocalSettings;
             var romaingsettings = ApplicationData.Current.RoamingSettings;
@@ -42,12 +55,20 @@ namespace BeFriend.Views
                 case 1:
                     SecondButton.IsChecked = true;
                     TutorialProgressBar.Value = 40;
-                    if (!localsettings.Values.ContainsKey("UserName"))
-                        localsettings.Values.Add("UserName",UserNameTextBox.Text);
-                    else
+                    if (!localsettings.Values.ContainsKey("UserName") && UserNameTextBox.Text != "")
+                    {
+                        localsettings.Values.Add("UserName", UserNameTextBox.Text);
+                    }
+                    else if (localsettings.Values.ContainsKey("UserName") && UserNameTextBox.Text != "")
                     {
                         localsettings.Values.Remove("UserName");
                         localsettings.Values.Add("UserName", UserNameTextBox.Text);
+                    }
+                    else
+                    {
+                        var msg = new MessageDialog("Please Enter Your Name!");
+                        await msg.ShowAsync();
+                        MainPivot.SelectedIndex = 0;
                     }
                     break;
 
@@ -119,9 +140,14 @@ namespace BeFriend.Views
 
                 // Adding stream as source of the bitmap image object defined above     
                 await image1.SetSourceAsync(stream);
-                
+
                 SpineClass.ImagetoIsolatedStorageSaver(stream1, "profiledefault.jpg");
+
+                stream1.Dispose();
+                stream.Dispose();
                 
+
+
             }
             catch (Exception ex)
             {
@@ -135,7 +161,7 @@ namespace BeFriend.Views
         private async void FirstContactPanel_OnTapped(object sender, TappedRoutedEventArgs e)
         {
             var localsettings = ApplicationData.Current.LocalSettings;
-            var romaingsettings = ApplicationData.Current.RoamingSettings;
+            var roamingsettings = ApplicationData.Current.RoamingSettings;
             var contactPicker = new ContactPicker();
             // Ask the user to pick contact phone numbers.
             contactPicker.DesiredFieldsWithContactFieldType.Add(ContactFieldType.PhoneNumber);
@@ -202,6 +228,39 @@ namespace BeFriend.Views
                 localsettings.Values.Add("ThirdContactName", contacts2.DisplayName);
                 localsettings.Values.Add("ThirdContactNumber", contacts2.YomiDisplayName);
                 ThirdContactTextBlock.Text = contacts2.DisplayName;
+            }
+        }
+
+        private void AddTwitterButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            var frame = Window.Current.Content as Frame;
+            frame?.BackStack.Add(new PageStackEntry(typeof(FirstTimeTutorial), null, null));
+            frame?.Navigate(typeof(TwitterAuthenticator));
+        }
+
+        private async void AddFacebookButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            var sess = FBSession.ActiveSession;
+            //Use your FB App ID
+            sess.FBAppId = AuthTokens.FacebookAppID;
+            sess.WinAppId = WebAuthenticationBroker.GetCurrentApplicationCallbackUri().ToString();
+
+
+            // Add permissions required by the app
+            var permissionList = new List<string> {"public_profile", "publish_actions"};
+            var permissions = new FBPermissions(permissionList);
+
+
+            // Login to Facebook
+            var result = await sess.LoginAsync(permissions);
+
+            if (result.Succeeded)
+            {
+                //TODO:
+            }
+            else
+            {
+                //TODO:
             }
         }
     }

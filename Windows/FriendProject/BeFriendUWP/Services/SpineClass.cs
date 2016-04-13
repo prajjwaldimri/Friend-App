@@ -163,6 +163,9 @@ namespace BeFriend.Services
                 encoder.SetPixelData(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Ignore, (uint) image.PixelWidth,
                     (uint) image.PixelHeight, 96.0, 96.0, pixels);
                 await encoder.FlushAsync();
+                await pixelStream.FlushAsync();
+                pixelStream.Dispose();
+                
             }
             catch (Exception e)
             {

@@ -22,6 +22,7 @@
             <StackPanel Orientation="Horizontal">
                 <TextBox PlaceholderText="Paste Pin here!" Name="pinText" Width="240" Margin="0,12,12,12" BorderThickness="1" BorderBrush="Black"/>
                 <Button Content="Confirm" Click="ButtonBase_OnClick" Margin="0,12,0,12"/>
+                <Button Name="CancelButton" Content="Cancel" Click="CancelButton_OnClick" Margin="0,12,0,12"/>
             </StackPanel>
             <WebView Name="TwitterWebView" RelativePanel.AlignBottomWithPanel="True" Height="500" Width="500" />
         </StackPanel>
