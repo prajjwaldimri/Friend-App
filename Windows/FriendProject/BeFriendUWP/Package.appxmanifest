@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="34691PrajjwalDimri.BeFriendBeta" Publisher="CN=Prajjwal" Version="1.1.2.0" />
+  <Identity Name="34691PrajjwalDimri.BeFriendBeta" Publisher="CN=Prajjwal" Version="1.1.3.0" />
   <mp:PhoneIdentity PhoneProductId="36411e27-597b-436e-a0bc-7205d8d5afe2" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>BeFriend Beta</DisplayName>
@@ -29,19 +29,19 @@
         <uap:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#a51e22" />
       </uap:VisualElements>
       <Extensions>
+        <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundProcesses.Reminder">
+          <BackgroundTasks>
+            <Task Type="general" />
+            <Task Type="systemEvent" />
+            <Task Type="pushNotification" />
+            <uap:Task Type="chatMessageNotification" />
+          </BackgroundTasks>
+        </Extension>
         <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundProcesses.ActionCenterToastMaker">
           <BackgroundTasks>
             <Task Type="general" />
             <Task Type="systemEvent" />
             <Task Type="timer" />
-            <Task Type="pushNotification" />
-            <uap:Task Type="chatMessageNotification" />
-          </BackgroundTasks>
-        </Extension>
-        <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundProcesses.Reminder">
-          <BackgroundTasks>
-            <Task Type="general" />
-            <Task Type="systemEvent" />
             <Task Type="pushNotification" />
             <uap:Task Type="chatMessageNotification" />
           </BackgroundTasks>

@@ -163,6 +163,7 @@
     </Content>
     <Content Include="Fonts\Karla-Regular.ttf" />
     <Content Include="Fonts\Karla-Bold.ttf" />
+    <None Include="app.config" />
     <None Include="BeFriendUWP_StoreKey.pfx" />
     <None Include="BeFriendUWP_TemporaryKey.pfx" />
     <Content Include="Fonts\Corbert-Regular.otf" />
@@ -281,30 +282,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <SDKReference Include="BehaviorsXamlSDKManaged, Version=12.0">
-      <Name>Behaviors SDK %28XAML%29</Name>
-    </SDKReference>
-    <SDKReference Include="Microsoft.Midi.GmDls, Version=10.0.10586.0">
-      <Name>Microsoft General MIDI DLS for Universal Windows Apps</Name>
-    </SDKReference>
-    <SDKReference Include="Microsoft.UniversalCRT.Debug, Version=10.0.10586.0">
-      <Name>Microsoft Universal CRT Debug Runtime</Name>
-    </SDKReference>
-    <SDKReference Include="Microsoft.VCLibs, Version=14.0">
-      <Name>Visual C++ 2015 Runtime for Universal Windows Platform Apps</Name>
-    </SDKReference>
-    <SDKReference Include="Microsoft.VCLibs.120, Version=14.0">
-      <Name>Microsoft Visual C++ 2013 Runtime Package for Windows Universal</Name>
-    </SDKReference>
-    <SDKReference Include="MSTestFramework.Universal, Version=14.0">
-      <Name>MSTest for Managed Projects</Name>
-    </SDKReference>
-    <SDKReference Include="TestPlatform.Universal, Version=14.0">
-      <Name>Microsoft Visual Studio Test Core</Name>
-    </SDKReference>
-    <SDKReference Include="WindowsDesktop, Version=10.0.10586.0">
-      <Name>Windows Desktop Extensions for the UWP</Name>
-    </SDKReference>
     <SDKReference Include="WindowsMobile, Version=10.0.10586.0">
       <Name>Windows Mobile Extensions for the UWP</Name>
     </SDKReference>

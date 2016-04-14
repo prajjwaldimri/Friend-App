@@ -119,15 +119,6 @@
     <Compile Include="SpineClass.cs" />
   </ItemGroup>
   <ItemGroup>
-    <SDKReference Include="Microsoft.Midi.GmDls, Version=10.0.10586.0">
-      <Name>Microsoft General MIDI DLS for Universal Windows Apps</Name>
-    </SDKReference>
-    <SDKReference Include="Microsoft.UniversalCRT.Debug, Version=10.0.10586.0">
-      <Name>Microsoft Universal CRT Debug Runtime</Name>
-    </SDKReference>
-    <SDKReference Include="Microsoft.VCLibs.120, Version=14.0">
-      <Name>Microsoft Visual C++ 2013 Runtime Package for Windows Universal</Name>
-    </SDKReference>
     <SDKReference Include="WindowsMobile, Version=10.0.10586.0">
       <Name>Windows Mobile Extensions for the UWP</Name>
     </SDKReference>
