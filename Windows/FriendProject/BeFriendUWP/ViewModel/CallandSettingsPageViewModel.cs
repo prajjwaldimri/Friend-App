@@ -66,7 +66,7 @@ namespace BeFriend.ViewModel
         public string MessageBox { get; set; }
 
 
-        private void LocalStorageSettingsRetriever()
+        private async void LocalStorageSettingsRetriever()
         {
             MessengerInstance.Send(new NotificationMessage("ProgressBarEnable"));
             try
@@ -106,11 +106,31 @@ namespace BeFriend.ViewModel
                 {
                     ToggleSwitchIsOn = false;
                 }
-                else if (_themeColorPrimary == "#ceb9fe")
+                else if (_themeColorPrimary == "#a51e22")
                 {
                     ToggleSwitchIsOn = true;
                     IsAppFirstTimeOn = true;
                 }
+
+                const string taskName = "ActionCenterToastMaker";
+                var backgroundAccessStatus = await BackgroundExecutionManager.RequestAccessAsync();
+
+                if (backgroundAccessStatus != BackgroundAccessStatus.AllowedMayUseActiveRealTimeConnectivity &&
+                    backgroundAccessStatus != BackgroundAccessStatus.AllowedWithAlwaysOnRealTimeConnectivity) return;
+                foreach (var task in BackgroundTaskRegistration.AllTasks)
+                {
+                    ToastToggleSwitchIsOn = task.Value.Name == taskName;
+                    if (ToastToggleSwitchIsOn)
+                    {
+                        _notificationStatus = "On";
+                        break;
+                    }
+                    else
+                    {
+                        _notificationStatus = "Off";
+                    }
+                }
+
                 if (_notificationStatus == "Off")
                 {
                     ToastToggleSwitchIsOn = false;
@@ -119,6 +139,8 @@ namespace BeFriend.ViewModel
                 {
                     ToastToggleSwitchIsOn = true;
                 }
+
+                
 
                 var sess = FBSession.ActiveSession;
                 if (sess.LoggedIn)
@@ -354,9 +376,14 @@ namespace BeFriend.ViewModel
 
             if (IsAppFirstTimeOn1)
             {
-                IsAppFirstTimeOn1 = false;
-                return;
+                if (_notificationStatus == "On")
+                {
+                    IsAppFirstTimeOn1 = false;
+                    return;
+                }
             }
+
+            IsAppFirstTimeOn1 = false;
             var localData = ApplicationData.Current.LocalSettings;
             var roamData = ApplicationData.Current.RoamingSettings;
 
@@ -498,10 +525,10 @@ namespace BeFriend.ViewModel
             {
                 if (!localData.Values.ContainsKey("ThemeColorPrimary") && !roamData.Values.ContainsKey("ThemeColorPrimary"))
                 {
-                    localData.Values.Add("ThemeColorPrimary", "#ceb9fe");
-                    roamData.Values.Add("ThemeColorPrimary", "#ceb9fe");
-                    localData.Values.Add("ThemeColorSecondary", "#9f8fc4");
-                    roamData.Values.Add("ThemeColorSecondary", "#9f8fc4");
+                    localData.Values.Add("ThemeColorPrimary", "#a51e22");
+                    roamData.Values.Add("ThemeColorPrimary", "#a51e22");
+                    localData.Values.Add("ThemeColorSecondary", "#bd302c");
+                    roamData.Values.Add("ThemeColorSecondary", "#bd302c");
                 }
                 else
                 {
@@ -509,14 +536,14 @@ namespace BeFriend.ViewModel
                     roamData.Values.Remove("ThemeColorPrimary");
                     localData.Values.Remove("ThemeColorSecondary");
                     roamData.Values.Remove("ThemeColorSecondary");
-                    localData.Values.Add("ThemeColorPrimary", "#ceb9fe");
-                    roamData.Values.Add("ThemeColorPrimary", "#ceb9fe");
-                    localData.Values.Add("ThemeColorSecondary", "#9f8fc4");
-                    roamData.Values.Add("ThemeColorSecondary", "#9f8fc4");
+                    localData.Values.Add("ThemeColorPrimary", "#a51e22");
+                    roamData.Values.Add("ThemeColorPrimary", "#a51e22");
+                    localData.Values.Add("ThemeColorSecondary", "#bd302c");
+                    roamData.Values.Add("ThemeColorSecondary", "#bd302c");
                 }
                 ToggleSwitchIsOn = true;
-                _themeColorPrimary = "#ceb9fe";
-                _themeColorSecondary = "#9f8fc4";
+                _themeColorPrimary = "#a51e22";
+                _themeColorSecondary = "#bd302c";
             }
 
             RaisePropertyChanged(() => ToggleSwitchIsOn);

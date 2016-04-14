@@ -171,6 +171,9 @@ namespace BackgroundProcesses
 
         private static async void Caller()
         {
+            if (!Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.ApplicationModel.Calls"))
+                return;
+
             if (!ApplicationData.Current.LocalSettings.Values.ContainsKey("CallOn"))
             {
                 return;

@@ -38,6 +38,7 @@ namespace BeFriend.Services
             SimpleIoc.Default.Register<SosPageViewModel>();
             SimpleIoc.Default.Register<BaseViewModel>();
             SimpleIoc.Default.Register<ChatBotPageViewModel>();
+            SimpleIoc.Default.Register<AboutPageViewModel>();
 
         }
 
@@ -74,6 +75,11 @@ namespace BeFriend.Services
         public ChatBotPageViewModel ChatBotView
         {
             get { return ServiceLocator.Current.GetInstance<ChatBotPageViewModel>(); }
+        }
+
+        public AboutPageViewModel AboutPageView
+        {
+            get { return ServiceLocator.Current.GetInstance<AboutPageViewModel>(); }
         }
         
     }

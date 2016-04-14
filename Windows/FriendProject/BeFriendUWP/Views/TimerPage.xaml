@@ -71,8 +71,7 @@
                     Holding="HoldRectangle_OnHolding" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Button.Content>
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
-                    <FontIcon Glyph="&#xf25a;" FontSize="70"  
-                  FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome" Foreground="Black"/>
+                    <Image Source="../Assets/Extra Images/phone.png" Width="64" Height="64" />
                     <TextBlock Text="Hold" FontSize="25" HorizontalAlignment="Center"  Margin="0,0,0,0"
                    Foreground="Black" FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontWeight="Bold" />
                 </StackPanel>

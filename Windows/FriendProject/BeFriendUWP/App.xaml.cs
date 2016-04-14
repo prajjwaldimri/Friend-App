@@ -89,7 +89,7 @@ namespace BeFriend
                 // parameter
                 if (localsettings.Values.ContainsKey("FirstTimeRunComplete"))
                 {
-                    rootFrame.Navigate(typeof (FirstTimeTutorial), e.Arguments);
+                    rootFrame.Navigate(typeof (MainPage), e.Arguments);
                 }
 
                 else
@@ -100,7 +100,7 @@ namespace BeFriend
             // Ensure the current window is active
             Window.Current.Activate();
 
-            if (!Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
+            if (!Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
                 return;
             try
             {

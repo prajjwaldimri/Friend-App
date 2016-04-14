@@ -167,19 +167,21 @@
                     
                 </PivotItem>
                 
-                <PivotItem Margin="0,0,0,49" Header="SETTINGS">
-                    <ScrollViewer VerticalScrollMode="Enabled">
-                    <views:CallandSmsSettings/>
-                </ScrollViewer>
-            </PivotItem>
-
             <PivotItem Margin="0,0,0,49" Header="REMINDER">
                 <views:Reminderpage/>
             </PivotItem>
 
-        <PivotItem Margin="0,0,0,49" Header="ABOUT">
-                    <TextBlock/>
-                </PivotItem>
+            <PivotItem Margin="0,0,0,49" Header="SETTINGS">
+                <ScrollViewer VerticalScrollMode="Enabled">
+                    <views:CallandSmsSettings/>
+                </ScrollViewer>
+            </PivotItem>
+
+            <PivotItem Margin="0,0,0,49" Header="ABOUT">
+                <ScrollViewer VerticalScrollMode="Auto">
+                    <views:AboutPage/>
+                </ScrollViewer>
+            </PivotItem>
             </Pivot>
         
         <CommandBar Background="WhiteSmoke" VerticalAlignment="Bottom" Foreground="Black">

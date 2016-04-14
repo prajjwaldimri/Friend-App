@@ -102,10 +102,54 @@
     <Content Include="Assets\Extra Images\BeFriendReminderPageMockup.png" />
     <Content Include="Assets\Extra Images\BeFriendTimerPageMockup.png" />
     <Content Include="Assets\Extra Images\night-clouds-trees-stars.jpg" />
-    <Content Include="Assets\Extra Images\night-dark-long-exposure-windmill.jpg" />
-    <Content Include="Assets\Extra Images\pexels-photo-30732.jpg" />
-    <Content Include="Assets\Extra Images\sunny-man-person-legs.jpg" />
-    <Content Include="Assets\Extra Images\wp_ss_20160411_0001.png" />
+    <Content Include="Assets\Extra Images\pexels-photo-befriend-about.jpeg" />
+    <Content Include="Assets\Extra Images\phone.png" />
+    <Content Include="Assets\LogoBefriend.png" />
+    <Content Include="Assets\NewStoreLogo.scale-100.png" />
+    <Content Include="Assets\NewStoreLogo.scale-125.png" />
+    <Content Include="Assets\NewStoreLogo.scale-150.png" />
+    <Content Include="Assets\NewStoreLogo.scale-200.png" />
+    <Content Include="Assets\NewStoreLogo.scale-400.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-125.png" />
+    <Content Include="Assets\SplashScreen.scale-150.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-400.png" />
+    <Content Include="Assets\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\Square150x150Logo.scale-125.png" />
+    <Content Include="Assets\Square150x150Logo.scale-150.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-400.png" />
+    <Content Include="Assets\Square310x310Logo.scale-100.png" />
+    <Content Include="Assets\Square310x310Logo.scale-125.png" />
+    <Content Include="Assets\Square310x310Logo.scale-150.png" />
+    <Content Include="Assets\Square310x310Logo.scale-200.png" />
+    <Content Include="Assets\Square310x310Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.scale-100.png" />
+    <Content Include="Assets\Square44x44Logo.scale-125.png" />
+    <Content Include="Assets\Square44x44Logo.scale-150.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-16_altform-unplated.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-256_altform-unplated.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-32_altform-unplated.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-48_altform-unplated.png" />
+    <Content Include="Assets\Square71x71Logo.scale-100.png" />
+    <Content Include="Assets\Square71x71Logo.scale-125.png" />
+    <Content Include="Assets\Square71x71Logo.scale-150.png" />
+    <Content Include="Assets\Square71x71Logo.scale-200.png" />
+    <Content Include="Assets\Square71x71Logo.scale-400.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-125.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-150.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-400.png" />
     <Content Include="Fonts\AGAINTS.TTF" />
     <Content Include="Fonts\UBUNTU-R.TTF" />
     <Content Include="Fonts\TNALOGO.TTF" />
@@ -124,6 +168,12 @@
     <Content Include="Fonts\Corbert-Regular.otf" />
     <Content Include="Fonts\Brandon_reg.otf" />
     <Content Include="Fonts\Brandon_bld.otf" />
+    <Content Include="Fonts\Lato-Regular.ttf" />
+    <Content Include="Fonts\Lato-Thin.ttf" />
+    <Content Include="Fonts\Lato-Bold.ttf" />
+    <Content Include="Fonts\Lato-Hairline.ttf" />
+    <Content Include="Fonts\Lato-Heavy.ttf" />
+    <Content Include="Fonts\Pinstripe Limo.ttf" />
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
@@ -131,7 +181,11 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="AuthTokens.cs" />
+    <Compile Include="ViewModel\AboutPageViewModel.cs" />
     <Compile Include="ViewModel\ChatBotPageViewModel.cs" />
+    <Compile Include="Views\AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ChatBot.xaml.cs">
       <DependentUpon>ChatBot.xaml</DependentUpon>
     </Compile>
@@ -179,19 +233,16 @@
     <Content Include="Assets\Generic-Profile-Image.jpg" />
     <None Include="Package.StoreAssociation.xml" />
     <Content Include="Properties\Default.rd.xml" />
-    <Content Include="Assets\LockScreenLogo.scale-200.png" />
-    <Content Include="Assets\SplashScreen.scale-200.png" />
-    <Content Include="Assets\Square150x150Logo.scale-200.png" />
-    <Content Include="Assets\Square44x44Logo.scale-200.png" />
-    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
-    <Content Include="Assets\StoreLogo.png" />
-    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Views\AboutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ChatBot.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

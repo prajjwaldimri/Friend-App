@@ -143,13 +143,13 @@ namespace BeFriend.ViewModel
                 var parseresult = double.TryParse(notification, out result);
 
                 if (parseresult) return;
-                if (notification == "#ceb9fe" || notification == "#0371b2")
+                if (notification == "#a51e22" || notification == "#0371b2")
                 {
                     _themeColorPrimary = notification;
                     
                 }
 
-                else if (notification == "#00a0ff" || notification == "#9f8fc4")
+                else if (notification == "#00a0ff" || notification == "#bd302c")
                 {
                     _themeColorSecondary = notification;
                 }

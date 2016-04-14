@@ -66,7 +66,7 @@ namespace BeFriend.ViewModel
                 return;
             //TODO: Get messaging permission
             
-            MessageSender();
+            //MessageSender();
             
         }
 
@@ -175,8 +175,11 @@ namespace BeFriend.ViewModel
             RaisePropertyChanged(()=>SosPageText);
         }
 
-        private async void Caller()
+        private void Caller()
         {
+            if (!Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.ApplicationModel.Calls"))
+                return;
+
             if (!ApplicationData.Current.LocalSettings.Values.ContainsKey("FirstContactNumber"))
             {
                 SosPageText += "Contacts not assigned \n";

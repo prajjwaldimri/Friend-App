@@ -25,19 +25,35 @@
         </Grid.Background>
 
         <StackPanel VerticalAlignment="Center">
-            <TextBlock Text="Register a reminder!" HorizontalAlignment="Center"
-                       Margin="0,0,0,40"/>
+            <TextBlock Text="Set a time at which you think you should be able to respond to the reminder on the phone. If you don't respond to the reminder in 20 minutes, I will remind all of your friends about your location!"
+                       HorizontalAlignment="Center" TextWrapping="WrapWholeWords"
+                       Margin="10,0,10,40" Padding="20" TextAlignment="Center" FontFamily="ms-appx:/Fonts/Lato-Regular.ttf#Lato"/>
+            
             <TimePicker Time="{Binding Time,Mode=TwoWay}"
-                        Name="TimePickerReminder" HorizontalAlignment="Stretch">
+                        Name="TimePickerReminder" FontWeight="Bold" HorizontalAlignment="Stretch">
                 
             </TimePicker>
 
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal"
                         Margin="0,40,0,0">
             
-                <Button Content="Register" Command="{Binding ReminderRegisterCommand}"/>
-                <Button x:Name="CancelButton" Content="Cancel"
-                        Command="{Binding ReminderRemoverCommand}" Margin="10,0,0,0"/>
+                <Button Background="Teal" Command="{Binding ReminderRegisterCommand}">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <FontIcon Glyph="&#xf00c;" FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"/>
+                            <TextBlock FontWeight="Bold" Margin="10,0,0,0" Text="Register"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+                <Button x:Name="CancelButton" Background="Crimson"
+                        Command="{Binding ReminderRemoverCommand}" Margin="10,0,0,0">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <FontIcon Glyph="&#xf00d;" FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"/>
+                            <TextBlock FontWeight="Bold" Margin="14,0,0,0" Text="Cancel"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
                 
             </StackPanel>
         </StackPanel>
