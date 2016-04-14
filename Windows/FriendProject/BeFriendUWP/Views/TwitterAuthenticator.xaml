@@ -13,14 +13,14 @@
             <RowDefinition/>
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
-        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock x:Name="PageTitle" Text="authorize twitter" Margin="9,-7,0,0"/>
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="0,20,0,0">
+            <TextBlock x:Name="PageTitle" Text="Twitter Authorization"/>
         </StackPanel>
 
         <StackPanel x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <TextBlock Text="Log in and copy the PIN here:"></TextBlock>
+            <TextBlock Text="Log in and paste the PIN here:"></TextBlock>
             <StackPanel Orientation="Horizontal">
-                <TextBox PlaceholderText="Paste Pin here!" Name="pinText" Width="240" Margin="0,12,12,12" BorderThickness="1" BorderBrush="Black"/>
+                <TextBox PlaceholderText="Paste Pin here!" Name="pinText" Margin="0,12,12,12" BorderThickness="1" BorderBrush="Black"/>
                 <Button Content="Confirm" Click="ButtonBase_OnClick" Margin="0,12,0,12"/>
                 <Button Name="CancelButton" Content="Cancel" Click="CancelButton_OnClick" Margin="0,12,0,12"/>
             </StackPanel>

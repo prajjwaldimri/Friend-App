@@ -47,6 +47,11 @@ namespace BeFriend.Views
             switch (MainPivot.SelectedIndex)
             {
                 case 0:
+                    var roamSettings = ApplicationData.Current.RoamingSettings;
+                    if (roamSettings.Values.ContainsKey("UserName"))
+                    {
+                        UserNameTextBox.Text = roamSettings.Values["UserName"].ToString();
+                    }
                     FirstButton.IsChecked = true;
                     TutorialProgressBar.Value = 20;
                     
