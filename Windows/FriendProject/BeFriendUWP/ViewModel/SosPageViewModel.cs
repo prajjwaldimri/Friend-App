@@ -13,7 +13,7 @@ using BeFriend.Services;
 using GalaSoft.MvvmLight.Command;
 using Newtonsoft.Json;
 using Tweetinvi;
-using Tweetinvi.Core.Credentials;
+using Tweetinvi.Credentials;
 using winsdkfb;
 using winsdkfb.Graph;
 

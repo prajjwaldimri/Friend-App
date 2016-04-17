@@ -67,6 +67,8 @@
                        HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
         
+
+        
         <Button x:Name="HoldRectangle" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Background="GhostWhite"
                     Holding="HoldRectangle_OnHolding" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Button.Content>
@@ -76,8 +78,17 @@
                    Foreground="Black" FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontWeight="Bold" />
                 </StackPanel>
             </Button.Content>
-            
-           
+        </Button>
+        
+        <Button x:Name="StopTimerButton" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"
+                HorizontalAlignment="Stretch" Height="60" Click="StopTimerButton_OnClick"
+                Background="CadetBlue">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <SymbolIcon Symbol="Stop" Height="50" Margin="0,0,10,0"/>
+                    <TextBlock Text="Stop" FontSize="25" VerticalAlignment="Center" FontWeight="ExtraBold"/>
+                </StackPanel>
+            </Button.Content>
         </Button>
         
 

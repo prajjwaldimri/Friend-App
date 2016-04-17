@@ -7,7 +7,8 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using Tweetinvi;
-using Tweetinvi.Core.Credentials;
+using Tweetinvi.Core.Authentication;
+using Tweetinvi.Credentials;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -45,7 +46,8 @@ namespace BeFriend.Views
             else
             {
                 var pinCode = pinText.Text;
-                var userCredentials = CredentialsCreator.GetCredentialsFromVerifierCode(pinCode, _appCredentials);
+                var authenticationContext = AuthFlow.InitAuthentication(_appCredentials);
+                var userCredentials = AuthFlow.CreateCredentialsFromVerifierCode(pinCode, authenticationContext);
                 Auth.SetCredentials(userCredentials);
 
                 var vault = new PasswordVault();
@@ -69,8 +71,8 @@ namespace BeFriend.Views
         {
             try
             {
-                var url = CredentialsCreator.GetAuthorizationURL(_appCredentials);
-                TwitterWebView.Navigate(new Uri(url));
+                var authenticationContext = AuthFlow.InitAuthentication(_appCredentials);
+                TwitterWebView.Navigate(new Uri(authenticationContext.AuthorizationURL));
 
             }
             catch (Exception e)

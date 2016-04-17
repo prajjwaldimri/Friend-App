@@ -96,9 +96,6 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Assets\Extra Images\BeFriendReminderPageMockup.png" />
     <Content Include="Assets\Extra Images\BeFriendTimerPageMockup.png" />
     <Content Include="Assets\Extra Images\night-clouds-trees-stars.jpg" />
@@ -164,6 +161,7 @@
     <Content Include="Fonts\Karla-Regular.ttf" />
     <Content Include="Fonts\Karla-Bold.ttf" />
     <None Include="app.config" />
+    <None Include="ApplicationInsights.config" />
     <None Include="BeFriendUWP_StoreKey.pfx" />
     <None Include="BeFriendUWP_TemporaryKey.pfx" />
     <Content Include="Fonts\Corbert-Regular.otf" />

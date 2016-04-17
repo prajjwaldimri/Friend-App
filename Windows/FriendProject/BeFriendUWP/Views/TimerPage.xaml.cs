@@ -116,5 +116,14 @@ namespace BeFriend.Views
             _i++;
 
         }
+
+        private void StopTimerButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            timer.Stop();
+            militimer.Stop();
+            _secondstime = TimeSpan.FromSeconds(_timerValue);
+            _minutestime = TimeSpan.FromMinutes(Convert.ToDouble(_secondstime.Minutes.ToString()));
+            timer.Tick -= TimerOnTick;
+        }
     }
 }
