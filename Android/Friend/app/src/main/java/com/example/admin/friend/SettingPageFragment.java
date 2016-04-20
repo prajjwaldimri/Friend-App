@@ -150,7 +150,7 @@ public class SettingPageFragment extends android.support.v4.app.Fragment impleme
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.button2:
+           /* case R.id.button2:
                 Intent contactpicker = new Intent(Intent.ACTION_PICK, Phone.CONTENT_URI);
                 startActivityForResult(contactpicker, CONTACT_PICKER);
                 break;
@@ -166,7 +166,7 @@ public class SettingPageFragment extends android.support.v4.app.Fragment impleme
                 contactpicker = new Intent(Intent.ACTION_PICK, Phone.CONTENT_URI);
                 startActivityForResult(contactpicker, CONTACT_PICKER);
                 break;
-
+*/
 
         }
 

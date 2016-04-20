@@ -21,10 +21,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
-    private static final String TWITTER_KEY = "Fgtr1cTlCjlhTnTbGC5kwOFap";
-    private static final String TWITTER_SECRET = "WHSG65UvqKJQy4SEzLm0ljyIaxd4Ml75wlosDt8CRYapYE205Z";
-
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
@@ -34,11 +30,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
        // Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/TT1255M_.ttf");
-
         super.onCreate(savedInstanceState);
-        TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
-        Fabric.with(this, new Twitter(authConfig));
-        //startLoginActivity();
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -46,10 +38,8 @@ public class MainActivity extends AppCompatActivity {
         setupViewPager(viewPager);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
+
     }
-   // private void startLoginActivity(){
-       // startActivity(new Intent(this,SettingPageFragment.class));
-    //}
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
