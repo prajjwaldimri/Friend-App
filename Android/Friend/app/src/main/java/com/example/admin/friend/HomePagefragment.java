@@ -63,13 +63,18 @@ TextView location;
         try{
             List<Address> addresses=geocoder.getFromLocation(37.423247,-122.085469,1);
             if (addresses!=null){
-                Address address=addresses.get(0);
-                StringBuilder stringBuilder=new StringBuilder();
-                for (int i=0;i<address.getMaxAddressLineIndex();i++){
-                    stringBuilder.append(address.getAddressLine(i)).append("\n");
-                    location.setText(""+stringBuilder.toString());
+               try {
+                   Address address = addresses.get(4);
+                   StringBuilder stringBuilder = new StringBuilder();
+                   for (int i = 0; i < address.getMaxAddressLineIndex(); i++) {
+                       stringBuilder.append(address.getAddressLine(i)).append("\n");
+                       location.setText("" + stringBuilder.toString());
 
-                }
+                   }
+               }
+               catch (IndexOutOfBoundsException e){
+                   e.printStackTrace();
+               }
             }
             else {
                 location.setText("No Location found");

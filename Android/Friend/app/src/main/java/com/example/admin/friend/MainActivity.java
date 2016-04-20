@@ -1,8 +1,7 @@
 package com.example.admin.friend;
 
-import android.app.ActionBar;
+import android.content.Intent;
 import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -11,15 +10,21 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
 
+import com.twitter.sdk.android.Twitter;
+import com.twitter.sdk.android.core.TwitterAuthConfig;
+import io.fabric.sdk.android.Fabric;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+
+    // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
+    private static final String TWITTER_KEY = "Fgtr1cTlCjlhTnTbGC5kwOFap";
+    private static final String TWITTER_SECRET = "WHSG65UvqKJQy4SEzLm0ljyIaxd4Ml75wlosDt8CRYapYE205Z";
+
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
@@ -28,51 +33,23 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+       // Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/TT1255M_.ttf");
 
         super.onCreate(savedInstanceState);
+        TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
+        Fabric.with(this, new Twitter(authConfig));
+        //startLoginActivity();
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        Typeface custom_font = Typeface.createFromAsset(getAssets(), "HirukoStencil.otf");
-        TextView title= (TextView)findViewById(R.id.toolbarTextView);
-        title.setTypeface(custom_font);
         setSupportActionBar(toolbar);
-        ActionBar ab=getActionBar();
-       // TextView tv= new TextView(getApplicationContext());
-        //Typeface font=Typeface.createFromAsset(getAssets(),"TT1255M_.TTF");
-        //tv.setTypeface(font);
-        //ab.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        //ab.setCustomView(tv);
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
-        for(int i=0;i<tabLayout.getTabCount();i++)
-        {
-            switch(i)
-            {
-                case 0:
-                    tabLayout.getTabAt(i).setIcon(R.drawable.ic_action_name);
-                    break;
-                case 1:
-                    tabLayout.getTabAt(i).setIcon(R.drawable.ic_action_name2);
-                    break;
-                case 2:
-                    tabLayout.getTabAt(i).setIcon(R.drawable.ic_action_name3);
-                    break;
-                case 3:
-                    tabLayout.getTabAt(i).setIcon(R.drawable.ic_action_name4);
-                    break;
-                case 4:
-                    tabLayout.getTabAt(i).setIcon(R.drawable.ic_action_name5);
-                    break;
-                default:
-                    break;
-            }
-
-        }
-
-
     }
+   // private void startLoginActivity(){
+       // startActivity(new Intent(this,SettingPageFragment.class));
+    //}
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
@@ -81,11 +58,8 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFragment(new SettingPageFragment(), "Settings");
         adapter.addFragment(new TimerPageFragment(), "Timer");
         adapter.addFragment(new ReminderPage(), "Reminder");
-
         viewPager.setAdapter(adapter);
     }
-
-
 
     class ViewPagerAdapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();
@@ -116,7 +90,6 @@ public class MainActivity extends AppCompatActivity {
         public void addFragment(Fragment fragment, String string) {
             mFragmentList.add(fragment);
             mFragmentTitleList.add(string);
-
         }
     }
 
