@@ -63,13 +63,18 @@ TextView location;
         try{
             List<Address> addresses=geocoder.getFromLocation(37.423247,-122.085469,1);
             if (addresses!=null){
-                Address address=addresses.get(0);
-                StringBuilder stringBuilder=new StringBuilder();
-                for (int i=0;i<address.getMaxAddressLineIndex();i++){
-                    stringBuilder.append(address.getAddressLine(i)).append("\n");
-                    location.setText(""+stringBuilder.toString());
+               try {
+                   Address address = addresses.get(4);
+                   StringBuilder stringBuilder = new StringBuilder();
+                   for (int i = 0; i < address.getMaxAddressLineIndex(); i++) {
+                       stringBuilder.append(address.getAddressLine(i)).append("\n");
+                       location.setText("" + stringBuilder.toString());
 
-                }
+                   }
+               }
+               catch (IndexOutOfBoundsException e){
+                   e.printStackTrace();
+               }
             }
             else {
                 location.setText("No Location found");
@@ -95,7 +100,7 @@ TextView location;
                 String path=getPathFromCameraData(data,this.getActivity());
                 Bitmap bmp=BitmapFactory.decodeFile(path);
                 iv.setImageBitmap(bmp);
-                storeImage();
+                storeImage(bmp);
 
             }else {
                 Toast.makeText(getActivity(), "Pick your image first", Toast.LENGTH_LONG).show();
@@ -119,7 +124,7 @@ TextView location;
         return piturepath;
 
     }
-    private boolean storeImage() {
+    private boolean storeImage(Bitmap bmp) {
 
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
         File filepaths = Environment.getExternalStorageDirectory();
@@ -130,7 +135,8 @@ TextView location;
 
             new FileOutputStream(imageName);
             if (bmp != null) {
-                bmp.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+                bmp.compress(Bitmap.CompressFormat.PNG, 100, bytes);
+
             } else {
                 return false;
             }
@@ -141,7 +147,7 @@ TextView location;
         return true;
     }
     public boolean retrieveImage(){
-        File f = new File(android.os.Environment.getExternalStorageDirectory() + "/friend's/myProfile.jpeg");
+        File f = new File(Environment.getExternalStorageDirectory()+"/friend's/myProfile.jpeg");
         Bitmap bmp = BitmapFactory.decodeFile(f.getAbsolutePath());
         iv.setImageBitmap(bmp);
         return  true;
