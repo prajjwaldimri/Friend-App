@@ -42,7 +42,7 @@ namespace BeFriend.ViewModel
             FacebookAuthenticatorCommand = new RelayCommand(FacebookLoginMethod);
         }
 
-
+        
         private string _themeColorPrimary;
         private string _themeColorSecondary;
         private string _notificationStatus;
@@ -82,12 +82,14 @@ namespace BeFriend.ViewModel
                     ThirdContactName = localsettings.Values["ThirdContactName"] as string;
                 if (localsettings.Values.ContainsKey("FacebookConnect"))
                     FacebookConnected = localsettings.Values["FacebookConnect"] as string;
+               
                 if (localsettings.Values.ContainsKey("TwitterConnect"))
                     TwitterConnected = localsettings.Values["TwitterConnect"] as string;
                 if (localsettings.Values.ContainsKey("ThemeColorPrimary"))
                     _themeColorPrimary = localsettings.Values["ThemeColorPrimary"] as string;
                 if (localsettings.Values.ContainsKey("ThemeColorSecondary"))
                     _themeColorSecondary = localsettings.Values["ThemeColorSecondary"] as string;
+
                 if (localsettings.Values.ContainsKey("ToastNotification"))
                     _notificationStatus = localsettings.Values["ToastNotification"] as string;
                 else
@@ -193,6 +195,7 @@ namespace BeFriend.ViewModel
                     {
                         localsettings.Values.Add("FirstContactName", contacts.DisplayName);
                         localsettings.Values.Add("FirstContactNumber", contacts.YomiDisplayName);
+                        
                         FirstContactName = contacts.DisplayName;
                         RaisePropertyChanged(() => FirstContactName);
                     }
@@ -355,6 +358,7 @@ namespace BeFriend.ViewModel
             taskBuilder.SetTrigger(new TimeTrigger(500, false));
 
             var register = taskBuilder.Register();
+            
         }
 
         private static async void BackgroundProcessRemover()

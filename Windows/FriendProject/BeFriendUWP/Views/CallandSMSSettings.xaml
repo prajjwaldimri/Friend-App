@@ -194,16 +194,30 @@
                 <SymbolIcon Symbol="Contact2" Grid.Row="1" Grid.Column="0"/>
                 <SymbolIcon Symbol="Contact2" Grid.Row="2" Grid.Column="0"/>
 
-                <TextBlock VerticalAlignment="Center" Text="{Binding FirstContactName}" 
-                       Grid.Row="0" Grid.Column="1" FontSize="18" 
-                       FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"/>
+                <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+                    <TextBlock Margin="0,0,10,0" VerticalAlignment="Center" Text="{Binding FirstContactName}" 
+                        FontSize="18" FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"/>
+                    
+                    <FontIcon Margin="3,0,0,0" FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"
+                              Glyph="&#xf095;"/>
 
-                <TextBlock VerticalAlignment="Center" FontSize="18" 
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                
+                    <TextBlock VerticalAlignment="Center" FontSize="18" 
                            FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"
-                       Text="{Binding SecondContactName}" Grid.Row="1" Grid.Column="1"/>
-                <TextBlock VerticalAlignment="Center"
+                       Text="{Binding SecondContactName}" Margin="0,0,10,0"/>
+                    
+                </StackPanel>
+                
+                <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+                
+                    <TextBlock VerticalAlignment="Center"
                        FontSize="18" FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"
-                       Text="{Binding ThirdContactName}" Grid.Row="2" Grid.Column="1"/>
+                       Text="{Binding ThirdContactName}" Margin="0,0,10,0" />
+
+                </StackPanel>
 
                 <Button Background="{x:Null}" Grid.Row="0" Grid.Column="2" CommandParameter="1"
                     HorizontalAlignment="Center" Command="{Binding EditContactButtonHandlerCommand}">

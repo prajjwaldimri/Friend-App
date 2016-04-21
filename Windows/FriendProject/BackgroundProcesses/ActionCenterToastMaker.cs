@@ -44,7 +44,11 @@ namespace BackgroundProcesses
                 SuppressPopup = true,
                 Tag = "Friends"
             };
-            if (ToastNotificationManager.History != null) ToastNotificationManager.History.Remove("Friends");
+            if (ToastNotificationManager.History != null)
+            {
+                ToastNotificationManager.History.Remove("Friends");
+            }
+            
             ToastNotificationManager.CreateToastNotifier().Show(toast);
         }
     }
