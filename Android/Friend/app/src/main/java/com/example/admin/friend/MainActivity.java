@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         setupViewPager(viewPager);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
+
         for(int i=0;i<tabLayout.getTabCount();i++)
         {
             switch(i)

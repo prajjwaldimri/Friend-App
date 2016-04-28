@@ -1,14 +1,23 @@
 package com.example.admin.friend;
 
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +28,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.util.Random;
 
 public class HomePagefragment extends android.support.v4.app.Fragment {
     private static final int RESULT_OK = 1;
@@ -47,65 +58,44 @@ TextView location;
             @Override
             public void onClick(View v) {
                 openGallery();
+
             }
         });
 
-   //getLocation();
   retrieveImage();
 
-//retrieve();
+
 
      return view;
     }
 
-    /*public void getLocation() {
-        Geocoder geocoder=new Geocoder(getActivity(),Locale.ENGLISH);
-        try{
-            List<Address> addresses=geocoder.getFromLocation(37.423247,-122.085469,1);
-            if (addresses!=null){
-                Address address=addresses.get(0);
-                StringBuilder stringBuilder=new StringBuilder();
-                for (int i=0;i<address.getMaxAddressLineIndex();i++){
-                    stringBuilder.append(address.getAddressLine(i)).append("\n");
-                    location.setText(""+stringBuilder.toString());
 
-                }
-            }
-            else {
-                location.setText("No Location found");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }*/
 
     private void openGallery() {
         Intent photoPickerIntent = new Intent(Intent.ACTION_GET_CONTENT);
         photoPickerIntent.setType("image/*");
-        startActivityForResult(photoPickerIntent, 1);
+       startActivityForResult(photoPickerIntent, 1);
 
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        try{
+        try
+        {
             if (requestCode==RESULT_OK){
-                String path=getPathFromCameraData(data,this.getActivity());
+              String path=getPathFromCameraData(data,getActivity());
                 Bitmap bmp=BitmapFactory.decodeFile(path);
                 iv.setImageBitmap(bmp);
-                storeImage();
+                storeImage(bmp);
 
-            }else {
-                Toast.makeText(getActivity(), "Pick your image first", Toast.LENGTH_LONG).show();
             }
-        }catch (Exception e){
+    } catch (IOException e) {
             e.printStackTrace();
-
         }
+    }
 
-}
+
 
     private String getPathFromCameraData(Intent data, Context context) {
         Uri selectImage=data.getData();
@@ -116,35 +106,42 @@ TextView location;
         int columnIndx=cursor.getColumnIndex(filepathColumn[0]);
         String piturepath=cursor.getString(columnIndx);
         cursor.close();
+
         return piturepath;
 
     }
-    private boolean storeImage() {
+    private boolean storeImage(Bitmap bitmap) throws IOException {
+        OutputStream outputStream=null ;
+        String directory=Environment.getExternalStorageDirectory().toString();
 
-        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-        File filepaths = Environment.getExternalStorageDirectory();
-        File dir = new File(filepaths.getAbsolutePath()+"/friend's/");
-        dir.mkdirs();
-        File imageName=new File(dir,"myProfile.jpeg");
-        try {
 
-            new FileOutputStream(imageName);
-            if (bmp != null) {
-                bmp.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
-            } else {
-                return false;
-            }
 
-        } catch (IOException e) {
+        File file=new File(directory,"/friend/profile.jpg");
+        if (file.exists())file.delete();
+        try{
+
+
+            outputStream = new FileOutputStream(file);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
+            outputStream.close();
+            MediaStore.Images.Media.insertImage(getActivity().getContentResolver(),file.getAbsolutePath(),file.getName(),file.getName());
+        }
+        catch (Exception e){
             e.printStackTrace();
         }
+
+
+
         return true;
-    }
+
+        }
     public boolean retrieveImage(){
-        File f = new File(android.os.Environment.getExternalStorageDirectory() + "/friend's/myProfile.jpeg");
-        Bitmap bmp = BitmapFactory.decodeFile(f.getAbsolutePath());
-        iv.setImageBitmap(bmp);
-        return  true;
+        File f = new File( "/sdcard/friend/profile.jpg");
+        if (f.exists()) {
+            Bitmap bmp = BitmapFactory.decodeFile(f.getAbsolutePath());
+            iv.setImageBitmap(bmp);
+        }
+            return true;
 
     }
 
