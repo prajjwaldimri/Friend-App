@@ -8,13 +8,20 @@ import android.app.PendingIntent;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,8 +30,14 @@ import com.twitter.sdk.android.core.Callback;
 import com.twitter.sdk.android.core.Result;
 import com.twitter.sdk.android.core.TwitterException;
 import com.twitter.sdk.android.core.TwitterSession;
+import com.twitter.sdk.android.core.identity.OAuthActivity;
 import com.twitter.sdk.android.tweetcomposer.TweetComposer;
 import com.twitter.sdk.android.core.identity.TwitterLoginButton;
+
+import twitter4j.Twitter;
+import twitter4j.auth.AccessToken;
+import twitter4j.auth.RequestToken;
+
 import static android.provider.ContactsContract.CommonDataKinds.Phone;
 
 public class SettingPageFragment extends android.support.v4.app.Fragment implements View.OnClickListener {
@@ -35,8 +48,11 @@ public class SettingPageFragment extends android.support.v4.app.Fragment impleme
     View view;
     Switch theme, toast;
     TextView pname,phoneno,tv3,tv4;
-    Button contact1,contact2, contact3,contact4,Register;
+    Button contact1,contact2, contact3,contact4,Register,_loginButton;
     private Context context;
+    EditText _edittext;
+    private boolean isUseStoredTokenKey = false;
+    private boolean isUseWebViewForAuthentication = false;
 
 
     public SettingPageFragment() {
@@ -55,7 +71,9 @@ public class SettingPageFragment extends android.support.v4.app.Fragment impleme
         view = inflater.inflate(R.layout.fragment_settingpage, container, false);
         toast = (Switch) view.findViewById(R.id.switch1);
         theme = (Switch) view.findViewById(R.id.switch2);
-        setUpViews();
+        _edittext=(EditText) view.findViewById(R.id.edittext);
+        _loginButton=(Button) view.findViewById(R.id.loginbutton);
+        _loginButton.setOnClickListener(this);
         //s3 = (Switch) view.findViewById(R.id.switch3);
 
 
@@ -108,48 +126,20 @@ public class SettingPageFragment extends android.support.v4.app.Fragment impleme
 
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        twitterLoginButton.onActivityResult(requestCode, resultCode, data);
-    }
-    private void setUpViews(){
-        setUpTwitterButton();
-    }
-    private void setUpTwitterButton(){
-        twitterLoginButton=(TwitterLoginButton)view.findViewById(R.id.twitter_button);
-        twitterLoginButton.setCallback(new Callback<TwitterSession>() {
-            @Override
-            public void success(Result<TwitterSession> result) {
-                Toast.makeText(getActivity().getApplicationContext(), getResources().getString(R.string.app_name), Toast.LENGTH_SHORT).show();
-                setUpViewsForTweetComposer();
-            }
-
-            @Override
-            public void failure(TwitterException e) {
-                Toast.makeText(getActivity().getApplicationContext(), getResources().getString(R.string.app_name), Toast.LENGTH_SHORT).show();
-
-            }
-        });
-    }
-    private void setUpViewsForTweetComposer(){
-        TweetComposer.Builder builder=new TweetComposer.Builder(getContext()).text("Message from friend");
-        builder.show();
-    }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.loginbutton:
+                if (ConstantValues.TWITTER_CONSUMER_KEY==null ||ConstantValues.TWITTER_CONSUMER_SECRET==null) {
+                    Toast.makeText(getActivity().getApplicationContext(), "Twitter oAuth infos:Please set your twitter consumer key and consumer secret", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (isUseStoredTokenKey)
+                    logIn();
+
+                break;
            /* case R.id.button2:
                 Intent contactpicker = new Intent(Intent.ACTION_PICK, Phone.CONTENT_URI);
                 startActivityForResult(contactpicker, CONTACT_PICKER);
@@ -172,6 +162,131 @@ public class SettingPageFragment extends android.support.v4.app.Fragment impleme
 
 
     }
+    private void logIn() {
+
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext());
+        if (!sharedPreferences.getBoolean(ConstantValues.PREFERENCE_TWITTER_IS_LOGGED_IN,false))
+        {
+            new TwitterAuthenticateTask().execute();
+        }
+        else
+        {
+            initControl();
+        }
+    }
+
+    class TwitterAuthenticateTask extends AsyncTask<String, String, RequestToken> {
+
+        @Override
+        protected void onPostExecute(RequestToken requestToken) {
+            if (requestToken!=null)
+            {
+                if (!isUseWebViewForAuthentication)
+                {
+
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(requestToken.getAuthenticationURL()));
+                    startActivity(intent);
+                }
+                else
+                {
+                    Intent intent = new Intent(getActivity().getApplicationContext(), Web_view_Activity.class);
+                    intent.putExtra(ConstantValues.STRING_EXTRA_AUTHENCATION_URL,requestToken.getAuthenticationURL());
+                    startActivity(intent);
+                }
+            }
+        }
+
+        @Override
+        protected RequestToken doInBackground(String... params) {
+            return TwitterUtil.getInstance().getRequestToken();
+        }
+    }
+    private void initControl() {
+        Uri uri = getActivity().getIntent().getData();
+        if (uri != null && uri.toString().startsWith(ConstantValues.TWITTER_CALLBACK_URL)) {
+            String verifier = uri.getQueryParameter(ConstantValues.URL_PARAMETER_TWITTER_OAUTH_VERIFIER);
+            new TwitterGetAccessTokenTask().execute(verifier);
+        } else {
+            new TwitterGetAccessTokenTask().execute("");
+        }
+    }
+    /*private void updateStatus(){
+        String status = _edittext.getText().toString();
+        new TwitterUpdateStatusTask().execute(status);
+    }*/
+    class TwitterGetAccessTokenTask extends AsyncTask<String, String, String> {
+
+        @Override
+        protected void onPostExecute(String userName) {
+        }
+
+        @Override
+        protected String doInBackground(String... params) {
+
+            Twitter twitter = TwitterUtil.getInstance().getTwitter();
+            RequestToken requestToken = TwitterUtil.getInstance().getRequestToken();
+            if (params[0]!=null) {
+                try {
+
+                    AccessToken accessToken = twitter.getOAuthAccessToken(requestToken, params[0]);
+                    SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext());
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString(ConstantValues.PREFERENCE_TWITTER_OAUTH_TOKEN, accessToken.getToken());
+                    editor.putString(ConstantValues.PREFERENCE_TWITTER_OAUTH_TOKEN_SECRET, accessToken.getTokenSecret());
+                    editor.putBoolean(ConstantValues.PREFERENCE_TWITTER_IS_LOGGED_IN, true);
+                    editor.commit();
+                    return twitter.showUser(accessToken.getUserId()).getName();
+                } catch (twitter4j.TwitterException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                }
+            } else {
+                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext());
+                String accessTokenString = sharedPreferences.getString(ConstantValues.PREFERENCE_TWITTER_OAUTH_TOKEN, "");
+                String accessTokenSecret = sharedPreferences.getString(ConstantValues.PREFERENCE_TWITTER_OAUTH_TOKEN_SECRET, "");
+                AccessToken accessToken = new AccessToken(accessTokenString, accessTokenSecret);
+                try {
+                    TwitterUtil.getInstance().setTwitterFactory(accessToken);
+                    return TwitterUtil.getInstance().getTwitter().showUser(accessToken.getUserId()).getName();
+                } catch (twitter4j.TwitterException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                }
+            }
+
+            return null;  //To change body of implemented methods use File | Settings | File Templates.
+        }
+    }
+
+    /*class TwitterUpdateStatusTask extends AsyncTask<String, String, Boolean> {
+
+        @Override
+        protected void onPostExecute(Boolean result) {
+            if (result)
+                Toast.makeText(getActivity().getApplicationContext(), "Tweet successfully", Toast.LENGTH_SHORT).show();
+            else
+                Toast.makeText(getActivity().getApplicationContext(), "Tweet failed", Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        protected Boolean doInBackground(String... params) {
+            try {
+                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext());
+                String accessTokenString = sharedPreferences.getString(ConstantValues.PREFERENCE_TWITTER_OAUTH_TOKEN, "");
+                String accessTokenSecret = sharedPreferences.getString(ConstantValues.PREFERENCE_TWITTER_OAUTH_TOKEN_SECRET, "");
+
+                if (accessTokenString!=null && accessTokenSecret!=null) {
+                    AccessToken accessToken = new AccessToken(accessTokenString, accessTokenSecret);
+                    twitter4j.Status status = TwitterUtil.getInstance().getTwitterFactory().getInstance(accessToken).updateStatus(params[0]);
+                    return true;
+                }
+
+            } catch (twitter4j.TwitterException e) {
+                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            }
+            return false;  //To change body of implemented methods use File | Settings | File Templates.
+
+        }
+    }*/
+
 /*
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
