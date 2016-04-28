@@ -8,7 +8,7 @@
     <!-- TODO: Update blank fragment layout -->
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <Button
             android:id="@+id/button3"
@@ -34,7 +34,6 @@
 
         <TextView
             android:id="@+id/textView"
-        android:textSize="22dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -42,69 +41,28 @@
             android:layout_alignParentTop="true"
             android:layout_marginLeft="15dp"
             android:text="Profile"
-
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#fff"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView2"
-            android:textSize="18dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ayush pant"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="#fff"
             android:layout_below="@+id/textView"
-            android:layout_toRightOf="@+id/button5"
-            android:layout_toEndOf="@+id/button5" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:textSize="22dp"            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/textView2"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="35dp"
-            android:text="Social Networks"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#fff"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView4"
-            android:textSize="18dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Connect Facebook"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="#fff"
-            android:layout_below="@+id/textView3"
-            android:layout_alignLeft="@+id/textView2"
-            android:layout_alignStart="@+id/textView2" />
-
-        <TextView
-            android:id="@+id/textView5"
-            android:textSize="18dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView4"
-            android:layout_alignStart="@+id/textView4"
-            android:layout_below="@+id/textView4"
-            android:text="Connect twitter"
+            android:layout_toEndOf="@+id/textView"
+            android:layout_toRightOf="@+id/textView"
+            android:text="Ayush pant"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="#fff" />
 
         <TextView
             android:id="@+id/textView6"
-            android:textSize="22dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/textView5"
+            android:layout_below="@+id/textView2"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="39dp"
             android:text="Other"
@@ -114,22 +72,19 @@
 
         <Switch
             android:id="@+id/switch1"
-            android:textSize="18dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/textView6"
+            android:layout_toRightOf="@+id/textView6"
             android:checked="false"
             android:text="Theme"
             android:textColor="#fff"
-            android:textStyle="normal"
-            android:layout_below="@+id/textView6"
-            android:layout_alignLeft="@+id/textView5"
-            android:layout_alignStart="@+id/textView5"
-            android:layout_alignRight="@+id/seekBar"
-            android:layout_alignEnd="@+id/seekBar" />
+            android:textStyle="normal" />
 
         <TextView
             android:id="@+id/textView7"
-            android:textSize="18dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/switch1"
@@ -143,10 +98,10 @@
             android:id="@+id/seekBar"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:textColor="#fff"
-            android:layout_alignBottom="@+id/textView7"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignTop="@+id/textView7"
+            android:textColor="#fff" />
 
         <TextView
             android:id="@+id/textView8"
@@ -193,6 +148,13 @@
             android:layout_marginTop="20dp"
             android:text="Make a Toast"
             android:textStyle="bold" />
+        <com.twitter.sdk.android.core.identity.TwitterLoginButton
+            android:id="@+id/twitter_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/switch2"
+            android:layout_marginLeft="85dp"
+            android:clickable="true"/>
 
     </RelativeLayout>
 </ScrollView>

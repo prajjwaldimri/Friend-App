@@ -1,0 +1,62 @@
+﻿<UserControl
+    x:Class="BeFriend.Views.Reminderpage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BeFriend.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    DataContext="{Binding ReminderPage, Source={StaticResource ViewModelLocator}}">
+
+    <interactivity:Interaction.Behaviors>
+      <core:EventTriggerBehavior EventName="Loaded">
+            <core:InvokeCommandAction Command="{Binding UniversalSettingsCommand}"/>
+        </core:EventTriggerBehavior>
+    </interactivity:Interaction.Behaviors>
+    
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0,1" StartPoint="0.8,1.">
+                <GradientStop Color="{Binding ThemeColorPrimary}" Offset="0"/>
+                <GradientStop Color="{Binding ThemeColorSecondary}" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <StackPanel VerticalAlignment="Center">
+            <TextBlock Text="Set a time at which you think you should be able to respond to the reminder on the phone. If you don't respond to the reminder in 20 minutes, I will remind all of your friends about your location!"
+                       HorizontalAlignment="Center" TextWrapping="WrapWholeWords"
+                       Margin="10,0,10,40" Padding="20" TextAlignment="Center" FontFamily="ms-appx:/Fonts/Lato-Regular.ttf#Lato"/>
+            
+            <TimePicker Time="{Binding Time,Mode=TwoWay}"
+                        Name="TimePickerReminder" FontWeight="Bold" HorizontalAlignment="Stretch">
+                
+            </TimePicker>
+
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal"
+                        Margin="0,40,0,0">
+            
+                <Button Background="Teal" Command="{Binding ReminderRegisterCommand}">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <FontIcon Glyph="&#xf00c;" FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"/>
+                            <TextBlock FontWeight="Bold" Margin="10,0,0,0" Text="Register"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+                <Button x:Name="CancelButton" Background="Crimson"
+                        Command="{Binding ReminderRemoverCommand}" Margin="10,0,0,0">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <FontIcon Glyph="&#xf00d;" FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"/>
+                            <TextBlock FontWeight="Bold" Margin="14,0,0,0" Text="Cancel"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+                
+            </StackPanel>
+        </StackPanel>
+        
+    </Grid>
+</UserControl>

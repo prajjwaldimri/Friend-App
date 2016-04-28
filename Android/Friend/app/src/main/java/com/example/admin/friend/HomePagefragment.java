@@ -69,6 +69,30 @@ TextView location;
      return view;
     }
 
+    public void getLocation() {
+        Geocoder geocoder=new Geocoder(getActivity(),Locale.ENGLISH);
+        try{
+            List<Address> addresses=geocoder.getFromLocation(37.423247,-122.085469,1);
+            if (addresses!=null){
+               try {
+                   Address address = addresses.get(4);
+                   StringBuilder stringBuilder = new StringBuilder();
+                   for (int i = 0; i < address.getMaxAddressLineIndex(); i++) {
+                       stringBuilder.append(address.getAddressLine(i)).append("\n");
+                       location.setText("" + stringBuilder.toString());
+
+                   }
+               }
+               catch (IndexOutOfBoundsException e){
+                   e.printStackTrace();
+               }
+            }
+            else {
+                location.setText("No Location found");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
 
     private void openGallery() {
@@ -110,9 +134,23 @@ TextView location;
         return piturepath;
 
     }
-    private boolean storeImage(Bitmap bitmap) throws IOException {
-        OutputStream outputStream=null ;
-        String directory=Environment.getExternalStorageDirectory().toString();
+
+	private boolean storeImage(Bitmap bmp) {
+
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        File filepaths = Environment.getExternalStorageDirectory();
+        File dir = new File(filepaths.getAbsolutePath()+"/friend's/");
+        dir.mkdirs();
+        File imageName=new File(dir,"myProfile.jpeg");
+        try {
+
+            new FileOutputStream(imageName);
+            if (bmp != null) {
+                bmp.compress(Bitmap.CompressFormat.PNG, 100, bytes);
+
+            } else {
+                return false;
+            }
 
 
 
@@ -136,12 +174,10 @@ TextView location;
 
         }
     public boolean retrieveImage(){
-        File f = new File( "/sdcard/friend/profile.jpg");
-        if (f.exists()) {
-            Bitmap bmp = BitmapFactory.decodeFile(f.getAbsolutePath());
-            iv.setImageBitmap(bmp);
-        }
-            return true;
+        File f = new File(Environment.getExternalStorageDirectory()+"/friend's/myProfile.jpeg");
+        Bitmap bmp = BitmapFactory.decodeFile(f.getAbsolutePath());
+        iv.setImageBitmap(bmp);
+        return  true;
 
     }
 

@@ -5,9 +5,9 @@ import android.annotation.TargetApi;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -17,11 +17,18 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.twitter.sdk.android.core.Callback;
+import com.twitter.sdk.android.core.Result;
+import com.twitter.sdk.android.core.TwitterException;
+import com.twitter.sdk.android.core.TwitterSession;
+import com.twitter.sdk.android.tweetcomposer.TweetComposer;
+import com.twitter.sdk.android.core.identity.TwitterLoginButton;
 import static android.provider.ContactsContract.CommonDataKinds.Phone;
-import static com.example.admin.friend.R.layout.fragment_settingpage;
 
 public class SettingPageFragment extends android.support.v4.app.Fragment implements View.OnClickListener {
+    private TwitterLoginButton twitterLoginButton;
     private static final int CONTACT_PICKER = 1001;
     private static final int RESULT_OK = 1;
     Notification mynotification;
@@ -45,39 +52,19 @@ public class SettingPageFragment extends android.support.v4.app.Fragment impleme
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(fragment_settingpage, container, false);
-
+        view = inflater.inflate(R.layout.fragment_settingpage, container, false);
         toast = (Switch) view.findViewById(R.id.switch1);
         theme = (Switch) view.findViewById(R.id.switch2);
+        setUpViews();
         //s3 = (Switch) view.findViewById(R.id.switch3);
-        pname = (TextView) view.findViewById(R.id.textView);
-        Typeface font=Typeface.createFromAsset(getActivity().getAssets(),"HirukoStencil.otf");
-        Typeface font1=Typeface.createFromAsset(getActivity().getAssets(),"UBUNTU-R.TTF");
-         pname.setTypeface(font);
 
-        TextView textView=(TextView)view.findViewById(R.id.textView6);
-        TextView textView2=(TextView)view.findViewById(R.id.textView8);
-        TextView textView3=(TextView)view.findViewById(R.id.textView2);
-        TextView textView4=(TextView)view.findViewById(R.id.textView4);
-        TextView textView5=(TextView)view.findViewById(R.id.textView5);
-        TextView textView6=(TextView)view.findViewById(R.id.textView7);
-        Switch s1= (Switch) view.findViewById(R.id.switch1);
-        TextView textView1=(TextView)view.findViewById(R.id.textView3);
-        textView.setTypeface(font);
-        textView1.setTypeface(font);
-        textView2.setTypeface(font);
-        textView3.setTypeface(font1);
-        textView4.setTypeface(font1);
-        textView5.setTypeface(font1);
-        textView6.setTypeface(font1);
-        s1.setTypeface(font1);
 
 /*
         contact1 = (Button) view.findViewById(R.id.button);
         contact2 = (Button) view.findViewById(R.id.button3);
         contact3= (Button) view.findViewById(R.id.button5);
         contact4=(Button)view.findViewById(R.id.button4);
-        Register=(Button)view.findViewById(R.id.sosNavigatorButton);
+        Register=(Button)view.findViewById(R.id.button2);
         pname = (TextView) view.findViewById(R.id.textView);
         phoneno = (TextView) view.findViewById(R.id.textView2);
         tv3=(TextView)view.findViewById(R.id.textView3);
@@ -121,13 +108,49 @@ public class SettingPageFragment extends android.support.v4.app.Fragment impleme
 
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        twitterLoginButton.onActivityResult(requestCode, resultCode, data);
+    }
+    private void setUpViews(){
+        setUpTwitterButton();
+    }
+    private void setUpTwitterButton(){
+        twitterLoginButton=(TwitterLoginButton)view.findViewById(R.id.twitter_button);
+        twitterLoginButton.setCallback(new Callback<TwitterSession>() {
+            @Override
+            public void success(Result<TwitterSession> result) {
+                Toast.makeText(getActivity().getApplicationContext(), getResources().getString(R.string.app_name), Toast.LENGTH_SHORT).show();
+                setUpViewsForTweetComposer();
+            }
+
+            @Override
+            public void failure(TwitterException e) {
+                Toast.makeText(getActivity().getApplicationContext(), getResources().getString(R.string.app_name), Toast.LENGTH_SHORT).show();
+
+            }
+        });
+    }
+    private void setUpViewsForTweetComposer(){
+        TweetComposer.Builder builder=new TweetComposer.Builder(getContext()).text("Message from friend");
+        builder.show();
+    }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.sosNavigatorButton:
+           /* case R.id.button2:
                 Intent contactpicker = new Intent(Intent.ACTION_PICK, Phone.CONTENT_URI);
                 startActivityForResult(contactpicker, CONTACT_PICKER);
                 break;
@@ -143,7 +166,7 @@ public class SettingPageFragment extends android.support.v4.app.Fragment impleme
                 contactpicker = new Intent(Intent.ACTION_PICK, Phone.CONTENT_URI);
                 startActivityForResult(contactpicker, CONTACT_PICKER);
                 break;
-
+*/
 
         }
 

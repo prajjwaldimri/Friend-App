@@ -29,7 +29,7 @@ First clone the repo
 
 #### (In Windows)
 
-Open the solution file `Friend's.sln` in Visual Studio.  Make sure the selected platform is either `x86` (for emulator) or `ARM` (for device).  Then Build The Solution.  Nuget should auto download all missing packages, if not open the package manager and click `Restore Missing Packages`.
+Open the solution file `BeFriend.sln` in Visual Studio.  Make sure the selected platform is either `x86` (for emulator) or `ARM` (for device).  Then Build The Solution.  Nuget should auto download all missing packages, if not open the package manager and click `Restore Missing Packages`.
 
 #### (In Android)
 
