@@ -31,7 +31,7 @@
             
                 <Rectangle HorizontalAlignment="Stretch" Height="300">
                     <Rectangle.Fill>
-                        <ImageBrush ImageSource="../Assets/Extra Images/pexels-photo-befriend-about.jpeg"
+                        <ImageBrush ImageSource="../Assets/Extra Images/pexels-photo-befriend-about_compressed.jpg"
                                      Stretch="UniformToFill"></ImageBrush>
                     </Rectangle.Fill>
                 </Rectangle>

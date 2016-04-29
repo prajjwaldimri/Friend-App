@@ -1,5 +1,8 @@
 ﻿// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
+using System;
+using Windows.UI.Popups;
+
 namespace BeFriend.Views
 {
     /// <summary>
@@ -12,6 +15,13 @@ namespace BeFriend.Views
         public HomePage()
         {
             InitializeComponent();
+            //FirstRun();
+        }
+
+        private async void FirstRun()
+        {
+            var messageDialog = new MessageDialog("");
+            await messageDialog.ShowAsync();
         }
     }
 }

@@ -98,8 +98,9 @@
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
     <Content Include="Assets\Extra Images\BeFriendReminderPageMockup.png" />
     <Content Include="Assets\Extra Images\BeFriendTimerPageMockup.png" />
-    <Content Include="Assets\Extra Images\night-clouds-trees-stars.jpg" />
-    <Content Include="Assets\Extra Images\pexels-photo-befriend-about.jpeg" />
+    <Content Include="Assets\Extra Images\night-clouds-trees-stars_compressed.jpg" />
+    <Content Include="Assets\Extra Images\pexels-photo-29080_compressed.jpg" />
+    <Content Include="Assets\Extra Images\pexels-photo-befriend-about_compressed.jpg" />
     <Content Include="Assets\Extra Images\phone.png" />
     <Content Include="Assets\LogoBefriend.png" />
     <Content Include="Assets\NewStoreLogo.scale-100.png" />
