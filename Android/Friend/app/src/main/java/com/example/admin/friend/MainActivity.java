@@ -39,6 +39,30 @@ public class MainActivity extends AppCompatActivity {
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
 
+        for(int i=0;i<tabLayout.getTabCount();i++)
+        {
+            switch(i)
+            {
+                case 0:
+                    tabLayout.getTabAt(i).setIcon(R.drawable.ic_action_name);
+                    break;
+                case 1:
+                    tabLayout.getTabAt(i).setIcon(R.drawable.ic_action_name2);
+                    break;
+                case 2:
+                    tabLayout.getTabAt(i).setIcon(R.drawable.ic_action_name3);
+                    break;
+                case 3:
+                    tabLayout.getTabAt(i).setIcon(R.drawable.ic_action_name4);
+                    break;
+                case 4:
+                    tabLayout.getTabAt(i).setIcon(R.drawable.ic_action_name5);
+                    break;
+                default:
+                    break;
+            }
+
+        }
     }
 
     private void setupViewPager(ViewPager viewPager) {

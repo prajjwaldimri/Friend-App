@@ -148,13 +148,19 @@
             android:layout_marginTop="20dp"
             android:text="Make a Toast"
             android:textStyle="bold" />
-        <com.twitter.sdk.android.core.identity.TwitterLoginButton
-            android:id="@+id/twitter_button"
+<EditText
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/switch2"
+    android:hint="Message for friend"
+    android:id="@+id/edittext"/>
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/switch2"
-            android:layout_marginLeft="85dp"
-            android:clickable="true"/>
+            android:text="Connect to Twitter"
+            android:id="@+id/loginbutton"
+            android:layout_below="@+id/edittext"
+            android:layout_marginLeft="80dp"/>
 
     </RelativeLayout>
 </ScrollView>
