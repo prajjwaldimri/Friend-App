@@ -26,6 +26,7 @@ namespace BeFriend.Views
         public FirstTimeTutorial()
         {
             this.InitializeComponent();
+            DedicatedStoryBoard.Begin();
             BackgroundAnimation.Begin();
             
         }
@@ -35,7 +36,7 @@ namespace BeFriend.Views
             var localSettings = ApplicationData.Current.LocalSettings;
             if (!localSettings.Values.ContainsKey("FirstTimeRunComplete"))
             {
-                MainPivot.SelectedIndex = 1;
+                //MainPivot.SelectedIndex = 1;
             }
         }
 

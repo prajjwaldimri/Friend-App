@@ -314,12 +314,41 @@
 			</Setter>
 		</Style>
 
-	</Page.Resources>
+        <Storyboard x:Name="DedicatedStoryBoard" AutoReverse="False">
 
+            <DoubleAnimation
+                Storyboard.TargetName="DedicatedGrid"
+                Storyboard.TargetProperty="Opacity"
+                From="1.0" To="0.0" Duration="0:0:10" BeginTime="0:0:0"></DoubleAnimation>
 
-	<Grid>
+            <DoubleAnimation
+                Storyboard.TargetName="MainGrid"
+                Storyboard.TargetProperty="Opacity"
+                From="0.0" To="1.0" Duration="0:0:10" BeginTime="0:0:6"></DoubleAnimation>
 
-		<Grid.Resources>
+            
+
+        </Storyboard>
+
+    </Page.Resources>
+
+    <Grid>
+
+        <Grid  Name="DedicatedGrid" Background="Black">
+
+            <TextBlock Name="DedicatedTextBox" Foreground="GhostWhite" FontSize="35"
+                       VerticalAlignment="Center" HorizontalAlignment="Center" 
+                       FontFamily="ms-appx:/Fonts/AGAINTS.TTF#Againts">
+                Dedicated to all crime victims
+            </TextBlock>
+        </Grid>
+
+        <Grid Opacity="0.0" Name="MainGrid">
+		
+	<Grid.Resources>
+			
+			
+			
 			<Storyboard x:Name="BackgroundAnimation" RepeatBehavior="Forever">
 				<DoubleAnimationUsingKeyFrames 
 					Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)"
@@ -339,19 +368,21 @@
 
 
 		<Image Grid.Row="0" Grid.RowSpan="3" x:Name="MainImage" VerticalAlignment="Center"
-			Width="1123" Source="../Assets/Extra Images/pexels-photo-29080_compressed.jpg" 
+			Width="1123" Source="../Assets/Extra Images/simpledesktops_rising_sun.png" 
 			Margin="0,0,-643,0"  Opacity="1.0" RenderTransformOrigin="0,0.5" Stretch="UniformToFill" HorizontalAlignment="Left">
 			<Image.RenderTransform>
 				<CompositeTransform/>
 			</Image.RenderTransform>
 		</Image>
 
+       
 
-		<ProgressBar Grid.Row="0" Value="20" Foreground="Coral" x:Name="TutorialProgressBar" 
+
+        <ProgressBar Grid.Row="0" Value="20" Foreground="Coral" x:Name="TutorialProgressBar" 
 			Margin="20,0,20,0"/>
 
 
-		<Pivot Margin="0,-24,0,0" Grid.Row="1" x:Name="MainPivot" SelectionChanged="Pivot_OnSelectionChanged">
+		<Pivot Opacity="1.0" Margin="0,-24,0,0" Grid.Row="1" x:Name="MainPivot" SelectionChanged="Pivot_OnSelectionChanged">
 
 			<PivotItem>
 
@@ -544,4 +575,8 @@
 		</Grid>
 
 	</Grid>
+
+    </Grid>
+
+
 </Page>  

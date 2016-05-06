@@ -177,8 +177,9 @@ namespace BeFriend.ViewModel
 
         private void Caller()
         {
-            if (!Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.ApplicationModel.Calls"))
-                return;
+            //TODO: Not working on phones too
+            //if (!Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.ApplicationModel.Calls"))
+            //    return;
 
             if (!ApplicationData.Current.LocalSettings.Values.ContainsKey("FirstContactNumber"))
             {

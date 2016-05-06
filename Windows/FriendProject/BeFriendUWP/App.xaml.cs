@@ -3,12 +3,15 @@ using System.Diagnostics;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.ApplicationModel.Background;
+using Windows.Networking.PushNotifications;
 using Windows.Storage;
 using Windows.UI;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using BeFriend.Views;
+using Microsoft.WindowsAzure.Messaging;
 
 namespace BeFriend
 {
@@ -26,8 +29,10 @@ namespace BeFriend
             Microsoft.ApplicationInsights.WindowsAppInitializer.InitializeAsync(
                 Microsoft.ApplicationInsights.WindowsCollectors.Metadata |
                 Microsoft.ApplicationInsights.WindowsCollectors.Session);
+            Microsoft.HockeyApp.HockeyClient.Current.Configure("7aa2a6b96c05425886f27178cbd678a6");
             InitializeComponent();
             Suspending += OnSuspending;
+            InitNotificationsAsync();
         }
 
         /// <summary>
@@ -186,6 +191,21 @@ namespace BeFriend
             //TODO: Save application state and stop any background activity
             deferral.Complete();
         }
-        
+
+        private static async void InitNotificationsAsync()
+        {
+            var channel = await PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync();
+
+            var hub = new NotificationHub("BeFriendBetaNotificationHub", "Endpoint=sb://befriendbetanotificationhub.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=GQjnn4xAR07sdjAYLrmZPCjrw5OzWKY3AB5fhaLZPdw=");
+            var result = await hub.RegisterNativeAsync(channel.Uri);
+
+            // Displays the registration ID so you know it was successful
+            if (result.RegistrationId != null)
+            {
+                Debug.WriteLine("Registration successful: " + result.RegistrationId);
+            }
+
+        }
+
     }
 }
