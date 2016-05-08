@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f25f5c"
+    android:background="@color/backgroundColor"
     tools:context="com.example.admin.friend.TimerPageFragment">
 <Button
     android:layout_width="match_parent"

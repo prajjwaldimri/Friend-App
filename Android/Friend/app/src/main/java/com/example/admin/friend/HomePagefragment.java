@@ -127,10 +127,10 @@ TextView location;
         assert cursor != null;
         cursor.moveToFirst();
         int columnIndx=cursor.getColumnIndex(filepathColumn[0]);
-        String piturepath=cursor.getString(columnIndx);
+        String picturepath=cursor.getString(columnIndx);
         cursor.close();
 
-        return piturepath;
+        return picturepath;
 
     }
 
@@ -161,9 +161,14 @@ TextView location;
 
     public boolean retrieveImage(){
         File f = new File(Environment.getExternalStorageDirectory()+"/friend's/myProfile.jpeg");
-        Bitmap bmp = BitmapFactory.decodeFile(f.getAbsolutePath());
-        iv.setImageBitmap(bmp);
-        return  true;
+        if(f.canRead()) {
+            Bitmap bmp = BitmapFactory.decodeFile(f.getAbsolutePath());
+            iv.setImageBitmap(bmp);
+            return true;
+        }
+        else{
+            return false;
+        }
 
     }
 
