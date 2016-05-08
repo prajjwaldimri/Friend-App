@@ -79,8 +79,8 @@ namespace BeFriend.ViewModel
                 }
                 else
                 {
-                    localsettings.Values.Add("ThemeColorPrimary", "#0371b2");
-                    localsettings.Values.Add("ThemeColorSecondary", "#00a0ff");
+                    localsettings.Values.Add("ThemeColorPrimary", "#237ba0");
+                    localsettings.Values.Add("ThemeColorSecondary", "#70c1b4");
                     _themeColorPrimary = localsettings.Values["ThemeColorPrimary"] as string;
                     _themeColorSecondary = localsettings.Values["ThemeColorSecondary"] as string;
                 }
@@ -143,13 +143,13 @@ namespace BeFriend.ViewModel
                 var parseresult = double.TryParse(notification, out result);
 
                 if (parseresult) return;
-                if (notification == "#a51e22" || notification == "#0371b2")
+                if (notification == "#f25f5c" || notification == "#237ba0")
                 {
                     _themeColorPrimary = notification;
                     
                 }
 
-                else if (notification == "#00a0ff" || notification == "#bd302c")
+                else if (notification == "#70c1b4" || notification == "#E55A57")
                 {
                     _themeColorSecondary = notification;
                 }

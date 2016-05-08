@@ -18,14 +18,16 @@
             <core:InvokeCommandAction Command="{Binding TimerValueRetrieverCommand}"/>
         </core:EventTriggerBehavior>
     </interactivity:Interaction.Behaviors>
-    
-    <Grid>
-        <Grid.Background>
-            <LinearGradientBrush EndPoint="0,1" StartPoint="0.8,1.">
-                <GradientStop Color="{Binding ThemeColorPrimary}" Offset="0"/>
-                <GradientStop Color="{Binding ThemeColorSecondary}" Offset="1"/>
-            </LinearGradientBrush>
-        </Grid.Background>
+
+    <!--<Grid.Background>
+        <LinearGradientBrush EndPoint="0,1" StartPoint="0.8,1.">
+            <GradientStop Color="{Binding ThemeColorPrimary}" Offset="0"/>
+            <GradientStop Color="{Binding ThemeColorSecondary}" Offset="1"/>
+        </LinearGradientBrush>
+    </Grid.Background>-->
+
+    <Grid Background="{Binding ThemeColorPrimary}">
+        
 
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -56,15 +58,19 @@
 
 
             <TextBlock x:Name="MinuteText" Grid.Row="0" Grid.Column="1" Text="{Binding MinuteValue}"
-                       FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                       FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="ExtraBold"/>
+            
             <TextBlock Grid.Row="0" Grid.Column="2" Text=":" FontSize="30"
-                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                       HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="ExtraBold"/>
+            
             <TextBlock x:Name="SecondText" Grid.Row="0" Grid.Column="3" Text="{Binding SecondsValue}" 
-                       FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <TextBlock Grid.Row="0" Grid.Column="4" Text=":" FontSize="30"
+                       FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="ExtraBold"/>
+
+            <TextBlock Grid.Row="0" Grid.Column="4" Text=":" FontSize="30" FontWeight="ExtraBold"
                        HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            
             <TextBlock x:Name="MillisecondText" Grid.Row="0" Grid.Column="5" Text="00" FontSize="30"
-                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                       HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="ExtraBold"/>
         </Grid>
         
 

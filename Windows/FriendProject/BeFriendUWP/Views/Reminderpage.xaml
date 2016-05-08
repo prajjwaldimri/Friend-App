@@ -15,15 +15,8 @@
             <core:InvokeCommandAction Command="{Binding UniversalSettingsCommand}"/>
         </core:EventTriggerBehavior>
     </interactivity:Interaction.Behaviors>
-    
-    <Grid>
-        <Grid.Background>
-            <LinearGradientBrush EndPoint="0,1" StartPoint="0.8,1.">
-                <GradientStop Color="{Binding ThemeColorPrimary}" Offset="0"/>
-                <GradientStop Color="{Binding ThemeColorSecondary}" Offset="1"/>
-            </LinearGradientBrush>
-        </Grid.Background>
 
+    <Grid Background="{Binding ThemeColorPrimary}">
         <StackPanel VerticalAlignment="Center">
             <TextBlock Text="Set a time at which you think you should be able to respond to the reminder on the phone. If you don't respond to the reminder in 20 minutes, I will remind all of your friends about your location!"
                        HorizontalAlignment="Center" TextWrapping="WrapWholeWords"
