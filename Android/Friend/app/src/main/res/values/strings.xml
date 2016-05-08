@@ -1,12 +1,11 @@
 <resources>
 
-    
 
     <string name="app_name"></string>
 
     <string name="action_settings">Settings</string>
 
-<!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="timerVal">00:00:00</string>
     <string name="title_activity_sos">SosActivity</string>
