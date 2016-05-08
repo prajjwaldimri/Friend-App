@@ -11,6 +11,7 @@ using Windows.Security.Credentials;
 using Windows.Storage;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
+using BeFriend.Views;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
 using winsdkfb;
@@ -25,6 +26,7 @@ namespace BeFriend.ViewModel
         public RelayCommand PasswordVaultRetrieverCommand { get; private set; }
         public RelayCommand<object> EditContactButtonHandlerCommand { get; private set; }
         public RelayCommand<object> SocialIntegrationRemoverCommand { get; }
+        public RelayCommand<object> ButtonClickHandlerCommand { get; private set; }
         public RelayCommand ToastToggledCommand { get; private set; }
         public RelayCommand ThemeToggledCommand { get; private set; }
         public RelayCommand SliderValueChangedCommand { get; private set; }
@@ -36,13 +38,14 @@ namespace BeFriend.ViewModel
             PasswordVaultRetrieverCommand = new RelayCommand(PasswordVaultRetrieverMethod);
             EditContactButtonHandlerCommand = new RelayCommand<object>(EditContactButtonHandler);
             SocialIntegrationRemoverCommand = new RelayCommand<object>(PasswordVaultRemoverMethod);
+            ButtonClickHandlerCommand = new RelayCommand<object>(ButtonClickHandlerMethod);
             ToastToggledCommand = new RelayCommand(ToastMakerToggledButton);
             ThemeToggledCommand = new RelayCommand(ThemeChangerToggledButton);
             SliderValueChangedCommand = new RelayCommand(SliderValueControllerMethod);
             FacebookAuthenticatorCommand = new RelayCommand(FacebookLoginMethod);
         }
 
-        
+               
         private string _themeColorPrimary;
         private string _themeColorSecondary;
         private string _notificationStatus;
@@ -104,11 +107,11 @@ namespace BeFriend.ViewModel
 
                 IsAppFirstTimeOn1 = true;
 
-                if (_themeColorPrimary == "#0371b2")
+                if (_themeColorPrimary == "#237ba0")
                 {
                     ToggleSwitchIsOn = false;
                 }
-                else if (_themeColorPrimary == "#a51e22")
+                else if (_themeColorPrimary == "#f25f5c")
                 {
                     ToggleSwitchIsOn = true;
                     IsAppFirstTimeOn = true;
@@ -505,10 +508,10 @@ namespace BeFriend.ViewModel
                 }
                 if (!localData.Values.ContainsKey("ThemeColorPrimary") && !roamData.Values.ContainsKey("ThemeColorPrimary"))
                 {
-                    localData.Values.Add("ThemeColorPrimary", "#0371b2");
-                    roamData.Values.Add("ThemeColorPrimary", "#0371b2");
-                    localData.Values.Add("ThemeColorSecondary", "#00a0ff");
-                    roamData.Values.Add("ThemeColorSecondary", "#00a0ff");
+                    localData.Values.Add("ThemeColorPrimary", "#237ba0");
+                    roamData.Values.Add("ThemeColorPrimary", "#237ba0");
+                    localData.Values.Add("ThemeColorSecondary", "#70c1b4");
+                    roamData.Values.Add("ThemeColorSecondary", "#70c1b4");
                 }
                 else
                 {
@@ -516,23 +519,23 @@ namespace BeFriend.ViewModel
                     roamData.Values.Remove("ThemeColorPrimary");
                     localData.Values.Remove("ThemeColorSecondary");
                     roamData.Values.Remove("ThemeColorSecondary");
-                    localData.Values.Add("ThemeColorPrimary", "#0371b2");
-                    roamData.Values.Add("ThemeColorPrimary", "#0371b2");
-                    localData.Values.Add("ThemeColorSecondary", "#00a0ff");
-                    roamData.Values.Add("ThemeColorSecondary", "#00a0ff");
+                    localData.Values.Add("ThemeColorPrimary", "#237ba0");
+                    roamData.Values.Add("ThemeColorPrimary", "#237ba0");
+                    localData.Values.Add("ThemeColorSecondary", "#70c1b4");
+                    roamData.Values.Add("ThemeColorSecondary", "#70c1b4");
                 }
                 ToggleSwitchIsOn = false;
-                _themeColorPrimary = "#0371b2";
-                _themeColorSecondary = "#00a0ff";
+                _themeColorPrimary = "#237ba0";
+                _themeColorSecondary = "#70c1b4";
             }
             else
             {
                 if (!localData.Values.ContainsKey("ThemeColorPrimary") && !roamData.Values.ContainsKey("ThemeColorPrimary"))
                 {
-                    localData.Values.Add("ThemeColorPrimary", "#a51e22");
-                    roamData.Values.Add("ThemeColorPrimary", "#a51e22");
-                    localData.Values.Add("ThemeColorSecondary", "#bd302c");
-                    roamData.Values.Add("ThemeColorSecondary", "#bd302c");
+                    localData.Values.Add("ThemeColorPrimary", "#f25f5c");
+                    roamData.Values.Add("ThemeColorPrimary", "#f25f5c");
+                    localData.Values.Add("ThemeColorSecondary", "#E55A57");
+                    roamData.Values.Add("ThemeColorSecondary", "#E55A57");
                 }
                 else
                 {
@@ -540,14 +543,14 @@ namespace BeFriend.ViewModel
                     roamData.Values.Remove("ThemeColorPrimary");
                     localData.Values.Remove("ThemeColorSecondary");
                     roamData.Values.Remove("ThemeColorSecondary");
-                    localData.Values.Add("ThemeColorPrimary", "#a51e22");
-                    roamData.Values.Add("ThemeColorPrimary", "#a51e22");
-                    localData.Values.Add("ThemeColorSecondary", "#bd302c");
-                    roamData.Values.Add("ThemeColorSecondary", "#bd302c");
+                    localData.Values.Add("ThemeColorPrimary", "#f25f5c");
+                    roamData.Values.Add("ThemeColorPrimary", "#f25f5c");
+                    localData.Values.Add("ThemeColorSecondary", "#E55A57");
+                    roamData.Values.Add("ThemeColorSecondary", "#E55A57");
                 }
                 ToggleSwitchIsOn = true;
-                _themeColorPrimary = "#a51e22";
-                _themeColorSecondary = "#bd302c";
+                _themeColorPrimary = "#f25f5c";
+                _themeColorSecondary = "#E55A57";
             }
 
             RaisePropertyChanged(() => ToggleSwitchIsOn);
@@ -647,7 +650,29 @@ namespace BeFriend.ViewModel
             RaisePropertyChanged(()=>FacebookRemoveIconVisibility);
         }
 
-        
+        private async void ButtonClickHandlerMethod(object obj)
+        {
+            var localsettings = ApplicationData.Current.LocalSettings;
+
+            switch (Convert.ToInt64(obj))
+            {
+                case 1:
+                    if (localsettings.Values.ContainsKey("FirstTimeRunComplete"))
+                    {
+                        localsettings.Values.Remove("FirstTimeRunComplete");
+                        var dialog = new MessageDialog("Removed Key! Please restart the app to see the tutorial page!");
+                        await dialog.ShowAsync();
+                    }
+                    break;
+
+                case 2:
+                    localsettings.Values.Clear();
+                    break;
+            }
+        }
+
+
+
     }
 
 

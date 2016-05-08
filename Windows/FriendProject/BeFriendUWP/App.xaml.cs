@@ -194,15 +194,23 @@ namespace BeFriend
 
         private static async void InitNotificationsAsync()
         {
-            var channel = await PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync();
-
-            var hub = new NotificationHub("BeFriendBetaNotificationHub", "Endpoint=sb://befriendbetanotificationhub.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=GQjnn4xAR07sdjAYLrmZPCjrw5OzWKY3AB5fhaLZPdw=");
-            var result = await hub.RegisterNativeAsync(channel.Uri);
-
-            // Displays the registration ID so you know it was successful
-            if (result.RegistrationId != null)
+            try
             {
-                Debug.WriteLine("Registration successful: " + result.RegistrationId);
+                var channel = await PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync();
+
+                var hub = new NotificationHub("BeFriendBetaNotificationHub",
+                    "Endpoint=sb://befriendbetanotificationhub.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=GQjnn4xAR07sdjAYLrmZPCjrw5OzWKY3AB5fhaLZPdw=");
+                var result = await hub.RegisterNativeAsync(channel.Uri);
+
+                // Displays the registration ID so you know it was successful
+                if (result.RegistrationId != null)
+                {
+                    Debug.WriteLine("Registration successful: " + result.RegistrationId);
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
             }
 
         }

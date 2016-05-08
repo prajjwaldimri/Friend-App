@@ -175,6 +175,7 @@
     <Content Include="Fonts\Lato-Heavy.ttf" />
     <Content Include="Fonts\Pinstripe Limo.ttf" />
     <None Include="project.json" />
+    <PRIResource Include="Strings\en-US\Resources.resw" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">

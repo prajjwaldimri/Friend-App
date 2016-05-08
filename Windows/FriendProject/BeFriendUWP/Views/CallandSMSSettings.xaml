@@ -23,16 +23,12 @@
     </interactivity:Interaction.Behaviors>
 
     <ScrollViewer VerticalScrollMode="Enabled" VerticalScrollBarVisibility="Visible">
-        <Grid Name="MainGrid">
-            <Grid.Background>
-                <LinearGradientBrush EndPoint="0,1" StartPoint="0.8,1.">
-                    <GradientStop Color="{Binding ThemeColorPrimary}" Offset="0"/>
-                    <GradientStop Color="{Binding ThemeColorSecondary}" Offset="1"/>
-                </LinearGradientBrush>
-            </Grid.Background>
+        <Grid Name="MainGrid" Background="{Binding ThemeColorPrimary}">
+            
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="3*"/>
+                <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
@@ -71,13 +67,16 @@
                        FontWeight="Bold"/>
 
                 <SymbolIcon Symbol="Contact" Grid.Row="2" Grid.Column="0"/>
+                
                 <TextBlock Grid.Row="2" Grid.Column="1" x:Name="UserNameTextBlock"
                        FontSize="18" FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"
                        Text="{Binding UserName}" VerticalAlignment="Center"/>
+
                 <TextBox Background="{x:Null}" TextAlignment="Left" 
                      FontSize="18" FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"
                      VerticalAlignment="Bottom" x:Name="UserNameTextBox" Visibility="Collapsed"
                      Grid.Row="2" Grid.Column="1" BorderThickness="0"/>
+                
                 <SymbolIcon x:Name="UserNameEditIcon" Tapped="UserNameEditIcon_OnTapped" Symbol="Edit" Grid.Row="2" Grid.Column="2"/>
                 <SymbolIcon Visibility="Collapsed" x:Name="UserNameSaveIcon" Tapped="UserNameSaveIcon_OnTapped" Symbol="Save" Grid.Row="2" 
                             Grid.Column="2"/>
@@ -309,6 +308,44 @@
                         </core:EventTriggerBehavior>
                     </interactivity:Interaction.Behaviors>
                 </ToggleSwitch>
+            </Grid>
+
+            <Grid Grid.Row="3" Margin="10,10,0,0">
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    
+                </Grid.RowDefinitions>
+
+                
+                <TextBlock Text="Developer Options" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" 
+                       FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="26"
+                           FontWeight="Bold"/>
+                
+                <Button Grid.Row="2" Grid.RowSpan="2" Content="Click here to show the tutorial again!"
+                        HorizontalAlignment="Center">
+                    <interactivity:Interaction.Behaviors>
+                        <core:EventTriggerBehavior EventName="Click">
+                            <core:InvokeCommandAction Command="{Binding ButtonClickHandlerCommand}" CommandParameter="1"/>
+                        </core:EventTriggerBehavior>
+                    </interactivity:Interaction.Behaviors>
+                </Button>
+
+                <Button Grid.Row="4" Grid.RowSpan="2" Content="Reset all settings!"
+                        HorizontalAlignment="Center">
+                    <interactivity:Interaction.Behaviors>
+                        <core:EventTriggerBehavior EventName="Click">
+                            <core:InvokeCommandAction Command="{Binding ButtonClickHandlerCommand}" CommandParameter="2"/>
+                        </core:EventTriggerBehavior>
+                    </interactivity:Interaction.Behaviors>
+                </Button>
+
+
             </Grid>
         </Grid>
     </ScrollViewer>

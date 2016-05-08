@@ -334,7 +334,7 @@
 
     <Grid>
 
-        <Grid  Name="DedicatedGrid" Background="Black">
+        <Grid Name="DedicatedGrid" Background="Black">
 
             <TextBlock Name="DedicatedTextBox" Foreground="GhostWhite" FontSize="35"
                        VerticalAlignment="Center" HorizontalAlignment="Center" 
@@ -346,8 +346,6 @@
         <Grid Opacity="0.0" Name="MainGrid">
 		
 	<Grid.Resources>
-			
-			
 			
 			<Storyboard x:Name="BackgroundAnimation" RepeatBehavior="Forever">
 				<DoubleAnimationUsingKeyFrames 
@@ -369,7 +367,7 @@
 
 		<Image Grid.Row="0" Grid.RowSpan="3" x:Name="MainImage" VerticalAlignment="Center"
 			Width="1123" Source="../Assets/Extra Images/simpledesktops_rising_sun.png" 
-			Margin="0,0,-643,0"  Opacity="1.0" RenderTransformOrigin="0,0.5" Stretch="UniformToFill" HorizontalAlignment="Left">
+			Margin="0,0,-643,0"  Opacity="0.5" RenderTransformOrigin="0,0.5" Stretch="UniformToFill" HorizontalAlignment="Left">
 			<Image.RenderTransform>
 				<CompositeTransform/>
 			</Image.RenderTransform>

@@ -139,7 +139,7 @@
     
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         
-        <Pivot Background="Black" Title="BeFriend Beta">
+        <Pivot x:Uid="MainPagePivot" Background="Black" Title="BeFriend Beta">
 
           <Pivot.TitleTemplate>
                     <DataTemplate>
@@ -155,29 +155,29 @@
                 </DataTemplate>
             </Pivot.HeaderTemplate>
                 
-                <PivotItem Margin="0,0,0,49" Header="HOME">
+                <PivotItem x:Uid="HomePivotItem" Margin="0,0,0,49" Header="HOME">
                     
                     <views:HomePage/>
 
                 </PivotItem>
 
-            <PivotItem Margin="0,0,0,49" Header="TIMER">
+            <PivotItem x:Uid="TimerPivotItem" Margin="0,0,0,49" Header="TIMER">
                 
                 <views:TimerPage/>
                     
                 </PivotItem>
-                
-            <PivotItem Margin="0,0,0,49" Header="REMINDER">
+
+            <PivotItem x:Uid="ReminderPivotItem" Margin="0,0,0,49" Header="REMINDER">
                 <views:Reminderpage/>
             </PivotItem>
 
-            <PivotItem Margin="0,0,0,49" Header="SETTINGS">
+            <PivotItem x:Uid="SettingsPivotItem" Margin="0,0,0,49" Header="SETTINGS">
                 <ScrollViewer VerticalScrollMode="Enabled">
                     <views:CallandSmsSettings/>
                 </ScrollViewer>
             </PivotItem>
 
-            <PivotItem Margin="0,0,0,49" Header="ABOUT">
+            <PivotItem x:Uid="AboutPivotItem" Margin="0,0,0,49" Header="ABOUT">
                 <ScrollViewer VerticalScrollMode="Auto">
                     <views:AboutPage/>
                 </ScrollViewer>
@@ -185,10 +185,11 @@
             </Pivot>
         
         <CommandBar Background="WhiteSmoke" VerticalAlignment="Bottom" Foreground="Black">
+            
             <AppBarSeparator Foreground="Black" />
-            <AppBarButton Icon="List" Label="Medi-Kit" Foreground="Black"/>
-            <AppBarButton Name="StoreRateButton" Icon="Favorite" Label="Rate" Foreground="Black"
-                          Click="StoreRateButton_OnClick"/>
+            <AppBarButton x:Uid="MediKitAppBarButton" Icon="List" Label="Medi-Kit" Foreground="Black"/>
+            <AppBarButton x:Uid="StoreRateAppBarButton" Name="StoreRateButton" Icon="Favorite" Label="Rate" 
+                          Foreground="Black" Click="StoreRateButton_OnClick"/>
             
             <CommandBar.Content>
                 <TextBlock Margin="20,10" Text="{Binding CommandBarQuote}"
