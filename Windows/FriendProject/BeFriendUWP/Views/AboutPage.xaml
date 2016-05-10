@@ -16,14 +16,7 @@
         </core:EventTriggerBehavior>
     </interactivity:Interaction.Behaviors>
 
-    <Grid>
-    
-        <Grid.Background>
-                <LinearGradientBrush EndPoint="0,1" StartPoint="0.8,1.">
-                    <GradientStop Color="{Binding ThemeColorPrimary}" Offset="0"/>
-                    <GradientStop Color="{Binding ThemeColorSecondary}" Offset="1"/>
-                </LinearGradientBrush>
-        </Grid.Background>
+    <Grid Background="{Binding ThemeColorPrimary}">
 
         <ScrollViewer>
         
@@ -31,7 +24,7 @@
             
                 <Rectangle HorizontalAlignment="Stretch" Height="300">
                     <Rectangle.Fill>
-                        <ImageBrush ImageSource="../Assets/Extra Images/pexels-photo-befriend-about.jpeg"
+                        <ImageBrush ImageSource="../Assets/Extra Images/pexels-photo-befriend-about_compressed.jpg"
                                      Stretch="UniformToFill"></ImageBrush>
                     </Rectangle.Fill>
                 </Rectangle>
@@ -63,7 +56,7 @@
                         </HyperlinkButton.Content>
                     </HyperlinkButton>
 
-                    <HyperlinkButton Padding="10" NavigateUri="https://twitter.com/prajjwaldimri"
+                    <HyperlinkButton Padding="10" Margin="10,0,10,0" NavigateUri="https://twitter.com/prajjwaldimri"
                                      Foreground="Black">
                         <HyperlinkButton.Content>
                             <FontIcon Glyph="&#xf099;" FontSize="18"
@@ -83,7 +76,7 @@
 
                 <Border Margin="10,5,10,10" BorderBrush="GhostWhite" BorderThickness="0.2"/>
                 
-                <TextBlock FontSize="18" Text="Acknowledgments:" FontWeight="Bold" FontFamily="ms-appx:/Fonts/Karla-Bold.ttf#Karla"/>
+                <TextBlock x:Uid="AcknowledgmentHeader" FontSize="18" Text="Acknowledgments:" FontWeight="Bold" FontFamily="ms-appx:/Fonts/Karla-Bold.ttf#Karla"/>
 
                 <TextBlock FontSize="14" Text="www.flaticon.com" FontFamily="ms-appx:/Fonts/Karla-Bold.ttf#Karla"/>
 
@@ -94,9 +87,11 @@
             
         </ScrollViewer>
 
-        <TextBlock Text="Open-Source, Non-Profit and Made for community!" FontSize="35"
+        <TextBlock x:Uid="AboutPageHeader" Text="Open-Source, Non-Profit and Made for community!" FontSize="35"
                    Foreground="AliceBlue" TextWrapping="WrapWholeWords" Margin="10,70,10,10"
                    FontFamily="ms-appx:/Fonts/Pinstripe Limo.ttf#Pinstripe Limo"
-                   TextAlignment="Center"/>
+                   TextAlignment="Center" VerticalAlignment="Top"/>
+
+
     </Grid>
 </UserControl>

@@ -5,17 +5,14 @@ import android.annotation.TargetApi;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,19 +23,12 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.twitter.sdk.android.core.Callback;
-import com.twitter.sdk.android.core.Result;
-import com.twitter.sdk.android.core.TwitterException;
-import com.twitter.sdk.android.core.TwitterSession;
 import com.twitter.sdk.android.core.identity.OAuthActivity;
-import com.twitter.sdk.android.tweetcomposer.TweetComposer;
 import com.twitter.sdk.android.core.identity.TwitterLoginButton;
 
 import twitter4j.Twitter;
 import twitter4j.auth.AccessToken;
 import twitter4j.auth.RequestToken;
-
-import static android.provider.ContactsContract.CommonDataKinds.Phone;
 
 public class SettingPageFragment extends android.support.v4.app.Fragment implements View.OnClickListener {
     private TwitterLoginButton twitterLoginButton;
@@ -47,8 +37,8 @@ public class SettingPageFragment extends android.support.v4.app.Fragment impleme
     Notification mynotification;
     View view;
     Switch theme, toast;
-    TextView pname,phoneno,tv3,tv4;
-    Button contact1,contact2, contact3,contact4,Register,_loginButton;
+    TextView pname, phoneno, tv3, tv4;
+    Button contact1, contact2, contact3, contact4, Register, _loginButton;
     private Context context;
     EditText _edittext;
     private boolean isUseStoredTokenKey = false;
@@ -71,8 +61,8 @@ public class SettingPageFragment extends android.support.v4.app.Fragment impleme
         view = inflater.inflate(R.layout.fragment_settingpage, container, false);
         toast = (Switch) view.findViewById(R.id.switch1);
         theme = (Switch) view.findViewById(R.id.switch2);
-        _edittext=(EditText) view.findViewById(R.id.edittext);
-        _loginButton=(Button) view.findViewById(R.id.loginbutton);
+        _edittext = (EditText) view.findViewById(R.id.edittext);
+        _loginButton = (Button) view.findViewById(R.id.loginbutton);
         _loginButton.setOnClickListener(this);
         //s3 = (Switch) view.findViewById(R.id.switch3);
 
@@ -131,14 +121,13 @@ public class SettingPageFragment extends android.support.v4.app.Fragment impleme
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.loginbutton:
-                if (ConstantValues.TWITTER_CONSUMER_KEY==null ||ConstantValues.TWITTER_CONSUMER_SECRET==null) {
+                if (ConstantValues.TWITTER_CONSUMER_KEY == null || ConstantValues.TWITTER_CONSUMER_SECRET == null) {
                     Toast.makeText(getActivity().getApplicationContext(), "Twitter oAuth infos:Please set your twitter consumer key and consumer secret", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
-                if (isUseStoredTokenKey)
+                else {
                     logIn();
-
+                }
                 break;
            /* case R.id.button2:
                 Intent contactpicker = new Intent(Intent.ACTION_PICK, Phone.CONTENT_URI);
@@ -162,15 +151,13 @@ public class SettingPageFragment extends android.support.v4.app.Fragment impleme
 
 
     }
+
     private void logIn() {
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext());
-        if (!sharedPreferences.getBoolean(ConstantValues.PREFERENCE_TWITTER_IS_LOGGED_IN,false))
-        {
+        if (!sharedPreferences.getBoolean(ConstantValues.PREFERENCE_TWITTER_IS_LOGGED_IN, false)) {
             new TwitterAuthenticateTask().execute();
-        }
-        else
-        {
+        } else {
             initControl();
         }
     }
@@ -179,28 +166,16 @@ public class SettingPageFragment extends android.support.v4.app.Fragment impleme
 
         @Override
         protected void onPostExecute(RequestToken requestToken) {
-            if (requestToken!=null)
-            {
-                if (!isUseWebViewForAuthentication)
-                {
-
-                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(requestToken.getAuthenticationURL()));
-                    startActivity(intent);
-                }
-                else
-                {
-                    Intent intent = new Intent(getActivity().getApplicationContext(), Web_view_Activity.class);
-                    intent.putExtra(ConstantValues.STRING_EXTRA_AUTHENCATION_URL,requestToken.getAuthenticationURL());
-                    startActivity(intent);
-                }
-            }
+            Intent intent = new Intent(getActivity().getApplicationContext(), OAuth_Activity.class);
+            intent.putExtra(ConstantValues.STRING_EXTRA_AUTHENCATION_URL, requestToken.getAuthenticationURL());
+            startActivity(intent);
         }
-
         @Override
         protected RequestToken doInBackground(String... params) {
             return TwitterUtil.getInstance().getRequestToken();
         }
     }
+
     private void initControl() {
         Uri uri = getActivity().getIntent().getData();
         if (uri != null && uri.toString().startsWith(ConstantValues.TWITTER_CALLBACK_URL)) {

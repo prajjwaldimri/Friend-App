@@ -21,7 +21,7 @@ namespace BeFriend.Views
         private async void StoreRateButton_OnClick(object sender, RoutedEventArgs e)
         {
             //TODO: Replace with correct Product ID
-            var uri = new Uri("ms-windows-store://review/?ProductId=9WZDNCRFHVJL ");
+            var uri = new Uri("ms-windows-store://review/?ProductId=9NBLGGH4Q8NG");
             await Launcher.LaunchUriAsync(uri);
         }
     }

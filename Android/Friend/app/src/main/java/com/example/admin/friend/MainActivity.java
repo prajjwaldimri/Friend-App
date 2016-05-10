@@ -12,7 +12,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
+import com.ogaclejapan.smarttablayout.SmartTabLayout;
+import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
+import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 import io.fabric.sdk.android.Fabric;
@@ -34,46 +38,25 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
+                getSupportFragmentManager(), FragmentPagerItems.with(this)
+                .add("Home", HomePagefragment.class)
+                .add("Settings", SettingPageFragment.class)
+                .add("Timer", TimerPageFragment.class)
+                .add("Reminder", ReminderPage.class)
+                .create());
+
         viewPager = (ViewPager) findViewById(R.id.viewpager);
-        setupViewPager(viewPager);
-        tabLayout = (TabLayout) findViewById(R.id.tabs);
-        tabLayout.setupWithViewPager(viewPager);
-
-        for(int i=0;i<tabLayout.getTabCount();i++)
-        {
-            switch(i)
-            {
-                case 0:
-                    tabLayout.getTabAt(i).setIcon(R.drawable.ic_action_name);
-                    break;
-                case 1:
-                    tabLayout.getTabAt(i).setIcon(R.drawable.ic_action_name2);
-                    break;
-                case 2:
-                    tabLayout.getTabAt(i).setIcon(R.drawable.ic_action_name3);
-                    break;
-                case 3:
-                    tabLayout.getTabAt(i).setIcon(R.drawable.ic_action_name4);
-                    break;
-                case 4:
-                    tabLayout.getTabAt(i).setIcon(R.drawable.ic_action_name5);
-                    break;
-                default:
-                    break;
-            }
-
-        }
-    }
-
-    private void setupViewPager(ViewPager viewPager) {
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-
-        adapter.addFragment(new HomePagefragment(), "Home");
-        adapter.addFragment(new SettingPageFragment(), "Settings");
-        adapter.addFragment(new TimerPageFragment(), "Timer");
-        adapter.addFragment(new ReminderPage(), "Reminder");
         viewPager.setAdapter(adapter);
+
+        SmartTabLayout viewPagerTab = (SmartTabLayout) findViewById(R.id.tabs);
+        viewPagerTab.setViewPager(viewPager);
+
+        TextView tx = (TextView)findViewById(R.id.toolbarTextView);
+        Typeface custom_font = Typeface.createFromAsset(getAssets(), "UBUNTU-R.TTF");
+        tx.setTypeface(custom_font);
     }
+
 
     class ViewPagerAdapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();
