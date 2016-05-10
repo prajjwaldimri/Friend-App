@@ -95,7 +95,7 @@
             <Button.Content>
                 <StackPanel>
                     <SymbolIcon Symbol="ReportHacked"/>
-                    <TextBlock HorizontalAlignment="Center" 
+                    <TextBlock x:Uid="HomePageEmergency" HorizontalAlignment="Center" 
                                Margin="0,10,0,0" Text="Emergency!" 
                                TextWrapping="WrapWholeWords"/>
                 </StackPanel>
@@ -115,7 +115,7 @@
             <Button.Content>
                 <StackPanel>
                     <SymbolIcon Symbol="Help"/>
-                    <TextBlock HorizontalAlignment="Center" 
+                    <TextBlock x:Uid="HomePageSupport" HorizontalAlignment="Center" 
                                Margin="0,10,0,0" Text="Support"
                                TextWrapping="WrapWholeWords"/>
                 </StackPanel>

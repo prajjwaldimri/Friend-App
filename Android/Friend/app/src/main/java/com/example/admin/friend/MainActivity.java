@@ -15,7 +15,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
+import com.ogaclejapan.smarttablayout.SmartTabLayout;
+import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
+import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 import io.fabric.sdk.android.Fabric;
@@ -73,12 +77,19 @@ public class MainActivity extends AppCompatActivity {
                 default:
                     break;
             }
+        FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
+                getSupportFragmentManager(), FragmentPagerItems.with(this)
+                .add("Home", HomePagefragment.class)
+                .add("Settings", SettingPageFragment.class)
+                .add("Timer", TimerPageFragment.class)
+                .add("Reminder", ReminderPage.class)
+                .create());
 
-        }
-    }
+        viewPager = (ViewPager) findViewById(R.id.viewpager);
+        viewPager.setAdapter(adapter);
 
-    private void setupViewPager(ViewPager viewPager) {
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        SmartTabLayout viewPagerTab = (SmartTabLayout) findViewById(R.id.tabs);
+        viewPagerTab.setViewPager(viewPager);
 
         adapter.addFragment(new HomePagefragment(), "Home");
         adapter.addFragment(new SettingPageFragment(), "Settings");
@@ -86,7 +97,11 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFragment(new ReminderPage(), "Reminder");
         viewPager.setAdapter(adapter);
 
+        TextView tx = (TextView)findViewById(R.id.toolbarTextView);
+        Typeface custom_font = Typeface.createFromAsset(getAssets(), "UBUNTU-R.TTF");
+        tx.setTypeface(custom_font);
     }
+
 
     class ViewPagerAdapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();

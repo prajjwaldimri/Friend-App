@@ -148,19 +148,20 @@
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="CortanaVCD.xml" />
     <Content Include="Fonts\AGAINTS.TTF" />
     <Content Include="Fonts\UBUNTU-R.TTF" />
     <Content Include="Fonts\TNALOGO.TTF" />
     <Content Include="Fonts\fontawesome-webfont.ttf" />
     <Content Include="Fonts\HirukoStencil.otf" />
     <Content Include="Fonts\TT1255M_.TTF" />
-    <Content Include="TwitterConsumerSecret.txt" />
-    <Content Include="TwitterConsumerKey.txt" />
     <Content Include="BeFriendBot.simlpk">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Fonts\Karla-Regular.ttf" />
     <Content Include="Fonts\Karla-Bold.ttf" />
+    <Content Include="TwitterConsumerKey.txt" />
+    <Content Include="TwitterConsumerSecret.txt" />
     <None Include="app.config" />
     <None Include="ApplicationInsights.config" />
     <None Include="BeFriendUWP_StoreKey.pfx" />

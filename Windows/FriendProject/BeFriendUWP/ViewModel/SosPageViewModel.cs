@@ -64,9 +64,8 @@ namespace BeFriend.ViewModel
 
             if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
                 return;
-            //TODO: Get messaging permission
             
-            //MessageSender();
+            MessageSender();
             
         }
 
@@ -147,7 +146,7 @@ namespace BeFriend.ViewModel
                 }
                 catch (Exception ex)
                 {
-                    //textBox.Text = ex.Message;
+                    Debug.WriteLine(ex);
                     return;
                 }
 
@@ -159,7 +158,7 @@ namespace BeFriend.ViewModel
             var msg = new SmsTextMessage2
             {
                 To = _phonenumber,
-                Body = Message+"My coordinates are\n Latitude:" + _latitude + "Longitude \n" + _longitude
+                Body = Message+"\t My coordinates are\n Latitude:" + _latitude + "Longitude \n" + _longitude
             };
             var result = await _device.SendMessageAndGetResultAsync(msg);
             SosPageText += "Sending Message.... \n";

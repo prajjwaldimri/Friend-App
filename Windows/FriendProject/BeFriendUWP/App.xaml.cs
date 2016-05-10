@@ -80,7 +80,14 @@ namespace BeFriend
 
                     var registration = builder.Register();
 
-                    
+                    // Install the main VCD. 
+                    var vcdStorageFile =
+                     await Package.Current.InstalledLocation.GetFileAsync(
+                       @"CortanaVCD.xml");
+
+                    await Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager.
+                     InstallCommandDefinitionsFromStorageFileAsync(vcdStorageFile);
+
                 }
                 catch (Exception ex)
                 {
@@ -148,8 +155,6 @@ namespace BeFriend
                     
                 }
 
-
-
                 if (rootFrame.Content == null)
                 {
                     // When the navigation stack isn't restored navigate to the first page,
@@ -160,6 +165,43 @@ namespace BeFriend
                 else
                 {
                     rootFrame.Navigate(typeof (Sospage));
+                }
+
+                if (rootFrame.BackStack.Count == 0)
+                    rootFrame.BackStack.Add(new PageStackEntry(typeof(HomePage), null, null));
+            }
+
+            else if (e.Kind == Windows.ApplicationModel.Activation.ActivationKind.VoiceCommand)
+            {
+                if (rootFrame == null)
+                {
+                    // Create a Frame to act as the navigation context and navigate to the first page
+                    rootFrame = new Frame();
+
+                    rootFrame.NavigationFailed += OnNavigationFailed;
+
+                    //await CopyDatabase();
+
+                    if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
+                    {
+                        //TODO: Load state from previously suspended application
+                    }
+
+                    // Place the frame in the current Window
+                    Window.Current.Content = rootFrame;
+
+                }
+
+                if (rootFrame.Content == null)
+                {
+                    // When the navigation stack isn't restored navigate to the first page,
+                    // configuring the new page by passing required information as a navigation
+                    // parameter
+                    rootFrame.Navigate(typeof(Sospage));
+                }
+                else
+                {
+                    rootFrame.Navigate(typeof(Sospage));
                 }
 
                 if (rootFrame.BackStack.Count == 0)

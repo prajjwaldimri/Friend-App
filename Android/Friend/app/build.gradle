@@ -44,4 +44,9 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.2.0'
     compile 'com.android.support:design:23.2.0'
     compile 'com.android.support:support-v4:23.2.0'
+    compile 'com.ogaclejapan.smarttablayout:library:1.6.1@aar'
+    compile 'com.ogaclejapan.smarttablayout:utils-v4:1.6.1@aar'
+    compile 'de.hdodenhof:circleimageview:2.0.0'
+    compile 'net.steamcrafted:materialiconlib:1.0.9'
+    compile 'com.skyfishjy.ripplebackground:library:1.0.1'
 }

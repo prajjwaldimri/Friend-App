@@ -2,9 +2,9 @@
   "dependencies": {
     "Microsoft.Bcl.Build": "1.0.21",
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.1.0",
-    "NotificationsExtensions.Win10": "14295.0.0",
+    "NotificationsExtensions.Win10": "14295.0.1",
     "QueryString.NET": "1.0.0",
-    "TweetinviAPI": "0.9.11.2"
+    "TweetinviAPI": "0.9.12.2"
   },
   "frameworks": {
     "uap10.0": {}

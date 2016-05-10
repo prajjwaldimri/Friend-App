@@ -21,10 +21,14 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -44,6 +48,7 @@ public class HomePagefragment extends android.support.v4.app.Fragment {
 TextView location;
     Bitmap bmp;
     ImageView iv;
+    Button emergency;
     public HomePagefragment() {
 
     }
@@ -60,7 +65,15 @@ TextView location;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_homepage, container, false);
         iv = (ImageView) view.findViewById(R.id.profileImageView);
+        emergency=(Button)view.findViewById(R.id.sosNavigatorButton);
         location=(TextView)view.findViewById(R.id.textView9);
+        emergency.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent nextScreen = new Intent(getActivity(), Sospageactivity.class);
+                startActivity(nextScreen);
+            }
+        });
         iv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -134,10 +147,10 @@ TextView location;
         assert cursor != null;
         cursor.moveToFirst();
         int columnIndx=cursor.getColumnIndex(filepathColumn[0]);
-        String piturepath=cursor.getString(columnIndx);
+        String picturepath=cursor.getString(columnIndx);
         cursor.close();
 
-        return piturepath;
+        return picturepath;
 
     }
 
@@ -168,9 +181,14 @@ TextView location;
 
     public boolean retrieveImage(){
         File f = new File(Environment.getExternalStorageDirectory()+"/friend's/myProfile.jpeg");
-        Bitmap bmp = BitmapFactory.decodeFile(f.getAbsolutePath());
-        iv.setImageBitmap(bmp);
-        return  true;
+        if(f.canRead()) {
+            Bitmap bmp = BitmapFactory.decodeFile(f.getAbsolutePath());
+            iv.setImageBitmap(bmp);
+            return true;
+        }
+        else{
+            return false;
+        }
 
     }
 
