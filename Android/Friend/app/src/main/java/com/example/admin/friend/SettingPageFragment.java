@@ -30,7 +30,8 @@ import twitter4j.Twitter;
 import twitter4j.auth.AccessToken;
 import twitter4j.auth.RequestToken;
 
-public class SettingPageFragment extends android.support.v4.app.Fragment implements View.OnClickListener {
+@SuppressWarnings("ResultOfMethodCallIgnored")
+public class SettingPageFragment extends android.support.v4.app.Fragment implements View.OnClickListener,CompoundButton.OnCheckedChangeListener {
     private TwitterLoginButton twitterLoginButton;
     private static final int CONTACT_PICKER = 1001;
     private static final int RESULT_OK = 1;
@@ -43,6 +44,8 @@ public class SettingPageFragment extends android.support.v4.app.Fragment impleme
     EditText _edittext;
     private boolean isUseStoredTokenKey = false;
     private boolean isUseWebViewForAuthentication = false;
+    String _themecolor="#f25f5c";
+    SharedPreferences _themeShared;
 
 
     public SettingPageFragment() {
@@ -59,8 +62,8 @@ public class SettingPageFragment extends android.support.v4.app.Fragment impleme
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_settingpage, container, false);
-        toast = (Switch) view.findViewById(R.id.switch1);
-        theme = (Switch) view.findViewById(R.id.switch2);
+        toast = (Switch) view.findViewById(R.id.switch2);
+        theme = (Switch) view.findViewById(R.id.switch1);
         _edittext = (EditText) view.findViewById(R.id.edittext);
         _loginButton = (Button) view.findViewById(R.id.loginbutton);
         _loginButton.setOnClickListener(this);
@@ -85,35 +88,7 @@ public class SettingPageFragment extends android.support.v4.app.Fragment impleme
         contact4.setOnClickListener(this);
         Register.setOnClickListener(this);
 */
-        toast.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (toast.isChecked()) {
-                    String title = "Friend";
-                    String subject = "Notification by friend app";
-                    String body = "notification";
-                    NotificationManager manager = (NotificationManager) getActivity().getSystemService(Context.NOTIFICATION_SERVICE);
-                    Notification.Builder builder = new Notification.Builder(getActivity());
-                    builder.setContentTitle(title);
-                    builder.setContentText(subject);
-                    builder.setSmallIcon(R.mipmap.ic_launcher);
-                    builder.setOngoing(true);
-                    builder.build();
-                    PendingIntent pendingIntent = PendingIntent.getActivity(getContext(), 0, new Intent(), 0);
-                    mynotification = builder.getNotification();
-                    manager.notify(11, mynotification);
-
-                } else {
-
-                }
-            }
-        });
-
-
-        return view;
-
-
+              return view;
     }
 
 
@@ -160,6 +135,55 @@ public class SettingPageFragment extends android.support.v4.app.Fragment impleme
         } else {
             initControl();
         }
+    }
+
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+    @Override
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        switch (buttonView.getId()){
+            case R.id.switch2:
+                if (toast.isChecked()) {
+                    String title = "Friend";
+                    String subject = "Notification by friend app";
+                    String body = "notification";
+                    NotificationManager manager = (NotificationManager) getActivity().getSystemService(Context.NOTIFICATION_SERVICE);
+                    Notification.Builder builder = new Notification.Builder(getActivity());
+                    builder.setContentTitle(title);
+                    builder.setContentText(subject);
+                    builder.setSmallIcon(R.mipmap.ic_launcher);
+                    builder.setOngoing(true);
+                    builder.build();
+                    PendingIntent pendingIntent = PendingIntent.getActivity(getContext(), 0, new Intent(), 0);
+                    mynotification = builder.getNotification();
+                    manager.notify(11, mynotification);
+
+                } else {
+
+                }
+
+                break;
+            case R.id.switch1:
+                if (theme.isChecked()){
+                    _themecolor.replace(_themecolor,"#247ba0");
+                    _themeShared=PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext());
+                    SharedPreferences.Editor _themeEditor=_themeShared.edit();
+                    _themeEditor.putString("#247ba0",_themecolor);
+                    _themeEditor.apply();
+                }
+                else {
+                    SharedPreferences _themeShared=PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext());
+                    SharedPreferences.Editor _themeEditor=_themeShared.edit();
+                    _themeEditor.putString("#f25f5c",_themecolor);
+                    _themeEditor.apply();
+                }
+                if (_themecolor.equals(_themeShared)) {
+
+                    getActivity().setTheme(Integer.parseInt(_themecolor));
+                }
+                break;
+        }
+
+
     }
 
     class TwitterAuthenticateTask extends AsyncTask<String, String, RequestToken> {

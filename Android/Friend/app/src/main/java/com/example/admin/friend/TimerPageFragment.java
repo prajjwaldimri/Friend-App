@@ -1,9 +1,11 @@
 package com.example.admin.friend;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.preference.PreferenceManager;
 import android.telephony.SmsManager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -56,7 +58,13 @@ Button holdButton;
                return true;
            }
        });
-return  view;
+        SettingPageFragment settingPageFragment=new SettingPageFragment();
+       settingPageFragment._themeShared= PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext());
+        settingPageFragment._themecolor=settingPageFragment._themeShared.toString();
+        if (settingPageFragment._themecolor.equals(settingPageFragment._themeShared)) {
+            getActivity().setTheme(Integer.parseInt(settingPageFragment._themecolor));
+        }
+        return  view;
     }
     public void spine() {
         String phoneNumber = "tel:7830207022";

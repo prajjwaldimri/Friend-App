@@ -1,8 +1,11 @@
 package com.example.admin.friend;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -38,6 +41,15 @@ public class MainActivity extends AppCompatActivity {
         setupViewPager(viewPager);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
+        SettingPageFragment settingPageFragment=new SettingPageFragment();
+       settingPageFragment._themeShared= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        settingPageFragment._themecolor=settingPageFragment._themeShared.toString();
+        if (settingPageFragment._themecolor.equals(settingPageFragment._themeShared)){
+            getApplication().setTheme(Integer.parseInt(settingPageFragment._themecolor));
+
+        }
+
+
 
         for(int i=0;i<tabLayout.getTabCount();i++)
         {
@@ -73,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFragment(new TimerPageFragment(), "Timer");
         adapter.addFragment(new ReminderPage(), "Reminder");
         viewPager.setAdapter(adapter);
+
     }
 
     class ViewPagerAdapter extends FragmentPagerAdapter {

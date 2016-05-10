@@ -3,6 +3,7 @@ package com.example.admin.friend;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -18,6 +19,7 @@ import android.location.Geocoder;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -66,7 +68,12 @@ TextView location;
 
             }
         });
-
+        SettingPageFragment settingPageFragment=new SettingPageFragment();
+        settingPageFragment._themeShared= PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext());
+        settingPageFragment._themecolor=settingPageFragment._themeShared.toString();
+        if (settingPageFragment._themecolor.equals(settingPageFragment._themeShared)) {
+            getActivity().setTheme(Integer.parseInt(settingPageFragment._themecolor));
+        }
   retrieveImage();
 
 
