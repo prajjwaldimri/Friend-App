@@ -69,6 +69,18 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="#fff" />
 
+        <net.steamcrafted.materialiconlib.MaterialIconView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:materialIcon="account_circle"
+        app:materialIconColor="#fff"
+        app:materialIconSize="24dp"
+        android:scaleType="center"
+            android:id="@+id/icon"
+            android:layout_row="1"
+            android:layout_column="1" />
+
         <TextView
             android:id="@+id/textView6"
             android:layout_column="0"
