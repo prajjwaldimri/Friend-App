@@ -1,8 +1,11 @@
 package com.example.admin.friend;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -38,6 +41,42 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        viewPager = (ViewPager) findViewById(R.id.viewpager);
+        setupViewPager(viewPager);
+        tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(viewPager);
+        SettingPageFragment settingPageFragment=new SettingPageFragment();
+       settingPageFragment._themeShared= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        settingPageFragment._themecolor=settingPageFragment._themeShared.toString();
+        if (settingPageFragment._themecolor.equals(settingPageFragment._themeShared)){
+            getApplication().setTheme(Integer.parseInt(settingPageFragment._themecolor));
+
+        }
+
+
+
+        for(int i=0;i<tabLayout.getTabCount();i++)
+        {
+            switch(i)
+            {
+                case 0:
+                    tabLayout.getTabAt(i).setIcon(R.drawable.ic_action_name);
+                    break;
+                case 1:
+                    tabLayout.getTabAt(i).setIcon(R.drawable.ic_action_name2);
+                    break;
+                case 2:
+                    tabLayout.getTabAt(i).setIcon(R.drawable.ic_action_name3);
+                    break;
+                case 3:
+                    tabLayout.getTabAt(i).setIcon(R.drawable.ic_action_name4);
+                    break;
+                case 4:
+                    tabLayout.getTabAt(i).setIcon(R.drawable.ic_action_name5);
+                    break;
+                default:
+                    break;
+            }
         FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(), FragmentPagerItems.with(this)
                 .add("Home", HomePagefragment.class)
@@ -51,6 +90,12 @@ public class MainActivity extends AppCompatActivity {
 
         SmartTabLayout viewPagerTab = (SmartTabLayout) findViewById(R.id.tabs);
         viewPagerTab.setViewPager(viewPager);
+
+        adapter.addFragment(new HomePagefragment(), "Home");
+        adapter.addFragment(new SettingPageFragment(), "Settings");
+        adapter.addFragment(new TimerPageFragment(), "Timer");
+        adapter.addFragment(new ReminderPage(), "Reminder");
+        viewPager.setAdapter(adapter);
 
         TextView tx = (TextView)findViewById(R.id.toolbarTextView);
         Typeface custom_font = Typeface.createFromAsset(getAssets(), "UBUNTU-R.TTF");
