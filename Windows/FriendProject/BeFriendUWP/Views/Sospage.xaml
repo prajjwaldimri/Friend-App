@@ -7,6 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
     xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:views="using:BeFriend.Views"
     mc:Ignorable="d"
     DataContext="{Binding SosPage,Source={StaticResource ViewModelLocator}}"
     RequestedTheme="Light">
@@ -23,7 +24,14 @@
         </core:EventTriggerBehavior>
     </interactivity:Interaction.Behaviors>
     
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock Text="{Binding SosPageText}"></TextBlock>
-    </Grid>
+    <StackPanel Margin="0,0,0,0" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <views:GifView
+            x:Name="GifView"
+            Margin="0,60,0,0"
+            Stretch="None"
+            UriSource="ms-appx:///Assets/Extra Images/477.gif"/>
+        
+        <TextBlock Margin="20,0,0,0" Text="{Binding SosPageText}" FontFamily="ms-appx:/Fonts/UBUNTU-R.TTF#Ubuntu"/>
+    </StackPanel>
 </Page>
