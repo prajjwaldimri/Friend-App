@@ -80,7 +80,7 @@
             <Button.Content>
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
                     <Image Source="../Assets/Extra Images/phone.png" Width="64" Height="64" />
-                    <TextBlock Text="Hold" FontSize="25" HorizontalAlignment="Center"  Margin="0,0,0,0"
+                    <TextBlock x:Uid="TimerPageHold" Text="Hold" FontSize="25" HorizontalAlignment="Center"  Margin="0,0,0,0"
                    Foreground="Black" FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontWeight="Bold" />
                 </StackPanel>
             </Button.Content>
@@ -92,7 +92,7 @@
             <Button.Content>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <SymbolIcon Symbol="Stop" Height="50" Margin="0,0,10,0"/>
-                    <TextBlock Text="Stop" FontSize="25" VerticalAlignment="Center" FontWeight="ExtraBold"/>
+                    <TextBlock x:Uid="TimerPageStop" Text="Stop" FontSize="25" VerticalAlignment="Center" FontWeight="ExtraBold"/>
                 </StackPanel>
             </Button.Content>
         </Button>

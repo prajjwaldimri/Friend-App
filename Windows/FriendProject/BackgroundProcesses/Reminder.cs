@@ -72,7 +72,7 @@ namespace BackgroundProcesses
         private static void TimerStarter()
         {
             LocationAccesser();
-            //MessageSender();
+            MessageSender();
             TwitterPoster();
             FacebookPoster();
             if (!Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
@@ -132,12 +132,6 @@ namespace BackgroundProcesses
 
         private static async void MessageSender()
         {
-            if (!ApplicationData.Current.LocalSettings.Values.ContainsKey("SmsOn"))
-            {
-                //var messageDialog= new MessageDialog("SMS Permission Denied");
-                //await messageDialog.ShowAsync();
-                return;
-            }
             if (_device == null)
             {
                 try

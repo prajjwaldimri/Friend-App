@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.2">
+  <CommandSet xml:lang="en-us" Name="BeFriendBetaCommandSet_en-us">
+    <AppName> BeFriend </AppName>
+    <Example> Help </Example>
+ 
+    <Command Name="launchSOS">
+      <Example> show trip to London </Example>
+      <ListenFor RequireAppName="BeforeOrAfterPhrase"> Help </ListenFor>
+      <Feedback> Don't Worry, I'm here. Launching the App </Feedback>
+      <Navigate />
+    </Command>
+ 
+  </CommandSet>
+<!-- Other CommandSets for other languages -->
+</VoiceCommands>
+
+

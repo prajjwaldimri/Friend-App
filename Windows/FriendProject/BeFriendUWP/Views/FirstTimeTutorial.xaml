@@ -338,7 +338,8 @@
 
             <TextBlock Name="DedicatedTextBox" Foreground="GhostWhite" FontSize="35"
                        VerticalAlignment="Center" HorizontalAlignment="Center" 
-                       FontFamily="ms-appx:/Fonts/AGAINTS.TTF#Againts">
+                       FontFamily="ms-appx:/Fonts/AGAINTS.TTF#Againts"
+                       x:Uid="FirstTimeTutorialMemory">
                 Dedicated to all crime victims
             </TextBlock>
         </Grid>
@@ -386,22 +387,26 @@
 
 				<StackPanel VerticalAlignment="Top" HorizontalAlignment="Stretch">
 
-					<TextBlock Margin="0,20,0,20" Foreground="White" Text="Let's Get Started!"
+					<TextBlock x:Uid="FirstTimeTutorialStart" Margin="0,20,0,20" Foreground="White" Text="Let's Get Started!"
 						HorizontalAlignment="Center" FontSize="30" FontFamily="ms-appx:/Fonts/Brandon_bld.otf#Brandon Grotesque Bold" 
 						FontWeight="Bold"/>
 
-					<TextBlock Margin="0,20,0,20" Foreground="White" Text="Enter your name and choose a profile pic"
+					<TextBlock x:Uid="FirstTimeTutorialName" Margin="0,20,0,20" Foreground="White" 
+                               Text="Enter your name and choose a profile pic"
 						HorizontalAlignment="Center" FontSize="20" FontFamily="ms-appx:/Fonts/UBUNTU-R.TTF#Ubuntu" 
 						FontWeight="Bold" TextWrapping="WrapWholeWords" TextAlignment="Center"/>
-					<TextBox x:Name="UserNameTextBox"
+                    
+					<TextBox x:Name="UserNameTextBox" x:Uid="FirstTimeTutorialUserName"
 						BorderThickness="0" AcceptsReturn="False"
 						Margin="50,20,50,0" PlaceholderText="Name..."
 						FontSize="20" Background="White" />
 					<StackPanel HorizontalAlignment="Center" Margin="50,20,50,0">
 
-						<Button RequestedTheme="Dark" Click="PictureButton_OnClick" Content="Click to choose a picture"/>
+						<Button x:Uid="FirstTimeTutorialPictureButton" RequestedTheme="Dark" Click="PictureButton_OnClick"
+                                Content="Click to choose a picture"/>
 
-						<TextBlock HorizontalAlignment="Center" x:Name="DisplaypicPathTextBlock" Margin="0,10,0,0" RequestedTheme="Dark" Text="No picture selected"/>
+						<TextBlock x:Uid="FirstTimeTutorialNoPicture" HorizontalAlignment="Center" x:Name="DisplaypicPathTextBlock" Margin="0,10,0,0" RequestedTheme="Dark"
+                                   Text="No picture selected"/>
 
 					</StackPanel>
 				</StackPanel>
@@ -411,17 +416,19 @@
 			<PivotItem>
 
 				<StackPanel VerticalAlignment="Top" HorizontalAlignment="Stretch">
+                    
 					<TextBlock Margin="0,20,0,50" Foreground="White" Text="Choose 3 people whom you would like to inform if you're ever in danger!"
 						HorizontalAlignment="Center" FontSize="20" 
 						FontFamily="ms-appx:/Fonts/UBUNTU-R.TTF#Ubuntu" FontWeight="Bold" TextWrapping="WrapWholeWords"
-						TextAlignment="Center"/>
+						TextAlignment="Center" x:Uid="FirstTimeTutorialContactTutorial"/>
 
 					<StackPanel HorizontalAlignment="Center" x:Name="FirstContactPanel" Tapped="FirstContactPanel_OnTapped" 
 						Margin="20,10,20,10" RequestedTheme="Dark" Orientation="Horizontal">
 						<Viewbox MaxHeight="30">
 							<SymbolIcon Symbol="Contact2"/>
 						</Viewbox>
-						<TextBlock Text="Click here to set contact 1..." x:Name="FirstContactTextBlock"
+                        
+						<TextBlock x:Uid="FirstTimeTutorialContactChooserOne" Text="Click here to set contact 1..." x:Name="FirstContactTextBlock"
 							Margin="10,0,10,0" VerticalAlignment="Center" FontSize="16"/>
 					</StackPanel>
 
@@ -430,7 +437,7 @@
 						<Viewbox MaxHeight="30">
 							<SymbolIcon Symbol="Contact2"/>
 						</Viewbox>
-						<TextBlock Text="Click here to set contact 2..." x:Name="SecondContactTextBlock"
+                            <TextBlock x:Uid="FirstTimeTutorialContactChooserTwo" Text="Click here to set contact 2..." x:Name="SecondContactTextBlock"
 							Margin="10,0,10,0" VerticalAlignment="Center" FontSize="16"/>
 					</StackPanel>
 
@@ -439,7 +446,7 @@
 						<Viewbox MaxHeight="30">
 							<SymbolIcon Symbol="Contact2"/>
 						</Viewbox>
-						<TextBlock Text="Click here to set contact 3..." x:Name="ThirdContactTextBlock"
+                            <TextBlock x:Uid="FirstTimeTutorialContactChooserThree" Text="Click here to set contact 3..." x:Name="ThirdContactTextBlock"
 							Margin="10,0,10,0" VerticalAlignment="Center" FontSize="16"/>
 					</StackPanel>
 
@@ -449,7 +456,7 @@
 							<StackPanel Orientation="Horizontal">
 								<FontIcon Glyph="&#xF081;" FontSize="30"
 									FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"/>
-								<TextBlock Margin="10,0,10,0" VerticalAlignment="Center"
+								<TextBlock Margin="10,0,10,0" VerticalAlignment="Center" x:Uid="FirstTimeTutorialTwitter"
 									Text="Add Twitter" FontSize="16"/>
 							</StackPanel>
 						</Button>
@@ -457,7 +464,7 @@
 							<StackPanel Orientation="Horizontal">
 								<FontIcon Glyph="&#xF230;" FontSize="30"
 									FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"/>
-								<TextBlock Margin="10,0,10,0" VerticalAlignment="Center"
+								<TextBlock Margin="10,0,10,0" VerticalAlignment="Center" x:Uid="FirstTimeTutorialFacebook"
 									Text="Add Facebook" FontSize="16"/>
 							</StackPanel>
 						</Button>
@@ -471,15 +478,19 @@
 
 				<ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Enabled">
 				<StackPanel VerticalAlignment="Top" HorizontalAlignment="Stretch">
-					<TextBlock Margin="0,20,0,20" Foreground="White" Text="Tutorial 1"
+					
+                    <TextBlock Margin="0,20,0,20" Foreground="White" Text="Tutorial 1"
+                               x:Uid="FirstTimeTutorialOne"
 						HorizontalAlignment="Center" FontSize="30" FontFamily="ms-appx:/Fonts/Brandon_bld.otf#Brandon Grotesque Bold" 
 						FontWeight="Bold"/>
-					<TextBlock Margin="0,0,0,10" Foreground="White" Text="Timer Page"
+                    
+					<TextBlock Margin="0,0,0,10" Foreground="White" Text="Timer Page" x:Uid="FirstTimeTutorialOneHeader"
 						HorizontalAlignment="Center" FontSize="20" 
 						FontFamily="ms-appx:/Fonts/UBUNTU-R.TTF#Ubuntu" FontWeight="Bold" TextWrapping="WrapWholeWords"
 						TextAlignment="Center"/>
-					<TextBlock Margin="0,0,0,0" Foreground="White" Text="Whenever you are suspicious of someone following you or you suspect you're in danger go to this page and hold the button. If your finger lifts from the button it triggers a countdown which will open SOS page if it reaches 00:00:00"
-						HorizontalAlignment="Center" FontSize="16" TextWrapping="WrapWholeWords"
+					
+                    <TextBlock Margin="0,0,0,0" Foreground="White" Text="Whenever you are suspicious of someone following you or you suspect you're in danger go to this page and hold the button. If your finger lifts from the button it triggers a countdown which will open SOS page if it reaches 00:00:00"
+						HorizontalAlignment="Center" FontSize="16" TextWrapping="WrapWholeWords" x:Uid="FirstTimeTutorialOneDescription"
 						TextAlignment="Center"/>
 					<Image Source="../Assets/Extra Images/BeFriendTimerPageMockup.png"/>
 
@@ -496,14 +507,17 @@
 				<StackPanel VerticalAlignment="Top" HorizontalAlignment="Stretch">
 
 					<TextBlock Margin="0,20,0,20" Foreground="White" Text="Tutorial 2"
+                               x:Uid="FirstTimeTutorialTwo"
 						HorizontalAlignment="Center" FontSize="30" FontFamily="ms-appx:/Fonts/Brandon_bld.otf#Brandon Grotesque Bold" 
 						FontWeight="Bold"/>
-					<TextBlock Margin="0,0,0,10" Foreground="White" Text="Reminder Page"
+
+                            <TextBlock Margin="0,0,0,10" Foreground="White" Text="Reminder Page" x:Uid="FirstTimeTutorialTwoHeader"
 						HorizontalAlignment="Center" FontSize="20" 
 						FontFamily="ms-appx:/Fonts/UBUNTU-R.TTF#Ubuntu" FontWeight="Bold" TextWrapping="WrapWholeWords"
 						TextAlignment="Center"/>
+                    
 					<TextBlock Margin="0,0,0,0" Foreground="White" Text="You can set a time at which the app will ask you if you're fine at the time. If you don't respond within 30 minutes it will notify your friends about your location."
-						HorizontalAlignment="Center" FontSize="16" TextWrapping="WrapWholeWords"
+						HorizontalAlignment="Center" FontSize="16" TextWrapping="WrapWholeWords" x:Uid="FirstTimeTutorialTwoDescription"
 						TextAlignment="Center"/>
 
 					<Viewbox HorizontalAlignment="Stretch">
@@ -517,15 +531,16 @@
 
 			<PivotItem>
 				<StackPanel VerticalAlignment="Top" HorizontalAlignment="Stretch">
-					<TextBlock Margin="0,20,0,20" Foreground="White" Text="Tutorial 3"
+                        <TextBlock Margin="0,20,0,20" Foreground="White" Text="Tutorial 3" x:Uid="FirstTimeTutorialThree"
 						HorizontalAlignment="Center" FontSize="30" FontFamily="ms-appx:/Fonts/Brandon_bld.otf#Brandon Grotesque Bold" 
 						FontWeight="Bold"/>
-					<TextBlock Margin="0,0,0,20" Foreground="White" Text="SOS Page"
+
+                        <TextBlock Margin="0,0,0,20" Foreground="White" Text="SOS Page" x:Uid="FirstTimeTutorialThreeHeader"
 						HorizontalAlignment="Center" FontSize="20" 
 						FontFamily="ms-appx:/Fonts/UBUNTU-R.TTF#Ubuntu" FontWeight="Bold" TextWrapping="WrapWholeWords"
 						TextAlignment="Center"/>
 					<TextBlock Margin="0,0,0,0" Foreground="White" Text="The most important page in the App. Navigating to this page will trigger all emergency options built-in the application."
-						HorizontalAlignment="Center" FontSize="16" TextWrapping="WrapWholeWords"
+						HorizontalAlignment="Center" FontSize="16" TextWrapping="WrapWholeWords" x:Uid="FirstTimeTutorialThreeDescription"
 						TextAlignment="Center"/>
 				</StackPanel>
 
@@ -534,7 +549,7 @@
 		</Pivot>
 
 		<Button Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" 
-			Background="AntiqueWhite" Content="Skip"
+			Background="AntiqueWhite" Content="Skip" x:Uid="FirstTimeTutorialSkip"
 			Click="FinishButton_OnClickButton_OnClick"/>
 
 		<Grid Grid.Row="2">
@@ -546,13 +561,13 @@
 			</Grid.ColumnDefinitions>
 
 			<Button x:Name="BackButton" Click="BackButton_OnClick" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-				Content="&lt; Back" Background="Thistle" FontFamily="ms-appx:/Fonts/Karla-Bold.ttf#Karla"/>
+				Content="&lt; Back" Background="Thistle" FontFamily="ms-appx:/Fonts/Karla-Bold.ttf#Karla" x:Uid="FirstTimeTutorialBack"/>
 
 			<Button x:Name="NextButton" Click="NextButton_OnClick" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-				Content="Next &gt;" Background="Salmon" FontFamily="ms-appx:/Fonts/Karla-Bold.ttf#Karla"/>
+				Content="Next &gt;" Background="Salmon" FontFamily="ms-appx:/Fonts/Karla-Bold.ttf#Karla" x:Uid="FirstTimeTutorialNext"/>
 
 			<Button Visibility="Collapsed" x:Name="FinishButton" Click="FinishButton_OnClickButton_OnClick" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-				Content="Finish" Background="Tomato" FontFamily="ms-appx:/Fonts/Karla-Bold.ttf#Karla"/>
+				Content="Finish" Background="Tomato" FontFamily="ms-appx:/Fonts/Karla-Bold.ttf#Karla" x:Uid="FirstTimeTutorialFinish"/>
 
 
 			<StackPanel Background="{x:Null}" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">

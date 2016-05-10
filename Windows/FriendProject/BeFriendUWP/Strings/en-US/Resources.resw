@@ -117,6 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AboutPageAppTitle.Text" xml:space="preserve">
+    <value>BeFriend Beta</value>
+    <comment>AboutPage.xaml</comment>
+  </data>
+  <data name="AboutPageDeveloperName.Text" xml:space="preserve">
+    <value>Created by - Prajjwal Dimri</value>
+    <comment>AboutPage.xaml</comment>
+  </data>
   <data name="AboutPageHeader.Text" xml:space="preserve">
     <value>Open-Source, Non-Profit and Made for community!</value>
     <comment>AboutPage.xaml</comment>
@@ -128,6 +136,114 @@
   <data name="AcknowledgmentHeader.Text" xml:space="preserve">
     <value>Acknowledgments:</value>
     <comment>AboutPage.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialBack.Content" xml:space="preserve">
+    <value>&lt; Back</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialContactChooserOne.Text" xml:space="preserve">
+    <value>Click here to set contact 1...</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialContactChooserThree.Text" xml:space="preserve">
+    <value>Click here to set contact 3...</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialContactChooserTwo.Text" xml:space="preserve">
+    <value>Click here to set contact 2...</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialContactTutorial.Text" xml:space="preserve">
+    <value>Choose 3 people whom you would like to inform if you're ever in danger!</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialFacebook.Text" xml:space="preserve">
+    <value>Add Facebook</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialFinish.Content" xml:space="preserve">
+    <value>Finish</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialMemory.Text" xml:space="preserve">
+    <value>Dedicated to all crime victims</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialName.Text" xml:space="preserve">
+    <value>Enter your name and choose a profile pic</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialNext.Content" xml:space="preserve">
+    <value>Next &gt;</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialNoPicture.Text" xml:space="preserve">
+    <value>No Picture Selected</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialOne.Text" xml:space="preserve">
+    <value>Tutorial 1</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialOneDescription.Text" xml:space="preserve">
+    <value>Whenever you are suspicious of someone following you or you suspect you're in danger go to this page and hold the button. If your finger lifts from the button it triggers a countdown which will open SOS page if it reaches 00:00:00</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialOneHeader.Text" xml:space="preserve">
+    <value>Timer Page</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialPictureButton.Content" xml:space="preserve">
+    <value>Click to choose a picture</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialSkip.Content" xml:space="preserve">
+    <value>Skip</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialStart.Text" xml:space="preserve">
+    <value>Let's Get Started</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialThree.Text" xml:space="preserve">
+    <value>Tutorial 3</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialThreeDescription.Text" xml:space="preserve">
+    <value>The most important page in the App. Navigating to this page will trigger all emergency options built-in the application.</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialThreeHeader.Text" xml:space="preserve">
+    <value>SOS Page</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialTwitter.Text" xml:space="preserve">
+    <value>Add Twitter</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialTwo.Text" xml:space="preserve">
+    <value>Tutorial 2</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialTwoDescription.Text" xml:space="preserve">
+    <value>You can set a time at which the app will ask you if you're fine at the time. If you don't respond within 30 minutes it will notify your friends about your location.</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialTwoHeader.Text" xml:space="preserve">
+    <value>Reminder Page</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialUserName.PlaceholderText" xml:space="preserve">
+    <value>Name...</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="HomePageEmergency.Text" xml:space="preserve">
+    <value>Emergency</value>
+    <comment>HomePage.xaml</comment>
+  </data>
+  <data name="HomePageSupport.Text" xml:space="preserve">
+    <value>Support</value>
+    <comment>HomePage.xaml</comment>
   </data>
   <data name="HomePivotItem.Header" xml:space="preserve">
     <value>HOME</value>
@@ -141,17 +257,85 @@
     <value>Medi-Kit</value>
     <comment>MainPage.xaml</comment>
   </data>
+  <data name="ReminderPageCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+    <comment>ReminderPage.xaml</comment>
+  </data>
+  <data name="ReminderPageRegister.Text" xml:space="preserve">
+    <value>Register</value>
+    <comment>ReminderPage.xaml</comment>
+  </data>
+  <data name="ReminderPageTutorialText.Text" xml:space="preserve">
+    <value>Set a time at which you think you should be able to respond to the reminder on the phone. If you don't respond to the reminder in 20 minutes, I will remind all of your friends about your location!</value>
+    <comment>ReminderPage.xaml</comment>
+  </data>
   <data name="ReminderPivotItem.Header" xml:space="preserve">
     <value>REMINDER</value>
     <comment>MainPage.xaml</comment>
+  </data>
+  <data name="SettingsContactsHeader.Text" xml:space="preserve">
+    <value>Contacts</value>
+    <comment>SettingsPage.xaml</comment>
+  </data>
+  <data name="SettingsDeveloperOptions.Text" xml:space="preserve">
+    <value>Developer Options</value>
+    <comment>SettingsPage.xaml</comment>
+  </data>
+  <data name="SettingsFacebook.Text" xml:space="preserve">
+    <value>Connect Facebook</value>
+    <comment>SettingsPage.xaml</comment>
+  </data>
+  <data name="SettingsMessageHeader.Text" xml:space="preserve">
+    <value>Message</value>
+    <comment>SettingsPage.xaml</comment>
+  </data>
+  <data name="SettingsNotificationHeader.Text" xml:space="preserve">
+    <value>Notifications</value>
+    <comment>SettingsPage.xaml</comment>
+  </data>
+  <data name="SettingsOtherHeader.Text" xml:space="preserve">
+    <value>Other</value>
+    <comment>SettingsPage.xaml</comment>
+  </data>
+  <data name="SettingsPermanentNotification.Text" xml:space="preserve">
+    <value>Permanent Toast Notifications</value>
+    <comment>SettingsPage.xaml</comment>
   </data>
   <data name="SettingsPivotItem.Header" xml:space="preserve">
     <value>SETTINGS</value>
     <comment>MainPage.xaml</comment>
   </data>
+  <data name="SettingsProfileHeader.Text" xml:space="preserve">
+    <value>Profile</value>
+    <comment>SettingsPage.xaml</comment>
+  </data>
+  <data name="SettingsSocialHeader.Text" xml:space="preserve">
+    <value>Social Networks</value>
+    <comment>SettingsPage.xaml</comment>
+  </data>
+  <data name="SettingsTheme.Text" xml:space="preserve">
+    <value>Theme</value>
+    <comment>SettingsPage.xaml</comment>
+  </data>
+  <data name="SettingsTiming.Text" xml:space="preserve">
+    <value>Set Time in Timer</value>
+    <comment>SettingsPage.xaml</comment>
+  </data>
+  <data name="SettingsTwitter.Text" xml:space="preserve">
+    <value>Connect Twitter</value>
+    <comment>SettingsPage.xaml</comment>
+  </data>
   <data name="StoreRateAppBarButton.Label" xml:space="preserve">
     <value>Rate</value>
     <comment>MainPage.xaml</comment>
+  </data>
+  <data name="TimerPageHold.Text" xml:space="preserve">
+    <value>Hold</value>
+    <comment>TimerPage.xaml</comment>
+  </data>
+  <data name="TimerPageStop.Text" xml:space="preserve">
+    <value>Stop</value>
+    <comment>TimerPage.xaml</comment>
   </data>
   <data name="TimerPivotItem.Header" xml:space="preserve">
     <value>TIMER</value>

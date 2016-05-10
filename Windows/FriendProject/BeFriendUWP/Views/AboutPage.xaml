@@ -38,12 +38,13 @@
                 
                 <TextBlock Text="BeFriend Beta" TextAlignment="Center" FontWeight="Bold"
                            FontFamily="ms-appx:/Fonts/TT1255M_.TTF#AlphabetSoup Tilt BT" 
-                           FontSize="30"/>
+                           x:Uid="AboutPageAppTitle" FontSize="30"/>
 
                 <TextBlock Margin="0,10,0,0" Text="v 1.1.1.0" FontSize="20" TextAlignment="Center"/>
 
                 <TextBlock Margin="0,10,0,0" Text="Created by- Prajjwal Dimri" FontSize="20" TextAlignment="Center"
-                           FontFamily="ms-appx:/Fonts/Karla-Bold.ttf#Karla"/>
+                           FontFamily="ms-appx:/Fonts/Karla-Bold.ttf#Karla"
+                           x:Uid="AboutPageDeveloperName"/>
 
                 
                 <StackPanel Margin="0,10,0,0" Orientation="Horizontal" HorizontalAlignment="Center">
