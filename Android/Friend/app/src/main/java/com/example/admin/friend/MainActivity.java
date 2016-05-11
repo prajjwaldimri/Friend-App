@@ -3,6 +3,7 @@ package com.example.admin.friend;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -10,19 +11,22 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
-import com.twitter.sdk.android.Twitter;
-import com.twitter.sdk.android.core.TwitterAuthConfig;
-import io.fabric.sdk.android.Fabric;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         viewPager = (ViewPager) findViewById(R.id.viewpager);
+
         SettingPageFragment settingPageFragment = new SettingPageFragment();
         settingPageFragment._themeShared = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         settingPageFragment._themecolor = settingPageFragment._themeShared.toString();
@@ -49,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
             getApplication().setTheme(Integer.parseInt(settingPageFragment._themecolor));
 
         }
-
 
             FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
                     getSupportFragmentManager(), FragmentPagerItems.with(this)
@@ -61,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
 
             viewPager = (ViewPager) findViewById(R.id.viewpager);
             viewPager.setAdapter(adapter);
-
             SmartTabLayout viewPagerTab = (SmartTabLayout) findViewById(R.id.smarttabs);
             viewPagerTab.setViewPager(viewPager);
             TextView tx = (TextView) findViewById(R.id.toolbarTextView);

@@ -23,16 +23,12 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.twitter.sdk.android.core.identity.OAuthActivity;
-import com.twitter.sdk.android.core.identity.TwitterLoginButton;
-
 import twitter4j.Twitter;
 import twitter4j.auth.AccessToken;
 import twitter4j.auth.RequestToken;
 
 @SuppressWarnings("ResultOfMethodCallIgnored")
 public class SettingPageFragment extends android.support.v4.app.Fragment implements View.OnClickListener,CompoundButton.OnCheckedChangeListener {
-    private TwitterLoginButton twitterLoginButton;
     private static final int CONTACT_PICKER = 1001;
     private static final int RESULT_OK = 1;
     Notification mynotification;
