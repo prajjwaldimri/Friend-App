@@ -16,6 +16,9 @@
         <core:EventTriggerBehavior EventName="Loaded">
             <core:InvokeCommandAction Command="{Binding UniversalSettingsCommand}"/>
         </core:EventTriggerBehavior>
+        <core:EventTriggerBehavior EventName="Loaded">
+            <core:InvokeCommandAction Command="{Binding InAppMessagesCommand}"/>
+        </core:EventTriggerBehavior>
         </interactivity:Interaction.Behaviors>
     
     <!--Modifies the selected color in Pivot Header-->

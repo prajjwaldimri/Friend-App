@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -25,6 +26,18 @@ namespace BeFriend.Views
         public AboutPage()
         {
             this.InitializeComponent();
+            VersionTextBlock.Text = GetAppVersion();
+        }
+
+        private static string GetAppVersion()
+        {
+
+            var package = Package.Current;
+            var packageId = package.Id;
+            var version = packageId.Version;
+
+            return string.Format("{0}.{1}.{2}.{3}", version.Major, version.Minor, version.Build, version.Revision);
+
         }
     }
 }

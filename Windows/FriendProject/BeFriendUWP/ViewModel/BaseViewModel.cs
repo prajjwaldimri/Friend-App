@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Windows.Storage;
+using Windows.System;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
@@ -14,6 +17,7 @@ namespace BeFriend.ViewModel
         {
             UniversalSettingsCommand = new RelayCommand(UniversalSettingsRetriever);
             MessengerInstance.Register<NotificationMessage>(this,NotifyMe );
+            InAppMessagesCommand = new RelayCommand(InAppMessages);
         }
 
         private string _themeColorPrimary;
@@ -21,6 +25,7 @@ namespace BeFriend.ViewModel
         private string _userName;
         
         public RelayCommand UniversalSettingsCommand { get; private set; }
+        public RelayCommand InAppMessagesCommand { get; private set; }
         
         public string UserName
         {
@@ -180,6 +185,55 @@ namespace BeFriend.ViewModel
             }
         }
 
-        
+        private async void InAppMessages()
+        {
+            var localSettings = ApplicationData.Current.LocalSettings;
+            if (localSettings.Values.ContainsKey("InAppMessageCount"))
+            {
+                switch (Convert.ToInt64(localSettings.Values["InAppMessageCount"]))
+                {
+                    case 1:
+                        
+
+                       break;
+                }
+
+                var count = (int) localSettings.Values["InAppMessageCount"];
+                count++;
+                localSettings.Values["InAppMessageCount"] = count.ToString();
+
+         
+
+    }
+            else
+            {
+                var dialog = new MessageDialog("Your personal information is and will never be " +
+                                                       "shared with any 3rd party. \n The only information collected is by using " +
+                                                       "HockeyApp SDK which stores the debug log whenever a crash occurs and sends it " +
+                                                       "so that I can check what bugs are happening in the app.", "Privacy Policy");
+                dialog.Options = MessageDialogOptions.None;
+                dialog.Commands.Add(new UICommand("I Understand!", CommandInvokedHandler));
+                dialog.Commands.Add(new UICommand("I didn't Understand", CommandInvokedHandler));
+
+                dialog.DefaultCommandIndex = 0;
+                dialog.CancelCommandIndex = 1;
+                await dialog.ShowAsync();
+                localSettings.Values.Add("InAppMessageCount","1");
+            }
+        }
+
+        private async void CommandInvokedHandler(IUICommand command)
+        {
+            switch (command.Label)
+            {
+                case "I Understand!":
+
+                    break;
+                case "I didn't Understand":
+                    var uri = new Uri("mailto:prajjwaldimri@outlook.com");
+                    await Launcher.LaunchUriAsync(uri);
+                    break;
+            }
+        }
     }
 }

@@ -118,227 +118,227 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutPageAppTitle.Text" xml:space="preserve">
-    <value>BeFriend Beta</value>
+    <value>BeFriend Бета</value>
     <comment>AboutPage.xaml</comment>
   </data>
   <data name="AboutPageDeveloperName.Text" xml:space="preserve">
-    <value>Oluşturan Prajjwal Dimri</value>
+    <value>Созданно Prajjwal Димри</value>
     <comment>AboutPage.xaml</comment>
   </data>
   <data name="AboutPageHeader.Text" xml:space="preserve">
-    <value>Açık Kaynaklı, Kar Amacı Gütmüyor ve Topluluk Adına Hazırlandı!</value>
+    <value>Некоммерческое, с открытым исходным кодом, и созданно для сообщества!</value>
     <comment>AboutPage.xaml</comment>
   </data>
   <data name="AboutPivotItem.Header" xml:space="preserve">
-    <value>HAKKINDA</value>
+    <value>О НАС</value>
     <comment>MainPage.xaml</comment>
   </data>
   <data name="AcknowledgmentHeader.Text" xml:space="preserve">
-    <value>Teşekkürler:</value>
+    <value>Благодарности:</value>
     <comment>AboutPage.xaml</comment>
   </data>
   <data name="FirstTimeTutorialBack.Content" xml:space="preserve">
-    <value>&lt; Geri</value>
+    <value>&lt; Назад</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialContactChooserOne.Text" xml:space="preserve">
-    <value>1. kişiyi belirlemek için buraya tıklayın...</value>
+    <value>Нажмите сюда, чтобы установить контакт 1...</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialContactChooserThree.Text" xml:space="preserve">
-    <value>3. kişiyi belirlemek için buraya tıklayın...</value>
+    <value>Нажмите сюда, чтобы установить контакт 3...</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialContactChooserTwo.Text" xml:space="preserve">
-    <value>2. kişiyi belirlemek için buraya tıklayın...</value>
+    <value>Нажмите сюда, чтобы установить контакт 2...</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialContactTutorial.Text" xml:space="preserve">
-    <value>Tehlikede olursanız haber vermek istediğiniz 3 kişi seçin!</value>
+    <value>Выберите три человека, которым Вы бы хотели сообщить, если Вы когда-либо в опасности!</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialFacebook.Text" xml:space="preserve">
-    <value>Facebook ekle</value>
+    <value>Добавить Facebook</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialFinish.Content" xml:space="preserve">
-    <value>Bitir</value>
+    <value>Закончить</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialMemory.Text" xml:space="preserve">
-    <value>Tüm suç mağdurlarına ithafen</value>
+    <value>Посвящённо всем жертвам преступлений</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialName.Text" xml:space="preserve">
-    <value>Adınızı girip bir profil resmi seçin</value>
+    <value>Введите Ваше имя и выберите картинку профиля</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialNext.Content" xml:space="preserve">
-    <value>İleri &gt;</value>
+    <value>Следующее &gt;</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialNoPicture.Text" xml:space="preserve">
-    <value>Resim seçilmedi</value>
+    <value>Аватар не выбран</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialOne.Text" xml:space="preserve">
-    <value>Eğitim 1</value>
+    <value>Урок 1</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialOneDescription.Text" xml:space="preserve">
-    <value>Birisinin sizi takip ettiğinden veya tehlikede olduğunuzdan şüphe duyduğunuzda, bu sayfaya gelip düğmeyi basılı tutun. Parmağınızı kaldırdığınızda geri sayım başlayacaktır. Geri sayım 00:00:00'a ulaştığı zaman, SOS sayfası açılacaktır.</value>
+    <value>Когда-либо Вы подозреваете, что кто-то за вами преследует, или Вы подозреваете что Вы в опасности, перейдите на эту страницу и нажмите на кнопку. Если Вы отпустите кнопку, начнётся отсчёт времени, который откроет страницу SOS если он достигнет 00:00:00</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialOneHeader.Text" xml:space="preserve">
-    <value>Geri Sayım Sayfası</value>
+    <value>Страница таймера</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialPictureButton.Content" xml:space="preserve">
-    <value>Resim seçmek için tıklayın</value>
+    <value>Нажмите, чтобы выбрать изображение</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialSkip.Content" xml:space="preserve">
-    <value>Atla</value>
+    <value>Пропустить</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialStart.Text" xml:space="preserve">
-    <value>Hadi Başlayalım</value>
+    <value>Давайте приступим</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialThree.Text" xml:space="preserve">
-    <value>Eğitim 3</value>
+    <value>Урок 3</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialThreeDescription.Text" xml:space="preserve">
-    <value>Uygulamadaki en önemli sayfa. Bu sayfaya gelmek, uygulamadaki tüm acil durum seçeneklerini harekete geçirecektir.</value>
+    <value>Самая важная страница в приложении. Переход на эту страницу активирует все аварийные функции приложения.</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialThreeHeader.Text" xml:space="preserve">
-    <value>SOS Sayfası</value>
+    <value>Страница SOS</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialTwitter.Text" xml:space="preserve">
-    <value>Twitter Ekle</value>
+    <value>Добавить Twitter</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialTwo.Text" xml:space="preserve">
-    <value>Eğitim 2</value>
+    <value>Урок 2</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialTwoDescription.Text" xml:space="preserve">
-    <value>Uygulamanın iyi olup olmadığınızı soracağı bir saat belirleyebilirsiniz. 30 dakika içinde yanıt vermezseniz, uygulama arkadaşlarınıza konumunuzu bildirir.</value>
+    <value>Вы можете установить время, в которое приложение спросит вас "Всё в порядке?". Если Вы не отреагируйте на вопрос за 30 минут, оно уведомит Вашим друзьям про Ваше местоположение.</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialTwoHeader.Text" xml:space="preserve">
-    <value>Hatırlatıcı Sayfası</value>
+    <value>Страница напоминаний</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialUserName.PlaceholderText" xml:space="preserve">
-    <value>Ad...</value>
+    <value>Имя...</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="HomePageEmergency.Text" xml:space="preserve">
-    <value>Acil Durum</value>
+    <value>Аварийный режим</value>
     <comment>HomePage.xaml</comment>
   </data>
   <data name="HomePageSupport.Text" xml:space="preserve">
-    <value>Destek</value>
+    <value>Поддержка</value>
     <comment>HomePage.xaml</comment>
   </data>
   <data name="HomePivotItem.Header" xml:space="preserve">
-    <value>ANA SAYFA</value>
+    <value>ГЛАВНАЯ</value>
     <comment>MainPage.xaml</comment>
   </data>
   <data name="MainPagePivot.Title" xml:space="preserve">
-    <value>BeFriend Beta</value>
+    <value>BeFriend Бета</value>
     <comment>MainPage.xaml</comment>
   </data>
   <data name="MediKitAppBarButton.Label" xml:space="preserve">
-    <value>İlk Yardım</value>
+    <value>Меди-Кит</value>
     <comment>MainPage.xaml</comment>
   </data>
   <data name="ReminderPageCancel.Text" xml:space="preserve">
-    <value>İptal</value>
+    <value>Отменить</value>
     <comment>ReminderPage.xaml</comment>
   </data>
   <data name="ReminderPageRegister.Text" xml:space="preserve">
-    <value>Kayıt</value>
+    <value>Регистрация</value>
     <comment>ReminderPage.xaml</comment>
   </data>
   <data name="ReminderPageTutorialText.Text" xml:space="preserve">
-    <value>Telefondaki hatırlatıcıya cevap verebileceğiniz bir saat belirleyin. Hatırlatıcıya 20 dakika içinde yanıt vermezseniz, tüm arkadaşlarınıza konumunuzu bildirir!</value>
+    <value>Настройте время, в которое Вы думаете Вы можете отреагировать на напоминание на телефоне. Если Вы не отреагируйте на напоминание за 20 минут, я напомню всем Вашим друзьям про Ваше местоположение!</value>
     <comment>ReminderPage.xaml</comment>
   </data>
   <data name="ReminderPivotItem.Header" xml:space="preserve">
-    <value>HATIRLATICI</value>
+    <value>НАПОМИНАНИЕ</value>
     <comment>MainPage.xaml</comment>
   </data>
   <data name="SettingsContactsHeader.Text" xml:space="preserve">
-    <value>Kişiler</value>
+    <value>Контакты</value>
     <comment>SettingsPage.xaml</comment>
   </data>
   <data name="SettingsDeveloperOptions.Text" xml:space="preserve">
-    <value>Geliştirici Seçenekleri</value>
+    <value>Опции для разработчиков</value>
     <comment>SettingsPage.xaml</comment>
   </data>
   <data name="SettingsFacebook.Text" xml:space="preserve">
-    <value>Facebook bağla</value>
+    <value>Подключить к Facebook</value>
     <comment>SettingsPage.xaml</comment>
   </data>
   <data name="SettingsMessageHeader.Text" xml:space="preserve">
-    <value>Mesaj</value>
+    <value>Сообщение</value>
     <comment>SettingsPage.xaml</comment>
   </data>
   <data name="SettingsNotificationHeader.Text" xml:space="preserve">
-    <value>Bildirimler</value>
+    <value>Уведомления</value>
     <comment>SettingsPage.xaml</comment>
   </data>
   <data name="SettingsOtherHeader.Text" xml:space="preserve">
-    <value>Diğer</value>
+    <value>Иное</value>
     <comment>SettingsPage.xaml</comment>
   </data>
   <data name="SettingsPermanentNotification.Text" xml:space="preserve">
-    <value>Kalıcı Bildirimler</value>
+    <value>Постоянные всплывающие уведомления</value>
     <comment>SettingsPage.xaml</comment>
   </data>
   <data name="SettingsPivotItem.Header" xml:space="preserve">
-    <value>AYARLAR</value>
+    <value>НАСТРОЙКИ</value>
     <comment>MainPage.xaml</comment>
   </data>
   <data name="SettingsProfileHeader.Text" xml:space="preserve">
-    <value>Profil</value>
+    <value>Профайл</value>
     <comment>SettingsPage.xaml</comment>
   </data>
   <data name="SettingsSocialHeader.Text" xml:space="preserve">
-    <value>Sosyal Ağlar</value>
+    <value>Социальные сети</value>
     <comment>SettingsPage.xaml</comment>
   </data>
   <data name="SettingsTheme.Text" xml:space="preserve">
-    <value>Tema</value>
+    <value>Стиль</value>
     <comment>SettingsPage.xaml</comment>
   </data>
   <data name="SettingsTiming.Text" xml:space="preserve">
-    <value>Geri Sayım Süresi Ayarla</value>
+    <value>Настроить время на таймере</value>
     <comment>SettingsPage.xaml</comment>
   </data>
   <data name="SettingsTwitter.Text" xml:space="preserve">
-    <value>Twitter Bağla</value>
+    <value>Подключить Twitter</value>
     <comment>SettingsPage.xaml</comment>
   </data>
   <data name="StoreRateAppBarButton.Label" xml:space="preserve">
-    <value>Oyla</value>
+    <value>Оценить</value>
     <comment>MainPage.xaml</comment>
   </data>
   <data name="TimerPageHold.Text" xml:space="preserve">
-    <value>Basılı Tut</value>
+    <value>Держите</value>
     <comment>TimerPage.xaml</comment>
   </data>
   <data name="TimerPageStop.Text" xml:space="preserve">
-    <value>Durdur</value>
+    <value>Стоп</value>
     <comment>TimerPage.xaml</comment>
   </data>
   <data name="TimerPivotItem.Header" xml:space="preserve">
-    <value>GERİ SAYIM</value>
+    <value>ТАЙМЕР</value>
     <comment>MainPage.xaml</comment>
   </data>
 </root>

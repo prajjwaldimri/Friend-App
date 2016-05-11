@@ -40,7 +40,8 @@
                            FontFamily="ms-appx:/Fonts/TT1255M_.TTF#AlphabetSoup Tilt BT" 
                            x:Uid="AboutPageAppTitle" FontSize="30"/>
 
-                <TextBlock Margin="0,10,0,0" Text="v 1.1.1.0" FontSize="20" TextAlignment="Center"/>
+                <TextBlock Margin="0,10,0,0" FontSize="20"
+                           TextAlignment="Center" Name="VersionTextBlock"/>
 
                 <TextBlock Margin="0,10,0,0" Text="Created by- Prajjwal Dimri" FontSize="20" TextAlignment="Center"
                            FontFamily="ms-appx:/Fonts/Karla-Bold.ttf#Karla"

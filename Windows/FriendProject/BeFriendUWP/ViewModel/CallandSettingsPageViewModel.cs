@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Xml;
 using Windows.ApplicationModel.Background;
 using Windows.ApplicationModel.Contacts;
@@ -562,6 +563,7 @@ namespace BeFriend.ViewModel
             {
                 TwitterPlusIconVisibility = Visibility.Visible;
                 TwitterRemoveIconVisibility = Visibility.Collapsed;
+                Debug.WriteLine(ex);
             }
 
             RaisePropertyChanged(() => TwitterPlusIconVisibility);
@@ -605,6 +607,7 @@ namespace BeFriend.ViewModel
 
         private async void FacebookLoginMethod()
         {
+            MessengerInstance.Send(new NotificationMessage("ProgressBarEnable"));
             var sess = FBSession.ActiveSession;
             //Use your FB App ID
             sess.FBAppId = AuthTokens.FacebookAppID;
@@ -634,6 +637,7 @@ namespace BeFriend.ViewModel
             }
             RaisePropertyChanged(()=>FacebookPlusIconVisibility);
             RaisePropertyChanged(()=>FacebookRemoveIconVisibility);
+            MessengerInstance.Send(new NotificationMessage("ProgressBarDisable"));
         }
 
         private async void ButtonClickHandlerMethod(object obj)
@@ -656,8 +660,6 @@ namespace BeFriend.ViewModel
                     break;
             }
         }
-
-
 
     }
 

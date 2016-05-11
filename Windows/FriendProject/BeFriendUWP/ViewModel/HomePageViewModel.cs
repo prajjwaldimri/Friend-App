@@ -215,16 +215,16 @@ namespace BeFriend.ViewModel
                     break;
 
                 case 2:
-                    var frame1 = Window.Current.Content as Frame;
-                    if (frame1 != null)
-                    {
+                    //var frame1 = Window.Current.Content as Frame;
+                    //if (frame1 != null)
+                    //{
 
-                        frame1.Navigate(typeof(Views.ChatBot));
-                    }
+                    //    frame1.Navigate(typeof(Views.ChatBot));
+                    //}
 
 
-                    //var uri = new Uri("mailto:prajjwaldimri@outlook.com");
-                    //await Launcher.LaunchUriAsync(uri);
+                    var uri = new Uri("mailto:prajjwaldimri@outlook.com");
+                    await Launcher.LaunchUriAsync(uri);
                     break;
 
                 
