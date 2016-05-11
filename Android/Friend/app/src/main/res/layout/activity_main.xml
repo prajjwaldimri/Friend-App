@@ -28,9 +28,8 @@
         </android.support.v7.widget.Toolbar>
 
 
-
         <com.ogaclejapan.smarttablayout.SmartTabLayout
-            android:id="@+id/tabs"
+            android:id="@+id/smarttabs"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:elevation="16dp"
@@ -61,6 +60,7 @@
             app:stl_drawDecorationAfterTab="false"/>
 
 
+
         <android.support.v4.view.ViewPager
             android:layout_width="match_parent"
             android:id="@+id/viewpager"
@@ -73,3 +73,8 @@
 
 
 </android.support.design.widget.CoordinatorLayout>
+
+
+
+
+

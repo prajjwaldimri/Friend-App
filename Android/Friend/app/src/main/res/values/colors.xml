@@ -7,4 +7,5 @@
     <color name="colorAccent">#ff5252</color>
     <color name="textColorPrimary">#FFFFFF</color>
     <color name="backgroundColor">#607D8B</color>
+    <color name="custom_tab_icon">#FFFFFF</color>
 </resources>
