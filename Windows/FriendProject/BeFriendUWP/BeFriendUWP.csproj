@@ -97,6 +97,7 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Content Include="Assets\Extra Images\477.gif" />
     <Content Include="Assets\Extra Images\BeFriendReminderPageMockup.png" />
     <Content Include="Assets\Extra Images\BeFriendTimerPageMockup.png" />
     <Content Include="Assets\Extra Images\pexels-photo-befriend-about_compressed.jpg" />
@@ -176,6 +177,9 @@
     <Content Include="Fonts\Lato-Heavy.ttf" />
     <Content Include="Fonts\Pinstripe Limo.ttf" />
     <None Include="project.json" />
+    <PRIResource Include="Strings\fr\Resources.resw" />
+    <PRIResource Include="Strings\pt\Resources.resw" />
+    <PRIResource Include="Strings\tr\Resources.resw" />
     <PRIResource Include="Strings\en-US\Resources.resw" />
   </ItemGroup>
   <ItemGroup>
@@ -205,6 +209,9 @@
     </Compile>
     <Compile Include="Views\FirstTimeTutorial.xaml.cs">
       <DependentUpon>FirstTimeTutorial.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GifView.xaml.cs">
+      <DependentUpon>GifView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
@@ -254,6 +261,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\FirstTimeTutorial.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GifView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -413,36 +413,30 @@ namespace BeFriend.ViewModel
             {
                 if (_notificationStatus == "Off")
                 {
-                    if (!localData.Values.ContainsKey("ToastNotification") ||
-                        !roamData.Values.ContainsKey("ToastNotification"))
+                    if (!localData.Values.ContainsKey("ToastNotification"))
+                        
                     {
                         localData.Values.Add("ToastNotification", "On");
-                        roamData.Values.Add("ToastNotification", "On");
                     }
                     else
                     {
                         localData.Values.Remove("ToastNotification");
-                        roamData.Values.Remove("ToastNotification");
                         localData.Values.Add("ToastNotification", "On");
-                        roamData.Values.Add("ToastNotification", "On");
+                        
                     }
                     ToastToggleSwitchIsOn = true;
                     BackgroundProcessRegisterer();
                 }
                 else
                 {
-                    if (!localData.Values.ContainsKey("ToastNotification") ||
-                        !roamData.Values.ContainsKey("ToastNotification"))
+                    if (!localData.Values.ContainsKey("ToastNotification"))
                     {
                         localData.Values.Add("ToastNotification", "Off");
-                        roamData.Values.Add("ToastNotification", "Off");
                     }
                     else
                     {
                         localData.Values.Remove("ToastNotification");
-                        roamData.Values.Remove("ToastNotification");
                         localData.Values.Add("ToastNotification", "Off");
-                        roamData.Values.Add("ToastNotification", "Off");
                     }
                     ToastToggleSwitchIsOn = false;
                 }
@@ -452,36 +446,28 @@ namespace BeFriend.ViewModel
             {
                 if (_notificationStatus == "On")
                 {
-                    if (!localData.Values.ContainsKey("ToastNotification") ||
-                        !roamData.Values.ContainsKey("ToastNotification"))
+                    if (!localData.Values.ContainsKey("ToastNotification"))
                     {
                         localData.Values.Add("ToastNotification", "Off");
-                        roamData.Values.Add("ToastNotification", "Off");
                     }
                     else
                     {
                         localData.Values.Remove("ToastNotification");
-                        roamData.Values.Remove("ToastNotification");
                         localData.Values.Add("ToastNotification", "Off");
-                        roamData.Values.Add("ToastNotification", "Off");
                     }
                     ToastToggleSwitchIsOn = false;
                     BackgroundProcessRemover();
                 }
                 else
                 {
-                    if (!localData.Values.ContainsKey("ToastNotification") ||
-                        !roamData.Values.ContainsKey("ToastNotification"))
+                    if (!localData.Values.ContainsKey("ToastNotification"))
                     {
                         localData.Values.Add("ToastNotification", "On");
-                        roamData.Values.Add("ToastNotification", "On");
                     }
                     else
                     {
                         localData.Values.Remove("ToastNotification");
-                        roamData.Values.Remove("ToastNotification");
                         localData.Values.Add("ToastNotification", "On");
-                        roamData.Values.Add("ToastNotification", "On");
                     }
                     ToastToggleSwitchIsOn = true;
                 }

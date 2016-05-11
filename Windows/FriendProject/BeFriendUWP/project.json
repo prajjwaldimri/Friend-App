@@ -14,6 +14,7 @@
     "QueryString.NET": "1.0.0",
     "Syn.Bot": "1.2.3",
     "TweetinviAPI": "0.9.12.2",
+    "Win2D.uwp": "1.17.0",
     "WindowsAzure.Messaging.Managed": "0.1.7.9"
   },
   "frameworks": {

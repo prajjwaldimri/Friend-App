@@ -42,20 +42,20 @@ namespace BeFriend.ViewModel
         public RelayCommand TimerStarterCommand { get; set; }
         public RelayCommand SosCommand { get; set; }
 
-        private void TimerStarter()
+        private async void TimerStarter()
         {
             SosPageText += "Timer Started \n";
             RaisePropertyChanged(()=>SosPageText);
             var timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(20);
+            timer.Interval = TimeSpan.FromSeconds(300);
             timer.Tick += timer_Tick;
-            //timer.Start();
+            timer.Start();
 
             if (!Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
                 return;
             var spineClass = new SpineClass();
             spineClass.InitializeCallingInfoAsync();
-            Caller();
+            
         }
 
         private async void timer_Tick(object sender, object e)
@@ -85,10 +85,10 @@ namespace BeFriend.ViewModel
                 Message = "Help Me at";
             }
             await LocationAccesser();
-            //MessageSender();
+            MessageSender();
             TwitterPoster();
             FacebookPoster();
-            Caller();
+            //Caller();
         }
 
         private async Task LocationAccesser()
@@ -143,6 +143,7 @@ namespace BeFriend.ViewModel
                 try
                 {
                     _device = SmsDevice2.GetDefault();
+                    
                 }
                 catch (Exception ex)
                 {
@@ -165,7 +166,12 @@ namespace BeFriend.ViewModel
 
             if (!result.IsSuccessful)
             {
+                if (result.NetworkCauseCode.Equals(50))
+                {
+                    SosPageText += "\n Network Error in sending SMS. Possibly no balance!";
+                }
                 SosPageText += "Message Sending Failed \n";
+                RaisePropertyChanged(() => SosPageText);
                 return;
             }
             var msgStr = "";
@@ -227,7 +233,7 @@ namespace BeFriend.ViewModel
                 Auth.SetUserCredentials(AuthTokens.TwitterConsumerKey, AuthTokens.TwitterConsumerSecret,
                     twitteraccesstoken.Password, twitteraccesstokensecret.Password);
 
-                await LocationAccesser();
+                
                 //TODO: Publish the Tweet with location on your Timeline
                 Tweet.PublishTweet(Message+" \n" + _latitude + "\n" + _longitude);
 
