@@ -1,0 +1,128 @@
+﻿<UserControl
+    x:Class="BeFriend.Views.HomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BeFriend"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    DataContext="{Binding Path=HomePage,Source={StaticResource ViewModelLocator}}"
+    mc:Ignorable="d">
+
+    <interactivity:Interaction.Behaviors>
+        <core:EventTriggerBehavior EventName="Loaded">
+            <core:InvokeCommandAction Command="{Binding LocationAccesserCommand}"/>
+        </core:EventTriggerBehavior>
+        <core:EventTriggerBehavior EventName="Loaded">
+            <core:InvokeCommandAction Command="{Binding ProfileImageSetterCommand}"/>
+        </core:EventTriggerBehavior>
+        <core:EventTriggerBehavior EventName="Loaded">
+            <core:InvokeCommandAction Command="{Binding SpineInitializerCommand}"/>
+        </core:EventTriggerBehavior>
+        <core:EventTriggerBehavior EventName="Loaded">
+            <core:InvokeCommandAction Command="{Binding UniversalSettingsCommand}"/>
+        </core:EventTriggerBehavior>
+    </interactivity:Interaction.Behaviors>
+
+
+    <Grid Background="{Binding ThemeColorPrimary}">
+
+
+        <Grid.RowDefinitions>
+
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Rectangle Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" Grid.ColumnSpan="4"/>
+
+
+        <StackPanel BorderThickness="0,0,0,0" Grid.Row="0" Grid.RowSpan="5" Grid.Column="0"
+                    Grid.ColumnSpan="4" Orientation="Horizontal"
+                    HorizontalAlignment="Center">
+
+            <Ellipse Stroke="White" StrokeThickness="4"
+                     Margin="0,0,0,0" Name="EllipseButton"
+                     Height="150" Width="150">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="Tapped">
+                        <core:InvokeCommandAction Command="{Binding ProfileEllipseButtonTapCommand}"/>
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+                <Ellipse.Fill>
+                    <ImageBrush x:Name="EllipseImg" Stretch="UniformToFill"
+                                ImageSource="{Binding ProfileImageSource}"/>
+                </Ellipse.Fill>
+            </Ellipse>
+
+            <StackPanel Margin="20,0,0,0" VerticalAlignment="Center">
+            <TextBlock Margin="0,0,0,0" Text="{Binding UserName}"
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Center" FontFamily="ms-appx:/Fonts/Corbert-Regular.otf#Corbert" FontSize="22" FontWeight="Bold"/>
+
+            <StackPanel Margin="0,20,0,0" HorizontalAlignment="Center" Orientation="Horizontal">
+                <FontIcon Glyph="&#xE1C4;"/>
+                <TextBlock Margin="2,0,0,0" Name="LocationTextBox"
+                           Text="{Binding GpsLocation}"
+                           HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+            </StackPanel>
+            </StackPanel>
+        </StackPanel>
+
+
+        <Button Grid.Row="5" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="2"
+                HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                Background="#EDF2F4" Foreground="Black" 
+                FontFamily="Rondalo" FontSize="20" BorderBrush="White"
+                BorderThickness="0.2"
+                Command="{Binding ButtonClickEventHome}"
+                CommandParameter="1"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center">
+            <Button.Content>
+                <StackPanel>
+                    <SymbolIcon Symbol="ReportHacked"/>
+                    <TextBlock x:Uid="HomePageEmergency" HorizontalAlignment="Center" 
+                               Margin="0,10,0,0" Text="Emergency!" 
+                               TextWrapping="WrapWholeWords"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+
+
+        <Button Grid.Row="5" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="2"
+                HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                Background="#EDF2F4" Foreground="Black" 
+                FontFamily="Rondalo" FontSize="20" BorderBrush="White" 
+                BorderThickness="0.2"
+                Command="{Binding ButtonClickEventHome}"
+                CommandParameter="2"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center">
+            <Button.Content>
+                <StackPanel>
+                    <SymbolIcon Symbol="Help"/>
+                    <TextBlock x:Uid="HomePageSupport" HorizontalAlignment="Center" 
+                               Margin="0,10,0,0" Text="Support"
+                               TextWrapping="WrapWholeWords"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+
+    </Grid>
+
+</UserControl>
+

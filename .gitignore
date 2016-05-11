@@ -7,6 +7,7 @@
 *.userosscache
 *.sln.docstates
 *.VC.opendb
+*.Vc.db
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -34,6 +35,10 @@ bld/
 # NUNIT
 *.VisualState.xml
 TestResult.xml
+
+#Twitter API Keys
+TwitterConsumerKey.txt
+TwitterConsumerSecret.txt
 
 # Build Results of an ATL Project
 [Dd]ebugPS/

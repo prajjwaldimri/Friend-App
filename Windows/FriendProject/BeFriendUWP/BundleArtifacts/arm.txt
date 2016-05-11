@@ -1,0 +1,6 @@
+MainPackage=C:\Users\prajj\Source\Repos\Friend-App\Windows\FriendProject\BeFriendUWP\bin\ARM\Release\BeFriendUWP_1.1.2.0_ARM.appx
+SymbolPackage=C:\Users\prajj\Source\Repos\Friend-App\Windows\FriendProject\BeFriendUWP\AppPackages\Github\BeFriendUWP_1.1.2.0_Test\BeFriendUWP_1.1.2.0_ARM.appxsym
+ResourcePack=C:\Users\prajj\Source\Repos\Friend-App\Windows\FriendProject\BeFriendUWP\bin\ARM\Release\BeFriendUWP_1.1.2.0_scale-100.appx
+ResourcePack=C:\Users\prajj\Source\Repos\Friend-App\Windows\FriendProject\BeFriendUWP\bin\ARM\Release\BeFriendUWP_1.1.2.0_scale-125.appx
+ResourcePack=C:\Users\prajj\Source\Repos\Friend-App\Windows\FriendProject\BeFriendUWP\bin\ARM\Release\BeFriendUWP_1.1.2.0_scale-150.appx
+ResourcePack=C:\Users\prajj\Source\Repos\Friend-App\Windows\FriendProject\BeFriendUWP\bin\ARM\Release\BeFriendUWP_1.1.2.0_scale-400.appx

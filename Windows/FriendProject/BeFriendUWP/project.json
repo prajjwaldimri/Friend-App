@@ -1,0 +1,31 @@
+﻿{
+  "dependencies": {
+    "FakeBand": "0.0.9",
+    "HockeySDK.UWP": "4.0.0",
+    "Microsoft.ApplicationInsights": "2.0.1",
+    "Microsoft.ApplicationInsights.PersistenceChannel": "1.2.3",
+    "Microsoft.ApplicationInsights.WindowsApps": "1.1.1",
+    "Microsoft.Bcl.Build": "1.0.21",
+    "Microsoft.NETCore.UniversalWindowsPlatform": "5.1.0",
+    "Microsoft.Xaml.Behaviors.Uwp.Managed": "1.1.0",
+    "MvvmLightLibs": "5.3.0",
+    "Newtonsoft.Json": "8.0.3",
+    "NotificationsExtensions.Win10": "14295.0.1",
+    "QueryString.NET": "1.0.0",
+    "Syn.Bot": "1.2.3",
+    "TweetinviAPI": "0.9.12.2",
+    "Win2D.uwp": "1.17.0",
+    "WindowsAzure.Messaging.Managed": "0.1.7.9"
+  },
+  "frameworks": {
+    "uap10.0": {}
+  },
+  "runtimes": {
+    "win10-arm": {},
+    "win10-arm-aot": {},
+    "win10-x86": {},
+    "win10-x86-aot": {},
+    "win10-x64": {},
+    "win10-x64-aot": {}
+  }
+}
