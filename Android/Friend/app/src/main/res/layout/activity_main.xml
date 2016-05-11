@@ -30,7 +30,7 @@
 
 
         <com.ogaclejapan.smarttablayout.SmartTabLayout
-            android:id="@+id/tabs"
+            android:id="@+id/smarttabs"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:elevation="16dp"
