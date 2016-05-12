@@ -29,13 +29,12 @@
             <TextBox BorderBrush="{StaticResource SystemControlBackgroundAccentBrush}" 
                      BorderThickness="4"
                      PlaceholderText="Write a message..." VerticalContentAlignment="Center"
-                     HorizontalContentAlignment="Center" KeyUp="InputText_OnKeyUp"
+                     HorizontalContentAlignment="Center" 
                      HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="InputText"
                      Grid.Column="0"/>
             <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                     Background="{StaticResource SystemControlBackgroundAccentBrush}" 
-                    Name="SendButton" Grid.Column="1"
-                    Click="SendButton_OnClick">
+                    Name="SendButton" Grid.Column="1">
                 <Button.Content>
                     <FontIcon Glyph="&#xf1d8;" Margin="-4,0,0,0" FontSize="25" Foreground="White"
                               FontFamily="Fonts/fontawesome-webfont.ttf#FontAwesome"/>

@@ -223,7 +223,7 @@ namespace BeFriend.ViewModel
                     //}
 
 
-                    var uri = new Uri("mailto:prajjwaldimri@outlook.com");
+                    var uri = new Uri("https://gitter.im/prajjwaldimri/Friend-App#");
                     await Launcher.LaunchUriAsync(uri);
                     break;
 

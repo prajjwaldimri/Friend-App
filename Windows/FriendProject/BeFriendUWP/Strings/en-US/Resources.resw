@@ -129,6 +129,22 @@
     <value>Open-Source, Non-Profit and Made for community!</value>
     <comment>AboutPage.xaml</comment>
   </data>
+  <data name="AboutPageLibraries.Text" xml:space="preserve">
+    <value>3rd Party Libraries</value>
+    <comment>AboutPage.xaml</comment>
+  </data>
+  <data name="AboutPageLicenses.Text" xml:space="preserve">
+    <value>Licenses:</value>
+    <comment>AboutPage.xaml</comment>
+  </data>
+  <data name="AboutPageOthers.Text" xml:space="preserve">
+    <value>Other Resources</value>
+    <comment>AboutPage.xaml</comment>
+  </data>
+  <data name="AboutPageTranslators.Text" xml:space="preserve">
+    <value>Translators:</value>
+    <comment>AboutPage.xaml</comment>
+  </data>
   <data name="AboutPivotItem.Header" xml:space="preserve">
     <value>ABOUT</value>
     <comment>MainPage.xaml</comment>

@@ -193,32 +193,73 @@ namespace BeFriend.ViewModel
                 switch (Convert.ToInt64(localSettings.Values["InAppMessageCount"]))
                 {
                     case 1:
-                        
+                        var dialog =
+                            new MessageDialog(
+                                "Use the Gitter chat or " +
+                                "Github issues to report any bugs or new feature suggestions.",
+                                "Any Bugs or suggestions?") {Options = MessageDialogOptions.None};
+                        dialog.Commands.Add(new UICommand("Gitter Chat", CommandInvokedHandler));
+                        dialog.Commands.Add(new UICommand("Github Issues", CommandInvokedHandler));
 
-                       break;
+                        dialog.DefaultCommandIndex = 0;
+                        dialog.CancelCommandIndex = 1;
+
+                        await dialog.ShowAsync();
+
+                        break;
+
+                    case 2:
+                        var dialog1 =
+                            new MessageDialog(
+                                "Translate the app to your native language in easy to use web interface " +
+                                "using Crowdin.",
+                                "Native language not English?") {Options = MessageDialogOptions.None};
+                        dialog1.Commands.Add(new UICommand("Translate Now!", CommandInvokedHandler));
+                        dialog1.Commands.Add(new UICommand("Translate Later", CommandInvokedHandler));
+
+                        dialog1.DefaultCommandIndex = 0;
+                        dialog1.CancelCommandIndex = 1;
+
+                        await dialog1.ShowAsync();
+
+                        break;
+
+                    case 4:
+                        var dialog2 =
+                            new MessageDialog(
+                                "Did you know that BeFriend is completely Open-Source which means you can actively contribute in the " +
+                                "development of the app. \n\nWhether it is coding, designing, documenting, testing or translating, all " +
+                                "contributions are welcome",
+                                "Develop with Us!") {Options = MessageDialogOptions.None};
+                        dialog2.Commands.Add(new UICommand("Join the Development!", CommandInvokedHandler));
+                        dialog2.Commands.Add(new UICommand("Not interested", CommandInvokedHandler));
+
+                        dialog2.DefaultCommandIndex = 0;
+                        dialog2.CancelCommandIndex = 1;
+
+                        await dialog2.ShowAsync();
+
+                        break;
                 }
 
-                var count = (int) localSettings.Values["InAppMessageCount"];
+                var count = Convert.ToInt64(localSettings.Values["InAppMessageCount"]);
                 count++;
                 localSettings.Values["InAppMessageCount"] = count.ToString();
-
-         
-
-    }
+            }
             else
             {
                 var dialog = new MessageDialog("Your personal information is and will never be " +
-                                                       "shared with any 3rd party. \n The only information collected is by using " +
-                                                       "HockeyApp SDK which stores the debug log whenever a crash occurs and sends it " +
-                                                       "so that I can check what bugs are happening in the app.", "Privacy Policy");
-                dialog.Options = MessageDialogOptions.None;
+                                               "shared with any 3rd party. \n\nThe only information collected is by using " +
+                                               "HockeyApp SDK which stores the debug log whenever a crash occurs and sends it " +
+                                               "so that I can check what bugs are happening in the app.",
+                    "Privacy Policy") {Options = MessageDialogOptions.None};
                 dialog.Commands.Add(new UICommand("I Understand!", CommandInvokedHandler));
                 dialog.Commands.Add(new UICommand("I didn't Understand", CommandInvokedHandler));
 
                 dialog.DefaultCommandIndex = 0;
                 dialog.CancelCommandIndex = 1;
                 await dialog.ShowAsync();
-                localSettings.Values.Add("InAppMessageCount","1");
+                localSettings.Values.Add("InAppMessageCount", "1");
             }
         }
 
@@ -230,9 +271,24 @@ namespace BeFriend.ViewModel
 
                     break;
                 case "I didn't Understand":
-                    var uri = new Uri("mailto:prajjwaldimri@outlook.com");
-                    await Launcher.LaunchUriAsync(uri);
+                    await Launcher.LaunchUriAsync(new Uri("mailto:prajjwaldimri@outlook.com"));
                     break;
+                case "Gitter Chat":
+                    await Launcher.LaunchUriAsync(new Uri("https://gitter.im/prajjwaldimri/Friend-App"));
+                    break;
+                    
+                case "Github Issues":
+                    await Launcher.LaunchUriAsync(new Uri("https://github.com/prajjwaldimri/Friend-App/issues"));
+                    break;
+
+                case "Translate Now!":
+                    await Launcher.LaunchUriAsync(new Uri("https://crowdin.com/project/befriend/invite"));
+                    break;
+
+                case "Join the Development!":
+                    await Launcher.LaunchUriAsync(new Uri("https://gitter.im/prajjwaldimri/Friend-App"));
+                    break;
+
             }
         }
     }
