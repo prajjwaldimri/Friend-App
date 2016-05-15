@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Windows.ApplicationModel;
 using Windows.Storage;
 using Windows.System;
 using Windows.UI.Popups;
@@ -73,7 +74,7 @@ namespace BeFriend.ViewModel
         {
             try
             {
-               var applicationData = Windows.Storage.ApplicationData.Current;
+               var applicationData = ApplicationData.Current;
                 var localsettings = applicationData.LocalSettings;
                 if (localsettings.Values.ContainsKey("UserName"))
                     _userName = localsettings.Values["UserName"] as string;
@@ -115,18 +116,12 @@ namespace BeFriend.ViewModel
                     "Trust Yourself",
                     "Stay Positive",
                     "Don't Stop",
-                    "Enjoy Life",
-                    "Nobody is Perfect",
-                    "Change is Good",
-                    "Live the Moment",
-                    "Never Stop Dreaming",
-                    "Go For It",
-                    "Never Give Up",
-                    "Family is Forever"
+                    "Enjoy Life"
+                    
                 };
 
                 var random = new Random();
-                var number = random.Next(1, 20);
+                var number = random.Next(1, 13);
 
                 CommandBarQuote = quotes[number];
 
@@ -188,6 +183,18 @@ namespace BeFriend.ViewModel
         private async void InAppMessages()
         {
             var localSettings = ApplicationData.Current.LocalSettings;
+            var package = Package.Current.Id.Version;
+
+            if (localSettings.Values.ContainsKey("AppUpdated") && localSettings.Values["AppUpdated"].ToString()!=(package.Build.ToString() + package.Major.ToString()
+                                                                                                                  + package.Minor.ToString()))
+            {
+                var messageDialog = new MessageDialog("- Updated About Page \n " +
+                                                      "- Improved Messaging \n" +
+                                                      "- Minor Bug Fixes");
+                await messageDialog.ShowAsync();
+                ApplicationData.Current.LocalSettings.Values["AddUpdated"]= (package.Build.ToString() + package.Major.ToString()
+                    + package.Minor.ToString());
+            }
             if (localSettings.Values.ContainsKey("InAppMessageCount"))
             {
                 switch (Convert.ToInt64(localSettings.Values["InAppMessageCount"]))

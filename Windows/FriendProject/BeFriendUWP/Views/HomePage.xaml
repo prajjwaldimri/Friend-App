@@ -46,7 +46,7 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-
+        
         <Rectangle Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" Grid.ColumnSpan="4"/>
 
 
@@ -56,7 +56,7 @@
 
             <Ellipse Stroke="White" StrokeThickness="4"
                      Margin="0,0,0,0" Name="EllipseButton"
-                     Height="150" Width="150">
+                     Height="200" Width="200"> 
                 <interactivity:Interaction.Behaviors>
                     <core:EventTriggerBehavior EventName="Tapped">
                         <core:InvokeCommandAction Command="{Binding ProfileEllipseButtonTapCommand}"/>
@@ -74,10 +74,19 @@
                        VerticalAlignment="Center" FontFamily="ms-appx:/Fonts/Corbert-Regular.otf#Corbert" FontSize="22" FontWeight="Bold"/>
 
             <StackPanel Margin="0,20,0,0" HorizontalAlignment="Center" Orientation="Horizontal">
-                <FontIcon Glyph="&#xE1C4;"/>
-                <TextBlock Margin="2,0,0,0" Name="LocationTextBox"
+                    
+                <FontIcon Glyph="&#xf041;" FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome">
+                    <FontIcon.RenderTransform>
+                        <ScaleTransform ScaleX="1.4" ScaleY="1.4"/>
+                    </FontIcon.RenderTransform>
+                </FontIcon>
+                <TextBlock Margin="4,0,0,0" Name="LocationTextBox"
                            Text="{Binding GpsLocation}"
-                           HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                           HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                    <TextBlock.RenderTransform>
+                        <ScaleTransform ScaleX="1.4" ScaleY="1.4"/>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
             </StackPanel>
             </StackPanel>
         </StackPanel>
@@ -94,7 +103,8 @@
                 VerticalContentAlignment="Center">
             <Button.Content>
                 <StackPanel>
-                    <SymbolIcon Symbol="ReportHacked"/>
+                    <FontIcon FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"
+                              Glyph="&#xf071;" FontSize="32"/>
                     <TextBlock x:Uid="HomePageEmergency" HorizontalAlignment="Center" 
                                Margin="0,10,0,0" Text="Emergency!" 
                                TextWrapping="WrapWholeWords"/>
@@ -114,7 +124,7 @@
                 VerticalContentAlignment="Center">
             <Button.Content>
                 <StackPanel>
-                    <SymbolIcon Symbol="Help"/>
+                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE939;" FontSize="32"/>
                     <TextBlock x:Uid="HomePageSupport" HorizontalAlignment="Center" 
                                Margin="0,10,0,0" Text="Support"
                                TextWrapping="WrapWholeWords"/>

@@ -1,4 +1,8 @@
-MainPackage=C:\Users\prajj\Source\Repos\Friend-App\Windows\FriendProject\BeFriendUWP\bin\ARM\Release\Upload\BeFriendUWP_1.1.2.0_ARM.appx
+MainPackage=C:\Users\prajj\Source\Repos\Friend-App\Windows\FriendProject\BeFriendUWP\bin\ARM\Release\Upload\BeFriendUWP_1.1.3.0_ARM.appx
+ResourcePack=C:\Users\prajj\Source\Repos\Friend-App\Windows\FriendProject\BeFriendUWP\_language-fr.appx
+ResourcePack=C:\Users\prajj\Source\Repos\Friend-App\Windows\FriendProject\BeFriendUWP\_language-pt.appx
+ResourcePack=C:\Users\prajj\Source\Repos\Friend-App\Windows\FriendProject\BeFriendUWP\_language-ru.appx
+ResourcePack=C:\Users\prajj\Source\Repos\Friend-App\Windows\FriendProject\BeFriendUWP\_language-tr.appx
 ResourcePack=C:\Users\prajj\Source\Repos\Friend-App\Windows\FriendProject\BeFriendUWP\_scale-100.appx
 ResourcePack=C:\Users\prajj\Source\Repos\Friend-App\Windows\FriendProject\BeFriendUWP\_scale-125.appx
 ResourcePack=C:\Users\prajj\Source\Repos\Friend-App\Windows\FriendProject\BeFriendUWP\_scale-150.appx

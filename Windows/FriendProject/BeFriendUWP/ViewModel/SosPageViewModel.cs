@@ -64,9 +64,18 @@ namespace BeFriend.ViewModel
 
             if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
                 return;
-            
-            MessageSender();
-            
+
+            /*Message Sending Methods */
+            if (!ApplicationData.Current.LocalSettings.Values.ContainsKey("FirstContactNumber")) return;
+            _phonenumber = ApplicationData.Current.LocalSettings.Values["FirstContactNumber"] as string;
+            MessageSender(_phonenumber);
+            if (!ApplicationData.Current.LocalSettings.Values.ContainsKey("SecondContactNumber")) return;
+            _phonenumber = ApplicationData.Current.LocalSettings.Values["SecondContactNumber"] as string;
+            MessageSender(_phonenumber);
+            if (!ApplicationData.Current.LocalSettings.Values.ContainsKey("ThirdContactNumber")) return;
+            _phonenumber = ApplicationData.Current.LocalSettings.Values["ThirdContactNumber"] as string;
+            MessageSender(_phonenumber);
+
         }
 
 
@@ -85,10 +94,22 @@ namespace BeFriend.ViewModel
                 Message = "Help Me at";
             }
             await LocationAccesser();
-            MessageSender();
+
+            /*Message Sending Methods */
+            if (!ApplicationData.Current.LocalSettings.Values.ContainsKey("FirstContactNumber")) return;
+            _phonenumber = ApplicationData.Current.LocalSettings.Values["FirstContactNumber"] as string;
+            MessageSender(_phonenumber);
+            if (!ApplicationData.Current.LocalSettings.Values.ContainsKey("SecondContactNumber")) return;
+            _phonenumber = ApplicationData.Current.LocalSettings.Values["SecondContactNumber"] as string;
+            MessageSender(_phonenumber);
+            if (!ApplicationData.Current.LocalSettings.Values.ContainsKey("ThirdContactNumber")) return;
+            _phonenumber = ApplicationData.Current.LocalSettings.Values["ThirdContactNumber"] as string;
+            MessageSender(_phonenumber);
+
+            
             TwitterPoster();
             FacebookPoster();
-            //Caller();
+            Caller();
         }
 
         private async Task LocationAccesser()
@@ -136,7 +157,7 @@ namespace BeFriend.ViewModel
             RaisePropertyChanged(() => SosPageText);
         }
 
-        private async void MessageSender()
+        private async void MessageSender(string contactNumber)
         {
             if (_device == null)
             {
@@ -154,15 +175,15 @@ namespace BeFriend.ViewModel
             }
             //if (_device == null) return;
 
-            if (!ApplicationData.Current.LocalSettings.Values.ContainsKey("FirstContactNumber")) return;
-            _phonenumber = ApplicationData.Current.LocalSettings.Values["FirstContactNumber"] as string;
+            
             var msg = new SmsTextMessage2
             {
-                To = _phonenumber,
+                To = contactNumber,
                 Body = Message+"\t My coordinates are\n Latitude:" + _latitude + "Longitude \n" + _longitude
             };
             var result = await _device.SendMessageAndGetResultAsync(msg);
             SosPageText += "Sending Message.... \n";
+            RaisePropertyChanged(() => SosPageText);
 
             if (!result.IsSuccessful)
             {

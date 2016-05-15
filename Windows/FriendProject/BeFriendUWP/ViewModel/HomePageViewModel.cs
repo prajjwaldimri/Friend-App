@@ -223,9 +223,19 @@ namespace BeFriend.ViewModel
                     //}
 
 
-                    var uri = new Uri("https://gitter.im/prajjwaldimri/Friend-App#");
-                    await Launcher.LaunchUriAsync(uri);
+                    if (Microsoft.Services.Store.Engagement.Feedback.IsSupported)
+                    {
+                        await Microsoft.Services.Store.Engagement.Feedback.LaunchFeedbackAsync();
+                    }
+                    else
+                    {
+                        var uri = new Uri("https://gitter.im/prajjwaldimri/Friend-App#");
+                        await Launcher.LaunchUriAsync(uri);
+                    }
+
+
                     break;
+
 
                 
                 default:

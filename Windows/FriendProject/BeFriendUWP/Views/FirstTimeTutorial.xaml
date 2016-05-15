@@ -531,18 +531,29 @@
 
 			<PivotItem>
 				<StackPanel VerticalAlignment="Top" HorizontalAlignment="Stretch">
-                        <TextBlock Margin="0,20,0,20" Foreground="White" Text="Tutorial 3" x:Uid="FirstTimeTutorialThree"
+                    
+                    <TextBlock Margin="0,20,0,20" Foreground="White" Text="Tutorial 3" x:Uid="FirstTimeTutorialThree"
 						HorizontalAlignment="Center" FontSize="30" FontFamily="ms-appx:/Fonts/Brandon_bld.otf#Brandon Grotesque Bold" 
 						FontWeight="Bold"/>
 
-                        <TextBlock Margin="0,0,0,20" Foreground="White" Text="SOS Page" x:Uid="FirstTimeTutorialThreeHeader"
+                    <TextBlock Margin="0,0,0,20" Foreground="White" Text="SOS Page" x:Uid="FirstTimeTutorialThreeHeader"
 						HorizontalAlignment="Center" FontSize="20" 
 						FontFamily="ms-appx:/Fonts/UBUNTU-R.TTF#Ubuntu" FontWeight="Bold" TextWrapping="WrapWholeWords"
 						TextAlignment="Center"/>
-					<TextBlock Margin="0,0,0,0" Foreground="White" Text="The most important page in the App. Navigating to this page will trigger all emergency options built-in the application."
+					
+                    <TextBlock Margin="0,0,0,0" Foreground="White" Text="The most important page in the App. Navigating to this page will trigger all emergency options built-in the application."
 						HorizontalAlignment="Center" FontSize="16" TextWrapping="WrapWholeWords" x:Uid="FirstTimeTutorialThreeDescription"
 						TextAlignment="Center"/>
-				</StackPanel>
+
+                    <TextBlock Margin="0,0,0,20" Foreground="White" Text="Permanent Toast Notifications" x:Uid="FirstTimeTutorialThreeHeader"
+						HorizontalAlignment="Center" FontSize="20" 
+						FontFamily="ms-appx:/Fonts/UBUNTU-R.TTF#Ubuntu" FontWeight="Bold" TextWrapping="WrapWholeWords"
+						TextAlignment="Center"/>
+                       
+                    <TextBlock Margin="0,0,0,0" Foreground="White" Text="Enable this option in SETTINGS page. This will place a silent notification in action center periodically till it is disabled. Clicking on the notification will immediately launch the SOS Page"
+						HorizontalAlignment="Center" FontSize="16" TextWrapping="WrapWholeWords" x:Uid="FirstTimeTutorialThreeDescription"
+						TextAlignment="Center"/>
+                    </StackPanel>
 
 			</PivotItem>
 			

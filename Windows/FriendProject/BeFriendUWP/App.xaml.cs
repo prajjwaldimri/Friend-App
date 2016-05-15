@@ -112,6 +112,13 @@ namespace BeFriend
             // Ensure the current window is active
             Window.Current.Activate();
 
+            if (!localsettings.Values.ContainsKey("AppUpdated"))
+            {
+                var package = Package.Current.Id.Version;
+                localsettings.Values.Add("AppUpdated",(package.Build.ToString()+package.Major.ToString()
+                    +package.Minor.ToString()));
+            }
+
             if (!Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
                 return;
             try

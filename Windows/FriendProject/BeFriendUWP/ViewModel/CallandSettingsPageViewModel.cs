@@ -10,11 +10,14 @@ using Windows.ApplicationModel.Contacts;
 using Windows.Security.Authentication.Web;
 using Windows.Security.Credentials;
 using Windows.Storage;
+using Windows.UI.Notifications;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using BeFriend.Views;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
+using Microsoft.QueryStringDotNET;
+using NotificationsExtensions.Toasts;
 using winsdkfb;
 using winsdkfb.Graph;
 
@@ -358,11 +361,48 @@ namespace BeFriend.ViewModel
 
             var taskBuilder = new BackgroundTaskBuilder();
             taskBuilder.Name = taskName;
-            taskBuilder.TaskEntryPoint = typeof (BackgroundProcesses.ActionCenterToastMaker).FullName;
+            taskBuilder.TaskEntryPoint = typeof(BackgroundProcesses.ActionCenterToastMaker).FullName;
             taskBuilder.SetTrigger(new TimeTrigger(500, false));
 
             var register = taskBuilder.Register();
-            
+
+            //Create a new Toast immediately after user toggles the switch     
+            const string title = "Click on time of Emergency!";
+
+            var visual = new ToastVisual()
+            {
+                TitleText = new ToastText()
+                {
+                    Text = title
+                }
+
+            };
+
+            const int conversationId = 177777;
+
+            var toastContent = new ToastContent()
+            {
+                Visual = visual,
+                Launch = new QueryString()
+                {
+                    {"conversationId", conversationId.ToString()}
+                }.ToString()
+            };
+
+            var toast = new ToastNotification(toastContent.GetXml())
+            {
+                ExpirationTime = DateTime.Now.AddHours(5),
+                SuppressPopup = true,
+                Tag = "Friends"
+            };
+            if (ToastNotificationManager.History != null)
+            {
+                ToastNotificationManager.History.Remove("Friends");
+            }
+
+            ToastNotificationManager.CreateToastNotifier().Show(toast);
+
+
         }
 
         private static async void BackgroundProcessRemover()

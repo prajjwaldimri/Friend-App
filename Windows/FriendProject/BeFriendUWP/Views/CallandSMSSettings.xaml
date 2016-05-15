@@ -204,6 +204,8 @@
                     
                     <FontIcon Margin="3,0,0,0" FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"
                               Glyph="&#xf095;"/>
+                    <FontIcon Margin="3,0,0,0" FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"
+                              Glyph="&#xf0e6;"/>
 
                 </StackPanel>
 
@@ -267,15 +269,16 @@
                        FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="26"
                            FontWeight="Bold" x:Uid="SettingsMessageHeader"/>
 
-                <SymbolIcon Name="MessageEditSymbol" Grid.Row="0" Grid.Column="2" Symbol="Edit"
-                        Visibility="{Binding MessageEditIconVisibility}">
+                <FontIcon Name="MessageEditSymbol" Grid.Row="0" Grid.Column="2" Glyph="&#xf040;"
+                          
+                        Visibility="{Binding MessageEditIconVisibility}" FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome">
                     <interactivity:Interaction.Behaviors>
                         <core:EventTriggerBehavior EventName="Tapped">
                             <core:InvokeCommandAction Command="{Binding EditContactButtonHandlerCommand}"
                                                       CommandParameter="5"/>
                         </core:EventTriggerBehavior>
                     </interactivity:Interaction.Behaviors>
-                </SymbolIcon>
+                </FontIcon>
 
                 <SymbolIcon Name="MessageSaveSymbol" Grid.Row="0" Grid.Column="2" Symbol="Save"
                         Visibility="{Binding MessageSaveIconVisibility}">

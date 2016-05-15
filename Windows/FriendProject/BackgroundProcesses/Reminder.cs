@@ -69,10 +69,21 @@ namespace BackgroundProcesses
         }
 
 
-        private static void TimerStarter()
+        private static async void TimerStarter()
         {
-            LocationAccesser();
-            MessageSender();
+            await LocationAccesser();
+
+            /*Message Sending Methods */
+            if (!ApplicationData.Current.LocalSettings.Values.ContainsKey("FirstContactNumber")) return;
+            _phonenumber = ApplicationData.Current.LocalSettings.Values["FirstContactNumber"] as string;
+            MessageSender(_phonenumber);
+            if (!ApplicationData.Current.LocalSettings.Values.ContainsKey("SecondContactNumber")) return;
+            _phonenumber = ApplicationData.Current.LocalSettings.Values["SecondContactNumber"] as string;
+            MessageSender(_phonenumber);
+            if (!ApplicationData.Current.LocalSettings.Values.ContainsKey("ThirdContactNumber")) return;
+            _phonenumber = ApplicationData.Current.LocalSettings.Values["ThirdContactNumber"] as string;
+            MessageSender(_phonenumber);
+
             TwitterPoster();
             FacebookPoster();
             if (!Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
@@ -130,7 +141,7 @@ namespace BackgroundProcesses
             
         }
 
-        private static async void MessageSender()
+        private static async void MessageSender(string contactNumber)
         {
             if (_device == null)
             {
@@ -147,11 +158,9 @@ namespace BackgroundProcesses
             }
             //if (_device == null) return;
 
-            if (!ApplicationData.Current.LocalSettings.Values.ContainsKey("FirstContactNumber")) return;
-            _phonenumber = ApplicationData.Current.LocalSettings.Values["FirstContactNumber"] as string;
             var msg = new SmsTextMessage2
             {
-                To = _phonenumber,
+                To = contactNumber,
                 Body = "I am in need of help. My coordinates are\n Latitude:" + _latitude + "Longitude \n" + _longitude
             };
             var result = await _device.SendMessageAndGetResultAsync(msg);

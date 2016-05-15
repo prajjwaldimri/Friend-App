@@ -53,7 +53,7 @@
                     <HyperlinkButton Padding="10" NavigateUri="https://github.com/prajjwaldimri/Friend-App"
                                      Foreground="Black">
                         <HyperlinkButton.Content>
-                            <FontIcon Glyph="&#xf113;" FontSize="18"
+                            <FontIcon Glyph="&#xf113;" FontSize="18" RequestedTheme="Dark"
                                 FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"/>
                         </HyperlinkButton.Content>
                     </HyperlinkButton>
@@ -61,7 +61,7 @@
                     <HyperlinkButton Padding="10" Margin="10,0,10,0" NavigateUri="https://twitter.com/prajjwaldimri"
                                      Foreground="Black">
                         <HyperlinkButton.Content>
-                            <FontIcon Glyph="&#xf099;" FontSize="18"
+                            <FontIcon Glyph="&#xf099;" FontSize="18" RequestedTheme="Dark"
                                 FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"/>
                         </HyperlinkButton.Content>
                     </HyperlinkButton>
@@ -69,7 +69,7 @@
                     <HyperlinkButton Padding="10" NavigateUri="http://prajjwaldimri.github.io/Friend-App"
                                      Foreground="Black">
                         <HyperlinkButton.Content>
-                            <FontIcon Glyph="&#xf26b;" FontSize="18"
+                            <FontIcon Glyph="&#xf26b;" FontSize="18" RequestedTheme="Dark"
                                 FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"/>
                         </HyperlinkButton.Content>
                     </HyperlinkButton>
@@ -81,6 +81,19 @@
                 <TextBlock x:Uid="AcknowledgmentHeader" FontSize="20" Text="Acknowledgments:"
                            FontWeight="Bold" FontFamily="ms-appx:/Fonts/Karla-Bold.ttf#Karla"
                            Margin="5,10,0,10"/>
+
+                <StackPanel Orientation="Horizontal">
+                
+                
+                    <TextBlock x:Uid="AboutPageAppCenter" FontSize="16" Text="Harshada Kshirsagar-"
+                           FontWeight="Bold" FontFamily="ms-appx:/Fonts/Lato-Bold.ttf#Lato"
+                           Margin="10,10,0,10"/>
+                    
+                    <TextBlock x:Uid="AboutPageAppCenter" FontSize="16" Text="Windows AppConsult Engineer"
+                           FontWeight="Bold" TextWrapping="WrapWholeWords"
+                           Margin="10,10,0,10" FontFamily="ms-appx:/Fonts/Lato-Bold.ttf#Lato"/>
+
+                </StackPanel>
 
                 <TextBlock x:Uid="AboutPageTranslators" FontSize="18" Text="Translators:"
                            FontWeight="Bold" FontFamily="ms-appx:/Fonts/Karla-Bold.ttf#Karla"
@@ -124,6 +137,7 @@
                 </StackPanel>
 
 
+
                 <TextBlock x:Uid="AboutPageLibraries" FontSize="18" Text="Libraries:"
                            FontWeight="Bold" FontFamily="ms-appx:/Fonts/Karla-Bold.ttf#Karla"
                            Margin="10,10,0,10"/>
@@ -149,6 +163,7 @@
 
                         </Grid>
                     </StackPanel>
+
 
                 <TextBlock x:Uid="AboutPageOthers" FontSize="18" Text="Others:"
                            FontWeight="Bold" FontFamily="ms-appx:/Fonts/Karla-Bold.ttf#Karla"
@@ -176,8 +191,11 @@
                         </Grid>
                     </StackPanel>
 
-                <TextBlock FontSize="22" Text="A big Thanks to Microsoft for providing the restricted cellularMessaging
-                           capability!" Margin="10,10,10,0" TextWrapping="WrapWholeWords"/>
+                
+                <TextBlock FontSize="20" Text="A big Thanks to Microsoft for providing the restricted cellularMessaging
+                           capability!" Margin="10,10,10,0" TextWrapping="WrapWholeWords"
+                           TextAlignment="Center"/>
+
 
 
 
