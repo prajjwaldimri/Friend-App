@@ -229,8 +229,16 @@
     <value>The most important page in the App. Navigating to this page will trigger all emergency options built-in the application.</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
+  <data name="FirstTimeTutorialThreeDescription1.Text" xml:space="preserve">
+    <value>Enable this option in SETTINGS page. This will place a silent notification in action center periodically till it is disabled. Clicking on the notification will immediately launch the SOS Page</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
   <data name="FirstTimeTutorialThreeHeader.Text" xml:space="preserve">
     <value>SOS Page</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialThreeHeader1.Text" xml:space="preserve">
+    <value>Permanent Toast Notifications</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialTwitter.Text" xml:space="preserve">
