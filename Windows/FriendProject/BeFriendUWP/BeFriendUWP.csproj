@@ -161,6 +161,7 @@
     </Content>
     <Content Include="Fonts\Karla-Regular.ttf" />
     <Content Include="Fonts\Karla-Bold.ttf" />
+    <Content Include="Quotes.txt" />
     <Content Include="TwitterConsumerKey.txt" />
     <Content Include="TwitterConsumerSecret.txt" />
     <None Include="app.config" />

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
@@ -6,11 +7,11 @@ using Windows.ApplicationModel.Background;
 using Windows.Networking.PushNotifications;
 using Windows.Storage;
 using Windows.UI;
-using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using BeFriend.Views;
+using Microsoft.Band;
 using Microsoft.WindowsAzure.Messaging;
 
 namespace BeFriend
@@ -87,6 +88,8 @@ namespace BeFriend
 
                     await Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager.
                      InstallCommandDefinitionsFromStorageFileAsync(vcdStorageFile);
+
+                    
 
                 }
                 catch (Exception ex)

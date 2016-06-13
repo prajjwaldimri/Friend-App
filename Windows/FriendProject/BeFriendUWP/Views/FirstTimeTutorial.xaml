@@ -545,7 +545,7 @@
 						HorizontalAlignment="Center" FontSize="16" TextWrapping="WrapWholeWords" x:Uid="FirstTimeTutorialThreeDescription"
 						TextAlignment="Center"/>
 
-					<TextBlock Margin="0,0,0,20" Foreground="White" Text="Permanent Toast Notifications" x:Uid="FirstTimeTutorialThreeHeader1"
+					<TextBlock Margin="0,40,0,20" Foreground="White" Text="Permanent Toast Notifications" x:Uid="FirstTimeTutorialThreeHeader1"
 						HorizontalAlignment="Center" FontSize="20" 
 						FontFamily="ms-appx:/Fonts/UBUNTU-R.TTF#Ubuntu" FontWeight="Bold" TextWrapping="WrapWholeWords"
 						TextAlignment="Center"/>

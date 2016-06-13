@@ -1,29 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Globalization;
 using System.Linq;
-using System.Threading.Tasks;
-using System.Xml;
 using Windows.ApplicationModel.Background;
 using Windows.ApplicationModel.Contacts;
 using Windows.Security.Authentication.Web;
 using Windows.Security.Credentials;
 using Windows.Storage;
+using Windows.System;
 using Windows.UI.Notifications;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 using BeFriend.Views;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
+using Microsoft.Band;
+using Microsoft.Band.Personalization;
+using Microsoft.Band.Tiles;
 using Microsoft.QueryStringDotNET;
 using NotificationsExtensions.Toasts;
 using winsdkfb;
-using winsdkfb.Graph;
 
 
 namespace BeFriend.ViewModel
 {
+    /// <summary>
+    /// ViewModel for settings Page. Currently takes heavy resources and shows delay in UI on navigated.
+    /// //TODO: Reduce load time of Settings Page
+    /// </summary>
     public class CallandSettingsPageViewModel : BaseViewModel
     {
         public RelayCommand LocalStorageSettingsRetrieverCommand { get; private set; }
@@ -35,6 +40,7 @@ namespace BeFriend.ViewModel
         public RelayCommand ThemeToggledCommand { get; private set; }
         public RelayCommand SliderValueChangedCommand { get; private set; }
         public RelayCommand FacebookAuthenticatorCommand { get; private set; }
+        public RelayCommand MsBandTileCreatorCommand { get; private set; }
 
         public CallandSettingsPageViewModel()
         {
@@ -47,9 +53,10 @@ namespace BeFriend.ViewModel
             ThemeToggledCommand = new RelayCommand(ThemeChangerToggledButton);
             SliderValueChangedCommand = new RelayCommand(SliderValueControllerMethod);
             FacebookAuthenticatorCommand = new RelayCommand(FacebookLoginMethod);
+            MsBandTileCreatorCommand = new RelayCommand(BandTileCreator);
         }
 
-               
+        
         private string _themeColorPrimary;
         private string _themeColorSecondary;
         private string _notificationStatus;
@@ -697,8 +704,58 @@ namespace BeFriend.ViewModel
 
                 case 2:
                     localsettings.Values.Clear();
+                    var dialog1 = new MessageDialog("Removed all local settings. Restart the app to see effects!");
+                    await dialog1.ShowAsync();
                     break;
             }
+        }
+
+        private async void BandTileCreator()
+        {
+            try
+            {
+                var bandClientManager = BandClientManager.Instance;
+                var pairedBands = await bandClientManager.GetBandsAsync();
+                if (pairedBands.Length == 0)
+                {
+                    var msg = new MessageDialog("No bands connected! \nPlease connect a band and try again");
+                    await msg.ShowAsync();
+                    await Launcher.LaunchUriAsync(new Uri("ms-settings-bluetooth:"));
+                    return;
+                }
+
+                var bandInfo = pairedBands.FirstOrDefault();
+                var bandClient = await bandClientManager.ConnectAsync(bandInfo);
+
+                var tileManager = bandClient.TileManager;
+                // get the current set of tiles
+                var tiles = await tileManager.GetTilesAsync();
+                // get the number of tiles we can add
+                var capacity = await tileManager.GetRemainingTileCapacityAsync();
+                // create a new tile
+                var tile = new BandTile(Guid.NewGuid())
+                {
+                   Name = "BeFriendBeta"
+                };
+                // add the tile
+                await tileManager.AddTileAsync(tile);
+               
+                tileManager.TileButtonPressed += (sender, e) => {
+                    var frame = Window.Current.Content as Frame;
+                    if (frame != null)
+                    {
+                        frame.Navigate(typeof(Sospage));
+                    }
+                };
+                
+                
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
+
+
         }
 
     }

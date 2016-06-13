@@ -195,7 +195,7 @@
                           Foreground="Black" Click="StoreRateButton_OnClick"/>
             
             <CommandBar.Content>
-                <TextBlock Margin="20,10" Text="{Binding CommandBarQuote}"
+                <TextBlock Margin="20,10" Text="{Binding CommandBarQuote}" FontWeight="Bold"
                            Foreground="Black" TextTrimming="CharacterEllipsis"/>
             </CommandBar.Content>
             

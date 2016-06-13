@@ -10,7 +10,6 @@ using Windows.Security.Credentials;
 using Windows.Storage;
 using Windows.UI.Notifications;
 using Windows.UI.Popups;
-using Windows.UI.Xaml;
 using Newtonsoft.Json;
 using Tweetinvi;
 using winsdkfb;

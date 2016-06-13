@@ -86,11 +86,11 @@
                 
                 
                     <TextBlock x:Uid="AboutPageAppCenter" FontSize="16" Text="Harshada Kshirsagar-"
-                           FontWeight="Bold" FontFamily="ms-appx:/Fonts/Lato-Bold.ttf#Lato"
-                           Margin="10,10,0,10"/>
+                           FontFamily="ms-appx:/Fonts/Lato-Bold.ttf#Lato"
+                           Margin="10,10,0,10" TextWrapping="WrapWholeWords"/>
                     
                     <TextBlock x:Uid="AboutPageAppCenter" FontSize="16" Text="Windows AppConsult Engineer"
-                           FontWeight="Bold" TextWrapping="WrapWholeWords"
+                           TextWrapping="WrapWholeWords"
                            Margin="10,10,0,10" FontFamily="ms-appx:/Fonts/Lato-Bold.ttf#Lato"/>
 
                 </StackPanel>

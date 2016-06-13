@@ -1,8 +1,10 @@
 ﻿using System;
-using Windows.ApplicationModel.Store;
+using System.Collections.Generic;
+using System.Linq;
 using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Microsoft.Band;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -24,6 +26,8 @@ namespace BeFriend.Views
             var uri = new Uri("ms-windows-store://review/?ProductId=9NBLGGH4Q8NG");
             await Launcher.LaunchUriAsync(uri);
         }
+
+        
     }
 }
 

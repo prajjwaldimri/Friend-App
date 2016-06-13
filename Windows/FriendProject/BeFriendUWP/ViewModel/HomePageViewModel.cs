@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
-using System.Runtime.InteropServices;
-using Windows.ApplicationModel.Contacts;
 using Windows.Devices.Geolocation;
 using Windows.Services.Maps;
 using Windows.Storage;
@@ -12,7 +10,6 @@ using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
-using Autofac.Core.Registration;
 using BeFriend.Services;
 using BeFriend.Views;
 using GalaSoft.MvvmLight.Command;

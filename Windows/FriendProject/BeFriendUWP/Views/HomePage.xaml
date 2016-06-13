@@ -47,16 +47,16 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         
-        <Rectangle Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" Grid.ColumnSpan="4"/>
+        <Rectangle Grid.Row="0" Grid.Column="0" Grid.RowSpan="5" Grid.ColumnSpan="4"/>
 
 
         <StackPanel BorderThickness="0,0,0,0" Grid.Row="0" Grid.RowSpan="5" Grid.Column="0"
                     Grid.ColumnSpan="4" Orientation="Horizontal"
-                    HorizontalAlignment="Center">
+                    HorizontalAlignment="Center" VerticalAlignment="Center">
 
             <Ellipse Stroke="White" StrokeThickness="4"
                      Margin="0,0,0,0" Name="EllipseButton"
-                     Height="200" Width="200"> 
+                     Height="150" Width="150"> 
                 <interactivity:Interaction.Behaviors>
                     <core:EventTriggerBehavior EventName="Tapped">
                         <core:InvokeCommandAction Command="{Binding ProfileEllipseButtonTapCommand}"/>
