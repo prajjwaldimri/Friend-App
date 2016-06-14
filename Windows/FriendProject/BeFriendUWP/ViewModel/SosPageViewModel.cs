@@ -7,13 +7,11 @@ using Windows.Devices.Sms;
 using Windows.Foundation.Collections;
 using Windows.Security.Credentials;
 using Windows.Storage;
-using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using BeFriend.Services;
 using GalaSoft.MvvmLight.Command;
 using Newtonsoft.Json;
 using Tweetinvi;
-using Tweetinvi.Credentials;
 using winsdkfb;
 using winsdkfb.Graph;
 
@@ -62,11 +60,43 @@ namespace BeFriend.ViewModel
         {
             await LocationAccesser();
 
-            if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
+            await TwitterPoster();
+            await FacebookPoster();
+
+            if (!Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
                 return;
-            
-            MessageSender();
-            
+
+            /*Message Sending Methods */
+            if (!ApplicationData.Current.LocalSettings.Values.ContainsKey("FirstContactNumber"))
+            {
+                SosPageText += "\n No First Contact Assigned! Checking other entries";
+                RaisePropertyChanged(() => SosPageText);
+            }
+            else
+            {
+                _phonenumber = ApplicationData.Current.LocalSettings.Values["FirstContactNumber"] as string;
+                MessageSender(_phonenumber);
+            }
+            if (!ApplicationData.Current.LocalSettings.Values.ContainsKey("SecondContactNumber"))
+            {
+                SosPageText += "\n No Second Contact Assigned! Checking other entries";
+                RaisePropertyChanged(() => SosPageText);
+            }
+            else
+            {
+                _phonenumber = ApplicationData.Current.LocalSettings.Values["SecondContactNumber"] as string;
+                MessageSender(_phonenumber);
+            }
+            if (!ApplicationData.Current.LocalSettings.Values.ContainsKey("ThirdContactNumber"))
+            {
+                SosPageText += "\n No Third Contact Assigned! Checking other entries";
+                RaisePropertyChanged(() => SosPageText);
+            }
+            else
+            {
+                _phonenumber = ApplicationData.Current.LocalSettings.Values["ThirdContactNumber"] as string;
+                MessageSender(_phonenumber);
+            }
         }
 
 
@@ -85,15 +115,52 @@ namespace BeFriend.ViewModel
                 Message = "Help Me at";
             }
             await LocationAccesser();
-            MessageSender();
-            TwitterPoster();
-            FacebookPoster();
-            //Caller();
+
+            await TwitterPoster();
+            await FacebookPoster();
+
+            if (!Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
+                return;
+
+            /*Message Sending Methods */
+            if (!ApplicationData.Current.LocalSettings.Values.ContainsKey("FirstContactNumber"))
+            {
+                SosPageText += "\n No First Contact Assigned! \n Checking other entries";
+                RaisePropertyChanged(() => SosPageText);
+            }
+            else
+            {
+                _phonenumber = ApplicationData.Current.LocalSettings.Values["FirstContactNumber"] as string;
+                MessageSender(_phonenumber);
+            }
+            if (!ApplicationData.Current.LocalSettings.Values.ContainsKey("SecondContactNumber"))
+            {
+                SosPageText += "\n No Second Contact Assigned! \n Checking other entries";
+                RaisePropertyChanged(() => SosPageText);
+            }
+            else
+            {
+                _phonenumber = ApplicationData.Current.LocalSettings.Values["SecondContactNumber"] as string;
+                MessageSender(_phonenumber);
+            }
+            if (!ApplicationData.Current.LocalSettings.Values.ContainsKey("ThirdContactNumber"))
+            {
+                SosPageText += "\n No Third Contact Assigned! \n Checking other entries \n";
+                RaisePropertyChanged(() => SosPageText);
+            }
+            else
+            {
+                _phonenumber = ApplicationData.Current.LocalSettings.Values["ThirdContactNumber"] as string;
+                MessageSender(_phonenumber);
+            }
+
+            Caller();
         }
 
         private async Task LocationAccesser()
         {
-            SosPageText += "Trying to get location... \n";
+            SosPageText += "Trying to get the most accurate location co-ordinates... \n";
+            RaisePropertyChanged(() => SosPageText);
             try
             {
                 var accessStatus = await Geolocator.RequestAccessAsync();
@@ -136,7 +203,7 @@ namespace BeFriend.ViewModel
             RaisePropertyChanged(() => SosPageText);
         }
 
-        private async void MessageSender()
+        private async void MessageSender(string contactNumber)
         {
             if (_device == null)
             {
@@ -154,15 +221,15 @@ namespace BeFriend.ViewModel
             }
             //if (_device == null) return;
 
-            if (!ApplicationData.Current.LocalSettings.Values.ContainsKey("FirstContactNumber")) return;
-            _phonenumber = ApplicationData.Current.LocalSettings.Values["FirstContactNumber"] as string;
+            
             var msg = new SmsTextMessage2
             {
-                To = _phonenumber,
+                To = contactNumber,
                 Body = Message+"\t My coordinates are\n Latitude:" + _latitude + "Longitude \n" + _longitude
             };
             var result = await _device.SendMessageAndGetResultAsync(msg);
             SosPageText += "Sending Message.... \n";
+            RaisePropertyChanged(() => SosPageText);
 
             if (!result.IsSuccessful)
             {
@@ -188,7 +255,8 @@ namespace BeFriend.ViewModel
 
             if (!ApplicationData.Current.LocalSettings.Values.ContainsKey("FirstContactNumber"))
             {
-                SosPageText += "Contacts not assigned \n";
+                SosPageText += "\n No Contacts assigned to call \n";
+                RaisePropertyChanged(() => SosPageText);
                 return;
             }
             _phonenumber = ApplicationData.Current.LocalSettings.Values["FirstContactNumber"] as string;
@@ -201,19 +269,20 @@ namespace BeFriend.ViewModel
 
             if ((SpineClass.CurrentPhoneLine != null))
             {
-                SosPageText += "Calling... \n";
+                SosPageText += "\n Calling... \n";
                 SpineClass.CurrentPhoneLine.Dial(_phonenumber, _phonename);
             }
             else
             {
-                SosPageText += "No line found to place the call. No SIM or system not a mobile phone \n";
+                SosPageText += "\n No line found to place the call. No SIM or system not a mobile phone \n";
             }
             RaisePropertyChanged(()=>SosPageText);
         }
 
-        private async void TwitterPoster()
+        private async Task TwitterPoster()
         {
-            SosPageText += "Checking credentials... \n";
+            SosPageText += "\n Checking credentials... \n";
+            RaisePropertyChanged(() => SosPageText);
             var vault = new PasswordVault();
             try
             {
@@ -248,39 +317,44 @@ namespace BeFriend.ViewModel
             RaisePropertyChanged(()=>SosPageText);
         }
 
-        private async void FacebookPoster()
+        private async Task FacebookPoster()
         {
             // Get active session
             FBSession sess = FBSession.ActiveSession;
 
+            SosPageText += "\n Getting active Facebook Session...";
+            RaisePropertyChanged(() => SosPageText);
 
             if (sess.LoggedIn)
             {
                 var user = sess.User;
                 // Set caption, link and description parameters
                 var parameters = new PropertySet();
-                
+
                 // Add post message
                 await LocationAccesser();
-                parameters.Add("message", Message+"\n"+"\n"+_latitude+"\n"+_longitude);
+                parameters.Add("message", Message + "\n" + "\n" + _latitude + "\n" + _longitude);
 
                 // Set Graph api path
                 var path = "/" + user.Id + "/feed";
 
-                var factory = new FBJsonClassFactory(s => {
-                                                              return JsonConvert.DeserializeObject<FBReturnObject>(s);
-                });
+                var factory = new FBJsonClassFactory(JsonConvert.DeserializeObject<FBReturnObject>);
 
                 var singleValue = new FBSingleValue(path, parameters, factory);
                 var result = await singleValue.PostAsync();
                 if (result.Succeeded)
                 {
-                    SosPageText += "\n Posted to Facebook Wall";
+                    SosPageText += "\n Posted to Facebook Wall \n";
                 }
                 else
                 {
-                    SosPageText += "\n Can't post to Facebook Wall";
+                    SosPageText += "\n Can't post to Facebook Wall \n";
                 }
+            }
+            else
+            {
+                SosPageText += "\n Facebook Not Configured or Active session not available! ";
+                RaisePropertyChanged(() => SosPageText);
             }
             RaisePropertyChanged(()=>SosPageText);
         }

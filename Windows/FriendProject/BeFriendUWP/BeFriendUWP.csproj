@@ -22,7 +22,7 @@
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <AppxBundle>Always</AppxBundle>
     <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
-    <AppxPackageDir>C:\Users\prajj\Source\Repos\Friend-App\Windows\FriendProject\BeFriendUWP\AppPackages\Github\</AppxPackageDir>
+    <AppxPackageDir>C:\Users\prajj\Source\Repos\Friend-App\Windows\FriendProject\BeFriendUWP\AppPackages\</AppxPackageDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <DebugSymbols>true</DebugSymbols>
@@ -161,6 +161,7 @@
     </Content>
     <Content Include="Fonts\Karla-Regular.ttf" />
     <Content Include="Fonts\Karla-Bold.ttf" />
+    <Content Include="Quotes.txt" />
     <Content Include="TwitterConsumerKey.txt" />
     <Content Include="TwitterConsumerSecret.txt" />
     <None Include="app.config" />
@@ -177,6 +178,8 @@
     <Content Include="Fonts\Lato-Heavy.ttf" />
     <Content Include="Fonts\Pinstripe Limo.ttf" />
     <None Include="project.json" />
+    <PRIResource Include="Strings\ru\Resources.resw" />
+    <PRIResource Include="Strings\pt-BR\Resources.resw" />
     <PRIResource Include="Strings\fr\Resources.resw" />
     <PRIResource Include="Strings\pt\Resources.resw" />
     <PRIResource Include="Strings\tr\Resources.resw" />
@@ -294,6 +297,12 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <SDKReference Include="Microsoft.Services.Store.Engagement, Version=10.0">
+      <Name>Microsoft Store Engagement SDK</Name>
+    </SDKReference>
+    <SDKReference Include="Microsoft.VCLibs, Version=14.0">
+      <Name>Visual C++ 2015 Runtime for Universal Windows Platform Apps</Name>
+    </SDKReference>
     <SDKReference Include="WindowsMobile, Version=10.0.10586.0">
       <Name>Windows Mobile Extensions for the UWP</Name>
     </SDKReference>

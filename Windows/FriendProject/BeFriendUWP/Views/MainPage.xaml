@@ -16,6 +16,9 @@
         <core:EventTriggerBehavior EventName="Loaded">
             <core:InvokeCommandAction Command="{Binding UniversalSettingsCommand}"/>
         </core:EventTriggerBehavior>
+        <core:EventTriggerBehavior EventName="Loaded">
+            <core:InvokeCommandAction Command="{Binding InAppMessagesCommand}"/>
+        </core:EventTriggerBehavior>
         </interactivity:Interaction.Behaviors>
     
     <!--Modifies the selected color in Pivot Header-->
@@ -192,7 +195,7 @@
                           Foreground="Black" Click="StoreRateButton_OnClick"/>
             
             <CommandBar.Content>
-                <TextBlock Margin="20,10" Text="{Binding CommandBarQuote}"
+                <TextBlock Margin="20,10" Text="{Binding CommandBarQuote}" FontWeight="Bold"
                            Foreground="Black" TextTrimming="CharacterEllipsis"/>
             </CommandBar.Content>
             

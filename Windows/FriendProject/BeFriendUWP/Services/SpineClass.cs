@@ -8,12 +8,10 @@ using System.Threading.Tasks;
 using Windows.ApplicationModel.Calls;
 using Windows.ApplicationModel.Contacts;
 using Windows.Devices.Sms;
-using Windows.Foundation.Collections;
 using Windows.Graphics.Imaging;
 using Windows.Storage;
 using Windows.Storage.Streams;
 using Windows.UI.Xaml.Media.Imaging;
-using Newtonsoft.Json;
 
 namespace BeFriend.Services
 {

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
-using System.Runtime.InteropServices;
-using Windows.ApplicationModel.Contacts;
 using Windows.Devices.Geolocation;
 using Windows.Services.Maps;
 using Windows.Storage;
@@ -12,7 +10,6 @@ using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
-using Autofac.Core.Registration;
 using BeFriend.Services;
 using BeFriend.Views;
 using GalaSoft.MvvmLight.Command;
@@ -215,17 +212,27 @@ namespace BeFriend.ViewModel
                     break;
 
                 case 2:
-                    var frame1 = Window.Current.Content as Frame;
-                    if (frame1 != null)
-                    {
+                    //var frame1 = Window.Current.Content as Frame;
+                    //if (frame1 != null)
+                    //{
 
-                        frame1.Navigate(typeof(Views.ChatBot));
+                    //    frame1.Navigate(typeof(Views.ChatBot));
+                    //}
+
+
+                    if (Microsoft.Services.Store.Engagement.Feedback.IsSupported)
+                    {
+                        await Microsoft.Services.Store.Engagement.Feedback.LaunchFeedbackAsync();
+                    }
+                    else
+                    {
+                        var uri = new Uri("https://gitter.im/prajjwaldimri/Friend-App#");
+                        await Launcher.LaunchUriAsync(uri);
                     }
 
 
-                    //var uri = new Uri("mailto:prajjwaldimri@outlook.com");
-                    //await Launcher.LaunchUriAsync(uri);
                     break;
+
 
                 
                 default:

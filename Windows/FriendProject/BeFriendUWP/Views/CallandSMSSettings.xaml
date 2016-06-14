@@ -51,6 +51,7 @@
                     <RowDefinition Height="1.4*"/>
                     <RowDefinition Height="0.2*"/>
                     <RowDefinition Height="1.4*"/>
+                    <RowDefinition Height="30"/>
                     <RowDefinition Height="0.2*"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
@@ -204,6 +205,8 @@
                     
                     <FontIcon Margin="3,0,0,0" FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"
                               Glyph="&#xf095;"/>
+                    <FontIcon Margin="3,0,0,0" FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"
+                              Glyph="&#xf0e6;"/>
 
                 </StackPanel>
 
@@ -212,7 +215,10 @@
                     <TextBlock VerticalAlignment="Center" FontSize="18" 
                            FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"
                        Text="{Binding SecondContactName}" Margin="0,0,10,0"/>
-                    
+
+                    <FontIcon Margin="3,0,0,0" FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"
+                              Glyph="&#xf0e6;"/>
+
                 </StackPanel>
                 
                 <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
@@ -220,6 +226,9 @@
                     <TextBlock VerticalAlignment="Center"
                        FontSize="18" FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"
                        Text="{Binding ThirdContactName}" Margin="0,0,10,0" />
+
+                    <FontIcon Margin="3,0,0,0" FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"
+                              Glyph="&#xf0e6;"/>
 
                 </StackPanel>
 
@@ -246,14 +255,15 @@
 
             </Grid>
 
-            <Grid Grid.Row="2" Margin="10,10,0,0">
+            <Grid Grid.Row="2" Margin="10,30,0,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="20"/>
                     <RowDefinition Height="3*"/>
-                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="30"/>
                     <RowDefinition/>
-                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
@@ -267,15 +277,16 @@
                        FontFamily="ms-appx:/Fonts/HirukoStencil.otf#Hiruko Stencil" FontSize="26"
                            FontWeight="Bold" x:Uid="SettingsMessageHeader"/>
 
-                <SymbolIcon Name="MessageEditSymbol" Grid.Row="0" Grid.Column="2" Symbol="Edit"
-                        Visibility="{Binding MessageEditIconVisibility}">
+                <FontIcon Name="MessageEditSymbol" Grid.Row="0" Grid.Column="2" Glyph="&#xf040;"
+                          
+                        Visibility="{Binding MessageEditIconVisibility}" FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome">
                     <interactivity:Interaction.Behaviors>
                         <core:EventTriggerBehavior EventName="Tapped">
                             <core:InvokeCommandAction Command="{Binding EditContactButtonHandlerCommand}"
                                                       CommandParameter="5"/>
                         </core:EventTriggerBehavior>
                     </interactivity:Interaction.Behaviors>
-                </SymbolIcon>
+                </FontIcon>
 
                 <SymbolIcon Name="MessageSaveSymbol" Grid.Row="0" Grid.Column="2" Symbol="Save"
                         Visibility="{Binding MessageSaveIconVisibility}">
@@ -313,6 +324,21 @@
                         </core:EventTriggerBehavior>
                     </interactivity:Interaction.Behaviors>
                 </ToggleSwitch>
+
+
+                <TextBlock VerticalAlignment="Center" Text="Create Tile on MS Band"
+                       FontSize="18" FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"
+                       Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" 
+                       HorizontalAlignment="Left" x:Uid="SettingsPermanentNotification"/>
+
+                <Button x:Name="ToastMakerToggle1" Content="Create" HorizontalAlignment="Stretch"
+                              Grid.Row="7" Grid.Column="2">
+                    <interactivity:Interaction.Behaviors>
+                        <core:EventTriggerBehavior EventName="Click">
+                            <core:InvokeCommandAction Command="{Binding MsBandTileCreatorCommand}"/>
+                        </core:EventTriggerBehavior>
+                    </interactivity:Interaction.Behaviors>
+                </Button>
             </Grid>
 
             <Grid Grid.Row="3" Margin="10,10,0,0">

@@ -32,6 +32,8 @@
             Stretch="None"
             UriSource="ms-appx:///Assets/Extra Images/477.gif"/>
         
-        <TextBlock Margin="20,0,0,0" Text="{Binding SosPageText}" FontFamily="ms-appx:/Fonts/UBUNTU-R.TTF#Ubuntu"/>
+        <TextBlock Margin="20,0,20,0" Text="{Binding SosPageText}"
+                   FontFamily="ms-appx:/Fonts/UBUNTU-R.TTF#Ubuntu" 
+                   TextWrapping="WrapWholeWords"/>
     </StackPanel>
 </Page>

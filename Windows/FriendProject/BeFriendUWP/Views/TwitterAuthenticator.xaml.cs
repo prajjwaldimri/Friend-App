@@ -2,13 +2,13 @@
 using System.Diagnostics;
 using Windows.Security.Credentials;
 using Windows.Storage;
+using Windows.UI.Core;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using Tweetinvi;
 using Tweetinvi.Core.Authentication;
-using Tweetinvi.Credentials;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -29,7 +29,18 @@ namespace BeFriend.Views
             await AuthTokens.KeyRetriever();
             _appCredentials = new TwitterCredentials(AuthTokens.TwitterConsumerKey, AuthTokens.TwitterConsumerSecret);
             TwitterAuthenticatorMethod();
-            
+
+            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+            SystemNavigationManager.GetForCurrentView().BackRequested += (s, ex) =>
+            {
+                var frame = Window.Current.Content as Frame;
+                if (frame != null)
+                {
+
+                    frame.Navigate(typeof(MainPage));
+                }
+            };
+
         }
         //Use your consumerKey and ConsumerSecret
 

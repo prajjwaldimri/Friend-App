@@ -18,9 +18,9 @@
 
     <Grid Background="{Binding ThemeColorPrimary}">
         <StackPanel VerticalAlignment="Center">
-            <TextBlock Text="Set a time at which you think you should be able to respond to the reminder on the phone. If you don't respond to the reminder in 20 minutes, I will remind all of your friends about your location!"
+            <TextBlock Text="Set a time at which you think you should be able to respond to the reminder on the phone. If you don't respond to the reminder in 20 minutes, the app will remind all of your friends about your location!"
                        HorizontalAlignment="Center" TextWrapping="WrapWholeWords"
-                       x:Uid="ReminderPageTutorialText"
+                       x:Uid="ReminderPageTutorialText" FontWeight="SemiBold"
                        Margin="10,0,10,40" Padding="20" TextAlignment="Center" FontFamily="ms-appx:/Fonts/Lato-Regular.ttf#Lato"/>
             
             <TimePicker Time="{Binding Time,Mode=TwoWay}"

@@ -1,6 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
+using Windows.ApplicationModel;
+using Windows.Storage;
+using Windows.System;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
@@ -8,12 +13,16 @@ using GalaSoft.MvvmLight.Messaging;
 
 namespace BeFriend.ViewModel
 {
+    /// <summary>
+    /// Methods in BaseViewModel will be fired on all pages.
+    /// </summary>
     public class BaseViewModel:ViewModelBase
     {
         public BaseViewModel()
         {
             UniversalSettingsCommand = new RelayCommand(UniversalSettingsRetriever);
             MessengerInstance.Register<NotificationMessage>(this,NotifyMe );
+            InAppMessagesCommand = new RelayCommand(InAppMessages);
         }
 
         private string _themeColorPrimary;
@@ -21,6 +30,7 @@ namespace BeFriend.ViewModel
         private string _userName;
         
         public RelayCommand UniversalSettingsCommand { get; private set; }
+        public RelayCommand InAppMessagesCommand { get; private set; }
         
         public string UserName
         {
@@ -64,11 +74,11 @@ namespace BeFriend.ViewModel
             }
         }
 
-        private void UniversalSettingsRetriever()
+        private async void UniversalSettingsRetriever()
         {
             try
             {
-               var applicationData = Windows.Storage.ApplicationData.Current;
+               var applicationData = ApplicationData.Current;
                 var localsettings = applicationData.LocalSettings;
                 if (localsettings.Values.ContainsKey("UserName"))
                     _userName = localsettings.Values["UserName"] as string;
@@ -95,35 +105,13 @@ namespace BeFriend.ViewModel
 
             try
             {
-                var quotes = new List<string>
-                {
-                    "Be Yourself",
-                    "Move On",
-                    "Free Yourself",
-                    "Look Up :)",
-                    "Dream Big",
-                    "Start Living!",
-                    "Define Yourself",
-                    "Be Happy",
-                    "Be Fearless",
-                    "Accept Yourself",
-                    "Trust Yourself",
-                    "Stay Positive",
-                    "Don't Stop",
-                    "Enjoy Life",
-                    "Nobody is Perfect",
-                    "Change is Good",
-                    "Live the Moment",
-                    "Never Stop Dreaming",
-                    "Go For It",
-                    "Never Give Up",
-                    "Family is Forever"
-                };
+                var quotesFile = await StorageFile.GetFileFromApplicationUriAsync(new Uri(@"ms-appx:///Quotes.txt"));
 
-                var random = new Random();
-                var number = random.Next(1, 20);
+                var lines = File.ReadAllLines(quotesFile.Path);
 
-                CommandBarQuote = quotes[number];
+                var rand = new Random();
+
+                CommandBarQuote = lines[rand.Next(lines.Length)];
 
                 RaisePropertyChanged(() => CommandBarQuote);
             }
@@ -180,6 +168,122 @@ namespace BeFriend.ViewModel
             }
         }
 
-        
+        private async void InAppMessages()
+        {
+            var localSettings = ApplicationData.Current.LocalSettings;
+            var package = Package.Current.Id.Version;
+
+            if (localSettings.Values.ContainsKey("AppUpdated") && localSettings.Values["AppUpdated"].ToString()!=(package.Build.ToString() + package.Major.ToString()
+                                                                                                                  + package.Minor.ToString()))
+            {
+                var messageDialog = new MessageDialog("- Fixed FirstTimeTutorial Page \n " +
+                                                      "- Improved SOS Page Algorithm \n" +
+                                                      "- Minor Bug Fixes");
+                await messageDialog.ShowAsync();
+                ApplicationData.Current.LocalSettings.Values["AddUpdated"]= (package.Build.ToString() + package.Major.ToString()
+                    + package.Minor.ToString());
+            }
+            if (localSettings.Values.ContainsKey("InAppMessageCount"))
+            {
+                switch (Convert.ToInt64(localSettings.Values["InAppMessageCount"]))
+                {
+                    case 1:
+                        var dialog =
+                            new MessageDialog(
+                                "Use the Gitter chat or " +
+                                "Github issues to report any bugs or new feature suggestions.",
+                                "Any Bugs or suggestions?") {Options = MessageDialogOptions.None};
+                        dialog.Commands.Add(new UICommand("Gitter Chat", CommandInvokedHandler));
+                        dialog.Commands.Add(new UICommand("Github Issues", CommandInvokedHandler));
+
+                        dialog.DefaultCommandIndex = 0;
+                        dialog.CancelCommandIndex = 1;
+
+                        await dialog.ShowAsync();
+
+                        break;
+
+                    case 4:
+                        var dialog1 =
+                            new MessageDialog(
+                                "Translate the app to your native language in easy to use web interface " +
+                                "using Crowdin.",
+                                "Not a native English speaker?") {Options = MessageDialogOptions.None};
+                        dialog1.Commands.Add(new UICommand("Translate Now!", CommandInvokedHandler));
+                        dialog1.Commands.Add(new UICommand("Translate Later", CommandInvokedHandler));
+
+                        dialog1.DefaultCommandIndex = 0;
+                        dialog1.CancelCommandIndex = 1;
+
+                        await dialog1.ShowAsync();
+
+                        break;
+
+                    case 6:
+                        var dialog2 =
+                            new MessageDialog(
+                                "Did you know that BeFriend is completely Open-Sourced! Which means you can actively contribute in the " +
+                                "development of the app. \n\nWhether it is coding, designing, documenting, testing or translating, all " +
+                                "contributions are welcome",
+                                "Develop with Us!") {Options = MessageDialogOptions.None};
+                        dialog2.Commands.Add(new UICommand("Join the Development!", CommandInvokedHandler));
+                        dialog2.Commands.Add(new UICommand("Not interested", CommandInvokedHandler));
+
+                        dialog2.DefaultCommandIndex = 0;
+                        dialog2.CancelCommandIndex = 1;
+
+                        await dialog2.ShowAsync();
+
+                        break;
+                }
+
+                var count = Convert.ToInt64(localSettings.Values["InAppMessageCount"]);
+                count++;
+                localSettings.Values["InAppMessageCount"] = count.ToString();
+            }
+            else
+            {
+                var dialog = new MessageDialog("Your personal information is and never will be " +
+                                               "shared with any 3rd party. \n\nThe only information collected is the bug report which is  " +
+                                               "sent by the app whenever it crashes.",
+                    "Privacy Policy") {Options = MessageDialogOptions.None};
+                dialog.Commands.Add(new UICommand("I Understand!", CommandInvokedHandler));
+                dialog.Commands.Add(new UICommand("I didn't Understand", CommandInvokedHandler));
+
+                dialog.DefaultCommandIndex = 0;
+                dialog.CancelCommandIndex = 1;
+                await dialog.ShowAsync();
+                localSettings.Values.Add("InAppMessageCount", "1");
+            }
+        }
+
+        private async void CommandInvokedHandler(IUICommand command)
+        {
+            switch (command.Label)
+            {
+                case "I Understand!":
+
+                    break;
+                case "I didn't Understand":
+                    await Launcher.LaunchUriAsync(new Uri("mailto:prajjwaldimri@outlook.com"));
+                    break;
+                case "Gitter Chat":
+                    await Launcher.LaunchUriAsync(new Uri("https://gitter.im/prajjwaldimri/Friend-App"));
+                    break;
+                    
+                case "Github Issues":
+                    await Launcher.LaunchUriAsync(new Uri("https://github.com/prajjwaldimri/Friend-App/issues"));
+                    break;
+
+                case "Translate Now!":
+                    await Launcher.LaunchUriAsync(new Uri("https://crowdin.com/project/befriend/invite"));
+                    break;
+
+                case "Join the Development!":
+                    await Launcher.LaunchUriAsync(new Uri("https://gitter.im/prajjwaldimri/Friend-App"));
+                    break;
+
+            }
+        }
     }
 }

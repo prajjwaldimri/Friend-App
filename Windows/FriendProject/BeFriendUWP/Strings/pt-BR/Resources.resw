@@ -1,0 +1,344 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutPageAppTitle.Text" xml:space="preserve">
+    <value>BeFriend Beta</value>
+    <comment>AboutPage.xaml</comment>
+  </data>
+  <data name="AboutPageDeveloperName.Text" xml:space="preserve">
+    <value>Criado por - Prajjwal Dimri</value>
+    <comment>AboutPage.xaml</comment>
+  </data>
+  <data name="AboutPageHeader.Text" xml:space="preserve">
+    <value>Código Aberto, sem fins lucrativos e feito para a comunidade!</value>
+    <comment>AboutPage.xaml</comment>
+  </data>
+  <data name="AboutPivotItem.Header" xml:space="preserve">
+    <value>SOBRE</value>
+    <comment>MainPage.xaml</comment>
+  </data>
+  <data name="AcknowledgmentHeader.Text" xml:space="preserve">
+    <value>Agradecimentos:</value>
+    <comment>AboutPage.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialBack.Content" xml:space="preserve">
+    <value>&lt; Voltar</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialContactChooserOne.Text" xml:space="preserve">
+    <value>Clique aqui para definir o contato 1...</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialContactChooserThree.Text" xml:space="preserve">
+    <value>Clique aqui para definir o contato 3...</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialContactChooserTwo.Text" xml:space="preserve">
+    <value>Clique aqui para definir o contato 2...</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialContactTutorial.Text" xml:space="preserve">
+    <value>Escolha 3 pessoas com quem você gostaria de informar se você estiver em perigo!</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialFacebook.Text" xml:space="preserve">
+    <value>Adicionar Facebook</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialFinish.Content" xml:space="preserve">
+    <value>Concluir</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialMemory.Text" xml:space="preserve">
+    <value>Dedicado a todas as vítimas de crime</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialName.Text" xml:space="preserve">
+    <value>Digite seu nome e escolha uma foto de perfil</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialNext.Content" xml:space="preserve">
+    <value>Próximo &gt;</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialNoPicture.Text" xml:space="preserve">
+    <value>Nenhuma imagem selecionada</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialOne.Text" xml:space="preserve">
+    <value>Tutorial 1</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialOneDescription.Text" xml:space="preserve">
+    <value>Sempre que você desconfiar que alguém esteja te seguindo ou que você está em perigo, vá até essa pagina e segure o botão. Se o seu dedo soltar o botão, ele acionará uma contagem regressiva que irá abrir a página de SOS se a contagem atingir 00:00:00</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialOneHeader.Text" xml:space="preserve">
+    <value>Página do temporizador</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialPictureButton.Content" xml:space="preserve">
+    <value>Clique para escolher uma imagem</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialSkip.Content" xml:space="preserve">
+    <value>Pular</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialStart.Text" xml:space="preserve">
+    <value>Vamos começar</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialThree.Text" xml:space="preserve">
+    <value>Tutorial 3</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialThreeDescription.Text" xml:space="preserve">
+    <value>Esta é a página mais importante do aplicativo. Abrir esta página irá acionar todas as opções de emergência do app.</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialThreeHeader.Text" xml:space="preserve">
+    <value>Página de SOS</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialTwitter.Text" xml:space="preserve">
+    <value>Adicionar Twitter</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialTwo.Text" xml:space="preserve">
+    <value>Tutorial 2</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialTwoDescription.Text" xml:space="preserve">
+    <value>Você pode definir um tempo no qual o aplicativo irá perguntar se você está bem. Se você não responder em 30 minutos o app irá notificar os seus amigos sobre a sua localização.</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialTwoHeader.Text" xml:space="preserve">
+    <value>Página de lembrete</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialUserName.PlaceholderText" xml:space="preserve">
+    <value>Nome...</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="HomePageEmergency.Text" xml:space="preserve">
+    <value>Emergência</value>
+    <comment>HomePage.xaml</comment>
+  </data>
+  <data name="HomePageSupport.Text" xml:space="preserve">
+    <value>Suporte</value>
+    <comment>HomePage.xaml</comment>
+  </data>
+  <data name="HomePivotItem.Header" xml:space="preserve">
+    <value>INÍCIO</value>
+    <comment>MainPage.xaml</comment>
+  </data>
+  <data name="MainPagePivot.Title" xml:space="preserve">
+    <value>BeFriend Beta</value>
+    <comment>MainPage.xaml</comment>
+  </data>
+  <data name="MediKitAppBarButton.Label" xml:space="preserve">
+    <value>Kit Médico</value>
+    <comment>MainPage.xaml</comment>
+  </data>
+  <data name="ReminderPageCancel.Text" xml:space="preserve">
+    <value>Cancelar</value>
+    <comment>ReminderPage.xaml</comment>
+  </data>
+  <data name="ReminderPageRegister.Text" xml:space="preserve">
+    <value>Cadastre-se</value>
+    <comment>ReminderPage.xaml</comment>
+  </data>
+  <data name="ReminderPageTutorialText.Text" xml:space="preserve">
+    <value>Defina um tempo em que você acha que você será capaz de responder o lembrete no telefone. Se você não responder para o lembrete em 20 minutos, eu informarei a todos os seus amigos a sua localização!</value>
+    <comment>ReminderPage.xaml</comment>
+  </data>
+  <data name="ReminderPivotItem.Header" xml:space="preserve">
+    <value>LEMBRETE</value>
+    <comment>MainPage.xaml</comment>
+  </data>
+  <data name="SettingsContactsHeader.Text" xml:space="preserve">
+    <value>Contatos</value>
+    <comment>SettingsPage.xaml</comment>
+  </data>
+  <data name="SettingsDeveloperOptions.Text" xml:space="preserve">
+    <value>Opções de Desenvolvedor</value>
+    <comment>SettingsPage.xaml</comment>
+  </data>
+  <data name="SettingsFacebook.Text" xml:space="preserve">
+    <value>Conectar ao Facebook</value>
+    <comment>SettingsPage.xaml</comment>
+  </data>
+  <data name="SettingsMessageHeader.Text" xml:space="preserve">
+    <value>Mensagem</value>
+    <comment>SettingsPage.xaml</comment>
+  </data>
+  <data name="SettingsNotificationHeader.Text" xml:space="preserve">
+    <value>Notificações</value>
+    <comment>SettingsPage.xaml</comment>
+  </data>
+  <data name="SettingsOtherHeader.Text" xml:space="preserve">
+    <value>Outros</value>
+    <comment>SettingsPage.xaml</comment>
+  </data>
+  <data name="SettingsPermanentNotification.Text" xml:space="preserve">
+    <value>Notificações Permanentes</value>
+    <comment>SettingsPage.xaml</comment>
+  </data>
+  <data name="SettingsPivotItem.Header" xml:space="preserve">
+    <value>CONFIGURAÇÕES</value>
+    <comment>MainPage.xaml</comment>
+  </data>
+  <data name="SettingsProfileHeader.Text" xml:space="preserve">
+    <value>Perfil</value>
+    <comment>SettingsPage.xaml</comment>
+  </data>
+  <data name="SettingsSocialHeader.Text" xml:space="preserve">
+    <value>Redes sociais</value>
+    <comment>SettingsPage.xaml</comment>
+  </data>
+  <data name="SettingsTheme.Text" xml:space="preserve">
+    <value>Tema</value>
+    <comment>SettingsPage.xaml</comment>
+  </data>
+  <data name="SettingsTiming.Text" xml:space="preserve">
+    <value>Defina o tempo do temporizador</value>
+    <comment>SettingsPage.xaml</comment>
+  </data>
+  <data name="SettingsTwitter.Text" xml:space="preserve">
+    <value>Conectar com Twitter</value>
+    <comment>SettingsPage.xaml</comment>
+  </data>
+  <data name="StoreRateAppBarButton.Label" xml:space="preserve">
+    <value>Avalie o app</value>
+    <comment>MainPage.xaml</comment>
+  </data>
+  <data name="TimerPageHold.Text" xml:space="preserve">
+    <value>Pressione</value>
+    <comment>TimerPage.xaml</comment>
+  </data>
+  <data name="TimerPageStop.Text" xml:space="preserve">
+    <value>Interromper</value>
+    <comment>TimerPage.xaml</comment>
+  </data>
+  <data name="TimerPivotItem.Header" xml:space="preserve">
+    <value>TEMPORIZADOR</value>
+    <comment>MainPage.xaml</comment>
+  </data>
+</root>

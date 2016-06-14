@@ -40,7 +40,8 @@
                            FontFamily="ms-appx:/Fonts/TT1255M_.TTF#AlphabetSoup Tilt BT" 
                            x:Uid="AboutPageAppTitle" FontSize="30"/>
 
-                <TextBlock Margin="0,10,0,0" Text="v 1.1.1.0" FontSize="20" TextAlignment="Center"/>
+                <TextBlock Margin="0,10,0,0" FontSize="20"
+                           TextAlignment="Center" Name="VersionTextBlock"/>
 
                 <TextBlock Margin="0,10,0,0" Text="Created by- Prajjwal Dimri" FontSize="20" TextAlignment="Center"
                            FontFamily="ms-appx:/Fonts/Karla-Bold.ttf#Karla"
@@ -52,7 +53,7 @@
                     <HyperlinkButton Padding="10" NavigateUri="https://github.com/prajjwaldimri/Friend-App"
                                      Foreground="Black">
                         <HyperlinkButton.Content>
-                            <FontIcon Glyph="&#xf113;" FontSize="18"
+                            <FontIcon Glyph="&#xf113;" FontSize="18" RequestedTheme="Dark"
                                 FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"/>
                         </HyperlinkButton.Content>
                     </HyperlinkButton>
@@ -60,7 +61,7 @@
                     <HyperlinkButton Padding="10" Margin="10,0,10,0" NavigateUri="https://twitter.com/prajjwaldimri"
                                      Foreground="Black">
                         <HyperlinkButton.Content>
-                            <FontIcon Glyph="&#xf099;" FontSize="18"
+                            <FontIcon Glyph="&#xf099;" FontSize="18" RequestedTheme="Dark"
                                 FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"/>
                         </HyperlinkButton.Content>
                     </HyperlinkButton>
@@ -68,7 +69,7 @@
                     <HyperlinkButton Padding="10" NavigateUri="http://prajjwaldimri.github.io/Friend-App"
                                      Foreground="Black">
                         <HyperlinkButton.Content>
-                            <FontIcon Glyph="&#xf26b;" FontSize="18"
+                            <FontIcon Glyph="&#xf26b;" FontSize="18" RequestedTheme="Dark"
                                 FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"/>
                         </HyperlinkButton.Content>
                     </HyperlinkButton>
@@ -77,13 +78,127 @@
 
                 <Border Margin="10,5,10,10" BorderBrush="GhostWhite" BorderThickness="0.2"/>
                 
-                <TextBlock x:Uid="AcknowledgmentHeader" FontSize="18" Text="Acknowledgments:" FontWeight="Bold" FontFamily="ms-appx:/Fonts/Karla-Bold.ttf#Karla"/>
+                <TextBlock x:Uid="AcknowledgmentHeader" FontSize="20" Text="Acknowledgments:"
+                           FontWeight="Bold" FontFamily="ms-appx:/Fonts/Karla-Bold.ttf#Karla"
+                           Margin="5,10,0,10"/>
 
-                <TextBlock FontSize="14" Text="www.flaticon.com" FontFamily="ms-appx:/Fonts/Karla-Bold.ttf#Karla"/>
+                <StackPanel Orientation="Horizontal">
+                
+                
+                    <TextBlock x:Uid="AboutPageAppCenter" FontSize="16" Text="Harshada Kshirsagar-"
+                           FontFamily="ms-appx:/Fonts/Lato-Bold.ttf#Lato"
+                           Margin="10,10,0,10" TextWrapping="WrapWholeWords"/>
+                    
+                    <TextBlock x:Uid="AboutPageAppCenter" FontSize="16" Text="Windows AppConsult Engineer"
+                           TextWrapping="WrapWholeWords"
+                           Margin="10,10,0,10" FontFamily="ms-appx:/Fonts/Lato-Bold.ttf#Lato"/>
 
-                <TextBlock FontSize="14" Text="www.pexels.com" FontFamily="ms-appx:/Fonts/Karla-Bold.ttf#Karla"/>
+                </StackPanel>
+
+                <TextBlock x:Uid="AboutPageTranslators" FontSize="18" Text="Translators:"
+                           FontWeight="Bold" FontFamily="ms-appx:/Fonts/Karla-Bold.ttf#Karla"
+                           Margin="10,10,0,10"/>
 
                 
+                <StackPanel Margin="15,0,0,0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <TextBlock Text="French" Grid.Row="0" Grid.Column="0"/>
+                        <TextBlock Text="@arimhan" Grid.Row="0" Grid.Column="1"/>
+
+                        <TextBlock Text="Portuguese" Grid.Row="1" Grid.Column="0"/>
+                        <TextBlock Text="Marcelo Jardim, João da Costa Santos" 
+                                   Grid.Row="1" Grid.Column="1" TextWrapping="WrapWholeWords"/>
+
+                        <TextBlock Text="Portuguese-Brazilian" Grid.Row="2" Grid.Column="0"
+                                   TextWrapping="WrapWholeWords"/>
+                        <TextBlock Text="Marcelo Jardim, Rapahel Oliveira" Grid.Row="2"
+                                   Grid.Column="1" TextWrapping="WrapWholeWords"/>
+
+                        <TextBlock Text="Russian" Grid.Row="3" Grid.Column="0"/>
+                        <TextBlock Text="Timothy Kanarsky" Grid.Row="3" Grid.Column="1"/>
+
+                        <TextBlock Text="Turkish" Grid.Row="4" Grid.Column="0"/>
+                        <TextBlock Text="Cemre Serpal" Grid.Row="4" Grid.Column="1"/>
+                    </Grid>
+                    
+                </StackPanel>
+
+
+
+                <TextBlock x:Uid="AboutPageLibraries" FontSize="18" Text="Libraries:"
+                           FontWeight="Bold" FontFamily="ms-appx:/Fonts/Karla-Bold.ttf#Karla"
+                           Margin="10,10,0,10"/>
+
+                <StackPanel Margin="15,0,0,0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <TextBlock Text="MvvmLight" Grid.Row="0"/>
+                        <TextBlock Text="NewtonSoft.JSON" Grid.Row="1"/>
+                        <TextBlock Text="TweetInvi" Grid.Row="2"/>
+
+
+                        </Grid>
+                    </StackPanel>
+
+
+                <TextBlock x:Uid="AboutPageOthers" FontSize="18" Text="Others:"
+                           FontWeight="Bold" FontFamily="ms-appx:/Fonts/Karla-Bold.ttf#Karla"
+                           Margin="10,10,0,10"/>
+
+                <StackPanel Margin="15,0,0,0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <TextBlock Text="Pexels" Grid.Row="0"/>
+                        <TextBlock Text="FlatIcon" Grid.Row="1"/>
+                        <TextBlock Text="FontAwesome" Grid.Row="2"/>
+
+
+                        </Grid>
+                    </StackPanel>
+
+                
+                <TextBlock FontSize="20" Text="A big Thanks to Microsoft for providing the restricted cellularMessaging
+                           capability!" Margin="10,10,10,0" TextWrapping="WrapWholeWords"
+                           TextAlignment="Center"/>
+
+
+
+
             </StackPanel>
             
         </ScrollViewer>
