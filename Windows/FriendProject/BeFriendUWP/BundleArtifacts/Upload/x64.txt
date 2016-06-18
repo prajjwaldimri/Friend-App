@@ -1,1 +1,1 @@
-MainPackage=C:\Users\prajj\Source\Repos\Friend-App\Windows\FriendProject\BeFriendUWP\bin\x64\Release\Upload\BeFriendUWP_1.1.5.0_x64.appx
+MainPackage=C:\Users\prajj\Source\Repos\Friend-App\Windows\FriendProject\BeFriendUWP\bin\x64\Release\Upload\BeFriendUWP_1.1.6.0_x64.appx
