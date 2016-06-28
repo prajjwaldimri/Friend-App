@@ -6,7 +6,7 @@ BeFriend
 [![GitHub issues](https://img.shields.io/github/issues/prajjwaldimri/Friend-App.svg?style=flat-square)](https://github.com/prajjwaldimri/Friend-App/issues)
 
 
-The app that notifies your friends and relatives anytime you are in danger.
+BeFriend notifies your contacts about your location through SMS and Twitter anytime you are in danger.
 
 ## Requirements
 
