@@ -52,6 +52,7 @@ namespace BeFriend.Views
             else
             {
                 var pinCode = pinText.Text;
+                TweetinviConfig.CurrentThreadSettings.GetUtcDateTime = () => DateTime.UtcNow;
                 var authenticationContext = AuthFlow.InitAuthentication(_appCredentials);
                 var userCredentials = AuthFlow.CreateCredentialsFromVerifierCode(pinCode, authenticationContext);
                 Auth.SetCredentials(userCredentials);
