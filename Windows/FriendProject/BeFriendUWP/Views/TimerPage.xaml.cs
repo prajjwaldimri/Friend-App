@@ -51,7 +51,6 @@ namespace BeFriend.Views
             {
                 timer.Stop();
                 militimer.Stop();
-                //TODO: Uncomment on release
                 var frame = Window.Current.Content as Frame;
                 if (frame != null)
                 {

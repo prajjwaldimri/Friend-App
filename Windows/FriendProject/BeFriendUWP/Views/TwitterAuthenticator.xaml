@@ -13,10 +13,15 @@
             <RowDefinition/>
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
-        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="20,20,0,0">
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="20,20,0,0" Orientation="Horizontal">
             <TextBlock x:Name="PageTitle" Text="Twitter Authorization" 
                        FontFamily="ms-appx:/Fonts/Pinstripe Limo.ttf#Pinstripe Limo"
                        FontSize="20"/>
+            
+            <ProgressRing Margin="40,0,0,0" Foreground="Snow"
+                          HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                          Name="WebViewProgressRing"/>
+
         </StackPanel>
 
         <StackPanel x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">

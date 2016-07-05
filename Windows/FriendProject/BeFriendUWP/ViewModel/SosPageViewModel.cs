@@ -301,8 +301,6 @@ namespace BeFriend.ViewModel
                 Auth.SetUserCredentials(AuthTokens.TwitterConsumerKey, AuthTokens.TwitterConsumerSecret,
                     twitteraccesstoken.Password, twitteraccesstokensecret.Password);
 
-                
-                //TODO: Publish the Tweet with location on your Timeline
                 Tweet.PublishTweet(Message+" \n" + _latitude + "\n" + _longitude);
 
                 SosPageText += "Publishing Tweet... \n";

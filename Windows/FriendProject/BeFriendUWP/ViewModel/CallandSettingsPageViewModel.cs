@@ -21,7 +21,6 @@ namespace BeFriend.ViewModel
 {
     /// <summary>
     /// ViewModel for settings Page. Currently takes heavy resources and shows delay in UI on navigated.
-    /// //TODO: Reduce load time of Settings Page
     /// </summary>
     public class CallandSettingsPageViewModel : BaseViewModel
     {

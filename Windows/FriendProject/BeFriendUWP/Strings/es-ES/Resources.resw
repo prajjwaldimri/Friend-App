@@ -1,0 +1,425 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutPageAppTitle.Text" xml:space="preserve">
+    <value>BeFriend</value>
+    <comment>AboutPage.xaml</comment>
+  </data>
+  <data name="AboutPageDeveloperName.Text" xml:space="preserve">
+    <value>Creado por - Prajjwal Dimri</value>
+    <comment>AboutPage.xaml</comment>
+  </data>
+  <data name="AboutPageHeader.Text" xml:space="preserve">
+    <value>Codigo abierto, sin fines de lucro y hecho para la comunidad!</value>
+    <comment>AboutPage.xaml</comment>
+  </data>
+  <data name="AboutPageLibraries.Text" xml:space="preserve">
+    <value>Bibliotecas de 3ros</value>
+    <comment>AboutPage.xaml</comment>
+  </data>
+  <data name="AboutPageLicenses.Text" xml:space="preserve">
+    <value>Licencias:</value>
+    <comment>AboutPage.xaml</comment>
+  </data>
+  <data name="AboutPageOthers.Text" xml:space="preserve">
+    <value>Otros recursos:</value>
+    <comment>AboutPage.xaml</comment>
+  </data>
+  <data name="AboutPageTranslators.Text" xml:space="preserve">
+    <value>Traductores:</value>
+    <comment>AboutPage.xaml</comment>
+  </data>
+  <data name="AboutPivotItem.Header" xml:space="preserve">
+    <value>ACERCA DE</value>
+    <comment>MainPage.xaml</comment>
+  </data>
+  <data name="AcknowledgmentHeader.Text" xml:space="preserve">
+    <value>Agradecimientos:</value>
+    <comment>AboutPage.xaml</comment>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>BeFriend es una aplicacion de codigo abierto que emite una señal de socorro a tus contactos y tu ubicacion actual.
+
+Utiliza el GPS y el celular juntos para obtener la ubicacion mas precisa del usuario. La aplicacion puede enviar mensajes(SMS), twetear(Twitter) o postear (Facebook) su ubicacion actual.
+
+La aplicacion es de codigo abierto, asi que puedes ayudar en su desarrollo.
+La aplicacion esta siendo desarrollada en http://www.gifthub.com/prajjwaldimri/Friend-App
+
+Nota: La aplicacion utiliza 'phoneCall' para realizar llamadas sin mostrar el marcador. Esta tambien usa 'cellularMessaging' (proporcionado por Microsoft) que envia mensajes de texto silenciosos desde tu equipo. Ambas capacidades son usadas acorde a las lineas de guia provistas por Microsoft y pueden ser inspeccionadas por el repositorio de GiftHub en cualquier momento.</value>
+    <comment>AppxPackageManifest</comment>
+  </data>
+  <data name="FirstTimeTutorialBack.Content" xml:space="preserve">
+    <value>&lt; Volver</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialContactChooserOne.Text" xml:space="preserve">
+    <value>Seleccionar contacto 1...</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialContactChooserThree.Text" xml:space="preserve">
+    <value>Seleccionar contacto 3...</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialContactChooserTwo.Text" xml:space="preserve">
+    <value>Seleccionar contacto 2...</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialContactTutorial.Text" xml:space="preserve">
+    <value>Escoge 3 personas a quienes deseas informar si estás en peligro!</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialFacebook.Text" xml:space="preserve">
+    <value>Añadir Facebook</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialFinish.Content" xml:space="preserve">
+    <value>Finalizar</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialMemory.Text" xml:space="preserve">
+    <value>Dedicado a todas las víctimas de delitos</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialName.Text" xml:space="preserve">
+    <value>Introduce tu nombre y elija una foto de perfil</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialNext.Content" xml:space="preserve">
+    <value>Siguiente &gt;</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialNoPicture.Text" xml:space="preserve">
+    <value>Ninguna imagen seleccionada</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialOne.Text" xml:space="preserve">
+    <value>Tutorial 1</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialOneDescription.Text" xml:space="preserve">
+    <value>Cada vez que sospeches que alguien esta siguiendote o si sospechas que estas en peligro ven a esta seccion y manten apretado el boton. Si tu dedo se levanta de la pantalla la aplicacion activa una cuenta regresiva que abrira una pagina de SOS cuando llegue al 00:00:00</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialOneHeader.Text" xml:space="preserve">
+    <value>Pagina de la cuenta regresiva</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialPictureButton.Content" xml:space="preserve">
+    <value>Haga clic para seleccionar una imagen</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialSkip.Content" xml:space="preserve">
+    <value>Saltar</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialStart.Text" xml:space="preserve">
+    <value>¡Empecemos!</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialThree.Text" xml:space="preserve">
+    <value>Tutorial 3</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialThreeDescription.Text" xml:space="preserve">
+    <value>La página más importante, navegar en esta página activará todas las opciones de emergencia incorporadas la aplicación.</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialThreeDescription1.Text" xml:space="preserve">
+    <value>Habilite esta opción en la página de configuración. Esto colocará una notificacion silenciosa en el centro de notificaciones periódicamente hasta que se desactive. Hacer clic en la notificación inmediatamente pondrá en marcha la página de SOS</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialThreeHeader.Text" xml:space="preserve">
+    <value>Página de SOS</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialThreeHeader1.Text" xml:space="preserve">
+    <value>Notificaciones permanentes</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialTwitter.Text" xml:space="preserve">
+    <value>Añadir Twitter</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialTwo.Text" xml:space="preserve">
+    <value>Tutorial 2</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialTwoDescription.Text" xml:space="preserve">
+    <value>Se puede establecer un tiempo en que la aplicación le preguntará su estado. Si no responde en 30 minutos se les notificará a tus amigos acerca de su ubicación.</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialTwoHeader.Text" xml:space="preserve">
+    <value>Página de recordatorio</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="FirstTimeTutorialUserName.PlaceholderText" xml:space="preserve">
+    <value>Nombre...</value>
+    <comment>FirstTimeTutorial.xaml</comment>
+  </data>
+  <data name="HomePageEmergency.Text" xml:space="preserve">
+    <value>Emergencia</value>
+    <comment>HomePage.xaml</comment>
+  </data>
+  <data name="HomePageSupport.Text" xml:space="preserve">
+    <value>Soporte</value>
+    <comment>HomePage.xaml</comment>
+  </data>
+  <data name="HomePivotItem.Header" xml:space="preserve">
+    <value>INICIO</value>
+    <comment>MainPage.xaml</comment>
+  </data>
+  <data name="InAppMessage/AppUpdation" xml:space="preserve">
+    <value>-Build inicial</value>
+    <comment>BaseViewModel.cs</comment>
+  </data>
+  <data name="InAppMessage/BugSuggestionsContent" xml:space="preserve">
+    <value>Actualmente, soy el único desarrollador de la aplicación, por lo que podría haber algunos errores en la aplicación que pase por encima. Utilice Gitter chat, Github issues o por correo electrónico para reportar cualquier bug o nuevas sugerencias de funciones antes de dejar una mala crítica en la tienda. ¡Disfrute!</value>
+    <comment>BaseViewModel.cs</comment>
+  </data>
+  <data name="InAppMessage/BugSuggestionsTitle" xml:space="preserve">
+    <value>Algun error o sugerencias?</value>
+    <comment>BaseViewModel.cs</comment>
+  </data>
+  <data name="InAppMessage/DevelopContent" xml:space="preserve">
+    <value>Sabías que BeFriend es código completamente abierto, lo que significa que usted puede contribuir activamente al desarrollo de la aplicación. 
+
+Codificación, diseño, documentación, pruebas o traduciendo, todas las contribuciones son bienvenidas.</value>
+    <comment>BaseViewModel.cs</comment>
+  </data>
+  <data name="InAppMessage/DevelopTitle" xml:space="preserve">
+    <value>Desarrollemos juntos!</value>
+    <comment>BaseViewModel.cs</comment>
+  </data>
+  <data name="InAppMessage/PrivacyContent" xml:space="preserve">
+    <value>Su información es personal y nunca será compartida con terceros.  La única información recogida del dispositivo es el informe que es enviado por la aplicación cada vez que se cuelga (utilizando HockeyAppSdk) y el informe de error contiene sólo los detalles técnicos de error y el nombre del dispositivo.</value>
+    <comment>BaseViewModel.cs</comment>
+  </data>
+  <data name="InAppMessage/PrivacyTitle" xml:space="preserve">
+    <value>Politica de Privacidad</value>
+    <comment>BaseViewModel.cs</comment>
+  </data>
+  <data name="InAppMessage/TranslateContent" xml:space="preserve">
+    <value>Traducir la aplicación a su lengua materna con Crowdin.</value>
+    <comment>BaseViewModel.cs</comment>
+  </data>
+  <data name="InAppMessage/TranslateTitle" xml:space="preserve">
+    <value>¿No hablante nativo de español/ingles?</value>
+    <comment>BaseViewModel.cs</comment>
+  </data>
+  <data name="MainPagePivot.Title" xml:space="preserve">
+    <value>BeFriend</value>
+    <comment>MainPage.xaml</comment>
+  </data>
+  <data name="MediKitAppBarButton.Label" xml:space="preserve">
+    <value>Medi-Kit</value>
+    <comment>MainPage.xaml</comment>
+  </data>
+  <data name="ReminderPageCancel.Text" xml:space="preserve">
+    <value>Cancelar</value>
+    <comment>ReminderPage.xaml</comment>
+  </data>
+  <data name="ReminderPageRegister.Text" xml:space="preserve">
+    <value>Registrate</value>
+    <comment>ReminderPage.xaml</comment>
+  </data>
+  <data name="ReminderPageTutorialText.Text" xml:space="preserve">
+    <value>Establezca un horario en el que creas que puedes responder al recordatorio del telefono. Si no respondes al recordatorio en 20 minutos, BeFriend le enviara a los contactos seleccionados tu ubicacion actual.</value>
+    <comment>ReminderPage.xaml</comment>
+  </data>
+  <data name="ReminderPivotItem.Header" xml:space="preserve">
+    <value>RECORDATORIO</value>
+    <comment>MainPage.xaml</comment>
+  </data>
+  <data name="SettingsContactsHeader.Text" xml:space="preserve">
+    <value>Contactos</value>
+    <comment>SettingsPage.xaml</comment>
+  </data>
+  <data name="SettingsDeveloperOptions.Text" xml:space="preserve">
+    <value>Opciones para desarrolladores</value>
+    <comment>SettingsPage.xaml</comment>
+  </data>
+  <data name="SettingsFacebook.Text" xml:space="preserve">
+    <value>Conectar con Facebook</value>
+    <comment>SettingsPage.xaml</comment>
+  </data>
+  <data name="SettingsMessageHeader.Text" xml:space="preserve">
+    <value>Mensaje</value>
+    <comment>SettingsPage.xaml</comment>
+  </data>
+  <data name="SettingsNotificationHeader.Text" xml:space="preserve">
+    <value>Notificaciones</value>
+    <comment>SettingsPage.xaml</comment>
+  </data>
+  <data name="SettingsOtherHeader.Text" xml:space="preserve">
+    <value>Otros</value>
+    <comment>SettingsPage.xaml</comment>
+  </data>
+  <data name="SettingsPermanentNotification.Text" xml:space="preserve">
+    <value>Notificaciones permanentes</value>
+    <comment>SettingsPage.xaml</comment>
+  </data>
+  <data name="SettingsPivotItem.Header" xml:space="preserve">
+    <value>Configuración</value>
+    <comment>MainPage.xaml</comment>
+  </data>
+  <data name="SettingsProfileHeader.Text" xml:space="preserve">
+    <value>Perfíl</value>
+    <comment>SettingsPage.xaml</comment>
+  </data>
+  <data name="SettingsSocialHeader.Text" xml:space="preserve">
+    <value>Redes Sociales</value>
+    <comment>SettingsPage.xaml</comment>
+  </data>
+  <data name="SettingsTheme.Text" xml:space="preserve">
+    <value>Aspecto</value>
+    <comment>SettingsPage.xaml</comment>
+  </data>
+  <data name="SettingsTiming.Text" xml:space="preserve">
+    <value>Establecer un tiempo en em temporizador</value>
+    <comment>SettingsPage.xaml</comment>
+  </data>
+  <data name="SettingsTwitter.Text" xml:space="preserve">
+    <value>Conectarse con Twitter</value>
+    <comment>SettingsPage.xaml</comment>
+  </data>
+  <data name="StoreRateAppBarButton.Label" xml:space="preserve">
+    <value>Calificar</value>
+    <comment>MainPage.xaml</comment>
+  </data>
+  <data name="TimerPageHold.Text" xml:space="preserve">
+    <value>Mantener</value>
+    <comment>TimerPage.xaml</comment>
+  </data>
+  <data name="TimerPageStop.Text" xml:space="preserve">
+    <value>Detener</value>
+    <comment>TimerPage.xaml</comment>
+  </data>
+  <data name="TimerPivotItem.Header" xml:space="preserve">
+    <value>CUENTA REGRESIVA</value>
+    <comment>MainPage.xaml</comment>
+  </data>
+  <data name="TwitterAuthInstruction.Text" xml:space="preserve">
+    <value>Inicie secion y pegue el PIN debajo:</value>
+    <comment>TwitterAuthenticator.xaml</comment>
+  </data>
+  <data name="TwitterAuthTextBox.PlaceholderText" xml:space="preserve">
+    <value>Pegue el PIN aqui:</value>
+    <comment>TwitterAuthenticator.xaml</comment>
+  </data>
+</root>

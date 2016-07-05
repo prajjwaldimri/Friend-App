@@ -14,7 +14,6 @@ namespace BeFriend
 
         public static string TwitterConsumerKey;
         public static string TwitterConsumerSecret;
-        public static string FacebookAppID = "1831229747103982";
 
         public static async Task KeyRetriever()
         {

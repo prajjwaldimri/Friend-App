@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using Windows.Foundation;
 using Windows.Security.Credentials;
 using Windows.Storage;
 using Windows.UI.Core;
@@ -24,10 +25,13 @@ namespace BeFriend.Views
             InitializeComponent();
         }
 
+        private TwitterCredentials _appCredentials;
+        private IAuthenticationContext authenticationContext;
+
         protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
             await AuthTokens.KeyRetriever();
-            _appCredentials = new TwitterCredentials(AuthTokens.TwitterConsumerKey, AuthTokens.TwitterConsumerSecret);
+            _appCredentials = new TwitterCredentials(AuthTokens.TwitterConsumerKey.Trim(), AuthTokens.TwitterConsumerSecret.Trim());
             TwitterAuthenticatorMethod();
 
             SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
@@ -39,8 +43,7 @@ namespace BeFriend.Views
 
         }
         //Use your consumerKey and ConsumerSecret
-
-        private TwitterCredentials _appCredentials;
+        
 
         private async void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
@@ -51,9 +54,7 @@ namespace BeFriend.Views
             }
             else
             {
-                var pinCode = pinText.Text;
-                TweetinviConfig.CurrentThreadSettings.GetUtcDateTime = () => DateTime.UtcNow;
-                var authenticationContext = AuthFlow.InitAuthentication(_appCredentials);
+                var pinCode = pinText.Text.Trim();
                 var userCredentials = AuthFlow.CreateCredentialsFromVerifierCode(pinCode, authenticationContext);
                 Auth.SetCredentials(userCredentials);
 
@@ -78,14 +79,25 @@ namespace BeFriend.Views
         {
             try
             {
-                var authenticationContext = AuthFlow.InitAuthentication(_appCredentials);
+                authenticationContext = AuthFlow.InitAuthentication(_appCredentials);
+                TwitterWebView.NavigationStarting += TwitterWebViewNavigationStarting;
+                TwitterWebView.DOMContentLoaded += TwitterWebViewDomContentLoaded;
                 TwitterWebView.Navigate(new Uri(authenticationContext.AuthorizationURL));
-
             }
             catch (Exception e)
             {
                 Debug.WriteLine(e);
             }
+        }
+
+        private void TwitterWebViewNavigationStarting(WebView sender, WebViewNavigationStartingEventArgs args)
+        {
+            WebViewProgressRing.IsActive = true;
+        }
+
+        private void TwitterWebViewDomContentLoaded(WebView sender, WebViewDOMContentLoadedEventArgs args)
+        {
+            WebViewProgressRing.IsActive = false;
         }
 
         private void CancelButton_OnClick(object sender, RoutedEventArgs e)

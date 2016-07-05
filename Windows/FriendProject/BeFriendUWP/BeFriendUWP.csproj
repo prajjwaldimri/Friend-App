@@ -178,6 +178,7 @@
     <Content Include="Fonts\Lato-Heavy.ttf" />
     <Content Include="Fonts\Pinstripe Limo.ttf" />
     <None Include="project.json" />
+    <PRIResource Include="Strings\es-ES\Resources.resw" />
     <PRIResource Include="Strings\ru\Resources.resw" />
     <PRIResource Include="Strings\pt-BR\Resources.resw" />
     <PRIResource Include="Strings\fr\Resources.resw" />

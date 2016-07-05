@@ -89,7 +89,7 @@
                            FontFamily="ms-appx:/Fonts/Lato-Bold.ttf#Lato"
                            Margin="10,10,0,10" TextWrapping="WrapWholeWords"/>
                     
-                    <TextBlock x:Uid="AboutPageAppCenter" FontSize="16" Text="Windows AppConsult Engineer"
+                    <TextBlock x:Uid="AboutPageAppCenter" FontSize="12" Text="Windows AppConsult Engineer"
                            TextWrapping="WrapWholeWords"
                            Margin="10,10,0,10" FontFamily="ms-appx:/Fonts/Lato-Bold.ttf#Lato"/>
 
@@ -103,6 +103,7 @@
                 <StackPanel Margin="15,0,0,0">
                     <Grid>
                         <Grid.RowDefinitions>
+                            <RowDefinition/>
                             <RowDefinition/>
                             <RowDefinition/>
                             <RowDefinition/>
@@ -130,8 +131,12 @@
                         <TextBlock Text="Russian" Grid.Row="3" Grid.Column="0"/>
                         <TextBlock Text="Timothy Kanarsky" Grid.Row="3" Grid.Column="1"/>
 
+                        <TextBlock Text="Spanish" Grid.Row="5" Grid.Column="0"/>
+                        <TextBlock Text="stdelprato" Grid.Row="5" Grid.Column="1"/>
+
                         <TextBlock Text="Turkish" Grid.Row="4" Grid.Column="0"/>
                         <TextBlock Text="Cemre Serpal" Grid.Row="4" Grid.Column="1"/>
+                        
                     </Grid>
                     
                 </StackPanel>
