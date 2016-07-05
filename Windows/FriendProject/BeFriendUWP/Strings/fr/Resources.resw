@@ -134,23 +134,23 @@
     <comment>MainPage.xaml</comment>
   </data>
   <data name="AcknowledgmentHeader.Text" xml:space="preserve">
-    <value>Reconnaissance:</value>
+    <value>Reconnaissances:</value>
     <comment>AboutPage.xaml</comment>
   </data>
   <data name="FirstTimeTutorialBack.Content" xml:space="preserve">
-    <value>&lt;Retour</value>
+    <value>&lt; Retour</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialContactChooserOne.Text" xml:space="preserve">
-    <value>Cliquez ici pour définir le contact 1...</value>
+    <value>Cliquer ici pour définir le contact 1...</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialContactChooserThree.Text" xml:space="preserve">
-    <value>Cliquez ici pour définir le contact 3...</value>
+    <value>Cliquer ici pour définir le contact 3...</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialContactChooserTwo.Text" xml:space="preserve">
-    <value>Cliquez ici pour définir le contact 3...</value>
+    <value>Cliquer ici pour définir le contact 3...</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialContactTutorial.Text" xml:space="preserve">
@@ -186,67 +186,67 @@
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialOneDescription.Text" xml:space="preserve">
-    <value>Whenever you are suspicious of someone following you or you suspect you're in danger go to this page and hold the button. If your finger lifts from the button it triggers a countdown which will open SOS page if it reaches 00:00:00</value>
+    <value>Dés que vous suspectez quelqu'un qui vous suit ou que vous soyez en danger, aller sur cette page et tenez le bouton. Si votre doigt se lève du bouton, cela déclenche un compte à rebours qui va ouvrir la page SOS si il atteint 00:00:00</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialOneHeader.Text" xml:space="preserve">
-    <value>Timer Page</value>
+    <value>Page de compte à rebours</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialPictureButton.Content" xml:space="preserve">
-    <value>Click to choose a picture</value>
+    <value>Cliquer pour choisir une photo</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialSkip.Content" xml:space="preserve">
-    <value>Skip</value>
+    <value>Passer</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialStart.Text" xml:space="preserve">
-    <value>Let's Get Started</value>
+    <value>Commençons</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialThree.Text" xml:space="preserve">
-    <value>Tutorial 3</value>
+    <value>Tutoriel 3</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialThreeDescription.Text" xml:space="preserve">
-    <value>The most important page in the App. Navigating to this page will trigger all emergency options built-in the application.</value>
+    <value>La page la plus importante de l'application. Naviguer sur cette page va déclencher toutes les options d'urgences intégrées dans l'application.</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialThreeHeader.Text" xml:space="preserve">
-    <value>SOS Page</value>
+    <value>Page de SOS</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialTwitter.Text" xml:space="preserve">
-    <value>Add Twitter</value>
+    <value>Ajouter Twitter</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialTwo.Text" xml:space="preserve">
-    <value>Tutorial 2</value>
+    <value>Tutoriel 2</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialTwoDescription.Text" xml:space="preserve">
-    <value>You can set a time at which the app will ask you if you're fine at the time. If you don't respond within 30 minutes it will notify your friends about your location.</value>
+    <value>Vous pouvez définir la fréquence à laquelle l’application vas vous demander si vous êtes bien. Si vous ne répondez pas endéans les 30 minutes vos amis seront notifié de votre emplacement.</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialTwoHeader.Text" xml:space="preserve">
-    <value>Reminder Page</value>
+    <value>Page des rappels</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialUserName.PlaceholderText" xml:space="preserve">
-    <value>Name...</value>
+    <value>Nom...</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="HomePageEmergency.Text" xml:space="preserve">
-    <value>Emergency</value>
+    <value>Urgences</value>
     <comment>HomePage.xaml</comment>
   </data>
   <data name="HomePageSupport.Text" xml:space="preserve">
-    <value>Support</value>
+    <value>Assistance technique</value>
     <comment>HomePage.xaml</comment>
   </data>
   <data name="HomePivotItem.Header" xml:space="preserve">
-    <value>HOME</value>
+    <value>Accueil</value>
     <comment>MainPage.xaml</comment>
   </data>
   <data name="MainPagePivot.Title" xml:space="preserve">
@@ -254,23 +254,23 @@
     <comment>MainPage.xaml</comment>
   </data>
   <data name="MediKitAppBarButton.Label" xml:space="preserve">
-    <value>Medi-Kit</value>
+    <value>Kit de soin</value>
     <comment>MainPage.xaml</comment>
   </data>
   <data name="ReminderPageCancel.Text" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Annuler</value>
     <comment>ReminderPage.xaml</comment>
   </data>
   <data name="ReminderPageRegister.Text" xml:space="preserve">
-    <value>Register</value>
+    <value>Inscrivez-vous</value>
     <comment>ReminderPage.xaml</comment>
   </data>
   <data name="ReminderPageTutorialText.Text" xml:space="preserve">
-    <value>Set a time at which you think you should be able to respond to the reminder on the phone. If you don't respond to the reminder in 20 minutes, I will remind all of your friends about your location!</value>
+    <value>Définissez un moment durant lequel vous devriez être capable de répondre au rappel sur votre téléphone. Si vous ne répondez pas dans les 20 minutes, il va rappeler vos amis de votre emplacement!</value>
     <comment>ReminderPage.xaml</comment>
   </data>
   <data name="ReminderPivotItem.Header" xml:space="preserve">
-    <value>REMINDER</value>
+    <value>Rappels</value>
     <comment>MainPage.xaml</comment>
   </data>
   <data name="SettingsContactsHeader.Text" xml:space="preserve">
@@ -278,15 +278,15 @@
     <comment>SettingsPage.xaml</comment>
   </data>
   <data name="SettingsDeveloperOptions.Text" xml:space="preserve">
-    <value>Developer Options</value>
+    <value>Options de développeur</value>
     <comment>SettingsPage.xaml</comment>
   </data>
   <data name="SettingsFacebook.Text" xml:space="preserve">
-    <value>Connect Facebook</value>
+    <value>Connecter Facebook</value>
     <comment>SettingsPage.xaml</comment>
   </data>
   <data name="SettingsMessageHeader.Text" xml:space="preserve">
-    <value>Message</value>
+    <value>Messages</value>
     <comment>SettingsPage.xaml</comment>
   </data>
   <data name="SettingsNotificationHeader.Text" xml:space="preserve">
@@ -294,43 +294,43 @@
     <comment>SettingsPage.xaml</comment>
   </data>
   <data name="SettingsOtherHeader.Text" xml:space="preserve">
-    <value>Other</value>
+    <value>Autres</value>
     <comment>SettingsPage.xaml</comment>
   </data>
   <data name="SettingsPermanentNotification.Text" xml:space="preserve">
-    <value>Permanent Toast Notifications</value>
+    <value>Notifications Toast permanente</value>
     <comment>SettingsPage.xaml</comment>
   </data>
   <data name="SettingsPivotItem.Header" xml:space="preserve">
-    <value>SETTINGS</value>
+    <value>Paramètres</value>
     <comment>MainPage.xaml</comment>
   </data>
   <data name="SettingsProfileHeader.Text" xml:space="preserve">
-    <value>Profile</value>
+    <value>Profil</value>
     <comment>SettingsPage.xaml</comment>
   </data>
   <data name="SettingsSocialHeader.Text" xml:space="preserve">
-    <value>Social Networks</value>
+    <value>Réseaux Sociaux</value>
     <comment>SettingsPage.xaml</comment>
   </data>
   <data name="SettingsTheme.Text" xml:space="preserve">
-    <value>Theme</value>
+    <value>Thème</value>
     <comment>SettingsPage.xaml</comment>
   </data>
   <data name="SettingsTiming.Text" xml:space="preserve">
-    <value>Set Time in Timer</value>
+    <value>Définir le compte à rebours</value>
     <comment>SettingsPage.xaml</comment>
   </data>
   <data name="SettingsTwitter.Text" xml:space="preserve">
-    <value>Connect Twitter</value>
+    <value>Connecter Twitter</value>
     <comment>SettingsPage.xaml</comment>
   </data>
   <data name="StoreRateAppBarButton.Label" xml:space="preserve">
-    <value>Rate</value>
+    <value>Évaluer</value>
     <comment>MainPage.xaml</comment>
   </data>
   <data name="TimerPageHold.Text" xml:space="preserve">
-    <value>Hold</value>
+    <value>Tenir</value>
     <comment>TimerPage.xaml</comment>
   </data>
   <data name="TimerPageStop.Text" xml:space="preserve">
@@ -338,7 +338,7 @@
     <comment>TimerPage.xaml</comment>
   </data>
   <data name="TimerPivotItem.Header" xml:space="preserve">
-    <value>TIMER</value>
+    <value>Compte à rebours</value>
     <comment>MainPage.xaml</comment>
   </data>
 </root>

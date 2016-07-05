@@ -8,7 +8,7 @@ namespace BeFriend.Views
     {
         public Reminderpage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
         
         

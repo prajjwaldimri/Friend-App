@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using Windows.ApplicationModel;
+using Windows.ApplicationModel.Resources;
 using Windows.Storage;
 using Windows.System;
 using Windows.UI.Popups;
@@ -173,26 +173,31 @@ namespace BeFriend.ViewModel
             var localSettings = ApplicationData.Current.LocalSettings;
             var package = Package.Current.Id.Version;
 
-            if (localSettings.Values.ContainsKey("AppUpdated") && localSettings.Values["AppUpdated"].ToString()!=(package.Build.ToString() + package.Major.ToString()
-                                                                                                                  + package.Minor.ToString()))
+            
+
+            
+            if (localSettings.Values.ContainsKey("AppUpdated") && localSettings.Values["AppUpdated"].ToString()!=(package.Build + package.Major.ToString()
+                                                                                                                  + package.Minor))
             {
-                var messageDialog = new MessageDialog("- Fixed FirstTimeTutorial Page \n " +
-                                                      "- Improved SOS Page Algorithm \n" +
-                                                      "- Minor Bug Fixes");
+                var appUpdationString = ResourceLoader.GetForCurrentView().GetString("InAppMessage/AppUpdation");
+
+                var messageDialog = new MessageDialog(appUpdationString);
+
                 await messageDialog.ShowAsync();
-                ApplicationData.Current.LocalSettings.Values["AddUpdated"]= (package.Build.ToString() + package.Major.ToString()
-                    + package.Minor.ToString());
+                ApplicationData.Current.LocalSettings.Values["AddUpdated"]= (package.Build + package.Major.ToString()
+                    + package.Minor);
             }
             if (localSettings.Values.ContainsKey("InAppMessageCount"))
             {
                 switch (Convert.ToInt64(localSettings.Values["InAppMessageCount"]))
                 {
                     case 1:
+
+                        var bugStringContent = ResourceLoader.GetForCurrentView().GetString("InAppMessage/BugSuggestionsContent");
+                        var bugStringTitle = ResourceLoader.GetForCurrentView().GetString("InAppMessage/BugSuggestionsTitle");
                         var dialog =
-                            new MessageDialog(
-                                "Use the Gitter chat or " +
-                                "Github issues to report any bugs or new feature suggestions.",
-                                "Any Bugs or suggestions?") {Options = MessageDialogOptions.None};
+                            new MessageDialog(bugStringContent,
+                                bugStringTitle) {Options = MessageDialogOptions.None};
                         dialog.Commands.Add(new UICommand("Gitter Chat", CommandInvokedHandler));
                         dialog.Commands.Add(new UICommand("Github Issues", CommandInvokedHandler));
 
@@ -204,11 +209,12 @@ namespace BeFriend.ViewModel
                         break;
 
                     case 4:
+
+                        var translateContent = ResourceLoader.GetForCurrentView().GetString("InAppMessage/TranslateContent");
+                        var translateTitle = ResourceLoader.GetForCurrentView().GetString("InAppMessage/TranslateTitle");
                         var dialog1 =
-                            new MessageDialog(
-                                "Translate the app to your native language in easy to use web interface " +
-                                "using Crowdin.",
-                                "Not a native English speaker?") {Options = MessageDialogOptions.None};
+                            new MessageDialog(translateContent,
+                                translateTitle) {Options = MessageDialogOptions.None};
                         dialog1.Commands.Add(new UICommand("Translate Now!", CommandInvokedHandler));
                         dialog1.Commands.Add(new UICommand("Translate Later", CommandInvokedHandler));
 
@@ -219,13 +225,12 @@ namespace BeFriend.ViewModel
 
                         break;
 
-                    case 6:
+                    case 9:
+
+                        var developContent = ResourceLoader.GetForCurrentView().GetString("InAppMessage/DevelopContent");
+                        var developTitle = ResourceLoader.GetForCurrentView().GetString("InAppMessage/DevelopTitle");
                         var dialog2 =
-                            new MessageDialog(
-                                "Did you know that BeFriend is completely Open-Sourced! Which means you can actively contribute in the " +
-                                "development of the app. \n\nWhether it is coding, designing, documenting, testing or translating, all " +
-                                "contributions are welcome",
-                                "Develop with Us!") {Options = MessageDialogOptions.None};
+                            new MessageDialog(developContent,developTitle) {Options = MessageDialogOptions.None};
                         dialog2.Commands.Add(new UICommand("Join the Development!", CommandInvokedHandler));
                         dialog2.Commands.Add(new UICommand("Not interested", CommandInvokedHandler));
 
@@ -243,10 +248,9 @@ namespace BeFriend.ViewModel
             }
             else
             {
-                var dialog = new MessageDialog("Your personal information is and never will be " +
-                                               "shared with any 3rd party. \n\nThe only information collected is the bug report which is  " +
-                                               "sent by the app whenever it crashes.",
-                    "Privacy Policy") {Options = MessageDialogOptions.None};
+                var privacyContent = ResourceLoader.GetForCurrentView().GetString("InAppMessage/PrivacyContent");
+                var privacyTitle = ResourceLoader.GetForCurrentView().GetString("InAppMessage/PrivacyTitle");
+                var dialog = new MessageDialog(privacyContent,privacyTitle) {Options = MessageDialogOptions.None};
                 dialog.Commands.Add(new UICommand("I Understand!", CommandInvokedHandler));
                 dialog.Commands.Add(new UICommand("I didn't Understand", CommandInvokedHandler));
 

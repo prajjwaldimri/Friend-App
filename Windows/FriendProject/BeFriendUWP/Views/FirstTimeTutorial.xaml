@@ -4,7 +4,6 @@
 	xmlns:local="using:BeFriend.Views"
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-	xmlns:winsdkfb="using:winsdkfb"
 	x:Class="BeFriend.Views.FirstTimeTutorial"
 	mc:Ignorable="d"
 	RequestedTheme="Light">
@@ -319,14 +318,13 @@
 			<DoubleAnimation
 				Storyboard.TargetName="DedicatedGrid"
 				Storyboard.TargetProperty="Opacity"
-				From="1.0" To="0.0" Duration="0:0:10" BeginTime="0:0:0"></DoubleAnimation>
+				From="1.0" To="0.0" Duration="0:0:10" BeginTime="0:0:0" />
 
 			<DoubleAnimation
 				Storyboard.TargetName="MainGrid"
 				Storyboard.TargetProperty="Opacity"
-				From="0.0" To="1.0" Duration="0:0:10" BeginTime="0:0:6"></DoubleAnimation>
+				From="0.0" To="1.0" Duration="0:0:10" BeginTime="0:0:6" />
 
-			
 
 		</Storyboard>
 
@@ -460,17 +458,7 @@
 									Text="Add Twitter" FontSize="16"/>
 							</StackPanel>
 						</Button>
-						<Button x:Name="AddFacebookButton" Click="AddFacebookButton_OnClick" Background="#3b5998" Margin="10,0,10,0">
-							<StackPanel Orientation="Horizontal">
-								<FontIcon Glyph="&#xF230;" FontSize="30"
-									FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"/>
-								<TextBlock Margin="10,0,10,0" VerticalAlignment="Center" x:Uid="FirstTimeTutorialFacebook"
-									Text="Add Facebook" FontSize="16"/>
-							</StackPanel>
-						</Button>
-
 					</StackPanel>
-
 				</StackPanel>
 			</PivotItem>
 

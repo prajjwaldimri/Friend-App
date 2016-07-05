@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using Windows.ApplicationModel.Contacts;
+using Windows.ApplicationModel.Resources;
 using Windows.Security.Authentication.Web;
 using Windows.Storage;
 using Windows.Storage.Pickers;
@@ -12,7 +13,6 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 using BeFriend.Services;
-using winsdkfb;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -25,7 +25,7 @@ namespace BeFriend.Views
     {
         public FirstTimeTutorial()
         {
-            this.InitializeComponent();
+            InitializeComponent();
             DedicatedStoryBoard.Begin();
             BackgroundAnimation.Begin();
             
@@ -244,30 +244,30 @@ namespace BeFriend.Views
             frame?.Navigate(typeof(TwitterAuthenticator));
         }
 
-        private async void AddFacebookButton_OnClick(object sender, RoutedEventArgs e)
-        {
-            var sess = FBSession.ActiveSession;
-            //Use your FB App ID
-            sess.FBAppId = AuthTokens.FacebookAppID;
-            sess.WinAppId = WebAuthenticationBroker.GetCurrentApplicationCallbackUri().ToString();
+        //private async void AddFacebookButton_OnClick(object sender, RoutedEventArgs e)
+        //{
+        //    var fbMessage = ResourceLoader.GetForCurrentView().GetString("FacebookMessage");
+        //    var message = new MessageDialog(fbMessage);
+        //    await message.ShowAsync();
+
+        //    var sess = FBSession.ActiveSession;
+        //    //Use your FB App ID
+        //    sess.FBAppId = AuthTokens.FacebookAppID;
+        //    sess.WinAppId = WebAuthenticationBroker.GetCurrentApplicationCallbackUri().ToString();
 
 
-            // Add permissions required by the app
-            var permissionList = new List<string> {"public_profile", "publish_actions"};
-            var permissions = new FBPermissions(permissionList);
+        //    // Add permissions required by the app
+        //    var permissionList = new List<string> {"public_profile", "publish_actions"};
+        //    var permissions = new FBPermissions(permissionList);
 
 
-            // Login to Facebook
-            var result = await sess.LoginAsync(permissions);
+        //    // Login to Facebook
+        //    var result = await sess.LoginAsync(permissions);
 
-            if (result.Succeeded)
-            {
-                //TODO:
-            }
-            else
-            {
-                //TODO:
-            }
-        }
+        //    if (result.Succeeded)
+        //    {
+        //        AddFacebookButton.IsEnabled = false;
+        //    }
+        //}
     }
 }

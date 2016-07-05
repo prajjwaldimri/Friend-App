@@ -12,8 +12,7 @@ using Windows.UI.Notifications;
 using Windows.UI.Popups;
 using Newtonsoft.Json;
 using Tweetinvi;
-using winsdkfb;
-using winsdkfb.Graph;
+
 
 namespace BackgroundProcesses
 {
@@ -84,7 +83,7 @@ namespace BackgroundProcesses
             MessageSender(_phonenumber);
 
             TwitterPoster();
-            FacebookPoster();
+            //FacebookPoster();
             if (!Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
                 return;
             var spineClass = new SpineClass();
@@ -150,7 +149,7 @@ namespace BackgroundProcesses
                 }
                 catch (Exception ex)
                 {
-                    //textBox.Text = ex.Message;
+                    Debug.WriteLine(ex);
                     return;
                 }
 
@@ -220,7 +219,6 @@ namespace BackgroundProcesses
                     twitteraccesstoken.Password, twitteraccesstokensecret.Password);
 
                 await LocationAccesser();
-                //TODO: Publish the Tweet with location on your Timeline
                 Tweet.PublishTweet(_message + " \n" + _latitude + "\n" + _longitude);
 
                Debug.WriteLine("Publishing Tweet... \n");
@@ -234,41 +232,41 @@ namespace BackgroundProcesses
             
         }
 
-        private static async void FacebookPoster()
-        {
-            // Get active session
-            FBSession sess = FBSession.ActiveSession;
+        //private static async void FacebookPoster()
+        //{
+        //    // Get active session
+        //    FBSession sess = FBSession.ActiveSession;
 
 
-            if (sess.LoggedIn)
-            {
-                var user = sess.User;
-                // Set caption, link and description parameters
-                var parameters = new PropertySet();
+        //    if (sess.LoggedIn)
+        //    {
+        //        var user = sess.User;
+        //        // Set caption, link and description parameters
+        //        var parameters = new PropertySet();
 
-                // Add post message
-                await LocationAccesser();
-                parameters.Add("message", _message + "\n" + "\n" + _latitude + "\n" + _longitude);
+        //        // Add post message
+        //        await LocationAccesser();
+        //        parameters.Add("message", _message + "\n" + "\n" + _latitude + "\n" + _longitude);
 
-                // Set Graph api path
-                var path = "/" + user.Id + "/feed";
+        //        // Set Graph api path
+        //        var path = "/" + user.Id + "/feed";
 
-                var factory = new FBJsonClassFactory(s => {
-                    return JsonConvert.DeserializeObject<FBReturnObject>(s);
-                });
+        //        var factory = new FBJsonClassFactory(s => {
+        //            return JsonConvert.DeserializeObject<FBReturnObject>(s);
+        //        });
 
-                var singleValue = new FBSingleValue(path, parameters, factory);
-                var result = await singleValue.PostAsync();
-                if (result.Succeeded)
-                {
-                    Debug.WriteLine("Succeed");
-                }
-                else
-                {
-                    Debug.WriteLine("Failed");
-                }
-            }
-        }
+        //        var singleValue = new FBSingleValue(path, parameters, factory);
+        //        var result = await singleValue.PostAsync();
+        //        if (result.Succeeded)
+        //        {
+        //            Debug.WriteLine("Succeed");
+        //        }
+        //        else
+        //        {
+        //            Debug.WriteLine("Failed");
+        //        }
+        //    }
+        //}
 
     }
     public sealed class FBReturnObject

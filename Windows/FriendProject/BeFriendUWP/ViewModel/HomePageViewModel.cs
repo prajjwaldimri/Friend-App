@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 using Windows.Devices.Geolocation;
+using Windows.Foundation.Metadata;
 using Windows.Services.Maps;
 using Windows.Storage;
 using Windows.Storage.Pickers;
@@ -14,6 +15,7 @@ using BeFriend.Services;
 using BeFriend.Views;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
+using Microsoft.Services.Store.Engagement;
 
 namespace BeFriend.ViewModel
 {
@@ -183,7 +185,7 @@ namespace BeFriend.ViewModel
 
         private static void SpineInitializer()
         {
-            if (!Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
+            if (!ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
                 return;
             try
             {
@@ -220,9 +222,9 @@ namespace BeFriend.ViewModel
                     //}
 
 
-                    if (Microsoft.Services.Store.Engagement.Feedback.IsSupported)
+                    if (Feedback.IsSupported)
                     {
-                        await Microsoft.Services.Store.Engagement.Feedback.LaunchFeedbackAsync();
+                        await Feedback.LaunchFeedbackAsync();
                     }
                     else
                     {

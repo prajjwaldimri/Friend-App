@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Linq;
 using Windows.ApplicationModel.Background;
 using Windows.UI.Notifications;
+using BackgroundProcesses;
 using GalaSoft.MvvmLight.Command;
 using Microsoft.QueryStringDotNET;
 using NotificationsExtensions.Toasts;
@@ -29,25 +30,25 @@ namespace BeFriend.ViewModel
             const string title = "Are you there?";
             const string content = "Click the button below if you are alright!";
 
-            var visual = new ToastVisual()
+            var visual = new ToastVisual
             {
-                TitleText = new ToastText()
+                TitleText = new ToastText
                 {
                     Text = title
                 },
 
-                BodyTextLine1 = new ToastText()
+                BodyTextLine1 = new ToastText
                 {
                     Text = content
                 }
 
             };
 
-            var actions = new ToastActionsCustom()
+            var actions = new ToastActionsCustom
             {
                 Buttons =
                 {
-                    new ToastButton("Dismiss", new QueryString()
+                    new ToastButton("Dismiss", new QueryString
                     {
                         {"action", "dismiss"}
                     }.ToString())
@@ -84,7 +85,7 @@ namespace BeFriend.ViewModel
                     const string taskName = "Reminder";
                     var taskBuilder = new BackgroundTaskBuilder();
                     taskBuilder.Name = taskName;
-                    taskBuilder.TaskEntryPoint = typeof (BackgroundProcesses.Reminder).FullName;
+                    taskBuilder.TaskEntryPoint = typeof (Reminder).FullName;
                     taskBuilder.SetTrigger(new TimeTrigger(Convert.ToUInt32(timeDifference.Minutes.ToString()), true));
 
                     var backgroundAccessStatus = await BackgroundExecutionManager.RequestAccessAsync();
@@ -114,7 +115,7 @@ namespace BeFriend.ViewModel
                     const string taskName = "Reminder";
                     var taskBuilder = new BackgroundTaskBuilder();
                     taskBuilder.Name = taskName;
-                    taskBuilder.TaskEntryPoint = typeof (BackgroundProcesses.Reminder).FullName;
+                    taskBuilder.TaskEntryPoint = typeof (Reminder).FullName;
                     taskBuilder.SetTrigger(new TimeTrigger(Convert.ToUInt32(timeDifference.Minutes.ToString()), true));
 
                     var backgroundAccessStatus = await BackgroundExecutionManager.RequestAccessAsync();

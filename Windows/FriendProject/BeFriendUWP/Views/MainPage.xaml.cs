@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using Windows.System;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Microsoft.Band;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -23,11 +21,16 @@ namespace BeFriend.Views
         private async void StoreRateButton_OnClick(object sender, RoutedEventArgs e)
         {
             //TODO: Replace with correct Product ID
-            var uri = new Uri("ms-windows-store://review/?ProductId=9NBLGGH4Q8NG");
+            var uri = new Uri("ms-windows-store://review/?ProductId=9nblggh4q864");
             await Launcher.LaunchUriAsync(uri);
         }
 
-        
+
+        private async void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            var msg = new MessageDialog("Coming Soon!");
+            await msg.ShowAsync();
+        }
     }
 }
 

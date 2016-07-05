@@ -24,9 +24,7 @@
                        Margin="10,0,10,40" Padding="20" TextAlignment="Center" FontFamily="ms-appx:/Fonts/Lato-Regular.ttf#Lato"/>
             
             <TimePicker Time="{Binding Time,Mode=TwoWay}"
-                        Name="TimePickerReminder" FontWeight="Bold" HorizontalAlignment="Stretch">
-                
-            </TimePicker>
+                        Name="TimePickerReminder" FontWeight="Bold" HorizontalAlignment="Stretch" />
 
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal"
                         Margin="0,40,0,0">

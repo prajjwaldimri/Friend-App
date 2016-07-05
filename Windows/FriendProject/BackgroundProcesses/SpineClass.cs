@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Calls;
@@ -52,14 +53,12 @@ namespace BackgroundProcesses
                 PhoneCallManager.CallStateChanged += (o, args) =>
                 {
                     DoesPhoneCallExist = PhoneCallManager.IsCallActive || PhoneCallManager.IsCallIncoming;
-                    if (ActivePhoneCallStateChanged != null)
-                    {
-                        ActivePhoneCallStateChanged();
-                    }
+                    ActivePhoneCallStateChanged?.Invoke();
                 };
             }
             catch (Exception e)
             {
+                Debug.WriteLine(e);
             }
         }
 

@@ -39,7 +39,7 @@ namespace BeFriend.Views
             nameof(UriSource),
             typeof(Uri),
             typeof(GifView),
-            new PropertyMetadata(null, new PropertyChangedCallback(OnSourcePropertyChanged))
+            new PropertyMetadata(null, OnSourcePropertyChanged)
             );
 
         public Uri UriSource
@@ -55,7 +55,7 @@ namespace BeFriend.Views
 
         public GifView()
         {
-            this.InitializeComponent();
+            InitializeComponent();
 
             // Register for visibility changed to stop the timer when minimized
             Window.Current.VisibilityChanged += Window_VisibilityChanged;
@@ -391,10 +391,7 @@ namespace BeFriend.Views
 
                     return _canvasImageSource;
                 }
-                else
-                {
-                    return null;
-                }
+                return null;
             }
 
             private void PrepareFrame(byte[] pixels, Rect frameRectangle, Rect disposeRectangle)

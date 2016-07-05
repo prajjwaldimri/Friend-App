@@ -1,18 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.ApplicationModel.Background;
+using Windows.ApplicationModel.VoiceCommands;
+using Windows.Foundation.Metadata;
 using Windows.Networking.PushNotifications;
 using Windows.Storage;
 using Windows.UI;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using BeFriend.Views;
-using Microsoft.Band;
+using Microsoft.ApplicationInsights;
+using Microsoft.HockeyApp;
 using Microsoft.WindowsAzure.Messaging;
+using WindowsCollectors = Microsoft.ApplicationInsights.WindowsCollectors;
 
 namespace BeFriend
 {
@@ -27,10 +31,10 @@ namespace BeFriend
         /// </summary>
         public App()
         {
-            Microsoft.ApplicationInsights.WindowsAppInitializer.InitializeAsync(
-                Microsoft.ApplicationInsights.WindowsCollectors.Metadata |
-                Microsoft.ApplicationInsights.WindowsCollectors.Session);
-            Microsoft.HockeyApp.HockeyClient.Current.Configure("7aa2a6b96c05425886f27178cbd678a6");
+            WindowsAppInitializer.InitializeAsync(
+                WindowsCollectors.Metadata |
+                WindowsCollectors.Session);
+            HockeyClient.Current.Configure("02009771188741c6a210252326b5732e");
             InitializeComponent();
             Suspending += OnSuspending;
             InitNotificationsAsync();
@@ -68,10 +72,9 @@ namespace BeFriend
 
                 try
                 {
-
                     var status = await BackgroundExecutionManager.RequestAccessAsync();
 
-                    var builder = new BackgroundTaskBuilder()
+                    var builder = new BackgroundTaskBuilder
                     {
                         Name = "MyReminder",
                         TaskEntryPoint = "BackgroundProcesses.Reminder"
@@ -86,11 +89,8 @@ namespace BeFriend
                      await Package.Current.InstalledLocation.GetFileAsync(
                        @"CortanaVCD.xml");
 
-                    await Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager.
+                    await VoiceCommandDefinitionManager.
                      InstallCommandDefinitionsFromStorageFileAsync(vcdStorageFile);
-
-                    
-
                 }
                 catch (Exception ex)
                 {
@@ -102,14 +102,16 @@ namespace BeFriend
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
-                if (localsettings.Values.ContainsKey("FirstTimeRunComplete"))
+                try
                 {
-                    rootFrame.Navigate(typeof (MainPage), e.Arguments);
+                    rootFrame.Navigate(
+                        localsettings.Values.ContainsKey("FirstTimeRunComplete")
+                            ? typeof(MainPage)
+                            : typeof(FirstTimeTutorial), e.Arguments);
                 }
-
-                else
+                catch (Exception exception)
                 {
-                    rootFrame.Navigate(typeof (FirstTimeTutorial), e.Arguments);
+                    Debug.WriteLine(exception);
                 }
             }
             // Ensure the current window is active
@@ -118,15 +120,15 @@ namespace BeFriend
             if (!localsettings.Values.ContainsKey("AppUpdated"))
             {
                 var package = Package.Current.Id.Version;
-                localsettings.Values.Add("AppUpdated",(package.Build.ToString()+package.Major.ToString()
-                    +package.Minor.ToString()));
+                localsettings.Values.Add("AppUpdated",(package.Build+package.Major.ToString()
+                    +package.Minor));
             }
 
-            if (!Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
+            if (!ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
                 return;
             try
             {
-                var statusBar = Windows.UI.ViewManagement.StatusBar.GetForCurrentView();
+                var statusBar = StatusBar.GetForCurrentView();
                 statusBar.BackgroundColor = Color.FromArgb(255, 62, 70, 81);
                 statusBar.BackgroundOpacity = 1;
             }
@@ -165,23 +167,34 @@ namespace BeFriend
                     
                 }
 
-                if (rootFrame.Content == null)
+                try
                 {
-                    // When the navigation stack isn't restored navigate to the first page,
-                    // configuring the new page by passing required information as a navigatio  n
-                    // parameter
-                    rootFrame.Navigate(typeof (Sospage));
+
+                    if (rootFrame.Content == null)
+                    {
+                        // When the navigation stack isn't restored navigate to the first page,
+                        // configuring the new page by passing required information as a navigatio  n
+                        // parameter
+                        rootFrame.Navigate(typeof(Sospage));
+                    }
+                    else
+                    {
+                        rootFrame.Navigate(typeof(Sospage));
+                    }
+
                 }
-                else
+
+                catch (Exception exc)
                 {
-                    rootFrame.Navigate(typeof (Sospage));
+                    Debug.WriteLine(exc);
+                    
                 }
 
                 if (rootFrame.BackStack.Count == 0)
                     rootFrame.BackStack.Add(new PageStackEntry(typeof(HomePage), null, null));
             }
 
-            else if (e.Kind == Windows.ApplicationModel.Activation.ActivationKind.VoiceCommand)
+            else if (e.Kind == ActivationKind.VoiceCommand)
             {
                 if (rootFrame == null)
                 {

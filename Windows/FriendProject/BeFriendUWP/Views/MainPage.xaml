@@ -146,7 +146,7 @@
 
           <Pivot.TitleTemplate>
                     <DataTemplate>
-                      <TextBlock Text="{Binding}" FontFamily="/Fonts/TT1255M_.TTF#AlphabetSoup Tilt BT" FontSize="32"></TextBlock>
+                      <TextBlock Text="{Binding}" FontFamily="/Fonts/TT1255M_.TTF#AlphabetSoup Tilt BT" FontSize="32" />
                     </DataTemplate>
                 </Pivot.TitleTemplate>
             
@@ -190,7 +190,7 @@
         <CommandBar Background="WhiteSmoke" VerticalAlignment="Bottom" Foreground="Black">
             
             <AppBarSeparator Foreground="Black" />
-            <AppBarButton x:Uid="MediKitAppBarButton" Icon="List" Label="Medi-Kit" Foreground="Black"/>
+            <AppBarButton x:Uid="MediKitAppBarButton" Icon="List" Label="Medi-Kit" Foreground="Black" Click="ButtonBase_OnClick"/>
             <AppBarButton x:Uid="StoreRateAppBarButton" Name="StoreRateButton" Icon="Favorite" Label="Rate" 
                           Foreground="Black" Click="StoreRateButton_OnClick"/>
             

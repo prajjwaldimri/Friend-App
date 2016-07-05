@@ -34,21 +34,16 @@ namespace BeFriend.Views
             SystemNavigationManager.GetForCurrentView().BackRequested += (s, ex) =>
             {
                 var frame = Window.Current.Content as Frame;
-                if (frame != null)
-                {
-
-                    frame.Navigate(typeof(MainPage));
-                }
+                frame?.Navigate(typeof(MainPage));
             };
 
         }
         //Use your consumerKey and ConsumerSecret
 
-        private  TwitterCredentials _appCredentials;
+        private TwitterCredentials _appCredentials;
 
         private async void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-            
             if (string.IsNullOrEmpty(pinText.Text))
             {
                 var msgDialog = new MessageDialog("Please Enter the pin showed below");

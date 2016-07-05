@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutPageAppTitle.Text" xml:space="preserve">
-    <value>BeFriend Beta</value>
+    <value>BeFriend</value>
     <comment>AboutPage.xaml</comment>
   </data>
   <data name="AboutPageDeveloperName.Text" xml:space="preserve">
@@ -126,7 +126,7 @@
     <comment>AboutPage.xaml</comment>
   </data>
   <data name="AboutPageHeader.Text" xml:space="preserve">
-    <value>Open-Source, Non-Profit and Made for community!</value>
+    <value>Open-Source, Non-Profit, and Made for the community!</value>
     <comment>AboutPage.xaml</comment>
   </data>
   <data name="AboutPageLibraries.Text" xml:space="preserve">
@@ -153,6 +153,22 @@
     <value>Acknowledgments:</value>
     <comment>AboutPage.xaml</comment>
   </data>
+  <data name="Description" xml:space="preserve">
+    <value>BeFriend is an open-source distress signal sending application which notifies your contacts of your location whenever you're in danger. 
+
+It uses GPS and cellular together to get the most accurate location of the user possible. The app can text(SMS), tweet(Twitter) or post(Facebook) your location.
+
+The app is open-sourced, so you can actively contribute to the development of the app. 
+The app is being developed at: http://www.github.com/prajjwaldimri/Friend-App 
+
+Note: The app uses phoneCall capability to place phone calls without showing dialer. The app also uses cellularMessaging capability(provided by Microsoft) which can silently send SMS from your device. Both capabilities are used according to the guidelines provide by Microsoft and can be inspected anytime at the Github repository.</value>
+    <comment>AppxPackageManifest</comment>
+  </data>
+  <data name="FacebookMessage" xml:space="preserve">
+    <value>By logging in here you are giving BeFriend permission to post to your feed without your consent. You can customize the message that the app posts in the settings page. 
+
+Note that you can customize the scope of the posted feed (private, friends or public) during login.</value>
+  </data>
   <data name="FirstTimeTutorialBack.Content" xml:space="preserve">
     <value>&lt; Back</value>
     <comment>FirstTimeTutorial.xaml</comment>
@@ -170,7 +186,7 @@
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialContactTutorial.Text" xml:space="preserve">
-    <value>Choose 3 people whom you would like to inform if you're ever in danger!</value>
+    <value>Choose 3 people whom you would like to inform if you're in danger!</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialFacebook.Text" xml:space="preserve">
@@ -250,7 +266,7 @@
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialTwoDescription.Text" xml:space="preserve">
-    <value>You can set a time at which the app will ask you if you're fine at the time. If you don't respond within 30 minutes it will notify your friends about your location.</value>
+    <value>You can set a time at which the app will ask you your status. If you don't respond within 30 minutes it will notify your friends about your location.</value>
     <comment>FirstTimeTutorial.xaml</comment>
   </data>
   <data name="FirstTimeTutorialTwoHeader.Text" xml:space="preserve">
@@ -273,8 +289,48 @@
     <value>HOME</value>
     <comment>MainPage.xaml</comment>
   </data>
+  <data name="InAppMessage/AppUpdation" xml:space="preserve">
+    <value>-Initial Build</value>
+    <comment>BaseViewModel.cs</comment>
+  </data>
+  <data name="InAppMessage/BugSuggestionsContent" xml:space="preserve">
+    <value>Currently, I am the only developer for the app, so there could be a few bugs in the app that I missed. Please use Gitter chat or Github issues or Email to report any bugs or new feature suggestions before giving the app a bad review on the store. Enjoy!</value>
+    <comment>BaseViewModel.cs</comment>
+  </data>
+  <data name="InAppMessage/BugSuggestionsTitle" xml:space="preserve">
+    <value>Any Bugs or Suggestions?</value>
+    <comment>BaseViewModel.cs</comment>
+  </data>
+  <data name="InAppMessage/DevelopContent" xml:space="preserve">
+    <value>Did you know that BeFriend is completely Open-Sourced, which means you can actively contribute to the development of the app. 
+
+Whether it is coding, designing, documenting, testing or translating, all contributions are very welcome.</value>
+    <comment>BaseViewModel.cs</comment>
+  </data>
+  <data name="InAppMessage/DevelopTitle" xml:space="preserve">
+    <value>Let's Develop Together!</value>
+    <comment>BaseViewModel.cs</comment>
+  </data>
+  <data name="InAppMessage/PrivacyContent" xml:space="preserve">
+    <value>Your personal information is and never will be shared with any 3rd party.
+
+The only information collected from the device is the bug report which is sent by the app whenever it crashes (using HockeyAppSdk) and the bug report only contains the technical details of bug and name of the device.</value>
+    <comment>BaseViewModel.cs</comment>
+  </data>
+  <data name="InAppMessage/PrivacyTitle" xml:space="preserve">
+    <value>Privacy Policy</value>
+    <comment>BaseViewModel.cs</comment>
+  </data>
+  <data name="InAppMessage/TranslateContent" xml:space="preserve">
+    <value>Translate the app to your native language in easy to use web interface using Crowdin.</value>
+    <comment>BaseViewModel.cs</comment>
+  </data>
+  <data name="InAppMessage/TranslateTitle" xml:space="preserve">
+    <value>Not a native English speaker?</value>
+    <comment>BaseViewModel.cs</comment>
+  </data>
   <data name="MainPagePivot.Title" xml:space="preserve">
-    <value>BeFriend Beta</value>
+    <value>BeFriend</value>
     <comment>MainPage.xaml</comment>
   </data>
   <data name="MediKitAppBarButton.Label" xml:space="preserve">
@@ -290,7 +346,7 @@
     <comment>ReminderPage.xaml</comment>
   </data>
   <data name="ReminderPageTutorialText.Text" xml:space="preserve">
-    <value>Set a time at which you think you should be able to respond to the reminder on the phone. If you don't respond to the reminder in 20 minutes, I will remind all of your friends about your location!</value>
+    <value>Set a time at which you think you should be able to respond to the reminder on the phone. If you don't respond to the reminder in 20 minutes, BeFriend will remind all of your friends about your location!</value>
     <comment>ReminderPage.xaml</comment>
   </data>
   <data name="ReminderPivotItem.Header" xml:space="preserve">
@@ -364,5 +420,13 @@
   <data name="TimerPivotItem.Header" xml:space="preserve">
     <value>TIMER</value>
     <comment>MainPage.xaml</comment>
+  </data>
+  <data name="TwitterAuthInstruction.Text" xml:space="preserve">
+    <value>Log in and paste the PIN below:</value>
+    <comment>TwitterAuthenticator.xaml</comment>
+  </data>
+  <data name="TwitterAuthTextBox.PlaceholderText" xml:space="preserve">
+    <value>Paste PIN here:</value>
+    <comment>TwitterAuthenticator.xaml</comment>
   </data>
 </root>

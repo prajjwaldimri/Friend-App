@@ -41,7 +41,7 @@
                     <RowDefinition/>
                     <RowDefinition Height="30"/>
                     <RowDefinition/>
-                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="0"/>
                     <RowDefinition/>
                     <RowDefinition Height="20"/>
                     <RowDefinition/>
@@ -86,36 +86,6 @@
                            FontSize="26" FontWeight="Bold"
                        Text="Social Networks" x:Uid="SettingsSocialHeader"
                            Grid.ColumnSpan="2" Grid.Row="4" Grid.Column="0"/>
-
-                <FontIcon VerticalAlignment="Center" Glyph="&#xf230;"
-                      Grid.Row="6" Grid.Column="0" 
-                      FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"/>
-                
-                <TextBlock TextAlignment="Left" Text="Connect Facebook" VerticalAlignment="Center" 
-                       FontSize="18" FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"
-                     Grid.Row="6" Grid.Column="1" x:Uid="SettingsFacebook"/>
-                <FontIcon Glyph="&#xf067;" Name="FacebookAddIcon"
-                      FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"
-                      Grid.Row="6" VerticalAlignment="Center" Grid.Column="2"
-                      Visibility="{Binding FacebookPlusIconVisibility}">
-                    <interactivity:Interaction.Behaviors>
-                        <core:EventTriggerBehavior EventName="Tapped">
-                            <core:InvokeCommandAction Command="{Binding FacebookAuthenticatorCommand}"/>
-                        </core:EventTriggerBehavior>
-                    </interactivity:Interaction.Behaviors>
-                </FontIcon>
-
-                <FontIcon Glyph="&#xf00d;" Name="FacebookRemoveIcon"
-                      Visibility="{Binding FacebookRemoveIconVisibility}"
-                      FontFamily="ms-appx:/Fonts/fontawesome-webfont.ttf#FontAwesome"
-                      Grid.Row="6" VerticalAlignment="Center" Grid.Column="2">
-                    <interactivity:Interaction.Behaviors>
-                        <core:EventTriggerBehavior EventName="Tapped">
-                            <core:InvokeCommandAction CommandParameter="2" 
-                                                      Command="{Binding SocialIntegrationRemoverCommand}"/>
-                        </core:EventTriggerBehavior>
-                    </interactivity:Interaction.Behaviors>
-                </FontIcon>
 
                 <FontIcon VerticalAlignment="Center" Glyph="&#xf081;"
                       Grid.Row="8" Grid.Column="0" 
@@ -324,21 +294,7 @@
                         </core:EventTriggerBehavior>
                     </interactivity:Interaction.Behaviors>
                 </ToggleSwitch>
-
-
-                <TextBlock VerticalAlignment="Center" Text="Create Tile on MS Band"
-                       FontSize="18" FontFamily="ms-appx:/Fonts/Karla-Regular.ttf#Karla"
-                       Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" 
-                       HorizontalAlignment="Left" x:Uid="SettingsPermanentNotification"/>
-
-                <Button x:Name="ToastMakerToggle1" Content="Create" HorizontalAlignment="Stretch"
-                              Grid.Row="7" Grid.Column="2">
-                    <interactivity:Interaction.Behaviors>
-                        <core:EventTriggerBehavior EventName="Click">
-                            <core:InvokeCommandAction Command="{Binding MsBandTileCreatorCommand}"/>
-                        </core:EventTriggerBehavior>
-                    </interactivity:Interaction.Behaviors>
-                </Button>
+                
             </Grid>
 
             <Grid Grid.Row="3" Margin="10,10,0,0">

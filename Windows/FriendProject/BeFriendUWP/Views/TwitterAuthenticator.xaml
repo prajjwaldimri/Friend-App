@@ -13,18 +13,22 @@
             <RowDefinition/>
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
-        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="0,20,0,0">
-            <TextBlock x:Name="PageTitle" Text="Twitter Authorization"/>
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="20,20,0,0">
+            <TextBlock x:Name="PageTitle" Text="Twitter Authorization" 
+                       FontFamily="ms-appx:/Fonts/Pinstripe Limo.ttf#Pinstripe Limo"
+                       FontSize="20"/>
         </StackPanel>
 
         <StackPanel x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <TextBlock Text="Log in and paste the PIN here:"></TextBlock>
+            <TextBlock Text="Log in and paste the PIN below:" x:Uid="TwitterAuthInstruction" />
             <StackPanel Orientation="Horizontal">
-                <TextBox PlaceholderText="Paste Pin here!" Name="pinText" Margin="0,12,12,12" BorderThickness="1" BorderBrush="Black"/>
+                <TextBox PlaceholderText="Paste Pin here!" Name="pinText" Margin="0,12,12,12"
+                         BorderThickness="1" BorderBrush="Black" x:Uid="TwitterAuthTextBox"/>
                 <Button Content="Confirm" Click="ButtonBase_OnClick" Margin="0,12,0,12"/>
                 <Button Name="CancelButton" Content="Cancel" Click="CancelButton_OnClick" Margin="0,12,0,12"/>
             </StackPanel>
-            <WebView Name="TwitterWebView" RelativePanel.AlignBottomWithPanel="True" Height="500" Width="500" />
+            <WebView Name="TwitterWebView" RelativePanel.AlignBottomWithPanel="True" Height="500"
+                     Width="500" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
         </StackPanel>
     </Grid>
     

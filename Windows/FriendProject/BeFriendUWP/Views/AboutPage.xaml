@@ -25,14 +25,14 @@
                 <Rectangle HorizontalAlignment="Stretch" Height="300">
                     <Rectangle.Fill>
                         <ImageBrush ImageSource="../Assets/Extra Images/pexels-photo-befriend-about_compressed.jpg"
-                                     Stretch="UniformToFill"></ImageBrush>
+                                     Stretch="UniformToFill" />
                     </Rectangle.Fill>
                 </Rectangle>
         
         
                 <Ellipse Width="128" Height="128">
                     <Ellipse.Fill>
-                        <ImageBrush ImageSource="../Assets/LogoBefriend.png"></ImageBrush>
+                        <ImageBrush ImageSource="../Assets/LogoBefriend.png" />
                     </Ellipse.Fill>
                 </Ellipse>
                 

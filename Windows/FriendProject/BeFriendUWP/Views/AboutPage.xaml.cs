@@ -12,7 +12,7 @@ namespace BeFriend.Views
     {
         public AboutPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
             VersionTextBlock.Text = GetAppVersion();
         }
 

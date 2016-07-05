@@ -7,10 +7,6 @@ namespace BeFriend.Services
     {
         private bool _doesPhoneCallExist;
 
-        public MonitorClass()
-        {
-        }
-
         public event HomePage.CallingInfoDelegate ActivePhoneCallStateChanged;
 
         private void MonitorCallState()

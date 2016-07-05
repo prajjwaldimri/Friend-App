@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Windows.Devices.Geolocation;
 using Windows.Devices.Sms;
 using Windows.Foundation.Collections;
+using Windows.Foundation.Metadata;
 using Windows.Security.Credentials;
 using Windows.Storage;
 using Windows.UI.Xaml;
@@ -12,8 +13,6 @@ using BeFriend.Services;
 using GalaSoft.MvvmLight.Command;
 using Newtonsoft.Json;
 using Tweetinvi;
-using winsdkfb;
-using winsdkfb.Graph;
 
 namespace BeFriend.ViewModel
 {
@@ -49,7 +48,7 @@ namespace BeFriend.ViewModel
             timer.Tick += timer_Tick;
             timer.Start();
 
-            if (!Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
+            if (!ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
                 return;
             var spineClass = new SpineClass();
             spineClass.InitializeCallingInfoAsync();
@@ -61,9 +60,9 @@ namespace BeFriend.ViewModel
             await LocationAccesser();
 
             await TwitterPoster();
-            await FacebookPoster();
+            //await FacebookPoster();
 
-            if (!Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
+            if (!ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
                 return;
 
             /*Message Sending Methods */
@@ -117,9 +116,9 @@ namespace BeFriend.ViewModel
             await LocationAccesser();
 
             await TwitterPoster();
-            await FacebookPoster();
+           // await FacebookPoster();
 
-            if (!Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
+            if (!ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
                 return;
 
             /*Message Sending Methods */
@@ -317,47 +316,47 @@ namespace BeFriend.ViewModel
             RaisePropertyChanged(()=>SosPageText);
         }
 
-        private async Task FacebookPoster()
-        {
-            // Get active session
-            FBSession sess = FBSession.ActiveSession;
+        //private async Task FacebookPoster()
+        //{
+        //    // Get active session
+        //    FBSession sess = FBSession.ActiveSession;
 
-            SosPageText += "\n Getting active Facebook Session...";
-            RaisePropertyChanged(() => SosPageText);
+        //    SosPageText += "\n Getting active Facebook Session...";
+        //    RaisePropertyChanged(() => SosPageText);
 
-            if (sess.LoggedIn)
-            {
-                var user = sess.User;
-                // Set caption, link and description parameters
-                var parameters = new PropertySet();
+        //    if (sess.LoggedIn)
+        //    {
+        //        var user = sess.User;
+        //        // Set caption, link and description parameters
+        //        var parameters = new PropertySet();
 
-                // Add post message
-                await LocationAccesser();
-                parameters.Add("message", Message + "\n" + "\n" + _latitude + "\n" + _longitude);
+        //        // Add post message
+        //        await LocationAccesser();
+        //        parameters.Add("message", Message + "\n" + "\n" + _latitude + "\n" + _longitude);
 
-                // Set Graph api path
-                var path = "/" + user.Id + "/feed";
+        //        // Set Graph api path
+        //        var path = "/" + user.Id + "/feed";
 
-                var factory = new FBJsonClassFactory(JsonConvert.DeserializeObject<FBReturnObject>);
+        //        var factory = new FBJsonClassFactory(JsonConvert.DeserializeObject<FBReturnObject>);
 
-                var singleValue = new FBSingleValue(path, parameters, factory);
-                var result = await singleValue.PostAsync();
-                if (result.Succeeded)
-                {
-                    SosPageText += "\n Posted to Facebook Wall \n";
-                }
-                else
-                {
-                    SosPageText += "\n Can't post to Facebook Wall \n";
-                }
-            }
-            else
-            {
-                SosPageText += "\n Facebook Not Configured or Active session not available! ";
-                RaisePropertyChanged(() => SosPageText);
-            }
-            RaisePropertyChanged(()=>SosPageText);
-        }
+        //        var singleValue = new FBSingleValue(path, parameters, factory);
+        //        var result = await singleValue.PostAsync();
+        //        if (result.Succeeded)
+        //        {
+        //            SosPageText += "\n Posted to Facebook Wall \n";
+        //        }
+        //        else
+        //        {
+        //            SosPageText += "\n Can't post to Facebook Wall \n";
+        //        }
+        //    }
+        //    else
+        //    {
+        //        SosPageText += "\n Facebook Not Configured or Active session not available! ";
+        //        RaisePropertyChanged(() => SosPageText);
+        //    }
+        //    RaisePropertyChanged(()=>SosPageText);
+        //}
 
         
     }

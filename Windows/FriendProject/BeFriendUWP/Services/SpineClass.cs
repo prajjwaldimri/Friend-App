@@ -12,6 +12,7 @@ using Windows.Graphics.Imaging;
 using Windows.Storage;
 using Windows.Storage.Streams;
 using Windows.UI.Xaml.Media.Imaging;
+using BeFriend.Views;
 
 namespace BeFriend.Services
 {
@@ -22,7 +23,7 @@ namespace BeFriend.Services
         public static double LocLon;
         public static string LocationAddress;
         public SmsDevice2 Device;
-        public Views.MainPage RootPage;
+        public MainPage RootPage;
         public static Dictionary<Guid, PhoneLine> AllPhoneLines;
         public bool DoesPhoneCallExist;
         public int NoOfLines;
