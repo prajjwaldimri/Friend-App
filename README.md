@@ -4,6 +4,7 @@ BeFriend
 [![License APACHE](https://img.shields.io/badge/license-APACHE-642C90.svg?style=flat-square)](https://github.com/prajjwaldimri/Friend-App/blob/master/LICENSE)
 [![Contact](https://img.shields.io/badge/contact-@prajjwaldimri-642C90.svg?style=flat-square)](https://twitter.com/prajjwaldimri)
 [![GitHub issues](https://img.shields.io/github/issues/prajjwaldimri/Friend-App.svg?style=flat-square)](https://github.com/prajjwaldimri/Friend-App/issues)
+<a href="https://zenhub.com"><img src="https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png"></a>
 
 
 BeFriend notifies your contacts about your location through SMS and Twitter anytime you are in danger.
