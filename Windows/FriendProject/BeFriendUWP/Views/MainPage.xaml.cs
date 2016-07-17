@@ -26,12 +26,12 @@ namespace BeFriend.Views
         }
 
 
-        private async void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-            var msg = new MessageDialog("Coming Soon!");
-            await msg.ShowAsync();
+            Frame.Navigate(typeof(FirstPageView));
+            //var msg = new MessageDialog("Coming Soon!");
+            //await msg.ShowAsync();
         }
     }
 }
 
-       

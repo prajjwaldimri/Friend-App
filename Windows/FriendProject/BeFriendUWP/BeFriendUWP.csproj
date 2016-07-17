@@ -211,6 +211,9 @@
     <Compile Include="Views\CallandSMSSettings.xaml.cs">
       <DependentUpon>CallandSMSSettings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\FirstPageView.xaml.cs">
+      <DependentUpon>FirstPageView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\FirstTimeTutorial.xaml.cs">
       <DependentUpon>FirstTimeTutorial.xaml</DependentUpon>
     </Compile>
@@ -261,6 +264,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CallandSMSSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FirstPageView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

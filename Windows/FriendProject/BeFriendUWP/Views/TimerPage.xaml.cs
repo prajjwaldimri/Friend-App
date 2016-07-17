@@ -21,7 +21,7 @@ namespace BeFriend.Views
             TimerValueRetriever();
         }
 
-        
+
 
         private DispatcherTimer timer = new DispatcherTimer();
         private DispatcherTimer militimer = new DispatcherTimer();
@@ -33,14 +33,14 @@ namespace BeFriend.Views
 
         private void TimerOnTick(object sender, object o)
         {
-                _secondstime = _secondstime.Add(TimeSpan.FromSeconds(-1));
-                SecondText.Text = _secondstime.ToString("ss");
-            
+            _secondstime = _secondstime.Add(TimeSpan.FromSeconds(-1));
+            SecondText.Text = _secondstime.ToString("ss");
 
-            if (_minutestime== new TimeSpan(0,1,0))
+
+            if (_minutestime == new TimeSpan(0, 1, 0))
             {
                 _i--;
-                if (_i==0)
+                if (_i == 0)
                 {
                     _minutestime = _minutestime.Add(TimeSpan.FromMinutes(-1));
                     MinuteText.Text = _minutestime.ToString("mm");
@@ -54,11 +54,11 @@ namespace BeFriend.Views
                 var frame = Window.Current.Content as Frame;
                 if (frame != null)
                 {
-                    frame.Navigate(typeof (Sospage));
+                    frame.Navigate(typeof(Sospage));
                 }
 
             }
-            
+
         }
 
         private void HoldRectangle_OnHolding(object sender, HoldingRoutedEventArgs e)
@@ -87,7 +87,7 @@ namespace BeFriend.Views
             {
                 var j = 100;
                 var random = new Random();
-                j-= random.Next(0,90);
+                j -= random.Next(0, 90);
 
                 MillisecondText.Text = j.ToString(CultureInfo.CurrentCulture);
             };

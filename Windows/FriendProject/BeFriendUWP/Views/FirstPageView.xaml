@@ -1,0 +1,396 @@
+﻿<Page
+    x:Class="BeFriend.Views.FirstPageView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BeFriend.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    RequestedTheme="Dark">
+
+    <Pivot Background="Black">
+        <PivotItem Header="BlackEye">
+            <ScrollViewer>
+                <RichTextBlock Margin="30,30,30,30">
+
+                    <Paragraph FontFamily="ms-appx:/Fonts/Lato-Bold.ttf#Lato"
+                           FontSize="18">
+                        A black eye is caused by bleeding under the skin around the eye.
+                        Most injuries that cause a black eye aren't serious. 
+                        But a black eye may indicate a more serious injury,
+                        such as an internal injury to the eye or a fracture of the thin bones 
+                        around the eye. You may have a skull fracture if you have double vision,
+                        bruising around both eyes (raccoon eyes) or bleeding from the nose.
+                        <LineBreak/>
+                        <LineBreak/>
+
+                        <Bold>To take care of a black eye:</Bold>
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Bold>Apply a cold compress soon after the injury.</Bold>
+                        <LineBreak/>
+
+                        - Using gentle pressure, place a cold pack or a cloth filled with ice to the 
+                    area around your eye. Take care not to press on the eye itself. 
+                    Apply cold as soon as possible after the injury to reduce swelling. 
+                    Repeat several times a day for a day or two.
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Bold>Look for blood.</Bold>
+                        <LineBreak/>
+                        If you see it in the white or colored parts of the eye, seek urgent care by an eye specialist (ophthalmologist).
+
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Bold>Seek medical care immediately</Bold>
+                        if you have vision problems (double vision, blurring), severe pain, bruising around both eyes, or bleeding in an eye or from the nose.
+
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Bold>Apply warm-hot compresses.</Bold>
+                        <LineBreak/>
+                        This may be helpful after a few days when the swelling has stabilized. Repeat several times a day for a day or two
+                    </Paragraph>
+                </RichTextBlock>
+            </ScrollViewer>
+        </PivotItem>
+
+        <PivotItem Header="Bruises">
+            <ScrollViewer>
+                <RichTextBlock>
+                    <Paragraph Margin="30,30,30,30" FontFamily="ms-appx:/Fonts/Lato-Bold.ttf#Lato"
+                           FontSize="18">
+                        <LineBreak/>
+                        A bruise forms when a blow breaks blood vessels near your skin's surface, allowing a small amount of blood to leak into the tissues under your skin. The trapped blood may cause a bruise that at first looks like a black-and-blue mark and then changes color as it heals.
+
+If your skin isn't broken, you don't need a bandage. 
+                        <LineBreak/>
+                        But you can enhance bruise healing with these simple techniques:
+
+                        <LineBreak/>
+                        <LineBreak/>
+-Elevate the injured area.
+                        <LineBreak/>
+-Apply an ice pack wrapped in a towel or a cloth dampened with cold water. Do this for about 10 minutes. Repeat several times a day for a day or two after the injury as needed.
+                        <LineBreak/>
+-Rest the bruised area, if possible.
+                        <LineBreak/>
+-Consider acetaminophen (Tylenol, others) for pain relief, or ibuprofen (Advil, Motrin IB, others) for pain relief and to reduce swelling.
+                        <LineBreak/>
+                        <LineBreak/>
+
+                        <Bold>Consult your doctor if you:</Bold>
+                        <LineBreak/>
+                        -Notice very painful swelling in the bruised area
+                        <LineBreak/>
+
+            -Are still experiencing pain three days after a seemingly minor injury
+                        <LineBreak/>
+
+            -Have frequent, large or painful bruises, particularly if your bruises appear on your trunk, back or face, or seem to develop for no known reasons
+                        <LineBreak/>
+
+            -Have easy bruising and a history of significant bleeding, such as during a surgical procedure
+                        <LineBreak/>
+
+            -Notice a lump (hematoma) form over the bruise
+                        <LineBreak/>
+
+            -Are experiencing abnormal bleeding elsewhere, such as from your nose or gums or in urine or stool
+                        <LineBreak/>
+
+            -Suddenly begin bruising, but have no history of bruising
+                        <LineBreak/>
+
+            -Have a family history of easy bruising or bleeding
+                        <LineBreak/>
+
+            -These signs and symptoms may indicate a more serious problem, such as a blood-clotting problem or blood-related disease.
+                    </Paragraph>
+                </RichTextBlock>
+            </ScrollViewer>
+        </PivotItem>
+
+        <PivotItem Header="Foreign Object in Skin">
+            <ScrollViewer>
+                <RichTextBlock>
+                    <Paragraph Margin="30,30,30,30" FontFamily="ms-appx:/Fonts/Lato-Bold.ttf#Lato"
+                           FontSize="18">
+                        You can usually safely remove a small foreign object — such as a wood splinter, thorn, fiberglass or glass — that's just under the surface of the skin:
+
+                        <LineBreak/>
+                        <LineBreak/>
+                        -Wash your hands and clean the area well with soap and water.
+                        <LineBreak/>
+                        -Use tweezers cleaned with rubbing alcohol to remove the object. A magnifying glass may help you see better.
+                        <LineBreak/>
+                        -If the object is under the surface of the skin, sterilize a clean, sharp needle by wiping it with rubbing alcohol. Use the needle to gently lift or break the skin over the object. Lift the tip of the object out and grasp it with your tweezers.
+                        <LineBreak/>
+                        -Squeeze the wound gently to allow bleeding to wash out germs.
+                        <LineBreak/>
+                        -Wash the area again and pat dry. Apply an antibiotic ointment.
+                        <LineBreak/>
+
+                        <LineBreak/>
+                        <Bold>Seek prompt medical help</Bold> for a foreign object that seems to be more deeply embedded in the skin or muscle. Follow these precautions and steps first:
+
+                        <LineBreak/>
+                        -Don't try to remove the object. Doing so could cause further harm.
+                        <LineBreak/>
+                        -If needed, control bleeding by pressing firmly around the object to bring the edges of the wound together and by raising the injury higher than the heart.
+                        <LineBreak/>
+                        -Bandage the wound. First put a piece of gauze over the object. Then, if it helps, put clean padding around the object before binding the wound securely with a bandage or a piece of clean cloth. Take care not to press too hard on the object.
+                        <LineBreak/>
+                        <LineBreak/>
+
+
+                        In addition, seek medical help if:
+
+                        <LineBreak/>
+                        -The object doesn't come out easily.
+                        <LineBreak/>
+                        -The injury involves an eye.
+                        <LineBreak/>
+                        -The wound is deep or dirty and the injured person's last tetanus shot was more than five years ago. The doctor may recommend a booster shot.
+                    </Paragraph>
+                </RichTextBlock>
+            </ScrollViewer>
+        </PivotItem>
+
+        <PivotItem Header="Fractures">
+            <ScrollViewer>
+                <RichTextBlock>
+                    <Paragraph Margin="30,30,30,30" FontFamily="ms-appx:/Fonts/Lato-Bold.ttf#Lato"
+                           FontSize="18">
+                        A fracture is a broken bone. It requires medical attention. If the broken bone is the result of major trauma or injury, call 911 or your local emergency number.
+
+                        <LineBreak/>
+                        <LineBreak/>
+                        Also call for emergency help if:
+                        <LineBreak/>
+
+                        -The person is unresponsive, isn't breathing or isn't moving. Begin CPR if there's no breathing or heartbeat.
+                        <LineBreak/>
+                        -There is heavy bleeding.
+                        <LineBreak/>
+                        -Even gentle pressure or movement causes pain.
+                        <LineBreak/>
+                        -The limb or joint appears deformed.
+                        <LineBreak/>
+                        -The bone has pierced the skin.
+                        <LineBreak/>
+                        -The extremity of the injured arm or leg, such as a toe or finger, is numb or bluish at the tip.
+                        <LineBreak/>
+                        -You suspect a bone is broken in the neck, head or back.
+                        <LineBreak/>
+                        <LineBreak/>
+
+                        Don't move the person except if necessary to avoid further injury. Take these actions immediately while waiting for medical help:
+
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Bold>Stop any bleeding.</Bold>
+                        <LineBreak/>
+                        Apply pressure to the wound with a sterile bandage, a clean cloth or a clean piece of clothing.
+                        <LineBreak/>
+                        <Bold>Immobilize the injured area.</Bold> Don't try to realign the bone or push a bone that's sticking out back in. If you've been trained in how to splint and professional help isn't readily available, apply a splint to the area above and below the fracture sites. Padding the splints can help reduce discomfort.
+                        <LineBreak/>
+                        <Bold>Apply ice packs to limit swelling and help relieve pain.</Bold> Don't apply ice directly to the skin. Wrap the ice in a towel, piece of cloth or some other material.
+                        <LineBreak/>
+                        <Bold>Treat for shock.</Bold> If the person feels faint or is breathing in short, rapid breaths, lay the person down with the head slightly lower than the trunk and, if possible, elevate the legs.
+                    </Paragraph>
+                </RichTextBlock>
+            </ScrollViewer>
+        </PivotItem>
+
+       <PivotItem Header="Human Bites">
+            <ScrollViewer>
+                <RichTextBlock>
+                    <Paragraph Margin="30,30,30,30" FontFamily="ms-appx:/Fonts/Lato-Bold.ttf#Lato"
+                           FontSize="18">
+                        Human bites can be as dangerous as or even more dangerous than animal bites because of the types of bacteria and viruses contained in the human mouth. If someone cuts his or her knuckles on another person's teeth, as might happen in a fight, this is also considered a human bite.
+                        <LineBreak/>
+                        <LineBreak/>
+
+If you sustain a human bite that breaks the skin:
+                        <LineBreak/>
+                        <LineBreak/>
+
+                        -Stop the bleeding by applying pressure with a clean, dry cloth.
+                        <LineBreak/>
+                        -Wash the wound thoroughly with soap and water.
+                        <LineBreak/>
+                        -Apply an antibiotic cream to prevent infection.
+                        <LineBreak/>
+                        -Apply a clean bandage. Cover the affected area with a nonstick bandage.
+                        <LineBreak/>
+                        -Seek emergency medical care.
+                        <LineBreak/>
+                        -If you haven't had a tetanus shot within five years, your doctor may recommend a booster. In this case, you should have the booster within 48 hours of the injury.
+                    </Paragraph>
+                </RichTextBlock>
+            </ScrollViewer>
+        </PivotItem>
+
+        <PivotItem Header="Puncture Wounds">
+            <ScrollViewer>
+                <RichTextBlock>
+                    <Paragraph Margin="30,30,30,30" FontFamily="ms-appx:/Fonts/Lato-Bold.ttf#Lato"
+                           FontSize="18">
+                        A puncture wound doesn't usually cause excessive bleeding. Often the wound seems to close almost instantly. But this doesn't mean treatment isn't necessary. A puncture wound — such as from stepping on a nail — can be dangerous because of the risk of infection.
+
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Bold>To take care of a puncture wound:</Bold>
+                        <LineBreak/>
+                        <LineBreak/>
+
+                        -Wash your hands. This helps avoid infection.
+                        <LineBreak/>
+                        -Stop the bleeding. Apply gentle pressure with a bandage or clean cloth.
+                        <LineBreak/>
+                        -Clean the wound. Rinse the wound with clear water. If dirt or debris remains in the wound after washing, use tweezers cleaned with alcohol to remove the particles. If debris still remains, see a doctor. Clean the area around the wound with soap and a washcloth.
+                        <LineBreak/>
+                        -Apply an antibiotic. Apply a thin layer of an antibiotic cream or ointment (Neosporin, Polysporin). Certain ingredients in some ointments can cause a mild rash in some people. If a rash appears, stop using the ointment.
+                        <LineBreak/>
+                        -Cover the wound. Bandages can help keep the wound clean and keep harmful bacteria out.
+                        <LineBreak/>
+                        -Change the dressing. Do this at least once a day or whenever the bandage becomes wet or dirty.
+                        <LineBreak/>
+                        -Watch for signs of infection. See a doctor if the wound isn't healing or you notice any redness, increasing pain, drainage, warmth or swelling.
+                        <LineBreak/>
+                        -Seek prompt medical care
+
+                        <LineBreak/>
+                        <LineBreak/>
+Get immediate medical help if the wound:
+
+-Keeps bleeding after a few minutes of direct pressure
+                        <LineBreak/>
+                        -Is the result of an animal or human bite
+                        <LineBreak/>
+                        -Is deep, dirty or caused by a metal object
+                        <LineBreak/>
+                        -If the injured person hasn't had a tetanus shot in the past five years and the wound is deep or dirty, your doctor may recommend a booster. The injured person should have the booster shot within 48 hours of the injury.
+                        <LineBreak/>
+                        -If the wound was caused by a cat or a dog, try to confirm that its rabies vaccination is up to date. If it was caused by a wild animal, seek advice from your doctor about which animals are most likely to carry rabies.
+                        <LineBreak/>
+                    </Paragraph>
+                </RichTextBlock>
+            </ScrollViewer>
+        </PivotItem>
+
+        <PivotItem Header="Severe Bleeding">
+            <ScrollViewer>
+                <RichTextBlock>
+                    <Paragraph Margin="30,30,30,30" FontFamily="ms-appx:/Fonts/Lato-Bold.ttf#Lato"
+                           FontSize="18">
+                        For severe bleeding, take these actions immediately:
+<LineBreak/>
+                        <LineBreak/>
+                        -Remove any obvious dirt or debris from the wound. Don't remove large or deeply embedded objects. Don't probe the wound or attempt to clean it yet. Your first job is to stop the bleeding. Wear disposable protective gloves if available.
+                        <LineBreak/>
+                        -Stop the bleeding. Place a sterile bandage or clean cloth on the wound. Press the bandage firmly with your palm to control bleeding. Maintain pressure by binding the wound tightly with a bandage or a piece of clean cloth. Secure with adhesive tape. Use your hands if nothing else is available.
+                        <LineBreak/>
+
+                        Raise the injured part above the level of the heart.
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Bold>Special cases:</Bold>
+<LineBreak/>
+                        <LineBreak/>
+                        -Don't put direct pressure on an eye injury or embedded object.
+                        <LineBreak/>
+                        -Don't reposition or put pressure on displaced organs. Cover the wound with a clean dressing.
+                        <LineBreak/>
+                        -Help the injured person lie down, preferably on a rug or blanket to prevent loss of body heat. If possible, elevate the legs.
+                        <LineBreak/>
+                        -Don't remove the gauze or bandage. If the bleeding seeps through the gauze or other cloth on the wound, add another bandage on top of it. And keep pressing firmly on the area.
+                        <LineBreak/>
+                        <LineBreak/>
+                        Tourniquets: A tourniquet is effective in controlling life-threatening bleeding from a limb. Apply a tourniquet if you're trained in how to do so. When emergency help arrives, explain how long the tourniquet has been in place.
+                        <LineBreak/>
+
+                        -Immobilize the injured body part once the bleeding has stopped. Leave the bandages in place and get the injured person to the emergency room as soon as possible.
+                        <LineBreak/>
+
+                        Call 911 or your local emergency number if the bleeding is the result of major trauma or injury. Also call for emergency help if you suspect internal bleeding. Signs of internal bleeding include:
+                        <LineBreak/>
+
+                        -Bleeding from a body opening, such as the ear, mouth, nose or anus
+                        <LineBreak/>
+                        -Vomiting or coughing up blood
+                        <LineBreak/>
+                        -Bruising
+                        <LineBreak/>
+                        -A tender or swollen stomach
+                        <LineBreak/>
+                        -Cold, clammy skin
+                        <LineBreak/>
+                        -Thirst
+                        <LineBreak/>
+                        -Fractures
+                        <LineBreak/>
+                        -Shock, indicated by a rapid, weak pulse, pallor, sweating, rapid breathing and decreased alertness
+                        <LineBreak/>
+                    </Paragraph>
+                </RichTextBlock>
+            </ScrollViewer>
+        </PivotItem>
+
+        <PivotItem Header="Shock">
+            <ScrollViewer>
+                <RichTextBlock>
+                    <Paragraph Margin="30,30,30,30" FontFamily="ms-appx:/Fonts/Lato-Bold.ttf#Lato"
+                           FontSize="18">
+                        Shock may result from trauma, heatstroke, blood loss, an allergic reaction, severe infection, poisoning, severe burns or other causes. When a person is in shock, his or her organs aren't getting enough blood or oxygen. If untreated, this can lead to permanent organ damage or even death.
+                        <LineBreak/>
+                        Signs and symptoms of shock vary depending on circumstances and may include:
+                        <LineBreak/>
+                        <LineBreak/>
+
+                        -Cool, clammy skin
+                        <LineBreak/>
+                        -Pale or ashen skin
+                        <LineBreak/>
+                        -Rapid pulse
+                        <LineBreak/>
+                        -Rapid breathing
+                        <LineBreak/>
+                        -Nausea or vomiting
+                        <LineBreak/>
+                        -Enlarged pupils
+                        <LineBreak/>
+                        -Weakness or fatigue
+                        <LineBreak/>
+                        -Dizziness or fainting
+                        <LineBreak/>
+                        -Changes in mental status or behavior, such as anxiousness or agitation
+                        <LineBreak/>
+
+                        <Bold>Seek emergency medical care</Bold>
+                        <LineBreak/>
+
+                        If you suspect a person is in shock, call 911 or your local emergency number. Then immediately take the following steps:
+                        <LineBreak/>
+                        <LineBreak/>
+
+                        -Lay the person down and elevate the legs and feet slightly, unless you think this may cause pain or further injury.
+                        <LineBreak/>
+                        -Keep the person still and don't move him or her unless necessary.
+                        <LineBreak/>
+                        -Begin CPR if the person shows no signs of life, such as breathing, coughing or movement.
+                        <LineBreak/>
+                        -Loosen tight clothing and, if needed, cover the person with a blanket to prevent chilling.
+                        <LineBreak/>
+                        -Don't let the person eat or drink anything.
+                        <LineBreak/>
+                        -If the person vomits or begins bleeding from the mouth, turn him or her onto a side to prevent choking, unless you suspect a spinal injury.
+                        <LineBreak/>
+                    </Paragraph>
+                </RichTextBlock>
+            </ScrollViewer>
+        </PivotItem>
+    </Pivot>
+
+</Page>
