@@ -4,10 +4,9 @@ using Windows.UI.Notifications;
 using Microsoft.QueryStringDotNET;
 using NotificationsExtensions.Toasts;
 
-
 namespace BackgroundProcesses
 {
-    public sealed class ActionCenterToastMaker: IBackgroundTask
+    public sealed class ActionCenterToastMaker : IBackgroundTask
     {
         public void Run(IBackgroundTaskInstance taskInstance)
         {
@@ -48,7 +47,7 @@ namespace BackgroundProcesses
             {
                 ToastNotificationManager.History.Remove("Friends");
             }
-            
+
             ToastNotificationManager.CreateToastNotifier().Show(toast);
         }
     }

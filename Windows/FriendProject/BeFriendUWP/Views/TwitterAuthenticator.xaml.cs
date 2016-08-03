@@ -9,7 +9,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using Tweetinvi;
-using Tweetinvi.Core.Authentication;
+using Tweetinvi.Models;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -43,7 +43,7 @@ namespace BeFriend.Views
 
         }
         //Use your consumerKey and ConsumerSecret
-        
+
 
         private async void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
@@ -59,18 +59,18 @@ namespace BeFriend.Views
                 Auth.SetCredentials(userCredentials);
 
                 var vault = new PasswordVault();
-                vault.Add(new PasswordCredential("Friend","TwitterAccessToken",userCredentials.AccessToken));
-                vault.Add(new PasswordCredential("Friend","TwitterAccessTokenSecret",userCredentials.AccessTokenSecret));
+                vault.Add(new PasswordCredential("Friend", "TwitterAccessToken", userCredentials.AccessToken));
+                vault.Add(new PasswordCredential("Friend", "TwitterAccessTokenSecret", userCredentials.AccessTokenSecret));
                 var localSettings = ApplicationData.Current.LocalSettings;
                 var frame = Window.Current.Content as Frame;
 
                 if (localSettings.Values.ContainsKey("FirstTimeRunComplete"))
                 {
-                    frame?.Navigate(typeof (MainPage));
+                    frame?.Navigate(typeof(MainPage));
                 }
                 else
                 {
-                    frame?.Navigate(typeof (FirstTimeTutorial));
+                    frame?.Navigate(typeof(FirstTimeTutorial));
                 }
             }
         }

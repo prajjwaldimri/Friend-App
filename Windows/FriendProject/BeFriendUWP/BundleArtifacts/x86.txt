@@ -1,2 +1,2 @@
-MainPackage=C:\Users\prajj\Source\Repos\Friend-App\Windows\FriendProject\BeFriendUWP\bin\x86\Release\BeFriendUWP_1.1.2.0_x86.appx
-SymbolPackage=C:\Users\prajj\Source\Repos\Friend-App\Windows\FriendProject\BeFriendUWP\AppPackages\BeFriendUWP_1.1.2.0_Test\BeFriendUWP_1.1.2.0_x86.appxsym
+MainPackage=C:\Users\prajj\Source\Repos\Friend-App\Windows\FriendProject\BeFriendUWP\bin\x86\Release\BeFriendUWP_1.1.4.0_x86.appx
+SymbolPackage=C:\Users\prajj\Source\Repos\Friend-App\Windows\FriendProject\BeFriendUWP\AppPackages\BeFriendUWP_1.1.4.0_Test\BeFriendUWP_1.1.4.0_x86.appxsym

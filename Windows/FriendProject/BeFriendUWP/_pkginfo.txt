@@ -1,1 +1,1 @@
-C:\Users\prajj\Source\Repos\Friend-App\Windows\FriendProject\BeFriendUWP\AppPackages\BeFriendUWP_1.1.2.0\BeFriendUWP_1.1.2.0_x86_x64_arm.appxbundle
+C:\Users\prajj\Source\Repos\Friend-App\Windows\FriendProject\BeFriendUWP\AppPackages\BeFriendUWP_1.1.4.0\BeFriendUWP_1.1.4.0_x86_x64_arm.appxbundle

@@ -5,6 +5,5 @@
   </PropertyGroup>
   <ImportGroup>
     <Import Project="$(NuGetPackageRoot)\Microsoft.Bcl.Build\1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('$(NuGetPackageRoot)\Microsoft.Bcl.Build\1.0.21\build\Microsoft.Bcl.Build.targets')" />
-    <Import Project="$(NuGetPackageRoot)\NotificationsExtensions.Win10\14332.0.1\build\Windows\NotificationsExtensions.Win10.targets" Condition="Exists('$(NuGetPackageRoot)\NotificationsExtensions.Win10\14332.0.1\build\Windows\NotificationsExtensions.Win10.targets')" />
   </ImportGroup>
 </Project>

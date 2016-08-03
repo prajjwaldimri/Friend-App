@@ -290,7 +290,9 @@ Note that you can customize the scope of the posted feed (private, friends or pu
     <comment>MainPage.xaml</comment>
   </data>
   <data name="InAppMessage/AppUpdation" xml:space="preserve">
-    <value>-Initial Build</value>
+    <value>-Fixed Twitter Integration
+- Updated to support Windows Anniversary update
+- Added medikit</value>
     <comment>BaseViewModel.cs</comment>
   </data>
   <data name="InAppMessage/BugSuggestionsContent" xml:space="preserve">
